@@ -1,0 +1,37 @@
+\documentclass[pdftex,12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,british]{babel}
+\usepackage{csquotes}
+
+\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=15mm,right=10mm,includefoot]{geometry}
+\usepackage[pdftex,unicode,colorlinks=true,urlcolor=blue,hyperindex,breaklinks]{hyperref} 
+
+\usepackage{color}
+\usepackage{floatflt}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{multirow} 
+\usepackage{eurosym}
+\usepackage{verbatim}
+\usepackage{dcolumn}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{hyperref}
+\usepackage{indentfirst} % indent first line
+\usepackage{caption}
+\newcommand{\e}{\varepsilon}
+\usepackage{chngpage}
+\usepackage{lscape}
+
+
+
+
+
+
+\end{document}
