@@ -40,6 +40,14 @@ $R^2 = \frac{ESS}{TSS} = \frac{\hat{\beta}_2^2 \textbf{x}^T \textbf{x}^{(2)}}{\t
 
 \def\baselinestretch{1.5}
 
+<<warning=FALSE, echo=FALSE, message=FALSE>>=
+library(knitr)
+library(texreg)
+opts_chunk$set(cache=FALSE, dev='png',dpi=300,warning=FALSE,message=FALSE)
+@
+
+
+
 <<eval=FALSE>>=
 library("dplyr")
 data <- read.csv("data.csv", header=TRUE)
@@ -66,5 +74,37 @@ ct.add <- left_join(d,ct) %>%
 
 @
 
+
+<<echo=FALSE>>=
+library("dplyr")
+library("ggplot2")
+library("gridExtra")
+library("car")
+set.seed(7)
+data(diamonds)
+small <- diamonds[sample(nrow(diamonds),1000),] 
+small$cut_r <- recode(small$cut,"'Fair'='Удовлетворительная'; 'Good'='Хорошая'; 'Very Good'='Очень хорошая'; 'Premium'='Премиум'; 'Ideal'='Идеальная' ")
+
+small4 <- filter(small, !cut == "Fair")
+
+@
+
+<<out.height="15cm",out.width="15cm", echo=FALSE>>=
+ggplot(small4) + geom_point(aes(x=carat,y=price,colour=cut_r)) + scale_y_log10() + facet_wrap(~cut_r) + labs(x= "Масса (карат)", y="Цена", color="Огранка", title="Зависимость цены бриллиантов от массы и огранки") + theme_bw() + theme(legend.position="bottom")
+@
+
+<<fig.width=12, echo=FALSE>>=
+ggplot(small4, aes(x=cut_r, fill=color)) + 
+  geom_histogram(color="black") + 
+  scale_fill_brewer(palette="Spectral") + facet_grid(~color) + theme(axis.text.x = element_text(size=12,angle=90), legend.position="none") + labs(x= "Огранка", y="Количество бриллиантов", fill="Цвет", title="Количество бриллиантов в зависимости от цвета и огранки")
+@
+
+\newpage
+\begin{center}
+Характеристики российских дефолтных компаний среднего и малого бизнеса
+\vspace{0.3cm}
+\includegraphics[width=17cm,height=11.5cm]{plot1a.jpeg}
+
+\end{center}
 
 \end{document}
