@@ -28,10 +28,43 @@
 \newcommand{\e}{\varepsilon}
 \usepackage{chngpage}
 \usepackage{lscape}
+\def\baselinestretch{3}
+
+\begin{document}
+
+$\ln y_i = \beta_1 + \beta_2 \ln l_i + \beta_3 \ln k_i + \e_i$
+
+$T = \frac{(RSS_{R} - RSS_{UR})/q}{RSS_{UR}/(n - k)}$
+
+$R^2 = \frac{ESS}{TSS} = \frac{\hat{\beta}_2^2 \textbf{x}^T \textbf{x}^{(2)}}{\textbf{y}^T \textbf{y}} = \frac{\textbf{x}^T \textbf{y}^{(2)}}{(\textbf{x}^T \textbf{x})(\textbf{y}^T \textbf{y})} = \mathrm{Corr}^2(X, Y)$
+
+\def\baselinestretch{1.5}
+
+<<eval=FALSE>>=
+library("dplyr")
+data <- read.csv("data.csv", header=TRUE)
+summary(data)
+@
 
 
+<<eval=FALSE>>=
+str_stand <- function(z) {
+  z %>% tolower() %>% str_trim() %>% 
+    stri_trans_general(id = "Russian-Latin/BGN" ) %>% 
+    str_replace_all("[[:punct:]]"," ") %>%
+    str_replace_all(" +"," ") %>% return()  
+}
+@
 
 
+<<eval=FALSE>>=
+ct.add <- left_join(d,ct) %>% 
+  mutate(dist=stringdist(str_stand(user_ans),in_cat)) %>% 
+  filter(dist<4) %>% 
+  select(in_cat=user_ans,out_cat) %>% 
+  unique() 
+
+@
 
 
 \end{document}
