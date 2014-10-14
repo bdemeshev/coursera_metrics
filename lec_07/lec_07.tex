@@ -1,0 +1,374 @@
+\documentclass[ignorenonframetext,]{beamer}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{lmodern}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+      \fi
+\fi
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{longtable,booktabs}
+\usepackage{caption}
+% These lines are needed to make table captions work with longtable:
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\title{Лекция 7. Максимально правдоподобно о логит и пробит-моделях}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Метод максимального правдоподобия}
+
+Наблюдения: вижу работающий фонтан
+
+Гипотеза 1: фонтан работает каждый день
+
+Гипотеза 2: фонтан включают раз в году
+
+\end{frame}
+
+\begin{frame}{Правдоподобие. Более формально}
+
+Метод максимального правдоподобия (ML --- Maximum Likelihood)
+
+В качестве оценки неизвестного параметра $\theta$ возьмем такое число
+$\hat{\theta}$, при котором вероятность имеющихся данных максимальна.
+
+\end{frame}
+
+\begin{frame}{Пример задачи}
+
+Наблюдения: $y_1=0$, $y_2=1$, $y_3=2$, $y_4=0$.
+
+Модель: наблюдения независимы,
+
+\begin{longtable}[c]{@{}rrrr@{}}
+\toprule\addlinespace
+$y$ & 0 & 1 & 2
+\\\addlinespace
+\midrule\endhead
+Вероятность & $p$ & $2p$ & $1-3p$
+\\\addlinespace
+\bottomrule
+\end{longtable}
+
+\end{frame}
+
+\begin{frame}{Решаем задачу у чудо-доски}
+
+\end{frame}
+
+\begin{frame}{Правдоподобие. Непрерывный случай}
+
+Для непрерывных случайных величин максимизируется плотность вероятности
+
+Для независимых наблюдений:
+$f(y_1,y_2,...,y_n|\theta)=f(y_1|\theta)\cdot f(y_2|\theta)\cdot ...\cdot f(y_n|\theta)=\prod f(y_i|\theta)$
+
+Трюк с логарифмированием:
+$l(\theta)=\ln\left( \prod f(y_i|\theta) \right) = \sum \ln f(y_i|\theta)$
+
+\end{frame}
+
+\begin{frame}{Задача 2.}
+
+100 наблюдений: $y_1=1.1$, $y_2=2.7$, \ldots{}, $y_{100}=1.5$.
+
+Сумма, $\sum y_i=200$.
+
+Модель: наблюдения независимы, $f(y)=\lambda e^{-\lambda x}$ при $x>0$.
+
+Найдите $\hat{\lambda}$
+
+\end{frame}
+
+\begin{frame}{Решаем задачу 2 чудо-доска.}
+
+\end{frame}
+
+\begin{frame}{ML --- это хорошо!}
+
+ML оценки:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Состоятельны: $\hat{\theta}_{ML} \to \theta$ при $n\to \infty$
+\item
+  Асимптотически несмещены: $E(\hat{\theta}_{ML}) \to \theta$ при
+  $n\to \infty$
+\item
+  Асимптотически эффективны:
+\end{itemize}
+
+$Var(\hat{\theta}_{ML})$ наименьшая среди асимптотически несмещенных
+
+\end{frame}
+
+\begin{frame}{ML --- это нормально!}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Асимптотически нормальны:
+\end{itemize}
+
+$\hat{\theta}_{ML} \sim N(\theta, I^{-1})$ при $n>>0$
+
+$I$ --- информация Фишера, $I=-E\left( l''(\theta) \right)$
+
+В многомерном случае: $I=-E( H )$, $H$ --- матрица Гессе
+
+\end{frame}
+
+\begin{frame}{ML оценка как случайная величина}
+
+Среднее: $E(\hat{\theta}_{ML}) \approx \theta$, дисперсия:
+$Var(\hat{\theta}_{ML}) \approx I^{-1}$
+
+Оценка дисперсии: $\widehat{Var}(\hat{\theta}_{ML})=\hat{I}^{-1}$
+
+Наблюдаемая информация Фишера $\hat{I}=-l''(\hat{\theta})$
+
+\end{frame}
+
+\begin{frame}{Доверительный интервал}
+
+Доверительный интервал:
+
+\[
+\theta \in [\hat{\theta}_{ML}-z_{cr}se(\hat{\theta});\hat{\theta}_{ML}+z_{cr}se(\hat{\theta})],
+\]
+
+$se(\hat{\theta}))=\sqrt{\widehat{Var}(\hat{\theta}_{ML})}=\sqrt{-(l''(\hat{\theta}))^{-1}}$
+
+\end{frame}
+
+\begin{frame}{Продолжение задачи у чудо-доски}
+
+Постройте 95\%-ый доверительный интервал для $\theta$.
+
+\end{frame}
+
+\begin{frame}{Проверка гипотез}
+
+$H_0$: Система из $q$ уравнений на неизвестные параметры
+
+$H_a$: Хотя бы одно из $q$ условий не выполнено
+
+Тест отношения правдоподобия (Likelihood Ratio, LR):
+
+\[
+LR=2(l(\hat{\theta})-l(\hat{\theta}_{H0})) \sim \chi^2_q
+\]
+
+\end{frame}
+
+\begin{frame}{Продолжение задачи у чудо-доски}
+
+Проверьте гипотезу $H_0$: $\lambda=1$.
+
+\end{frame}
+
+\begin{frame}{Логит и пробит-модели}
+
+Бинарная объясняемая переменная: $y_i \in \{0,1\}$.
+
+Скрытая ненаблюдаемая переменная:
+$y^*_i=\beta_1 +\beta_2 x_i +\varepsilon_i$.
+
+$y_i=\begin{cases} 1, y^*_i \geq 0 \\ 0, y^*_i <0 \end{cases}$
+
+\end{frame}
+
+\begin{frame}{Разница логит-пробит}
+
+Логит-модель: $\varepsilon_i \sim logistic$, $f(t)=e^{-x}/(1+e^{-x})^2$
+
+Пробит-модель: $\varepsilon_i \sim N(0,1)$.
+
+Логистическое похоже на $N(0,1.6^2)$
+
+\end{frame}
+
+\begin{frame}{Вероятность}
+
+\begin{multline}
+P(y_i=1)=P(y^*_i\geq 0)=P(\beta_1 +\beta_2 x_i +\varepsilon_i \geq 0)=\\
+=P( -\varepsilon_i \leq \beta_1 +\beta_2 x_i  ) = 
+P( \varepsilon_i \leq \beta_1 +\beta_2 x_i  ) = \\
+=F(\beta_1 +\beta_2 x_i) = \int_{-\infty}^{\beta_1+\beta_2 x_i} f(t) dt
+\end{multline}
+
+\end{frame}
+
+\begin{frame}{Упражнение.}
+
+Для логит-модели найдите $P(y_i=1)$, $\ln P(y_i=1)/P(y_i=0)$
+
+\end{frame}
+
+\begin{frame}{Чудо-Доска}
+
+\end{frame}
+
+\begin{frame}{Логарифмическое отношение шансов}
+
+Для логит-модели:
+
+\[
+P(y_i=1)=\frac{1}{1+exp(-(\beta_1+\beta_2 x_i))}
+\]
+
+\[
+\ln P(y_i=1)/P(y_i=0)=\beta_1 +\beta_2 x_i
+\]
+
+\end{frame}
+
+\begin{frame}{Функция правдоподобия}
+
+Наблюдения: $y_1=1$, $y_2=0$, \ldots{}
+
+Модель: логит.
+
+Функция правдоподобия: \[ 
+P(y_1=1, y_2=0, ...)=P(y_1=1)\cdot P(y_2=0)\cdot ...
+\]
+
+\end{frame}
+
+\begin{frame}{Интерпретация}
+
+Коэффициенты плохо интерпретируемы
+
+Предельный эффект --- производная вероятности:
+
+\[
+\frac{dP(y=1)}{dx}=\frac{dF(\beta_1+\beta_2 x)}{dx}=\beta_2 \cdot f(\beta_1+\beta_2x)
+\]
+
+Зависит от $x$ (!)
+
+\end{frame}
+
+\begin{frame}{Два средних предельных эффекта:}
+
+Средний предельный эффект по наблюдениям:
+
+\[
+\frac{\sum \beta_2 \cdot f(\beta_1+\beta_2 x_i)}{n}
+\]
+
+Предельный эффект для среднего наблюдения:
+
+\[
+\beta_2 \cdot f(\beta_1+\beta_2 \bar{x})
+\]
+
+\end{frame}
+
+\begin{frame}{Прогнозирование}
+
+Прогноз скрытой переменной:
+$\hat{y}^*_f=\hat{\beta}_1+\hat{\beta}_2 x_f$
+
+Доверительный интервал для $E(\hat{y}^*_f)$:
+
+\[
+[\hat{y}^*_f-z_{cr}se(\hat{y}^*_f);\hat{y}^*_f+z_{cr}se(\hat{y}^*_f)]
+\]
+
+Переход к $\hat{P}(y_f=1)=F(y^*_f)$
+
+\end{frame}
+
+\begin{frame}{Разница логит-пробит на практике}
+
+Коэффициенты логит/пробит отличаются в $\sim 1.6$ раза:
+
+Логит (примерно): $y^*_i=\beta_1+\beta_2 x_i +N(0,1.6^2)$
+
+\[
+\frac{y^*_i}{1.6}=\frac{\beta_1}{1.6}+\frac{\beta_2}{1.6} x_i +N(0,1)
+\]
+
+Пробит: $y^*_i=\beta_1+\beta_2 x_i +N(0,1)$
+
+\end{frame}
+
+\begin{frame}{Проблема логит-пробит моделей}
+
+``Идеальное прогнозирование'':
+
+\begin{longtable}[c]{@{}rrr@{}}
+\toprule\addlinespace
+$y_1=0$ & $y_2=0$ & $y_3=1$
+\\\addlinespace
+\midrule\endhead
+$x_1=1$ & $x_2=2$ & $x_3=3$
+\\\addlinespace
+\bottomrule
+\end{longtable}
+
+ML оценки не существуют!
+
+\end{frame}
+
+\begin{frame}{Объяснение с помощью ЧД}
+
+\end{frame}
+
+\begin{frame}{Проблема логит-пробит моделей}
+
+Нередко возникает при большом количестве дамми-регрессоров
+
+Признаки: не сходится ML,
+
+R: ``fitted probabilities numerically 0 or 1 occurred''
+
+Решения: регуляризация, байесовский подход
+
+\end{frame}
+
+\end{document}

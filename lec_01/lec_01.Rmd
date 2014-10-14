@@ -1,6 +1,11 @@
 ---
 title: "Эконометрика. Лекция 1"
-output: ioslides_presentation
+output:
+  ioslides_presentation: default
+  beamer_presentation:
+    includes:
+      in_header: header.tex
+    keep_tex: yes
 ---
 
 ## Эконометрика на одном слайде :)
@@ -19,7 +24,10 @@ output: ioslides_presentation
 - $y_i=\beta_1+\beta_2 x_i + \varepsilon_i$
 - $y_{t}=y_{t-1}+\varepsilon_t$
 
-
+```{r, echo=FALSE, include=FALSE}
+library(knitr)
+opts_chunk$set(cache=FALSE, dev='png',dpi=300)
+```
 
 ## Данные:
 
@@ -125,10 +133,10 @@ Q(\hat{\beta})=(60-\hat{\beta}170)^2+(70-\hat{\beta}170)^2+(80-\hat{\beta}180)^2
 \]
 
 Производная:
-\[
+\begin{multline}
 Q'(\hat{\beta})=-2\cdot 170\cdot (60-\hat{\beta}170)-2\cdot 170\cdot(70-\hat{\beta}170)\\
 -2\cdot 180\cdot(80-\hat{\beta}180)
-\]
+\end{multline}
 
 Приравняв производную к нулю получаем:
 \[
@@ -175,10 +183,10 @@ $RSS=\sum_{i=1}^n e_i^2$ --- сумма квадратов остатков
 
 Упрощаем производную:
 
-\[
+\begin{multline}
 Q'(\hat{\beta})=\sum_{i=1}^n -2(y_i-\hat{\beta})=-2 \sum_{i=1}^n (y_i-\hat{\beta})=\\
 -2 (\sum_{i=1}^n y_i-\sum_{i=1}^n \hat{\beta})=-2(\sum_{i=1}^n y_i-n\hat{\beta})
-\]
+\end{multline}
 
 Приравняв к нулю получаем: $\sum_{i=1}^n y_i=n\hat{\beta}$ или
 
