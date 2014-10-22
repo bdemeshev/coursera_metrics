@@ -1,0 +1,115 @@
+\documentclass[ignorenonframetext,]{beamer}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{lmodern}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+      \fi
+\fi
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\title{Лекция 5. Гетероскедастичность}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Метод максимального правдоподобия}
+
+Для проверки гипотез мы предполагали условную гомоскедастичность ошибок:
+
+\$ E(\varepsilon\_i \textbar{} X)=\sigma\^{}2 \$
+
+Что произойдет если эта предпосылка будет нарушена?
+
+\end{frame}
+
+\begin{frame}{Разница между условной и безусловной
+гетероскедастичностью}
+
+\end{frame}
+
+\begin{frame}{Проблема:}
+
+Все остальные предпосылки классической модели со стохастическими
+регрессорами для случайной выборки выполнены.
+
+Мы используем прежние формулы:
+
+$\hat{\beta}=(X'X)^{-1}X'y$
+
+$\widehat{Var}(\hat{\beta})=$
+
+В частности, $\widehat{Var}(\hat{\beta}_j)=\frac{\hat{\sigma}^2}{RSS_j}$
+
+\end{frame}
+
+\begin{frame}{Свойства для конечных выборок:}
+
+Без требования нормальности $\varepsilon$
+
+\begin{itemize}
+\item
+  Линейность по $y$
+\item
+  Условная несмещенность, $E(\hat{\beta}|X)=\beta$
+\item
+  (---) Оценки неэффективны
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{С требованием нормальности $\varepsilon$}
+
+\begin{itemize}
+\item
+  (---)
+  $t=\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}$
+\item
+  (---) $RSS/\sigma^2 |X \sim \chi^2_{n-k}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Асимптотические свойства:}
+
+\end{frame}
+
+\end{document}
