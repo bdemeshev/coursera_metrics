@@ -1,0 +1,19 @@
+\documentclass{article}
+
+\begin{document}
+
+<<echo=FALSE>>=
+library("ggplot2")
+x <- seq(0,15,length=100)
+ychi <- dchisq(x,df=6)
+qplot(x,ychi,xlab="",ylab="",geom="line") + theme_bw()
+
+xf <- seq(0,5,length=100)
+yf <- df(xf,df1=5,df2=2)
+qplot(x,yf,xlab="",ylab="",geom="line") + theme_bw()
+@
+
+
+
+
+\end{document}
