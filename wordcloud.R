@@ -40,7 +40,7 @@ pal <- c(brewer.pal(9, "Blues")[5:9], brewer.pal(9, "Oranges")[4:9],
          brewer.pal(9, "Reds")[5:9], brewer.pal(9, "Purples")[5:9])
 
 wordcloud(d$word,d$freq, scale=c(3,.1),min.freq=2,max.words=100, 
-          random.order=T, rot.per=0, colors=pal, fixed.asp=TRUE) 
+          random.order=T, rot.per=0.15, colors=pal) 
 
 wordcloud(d$word,d$freq, random.order=T, rot.per=.15, colors=pal) 
 
