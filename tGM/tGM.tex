@@ -1,0 +1,66 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+
+\section*{Свойства МНК оценок. Стохастические регрессоры}
+
+Если:
+\begin{enumerate}
+\item Истинная зависимость имеет вид $y_i=\beta_1 + \beta_2 x_{i2} + \ldots + \beta_k x_{ik}+\varepsilon_i$
+
+В матричном виде: $y=X\beta + \varepsilon$
+\item С помощью МНК оценивается регрессия $y$ на константу, $x_{.2}$, $x_{.3}$, \ldots, $x_{.k}$
+
+В матричном виде: $\hat{\beta}=(X'X)^{-1}X'y$
+\item Наблюдений больше, чем оцениваемых коэффициентов $\beta$: $n>k$
+\item Строгая экзогенность: $E(\varepsilon_i | \text{ все } x_{ij})=0$
+
+В матричном виде: $E(\varepsilon_i | X)=0$
+\item Условная гомоскедастичность: $E(\varepsilon_i^2 | \text{ все } x_{ij})=\sigma^2$
+
+В матричном виде: $E(\varepsilon_i^2 | X)=\sigma^2$
+\item  $Cov(\varepsilon_i,\varepsilon_j | X)=0$ при $i \neq j$
+\item  вектора $(x_{i.},y_i)$ --- независимы и одинаково распределены
+\item  с вероятностью 1 среди регрессоров нет линейно зависимых
+$rank(X)=k$
+$det(X'X)\neq 0$
+$(X'X)^{-1}$ существует
+\end{enumerate}
+
+То (свойства для конечных выборок, не требующие нормальности $\varepsilon$):
+\begin{enumerate}
+\item [тГМ] МНК оценки $\hat{\beta}$ линены по $y$:
+$\hat{\beta_j}=c_1 y_1 + ... + c_n y_n$
+\item  [тГМ] $E(\hat{\beta} |X )=\beta$, и в частности $E(\hat{\beta})=\beta$
+\item  [тГМ] Для любой альтернативной оценки $\hat{\beta}^{alt}$ удовлетворяющей свойствам 1 и 2:
+$Var(\hat{\beta}_j^{alt} | X)\geq Var(\hat{\beta}_j | X)$
+$Var(\hat{\beta}_j^{alt} )\geq Var(\hat{\beta}_j )$
+\item  $Var(\hat{\beta} | X )=\sigma^2 (X'X)^{-1}$
+\item $Cov(\hat{\beta},\hat{\varepsilon} | X)=0$
+\item  $E(\hat{\sigma}^2 |X ) = \sigma^2$, и $E(\hat{\sigma}^2 ) = \sigma^2$ ?остается ли при условной ГК?
+\end{enumerate}
+
+свойства для конечных выборок, требующие нормальности $\varepsilon$
+Если дополнительно известно, что $\varepsilon |X \sim N$, (в частности $\varepsilon$ и $X$ независимы) то:
+\begin{enumerate}
+\item $t|X \sim t_{n-k}$, $t\sim t_{n-k}$
+\item  $RSS/\sigma^2 |X \sim \chi^2_{n-k}$, $RSS/\sigma^2 \sim \chi^2_{n-k}$
+\item $F$ тест $F|X \sim F$
+\end{enumerate}
+
+Асимптотические свойства:
+\begin{enumerate}
+\item  $\hat{\beta} \to \beta$ по вероятности
+
+\item $t \to N(0,1)$
+\item  $rF \to \chi^2_r$, $r$ --- число ограничений
+\item  $nR^2 \to \chi^2_{k-1}$
+$\frac{RSS}{n-k} \to \sigma^2 $
+\end{enumerate}
+\end{document}
