@@ -1,0 +1,54 @@
+---
+title: "handout_1 2 3"
+output:
+  pdf_document:
+    includes:
+      in_header: header.tex
+    keep_tex: yes
+    toc: yes
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+
+
+Тут картинка.
+
+
+Столбца матрицы регрессоров $X$ ортогональны остаткам регрессии, вектору $\hat{\varepsilon}$:
+
+\[
+X'\hat{\varepsilon}=0
+\]
+
+Заметим, что здесь 0 --- это вектор размера $k\times 1$. Подставляем формулу для остатков, $\hat{\varepsilon}=y-X'\hat{\beta}$:
+
+\[
+X'(y-X\hat{\beta})=0
+\]
+
+Раскрываем скобки и переносим в разные стороны уравнения:
+
+
+\[
+X'y-X'X\hat{\beta}=0
+\]
+
+\[
+X'X\hat{\beta}=X'y
+\]
+
+Матрица $X'$ имеет размер $k\times n$, поэтому на неё сокращать нельзя. Хотя иногда хочется :) А вот обратная матрица к матрице $X'X$ существует, если среди столбцов $X$ нет линейно зависимых и $n\geq k$. Домножаем обе части уравнения слева на $(X'X)^{-1}$:
+
+\[
+\hat{\beta}=(X'X)^{-1}X'y
+\]
+
+Ура! Мы получили формулу для МНК-оценок множественной регрессии! Заметьте, что она подозрительно похожа на формулу МНК-оценки для случая одного оцениваемого параметра. В модели $y_i=\beta x_i +\varepsilon_i$ МНК-оценка коэффициента $\beta$ имела вид $\hat{\beta}=\sum x_i y_i /\sum x_i^2$. 
+
