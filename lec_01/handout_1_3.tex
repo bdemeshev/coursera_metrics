@@ -21,29 +21,6 @@
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
 \usepackage[margin=1in]{geometry}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
-\newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
-\newcommand{\NormalTok}[1]{{#1}}
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -89,33 +66,9 @@
 
 {
 \hypersetup{linkcolor=black}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \tableofcontents
 }
-This is an R Markdown document. Markdown is a simple formatting syntax
-for authoring HTML, PDF, and MS Word documents. For more details on
-using R Markdown see \url{http://rmarkdown.rstudio.com}.
-
-When you click the \textbf{Knit} button a document will be generated
-that includes both content as well as the output of any embedded R code
-chunks within the document. You can embed an R code chunk like this:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{summary}\NormalTok{(cars)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##      speed           dist    
-##  Min.   : 4.0   Min.   :  2  
-##  1st Qu.:12.0   1st Qu.: 26  
-##  Median :15.0   Median : 36  
-##  Mean   :15.4   Mean   : 43  
-##  3rd Qu.:19.0   3rd Qu.: 56  
-##  Max.   :25.0   Max.   :120
-\end{verbatim}
-
 Тут картинка.
 
 Столбца матрицы регрессоров $X$ ортогональны остаткам регрессии, вектору
@@ -156,5 +109,103 @@ X'X\hat{\beta}=X'y
 одного оцениваемого параметра. В модели $y_i=\beta x_i +\varepsilon_i$
 МНК-оценка коэффициента $\beta$ имела вид
 $\hat{\beta}=\sum x_i y_i /\sum x_i^2$.
+
+\subsubsection{Матрица-шляпница}\label{-}
+
+Если $\hat{\beta}=(X'X)^{-1}X'y$, то вектор прогнозов, $\hat{y}$, будет
+равен $\hat{y}=X\hat{\beta}=X(X'X)^{-1}X'y$. Матрицу $H=X(X'X)^{-1}X'$
+по-английски называют ``hat-matrix'', матрицей-шляпницей, потому, что
+она надевает на $y$ шляпку: $\hat{y}=H\cdot y$. Умножение любого вектора
+на матрицу $H$ проецирует этот вектор на пространство, порождаемое
+регрессорами. Поскольку сами регрессоры уже лежат в этом пространстве,
+то $H\cdot X=X$. Матрица $H$ идемпотентная, то есть возведенная в
+произвольную натуральную степень даст саму себя, $H^n=H$. В этом легко
+можно убедиться либо перемножив руками $H$ на $H$, \[
+H\cdot H=X(X'X)^{-1}X'X(X'X)^{-1}X'=X(X'X)^{-1}X'=H
+\] либо из геометрических соображений. Умножение на $H$ несколько раз
+подряд, это проецирование результата проецирования. А проекция от
+проекции совпадает с проекцией.
+
+Собственными числами матрицы $H$ могут быть только нули или единицы.
+Действительно, при проецировании часть векторов сохраняются (те, что
+лежали в пространстве регрессоров), часть превращается в ноль (те, что
+были ортогональны пространству регрессоров), а все другие при
+проецировании меняют направление.
+
+Ранг матрицы-шляпницы можно посчитать, воспользовавшись тем, что
+$rk (AB)=rk (BA)$:
+
+\[
+rk(X(X'X)^{-1}X')=rk(X'X(X'X)^{-1})=rk(I_{k\times k})=k
+\]
+
+\subsubsection{Математическое ожидание и ковариационная
+матрица}\label{----}
+
+Если $y=(y_1, \ldots, y_n)'$ --- случайный вектор, то для него
+определены математическое ожидание, $E(y)$, и ковариационная матрица,
+$Var(y)$.
+
+Определение. Если $y$ --- вектор-столбец случайных величин,
+
+\[
+y=
+\begin{pmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{pmatrix}
+,
+\text{ то }
+E(y)=
+\begin{pmatrix}
+E(y_1) \\
+E(y_2) \\
+\vdots \\
+E(y_n)
+\end{pmatrix}
+\]
+
+Определение. $Var(y)=E(yy')-E(y)E(y')$.
+
+Согласно определению ковариационной матрицы:
+
+\[
+Var(y) = \begin{pmatrix}
+Var(y_1) & Cov(y_1,y_2) & \cdots & Cov(y_1,y_n) \\
+Cov(y_2,y_1) & Var(y_2) & \cdots & Cov(y_2,y_n) \\
+Cov(y_3,y_1) & Cov(y_3,y_2) & \cdots & Cov(y_3,y_n) \\
+\vdots & \vdots & \vdots & \vdots \\
+Cov(y_n,y_1) & Cov(y_n,y_2) & \cdots & Var(y_n) \\
+\end{pmatrix}
+\]
+
+Определение. $Cov(y,z)=E(yz')-E(y)E(z')$
+
+Свойства:
+
+Если $A$ и $B$ --- неслучайные матрицы, $a$ и $b$ --- неслучайные
+вектора, $y$ и $w$ --- случайные вектора подходящих размеров, то:
+
+$E(a)=a$
+
+$E(Ay+b)=AE(y)+b$ и $E(yA+b)=E(y)A+b$
+
+$E(y+w)=E(y)+E(w)$
+
+$Var(a)=0$
+
+$Var(Ay+b)=AVar(y)A'$
+
+$Var(y+z)=Var(y)+Var(z)+Cov(y,z)+Cov(z,y)$
+
+$Cov(Ay+a,Bz+b)=ACov(y,z)B'$
+
+$Cov(y,z)=Cov(z,y)'$
+
+$Cov(y+z,w)=Cov(y,w)+Cov(z,w)$ и $Cov(y,z+w)=Cov(y,z)+Cov(y,w)$
+
+$Cov(y,y)=Var(y)$
 
 \end{document}
