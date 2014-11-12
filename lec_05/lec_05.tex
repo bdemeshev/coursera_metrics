@@ -58,10 +58,10 @@ $ E(\varepsilon_i^2 | X)=\sigma^2 $
 $\hat{\beta}=(X'X)^{-1}X'y$
 
 Для оценки ковариационной матрицы оценок коэффициентов,
-$\widehat{Var}(\hat{\beta})=\frac{RSS}{n-k}(X'X)^{-1}$
+$\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$
 
-В частности, $\widehat{Var}(\hat{\beta}_j)=\frac{\hat{\sigma}^2}{RSS_j}$
-и $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j)}$
+В частности, $\widehat{Var}(\hat{\beta}_j|X)=\frac{\hat{\sigma}^2}{RSS_j}$
+и $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
 
 
 \item Три группы свойств:
@@ -116,16 +116,16 @@ $\widehat{Var}(\hat{\beta})=\frac{RSS}{n-k}(X'X)^{-1}$
 
 * Исправить стандартные ошибки! 
 
-* Другая формула для оценки $\widehat{Var}_{HC}(\hat{\beta})$
+* Другая формула для оценки $\widehat{Var}_{HC}(\hat{\beta}|X)$
 
 * Следовательно, другие $se_{HC}(\hat{\beta}_j)$
 
 
 \item Робастная (устойчивая) к гетероскедастичности оценка ковариационной матрицы
 
-* Вместо $\widehat{Var}(\hat{\beta})=\frac{RSS}{n-k}(X'X)^{-1}$ 
+* Вместо $\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$ 
 
-использовать $\widehat{Var}_{HC}(\hat{\beta})=(X'X)^{-1}X'\hat{\Omega}X(X'X)^{-1}$
+использовать $\widehat{Var}_{HC}(\hat{\beta}|X)=(X'X)^{-1}X'\hat{\Omega}X(X'X)^{-1}$
 
 * Уайт, 1980, HC0: 
 
@@ -159,7 +159,7 @@ $\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \f
 \newpage
 \item С практической точки зрения:
 
-* Новая формула для $\widehat{Var}_{HC}(\hat{\beta})$, и, следовательно, для  $se_{HC}(\hat{\beta}_j)$
+* Новая формула для $\widehat{Var}_{HC}(\hat{\beta}|X)$, и, следовательно, для  $se_{HC}(\hat{\beta}_j)$
 
 * ковариационная матрица в R (по умолчанию HC3):
 

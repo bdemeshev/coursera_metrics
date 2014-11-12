@@ -99,9 +99,9 @@ $\varepsilon_{t}=\phi_1 \varepsilon_{t-1}+\phi_2 \varepsilon_{t-2} +\ldots + \ph
 $\hat{\beta}=(X'X)^{-1}X'y$
 
 Для оценки ковариационной матрицы оценок коэффициентов,
-$\widehat{Var}(\hat{\beta})=\frac{RSS}{n-k}(X'X)^{-1}$
+$\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$
 
-В частности, $\widehat{Var}(\hat{\beta}_j)=\frac{\hat{\sigma}^2}{RSS_j}$
+В частности, $\widehat{Var}(\hat{\beta}_j|X)=\frac{\hat{\sigma}^2}{RSS_j}$
 и $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j)}$
 
 
@@ -155,17 +155,17 @@ $\widehat{Var}(\hat{\beta})=\frac{RSS}{n-k}(X'X)^{-1}$
 
 * Исправить стандартные ошибки! 
 
-* Другая формула для оценки $\widehat{Var}_{HAC}(\hat{\beta})$
+* Другая формула для оценки $\widehat{Var}_{HAC}(\hat{\beta}|X)$
 
 * Следовательно, другие $se_{HAC}(\hat{\beta}_j)$
 
 \item Робастная (устойчивая) к условной гетероскедастичности и автокорреляции оценка ковариационной матрицы
 
-* Вместо $\widehat{Var}(\hat{\beta})=\frac{RSS}{n-k}(X'X)^{-1}$ 
+* Вместо $\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$ 
 
 использовать 
 \[
-\widehat{Var}_{HAC}(\hat{\beta})=(X'X)^{-1}\hat{\Phi}(X'X)^{-1}
+\widehat{Var}_{HAC}(\hat{\beta}|X)=(X'X)^{-1}\hat{\Phi}(X'X)^{-1}
 \]
 
 * Нью-Вест (Newey-West), 1987  (Существует много вариантов)
@@ -199,7 +199,7 @@ $\widehat{Var}(\hat{\beta})=\frac{RSS}{n-k}(X'X)^{-1}$
 \newpage
 \item С практической точки зрения:
 
-* Новая формула для $\widehat{Var}_{HAC}(\hat{\beta})$, и, следовательно, для  $se_{HAC}(\hat{\beta}_j)$
+* Новая формула для $\widehat{Var}_{HAC}(\hat{\beta}|X)$, и, следовательно, для  $se_{HAC}(\hat{\beta}_j)$
 
 * ковариационная матрица в R:
 

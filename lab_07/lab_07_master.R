@@ -69,7 +69,7 @@ m_logit2 <- glm(data=t2,
 
 summary(t$fare)
 summary(t$sex)
-newdata <- data_frame(age=seq(from=5, to=100,length=100),fare=100,
+newdata <- data_frame(age=seq(from=5, to=100,length=100),fare=40,
                       sex="male",pclass="2nd")
 head(newdata)
 pred_logit <- predict(m_logit,newdata, se=TRUE)
@@ -82,9 +82,9 @@ newdata_pr <- select(newdata_pr,-residual.scale) %>%
                   ci_rigth=plogis(fit+1.96*se.fit))
 head(newdata_pr)
 
-qplot(data=newdata_pr, x = age, y = prob, geom="line") + 
-  geom_ribbon(aes(ymin = ci_left, ymax = ci_rigth), alpha = 0.2) 
-  #geom_line()
+ggplot(newdata_pr, aes(x = age, y = prob)) + 
+  geom_ribbon(aes(ymin = ci_left, ymax = ci_rigth), alpha = 0.2) + 
+  geom_line()
 
 maBina(m_logit)
 maBina(m_logit,x.mean = FALSE)
@@ -92,7 +92,7 @@ qplot(data=t,age)
 
 # ols
 
-m_ols <- lm(data=t,as.numeric(survived)~age+fare+sex+pclass)
+m_ols <- lm(data=t,survived~age+fare+sex+pclass)
 summary(m_ols)
 
 pred_ols <- predict(m_ols,newdata)
@@ -106,11 +106,4 @@ glimpse(roc.data)
 attr(roc.data,"class") <- "list"
 melt(roc.data)
 library(reshape2)
-cbind(NULL,roc.data)
-
-qplot(roc.data$cutoffs,roc.data$fpr,geom="line")
-qplot(roc.data$cutoffs,roc.data$tpr,geom="line")
-
-attr(roc.data,"class") <- "list"
-roc.data <- as.data.frame(roc.data)
-qplot(data=roc.data,x=cutoffs,y=tpr) + geom_line(aes(y=fpr),col="red")
+as.da

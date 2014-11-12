@@ -6,7 +6,6 @@ library("vcd")
 library("ggplot2")
 library("reshape2")
 library("AUC")
-library("broom")
 
 options(stringsAsFactors=FALSE)
 

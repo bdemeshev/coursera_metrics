@@ -1,4 +1,5 @@
 \documentclass[ignorenonframetext,]{beamer}
+\usetheme{CambridgeUS}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
@@ -20,29 +21,6 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
-\newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
-\newcommand{\NormalTok}[1]{{#1}}
 \usepackage{longtable,booktabs}
 \usepackage{caption}
 % These lines are needed to make table captions work with longtable:
@@ -115,26 +93,47 @@
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  $y_i=\beta_1+\beta_2 x_i + \varepsilon_i$
-\item
-  $y_{t}=y_{t-1}+\varepsilon_t$
+  $y_i=\beta_1+\beta_2 x_i + \varepsilon_i$ 
 \end{itemize}
 
 \end{block}
 
 \end{frame}
 
-\begin{frame}{Данные:}
+\begin{frame}{Основные типы данных:}
+
+\begin{itemize}
+\item
+  Временные ряды\\Год Население Безработица\\2010 142962 7.4\\2011
+  142914 6.5\\2012 143103 5.5\\2013 143395 5.5
+\item
+  Перекрестная выборка\\Страна Золото Серебро Бронза\\Россия 13 11
+  9\\Норвегия 11 5 10\\Канада 10 10 5\\США 9 7 12
+\item
+  Панельные данные сочетание первых двух
+\item
+  \ldots{}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Данные --- обозначения}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Одна зависимая, объясняемая, переменная: $y$
 \item
-  Несколько независимых, объясняющих, переменных: $x$, $z$, $\ldots$
+  Несколько регрессоров, объясняющих, переменных: $x$, $z$, $\ldots$
 \item
   По каждой переменной $n$ наблюдений: $y_1$, $y_2$, $\ldots$, $y_n$
 \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Данные --- пример}
+
+Исторические данные 1920-х годов :)
 
 \begin{longtable}[c]{@{}rr@{}}
 \toprule\addlinespace
@@ -151,8 +150,6 @@
 \\\addlinespace
 \bottomrule
 \end{longtable}
-
-Исторические данные 1920-х годов :)
 
 \end{frame}
 
@@ -181,12 +178,12 @@
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  придумать адекватную модель
+  придумать адекватную модель\\
 \item
   получить оценки неизвестных параметров: $\hat{\beta}_1$,
-  $\hat{\beta}_2$
+  $\hat{\beta}_2$\\
 \item
-  прогнозировать, заменив неизвестные параметры на оценки: \[
+  прогнозировать, заменив неизвестные параметры на оценки:\\\[
   \hat{y}_i=\hat{\beta}_1 + \hat{\beta}_2 x_i
   \]
 \end{itemize}
@@ -204,10 +201,10 @@
   реальных данных.
 \end{itemize}
 
-Ошибка прогноза: $e_i=y_i-\hat{y}_i$.
+Ошибка прогноза: $\hat{\varepsilon}_i=y_i-\hat{y}_i$.
 
 Сумма квадратов ошибок прогноза: \[
-Q(\hat{\beta}_1,\hat{\beta}_2)=\sum_{i=1}^n e_i^2=\sum_{i=1}^n (y_i-\hat{y}_i)^2
+Q(\hat{\beta}_1,\hat{\beta}_2)=\sum_{i=1}^n \hat{\varepsilon}_i^2=\sum_{i=1}^n (y_i-\hat{y}_i)^2
 \]
 
 Суть МНК: В качестве оценок взять такие $\hat{\beta}_1$,
@@ -239,7 +236,7 @@ Q=(0.6-\hat{\beta}_1-\hat{\beta}_2 6.68)^2+(3-\hat{\beta}_1-\hat{\beta}_2 6.68)^
 
 \end{frame}
 
-\begin{frame}{Простой пример}
+\begin{frame}{Простой пример (чудо-доска)}
 
 \begin{longtable}[c]{@{}rrr@{}}
 \toprule\addlinespace
@@ -250,36 +247,36 @@ Q=(0.6-\hat{\beta}_1-\hat{\beta}_2 6.68)^2+(3-\hat{\beta}_1-\hat{\beta}_2 6.68)^
 \\\addlinespace
 Коля & 70 & 170
 \\\addlinespace
-Петя & 80 & 180
+Петя & 80 & 181
 \\\addlinespace
 \bottomrule
 \end{longtable}
 
-Модель: $y_i=\beta x_i +\varepsilon_i$, Прогнозы:
-$\hat{y}_i=\hat{\beta}x_i$.
+Оцените
+модели:\\$y_i=\beta x_i +\varepsilon_i$\\$y_i=\beta_1+\beta_2 x_i +\varepsilon_i$
 
-Сумма квадратов ошибок: \[
-Q(\hat{\beta})=(60-\hat{\beta}170)^2+(70-\hat{\beta}170)^2+(80-\hat{\beta}180)^2
-\]
+Маленькая подготовка $n\bar{x}=\sum_i x_i=\sum_i \bar{x}$
 
 \end{frame}
 
-\begin{frame}{Решение задачи минимизации}
+\begin{frame}{Готовые формулы МНК}
 
-Сумма квадратов ошибок: \[
-Q(\hat{\beta})=(60-\hat{\beta}170)^2+(70-\hat{\beta}170)^2+(80-\hat{\beta}180)^2
+В модели $y_i=\beta +\varepsilon_i$
+
+\[
+\hat{\beta}=\bar{y}
 \]
 
-Производная:
+В модели $y_i=\beta_1+\beta_2 x_i +\varepsilon_i$
 
-\begin{multline}
-Q'(\hat{\beta})=-2\cdot 170\cdot (60-\hat{\beta}170)-2\cdot 170\cdot(70-\hat{\beta}170)\\
--2\cdot 180\cdot(80-\hat{\beta}180)
-\end{multline}
-
-Приравняв производную к нулю получаем: \[
-\hat{\beta}=0.4047
+\[
+\hat{\beta}_2=\frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum (x_i-\bar{x})^2}
+\] \[
+\hat{\beta}_1=\bar{y}-\hat{\beta}_2\bar{x}
 \]
+
+точка $(\bar{x},\bar{y})$ лежит на прямой
+$\hat{y}=\hat{\beta}_1+\hat{\beta}_2 x$
 
 \end{frame}
 
@@ -293,252 +290,245 @@ $\varepsilon_i$ --- ошибка, ошибка модели, случайная 
 
 $\hat{y}_i$ --- прогноз, прогнозное значение
 
-$e_i=y_i-\hat{y}_i$ --- остаток, ошибка прогноза
+$\hat{\varepsilon}_i=y_i-\hat{y}_i$ --- остаток, ошибка прогноза
 
-$RSS=\sum_{i=1}^n e_i^2$ --- сумма квадратов остатков
-
-\end{frame}
-
-\begin{frame}{Три простых случая в явном виде}
-
-\begin{block}{$y_i=\beta+\varepsilon_i$}
-
-\end{block}
-
-\begin{block}{$y_i=\beta x_i+\varepsilon_i$}
-
-\end{block}
-
-\begin{block}{$y_i=\beta_1+\beta_2 x_i+\varepsilon_i$}
-
-\end{block}
+$RSS=\sum_{i=1}^n \hat{\varepsilon}_i^2$ --- сумма квадратов остатков
 
 \end{frame}
 
-\begin{frame}{Случай $y_i=\beta+\varepsilon_i$. Нет объясняющей
-переменной.}
+\begin{frame}{Графическая иллюстрация (чудо-доска)}
+
+!показать, что регрессия проходит через среднюю точку
+
+\end{frame}
+
+\begin{frame}{Много объясняющих переменных}
+
+$y_i=\beta_1+\beta_2 x_i +\beta_3 z_i+\varepsilon_i$
+
+Выпишем систему уравнений для оценок $\hat{\beta}_1$, $\hat{\beta}_2$,
+$\hat{\beta}_3$
+
+\end{frame}
+
+\begin{frame}{Чудо доска}
+
+\end{frame}
+
+\begin{frame}{Вывод}
+
+Оценки находятся из системы
+
+\[
+\begin{cases}
+\sum \hat{\varepsilon}_i \cdot 1 =0 \\
+\sum \hat{\varepsilon}_i \cdot x_i =0 \\
+\sum \hat{\varepsilon}_i \cdot z_i =0
+\end{cases}
+\]
+
+\end{frame}
+
+\begin{frame}{Суммы квадратов}
+
+сумма квадратов остатков, $RSS=\sum \hat{\varepsilon}_i^2$
+
+общая сумма квадратов, $TSS=\sum (y_i-\bar{y})^2$
+
+объясненная сумма квадратов, $ESS=\sum (\hat{y}_i-\bar{y})^2$
+
+\end{frame}
+
+\begin{frame}{Абсолютный ликбез по линейной алгебре}
+
+Обозначения:
+
+\[
+y=\begin{pmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{pmatrix}\;
+x=\begin{pmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{pmatrix}\;
+\hat{\varepsilon}=\begin{pmatrix}
+\hat{\varepsilon}_1 \\
+\hat{\varepsilon}_2 \\
+\vdots \\
+\hat{\varepsilon}_n
+\end{pmatrix}\;
+\vec{1}=\begin{pmatrix}
+1 \\
+1 \\
+\vdots \\
+1
+\end{pmatrix}
+\]
+
+В нашей модели:
+$\hat{y}=\hat{\beta}_1 \cdot \vec{1}+\hat{\beta}_2 \cdot x +\hat{\beta}_3 \cdot z$
+
+\[
+X=\begin{pmatrix}
+1 & x_1 & z_1 \\
+1 & x_2 & z_2 \\
+\vdots \\
+1 & x_n & z_n 
+\end{pmatrix}
+\]
+
+\end{frame}
+
+\begin{frame}{Длина вектора}
+
+Длина вектора, $|y|=\sqrt{y_1^2+y_2^2+\ldots+ y_n^2}$
+
+Квадрат длины вектора, $|y|^2=y_1^2+y_2^2+\ldots + y_n^2=\sum_i y_i^2$
+
+Примеры:\\$RSS=\sum \hat{\varepsilon}_i^2$ --- квадрат длины вектора
+$\hat{\varepsilon}$\\$TSS=\sum (y_i-\bar{y})^2$ --- квадрат длины
+вектора $(y-\bar{y}\cdot \vec{1})$
+
+$\begin{pmatrix} y_1-\bar{y} \\ y_2-\bar{y} \\ \vdots \\ y_n-\bar{y}  \end{pmatrix} = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n  \end{pmatrix} - \bar{y}\begin{pmatrix} 1 \\ 1 \\ \vdots \\ 1  \end{pmatrix}=y-\bar{y}\cdot \vec{1}$
+
+\end{frame}
+
+\begin{frame}{Скалярное произведение двух векторов:}
+
+\[
+(x,y)=|x|\cdot |y|\cdot cos(x,y)
+\]
+
+\[
+(x,y)=x_1 y_1 +x_2 y_2 +\ldots+ x_n y_n=\sum_i x_i y_i
+\]
+
+Условие перпендикулярности: $x \perp y$, $\sum_i x_i y_i=0$, т.к.
+$cos(90^\circ)=0$.
+
+\end{frame}
+
+\begin{frame}{Чудо-доска.}
+
+Картинка для модели $y_i=\beta + \varepsilon_i$
+
+Теорема Пифагора
+
+\end{frame}
+
+\begin{frame}{Геометрическая интерпретация условий первого порядка}
+
+\[
+\begin{cases}
+\sum \hat{\varepsilon}_i \cdot 1 =0 \\
+\sum \hat{\varepsilon}_i \cdot x_i =0 \\
+\sum \hat{\varepsilon}_i \cdot z_i =0
+\end{cases}\; \Leftrightarrow \;
+\begin{cases}
+\hat{\varepsilon}\perp \vec{1} \\
+\hat{\varepsilon}\perp x \\
+\hat{\varepsilon}\perp z \\
+\end{cases}
+\]
+
+\end{frame}
+
+\begin{frame}{Чудо-доска. Картинка для множественной регрессии (с TSS и
+RSS)}
+
+\end{frame}
+
+\begin{frame}{Если в регрессию включён свободный член ($\beta_1$)}
+
+Если в регрессию включён свободный член ($y_i=\beta_1 + \ldots $) и
+оценки МНК единственны, то:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Сколько лет Васе?
-\end{itemize}
-
-Анна: 35. Белла: 27. Вика: 34.
-
-Спрогнозируем Васин возраст с помощью МНК!
-
-Наблюдения: $y_1$, $y_2$, \ldots{}, $y_n$
-
-Модель: $y_i=\beta+\varepsilon_i$. Прогнозы: $\hat{y}_i=\hat{\beta}$
-
-Сумма квадратов остатков:
-$Q=\sum_{i=1}^n (y_i-\hat{y}_i)^2= \sum_{i=1}^n(y_i-\hat{\beta})^2$
-
-Находим производную: $Q'(\hat{\beta})=\sum_{i=1}^n -2(y_i-\hat{\beta})$
-
-\end{frame}
-
-\begin{frame}{Случай $y_i=\beta+\varepsilon_i$. Решение.}
-
-Упрощаем производную:
-
-\begin{multline}
-Q'(\hat{\beta})=\sum_{i=1}^n -2(y_i-\hat{\beta})=-2 \sum_{i=1}^n (y_i-\hat{\beta})=\\
--2 (\sum_{i=1}^n y_i-\sum_{i=1}^n \hat{\beta})=-2(\sum_{i=1}^n y_i-n\hat{\beta})
-\end{multline}
-
-Приравняв к нулю получаем: $\sum_{i=1}^n y_i=n\hat{\beta}$ или
-
-$\hat{\beta}=\sum_{i=1}^n y_i /n=(y_1+y_2+...+y_n)/n=\bar{y}$
-
-МНК-прогноз возраста Васи: $\hat{\beta}=(35+27+34)/3=32$
-
-\end{frame}
-
-\begin{frame}{Случай $y_i=\beta x_i+\varepsilon_i$. Пропорциональность.}
-
-\end{frame}
-
-\begin{frame}{Случай \$ \$. Парная регрессия.}
-
-Предварительные замечания:
-
-$\bar{x}=\sum_{i=1}^n x_i$, поэтому:
-
-$n\bar{x}=\sum_{i=1}^n x_i$ или $\sum_{i=1}^n \bar{x}=\sum_{i=1}^n x_i$.
-
-\end{frame}
-
-\begin{frame}{Первая регрессия в R}
-
-(!) Установите R, Rstudio и дополнительные пакеты
-
-Три режима работы с Rstudio:
-
-\begin{itemize}
+  $\sum \hat{\varepsilon}_i=0$\\
 \item
-  диалоговый, консольный
+  $\sum y_i = \sum \hat{y}_i$\\
 \item
-  написание скрипта или программы
+  $\bar{y}=\bar{\hat{y}}$\\
 \item
-  написание документа, ``грамотное программирование''
+  $TSS=RSS+ESS$
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Консольный режим}
+\begin{frame}{Коэффициент детерминации --- простой показатель качества}
 
-\ldots{} тут скринкаст
+В моделях со свободным членом $R^2=ESS/TSS$
 
-\end{frame}
+$TSS$ --- общий разброс $y$\\$ESS$ --- объясненный регрессорами
+разброс\\$R^2$ --- доля объясненного разброса в общем разбросе
 
-\begin{frame}[fragile]{Консольный режим. Резюме\ldots{}}
+Теорема. Если в регрессию включён свободный член
+($y_i=\beta_1 + \ldots $) и оценки МНК единственны, то $R^2$ равен
+выборочной корреляции между $y$ и $\hat{y}$, т.е.
 
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  R отличает заглавные и прописные буквы.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{a <-}\StringTok{ }\DecValTok{5}
-\NormalTok{A <-}\StringTok{ }\DecValTok{4}
-\NormalTok{a +}\StringTok{ }\NormalTok{A}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 9
-\end{verbatim}
-
-\begin{itemize}
-\item
-  присваивания \texttt{a \textless{}- 5} и \texttt{a = 5} абсолютно
-  равнозначны
-\item
-  знак \texttt{+} в командной строке означает неоконченную команду
-
-  \begin{itemize}
-  \itemsep1pt\parskip0pt\parsep0pt
-  \item
-    может означать забытую незакрытую скобку
-  \item
-    избавиться можно нажатием клавиши \texttt{Esc}
-  \end{itemize}
-\item
-  \texttt{tab} облегачает жизнь, дописывая длинные названия
-\end{itemize}
+\[
+R^2=\left(\frac{\sum (y_i-\bar{y})(\hat{y}_i-\bar{y})}{\sqrt{\sum(y_i-\bar{y})^2}\sqrt{\sum(\hat{y}_i-\bar{y})^2}}\right)^2
+\]
 
 \end{frame}
 
-\begin{frame}{Написание скрипта}
-
-(тут скринкаст)
+\begin{frame}{Чудо-доска (доказательство)}
 
 \end{frame}
 
-\begin{frame}[fragile]{Написание скрипта. Резюме\ldots{}}
+\begin{frame}{Линейная алгебра}
 
-\begin{itemize}
-\item
-  \texttt{ctrl+Enter} (\texttt{cmd+Enter} на Маке) исполняет текущую
-  строчку или несколько строк
-\item
-  два основных объекта: вектор и табличка с данными
-\end{itemize}
+Модель: $y_i=\beta_1 + \beta_2 x_i +\beta_3 z_i +\varepsilon_i$
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{)}
-\NormalTok{d <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{rost=}\KeywordTok{c}\NormalTok{(}\DecValTok{170}\NormalTok{,}\DecValTok{170}\NormalTok{,}\DecValTok{180}\NormalTok{),}\DataTypeTok{ves=}\KeywordTok{c}\NormalTok{(}\DecValTok{60}\NormalTok{,}\DecValTok{70}\NormalTok{,}\DecValTok{80}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
+\[
+y=\begin{pmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n 
+\end{pmatrix}
+\; X=\begin{pmatrix}
+1 & x_1 & z_1 \\
+1 & x_2 & z_2 \\
+\vdots \\
+1 & x_n & z_n 
+\end{pmatrix}
+\]
 
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  любой реальный скрипт начинается с загрузки дополнительных пакетов
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
-\KeywordTok{library}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\[
+\hat{\beta}=(X'X)^{-1}X'y
+\]
 
 \end{frame}
 
-\begin{frame}[fragile]{Резюме. Загрузка данных.}
+\begin{frame}{Чудо-доска вывод формулы}
 
-Загрузка данных из электронной таблицы (Excel, Libre Office Calc,
-Gnumeric \ldots{})
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Причесать данные
-\item
-  Сохранить данные в формате csv
-\item
-  Прочитать данные в R командой
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{d <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"mydata.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+Если слишком много видео, то уберём вывод формулы из видео.
 
 \end{frame}
 
-\begin{frame}{Резюме. Поглядеть на табличку}
+\begin{frame}{Итого}
 
-Данные в табличке \texttt{d}.
+УРА!!! МНК позволяет оценивать модели!!!
 
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  начало и конец таблички: \texttt{head(d)}, \texttt{tail(d)}
-\item
-  описание таблички: \texttt{str(d)}
-\item
-  описательные статистики: \texttt{summary(d)}
-\item
-  достать переменную \texttt{speed} из таблички: \texttt{d\$speed}
-\item
-  достать вторую строку из таблички: \texttt{d{[}2,{]}}
-\item
-  достать второй столбец из таблички: \texttt{d{[},2{]}}
-\item
-  преобразовать или создать новую переменную:
-  \texttt{d \textless{}- mutate(d,speed2=speed\^{}2)}
-\end{itemize}
+Предположив $y_i=\beta_1 + \beta_2 x_i +\beta_3 z_i +\varepsilon_i$
 
-\end{frame}
-
-\begin{frame}{Резюме. Два базовых графика}
-
-\begin{itemize}
-\item
-  Гистограмма
-\item
-  Диаграмма рассеяния
-\item
-  Не забывайте подписи!!!
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Резюме. Простой пример регрессии}
+Получаем $\hat{\beta}_1$, $\hat{\beta}_2$, $\hat{\beta}_3$
 
 \end{frame}
 
 \begin{frame}{Вопросы}
 
 \begin{itemize}
+\item
+  Как выбрать форму модели?
 \item
   А будет ли решение задачи минимизации единственным?
 \item
@@ -550,45 +540,6 @@ Gnumeric \ldots{})
 \item
   \ldots{}
 \end{itemize}
-
-\end{frame}
-
-\begin{frame}[fragile]{Написание документа}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
-\KeywordTok{library}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
-\NormalTok{d <-}\StringTok{ }\NormalTok{cars }
-\KeywordTok{head}\NormalTok{(cars)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##   speed dist
-## 1     4    2
-## 2     4   10
-## 3     7    4
-## 4     7   22
-## 5     8   16
-## 6     9   10
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# %>% mutate(dist=0.3*dist,speed=1.67*speed)}
-\end{Highlighting}
-\end{Shaded}
-
-\end{frame}
-
-\begin{frame}
-
-$\bar{y}=(y_1+y_2+...+y_n)/n$ --- среднее значение $y$
-
-$TSS=\sum_{i=1}^n (y_i-\bar{y})^2$ --- общая сумма квадратов
-
-$ESS=\sum_{i=1}^n (\hat{y}_i-\bar{y})^2$ --- объясненная сумма квадратов
 
 \end{frame}
 
