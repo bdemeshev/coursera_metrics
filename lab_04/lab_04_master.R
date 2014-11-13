@@ -14,11 +14,12 @@ m.poly3 <- lm(dist~speed+I(speed^2)+I(speed^3),data=h)
 # тут рассказать про смысл I(speed)
 summary(m.poly3)
 # отдельные коэф против регрессии
-X <- model.matrix(m.poly3)
-cor(X)
+X0 <- model.matrix(~0+speed+I(speed^2)+I(speed^3),data=h)
+cor(X0)
 vif(m.poly3)
 
 # не было в лекции
+X <- model.matrix(m.poly3)
 XX <- t(X) %*% X
 eigen <- eigen(XX)
 eigen$values
@@ -37,6 +38,7 @@ m.line <- lm(dist~speed,data=h)
 summary(m.line)
 
 # RR
+# убывающая последовательность (!)
 lambdas <- seq(50,0.1,length=30) # для этих лямбд будем делать RR
 m.rr <- lm.ridge(dist~speed+I(speed^2)+I(speed^3),lambda=lambdas,data=h)
 
@@ -44,9 +46,9 @@ head(coef(m.rr))
 plot(m.rr)
 
 # LASSO
-X <- model.matrix(~0+speed+I(speed^2)+I(speed^3),data=h)
+
 y <- h$dist
-fit <- glmnet(X,y,alpha=1)
+fit <- glmnet(X0,y,alpha=1,lambda = lambdas)
 
 fit$a0
 

@@ -36,7 +36,7 @@ y <- ymd("2010-05-07") + days(1:5)
 x
 y
 
-x_zoo <- xts(x,order.by = y)
+x_zoo <- zoo(x,order.by = y)
 x_zoo
 
 # первые плюсы zoo
