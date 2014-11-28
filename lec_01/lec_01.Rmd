@@ -1,9 +1,8 @@
 ---
 title: "Эконометрика. Лекция 1"
+lang: russian
 output:
   beamer_presentation:
-    includes:
-      in_header: header.tex
     keep_tex: yes
     theme: CambridgeUS
   ioslides_presentation: default
