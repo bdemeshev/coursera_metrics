@@ -164,6 +164,10 @@ E(s|r)=\int_{-\infty}^{\infty} s \cdot f(s|r) dx
 
 \end{frame}
 
+\begin{frame}{чудо-доска. пример расчета условной дисперсии}
+
+\end{frame}
+
 \begin{frame}{Свойства условной дисперсии}
 
 Пусть $a$, $b$ --- константы, $s$, $r$ --- случайные величины.
@@ -240,13 +244,13 @@ Var(\varepsilon|X) = \begin{pmatrix}
 \sigma^2 & 0 & 0 & \ldots \\
 0 & \sigma^2 & 0 & \ldots \\
 0 & 0 & \sigma^2 & \ldots \\
-\vdots & & & \\
+\vdots & \vdots &\vdots  & \\
 \end{pmatrix}
 = \sigma^2 \begin{pmatrix}
 1 & 0 & 0 & \ldots \\
 0 & 1 & 0 & \ldots \\
 0 & 0 & 1 & \ldots \\
-\vdots & & & \\
+\vdots & \vdots &  \vdots & \\
 \end{pmatrix}=\sigma^2 \cdot I_{n\times n}
 \]
 
@@ -289,6 +293,15 @@ $Cov(\hat{\beta}_j,\hat{\beta}_l)$
 
 \begin{frame}{Итого в парной регрессии:}
 
+\begin{itemize}
+\item
+  $Var(\hat{\beta}_2|X)=\frac{\sigma^2}{\sum (x_i-\bar{x})^2}$
+\item
+  $Cov(\hat{\beta}_1,\hat{\beta}_2 |X)=\frac{-\bar{x}\sigma^2}{\sum (x_i-\bar{x})^2}$
+\item
+  $Var(\hat{\beta}_1|X)=\frac{\sigma^2 \sum x_i^2}{n\sum (x_i-\bar{x})^2}$
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}{Вопрос:}
@@ -312,16 +325,9 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 
 \end{frame}
 
-\begin{frame}{ЛИНАЛ: ковариационная матрица оценок коэффициентов}
+\begin{frame}{ЛИНАЛ: прелюдия к доказательству}
 
-Если оценки МНК существуют и единственны,
-$Var(\varepsilon|X)=\sigma^2 I_{n\times n}$
-
-то $Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}$
-
-\end{frame}
-
-\begin{frame}{ЛИНАЛ: комментарии к доказательству:}
+ЛИНАЛ: $Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}$
 
 Свойство: $Var(Ay)=AVar(y)A'$
 
@@ -338,7 +344,12 @@ $Var(\varepsilon|X)=\sigma^2 I_{n\times n}$
 
 \begin{frame}{ЛИНАЛ: чудо-доска}
 
-$Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}$ --- доказательство
+Если оценки МНК существуют и единственны,
+$Var(\varepsilon|X)=\sigma^2 I_{n\times n}$
+
+то $Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}$
+
+Доказательство
 
 \end{frame}
 
@@ -353,15 +364,48 @@ $Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}$ --- доказательство
 
 \begin{frame}{Оценка ковариационной матрицы}
 
-Формула:
+\begin{itemize}
+\item
+  $Var(\hat{\beta}_j | X)=\sigma^2 \cdot f(X)$
+\item
+  $\widehat{Var}(\hat{\beta}_j | X)=\hat{\sigma}^2 \cdot f(X)$
+\end{itemize}
 
-В R: \texttt{vcov(model)}
+а именно: $\widehat{Var}(\hat{\beta}_j| X)=\hat{\sigma}^2/RSS_j$
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  $se(\hat{\beta}_j)=\sqrt{(\hat{\beta}_j | X)}$
+\end{itemize}
+
+Например, в модели $y_i=\beta_1 + \beta_2 x_i + \varepsilon_i$:
+$se(\hat{\beta}_2)=\sqrt{\frac{\hat{\sigma}^2}{\sum (x_i-\bar{x})^2}}$
+
+\end{frame}
+
+\begin{frame}{оценка ковариационной матрицы}
+
+\[
+\widehat{Var}(\hat{\beta}|X)=\begin{pmatrix}
+\widehat{Var}(\hat{\beta}_1) & \widehat{Cov}(\hat{\beta}_1,\hat{\beta}_2) & \widehat{Cov}(\hat{\beta}_1,\hat{\beta}_3) & \ldots \\
+\widehat{Cov}(\hat{\beta}_2,\hat{\beta}_1) & \widehat{Var}(\hat{\beta}_2) &  \widehat{Cov}(\hat{\beta}_2,\hat{\beta}_3) & \ldots \\
+\widehat{Cov}(\hat{\beta}_3,\hat{\beta}_1) & \widehat{Cov}(\hat{\beta}_3,\hat{\beta}_2) & \widehat{Var}(\hat{\beta}_3) &   \ldots \\
+\vdots & & 
+\end{pmatrix}
+\]
+
+\begin{itemize}
+\item
+  ЛИНАЛ:
+  $\widehat{Var}(\hat{\beta} | X)=\hat{\sigma}^2 \cdot (X'X)^{-1}$
+\item
+  В R: \texttt{vcov(model)}
+\end{itemize}
 
 \end{frame}
 
 \begin{frame}{БСХС - Большой Список Хороших Свойств}
-
-Хорошие свойства оценок делятся на 3 группы:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -498,32 +542,148 @@ $\varepsilon_i$
 
 \begin{frame}{БСХС --- базовые свойства}
 
+\begin{itemize}
+\item
+  Оценки $\hat{\beta}_j$ линейны по $y_i$:
+  $\hat{\beta_j}=c_1 y_1 + ... + c_n y_n$
+\item
+  Оценки несмещены: $E(\hat{\beta}_j |X )=\beta_j$, и в частности
+  $E(\hat{\beta}_j)=\beta_j$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{БСХС --- базовые свойства}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Оценки эффективны среди линейных и несмещенных
+\end{itemize}
+
+Для любой линейной по $y_i$ и несмещенной альтернативной оценки
+$\hat{\beta}^{alt}$:
+
+$Var(\hat{\beta}_j^{alt} | X)\geq Var(\hat{\beta}_j | X)$ и
+$Var(\hat{\beta}_j^{alt} )\geq Var(\hat{\beta}_j )$
+
+\end{frame}
+
+\begin{frame}{БСХС --- базовые свойства}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  $Var(\hat{\beta} | X )=\sigma^2 (X'X)^{-1}$
+\end{itemize}
+
+Оценки дисперсий: $Var(\hat{\beta}_j| X)=\sigma^2/RSS_j$
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  $Cov(\hat{\beta}_j,\hat{\varepsilon}_i | X)=0$
+\item
+  $E(\hat{\sigma}^2 |X ) = \sigma^2$, и $E(\hat{\sigma}^2 ) = \sigma^2$
+\end{itemize}
+
+$\hat{\sigma}^2=\frac{RSS}{n-k}$
+
 \end{frame}
 
 \begin{frame}{БСХС --- асимптотические свойства}
+
+При $n\to \infty$:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  $\hat{\beta}_j \to \beta_j$ по вероятности
+\item
+  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$ по
+  распределению
+\item
+  $\hat{\sigma}^2 \to \sigma^2 $ по вероятности
+\end{itemize}
+
+$\hat{\sigma}^2=\frac{RSS}{n-k}$
 
 \end{frame}
 
 \begin{frame}{БСХС --- при нормальности}
 
-\end{frame}
-
-\begin{frame}{Доверительные интервалы коэффициентов}
-
-Возможна в двух подходах:
+Если дополнительно известно, что $\varepsilon_i \sim N(0, \sigma^2)$:
 
 \begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
 \item
-  Асимптотически:
-  $t=\frac{\hat{\beta}_j-\beta_j}/se(\hat{\beta}_j) \to N(0,1)$
+  Оценки эффективны среди несмещенных
 \item
-  При нормальности:
-  $t=\frac{\hat{\beta}_j-\beta_j}/se(\hat{\beta}_j) \sim t_{n-k}$
+  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}|X \sim t_{n-k}$,
+  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}\sim t_{n-k}$
+\item
+  $RSS/\sigma^2 |X \sim \chi^2_{n-k}$, $RSS/\sigma^2 \sim \chi^2_{n-k}$
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Чудо-доска}
+\begin{frame}{Доверительные интервалы для коэффициентов}
+
+Возможно строить в двух подходах:
+
+\begin{itemize}
+\item
+  Асимптотически:
+  $t=\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$
+\item
+  При нормальности:
+  $t=\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \sim t_{n-k}$
+\end{itemize}
+
+Примерный 95\%-ый интервал:
+
+$[\hat{\beta}_j-2se(\hat{\beta}_j);\hat{\beta}_j+2se(\hat{\beta}_j) ] $
+
+\end{frame}
+
+\begin{frame}{Описание любого теста:}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  предпосылки теста (например, асимптотический или точный)
+\item
+  проверяемая $H_0$ против $H_a$
+\item
+  формула для вычисления статистики
+\item
+  закон распределения статистики при верной $H_0$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Последовательность действий}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  выбираем уровень значимости $\alpha$,
+  $\alpha=P(H_0 \text{ отвергнута }| H_0 \text{ верна })$
+\item
+  находим наблюдаемое значение некоторой статистики
+\item
+  находим критическое значение статистики (можно посчитать P-значение)
+\item
+  сравниваем критическое и наблюдаемое (можно сравнить P-значение и
+  $\alpha$)
+\item
+  вывод: ``$H0$ отвергается'' или ``$H0$ не отвергается''
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[fragile]{Чудо-доска}
 
 Дано:
 
@@ -533,7 +693,23 @@ $\varepsilon_i$
   уравнение регрессии
 \item
   ковариационная матрица
+\item
+  оценка $\hat{\sigma}^2$
 \end{itemize}
+
+(Intercept) 59.86392 3.98754 15.013 \textless{}2e-16 **\emph{
+Agriculture 0.10953 0.07848 1.396 0.1698\\Catholic 0.11496 0.04274 2.690
+0.0101 }
+
+\begin{verbatim}
+         (Intercept)  Agriculture     Catholic
+\end{verbatim}
+
+(Intercept) 15.900471817 -0.256680712 -0.006998292 Agriculture
+-0.256680712 0.006159437 -0.001345371 Catholic -0.006998292 -0.001345371
+0.001826622
+
+Residual standard error: 11.07
 
 Надо:
 
@@ -543,20 +719,33 @@ $\varepsilon_i$
   проверьте гипотезу
 \item
   постройте доверительный интервал
+\item
+  постройте доверительный интервал для сигма
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{стандартные ошибки часто выписывают под коэффициентами}
 
-Пример записи. Устно сказали, кто значим, кто нет.
+$\widehat{Fertility}_i=\underset{(3.98)}{59.8} + \underset{(0.078)}{0.109} Agriculture_i + \underset{(0.042)}{0.115} Catholic_i$
 
 \end{frame}
 
-\begin{frame}{стандартная табличка в любом пакете + чудо-доска}
+\begin{frame}[fragile]{стандартная табличка в любом пакете + чудо-доска}
 
 Вывели на экран, рядом рассказали на примере одного коэффициента с
 графиком!
+
+\begin{verbatim}
+        Estimate Std. Error t value Pr(>|t|)   
+        
+\end{verbatim}
+
+(Intercept) 59.86392 3.98754 15.013 \textless{}2e-16 ***
+
+Agriculture 0.10953 0.07848 1.396 0.1698
+
+Catholic 0.11496 0.04274 2.690 0.0101 *
 
 \end{frame}
 
@@ -569,21 +758,6 @@ $\varepsilon_i$
   ``Мы проверили значимость коэффициента при доходе''
 \item
   Мы проверили $H_0: \beta_{inc}=0$.
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Логика проверки гипотез:}
-
-\begin{itemize}
-\item
-  проверка гипотезы о значимости коэффициента
-\item
-  выбираете уровень значимости альфа
-\item
-  формулируете $H_0$
-\item
-  вывод: $H0$ отвергается/$H0$ не отвергается
 \end{itemize}
 
 \end{frame}
@@ -603,13 +777,19 @@ $\varepsilon_i$
 
 \begin{frame}{Значимость и существенность}
 
-Коэффициент может быть значимым и совершенно несущественным
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Коэффициент может быть значимым и совершенно несущественным
+\end{itemize}
 
-Коэффициент может быть существенным но не значимым
+На огромных выборках --- все коэффиценты значимы
 
-\end{frame}
-
-\begin{frame}{На огромных выборках --- все коэффиценты значимы}
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Коэффициент может быть существенным но не значимым
+\end{itemize}
 
 \end{frame}
 
@@ -653,6 +833,32 @@ $y^{st}_i=\beta_1^{st}+\beta_2^{st}x_i^{st}+\beta_3^{st}z_i^{st}+\varepsilon_i^{
 
 \begin{frame}{Проверка гипотезы об одном ограничении}
 
+Хотим проверить гипотезу о $\beta_2-\beta_3$.
+
+Статистика
+$t=\frac{\hat{\beta}_2-\hat{\beta}_3-(\beta_2-\beta_3)}{se(\hat{\beta}_2-\hat{\beta}_3)}$
+распределена
+
+\begin{itemize}
+\item
+  асимпотитически $N(0,1)$
+\item
+  при нормальности $t_{n-k}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Переформулировка модели}
+
+Хотим проверить гипотезу о $\beta_2-\beta_3$.
+
+Всегда можно переформулировать модель так, что $\beta_2-\beta_3$ станет
+новым коэффициентом $\beta_2'=\beta_2-\beta_3$.
+
+\end{frame}
+
+\begin{frame}{Пример у чудо-доски}
+
 \begin{itemize}
 \item
   способ через ковариационную матрицу
@@ -682,54 +888,6 @@ $y^{st}_i=\beta_1^{st}+\beta_2^{st}x_i^{st}+\beta_3^{st}z_i^{st}+\varepsilon_i^{
   более сложные гипотезы
 \item
   прогнозирование
-\item
-  Запись предпосылок с помощью ковариационной матрицы
-\item
-  единичная матрица
-\item
-  Способ оценить неизвестную $\sigma^2$
-\item
-  без док-ва Если\ldots{} и $\hat{\sigma}^2 = RSS/(n-k)$ то 1.
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  норм
-\item
-  $n \to \infty$
-\end{enumerate}
-
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  способ оценить ковариационную матрицу
-\end{itemize}
-
-$\widehat{Var}(\hat{\beta}_2|X) =$
-
-коротко: $se^2(\hat{\beta}_2)$
-
-стало быть, $se^2(\hat{\beta}_2)=\hat{\sigma}^2/RSS_2$
-
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  Если выполнены предпосылки
-\end{itemize}
-
-и норм то $t_{n-k}$ и $n\to\inf$ то $N(0;1)$
-
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  ЛИНАЛ оступление для знающих линейную алгебру
-\item
-  матричные свойства $E(y)$
-\item
-  матричные свойства $E(y|x)$
 \end{itemize}
 
 \end{frame}
