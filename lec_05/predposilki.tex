@@ -1,0 +1,159 @@
+\documentclass[ignorenonframetext,]{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{lmodern}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+      \fi
+\fi
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+\usepackage[russian]{babel}
+
+\title{Куча предпосылок}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Предпосылки}
+
+Если:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Истинная зависимость имеет вид
+  $y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i+\varepsilon_i$
+\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  В матричном виде: $y=X\beta + \varepsilon$
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  С помощью МНК оценивается регрессия $y$ на константу, $x_i$, $z_i$
+\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  В матричном виде: $\hat{\beta}=(X'X)^{-1}X'y$
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Наблюдений больше, чем оцениваемых коэффициентов $\beta$: $n>k$
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{БСХС --- предположения на $\varepsilon_i$:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Строгая экзогенность: $E(\varepsilon_i | \text{ все регрессоры } )=0$
+\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  В матричном виде: $E(\varepsilon_i | X)=0$
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Условная гомоскедастичность:
+  $E(\varepsilon_i^2 | \text{ все регрессоры })=\sigma^2$
+\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  В матричном виде: $E(\varepsilon_i^2 | X)=\sigma^2$
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  $Cov(\varepsilon_i,\varepsilon_j | X)=0$ при $i \neq j$
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{БСХС --- предпосылки на регрессоры}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  векторы отдельных наблюдений $(x_i,z_i,y_i)$ --- независимы и
+  одинаково распределены
+\item
+  с вероятностью 1 среди регрессоров нет линейно зависимых
+\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Синонимы в матричном виде: $rank(X)=k$ или $det(X'X)\neq 0$ или
+  $(X'X)^{-1}$ существует
+\end{itemize}
+
+\end{frame}
+
+\end{document}

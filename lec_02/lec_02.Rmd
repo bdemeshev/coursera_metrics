@@ -246,9 +246,9 @@ $RSS_j$ --- сумма квадратов остатков в регрессии
 
 \[
 \widehat{Var}(\hat{\beta}|X)=\begin{pmatrix}
-\widehat{Var}(\hat{\beta}_1) & \widehat{Cov}(\hat{\beta}_1,\hat{\beta}_2) & \widehat{Cov}(\hat{\beta}_1,\hat{\beta}_3) & \ldots \\
-\widehat{Cov}(\hat{\beta}_2,\hat{\beta}_1) & \widehat{Var}(\hat{\beta}_2) &  \widehat{Cov}(\hat{\beta}_2,\hat{\beta}_3) & \ldots \\
-\widehat{Cov}(\hat{\beta}_3,\hat{\beta}_1) & \widehat{Cov}(\hat{\beta}_3,\hat{\beta}_2) & \widehat{Var}(\hat{\beta}_3) &   \ldots \\
+\widehat{Var}(\hat{\beta}_1|X) & \widehat{Cov}(\hat{\beta}_1,\hat{\beta}_2|X) & \widehat{Cov}(\hat{\beta}_1,\hat{\beta}_3|X) & \ldots \\
+\widehat{Cov}(\hat{\beta}_2,\hat{\beta}_1|X) & \widehat{Var}(\hat{\beta}_2|X) &  \widehat{Cov}(\hat{\beta}_2,\hat{\beta}_3|X) & \ldots \\
+\widehat{Cov}(\hat{\beta}_3,\hat{\beta}_1|X) & \widehat{Cov}(\hat{\beta}_3,\hat{\beta}_2|X) & \widehat{Var}(\hat{\beta}_3|X) &   \ldots \\
 \vdots & & 
 \end{pmatrix}
 \]
@@ -295,15 +295,15 @@ $RSS_j$ --- сумма квадратов остатков в регрессии
 * Синонимы в матричном виде: $rank(X)=k$ или $det(X'X)\neq 0$ или $(X'X)^{-1}$ существует
 
 
-## БСХС --- базовые свойства
+## БСХС --- базовые свойства (т. Гаусса-Маркова)
 
 * Оценки $\hat{\beta}_j$ линейны по $y_i$:
-$\hat{\beta_j}=c_1 y_1 + ... + c_n y_n$
+$\hat{\beta_j}=c_1 y_1 + \ldots + c_n y_n$
 
 * Оценки несмещены:
 $E(\hat{\beta}_j |X )=\beta_j$, и в частности $E(\hat{\beta}_j)=\beta_j$
 
-## БСХС --- базовые свойства
+## БСХС --- базовые свойства (т. Гаусса-Маркова)
 
 * Оценки эффективны среди линейных и несмещенных 
 
@@ -314,14 +314,13 @@ $Var(\hat{\beta}_j^{alt} )\geq Var(\hat{\beta}_j )$
 
 ## БСХС --- базовые свойства
 
-* $Var(\hat{\beta} | X )=\sigma^2 (X'X)^{-1}$ 
+* Ковариационная матрица: $Var(\hat{\beta} | X )=\sigma^2 (X'X)^{-1}$ 
 
-Оценки дисперсий: $Var(\hat{\beta}_j| X)=\sigma^2/RSS_j$
+Диспрерсии: $Var(\hat{\beta}_j| X)=\sigma^2/RSS_j$
 
 * $Cov(\hat{\beta}_j,\hat{\varepsilon}_i | X)=0$
 * $E(\hat{\sigma}^2 |X ) = \sigma^2$, и $E(\hat{\sigma}^2 ) = \sigma^2$ 
 
-$\hat{\sigma}^2=\frac{RSS}{n-k}$
 
 ## БСХС --- асимптотические свойства
 
