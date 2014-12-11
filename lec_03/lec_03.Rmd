@@ -140,7 +140,7 @@ $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
 
 # Пример 2. 
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i \varepsilon_i$
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \varepsilon_i$
 
 Для мужчин: $wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
 
@@ -148,15 +148,15 @@ $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i \varepsilo
 
 # Пример 3. 
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i exper_i \varepsilon_i$
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i exper_i + \varepsilon_i$
 
-Для мужчин: $wage_i = (\beta_1+\beta_4) + (\beta_2+\beta_5) exper_i + \beta_3 educ_i + \varepsilon_i$
+Для мужчин: $wage_i = (\beta_1+\beta_4) + (\beta_2+\beta_5) exper_i + \beta_3 educ_i + + \varepsilon_i$
 
 Для женщин: $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
 
 # Пример 4. 
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i \varepsilon_i$
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \varepsilon_i$
 
 Для мужчин: $wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i$
 
@@ -164,7 +164,7 @@ $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 
 
 # Пример 5. 
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \beta_6 male_i exper_i \varepsilon_i$
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \beta_6 male_i exper_i + \varepsilon_i$
 
 Для мужчин: $wage_i = (\beta_1+\beta_4) + (\beta_2 + \beta_6) exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i$
 
@@ -184,13 +184,13 @@ $vesna_i$, $leto_i$, $osen_i$
 
 $icecream_i=\beta_1 + \beta_2 price_i + \beta_3 vesna_i + \beta_4 leto_i + \beta_5 osen_i + \varepsilon_i$
 
-Зима: $icecream_i=\beta_1 + \beta_2 price_i \varepsilon_i$
+Зима: $icecream_i=\beta_1 + \beta_2 price_i + \varepsilon_i$
 
-Весна: $icecream_i=(\beta_1 + \beta_3) + \beta_2 price_i \varepsilon_i$
+Весна: $icecream_i=(\beta_1 + \beta_3) + \beta_2 price_i + \varepsilon_i$
 
-Лето: $icecream_i=(\beta_1 + \beta_4) + \beta_2 price_i \varepsilon_i$
+Лето: $icecream_i=(\beta_1 + \beta_4) + \beta_2 price_i + \varepsilon_i$
 
-Осень: $icecream_i=(\beta_1 + \beta_5) + \beta_2 price_i \varepsilon_i$
+Осень: $icecream_i=(\beta_1 + \beta_5) + \beta_2 price_i + \varepsilon_i$
 
 # Частая ошибка!
 
@@ -389,7 +389,7 @@ $H_a:$ Есть неизвестные нам пропущенные регре�
 
 Получить прогнозы $\hat{y}_i$
 
-2. Оценить модель: $\hat{y}_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \gamma_1 \hat{y}^2_i + \gamma_2 \hat{y}^3_i + ... + \gamma_p \hat{y}_i^{p+1} + \varepsilon_i$
+2. Оценить модель: $\hat{y}_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \gamma_1 \hat{y}^2_i + \gamma_2 \hat{y}^3_i + \ldots + \gamma_p \hat{y}_i^{p+1} + \varepsilon_i$
 
 3. Посчитать $F$-статистику проверяющую гипотезу о равенстве всех $\gamma_i$ нулю.
 
@@ -409,14 +409,16 @@ $H_a:$ Есть неизвестные нам пропущенные регре�
 # Информационные критерии
 
 Модель плохая если: 
+
 * плохо предсказывает ($RSS$ большой)
+
 * сложная (много коэффицентов, большое $k$)
 
 3. Информационные критерии:
 
-3.1. Акаике $AIC=n \ln (RSS/n) + 2k$
+* Акаике $AIC=n \ln (RSS/n) + 2k$
 
-3.2. Шварца $BIC=n \ln (RSS/n) + \ln(n) k $
+* Шварца $BIC=n \ln (RSS/n) + \ln(n) k $
 
 
 # Мораль
