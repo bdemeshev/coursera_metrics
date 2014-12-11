@@ -1,0 +1,604 @@
+\documentclass[ignorenonframetext,]{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{lmodern}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+      \fi
+\fi
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+\usepackage[russian]{babel}
+
+\title{Эконометрика. Лекция 6. Автокорреляция}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Автокорреляция!}
+
+Для проверки гипотез мы предполагали условную некоррелированность
+ошибок:
+
+$E(\varepsilon_i \varepsilon_j | X)=0$ при $i\neq j$
+
+Что произойдет если эта предпосылка будет нарушена?
+
+\end{frame}
+
+\begin{frame}{Когда логично ожидать автокорреляцию?}
+
+\begin{itemize}
+\item
+  \textless{}\textgreater{} наблюдений во времени или в пространстве
+\item
+  наличие ненаблюдаемого фактора, действующего на
+  \textless{}\textgreater{} наблюдения
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Автокорреляцию подробно изучают!}
+
+\begin{itemize}
+\item
+  анализ временных рядов
+\item
+  пространственная эконометрика
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Автокорреляция бывает небезобидной}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  может привести к несостоятельности оценок $\hat{\beta}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Чудо-доска}
+
+$\varepsilon_1=\varepsilon_2=\ldots=\varepsilon_n=\pm 1$
+
+отметим, что $E(\varepsilon_1\varepsilon_2 | x)=1$
+
+\end{frame}
+
+\begin{frame}{Автокорреляция может иметь очень сложную богатую
+структуру}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  AR, MA, ARMA, ARIMA, VAR, VMA, VARMA, VECM, ARCH, GARCH, EGARCH,
+  FIGARCH, TARCH, AVARCH, ZARCH, CCC, DCC, BEKK, VEC, DLM, \ldots{}
+\end{itemize}
+
+(тут можно страшными сокращениями заполнить весь экран)
+
+\end{frame}
+
+\begin{frame}{Мы рассмотрим автокорреляцию порядка $p$}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Начнем с автокорреляции первого порядка, $p=1$
+\end{itemize}
+
+$\varepsilon_{t}=\rho \varepsilon_{t-1}+u_t$
+
+\end{frame}
+
+\begin{frame}{Предпосылки}
+
+\begin{itemize}
+\item
+  $\varepsilon_{t}=\rho \varepsilon_{t-1}+u_t$
+\item
+  $u_t$ --- независимы между собой,
+\item
+  $u_t$ независимы от регрессоров
+\item
+  $u_t$ одинаково распределены
+\item
+  $E(u_t)=0$, $Var(u_t)=\sigma^2_u$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{упражнение у чудо-доски}
+
+Как выглядит $Corr(\varepsilon_{t}, \varepsilon_{t-k})$ при
+автокорреляции первого порядка?
+
+\end{frame}
+
+\begin{frame}{Автокорреляция порядка $p$:}
+
+$\varepsilon_{t}=\phi_1 \varepsilon_{t-1}+\phi_2 \varepsilon_{t-2} +\ldots + \phi_p \varepsilon_{t-p}u_t$
+
+допускает более богатую структуру $Corr(\varepsilon_i, \varepsilon_j)$
+
+Как и в случае автокорреляции первого порядка, \[
+\lim_{k\to\infty} Corr(\varepsilon_t, \varepsilon_{t-k})=0
+\]
+
+\end{frame}
+
+\begin{frame}{условная автокорреляция и другие предпосылки}
+
+\begin{itemize}
+\item
+  автоматом нарушена предпосылки о незавимости наблюдений
+  $(x_{i.}, y_i)$
+\item
+  во временных рядах обычно нарушена предпосылка
+  $E(\varepsilon_t | X)=0$
+\end{itemize}
+
+например, использование $y_{t-1}$ в качестве регрессора нарушает
+$E(\varepsilon_t | X)=0$
+
+(сказать про остальные предпосылки, и более слабые варианты)
+
+\end{frame}
+
+\begin{frame}{Мы используем прежние формулы:}
+
+\begin{itemize}
+\item
+  Для оценок коэффициентов: $\hat{\beta}=(X'X)^{-1}X'y$
+\item
+  Для оценки ковариационной матрицы оценок коэффициентов,
+  $\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$
+\item
+  В частности,
+  $\widehat{Var}(\hat{\beta}_j|X)=\frac{\hat{\sigma}^2}{RSS_j}$ и
+  $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j)}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Три группы свойств:}
+
+\begin{itemize}
+\item
+  конечная выборка без предположения о нормальности $\varepsilon$
+\item
+  конечная выборка с предположением о нормальности $\varepsilon$
+\item
+  асимптотические свойства (без предположения о нормальности
+  $\varepsilon$)
+\end{itemize}
+
+Что происходит в каждом случае?
+
+\end{frame}
+
+\begin{frame}{Конечная выборка без предположения о нормальности
+$\varepsilon$}
+
+\begin{itemize}
+\item
+  Линейность по $y$
+\item
+  Условная несмещенность, $E(\hat{\beta}|X)=\beta$
+\item
+  (---) Оценки неэффективны
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Конечная выборка с предположением о нормальности
+$\varepsilon$}
+
+\begin{itemize}
+\item
+  (---)
+  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}$
+\item
+  (---) $\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$
+\item
+  (---) $\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Асимптотические свойства:}
+
+\begin{itemize}
+\item
+  $\hat{\beta} \to \beta$
+\item
+  $\frac{RSS}{n-k} \to \sigma^2$
+\item
+  (---) $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$
+\item
+  (---) $\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k)} \to \chi^2_r$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Мораль:}
+
+\begin{itemize}
+\item
+  Сами $\hat{\beta}$ можно интерпретировать и использовать
+\item
+  Стандартные ошибки $se(\hat{\beta}_j)$ несостоятельны
+\item
+  Не можем строить доверительные интервалы для $\beta_j$ и проверять
+  гипотезы
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Что делать?}
+
+\begin{itemize}
+\item
+  Исправить стандартные ошибки!
+\item
+  Другая формула для оценки $\widehat{Var}_{HAC}(\hat{\beta}|X)$
+\item
+  Следовательно, другие $se_{HAC}(\hat{\beta}_j)$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Робастная (устойчивая) к условной гетероскедастичности и
+автокорреляции оценка ковариационной матрицы}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Вместо $\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$
+\end{itemize}
+
+использовать \[
+\widehat{Var}_{HAC}(\hat{\beta}|X)=(X'X)^{-1}\hat{\Phi}(X'X)^{-1}
+\]
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Нью-Вест (Newey-West), 1987 (Существует много вариантов)
+\end{itemize}
+
+\[
+\hat{\Phi} = \sum_{j=-k}^k \frac{k-|j|}{k} \left(  \sum_t \hat{\varepsilon}_t\hat{\varepsilon}_{t+j} x_{t\,\cdot}'x_{t+j\,\cdot} \right)
+\]
+
+\end{frame}
+
+\begin{frame}{Суть корректировки:}
+
+Мы меняем $se(\hat{\beta}_j)$ на $se_{HAC}(\hat{\beta}_j)$
+
+Какие проблемы решены?
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  $\frac{\hat{\beta}_j-\beta_j}{se_{HAC}(\hat{\beta}_j)} \to N(0,1)$
+  (УРА!)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Какие проблемы не решены?}
+
+(---) оценки $\hat{\beta}$ не меняются и остаются неэффективными
+
+даже при предположении о нормальности $\varepsilon$:
+
+\begin{itemize}
+\item
+  (---)
+  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}$
+\item
+  (---) $\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$
+\item
+  (---) $\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{С практической точки зрения:}
+
+\begin{itemize}
+\item
+  Новая формула для $\widehat{Var}_{HAC}(\hat{\beta}|X)$, и,
+  следовательно, для $se_{HAC}(\hat{\beta}_j)$
+\item
+  ковариационная матрица в R:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(y~x, }\DataTypeTok{data=}\NormalTok{data)}
+\KeywordTok{vcovHAC}\NormalTok{(model)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  С ней жизнь прекрасна!
+\end{itemize}
+
+$\frac{\hat{\beta}_j-\beta_j}{se_{HAC}(\hat{\beta}_j)} \to N(0,1)$
+
+\end{frame}
+
+\begin{frame}{Когда следует использовать}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Когда мы подозреваем наличие автокорреляции и не хотим заниматься её
+  моделированием
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Обнаружение автокорреляции}
+
+\begin{itemize}
+\item
+  Оцениваем интересующую нас модель с помощью МНК
+\item
+  Строим график остатков в осях $\hat{\varepsilon}_{t-1}$,
+  $\hat{\varepsilon}_{t}$
+\end{itemize}
+
+/здесь пришлю три графика/
+
+\end{frame}
+
+\begin{frame}{Формальные тесты на автокорреляцию}
+
+\begin{itemize}
+\item
+  тест Дарбина-Уотсона (Durbin-Watson)
+\item
+  тест Бройша-Годфри (Breusch-Godfrey)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Тест Дарбина-Уотсона предпосылки:}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Автокорреляция первого порядка в остатках
+\end{itemize}
+
+\[
+\varepsilon_t=\rho \varepsilon_{t-1} + u_t
+\]
+
+\begin{itemize}
+\item
+  нормальность ошибок $\varepsilon$
+\item
+  сильная экзогенность, $E(\varepsilon_t | X)=0$
+\item
+  $H_0$ об отсутствии автокорреляции, $\rho=0$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{процедура теста Дарбина-Уотсона}
+
+\begin{itemize}
+\item
+  Шаг 1. Оценить основную регрессию, получить $\hat{\varepsilon}_i$
+\item
+  Шаг 2. Посчитать статистику
+  \[DW=\frac{\sum_{i=2}^n(\hat{\varepsilon}_i-\hat{\varepsilon}_{i-1})^2}{\sum_{i=1}^n \hat{\varepsilon}_i^2}\]
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Распределение статистики $DW$}
+
+\begin{itemize}
+\item
+  $H_0$ об отсутствии автокорреляции, $\rho=0$
+\item
+  Точный закон распределения сложным образом зависит от $X$
+\item
+  Если $\hat{\rho}$ --- выборочная корреляция остатков, то
+  $DW=2(1-\hat{\rho})$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Качественные выводы по статистике $DW$}
+
+$DW=2(1-\hat{\rho})$, поэтому $0<DW<4$
+
+\begin{itemize}
+\item
+  $DW\approx 0$ означает положительную автокорреляцию
+  $\hat{\rho}\approx 1$
+\item
+  $DW\approx 2$ означает отсутствие автокорреляции $\hat{\rho}\approx 0$
+\item
+  $DW\approx 4$ означает отрицательную автокорреляцию
+  $\hat{\rho}\approx -1$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{иллюстрация (рисунок прилагается: график про
+Дарбина-Уотсона)}
+
+теховские надписи для графиков:
+
+$H_0$ не отвергается $H_0$ отвергается $DW_{cr}$ $H_0$: $\rho=0$
+
+\end{frame}
+
+\begin{frame}{С практической точки зрения:}
+
+\begin{itemize}
+\item
+  \texttt{R} рассчитывает точные P-значения для теста $DW$
+\item
+  существуют таблицы диапазонов критических значений
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Тест Бройша-Годфри (Breusch-Godfrey)}
+
+\begin{itemize}
+\item
+  для тестирования автокорреляции порядка $p$ в ошибках \[
+  \varepsilon_t=\phi_1 \varepsilon_{t-1} + \ldots + \phi_p \varepsilon_{t-p} + u_t
+  \]
+\item
+  не требуется нормальность остатков
+\item
+  верен при ряде нарушений предпосылки $E(\varepsilon_t | X)=0$
+\item
+  асимптотический
+\end{itemize}
+
+$H_0$: $\phi_1=\phi_2=\ldots=\phi_p=0$
+
+\end{frame}
+
+\begin{frame}{Процедура теста Бройша-Годфри}
+
+\begin{itemize}
+\item
+  Шаг 1. Оцениваем исходную модель, получаем остатки
+  $\hat{\varepsilon}_t$
+\item
+  Шаг 2. Строим вспомогательную регрессию $\hat{\varepsilon}_t$ на
+  исходные регрессоры, $\hat{\varepsilon}_{t-1}$,
+  $\hat{\varepsilon}_{t-2}$, \ldots{}, $\hat{\varepsilon}_{t-p}$,
+  находим $R^2_{aux}$
+\item
+  Шаг 3. Считаем статистику $BG=(n-p)R^2_{aux}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Тест Бройша-Годфри продолжение}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  При верной $H_0$ об отсутствии автокорреляции
+\end{itemize}
+
+$H_0$: $\phi_1=\phi_2=\ldots=\phi_p=0$
+
+$BG=(n-p)R^2_{aux} \sim \chi^2_p$
+
+Здесь график распределения BG (рисунок прилагается) Подписи на графике:
+
+$H_0$ не отвергается $H_0$ отвергается $\chi^2_{cr}$ $H_0$:
+$\phi_1=\phi_2=\ldots=\phi_p=0$
+
+\end{frame}
+
+\begin{frame}{Тест Бройша-Годфри требует меньше предпосылок}
+
+\end{frame}
+
+\begin{frame}{Вставка с чудо-доской}
+
+Тест Дарбина-Уотсона и Бройша-Годфри (уже снят)
+
+здесь в задаче было дано $DW$, надо было найти $\hat{\rho}$ и провести
+тест Бройша-Годфри
+
+\end{frame}
+
+\begin{frame}{Мораль}
+
+\begin{itemize}
+\item
+  Мы рассмотрели ситуацию нарушения предпосылки условной
+  некоррелированности ошибок модели
+\item
+  Нарушена во временных рядах и пространственных данных
+\item
+  В простейшем случае достаточно использовать специальные стандартные
+  ошибки $se_{HAC}$
+\item
+  Большое количество специальных моделей
+\end{itemize}
+
+\end{frame}
+
+\end{document}
