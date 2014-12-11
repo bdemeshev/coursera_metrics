@@ -1,0 +1,150 @@
+\documentclass[ignorenonframetext,]{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{lmodern}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+      \fi
+\fi
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+\usepackage[russian]{babel}
+
+\title{Эконометрика. Лекция 8. Модели временных рядов}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Временные ряды:}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Многомерные
+\end{itemize}
+
+(тут табличка)
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Одномерные
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Одномерный временной ряд}
+
+Временной ряд --- последовательность случайных величин
+
+\[
+X_1, X_2, X_3, \ldots
+\]
+
+\end{frame}
+
+\begin{frame}{Без предположений невозможно прогнозировать}
+
+1, 2, 3, 4, 5, ?
+
+(потом появляется правильный ответ: 42)
+
+\end{frame}
+
+\begin{frame}{Базовое предположение --- стационарность}
+
+Временной ряд называется стационарным, если:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  $E(X_1)=E(X_2)=E(X_3)=\ldots$
+\item
+  $Var(X_1)=Var(X_2)=Var(X_3)=\ldots$
+\item
+  $Cov(X_1,X_2)=Cov(X_2,X_3)=Cov(X_3,X_4)=\ldots$
+\item
+  $Cov(X_1,X_3)=Cov(X_2,X_4)=Cov(X_3,X_5)=\ldots$
+\item
+  \ldots
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Графики}
+
+Пример с меняющимся $E(X_t)$
+
+Пример с меняющейся $Var(X_t)$
+
+Пример стационарного
+
+\end{frame}
+
+\begin{frame}{Предпосылки коротко:}
+
+Временной ряд называется стационарным, если:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  $E(X_t)=const$
+\item
+  $Cov(X_t,X_{t-k})=\gamma_k$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Самый простой пример --- белый шум}
+
+Ряд $\varepsilon_t$ --- белый шум, если:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  $E(\varepsilon_t)=0$
+\item
+  $Var(\varepsilon_t)=\sigma^2$
+\item
+  $Cov(\varepsilon_t,\varepsilon_{t-k})=0$
+\end{itemize}
+
+\end{frame}
+
+\end{document}
