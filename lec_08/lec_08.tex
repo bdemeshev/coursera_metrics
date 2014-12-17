@@ -315,16 +315,28 @@ $\phi_k$ --- на сколько в среднем изменится $y_{t}$ п
 \begin{frame}{Частная автокорреляция алгоритм подсчёта}
 
 \[
-\phi_k = det(A_k^*)/det(A_k)
+\gamma_0 \phi_1 = \gamma_1  
 \]
 
-\begin{itemize}
-\item
-  $A_k$ --- ковариационная матрица вектора $(y_1, y_2, \ldots, y_k)$
-\item
-  $A_k^*$ --- матрица $A_k$, в которой последний столбец заменили на
-  $(\gamma_1, \gamma_2, \ldots, \gamma_k)$.
-\end{itemize}
+\[
+\begin{cases}
+\gamma_0 *_1 + \gamma_1 \phi_2  = \gamma_1 \\
+\gamma_1 *_1 + \gamma_0 \phi_2  = \gamma_2 
+\end{cases}
+\]
+
+\[
+\begin{cases}
+\gamma_0 *_1 + \gamma_1 *_2 + \gamma_2 \phi_3 = \gamma_1 \\
+\gamma_1 *_1 + \gamma_0 *_2 + \gamma_1 \phi_3 = \gamma_2 \\
+\gamma_2 *_1 + \gamma_1 *_2 + \gamma_0 \phi_3 = \gamma_3
+\end{cases}
+\]
+
+\ldots
+
+Прим. для монтажа: уравнения имеет смысл выводить по очереди (убирать
+предыдущее, когда следущее появилось)
 
 \end{frame}
 
@@ -332,7 +344,7 @@ $\phi_k$ --- на сколько в среднем изменится $y_{t}$ п
 процесса}
 
 \[
-y_t = 5 + \varepsilon_t + 3 \varepsilon_{t-1}
+y_t = 5 + \varepsilon_t + 3 \varepsilon_{t-1} -2\varepsilon_{t-2}
 \]
 
 \end{frame}
@@ -359,7 +371,7 @@ $y_t \sim AR(p)$, AutoRegression
 для AR процесса}
 
 \[
-y_t = 2 + 0.5 y_{t-1} + \varepsilon_t \; \varepsilon_t \sim N(0,1)
+y_t = 2 + 0.5 y_{t-1} + \varepsilon_t \; \varepsilon_t \sim N(0,\sigma^2)
 \]
 
 Найдите $\rho_k$, $\phi_k$
@@ -447,10 +459,10 @@ $f(L)$ --- характеристический многочлен
 \begin{frame}{Когда у есть стационарное решение?}
 
 \[
-f(L)y_t=с+\varepsilon_t
+f(L)y_t=c+\varepsilon_t
 \]
 
-Если корни характеристического уравнения AR процесса по модулю меньше
+Если корни характеристического уравнения AR процесса по модулю больше
 единицы, то существует единственное стационарное решение, в котором
 $y_t$ выражается через прошлые шумы, то есть через $\varepsilon_t$,
 $\varepsilon_{t-1}$, $\varepsilon_{t-2}$, \ldots
