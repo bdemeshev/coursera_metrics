@@ -2,142 +2,123 @@
 # с этого начнем с листа
 library("lubridate") # работа с датами
 
-library("sandwich") # vcovHC, vcovHAC
-library("lmtest") # тесты
-library("car") # еще тесты
-library("bstats") # больше тестов
 library("zoo") # временные ряды
 library("xts") # еще ряды
 library("dplyr") # манипуляции с данными
-library("broom") # манипуляции
 library("ggplot2") # графики
+library("forecast")
 
 library("quantmod") # загрузка с finance.google.com
-library("rusquant") # загрузка с finam.ru
-library("stathse") # загрузка с sophist.hse.ru
-
-# работаем с датами
-x <- c("2010-01-17","2011-02-25")
-y <- ymd(x)
-str(y)
-y + days(56)
-y - months(2)
-day(y)
-month(y)
-year(y)
-vignette(package="lubridate")
-vignette("lubridate")
+library("sophisthse") # загрузка с sophist.hse.ru
 
 
+y <- arima.sim (n=100, list(ar=0.7))
+plot(y)
+Acf(y)
+Pacf(y)
+tsdisplay(y)
 
-# создание zoo объекта с нуля
-x <- rnorm(5)
-y <- ymd("2010-05-07") + days(1:5)
-x
-y
+y <- arima.sim (n=100, list(ma=-0.7))
+tsdisplay(y)
 
-x_zoo <- zoo(x,order.by = y)
-x_zoo
 
-# первые плюсы zoo
-lag(x_zoo,-1)
-merge(x_zoo,lag(x_zoo,-1))
-merge(x_zoo,lag(x_zoo,+1))
-merge(x_zoo,diff(x_zoo))
+y <- arima.sim (n=100, list(ma=-0.7, ar=-0.5))
+tsdisplay(y)
 
-# регулярные ряды
-xq <- zooreg(x,start = as.yearqtr("2010-02") , freq=4)
-xq
-xm <- zooreg(x,start = as.yearmon("2010-02") , freq=12)
-xm
 
-# перевод существующего объекта
-data("Investment")
-d <- as.zoo(Investment)
-d_df <- as.data.frame(d)
-coredata(d)
-time(d)
-start(d)
-end(d)
 
-# автоматическая замена NA
-dna <- d
-dna[2,3] <- NA
-na.locf(dna)
-na.approx(dna)
+y <- arima.sim(n=100, list(order=c(0,1,0)))
+tsdisplay(y)
+
+dy <- diff(y)
+tsdisplay(dy)
+
+
+
+y <- seq(0,10, length=100)
+tsdisplay(y)
+
+y <- seq(0,10,length=100) + arima.sim (n=100, list(ma=-0.7))
+tsdisplay(y)
+
+y <- seq(0,1,length=100) + arima.sim (n=100, list(ma=-0.7))
+tsdisplay(y)
 
 
 
 
-
-# sophist.hse.ru
-a <- stathse("WAG_Y")
-a
-z <- as.zoo(a, order.by=a$T)
-
-# finance.google.com
-# finance.yahoo.com
-Sys.setlocale("LC_MESSAGES", "C") # смена локали
-Sys.setlocale("LC_TIME", "C")
-getSymbols(Symbols="AAPL",src="google",from="2012-01-01",to="2013-08-08")
-str(AAPL)
-head(AAPL)
-
-# finam.ru
-getSymbols(Symbols="GAZP",src="Finam",from="2012-01-01",to="2013-08-08")
-head(GAZP)
-tail(GAZP)
-
-# автокорреляция
-data("Investment")
-help(Investment)
-d <- as.zoo(Investment)
-head(d)
-glimpse(as.data.frame(d))
-
-# графики
-autoplot(d)
-autoplot(d[,1:2])
-autoplot(d[,1:2], facets = NULL)  
-
-# estimation
-model <- lm(data=d, RealInv~RealInt+RealGNP)
-
-# отчеты
-summary(model)
-coeftest(model)
-confint(model)
-
-# остатки
-d_plus <- augment(model,as.data.frame(d))
-glimpse(d_plus)
-qplot(data=d_plus,lag(.resid),.resid)
+y <- arima.sim (n=300, list(order=c(0,1,1), ma=-0.7))
+tsdisplay(y)
 
 
-# разные оценки дисперсий
-vcov(model)
-vcovHAC(model)
 
 
-# корректируем
-coeftest(model,vcov. = vcovHAC(model))
-conftable <- coeftest(model, vcov. = vcovHAC(model))
-ci <- data.frame(estimate = conftable[, 1], sd_hc = conftable[, 2])
-ci$left_95 <- ci$estimate - qnorm(0.975) * ci$sd_hc
-ci$right_95 <- ci$estimate + qnorm(0.975) * ci$sd_hc
-ci
+y <- LakeHuron
+tsdisplay(y)
 
-# Durbin-Watson
-dwt(model)
-result <- dwt(model)
-result$dw
-result$p
+model_0 <- Arima(y, order=c(2,0,0))
+summary(model_0)
+AIC(model_0)
+model_1 <- Arima(y, order=c(0,1,0))
+summary(model_1)
+AIC(model_1)
+model_2 <- Arima(y, order=c(0,1,0), include.drift = TRUE)
+summary(model_2)
+AIC(model_2)
 
-# Breusch–Godfrey test
-bgtest(model)
-bgtest(model,order = 2)
-results <- bgtest(model)
-results$
-qchisq(0.95,df=2)
-nrow(na.omit(d))
+auto_mod <- auto.arima(y)
+summary(auto_mod)
+AIC(auto_mod)
+
+future <- forecast(model_0, h=20)
+plot(future)
+
+future <- forecast(auto_mod, h=20)
+plot(future)
+
+
+
+getSymbols(Symbols = "GOOG")
+head(GOOG)
+y <- GOOG$GOOG.Close
+tsdisplay(y)
+tsdisplay(diff(y))
+
+mod_auto <- auto.arima(y)
+summary(mod_auto)
+AIC(mod_auto)
+future <- forecast(mod_auto, h=20)
+str(future)
+plot(future)
+
+
+
+y <- sophisthse("POPNUM_Y")
+tsdisplay(y)
+
+model_0 <- Arima(y, order=c(1,1,0), include.drift = TRUE)
+summary(model_0)
+
+future <- forecast(model_0, h=5)
+plot(future)
+
+
+y <- sophisthse("CPI_M_CHI")
+tsdisplay(as.ts(y))
+tsdisplay(diff(y))
+
+y2 <- y[97:nrow(y),]
+tsdisplay(y2)
+mod_a <- auto.arima(y2)
+summary(mod_a)
+
+mod_0 <- Arima(y2, order=c(1,0,1), seasonal = c(1,0,1))
+AIC(mod_0)
+AIC(mod_a)
+future <- forecast(mod_a)
+plot(future)
+
+future <- forecast(mod_0)
+plot(future)
+
 
