@@ -1,0 +1,263 @@
+---
+title: "Графики к lec 08"
+author: "Boris Demeshev"
+output:
+  pdf_document:
+    keep_tex: yes
+lang: russian
+header-includes:
+   - \usepackage{dcolumn}
+   - \usepackage{embedfile}
+---
+
+
+
+```{r, include=FALSE}
+library("knitr")
+library("tikzsetup")
+tikzsetup()
+opts_chunk$set(echo=FALSE)
+```
+
+
+```{r}
+library("ggplot2")
+library("forecast")
+library("sophisthse")
+library("pander")
+library("dplyr")
+n <- 200
+```
+
+Страница 2/62. Таблица
+```{r}
+y <- sophisthse(series.name = c("POPNUM_Y","GDPVA_EEA_Y"), output="data.frame")
+y_sel <- y %>% filter(T>2001,T<2014) %>% select(T, POPNUM_Y, GDPVA_EEA_Y)
+colnames(y_sel) <- c("Год", "Население (тыс. чел.)", "ВВП (млрд. руб.)")
+pander(y_sel)
+```
+
+
+
+
+
+\newpage
+Страница 9/62
+
+```{r}
+y <- arima.sim(n=n, list(order=c(0,0,0)), sd = 2 )
+
+# tsdisplay(y)
+plot(y,main = "Белый шум, $y_t=\\varepsilon_t \\sim N(0,4)$")
+```
+
+
+\newpage
+Страница 12/62
+
+```{r}
+y <- 5+6*(1:n) + arima.sim(n=n, list(order=c(0,0,0)), sd=200 )
+
+# tsdisplay(y)
+plot(y,main = "Процесс с трендом, $y_t=5+6t+\\varepsilon_t$, $\\varepsilon_t\\sim N(0,200^2)$")
+```
+
+
+
+\newpage
+Страница 13/62
+
+```{r}
+y <- arima.sim(n=n, list(order=c(0,0,0)) )
+
+# tsdisplay(y)
+plot(y,main = "Случайное блуждание, $y_t=y_{t-1}+ 2 + \\varepsilon_t$")
+```
+
+
+
+\newpage
+Страница 56/62
+
+```{r}
+y <- arima.sim(n=n, list(order=c(0,0,0)) )
+
+# tsdisplay(y)
+plot(y,main = "Белый шум, $y_t=\\varepsilon_t$")
+```
+
+\newpage
+Страница 56/62
+
+```{r}
+Acf(y,main = "ACF, $y_t=\\varepsilon_t$")
+```
+
+\newpage
+Страница 56/62
+
+```{r}
+Pacf(y,main = "PACF, $y_t=\\varepsilon_t$")
+```
+
+\newpage
+Страница 57/62
+
+
+```{r}
+y <- arima.sim(n=n, list(order=c(0,1,0)) )
+plot(y,main = "Случайное блуждание, $y_t=y_{t-1}+\\varepsilon_t$")
+```
+
+\newpage
+Страница 57/62
+
+```{r}
+Acf(y,main = "ACF, $y_t=y_{t-1}+\\varepsilon_t$")
+```
+
+\newpage
+Страница 57/62
+
+```{r}
+Pacf(y,main = "PACF, $y_t=y_{t-1}+\\varepsilon_t$")
+```
+
+\newpage
+Страница 58/62
+
+
+```{r}
+y <- 0.02*(1:n)+arima.sim(n=n, list(order=c(0,0,0)) )
+plot(y,main = "Процесс с трендом, $y_t=0.02\\cdot t +\\varepsilon_t$")
+
+```
+
+\newpage
+Страница 58/62
+
+```{r}
+Acf(y,main = "ACF, $y_t=0.02\\cdot t +\\varepsilon_t$")
+```
+
+\newpage
+Страница 58/62
+
+```{r}
+Pacf(y,main = "PACF, $y_t=0.02\\cdot t +\\varepsilon_t$")
+```
+
+
+\newpage
+Страница 59/62
+
+
+```{r}
+y <- arima.sim(n=n, list(ar=0.7) )
+plot(y,main = "AR(1), $y_t=0.7y_{t-1} +\\varepsilon_t$")
+```
+
+\newpage
+Страница 59/62
+
+```{r}
+Acf(y, main = "ACF, AR(1), $y_t=0.7y_{t-1}+\\varepsilon_t$")
+```
+
+\newpage
+Страница 59/62
+
+```{r}
+Pacf(y, main = "PACF, AR(1), $y_t=0.7y_{t-1} +\\varepsilon_t$")
+```
+
+\newpage
+Страница 59/62
+
+```{r}
+y <- arima.sim(n=n, list(ar=c(0.9,-0.5)) )
+plot(y,main = "AR(2), $y_t=0.9y_{t-1}-0.5y_{t-2} +\\varepsilon_t$")
+```
+
+\newpage
+Страница 59/62
+
+```{r}
+Acf(y, main = "ACF, AR(2), $y_t=0.9y_{t-1}-0.5y_{t-2} +\\varepsilon_t$")
+```
+
+\newpage
+Страница 59/62
+
+```{r}
+Pacf(y, main = "PACF, AR(2), $y_t=0.9y_{t-1}-0.5y_{t-2} +\\varepsilon_t$")
+```
+
+
+\newpage
+Страница 60/62
+
+
+```{r}
+y <- arima.sim(n=n, list(ma=0.7) )
+plot(y,main = "MA(1), $y_t=0.7\\varepsilon_{t-1} +\\varepsilon_t$")
+```
+
+\newpage
+Страница 60/62
+
+```{r}
+Acf(y, main = "ACF, MA(1), $y_t=0.7\\varepsilon_{t-1} +\\varepsilon_t$")
+```
+
+\newpage
+Страница 60/62
+
+```{r}
+Pacf(y, main = "PACF, MA(1), $y_t=0.7\\varepsilon_{t-1} +\\varepsilon_t$")
+```
+
+\newpage
+Страница 60/62
+
+```{r}
+y <- arima.sim(n=n, list(ma=c(0.9,0.5)) )
+plot(y,main = "MA(2), $y_t=0.9\\varepsilon_{t-1} +0.5\\varepsilon_{t-1}+\\varepsilon_t$")
+```
+
+\newpage
+Страница 60/62
+
+```{r}
+Acf(y, main = "ACF, MA(2), $y_t=0.9\\varepsilon_{t-1} +0.5\\varepsilon_{t-1}+\\varepsilon_t$")
+```
+
+\newpage
+Страница 60/62
+
+```{r}
+Pacf(y, main = "PACF, MA(2), $y_t=0.9\\varepsilon_{t-1} +0.5\\varepsilon_{t-1}+\\varepsilon_t$")
+```
+
+\newpage
+Страница 61/62
+
+
+```{r}
+y <- arima.sim(n=n, list(ar=0.7, ma=0.5) )
+plot(y,main = "ARMA(1,1), $y_t=0.7y_{t-1}+0.5\\varepsilon_{t-1} +\\varepsilon_t$")
+```
+
+\newpage
+Страница 61/62
+
+```{r}
+Acf(y, main = "ACF, ARMA(1,1), $y_t=0.7y_{t-1}+0.5\\varepsilon_{t-1} +\\varepsilon_t$")
+```
+
+\newpage
+Страница 61/62
+
+```{r}
+Pacf(y, main = "PACF, ARMA(1,1), $y_t=0.7y_{t-1}+0.5\\varepsilon_{t-1} +\\varepsilon_t$")
+```

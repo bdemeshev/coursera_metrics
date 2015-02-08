@@ -1,0 +1,68 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\newcommand{\e}{\varepsilon}
+\newcommand{\hy}{\hat{y}}
+\begin{document}
+
+8.2.1
+
+\begin{itemize}
+
+\item AR(1), $y_t=0.7y_{t-1}+e_t, \; n=100$, примерно  2:12-5:20
+\item MA(1), $y_t=\e_t -0.8e_{t-1}, \; n=100$, примерно  5:50-6:23
+\item ARMA(1,1), $y_t=0.5y_{t-1}+\e_t-0.8e_{t-1}, \; n=100$, примерно  6:50-7:30
+\item ARMA(1,1), $y_t=-0.5y_{t-1}+\e_t-0.8e_{t-1}, \; n=100$, примерно  7:37-8:20
+
+\end{itemize}
+
+8.2.2
+
+\begin{itemize}
+
+\item $y_t=y_{t-1}+e_t, \; n=100$, примерно  0:51-1:48
+\item $y_t=y_{t-1}+e_t, \; n=500$, примерно  2:17-2:40
+\item 
+$
+\begin{cases}
+x_t=0.7x_{t-1}+\e_t, \; n=100 \\
+y_t=\frac{10}{99}(t-1)+x_t
+\end{cases}
+$, примерно  3:28-4:05
+\item 
+$
+\begin{cases}
+x_t=0.7x_{t-1}+\e_t, \; n=100 \\
+y_t=\frac{2}{99}(t-1)+x_t
+\end{cases}
+$, примерно  4:25-5:33
+\end{itemize}
+
+8.2.3
+
+\begin{itemize}
+\item Модель 1: $(\hy_t-579)=1.04(y_{t-1}-579)-0.25(y_{t-2}-579)+\e_t$, 2:09
+\item Модель 2: $(\hy_t-579)=0.74(y_{t-1}-579)+\e_t+0.32\e_{t-1}$, 2:53
+\item Модель 3: $(\hy_t-579)=0.78(y_{t-1}-579)-0.03(y_{t-2}-579)+\e_t+0.28\e_{t-1}$, 4:08
+\item Модель 4: $\Delta \hy_t=0.13 \Delta y_{t-1} + \e_t$, 6:00 
+\item Модель А: $\Delta \hy_t=-0.02 + \e_t + 0.05\e_{t-1}-0.31\e_{t-2}-0.30\e_{t-3}-0.23\e_{t-4}$, 7:28
+\end{itemize}
+
+8.2.4
+\begin{itemize}
+\item Модель 1: $\hy_t=y_{t-1}+e_t$, примерно  4:33
+\item Модель А: $\hy_t=y_{t-1}+e_t$, примерно  5:58
+\item Модель 1: $\Delta\hy_t=-187+ 0.39\Delta y_{t-1}+e_t$, примерно  8:52
+\end{itemize}
+
+8.2.5
+\begin{itemize}
+\item Модель 1: $\hy_t=101 + 0.58y_{t-1}+0.63y_{t-12}+e_t$, примерно  6:18
+\end{itemize}
+
+\end{document}

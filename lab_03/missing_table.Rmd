@@ -1,0 +1,28 @@
+---
+title: "Таблица для лекции 3"
+author: "Boris Demeshev"
+date: "21 January 2015"
+output:
+  pdf_document:
+    keep_tex: yes
+lang: russian
+---
+
+
+
+```{r, include=FALSE}
+library("knitr")
+library("pander")
+library("memisc")
+opts_chunk$set(echo=FALSE)
+```
+
+```{r, results='asis'}
+h <- read.table("flats_moscow.txt", sep="\t", header=TRUE)
+m0 <- lm(data=h, log(price)~log(totsp))
+m1 <- lm(data=h, log(price)~log(totsp)+brick)
+m2 <- lm(data=h, log(price)~log(totsp)+brick+brick:log(totsp))
+pander(mtable("Модель 0"=m0,"Модель 1"=m1,"Модель 2"=m2,
+       summary.stats=c("R-squared") ))
+```
+

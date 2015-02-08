@@ -1,0 +1,144 @@
+\documentclass[russian,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{}
+\else
+  \usepackage[shorthands=off,russian]{babel}
+\fi
+\usepackage{longtable,booktabs}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Boris Demeshev},
+            pdftitle={Таблица для лекции 3},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+\setlength{\droptitle}{-2em}
+  \title{Таблица для лекции 3}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Boris Demeshev}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{21 January 2015}
+
+
+
+
+\begin{document}
+
+\maketitle
+
+
+\begin{longtable}[c]{@{}cccc@{}}
+\toprule\addlinespace
+\begin{minipage}[b]{0.31\columnwidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
+Модель 0
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
+Модель 1
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
+Модель 2
+\end{minipage}
+\\\addlinespace
+\midrule\endhead
+\begin{minipage}[t]{0.31\columnwidth}\centering
+\textbf{(Intercept)}
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+-0.766***\\(0.098)
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+-0.650***\\(0.094)
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+-0.459***\\(0.121)
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.31\columnwidth}\centering
+\textbf{log(totsp)}
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+1.301***\\(0.023)
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+1.264***\\(0.022)
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+1.219***\\(0.028)
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.31\columnwidth}\centering
+\textbf{brick}
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+0.129***\\(0.009)
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+-0.350\\(0.193)
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.31\columnwidth}\centering
+\textbf{log(totsp) x brick}
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+0.112*\\(0.045)
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.31\columnwidth}\centering
+\textbf{R-squared}
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+0.611
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+0.647
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+0.648
+\end{minipage}
+\\\addlinespace
+\bottomrule
+\end{longtable}
+
+\end{document}

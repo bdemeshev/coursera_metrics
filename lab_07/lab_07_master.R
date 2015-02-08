@@ -13,7 +13,8 @@ t <- read.csv("titanic3.csv")
 # http://lib.stat.cmu.edu/S/Harrell/data/descriptions/titanic.html
 glimpse(t)
 
-t <- mutate_each(t,"as.factor",survived,pclass,sex,embarked)
+t <- mutate(t,survived=as.factor(survived),pclass=as.character(pclass),
+            sex=as.character(sex))
 
 # проверка загрузки
 glimpse(t)
@@ -67,9 +68,10 @@ m_logit2 <- glm(data=t2,
                 survived~age+sex,
                 family=binomial(link="logit"),x=TRUE)
 
+lrtest(m_logit,m_logit2)
 summary(t$fare)
 summary(t$sex)
-newdata <- data_frame(age=seq(from=5, to=100,length=100),fare=40,
+newdata <- data.frame(age=seq(from=5, to=100,length=100),fare=40,
                       sex="male",pclass="2nd")
 head(newdata)
 pred_logit <- predict(m_logit,newdata, se=TRUE)
@@ -102,8 +104,8 @@ pred_ols
 t_pr <- cbind(t2,predict(m_logit,t2,se=TRUE))
 t_pr <- mutate(t_pr,prob=plogis(fit))
 roc.data <- roc(t_pr$prob,t_pr$survived)
-glimpse(roc.data)
 attr(roc.data,"class") <- "list"
-melt(roc.data)
-library(reshape2)
-as.da
+
+roc.data <- as.data.frame(roc.data)
+qplot(data=roc.data,x=cutoffs,y=tpr,geom="line")
+qplot(data=roc.data,x=fpr,y=tpr,geom="line")

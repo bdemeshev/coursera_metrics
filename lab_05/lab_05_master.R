@@ -97,3 +97,5 @@ model2 <- lm(ln_price ~ ln_totsp, data = h_ord)
 white.test(model2)
 gqtest(model2,fraction=0.05)
 # сравнить результаты
+
+# правильные практики

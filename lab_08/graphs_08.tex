@@ -1,0 +1,342 @@
+\documentclass[russian,]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+% Set line spacing
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx}
+% Redefine \includegraphics so that, unless explicit options are
+% given, the image width will not exceed the width of the page.
+% Images get their normal width if they fit onto the page, but
+% are scaled down if they would overflow the margins.
+\makeatletter
+\def\ScaleIfNeeded{%
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+\let\Oldincludegraphics\includegraphics
+{%
+ \catcode`\@=11\relax%
+ \gdef\includegraphics{\@ifnextchar[{\Oldincludegraphics}{\Oldincludegraphics[width=\ScaleIfNeeded]}}%
+}%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Boris Demeshev},
+            pdftitle={Графики к lec 08},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{}
+\else
+  \usepackage[russian]{babel}
+\fi
+
+%%% Change title format to be more compact
+\usepackage{titling}
+\setlength{\droptitle}{-2em}
+  \title{Графики к lec 08}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Boris Demeshev}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \date{}
+  \predate{}\postdate{}
+
+
+\usepackage{dcolumn}
+\usepackage{embedfile}
+
+
+\begin{document}
+
+\maketitle
+
+
+Страница 2/62. Таблица
+
+\begin{longtable}[c]{@{}ccc@{}}
+\toprule\addlinespace
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Год
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\centering
+Население (тыс. чел.)
+\end{minipage} & \begin{minipage}[b]{0.23\columnwidth}\centering
+ВВП (млрд. руб.)
+\end{minipage}
+\\\addlinespace
+\midrule\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2002
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+145649
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+10830
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2003
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+144964
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+13208
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2004
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+144168
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+17027
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2005
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+143474
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+21610
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2006
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+142754
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+26917
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2007
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+142220
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+33248
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2008
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+141980
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+41277
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2009
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+141900
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+38807
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2010
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+142962
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+46322
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2011
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+142914
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+55799
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2012
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+143103
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+62357
+\end{minipage}
+\\\addlinespace
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2013
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+143395
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\centering
+46308
+\end{minipage}
+\\\addlinespace
+\bottomrule
+\end{longtable}
+
+\newpage
+Страница 9/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\newpage
+Страница 12/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\newpage
+Страница 13/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\newpage
+Страница 56/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\newpage
+Страница 56/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\newpage
+Страница 56/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\newpage
+Страница 57/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\newpage
+Страница 57/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+\newpage
+Страница 57/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+\newpage
+Страница 58/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+\newpage
+Страница 58/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+\newpage
+Страница 58/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\newpage
+Страница 59/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-16-1.pdf}
+
+\newpage
+Страница 59/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+\newpage
+Страница 59/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-18-1.pdf}
+
+\newpage
+Страница 59/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\newpage
+Страница 59/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+\newpage
+Страница 59/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-21-1.pdf}
+
+\newpage
+Страница 60/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-22-1.pdf}
+
+\newpage
+Страница 60/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-23-1.pdf}
+
+\newpage
+Страница 60/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-24-1.pdf}
+
+\newpage
+Страница 60/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-25-1.pdf}
+
+\newpage
+Страница 60/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-26-1.pdf}
+
+\newpage
+Страница 60/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-27-1.pdf}
+
+\newpage
+Страница 61/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-28-1.pdf}
+
+\newpage
+Страница 61/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-29-1.pdf}
+
+\newpage
+Страница 61/62
+
+\includegraphics{graphs_08_files/figure-latex/unnamed-chunk-30-1.pdf}
+
+\end{document}

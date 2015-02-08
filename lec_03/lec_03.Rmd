@@ -42,7 +42,7 @@ Var(\hat{y}_i - E(y_i | X) | X )=Var(\hat{y}_i | X) = Var(\hat{\beta}_1 +\hat{\b
 
 Ошибка при предсказании конкретного значения $y_i = E(y_i | X) + \varepsilon_i$:
 \begin{multline} \nonumber
-Var(\hat{y}_i - y_i | X) | X )=Var(\hat{y}_i - E(y_i | X) - \varepsilon_i | X) = Var(\hat{y}_i - \varepsilon_i | X) = \\
+Var(\hat{y}_i - y_i | X)=Var(\hat{y}_i - E(y_i | X) - \varepsilon_i | X) = Var(\hat{y}_i - \varepsilon_i | X) = \\
 Var(\hat{y}_i|X) + Var( \varepsilon_i | X) = Var(\hat{\beta}_1 +\hat{\beta}_2 x_i + \hat{\beta}_3 z_i | X) + Var(\epsilon_i | X)
 \end{multline}
 
@@ -389,7 +389,7 @@ $H_a:$ Есть неизвестные нам пропущенные регре�
 
 Получить прогнозы $\hat{y}_i$
 
-2. Оценить модель: $\hat{y}_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \gamma_1 \hat{y}^2_i + \gamma_2 \hat{y}^3_i + \ldots + \gamma_p \hat{y}_i^{p+1} + \varepsilon_i$
+2. Оценить модель: $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \gamma_1 \hat{y}^2_i + \gamma_2 \hat{y}^3_i + \ldots + \gamma_p \hat{y}_i^{p+1} + \varepsilon_i$
 
 3. Посчитать $F$-статистику проверяющую гипотезу о равенстве всех $\gamma_i$ нулю.
 

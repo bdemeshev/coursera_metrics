@@ -118,3 +118,27 @@ lab_03/wages1.dta
 lab_03/wages1.txt
 
 lab_03/wages1.wf1
+
+lab_08/graph_08.zip
+
+*.aux
+
+lab_08/graphs_08_files/figure-latex/
+
+lab_08/graphs_08-tikzDictionary
+
+*.log
+
+*.gz
+
+*.nav
+
+*.out
+
+*.snm
+
+*.toc
+
+*.vrb
+
+*.sol

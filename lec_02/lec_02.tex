@@ -21,6 +21,29 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
+\newcommand{\NormalTok}[1]{{#1}}
 
 % Comment these out if you don't want a slide with just the
 % part/section/subsection/subsubsection title:
@@ -601,7 +624,7 @@ $Var(\hat{\beta}_j^{alt} )\geq Var(\hat{\beta}_j )$
   $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$ по
   распределению
 \item
-  $\hat{\sigma}^2 \to \sigma^2 $ по вероятности
+  $\hat{\sigma}^2 \to \sigma^2$ по вероятности
 \end{itemize}
 
 $\hat{\sigma}^2=\frac{RSS}{n-k}$
@@ -640,7 +663,7 @@ $\hat{\sigma}^2=\frac{RSS}{n-k}$
 
 Примерный 95\%-ый интервал:
 
-$[\hat{\beta}_j-2se(\hat{\beta}_j);\hat{\beta}_j+2se(\hat{\beta}_j) ] $
+$[\hat{\beta}_j-2se(\hat{\beta}_j);\hat{\beta}_j+2se(\hat{\beta}_j) ]$
 
 \end{frame}
 
@@ -676,40 +699,27 @@ $[\hat{\beta}_j-2se(\hat{\beta}_j);\hat{\beta}_j+2se(\hat{\beta}_j) ] $
   сравниваем критическое и наблюдаемое (можно сравнить P-значение и
   $\alpha$)
 \item
-  вывод: ``$H0$ отвергается'' или ``$H0$ не отвергается''
+  вывод: ``$H_0$ отвергается'' или ``$H_0$ не отвергается''
 \end{enumerate}
 
 \end{frame}
 
 \begin{frame}[fragile]{Чудо-доска}
 
-Дано:
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(Intercept) }\FloatTok{59.86392}    \FloatTok{3.98754}  \FloatTok{15.013}   \NormalTok{<}\FloatTok{2e-16} \NormalTok{**}\ErrorTok{*}
+\NormalTok{Agriculture  }\FloatTok{0.10953}    \FloatTok{0.07848}   \FloatTok{1.396}   \FloatTok{0.1698}    
+\NormalTok{Catholic     }\FloatTok{0.11496}    \FloatTok{0.04274}   \FloatTok{2.690}   \FloatTok{0.0101} \NormalTok{*}\StringTok{ }
 
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  уравнение регрессии
-\item
-  ковариационная матрица
-\item
-  оценка $\hat{\sigma}^2$
-\end{itemize}
+\StringTok{             }\NormalTok{(Intercept)  Agriculture     Catholic}
+\NormalTok{(Intercept) }\FloatTok{15.900471817} \NormalTok{-}\FloatTok{0.256680712} \NormalTok{-}\FloatTok{0.006998292}
+\NormalTok{Agriculture -}\FloatTok{0.256680712}  \FloatTok{0.006159437} \NormalTok{-}\FloatTok{0.001345371}
+\NormalTok{Catholic    -}\FloatTok{0.006998292} \NormalTok{-}\FloatTok{0.001345371}  \FloatTok{0.001826622}
 
-(Intercept) 59.86392 3.98754 15.013 \textless{}2e-16 **\emph{
-Agriculture 0.10953 0.07848 1.396 0.1698\\Catholic 0.11496 0.04274 2.690
-0.0101 }
-
-\begin{verbatim}
-         (Intercept)  Agriculture     Catholic
-\end{verbatim}
-
-(Intercept) 15.900471817 -0.256680712 -0.006998292 Agriculture
--0.256680712 0.006159437 -0.001345371 Catholic -0.006998292 -0.001345371
-0.001826622
-
-Residual standard error: 11.07
-
-Надо:
+\NormalTok{Residual standard error:}\StringTok{ }\FloatTok{11.07}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt

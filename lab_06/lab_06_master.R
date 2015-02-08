@@ -1,5 +1,4 @@
 
-# с этого начнем с листа
 library("lubridate") # работа с датами
 
 library("sandwich") # vcovHC, vcovHAC
@@ -14,7 +13,7 @@ library("ggplot2") # графики
 
 library("quantmod") # загрузка с finance.google.com
 library("rusquant") # загрузка с finam.ru
-library("stathse") # загрузка с sophist.hse.ru
+library("sophisthse") # загрузка с sophist.hse.ru
 
 # работаем с датами
 x <- c("2010-01-17","2011-02-25")
@@ -36,7 +35,7 @@ y <- ymd("2010-05-07") + days(1:5)
 x
 y
 
-x_zoo <- zoo(x,order.by = y)
+x_zoo <- xts(x,order.by = y)
 x_zoo
 
 # первые плюсы zoo
@@ -71,17 +70,17 @@ na.approx(dna)
 
 
 # sophist.hse.ru
-a <- stathse("WAG_Y")
+a <- stathse("WAG_Q")
 a
-z <- as.zoo(a, order.by=a$T)
 
 # finance.google.com
 # finance.yahoo.com
-Sys.setlocale("LC_MESSAGES", "C") # смена локали
+# Sys.setlocale("LC_MESSAGES", "C") # смена локали
 Sys.setlocale("LC_TIME", "C")
 getSymbols(Symbols="AAPL",src="google",from="2012-01-01",to="2013-08-08")
 str(AAPL)
 head(AAPL)
+tail(AAPL)
 
 # finam.ru
 getSymbols(Symbols="GAZP",src="Finam",from="2012-01-01",to="2013-08-08")
@@ -135,9 +134,6 @@ result$p
 
 # Breusch–Godfrey test
 bgtest(model)
-bgtest(model,order = 2)
+bgtest(model,order = 3)
 results <- bgtest(model)
-results$
-qchisq(0.95,df=2)
-nrow(na.omit(d))
-
+results$p.value
