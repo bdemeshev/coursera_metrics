@@ -142,3 +142,7 @@ lab_08/graphs_08-tikzDictionary
 *.vrb
 
 *.sol
+
+lab_10/.Rhistory
+
+*.blg
