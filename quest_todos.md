@@ -55,4 +55,10 @@ TODO:
  * Курсера: ВИДЕО Ваня + Аня --- скачать - вставить!
  
  
+
+ # обойтись без bstats через bptest в жанре:
+ # bptest(cig_lm2, ~ income * price + I(income^2) + I(price^2), data = CigarettesB)
+
+ 
+ 
  

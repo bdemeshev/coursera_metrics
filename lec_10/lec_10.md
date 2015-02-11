@@ -14,16 +14,7 @@ header-includes:
    - \newcommand{\hb}{\hat{\beta}}
 ---
 
-```{r, include=FALSE}
-library("knitr")
-library("pander")
-opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
-library("rattle")
-#library("caret")
-library("rpart")
-library("quantreg")
-library("ggplot2")
-```
+
 
 
 # Три сюжета
@@ -88,12 +79,16 @@ Med(y_i|x_i)=\beta x_i
 
 Набор данных:
 
-```{r}
-x <- c(1,5,5)
-y <- c(1,2,6)
-df <- data.frame(y=y,x=x)
-pander(df)
-```
+
+-------
+ y   x 
+--- ---
+ 1   1 
+
+ 2   5 
+
+ 6   5 
+-------
 
 
 # Медианная и классическая регрессия
@@ -167,18 +162,7 @@ $\widehat{price}_i =  -102.4 + 3.6 totsp_i$
 
 # Квантильная регрессия стоимости на графике
 
-```{r}
-f <- read.table("flats_moscow.txt", header = TRUE, sep="\t")
-
-model <- rq(data=f, price~totsp, tau=c(0.1,0.5,0.9))
-#summary(model)
-
-base <- qplot(data=f, y=price, x=totsp) 
-# base
-base_q <- base + stat_smooth(se=FALSE, method = "rq", tau=0.1) + 
-  stat_smooth(se=FALSE, method = "rq", tau=0.9) 
-base_q 
-```
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 
 # Алгоритм случайного леса
@@ -198,17 +182,24 @@ base_q
 
 Набор данных
 
-```{r}
-t <- data.frame(y=c(1,1,2,10,20), x=c(1,0,0,0,1), z=c(-2,3,-4,9,9))
-pander(t)
-```
+
+-----------
+ y   x   z 
+--- --- ---
+ 1   1  -2 
+
+ 1   0   3 
+
+ 2   0  -4 
+
+10   0   9 
+
+20   1   9 
+-----------
 
 # Каждый мужчина должен посадить дерево
 
-```{r}
-fit <- rpart(data=t, y~x+z, control = rpart.control(minsplit = 2))
-fancyRpartPlot(fit)
-```
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 (рассказываю, что прогнозировать легко)
 
@@ -255,12 +246,20 @@ $\{ 1, 1, 2, 10, 20\}$, $\hy=\bar{y}=6.8$,
 # Неоновая доска. Пример построения классификационного дерева
 
 
-```{r}
-x <- 1:5
-y <- c(1,2,9,10,10)
-df <- data.frame(y=y,x=x)
-pander(df)
-```
+
+-------
+ y   x 
+--- ---
+ 1   1 
+
+ 2   2 
+
+ 9   3 
+
+10   4 
+
+10   5 
+-------
 
 
 
@@ -425,18 +424,20 @@ d & 0 & 0 & \ldots \\
 \vdots & \vdots & \vdots & \\
 \end{pmatrix}$
 
-Число $d$ мало
-
-То есть: $\beta_1 \sim N(0, 1/d)$, $\beta_2 \sim N(0, 1/d)$, ...
+$d$ --- мало
 
 # Пример проблемной ситуации
 
-```{r}
-x <- c(1,2,3)
-y <- c(0,0,1)
-df <- data.frame(y=y,x=x)
-pander(df)
-```
+
+-------
+ y   x 
+--- ---
+ 0   1 
+
+ 0   2 
+
+ 1   3 
+-------
 
 Логит и пробит оценки не существуют
 
@@ -502,9 +503,4 @@ $P(\beta_{speed^2}=0 | y )=0.05$
 
 # график для слайда 34
 
-```{r, fig.width=5, fig.height=5}
-x1 <- rnorm(50, mean=0, sd=1)
-x2 <- rnorm(70, mean=4, sd=1)
-x <- c(x1,x2)
-qplot(x, geom="density") + geom_rug() + xlab("r") 
-```
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 

@@ -46,12 +46,16 @@ y <- f_test$price
 sum( (y-yhat_lm)^2 )
 sum( (y-yhat_rf)^2 )
 
+t1 <- getTree(model_rf, k = 1)
+t1
+fancyRpartPlot(t1)
 # draw tree
 
 t <- data.frame(y=c(1,1,2,10,20), x=c(1,0,0,0,1), z=c(-2,3,-4,9,9))
 t
 
 fit <- rpart(data=t, y~x+z, control = rpart.control(minsplit = 2))
+str(fit)
 
 fancyRpartPlot(fit)
 
@@ -88,8 +92,6 @@ summary(model_b)
 
 h <- mutate(cars, speed=1.61*speed, dist=0.3*dist)
 
-
-
 h <- mutate(h, speed2=speed^2, junk=rnorm(nrow(cars)), junk2 = junk^2)
 glimpse(h)
 
@@ -103,6 +105,7 @@ summary(model_lm)
 #summary(model_ssg_f)
 print(model_ss)
 # look at bma.scale (posterior mean)
+model_ss$summary
 
 regressors_included <- melt(model_ss$model)
 regressors_included

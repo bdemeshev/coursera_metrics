@@ -1,9 +1,3 @@
-
-# обойтись без bstats через bptest в жанре:
-# bptest(cig_lm2, ~ income * price + I(income^2) + I(price^2), data = CigarettesB)
-
-
-
 install.packages("knitr")
 install.packages("xtable")
 install.packages("texreg")
