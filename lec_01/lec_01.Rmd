@@ -64,7 +64,7 @@ opts_chunk$set(cache=FALSE, dev='png',dpi=300)
 library("knitr")
 library("dplyr")
 library("ggplot2")
-d <- cars %>% mutate(dist=0.3*dist,speed=1.67*speed)
+d <- cars %>% mutate(dist=0.3*dist,speed=1.61*speed)
 kable(head(d))
 ```
 
@@ -72,9 +72,9 @@ kable(head(d))
 
 | Длина тормозного пути (м), $y_i$ | Скорость машины (км/ч), $x_i$ |
 |-----:|----:|
-| 0.6 |  6.68|  
-| 3.0 |  6.68|  
-| 1.2 | 11.69|
+| 0.6 |  6.44|  
+| 3.0 |  6.44|  
+| 1.2 | 11.27|
 | ...|  ...|
 
 
