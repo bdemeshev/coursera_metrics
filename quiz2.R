@@ -10,7 +10,7 @@ model1 <- glm(data=data, price ~ 0 + carat)
 model2 <- glm(data=data, price ~ carat + depth)
 summary(model2)
 
-model3 <- lm(data=data, price ~ carat+x+y)
+model3 <- lm(data=data, price ~ carat+x+y+z)
 summary(model3)
 
 model_ln <- lm(data=data, log(price) ~ carat)
@@ -25,14 +25,15 @@ summary(model_ln2)
 model_d <- glm(data=data, price ~ carat + color)
 summary(model_d)
 
+qnorm(0.95, mean=0,sd=1)
 10117.99-62.56*1.645
 10117.99+62.56*1.645
 
-126.00-25.76*1.645
-126.00+25.76*1.645
+round(126.00-25.76*1.645, digits = 0)
+round(126.00+25.76*1.645, digits = 0)
 
--1148.61-36.31*1.645
--1148.61+36.31*1.645
+round(-1148.61-36.31*1.645, digits = 0)
+round(-1148.61+36.31*1.645, digits = 0)
 
 # Res 
 200-105
