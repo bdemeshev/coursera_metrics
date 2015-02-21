@@ -103,7 +103,7 @@ X=\begin{pmatrix}
 один из регрессоров хорошо объясняется другими регрессорами
 
 \[
-se(\hat{\beta}_j)=\frac{\hat{\sigma}^2}{RSS_j}=\frac{\hat{\sigma}^2}{TSS_j\cdot (1-R^2_j)}=
+se^2(\hat{\beta}_j)=\frac{\hat{\sigma}^2}{RSS_j}=\frac{\hat{\sigma}^2}{TSS_j\cdot (1-R^2_j)}=
 \frac{1}{1-R^2_j}\frac{\hat{\sigma}^2}{TSS_j}
 \]
 
@@ -133,7 +133,7 @@ VIF_j=\frac{1}{1-R^2_j}
 \]
 
 \[
-se(\hat{\beta}_j)=VIF_j  \frac{\hat{\sigma}^2}{TSS_j}
+se^2(\hat{\beta}_j)=VIF_j \cdot \frac{\hat{\sigma}^2}{TSS_j}
 \]
 
 \item выборочные корреляции между регрессорами
