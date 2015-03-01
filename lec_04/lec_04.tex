@@ -1,28 +1,83 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
+\documentclass[ignorenonframetext,]{beamer}
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{:}
+\setbeamercolor{caption name}{fg=normal text.fg}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{lmodern}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+      \fi
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
 \usepackage[russian]{babel}
+\author[Эконометрика. Лекция 4]{Эконометрика. Лекция 4}
 
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,landscape]{geometry}
+\title{Мультиколлинеарность}
+\date{}
+
 \begin{document}
+\frame{\titlepage}
 
-{\Huge
-
+\begin{frame}
 
 Лекция 4. Мультиколлинеарность.
 
+\end{frame}
 
-\begin{enumerate}
-\item Мультиколлинеарность --- наличие линейной зависимости между регрессорами.
+\begin{frame}{Мультиколлинеарность --- наличие линейной зависимости
+между регрессорами.}
 
-\begin{enumerate}
-\item строгая (идеальная линейная зависимость) 
-\item нестрогая (примерная линейная зависимость)
-\end{enumerate}
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  строгая (идеальная линейная зависимость)
+\item
+  нестрогая (примерная линейная зависимость)
+\end{itemize}
 
-\item Строгая мультиколлинеарность
+\end{frame}
+
+\begin{frame}{Строгая мультиколлинеарность}
 
 Пример:
 
@@ -35,19 +90,21 @@ X=\begin{pmatrix}
 \end{pmatrix} 
 \]
 
-Здесь: $x_{\cdot 2}+x_{\cdot 3}=2x_{\cdot 4}$
+Здесь: \(x_{\cdot 2}+x_{\cdot 3}=2x_{\cdot 4}\)
 
-\item Строгая мультиколлинеарность 
+\end{frame}
+
+\begin{frame}{Строгая мультиколлинеарность}
 
 Частая причина: неправильно включены дамми-переменные
 
-Пример с ошибкой: 
+Пример с ошибкой:
 
 \[
 wage_i=\beta_1 + \beta_2 male_i + \beta_3 female_i + \beta_4 educ_i + \varepsilon_i
 \]
 
-Здесь:  $x_{\cdot 1}=x_{\cdot 2}+x_{\cdot 3}$
+Здесь: \(x_{\cdot 1}=x_{\cdot 2}+x_{\cdot 3}\)
 
 \[
 X=\begin{pmatrix}
@@ -58,8 +115,9 @@ X=\begin{pmatrix}
 \end{pmatrix} 
 \]
 
+\end{frame}
 
-\item Последствия строгой мультиколлинеарности
+\begin{frame}{Последствия строгой мультиколлинеарности}
 
 в теории: оценки МНК неединственны
 
@@ -75,30 +133,46 @@ X=\begin{pmatrix}
 \widehat{wage}_i=18 + 0 male_i -5 female_i + 3 educ_i 
 \]
 
+\end{frame}
 
+\begin{frame}{на практике:}
 
-\item на практике: 
-\begin{enumerate}
-\item сообщение об ошибке
-\item автоматическое удаление переменной (\verb|R|)
-\end{enumerate}
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  сообщение об ошибке
+\item
+  автоматическое удаление переменной, R
+\end{itemize}
 
-\item Нестрогая мультиколлинеарность
+\end{frame}
 
-Причина: 
+\begin{frame}{Нестрогая мультиколлинеарность}
 
-\begin{enumerate}
-\item регрессоры, измеряющие примерно одно и то же: валютный курс на начало и на конец дня
-\item естественные соотношения между регрессорами: возраст, стаж и количество лет обучения
-\end{enumerate}
+Причина:
 
-\item последствия нестрогой мультиколлинеарности
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  регрессоры, измеряющие примерно одно и то же: валютный курс на начало
+  и на конец дня
+\item
+  естественные соотношения между регрессорами: возраст, стаж и
+  количество лет обучения
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{последствия нестрогой мультиколлинеарности}
 
 нестрогая мультиколлинеарность НЕ нарушает стандартный набор предпосылок
 
-оценки $\hat{\beta}_j$ несмещенные, асимптотически нормальные, можно проверять гипотезы и строить доверительные интервалы
+оценки \(\hat{\beta}_j\) несмещенные, асимптотически нормальные, можно
+проверять гипотезы и строить доверительные интервалы
 
-\item последствия 
+\end{frame}
+
+\begin{frame}{последствия}
 
 один из регрессоров хорошо объясняется другими регрессорами
 
@@ -107,26 +181,39 @@ se^2(\hat{\beta}_j)=\frac{\hat{\sigma}^2}{RSS_j}=\frac{\hat{\sigma}^2}{TSS_j\cdo
 \frac{1}{1-R^2_j}\frac{\hat{\sigma}^2}{TSS_j}
 \]
 
-высокие стандартные ошибки $se(\hat{\beta}_j)$
+высокие стандартные ошибки \(se(\hat{\beta}_j)\)
 
-\item неприятные проявление высоких стандартных ошибок
+\end{frame}
 
-\begin{enumerate}
-\item очень широкие доверительные интервалы
-\item незначимые коэффициенты
-\item чувствительность модели к добавлению/удалению наблюдения
-\end{enumerate}
+\begin{frame}{неприятные проявление высоких стандартных ошибок}
 
-\item Типичное проявление
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  очень широкие доверительные интервалы
+\item
+  незначимые коэффициенты
+\item
+  чувствительность модели к добавлению/удалению наблюдения
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Типичное проявление}
 
 Несколько коэффициентов незначимы по отдельности
 
 Гипотеза об их одновременном равенстве нулю отвергается.
 
-\item количественные признаки
+\end{frame}
 
-\begin{enumerate}
-\item коэффициент вздутия дисперсии (Variance Inflation Factor)
+\begin{frame}{количественные признаки}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  коэффициент вздутия дисперсии (Variance Inflation Factor)
+\end{itemize}
 
 \[
 VIF_j=\frac{1}{1-R^2_j}
@@ -136,98 +223,149 @@ VIF_j=\frac{1}{1-R^2_j}
 se^2(\hat{\beta}_j)=VIF_j \cdot \frac{\hat{\sigma}^2}{TSS_j}
 \]
 
-\item выборочные корреляции между регрессорами
-\end{enumerate}
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  выборочные корреляции между регрессорами
+\end{itemize}
 
-Некоторые источники: $VIF_j > 10$, $\widehat{Corr}(x_{\cdot j},x_{\cdot m})>0.9$
+Некоторые источники: \(VIF_j > 10\),
+\(\widehat{Corr}(x_{\cdot j},x_{\cdot m})>0.9\)
 
-\item Что делать?
+\end{frame}
 
-\begin{enumerate}
-\item Не так страшен чёрт! Оценки $\hat{\beta}_j$ обладают наименьшей дисперсией среди несмещенных оценок. На доверительных интервалах для прогнозов мультиколлинеарность не сказывается.
-\item Пожертвовать несмещенностью
-\item Мечта: получить больше наблюдений 
-\end{enumerate}
+\begin{frame}{Что делать?}
 
-\item Жертвуем несмещенностью
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Не так страшен чёрт! Оценки \(\hat{\beta}_j\) обладают наименьшей
+  дисперсией среди несмещенных оценок. На доверительных интервалах для
+  прогнозов мультиколлинеарность не сказывается.
+\item
+  Пожертвовать несмещенностью
+\item
+  Мечта: получить больше наблюдений
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Жертвуем несмещенностью}
 
 Модель зависит от всех регрессоров!
 
-\begin{enumerate}
-\item выкинуть часть регрессоров
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  выкинуть часть регрессоров
+\end{itemize}
 
 Жертвуем: знанием коэффициента, несмещенностью коэффициентов
 
-\item использовать МНК со штрафом 
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  использовать МНК со штрафом
+\end{itemize}
 
 Жертвуем: несмещенностью коэффициентов, доверительными интервалами
-\end{enumerate}
 
 Жертвуем несмещенностью!
 
-\item упражнение у чудо доски:
+\end{frame}
 
-$R^2_2=0.5$, $R^2_3=0.95$, $R^2_4=0.98$
+\begin{frame}{упражнение у чудо доски:}
 
-Рассчитайте $VIF_j$, между какими переменными есть линейная зависимость?
+\(R^2_2=0.5\), \(R^2_3=0.95\), \(R^2_4=0.98\)
 
-\item МНК со штрафом 
+Рассчитайте \(VIF_j\), между какими переменными есть линейная
+зависимость?
 
-\begin{enumerate}
-\item Ридж-регрессия
+\end{frame}
+
+\begin{frame}{МНК со штрафом}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Ридж-регрессия
+\end{itemize}
 
 \[
 \min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda \sum_{j=1}^k \hat{\beta}_j^2
 \]
 
-\item LASSO
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  LASSO
+\end{itemize}
 
 \[
 \min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda \sum_{j=1}^k |\hat{\beta}_j|
 \]
 
-\item Метод эластичной сети
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Метод эластичной сети
+\end{itemize}
 
 \[
 \min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda_1 \sum_{j=1}^k |\hat{\beta}_j| + \lambda_2 \sum_{j=1}^k \hat{\beta}_j^2
 \]
 
+\end{frame}
 
-\end{enumerate}
+\begin{frame}{чудо-доска, упражнение}
 
-\item чудо-доска, упражнение
+Выведите оценку \(\hat{\beta}_{Ridge}\) в модели
+\(y_i=\beta x_i + \varepsilon_i\)
 
-Выведите оценку $\hat{\beta}_{Ridge}$ в модели $y_i=\beta x_i + \varepsilon_i$
+\end{frame}
 
-\item метод главных компонент
+\begin{frame}{метод главных компонент}
 
-Позволяет уменьшить число переменных, выбрав самые изменчивые 
+Позволяет уменьшить число переменных, выбрав самые изменчивые
 
-\item  переход к новым переменным
+\end{frame}
+
+\begin{frame}{переход к новым переменным}
 
 Например:
 
-Исходные переменные (центрированные): $x_1$ и $x_2$
+Исходные переменные (центрированные): \(x_1\) и \(x_2\)
 
-Новые переменные (главные компоненты): 
+Новые переменные (главные компоненты):
 
-$pc_1=\frac{1}{\sqrt{2}}x_1+\frac{1}{\sqrt{2}}x_2$ 
+\(pc_1=\frac{1}{\sqrt{2}}x_1+\frac{1}{\sqrt{2}}x_2\)
 
-$pc_2=\frac{1}{2}x_1-\frac{\sqrt{3}}{2}x_2$.
+\(pc_2=\frac{1}{2}x_1-\frac{\sqrt{3}}{2}x_2\).
 
 Сумма квадратов весов равна 1.
 
-\item Новые переменные
+\end{frame}
 
-\begin{enumerate}
-\item $pc_1$ имеет максимальную выборочную дисперсию $\widehat{Var}(pc_1)$
-\item $pc_2$ некоррелирована с $pc_1$ и имеет максимальную $\widehat{Var}(pc_2)$
-\item $pc_3$ некоррелирована с $pc_1$, $pc_2$ и имеет максимальную $\widehat{Var}(pc_3)$
-\item ...
-\end{enumerate}
+\begin{frame}{Новые переменные}
 
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  \(pc_1\) имеет максимальную выборочную дисперсию
+  \(\widehat{Var}(pc_1)\)
+\item
+  \(pc_2\) некоррелирована с \(pc_1\) и имеет максимальную
+  \(\widehat{Var}(pc_2)\)
+\item
+  \(pc_3\) некоррелирована с \(pc_1\), \(pc_2\) и имеет максимальную
+  \(\widehat{Var}(pc_3)\)
+\item
+  \ldots{}
+\end{itemize}
 
-\item игрушечный пример для пояснения идеи
+\end{frame}
+
+\begin{frame}{игрушечный пример для пояснения идеи}
 
 \begin{tabular}{cc}
 Биология & Математика \\ 
@@ -240,13 +378,15 @@ $pc_2=\frac{1}{2}x_1-\frac{\sqrt{3}}{2}x_2$.
 4 & 4 \\ 
 3 & 3 \\ 
 5 & 3 \\ 
-\end{tabular} 
+\end{tabular}
 
 Первая главная компонента --- математика
 
 Вторая главная компонента --- биология
 
-\item чудо-доска
+\end{frame}
+
+\begin{frame}{чудо-доска}
 
 Найдите первую главную компоненту
 
@@ -256,90 +396,115 @@ $a_1$ & $a_2$ \\
 2 & 5 \\ 
 4 & 1 \\ 
 0 & 3 \\ 
-\end{tabular} 
+\end{tabular}
 
-Не забываем центировать! 
+Не забываем центировать!
 
-\item Свойства главных компонент
+\end{frame}
 
-$pc_1=v_{11} \cdot x_1 +  v_{21} \cdot x_2 + \ldots + v_{k1} \cdot x_k$
+\begin{frame}{Свойства главных компонент}
 
-...
+\(pc_1=v_{11} \cdot x_1 + v_{21} \cdot x_2 + \ldots + v_{k1} \cdot x_k\)
 
-$pc_k=v_{1k} \cdot x_1 +  v_{2k} \cdot x_2 + \ldots + v_{kk} \cdot x_k$
+\ldots{}
 
+\(pc_k=v_{1k} \cdot x_1 + v_{2k} \cdot x_2 + \ldots + v_{kk} \cdot x_k\)
 
 \[
 \widehat{Corr}(pc_j,pc_m)=0
 \]
- 
+
 \[
 \widehat{Var}(x_1)+ \widehat{Var}(x_2) + \ldots + \widehat{Var}(x_k) =
 \widehat{Var}(pc_1)+ \widehat{Var}(pc_2) + \ldots + \widehat{Var}(pc_k)
 \]
 
+\end{frame}
 
+\begin{frame}{Вставка с линейной алгеброй}
 
-\item Вставка с линейной алгеброй
+Если: все переменные центрированы, \(\bar{x}_j=0\)
 
-Если: все переменные центрированы, $\bar{x}_j=0$
+То: \(pc_j=X \cdot v_j\) и \(|pc_j|^2=\lambda_j\), где
 
-То: $pc_j=X \cdot v_j$ и $|pc_j|^2=\lambda_j$, где
+\(\lambda_j\) --- собственные числа, а \(v_{j}\) --- собственные вектора
+матрицы \(X'X\)
 
-$\lambda_j$ --- собственные числа, а $v_{j}$ --- собственные вектора матрицы $X'X$
+\end{frame}
 
-\item Что дают главные компоненты?
+\begin{frame}{Что дают главные компоненты?}
 
-\begin{enumerate}
-\item визуализировать сложный набор данных
-\item увидеть самые информативные переменные
-\item увидеть особенные наблюдения
-\item переход к некоррелированным переменным
-\end{enumerate}
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  визуализировать сложный набор данных
+\item
+  увидеть самые информативные переменные
+\item
+  увидеть особенные наблюдения
+\item
+  переход к некоррелированным переменным
+\end{itemize}
 
-\item Подводные камни на практике
+\end{frame}
 
-\begin{enumerate}
-\item разные единицы измерения 
-\item применение перед регрессией
-\end{enumerate}
+\begin{frame}{Подводные камни на практике}
 
-\item Разные единицы измерения
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  разные единицы измерения
+\item
+  применение перед регрессией
+\end{itemize}
 
-первая главная компонента <<поймает>> переменную с самыми мелкими единицами измерения
+\end{frame}
+
+\begin{frame}{Разные единицы измерения}
+
+первая главная компонента \textless{}\textgreater{} переменную с самыми
+мелкими единицами измерения
 
 вместо самой информативной --- самая шумная
 
-нормировать переменные $x_j=\frac{a_j-\bar{a}_j}{se(a_l)}$
+нормировать переменные \(x_j=\frac{a_j-\bar{a}_j}{se(a_j)}\)
 
-\item Применение перед регрессией
+\end{frame}
 
-строят регрессию на несколько первых главных компонент, например на $pc_1$, $pc_2$
+\begin{frame}{Применение перед регрессией}
 
-Осторожно: 
+строят регрессию на несколько первых главных компонент, например на
+\(pc_1\), \(pc_2\)
+
+Осторожно:
 
 хорошо объясняющая переменная может быть почти постоянной
 
-\item Метод главных компонент
+\end{frame}
 
-\begin{enumerate}
-\item полезен сам по себе 
-\item иногда используется для борьбы с мультиколлинеарностью
-\end{enumerate}
+\begin{frame}{Метод главных компонент}
 
-\item Мораль - мультиколлинеарность
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  полезен сам по себе
+\item
+  иногда используется для борьбы с мультиколлинеарностью
+\end{itemize}
 
-\begin{enumerate}
-\item зависимость между регрессорами
+\end{frame}
 
-\item высокие стандартные ошибки
+\begin{frame}{Мораль - мультиколлинеарность}
 
-\item либо не бороться, либо жертвовать несмещенностью
-\end{enumerate}
+\begin{itemize}
+\item
+  зависимость между регрессорами
+\item
+  высокие стандартные ошибки
+\item
+  либо не бороться, либо жертвовать несмещенностью
+\end{itemize}
 
-
-\end{enumerate}
-
-} % end Huge
+\end{frame}
 
 \end{document}

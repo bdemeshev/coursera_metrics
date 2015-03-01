@@ -1,16 +1,18 @@
 ---
-title: "Эконометрика. Лекция 9. Эндогенность"
+title: "Эндогенность"
+lang: russian
+header-includes: 
+  - \author[Эконометрика. Лекция 9]{Эконометрика. Лекция 9}
+  - \usepackage{dcolumn}
+  - \usepackage{diagrams}
+  - \DeclareMathOperator{\plim}{plim}
+  - \newcommand{\e}{\varepsilon}
 output:
   beamer_presentation:
     keep_tex: yes
-    theme: CambridgeUS
+    theme: Madrid
+    colortheme: whale
   ioslides_presentation: default
-lang: russian
-header-includes:
-   - \usepackage{dcolumn}
-   - \usepackage{diagrams}
-   - \DeclareMathOperator{\plim}{plim}
-   - \newcommand{\e}{\varepsilon}
 ---
 
 # Разложение в сумму не однозначно

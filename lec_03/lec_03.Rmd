@@ -1,11 +1,14 @@
 ---
-title: "Эконометрика. Лекция 3"
+title: "Прогнозирование. Сравнение моделей"
+lang: russian
+header-includes: 
+  - \author[Эконометрика. Лекция 3]{Эконометрика. Лекция 3}
 output:
   beamer_presentation:
     keep_tex: yes
-    theme: CambridgeUS
+    theme: Madrid
+    colortheme: whale
   ioslides_presentation: default
-lang: russian
 ---
 
 # Лекция 3

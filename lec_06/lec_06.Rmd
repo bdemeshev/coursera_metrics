@@ -1,11 +1,14 @@
 ---
-title: "Эконометрика. Лекция 6. Автокорреляция"
+title: "Автокорреляция"
+lang: russian
+header-includes: 
+  - \author[Эконометрика. Лекция 6]{Эконометрика. Лекция 6}
 output:
   beamer_presentation:
     keep_tex: yes
-    theme: CambridgeUS
+    theme: Madrid
+    colortheme: whale
   ioslides_presentation: default
-lang: russian
 ---
 
 

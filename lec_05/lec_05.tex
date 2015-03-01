@@ -1,323 +1,508 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
+\documentclass[ignorenonframetext,]{beamer}
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{:}
+\setbeamercolor{caption name}{fg=normal text.fg}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{lmodern}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+      \fi
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
 \usepackage[russian]{babel}
+\author[Эконометрика. Лекция 5]{Эконометрика. Лекция 5}
 
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,landscape]{geometry}
+\title{Гетероскедастичность}
+\date{}
+
 \begin{document}
+\frame{\titlepage}
 
-
-{\Huge
-
-\begin{enumerate}
-
-\item Гомоскедастичность
+\begin{frame}{Гомоскедастичность}
 
 Для проверки гипотез мы предполагали условную гомоскедастичность ошибок:
 
-$ E(\varepsilon_i^2 | X)=\sigma^2 $
+\(E(\varepsilon_i^2 | X)=\sigma^2\)
 
 Что произойдет если эта предпосылка будет нарушена?
 
-\item Гомоскедастичность:
+\end{frame}
 
-Условная гомоскедастичность $E(\varepsilon_i^2 | X)=\sigma^2$
+\begin{frame}{Гомоскедастичность:}
 
-Условная гетероскедастичность  $E(\varepsilon_i^2 | X) \neq const$
+Условная гомоскедастичность \(E(\varepsilon_i^2 | X)=\sigma^2\)
 
+Условная гетероскедастичность \(E(\varepsilon_i^2 | X) \neq const\)
 
-Безусловная гомоскедастичность $E(\varepsilon_i^2)=\sigma^2$
+Безусловная гомоскедастичность \(E(\varepsilon_i^2)=\sigma^2\)
 
-Безусловная гетероскедастичность $E(\varepsilon_i^2) \neq \sigma^2$
-
-
+Безусловная гетероскедастичность \(E(\varepsilon_i^2) \neq \sigma^2\)
 
 тут вставка чудо-доска
 
+\end{frame}
 
-\item Когда логично ожидать гетероскедастичность?
+\begin{frame}{Когда логично ожидать гетероскедастичность?}
 
-* безусловной в случайной выборке не бывает
+\begin{itemize}
+\item
+  безусловной в случайной выборке не бывает
+\item
+  условная присутствует почти всегда
+\item
+  наличие \textless{}\textgreater{} объекта
+\end{itemize}
 
-* условная присутствует почти всегда
+\end{frame}
 
-* наличие <<размера>> объекта
+\begin{frame}{В остальном всё ок}
 
-\item В остальном всё ок
-
-Все остальные предпосылки классической модели со стохастическими регрессорами для случайной выборки выполнены.
+Все остальные предпосылки классической модели со стохастическими
+регрессорами для случайной выборки выполнены.
 
 (тут пачка предпосылок) --- файл predposilki.pdf
 
-\newpage
-\item  Мы используем прежние формулы:
+\end{frame}
 
-Для оценок коэффициентов:
-$\hat{\beta}=(X'X)^{-1}X'y$
+\begin{frame}{Мы используем прежние формулы:}
+
+Для оценок коэффициентов: \(\hat{\beta}=(X'X)^{-1}X'y\)
 
 Для оценки ковариационной матрицы оценок коэффициентов,
-$\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$
+\(\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}\)
 
-В частности, $\widehat{Var}(\hat{\beta}_j|X)=\frac{\hat{\sigma}^2}{RSS_j}$
-и $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
+В частности,
+\(\widehat{Var}(\hat{\beta}_j|X)=\frac{\hat{\sigma}^2}{RSS_j}\) и
+\(se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}\)
 
+\end{frame}
 
-\item Три группы свойств:
+\begin{frame}{Три группы свойств:}
 
-- конечная выборка без предположения о нормальности $\varepsilon$
-
-- конечная выборка с предположением о нормальности $\varepsilon$
-
-- асимптотические свойства (без предположения о нормальности  $\varepsilon$)
+\begin{itemize}
+\item
+  конечная выборка без предположения о нормальности \(\varepsilon\)
+\item
+  конечная выборка с предположением о нормальности \(\varepsilon\)
+\item
+  асимптотические свойства (без предположения о нормальности
+  \(\varepsilon\))
+\end{itemize}
 
 Что происходит в каждом случае?
 
-\item Конечная выборка без предположения о нормальности $\varepsilon$
+\end{frame}
 
-* Линейность по $y$
+\begin{frame}{Конечная выборка без предположения о нормальности
+\(\varepsilon\)}
 
-* Условная несмещенность, $E(\hat{\beta}|X)=\beta$
-
-* (---) Оценки неэффективны
+\begin{itemize}
+\item
+  Линейность по \(y\)
+\item
+  Условная несмещенность, \(E(\hat{\beta}|X)=\beta\)
+\item
+  (---) Оценки неэффективны
+\end{itemize}
 
 (---) - свойство потеряно при условной гетероскедастичности
 
-\newpage
-\item  Конечная выборка с предположением о нормальности $\varepsilon$
+\end{frame}
 
-* (---) $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}$
+\begin{frame}{Конечная выборка с предположением о нормальности
+\(\varepsilon\)}
 
-* (---) $\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$
+\begin{itemize}
+\item
+  (---)
+  \(\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}\)
+\item
+  (---) \(\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}\)
+\item
+  (---) \(\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}\)
+\end{itemize}
 
-* (---) $\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$
+\end{frame}
 
-\item  Асимптотические свойства:
+\begin{frame}{Асимптотические свойства:}
 
-*  $\hat{\beta} \to \beta $
+\begin{itemize}
+\item
+  \(\hat{\beta} \to \beta\)
+\item
+  \(\frac{RSS}{n-k} \to \sigma^2\)
+\item
+  (---) \(\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)\)
+\item
+  (---) \(\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k)} \to \chi^2_r\)
+\end{itemize}
 
-* $\frac{RSS}{n-k} \to \sigma^2 $
+\end{frame}
 
-* (---) $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$
+\begin{frame}{Мораль:}
 
-* (---) $\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k)} \to \chi^2_r$
+\begin{itemize}
+\item
+  Сами \(\hat{\beta}\) можно интерпретировать и использовать
+\item
+  Стандартные ошибки \(se(\hat{\beta}_j)\) несостоятельны
+\item
+  Не можем строить доверительные интервалы для \(\beta_j\) и проверять
+  гипотезы
+\end{itemize}
 
-\newpage
-\item Мораль:
+\end{frame}
 
-* Сами $\hat{\beta}$ можно интерпретировать и использовать
+\begin{frame}{Что делать?}
 
-* Стандартные ошибки $se(\hat{\beta}_j)$ несостоятельны
+\begin{itemize}
+\item
+  Исправить стандартные ошибки!
+\item
+  Другая формула для оценки \(\widehat{Var}_{HC}(\hat{\beta}|X)\)
+\item
+  Следовательно, другие \(se_{HC}(\hat{\beta}_j)\)
+\end{itemize}
 
-* Не можем строить доверительные интервалы для $\beta_j$ и проверять гипотезы
+\end{frame}
 
-\item Что делать?
+\begin{frame}{Робастная (устойчивая) к гетероскедастичности оценка
+ковариационной матрицы}
 
-* Исправить стандартные ошибки! 
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Вместо \(\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}\)
+\end{itemize}
 
-* Другая формула для оценки $\widehat{Var}_{HC}(\hat{\beta}|X)$
+использовать
+\(\widehat{Var}_{HC}(\hat{\beta}|X)=(X'X)^{-1}X'\hat{\Omega}X(X'X)^{-1}\)
 
-* Следовательно, другие $se_{HC}(\hat{\beta}_j)$
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Уайт, 1980, HC0:
+\end{itemize}
 
+\(\hat{\Omega}=diag( \hat{\varepsilon}_1^2, \ldots, \hat{\varepsilon}_n^2 )\)
 
-\item Робастная (устойчивая) к гетероскедастичности оценка ковариационной матрицы
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Современный вариант, HC3:
+\end{itemize}
 
-* Вместо $\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$ 
+\(\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \frac{\varepsilon_n^2}{(1-h_{nn})^2} \right)\)
 
-использовать $\widehat{Var}_{HC}(\hat{\beta}|X)=(X'X)^{-1}X'\hat{\Omega}X(X'X)^{-1}$
+\end{frame}
 
-* Уайт, 1980, HC0: 
+\begin{frame}{Суть корректировки:}
 
-$\hat{\Omega}=diag( \hat{\varepsilon}_1^2, \ldots, \hat{\varepsilon}_n^2 )$
-
-* Современный вариант, HC3: 
-
-$\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \frac{\varepsilon_n^2}{(1-h_{nn})^2} \right)$
-
-\newpage
-\newpage Суть корректировки:
-
-Мы меняем $se(\hat{\beta}_j)$ на $se_{HC}(\hat{\beta}_j)$
+Мы меняем \(se(\hat{\beta}_j)\) на \(se_{HC}(\hat{\beta}_j)\)
 
 Какие проблемы решены?
 
-* $\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} \to N(0,1)$ (УРА!)
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  \(\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} \to N(0,1)\)
+  (УРА!)
+\end{itemize}
 
-\item Какие проблемы не решены?
+\end{frame}
 
-(---) оценки $\hat{\beta}$ не меняются и остаются неэффективными
+\begin{frame}{Какие проблемы не решены?}
 
-даже при предположении о нормальности $\varepsilon$:
+(---) оценки \(\hat{\beta}\) не меняются и остаются неэффективными
 
-* (---) $\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} | X \sim t_{n-k}$
+даже при предположении о нормальности \(\varepsilon\):
 
-* (---) $\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$
+\begin{itemize}
+\item
+  (---)
+  \(\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} | X \sim t_{n-k}\)
+\item
+  (---) \(\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}\)
+\item
+  (---) \(\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}\)
+\end{itemize}
 
-* (---) $\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$
+\end{frame}
 
-\newpage
-\item С практической точки зрения:
+\begin{frame}[fragile]{С практической точки зрения:}
 
-* Новая формула для $\widehat{Var}_{HC}(\hat{\beta}|X)$, и, следовательно, для  $se_{HC}(\hat{\beta}_j)$
+\begin{itemize}
+\item
+  Новая формула для \(\widehat{Var}_{HC}(\hat{\beta}|X)\), и,
+  следовательно, для \(se_{HC}(\hat{\beta}_j)\)
+\item
+  ковариационная матрица в R (по умолчанию HC3):
+\end{itemize}
 
-* ковариационная матрица в R (по умолчанию HC3):
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(y~x, }\DataTypeTok{data=}\NormalTok{data)}
+\KeywordTok{vcovHC}\NormalTok{(model)}
+\end{Highlighting}
+\end{Shaded}
 
-\verb|model <- lm(y~x, data=data)|
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  С ней жизнь прекрасна!
+\end{itemize}
 
-\verb|vcovHC(model)|
+\(\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} \to N(0,1)\)
 
-* С ней жизнь прекрасна!
+\end{frame}
 
-$\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} \to N(0,1)$
+\begin{frame}{Когда следует использовать}
 
-\item Когда следует использовать 
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Как только есть случайная выборка и объекты могут быть разного
+  \textless{}\textgreater{}, использовать \(se_{HC}(\hat{\beta}_j)\) для
+  проверки гипотез
+\end{itemize}
 
-* Как только есть случайная выборка и объекты могут быть разного <<размера>>, использовать $se_{HC}(\hat{\beta}_j)$ для проверки гипотез
+\end{frame}
 
-\newpage
-\item Обнаружение гетероскедастичности
+\begin{frame}{Обнаружение гетероскедастичности}
 
-* Оцениваем интересующую нас модель с помощью МНК
-
-* Строим график квадратов (или модулей) остатков в зависимости от регрессора
+\begin{itemize}
+\item
+  Оцениваем интересующую нас модель с помощью МНК
+\item
+  Строим график квадратов (или модулей) остатков в зависимости от
+  регрессора
+\end{itemize}
 
 Тут графики 1 и 2 (присланы как png файлы)
 
+\end{frame}
 
-\item Формальные тесты на гетероскедастичность
+\begin{frame}{Формальные тесты на гетероскедастичность}
 
-* Тест Уайта (White)
+\begin{itemize}
+\item
+  Тест Уайта (White)
+\item
+  Асимптотический, не требуется нормальность остатков
+\end{itemize}
 
-* Асимптотический, не требуется нормальность остатков
+\end{frame}
 
-\item Тест Уайта  начало
+\begin{frame}{Тест Уайта начало}
 
-* Оценить основную регрессию, получить $\hat{\varepsilon}_i$
+\begin{itemize}
+\item
+  Оценить основную регрессию, получить \(\hat{\varepsilon}_i\)
+\item
+  Оценить вспомогательную регрессию:
+\end{itemize}
 
-* Оценить вспомогательную регрессию:
+\(\hat{\varepsilon}^2_i = \gamma_1 + \gamma_2 z_{i2} + \ldots + \gamma_{i,k} z_{im}+ u_i\)
 
-$\hat{\varepsilon}^2_i = \gamma_1 + \gamma_2 z_{i2} + \ldots + \gamma_{i,k} z_{im}+ u_i$
+\(z_{i2}\), \ldots, \(z_{im}\) --- факторы, определяющие форму
+гетероскедастичности
 
-$z_{i2}$, \ldots, $z_{im}$ --- факторы, определяющие форму гетероскедастичности
+Посчитать \(LM=nR^2_{aux}\)
 
-Посчитать $LM=nR^2_{aux}$
+\end{frame}
 
-\newpage
-\item Тест Уайта продолжение
+\begin{frame}{Тест Уайта продолжение}
 
-При верной $H_0$ об условной гомоскедастичности
+При верной \(H_0\) об условной гомоскедастичности
 
-$H_0$: $E(\varepsilon^2_i|X)=\sigma^2$
+\(H_0\): \(E(\varepsilon^2_i|X)=\sigma^2\)
 
-$LM \sim \chi^2_{m-1}$, где $m$ --- число параметров во вспомогательной регрессии
+\(LM \sim \chi^2_{m-1}\), где \(m\) --- число параметров во
+вспомогательной регрессии
 
-По умолчанию во вспомогательной регрессии берут исходные регрессоры, их квадраты и попарные произведения
+По умолчанию во вспомогательной регрессии берут исходные регрессоры, их
+квадраты и попарные произведения
 
-Здесь график 3 (прислан как фото рисунка от руки)
-Подписи на графике:
+Здесь график 3 (прислан как фото рисунка от руки) Подписи на графике:
 
-$H_0$ не отвергается
-$H_0$ отвергается
-$\chi^2_{cr}$
-$H_0: E(\varepsilon_i^2 | X)=const$
+\(H_0\) не отвергается \(H_0\) отвергается \(\chi^2_{cr}\)
+\(H_0: E(\varepsilon_i^2 | X)=const\)
 
-\item вставка чудо-доска тест Уайта
+\end{frame}
 
-По 200 киоскам мороженого и  исследователь оценил зависимость спроса (q) от цены (p), разнообразия ассортимента (a) и удаленности от метро (d).
+\begin{frame}{вставка чудо-доска тест Уайта}
+
+По 200 киоскам мороженого и исследователь оценил зависимость спроса (q)
+от цены (p), разнообразия ассортимента (a) и удаленности от метро (d).
 
 Какой регрессор скорее всего влияет на условную дисперсию ошибок?
 
-Исследователь провел классический тест Уайта и получил $R^2_{aux}=0.2$.
+Исследователь провел классический тест Уайта и получил
+\(R^2_{aux}=0.2\).
 
 Как выглядит вспомогательная регрессия?
 
 Имеет ли место условная гетероскедастичность?
 
-\newpage
-\item Тест Голдфельда-Квандта (Goldfeld-Quandt)
+\end{frame}
 
-* Есть переменная, от которой может зависеть условная дисперсия ошибок
+\begin{frame}{Тест Голдфельда-Квандта (Goldfeld-Quandt)}
 
-* Требуется нормальность ошибок
+\begin{itemize}
+\item
+  Есть переменная, от которой может зависеть условная дисперсия ошибок
+\item
+  Требуется нормальность ошибок
+\item
+  Тест подходит для малых выборок
+\end{itemize}
 
-* Тест подходит для малых выборок
+\end{frame}
 
-\item Процедура теста Голдфельда-Квандта
+\begin{frame}{Процедура теста Голдфельда-Квандта}
 
-* Сортируем наблюдения по предполагаемому убыванию условной дисперсии
+\begin{itemize}
+\item
+  Сортируем наблюдения по предполагаемому убыванию условной дисперсии
+\item
+  Выкидываем часть наблюдений посередине (20\%)
+\item
+  оцениваем исходную модель отдельно по первым и по последним
+  наблюдениям
+\item
+  Считаем \(F=\frac{RSS_1/(n_1-k)}{RSS_2/(n_2-k)}\)
+\end{itemize}
 
-* Выкидываем часть наблюдений посередине (20\%)
+\end{frame}
 
-* оцениваем исходную модель отдельно по первым и по последним наблюдениям
+\begin{frame}{Тест Голдфельда-Квандта продолжение}
 
-* Считаем $F=\frac{RSS_1/(n_1-k)}{RSS_2/(n_2-k)}$
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  При верной \(H_0\) об условной гомоскедастичности
+\end{itemize}
 
-\newpage
-\item Тест Голдфельда-Квандта продолжение
+\(H_0\): \(E(\varepsilon^2_i|X)=\sigma^2\)
 
-* При верной $H_0$ об условной гомоскедастичности
+\(F\sim F_{n_1-k,n_2-k}\)
 
-$H_0$: $E(\varepsilon^2_i|X)=\sigma^2$
+Здесь график 4 (прислан как фото рисунка от руки) Подписи на графике:
 
-$F\sim F_{n_1-k,n_2-k}$
+\(H_0\) не отвергается \(H_0\) отвергается \(F_{cr}\)
+\(H_0: E(\varepsilon_i^2 | X)=const\)
 
-Здесь график 4 (прислан как фото рисунка от руки)
-Подписи на графике:
+\end{frame}
 
-$H_0$ не отвергается
-$H_0$ отвергается
-$F_{cr}$
-$H_0: E(\varepsilon_i^2 | X)=const$
+\begin{frame}{Вставка с чудо-доской}
 
-\item Вставка с чудо-доской
+По 200 киоскам мороженого и исследователь оценил зависимость спроса (q)
+от цены (p), разнообразия ассортимента (a) и удаленности от метро (d).
 
-По 200 киоскам мороженого и  исследователь оценил зависимость спроса (q) от цены (p), разнообразия ассортимента (a) и удаленности от метро (d).
+Чтобы проверить наличие гетероскедастичности исследователь оценил эту
+модель отдельно по 80 самым удаленным от метро киоскам, получил,
+\(RSS_2=120\). По 80 самым близки к метро киоскам, получил,
+\(RSS_1=210\).
 
-Чтобы проверить наличие гетероскедастичности исследователь оценил эту модель отдельно по 80 самым удаленным от метро киоскам, получил, $RSS_2=120$. По 80 самым близки к метро киоскам, получил, $RSS_1=210$. 
+\end{frame}
 
-\newpage
-\item Эффективность оценок?
+\begin{frame}{Эффективность оценок?}
 
-* Да, надо смириться с тем, что оценки неэффективны
+\begin{itemize}
+\item
+  Да, надо смириться с тем, что оценки неэффективны
+\item
+  Мы довольны несмещенностью, состоятельностью и возможностью проверять
+  гипотезы
+\item
+  Для получения эффективных оценок нужно точно понимать как устроена
+  гетероскедастичность. Это большая редкость.
+\end{itemize}
 
-* Мы довольны несмещенностью, состоятельностью и возможностью проверять гипотезы
+\end{frame}
 
-* Для получения эффективных оценок нужно точно понимать как устроена гетероскедастичность. Это большая редкость.
+\begin{frame}{Вставка с чудо-доской}
 
+Задача про среднюю оценку по математике в классе Если бы мы знали как
+устроена гетероскедастичность\ldots{}
 
-\item Вставка с чудо-доской
+\end{frame}
 
-Задача про среднюю оценку по математике в классе
-Если бы мы знали как устроена гетероскедастичность...
+\begin{frame}{Мораль}
 
+\begin{itemize}
+\item
+  Мы рассмотрели ситуацию нарушения предпосылки условной
+  гомоскедастичности
+\item
+  Почти всегда нарушена
+\item
+  Неприятность мелкая, мы используем робастные стандартные ошибки
+\end{itemize}
 
-\item Мораль
+\end{frame}
 
-* Мы рассмотрели ситуацию нарушения предпосылки условной гомоскедастичности
-
-* Почти всегда нарушена
- 
-* Неприятность мелкая, мы используем робастные стандартные ошибки
-
-
-
-
-
-
-
- 
-
- 
-
-
-
-
-\end{enumerate}
-
-
-
-
-
-} % скобка от хьюго
 \end{document}

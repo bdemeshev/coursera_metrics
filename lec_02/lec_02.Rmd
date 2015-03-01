@@ -1,10 +1,13 @@
 ---
-title: "Эконометрика. Лекция 2"
+title: "Статистические свойства оценок"
 lang: russian
+header-includes: 
+  - \author[Эконометрика. Лекция 2]{Эконометрика. Лекция 2}
 output:
   beamer_presentation:
     keep_tex: yes
-    theme: CambridgeUS
+    theme: Madrid
+    colortheme: whale
   ioslides_presentation: default
 ---
 

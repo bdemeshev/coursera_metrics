@@ -1,11 +1,14 @@
 ---
-title: "Эконометрика. Лекция 8. Модели временных рядов"
+title: "Временные ряды"
+lang: russian
+header-includes: 
+  - \author[Эконометрика. Лекция 8]{Эконометрика. Лекция 8}
 output:
   beamer_presentation:
     keep_tex: yes
-    theme: CambridgeUS
+    theme: Madrid
+    colortheme: whale
   ioslides_presentation: default
-lang: russian
 ---
 
 

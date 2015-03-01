@@ -1,10 +1,13 @@
 ---
-title: "Лекция 7. Максимально правдоподобно о логит и пробит-моделях"
+title: "Модели бинарного выбора"
+lang: russian
+header-includes: 
+  - \author[Эконометрика. Лекция 7]{Эконометрика. Лекция 7}
 output:
   beamer_presentation:
-    includes:
-      in_header: header.tex
     keep_tex: yes
+    theme: Madrid
+    colortheme: whale
   ioslides_presentation: default
 ---
 
