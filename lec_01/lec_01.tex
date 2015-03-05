@@ -66,6 +66,7 @@
 \setcounter{secnumdepth}{0}
 \usepackage[russian]{babel}
 \author[Эконометрика. Лекция 1]{Эконометрика. Лекция 1}
+\usepackage{tikz}
 
 \title{Метод наименьших квадратов}
 \date{}
@@ -352,9 +353,9 @@ Q=(0.6-\hat{\beta}_1-\hat{\beta}_2 6.68)^2+(3-\hat{\beta}_1-\hat{\beta}_2 6.68)^
 
 \end{frame}
 
-\begin{frame}{Графическая иллюстрация (чудо-доска)}
+\begin{frame}{Регрессия проходит через среднюю точку {[}у доски{]}}
 
-!показать, что регрессия проходит через среднюю точку
+\includegraphics{lec_01_files/figure-beamer/unnamed-chunk-4-1.png}
 
 \end{frame}
 
@@ -481,6 +482,20 @@ x \perp y  \Leftrightarrow  \sum_i x_i y_i=0
 
 Модель: \(y_i=\beta + \varepsilon_i\)
 
+Прогнозы: \(\hat{y}_i=\hat{\beta}=\bar{y}\)
+
+\begin{figure}
+\begin{tikzpicture}
+\draw [->, thick] (0,0) -- (1,2);
+\draw [->, thick] (0,0) -- (3,0);
+\draw [->, thick] (0,0) -- (1,0);
+\draw [dashed, thick] (1,2) -- (1,0);
+\node [below] at (1,0) {$\bar{y}\cdot\vec{1}$};
+\node [above] at (1,2) {$y$};
+\node [below] at (3,0) {$\vec{1}$};
+\end{tikzpicture}
+\end{figure}
+
 \end{frame}
 
 \begin{frame}{Геометрическая интерпретация условий первого порядка}
@@ -500,7 +515,9 @@ x \perp y  \Leftrightarrow  \sum_i x_i y_i=0
 
 \end{frame}
 
-\begin{frame}{Иллюстрация для множественной регрессии}
+\begin{frame}{Иллюстрация для множественной регрессии {[}у доски{]}}
+
+\includegraphics{3dvec-ols.pdf}
 
 \end{frame}
 
