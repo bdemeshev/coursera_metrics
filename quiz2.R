@@ -126,6 +126,16 @@ mean(a$extra)-mean(b$extra)
 c <- var(a$extra)-var(b$extra)
 round(c, digits = 2)
 
+mean(data$extra)^2
+mean(data$extra)^3
+mean(data$extra)^(1/2)
+max(data$extra)-min(data$extra)
+max(data$extra)+min(data$extra)
+max(data$extra)*min(data$extra)
+var(data$extra[1:10])
+var(data$extra[5:14])
+var(data$extra[10:20])
+
 data(mtcars)
 model <- lm(data=mtcars, mpg ~ disp + hp + wt + am)
 summary(model)
@@ -139,7 +149,48 @@ summary(model2)
 round(-7.62486/-1.85591, digits = 1)
 
 model1 <- lm(data=mtcars, mpg ~ disp + hp + wt + am)
-model2 <- lm(data=mtcars, mpg ~ hp + wt + am)
-model3 <- lm(data=mtcars, mpg ~ disp + wt + am)
-model4 <- lm(data=mtcars, mpg ~ wt + am)
+model2 <- lm(data=mtcars, mpg ~ cyl + hp + wt + am)
+model3 <- lm(data=mtcars, mpg ~ disp + cyl + wt + am)
+model4 <- lm(data=mtcars, mpg ~ disp + hp + cyl + am)
 mtable(model1, model2, model3, model4)
+
+model1 <- lm(data=mtcars, mpg ~ hp + wt + am)
+model2 <- lm(data=mtcars, mpg ~ cyl + hp + wt)
+model3 <- lm(data=mtcars, mpg ~ cyl + wt + am)
+model4 <- lm(data=mtcars, mpg ~ hp + cyl + am)
+mtable(model1, model2, model3, model4)
+
+
+model1 <- lm(data=mtcars, mpg ~ disp + hp + wt)
+model2 <- lm(data=mtcars, mpg ~ cyl + hp + wt)
+model3 <- lm(data=mtcars, mpg ~ disp + cyl + wt)
+model4 <- lm(data=mtcars, mpg ~ disp + cyl + hp)
+mtable(model1, model2, model3, model4)
+
+data(sleep)
+
+library(ggplot2)
+data(airquality)
+qplot(airquality, x=airquality$Ozone, y=airquality$Solar.R)
+
+model1 <- lm(data=airquality, Ozone ~ Solar.R + Wind + Temp)
+library(car)
+vif(model1)
+
+library(glmnet)
+d <- airquality
+d <- na.omit(d)
+y<-d$Ozone
+X<-model.matrix(data = d, Ozone ~ 0 + Wind + Solar.R + Temp)
+lambdas <- seq(50,0.1,length=30)
+m_l<-glmnet(X,y,alpha=1,lambda = lambdas)
+coef(m_l, s = 1)
+plot(m_l,xvar="dev")
+
+m_l<-glmnet(X,y,alpha=0,lambda = lambdas)
+coef(m_l, s = 2)
+round(,digits=3)
+
+p<-prcomp(X,scale=TRUE)
+p$x
+qplot(x=p$x[,1], y=p$x[,2])
