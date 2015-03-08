@@ -1,59 +1,70 @@
+# if you see KRAKOZYABRY then do 
+# "File" - "Reopen with encoding" - "UTF-8" - (Set as default) - OK
+
+
 # lab 2
-library("memisc")
-library("dplyr")
-library("psych")
-library("lmtest")
-library("sjPlot")
+
+# загружаем пакеты
+library("memisc") # две и более регрессий в одной табличке
+library("dplyr") # манипуляции с данными
+library("psych") # описательные статистики
+library("lmtest") # тестирование гипотез в линейных моделях
+library("sjPlot") # графики
 library("sgof")
-library("ggplot2")
-library("foreign")
+library("ggplot2") # графики
+library("foreign") # загрузка данных в разных форматах
 library("car")
-library("hexbin")
+library("hexbin") # графики
+library("rlms") # загрузка данных в формате rlms (spss)
 
 # генерируем случайные величины
 # Z_1, ...., Z_100 ~ N(5, 9)
 z <- rnorm(100, mean=5, sd=3)
-z[56]
-z[2:9]
+z[56] # z номер 56
+z[2:9] # вектор из z_2, ..., z_9
 
-qplot(z)
+qplot(z) # гистограмма
 
 # построим функцию плотности
 
-x <- seq(-10,15,by=0.5)
-y <- dnorm(x, mean=5, sd=3)
-qplot(x,y)
-qplot(x,y, geom="line")
+x <- seq(-10,15,by=0.5) # задаем последовательности чисел от -10 до 15 с шагом 0.5
+y <- dnorm(x, mean=5, sd=3) # считаем в этих точках значение плотности для N(5,3^2)
+qplot(x,y) # график точками
+qplot(x,y, geom="line") # график линией
 
-# P(Z<3)
-# P(Z<3)=F(3)
-
+# Найдем P(Z<3)
+# P(Z<3)=F(3). Данная вероятность --- это функция распределения
 pnorm(3, mean=5, sd=3)
 
-# P(Z \in [4;9])
-# P(Z<9)-P(Z<4)
+# Найдем P(Z \in [4;9])
+# P(Z<9)-P(Z<4). Данная вероятность --- разность функций распределения 
 pnorm(9, mean=5, sd=3) - pnorm(4, mean=5, sd=3)
 
-# P(Z<a)=0.7 a?
+# Найдем а, при котором P(Z<a)=0.7.
 qnorm(0.7, mean=5, sd=3)
 
-# chisq, t, f
-rchisq, dchisq, pchisq, qchisq
-rt, dt, pt, qt
+# аналогичные функции для других распределений: chisq, t, f
+# rchisq, dchisq, pchisq, qchisq
+# rt, dt, pt, qt
+# rf, df, pf, qf
 
 
 # множественная регрессия. проверка гипотез
 
-h <- swiss
-glimpse(h)
-help(swiss)
+h <- swiss # набор данных по кантонам Швейцарии (встроенный в R)
+glimpse(h) # бросим взгляд на данные
+help(swiss) 
 
+# оценим модель множественной регрессии
 model <- lm(data=h, Fertility~Catholic+Agriculture+Examination)
+# посмотрим результаты оценивания
 summary(model)
 
+# отдельно табличка с тестами
 coeftest(model)
-confint(model)
-sjp.lm(model)
+
+confint(model) # доверительные интервалы для коэффициентов
+sjp.lm(model) # графическое представление интервалов
 
 # проверка гипотезы b_Cath=b_Agri
 
