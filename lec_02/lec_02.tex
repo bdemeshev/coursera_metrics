@@ -1,5 +1,9 @@
 \documentclass[ignorenonframetext,]{beamer}
-\usetheme{CambridgeUS}
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{:}
+\setbeamercolor{caption name}{fg=normal text.fg}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
@@ -18,6 +22,7 @@
     \usepackage[utf8]{inputenc}
       \fi
 \fi
+% use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
@@ -44,6 +49,12 @@
 \newcommand{\RegionMarkerTok}[1]{{#1}}
 \newcommand{\ErrorTok}[1]{\textbf{{#1}}}
 \newcommand{\NormalTok}[1]{{#1}}
+\usepackage{longtable,booktabs}
+\usepackage{caption}
+% These lines are needed to make table captions work with longtable:
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
 
 % Comment these out if you don't want a slide with just the
 % part/section/subsection/subsubsection title:
@@ -68,8 +79,18 @@
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \setcounter{secnumdepth}{0}
 \usepackage[russian]{babel}
+\usepackage{etex}
+\author[Эконометрика. Лекция 2]{Эконометрика. Лекция 2}
+\newcommand{\e}{\varepsilon}
+\newcommand{\hy}{\hat{y}}
+\newcommand{\hb}{\hat{\beta}}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{snake it/.style={decorate, decoration=snake}}
 
-\title{Эконометрика. Лекция 2}
+\title{Статистические свойства оценок}
+\date{}
 
 \begin{document}
 \frame{\titlepage}
@@ -78,54 +99,50 @@
 
 \begin{itemize}
 \item
-  сформулируем стандартные предпосылки
+  стандартные предпосылки для модели линейной регрессии
 \item
-  строить доверительные интервалы для коэффициентов
+  доверительные интервалы для коэффициентов
 \item
-  проверять гипотезы о коэффициентах
+  гипотезы о коэффициентах
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Условное математическое ожидание}
 
-$r$ --- одна случайная величина
+\(r\) --- одна случайная величина
 
-$s$ --- одна случайная величина
+\(s\) --- одна случайная величина
 
-\end{frame}
-
-\begin{frame}{Условное математическое ожидание. Неформально}
-
-$E(s|r)$ --- это такая функция от случайной величины $r$, которая
-наиболее похожа на случайную величину $s$
+\(E(s|r)\) --- это такая функция от случайной величины \(r\), которая
+наиболее похожа на случайную величину \(s\)
 
 \end{frame}
 
 \begin{frame}{Условное математическое ожидание. Формально}
 
-$E(s|r)$ --- это случайная величина $\tilde{s}$:
+\(E(s|r)\) --- это случайная величина \(\tilde{s}\):
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  представимая в виде $\tilde{s}=f(r)$
+  представимая в виде \(\tilde{s}=f(r)\)
 \item
-  $E(\tilde{s})=E(s)$
+  \(E(\tilde{s})=E(s)\)
 \item
-  $Cov(s-\tilde{s},g(r))=0$ для любой $g(r)$.
+  \(Cov(s-\tilde{s},g(r))=0\) для любой \(g(r)\).
 \end{enumerate}
 
-Или: $Cov(s,g(r))=Cov(\tilde{s},g(r))$
+Или: \(Cov(s,g(r))=Cov(\tilde{s},g(r))\)
 
 \end{frame}
 
 \begin{frame}{На практике}
 
-Теорема: Если величина $r$ дискретна и принимает значения $a$, $b$ или
-$c$, то
+Теорема:
 
-\[
+Если величина \(r\) дискретна и принимает значения \(a\), \(b\) или
+\(c\), то \[
 E(s|r)=\begin{cases}
 E(s|r=a), \text{ если } r=a \\
 E(s|r=b), \text{ если } r=b \\
@@ -135,96 +152,135 @@ E(s|r=c), \text{ если } r=c
 
 \end{frame}
 
-\begin{frame}{Пример расчета чудо-доска}
+\begin{frame}{Задача {[}у доски{]}}
+
+\begin{longtable}[c]{@{}lll@{}}
+\toprule
+\(s,r\) & \(r=1\) & \(r=2\)\tabularnewline
+\midrule
+\endhead
+\(s=0\) & 0.25 & 0.2\tabularnewline
+\(s=10\) & 0.25 & 0.3\tabularnewline
+\bottomrule
+\end{longtable}
+
+Найдите: \(E(s|r)\), \(E(s^2|r)\)
 
 \end{frame}
 
 \begin{frame}{Если величины непрерывны и есть совместная функция
 плотности}
 
-Теорема: Если пара величин $x$, $y$ имеет функцию плотности $f(r,s)$, то
-\[
+Теорема:
+
+Если пара величин \(x\), \(y\) имеет функцию плотности \(f(r,s)\), то \[
 E(s|r)=\int_{-\infty}^{\infty} s \cdot f(s|r) dx
 \]
 
-где $f(s|r)=f(r,s)/f(r)$ --- условная функция плотности
+где \(f(s|r)=f(r,s)/f(r)\) --- условная функция плотности
 
 \end{frame}
 
 \begin{frame}{Свойства условного ожидания}
 
-Пусть $a$, $b$ --- константы, $s$, $r$ --- случайные величины.
+Пусть \(a\), \(b\) --- константы, \(s\), \(r\) --- случайные величины.
 
-Идея: свойства $E(s|r)$ аналогичны свойствам $E(s)$, если считать $r$ и
-любую функцию $h(r)$ константой.
+Идея: свойства \(E(s|r)\) аналогичны свойствам \(E(s)\), если считать
+\(r\) и любую функцию \(h(r)\) константой.
 
 \end{frame}
 
-\begin{frame}{Список свойств}
+\begin{frame}{Свойства условного ожидания}
 
 \begin{itemize}
 \item
-  $E(E(s|r))=E(s)$
+  \(E(E(s|r))=E(s)\)
 \item
-  $E(as+b|r)=aE(s|r)+b$
+  \(E(as+b|r)=aE(s|r)+b\)
 \item
-  $E(h(r)|r)=h(r)$
+  \(E(h(r)|r)=h(r)\)
 \item
-  $E(h(r)s|r)=h(r)E(s|r)$
+  \(E(h(r)s|r)=h(r)E(s|r)\)
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Условная дисперсия и ковариация}
 
-Обычная дисперсия: $Var(s)=E(s^2)-(E(s))^2$
+Обычная дисперсия: \(Var(s)=E(s^2)-(E(s))^2\)
 
-Условная дисперсия. $Var(s|r)=E(s^2|r)-(E(s|r))^2$
+Условная дисперсия. \(Var(s|r)=E(s^2|r)-(E(s|r))^2\)
 
-Обычная ковариация: $Cov(s_1,s_2)=E(s_1 s_2)-E(s_1)E(s_2)$
+Обычная ковариация: \(Cov(s_1,s_2)=E(s_1 s_2)-E(s_1)E(s_2)\)
 
-Условная ковариация: $Cov(s_1,s_2|r)=E(s_1 s_2|r)-E(s_1|r)E(s_2|r)$
+Условная ковариация: \(Cov(s_1,s_2|r)=E(s_1 s_2|r)-E(s_1|r)E(s_2|r)\)
 
 \end{frame}
 
-\begin{frame}{чудо-доска. пример расчета условной дисперсии}
+\begin{frame}{Задача {[}у доски{]}}
+
+\begin{longtable}[c]{@{}lll@{}}
+\toprule
+\(s,r\) & \(r=1\) & \(r=2\)\tabularnewline
+\midrule
+\endhead
+\(s=0\) & 0.25 & 0.2\tabularnewline
+\(s=10\) & 0.25 & 0.3\tabularnewline
+\bottomrule
+\end{longtable}
+
+Найдите: \(Var(s|r)\)
 
 \end{frame}
 
 \begin{frame}{Свойства условной дисперсии}
 
-Пусть $a$, $b$ --- константы, $s$, $r$ --- случайные величины.
+Пусть \(a\), \(b\) --- константы, \(s\), \(r\) --- случайные величины.
 
-Идея: свойства $Var(s|r)$ аналогичны свойствам $Var(s)$, если считать
-$r$ и любую функцию $h(r)$ константой.
-
-\end{frame}
-
-\begin{frame}{Свойства}
-
-$Var(as+b|r)=a^2Var(s|r)$
-
-$Var(s+h(r)|r)=Var(s|r)$
-
-$Var(h(r)s|r)=h^2(r)Var(s|r)$
-
-$Var(s)=Var(E(s|r))+E(Var(s|r))$
+Идея: свойства \(Var(s|r)\) аналогичны свойствам \(Var(s)\), если
+считать \(r\) и любую функцию \(h(r)\) константой.
 
 \end{frame}
 
-\begin{frame}{Геометрическая интерпретация. Чудо-доска.}
+\begin{frame}{Свойства условной дисперсии}
+
+\(Var(as+b|r)=a^2Var(s|r)\)
+
+\(Var(s+h(r)|r)=Var(s|r)\)
+
+\(Var(h(r)s|r)=h^2(r)Var(s|r)\)
+
+\(Var(s)=Var(E(s|r))+E(Var(s|r))\)
+
+\end{frame}
+
+\begin{frame}{Геометрическая интерпретация {[}у доски{]}}
+
+\begin{figure}
+\begin{tikzpicture}
+\draw [->, thick] (0,0) -- (3,3);
+\draw [->, thick] (0,0) -- (3,0);
+\draw [blue] (0,0) -- (5,2);
+\draw [blue] (0,0) -- (4,-1.5);
+\draw [draw=blue,snake it] (4,-1.5) -- (5,2);
+\draw [dashed, thick] (3,3) -- (3,0);
+\node [above] at (2.8,2.8) {$s$};
+\node [below] at (3,0) {$E(s|r)$};
+\node [above] at (4,0.8) {$\{f(r)\}$};
+\end{tikzpicture}
+\end{figure}
 
 \end{frame}
 
 \begin{frame}{Мораль геометрической интерпретации:}
 
-Если считать, что $Cov(r,s)$ --- скалярное произведение, то
+Если считать, что \(Cov(r,s)\) --- скалярное произведение, то
 
 \begin{itemize}
 \item
-  квадрат длины случайной величины $r$, $Var(r)$
+  квадрат длины случайной величины \(r\) --- дисперсия, \(Var(r)\)
 \item
-  косинус угла между случайными величинами, $Corr(s,r)$
+  косинус угла между случайными величинами --- корреляция, \(Corr(s,r)\)
 \end{itemize}
 
 Верны ``школьные'' теоремы: теорема Пифагора, Фалеса, etc
@@ -235,19 +291,20 @@ $Var(s)=Var(E(s|r))+E(Var(s|r))$
 
 \begin{itemize}
 \item
-  $E(\varepsilon_i |X)=0$
+  \(E(\varepsilon_i |X)=0\)
 \item
-  $E(\varepsilon_i^2|X)=\sigma^2$ или $Var(\varepsilon_i|X)=\sigma^2$
+  \(E(\varepsilon_i^2|X)=\sigma^2\) или
+  \(Var(\varepsilon_i|X)=\sigma^2\)
 \item
-  $E(\varepsilon_i \varepsilon_j|X)=0$ или
-  $Cov(\varepsilon_i,\varepsilon_j|X)=0$
+  \(E(\varepsilon_i \varepsilon_j|X)=0\) или
+  \(Cov(\varepsilon_i,\varepsilon_j|X)=0\)
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{ковариационная матриц}
+\begin{frame}{Ковариационная матрица}
 
-Ковариационная матрица вектора $\varepsilon$:
+Ковариационная матрица вектора \(\varepsilon\):
 
 \[
 Var(\varepsilon)=\begin{pmatrix}
@@ -260,7 +317,7 @@ Cov(\varepsilon_3,\varepsilon_1) & Cov(\varepsilon_3,\varepsilon_2) & Var(\varep
 
 \end{frame}
 
-\begin{frame}{запись предпосылок с помощью ковариационной матрицы}
+\begin{frame}{Запись предпосылок с помощью ковариационной матрицы}
 
 \[
 Var(\varepsilon|X) = \begin{pmatrix}
@@ -286,31 +343,29 @@ Var(\varepsilon|X) = \begin{pmatrix}
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  $Var(\varepsilon|X)=\sigma^2 \cdot I_{n\times n}$
+  \(Var(\varepsilon|X)=\sigma^2 \cdot I_{n\times n}\)
 \item
-  $Var(\varepsilon_i|X)=\sigma^2$
+  \(Var(\varepsilon_i|X)=\sigma^2\)
 \item
-  $Cov(\varepsilon_i,\varepsilon_j|X)=0$
+  \(Cov(\varepsilon_i,\varepsilon_j|X)=0\)
 \item
-  $y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i +\varepsilon_i$
+  \(y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i +\varepsilon_i\)
 \end{itemize}
 
-Позволяют посчитать $Var(\hat{\beta}_j)$,
-$Cov(\hat{\beta}_j,\hat{\beta}_l)$
+Позволяют посчитать \(Var(\hat{\beta}_j|X)\),
+\(Cov(\hat{\beta}_j,\hat{\beta}_l|X)\)
 
 \end{frame}
 
-\begin{frame}{Пример вычислений в парной регрессии (в регрессии на
-константу)}
+\begin{frame}{Пример вычислений в парной регрессии {[}у доски{]}}
 
-чудо-доска.
+В модели \(y_i=\beta_1 + \beta_2 x_i + \varepsilon_i\)
 
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  Найдите $Var(\hat{\beta}_2|X)$, $Cov(\hat{\beta}_1,\hat{\beta}_2 |X)$,
-  $Var(\hat{\beta}_1|X)$
-\end{itemize}
+Предположим, что: \(Var(\varepsilon_i|X)=\sigma^2\),
+\(Cov(\varepsilon_i, \e_j|X)=0\)
+
+Найдите \(Var(\hat{\beta}_2|X)\),
+\(Cov(\hat{\beta}_1,\hat{\beta}_2 |X)\), \(Var(\hat{\beta}_1|X)\)
 
 \end{frame}
 
@@ -318,11 +373,11 @@ $Cov(\hat{\beta}_j,\hat{\beta}_l)$
 
 \begin{itemize}
 \item
-  $Var(\hat{\beta}_2|X)=\frac{\sigma^2}{\sum (x_i-\bar{x})^2}$
+  \(Var(\hat{\beta}_2|X)=\frac{\sigma^2}{\sum (x_i-\bar{x})^2}\)
 \item
-  $Cov(\hat{\beta}_1,\hat{\beta}_2 |X)=\frac{-\bar{x}\sigma^2}{\sum (x_i-\bar{x})^2}$
+  \(Cov(\hat{\beta}_1,\hat{\beta}_2 |X)=\frac{-\bar{x}\sigma^2}{\sum (x_i-\bar{x})^2}\)
 \item
-  $Var(\hat{\beta}_1|X)=\frac{\sigma^2 \sum x_i^2}{n\sum (x_i-\bar{x})^2}$
+  \(Var(\hat{\beta}_1|X)=\frac{\sigma^2 \sum x_i^2}{n\sum (x_i-\bar{x})^2}\)
 \end{itemize}
 
 \end{frame}
@@ -334,7 +389,9 @@ $Cov(\hat{\beta}_j,\hat{\beta}_l)$
   Зачем придумали эту условную дисперсию, если все свойства аналогичны
   обычной дисперсии?
 \item
-  А вот как раз и придумали, чтобы аналогичны всё было :)
+  А вот как раз и придумали, чтобы всё аналогично просто считалось!
+  Настоящая безусловная дисперсия оценок коэффициентов --- гораздо
+  сложнее, чем условная.
 \end{itemize}
 
 \end{frame}
@@ -343,71 +400,94 @@ $Cov(\hat{\beta}_j,\hat{\beta}_l)$
 
 \[
 Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
-\] $RSS_j$ --- сумма квадратов остатков в регрессии $j$-ой объясняющей
-переменной на остальные объясняющие переменные
+\] \(RSS_j\) --- сумма квадратов остатков в регрессии \(j\)-ой
+объясняющей переменной на остальные объясняющие переменные (включая
+константу)
 
 \end{frame}
 
-\begin{frame}{ЛИНАЛ: прелюдия к доказательству}
+\begin{frame}{ЛИНАЛ. Ковариационная матрица оценок коэффициентов}
 
-ЛИНАЛ: $Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}$
+Средствами линейной алгебры можно доказать, что:
 
-Свойство: $Var(Ay)=AVar(y)A'$
+\(Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}\)
 
-Напомним, что $(AB)'=B'A'$ и $(A^{-1})'=(A')^{-1}$ поэтому:
+\end{frame}
+
+\begin{frame}{ЛИНАЛ. Предварительная информация к доказательству:}
+
+Свойство: \(Var(Ay)=A\cdot Var(y) \cdot A'\)
+
+Это матричный аналог свойства \(Var(a\cdot y_1)=a^2\cdot Var(y_1)\).
+
+Напомним, что \((AB)'=B'A'\) и \((A^{-1})'=(A')^{-1}\)
+
+Поэтому:
 
 \begin{itemize}
 \item
-  $(X'X)'=X'X''=X'X$
+  \((X'X)'=X'X''=X'X\)
 \item
-  $((X'X)^{-1})'=(X'X)^{-1}$
+  \(((X'X)^{-1})'=(X'X)^{-1}\)
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{ЛИНАЛ: чудо-доска}
+\begin{frame}{ЛИНАЛ. доказательство формулы {[}у доски{]}}
 
 Если оценки МНК существуют и единственны,
-$Var(\varepsilon|X)=\sigma^2 I_{n\times n}$
+\(Var(\varepsilon|X)=\sigma^2 I_{n\times n}\)
 
-то $Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}$
+то ковариационная матрица равна:
 
-Доказательство
+\(Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}\)
 
 \end{frame}
 
-\begin{frame}{Как оценить $\sigma^2$?}
+\begin{frame}{Как оценить \(\sigma^2\)?}
 
-Константа $\sigma^2$ неизвестна.
+Константа \(\sigma^2\) неизвестна.
 
-Случайная величина $\hat{\sigma}^2=\frac{RSS}{n-k}$ --- замечательная
-оценка для $\sigma^2$.
+Случайная величина \(\hat{\sigma}^2=\frac{RSS}{n-k}\) --- замечательная
+оценка для \(\sigma^2\).
+
+Замечательная в смыслах:
+
+\begin{itemize}
+\item
+  \(E(\hat{\sigma}^2)=\sigma^2\), в среднем оценивает верно
+\item
+  \(\hat{\sigma}^2 \to \sigma^2\) по вероятности с ростом \(n\)
+\end{itemize}
 
 \end{frame}
 
 \begin{frame}{Оценка ковариационной матрицы}
 
+Идея: заменим во всех формулах \(\sigma^2\) на \(\hat{\sigma}^2\):
+
 \begin{itemize}
 \item
-  $Var(\hat{\beta}_j | X)=\sigma^2 \cdot f(X)$
+  Истинная дисперсия: \(Var(\hat{\beta}_j | X)=\sigma^2 \cdot f(X)\)
 \item
-  $\widehat{Var}(\hat{\beta}_j | X)=\hat{\sigma}^2 \cdot f(X)$
+  Оценка дисперсии:
+  \(\widehat{Var}(\hat{\beta}_j | X)=\hat{\sigma}^2 \cdot f(X)\)
 \end{itemize}
 
-а именно: $\widehat{Var}(\hat{\beta}_j| X)=\hat{\sigma}^2/RSS_j$
+а именно: \(\widehat{Var}(\hat{\beta}_j| X)=\hat{\sigma}^2/RSS_j\)
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  $se(\hat{\beta}_j)=\sqrt{(\hat{\beta}_j | X)}$
+  \(se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j | X)}\)
 \end{itemize}
 
-Например, в модели $y_i=\beta_1 + \beta_2 x_i + \varepsilon_i$:
-$se(\hat{\beta}_2)=\sqrt{\frac{\hat{\sigma}^2}{\sum (x_i-\bar{x})^2}}$
+Например, в модели \(y_i=\beta_1 + \beta_2 x_i + \varepsilon_i\):
+\(se(\hat{\beta}_2)=\sqrt{\frac{\hat{\sigma}^2}{\sum (x_i-\bar{x})^2}}\)
 
 \end{frame}
 
-\begin{frame}{оценка ковариационной матрицы}
+\begin{frame}{Оценка ковариационной матрицы}
 
 \[
 \widehat{Var}(\hat{\beta}|X)=\begin{pmatrix}
@@ -421,14 +501,14 @@ $se(\hat{\beta}_2)=\sqrt{\frac{\hat{\sigma}^2}{\sum (x_i-\bar{x})^2}}$
 \begin{itemize}
 \item
   ЛИНАЛ:
-  $\widehat{Var}(\hat{\beta} | X)=\hat{\sigma}^2 \cdot (X'X)^{-1}$
+  \(\widehat{Var}(\hat{\beta} | X)=\hat{\sigma}^2 \cdot (X'X)^{-1}\)
 \item
   В R: \texttt{vcov(model)}
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{БСХС - Большой Список Хороших Свойств}
+\begin{frame}{БСХС --- Большой Список Хороших Свойств}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -437,7 +517,7 @@ $se(\hat{\beta}_2)=\sqrt{\frac{\hat{\sigma}^2}{\sum (x_i-\bar{x})^2}}$
 \end{itemize}
 
 верны даже на малых выборках без предположения о нормальности
-$\varepsilon_i$
+\(\varepsilon_i\)
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -446,7 +526,7 @@ $\varepsilon_i$
 \end{itemize}
 
 верны на больших выборках даже без предположения о нормальности
-$\varepsilon_i$
+\(\varepsilon_i\)
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -454,11 +534,11 @@ $\varepsilon_i$
   При нормальности:
 \end{itemize}
 
-верны при нормальности $\varepsilon_i$ даже на малых выборках
+верны при нормальности \(\varepsilon_i\) даже на малых выборках
 
 \end{frame}
 
-\begin{frame}{БСХС --- предпосылки}
+\begin{frame}{БСХС --- предположение о связи \(y\) и регрессоров}
 
 Если:
 
@@ -467,13 +547,13 @@ $\varepsilon_i$
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Истинная зависимость имеет вид
-  $y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i+\varepsilon_i$
+  \(y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i+\varepsilon_i\)
 \end{enumerate}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  В матричном виде: $y=X\beta + \varepsilon$
+  В матричном виде: \(y=X\beta + \varepsilon\)
 \end{itemize}
 
 \begin{enumerate}
@@ -481,13 +561,14 @@ $\varepsilon_i$
 \setcounter{enumi}{1}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  С помощью МНК оценивается регрессия $y$ на константу, $x_i$, $z_i$
+  С помощью МНК оценивается регрессия \(y\) на константу, \(x_i\),
+  \(z_i\)
 \end{enumerate}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  В матричном виде: $\hat{\beta}=(X'X)^{-1}X'y$
+  В матричном виде: \(\hat{\beta}=(X'X)^{-1}X'y\)
 \end{itemize}
 
 \begin{enumerate}
@@ -495,25 +576,28 @@ $\varepsilon_i$
 \setcounter{enumi}{2}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Наблюдений больше, чем оцениваемых коэффициентов $\beta$: $n>k$
+  Наблюдений больше, чем оцениваемых коэффициентов \(\beta\): \(n>k\)
 \end{enumerate}
 
 \end{frame}
 
-\begin{frame}{БСХС --- предположения на $\varepsilon_i$:}
+\begin{frame}{БСХС --- предположения на \(\varepsilon_i\):}
+
+Если:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{3}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Строгая экзогенность: $E(\varepsilon_i | \text{ все регрессоры } )=0$
+  Строгая экзогенность:
+  \(E(\varepsilon_i | \text{ все регрессоры } )=0\)
 \end{enumerate}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  В матричном виде: $E(\varepsilon_i | X)=0$
+  В матричном виде: \(E(\varepsilon_i | X)=0\)
 \end{itemize}
 
 \begin{enumerate}
@@ -522,13 +606,13 @@ $\varepsilon_i$
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Условная гомоскедастичность:
-  $E(\varepsilon_i^2 | \text{ все регрессоры })=\sigma^2$
+  \(E(\varepsilon_i^2 | \text{ все регрессоры })=\sigma^2\)
 \end{enumerate}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  В матричном виде: $E(\varepsilon_i^2 | X)=\sigma^2$
+  В матричном виде: \(E(\varepsilon_i^2 | X)=\sigma^2\)
 \end{itemize}
 
 \begin{enumerate}
@@ -536,19 +620,21 @@ $\varepsilon_i$
 \setcounter{enumi}{5}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  $Cov(\varepsilon_i,\varepsilon_j | X)=0$ при $i \neq j$
+  \(Cov(\varepsilon_i,\varepsilon_j | X)=0\) при \(i \neq j\)
 \end{enumerate}
 
 \end{frame}
 
-\begin{frame}{БСХС --- предпосылки на регрессоры}
+\begin{frame}{БСХС --- предположения на регрессоры}
+
+Если:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{6}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  векторы отдельных наблюдений $(x_i,z_i,y_i)$ --- независимы и
+  векторы отдельных наблюдений \((x_i,z_i,y_i)\) --- независимы и
   одинаково распределены
 \item
   с вероятностью 1 среди регрессоров нет линейно зависимых
@@ -557,26 +643,30 @@ $\varepsilon_i$
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Синонимы в матричном виде: $rank(X)=k$ или $det(X'X)\neq 0$ или
-  $(X'X)^{-1}$ существует
+  Синонимы в матричном виде: \(rank(X)=k\) или \(det(X'X)\neq 0\) или
+  \((X'X)^{-1}\) существует
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{БСХС --- базовые свойства (т. Гаусса-Маркова)}
+
+То:
 
 \begin{itemize}
 \item
-  Оценки $\hat{\beta}_j$ линейны по $y_i$:
-  $\hat{\beta_j}=c_1 y_1 + \ldots + c_n y_n$
+  Оценки \(\hat{\beta}_j\) линейны по \(y_i\):
+  \(\hat{\beta_j}=c_1 y_1 + \ldots + c_n y_n\)
 \item
-  Оценки несмещены: $E(\hat{\beta}_j |X )=\beta_j$, и в частности
-  $E(\hat{\beta}_j)=\beta_j$
+  Оценки несмещены: \(E(\hat{\beta}_j |X )=\beta_j\), и в частности
+  \(E(\hat{\beta}_j)=\beta_j\)
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{БСХС --- базовые свойства (т. Гаусса-Маркова)}
+
+То:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -584,66 +674,71 @@ $\varepsilon_i$
   Оценки эффективны среди линейных и несмещенных
 \end{itemize}
 
-Для любой линейной по $y_i$ и несмещенной альтернативной оценки
-$\hat{\beta}^{alt}$:
+Для любой линейной по \(y_i\) и несмещенной альтернативной оценки
+\(\hat{\beta}^{alt}\):
 
-$Var(\hat{\beta}_j^{alt} | X)\geq Var(\hat{\beta}_j | X)$ и
-$Var(\hat{\beta}_j^{alt} )\geq Var(\hat{\beta}_j )$
+\(Var(\hat{\beta}_j^{alt} | X)\geq Var(\hat{\beta}_j | X)\) и
+\(Var(\hat{\beta}_j^{alt} )\geq Var(\hat{\beta}_j )\)
 
 \end{frame}
 
 \begin{frame}{БСХС --- базовые свойства}
 
+То:
+
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Ковариационная матрица: $Var(\hat{\beta} | X )=\sigma^2 (X'X)^{-1}$
+  Ковариационная матрица: \(Var(\hat{\beta} | X )=\sigma^2 (X'X)^{-1}\)
 \end{itemize}
 
-Диспрерсии: $Var(\hat{\beta}_j| X)=\sigma^2/RSS_j$
+Диспрерсии: \(Var(\hat{\beta}_j| X)=\sigma^2/RSS_j\)
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  $Cov(\hat{\beta}_j,\hat{\varepsilon}_i | X)=0$
+  \(Cov(\hat{\beta}_j,\hat{\varepsilon}_i | X)=0\)
 \item
-  $E(\hat{\sigma}^2 |X ) = \sigma^2$, и $E(\hat{\sigma}^2 ) = \sigma^2$
+  \(E(\hat{\sigma}^2 |X ) = \sigma^2\), и
+  \(E(\hat{\sigma}^2 ) = \sigma^2\)
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{БСХС --- асимптотические свойства}
 
-При $n\to \infty$:
+То при \(n\to \infty\):
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  $\hat{\beta}_j \to \beta_j$ по вероятности
+  \(\hat{\beta}_j \to \beta_j\) по вероятности
 \item
-  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$ по
+  \(\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)\) по
   распределению
 \item
-  $\hat{\sigma}^2 \to \sigma^2$ по вероятности
+  \(\hat{\sigma}^2 \to \sigma^2\) по вероятности
 \end{itemize}
 
-$\hat{\sigma}^2=\frac{RSS}{n-k}$
+\(\hat{\sigma}^2=\frac{RSS}{n-k}\)
 
 \end{frame}
 
 \begin{frame}{БСХС --- при нормальности}
 
-Если дополнительно известно, что $\varepsilon_i \sim N(0, \sigma^2)$:
+Если дополнительно известно, что \(\varepsilon_i \sim N(0, \sigma^2)\),
+то:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Оценки эффективны среди несмещенных
 \item
-  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}|X \sim t_{n-k}$,
-  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}\sim t_{n-k}$
+  \(\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}|X \sim t_{n-k}\),
+  \(\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}\sim t_{n-k}\)
 \item
-  $RSS/\sigma^2 |X \sim \chi^2_{n-k}$, $RSS/\sigma^2 \sim \chi^2_{n-k}$
+  \(RSS/\sigma^2 |X \sim \chi^2_{n-k}\),
+  \(RSS/\sigma^2 \sim \chi^2_{n-k}\)
 \end{itemize}
 
 \end{frame}
@@ -655,15 +750,15 @@ $\hat{\sigma}^2=\frac{RSS}{n-k}$
 \begin{itemize}
 \item
   Асимптотически:
-  $t=\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$
+  \(t=\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)\)
 \item
   При нормальности:
-  $t=\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \sim t_{n-k}$
+  \(t=\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \sim t_{n-k}\)
 \end{itemize}
 
 Примерный 95\%-ый интервал:
 
-$[\hat{\beta}_j-2se(\hat{\beta}_j);\hat{\beta}_j+2se(\hat{\beta}_j) ]$
+\([\hat{\beta}_j-2se(\hat{\beta}_j);\hat{\beta}_j+2se(\hat{\beta}_j) ]\)
 
 \end{frame}
 
@@ -672,50 +767,61 @@ $[\hat{\beta}_j-2se(\hat{\beta}_j);\hat{\beta}_j+2se(\hat{\beta}_j) ]$
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  предпосылки теста (например, асимптотический или точный)
+  предпосылки теста
+\end{itemize}
+
+например: асимптотический или требующий нормальности ошибок \(\e_i\)
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
 \item
-  проверяемая $H_0$ против $H_a$
+  проверяемая \(H_0\) против \(H_a\)
 \item
   формула для вычисления статистики
 \item
-  закон распределения статистики при верной $H_0$
+  закон распределения статистики при верной \(H_0\)
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Последовательность действий}
+\begin{frame}{Практическая последовательность действий}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  выбираем уровень значимости $\alpha$,
-  $\alpha=P(H_0 \text{ отвергнута }| H_0 \text{ верна })$
+  выбираем уровень значимости \(\alpha\),
+  \(\alpha=P(H_0 \text{ отвергнута }| H_0 \text{ верна })\)
 \item
-  находим наблюдаемое значение некоторой статистики
+  находим наблюдаемое значение статистики \(S_{obs}\)
 \item
-  находим критическое значение статистики (можно посчитать P-значение)
+  находим критическое значение статистики \(S_{cr}\)
 \item
-  сравниваем критическое и наблюдаемое (можно сравнить P-значение и
-  $\alpha$)
+  сравниваем критическое и наблюдаемое \(S_{obs}\) и \(S_{cr}\)
+\end{enumerate}
+
+(можно сравнить P-значение и уровень значимости \(\alpha\))
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\itemsep1pt\parskip0pt\parsep0pt
 \item
-  вывод: ``$H_0$ отвергается'' или ``$H_0$ не отвергается''
+  вывод: ``\(H_0\) отвергается'' или ``\(H_0\) не отвергается''
 \end{enumerate}
 
 \end{frame}
 
-\begin{frame}[fragile]{Чудо-доска}
+\begin{frame}[fragile]{Проверка гипотез и построение доверительных
+интервалов {[}у доски{]}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(model)}
+            \NormalTok{Estimate Std. Error t value }\KeywordTok{Pr}\NormalTok{(>}\ErrorTok{|}\NormalTok{t|)  }
 \NormalTok{(Intercept) }\FloatTok{59.86392}    \FloatTok{3.98754}  \FloatTok{15.013}   \NormalTok{<}\FloatTok{2e-16} \NormalTok{**}\ErrorTok{*}
 \NormalTok{Agriculture  }\FloatTok{0.10953}    \FloatTok{0.07848}   \FloatTok{1.396}   \FloatTok{0.1698}    
 \NormalTok{Catholic     }\FloatTok{0.11496}    \FloatTok{0.04274}   \FloatTok{2.690}   \FloatTok{0.0101} \NormalTok{*}\StringTok{ }
-
-\StringTok{             }\NormalTok{(Intercept)  Agriculture     Catholic}
-\NormalTok{(Intercept) }\FloatTok{15.900471817} \NormalTok{-}\FloatTok{0.256680712} \NormalTok{-}\FloatTok{0.006998292}
-\NormalTok{Agriculture -}\FloatTok{0.256680712}  \FloatTok{0.006159437} \NormalTok{-}\FloatTok{0.001345371}
-\NormalTok{Catholic    -}\FloatTok{0.006998292} \NormalTok{-}\FloatTok{0.001345371}  \FloatTok{0.001826622}
 
 \NormalTok{Residual standard error:}\StringTok{ }\FloatTok{11.07}
 \end{Highlighting}
@@ -724,40 +830,52 @@ $[\hat{\beta}_j-2se(\hat{\beta}_j);\hat{\beta}_j+2se(\hat{\beta}_j) ]$
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  проверьте гипотезу
+  проверьте гипотезу \(\beta_a=0\)
 \item
-  постройте доверительный интервал
+  постройте доверительный интервал для \(\beta_a\)
 \item
-  постройте доверительный интервал для сигма
+  постройте доверительный интервал для \(\sigma^2\)
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{стандартные ошибки часто выписывают под коэффициентами}
 
-$\widehat{Fertility}_i=\underset{(3.98)}{59.8} + \underset{(0.078)}{0.109} Agriculture_i + \underset{(0.042)}{0.115} Catholic_i$
+\(\widehat{Fertility}_i=\underset{(3.98)}{59.8} + \underset{(0.078)}{0.109} Agriculture_i + \underset{(0.042)}{0.115} Catholic_i\)
 
 \end{frame}
 
-\begin{frame}[fragile]{стандартная табличка в любом пакете + чудо-доска}
+\begin{frame}[fragile]{Стандартная табличка в любом статистическом
+пакете {[}у доски{]}}
 
-Вывели на экран, рядом рассказали на примере одного коэффициента с
-графиком!
-
-\begin{verbatim}
-        Estimate Std. Error t value Pr(>|t|)   
-        
-\end{verbatim}
-
-(Intercept) 59.86392 3.98754 15.013 \textless{}2e-16 ***
-
-Agriculture 0.10953 0.07848 1.396 0.1698
-
-Catholic 0.11496 0.04274 2.690 0.0101 *
+\begin{Shaded}
+\begin{Highlighting}[]
+            \NormalTok{Estimate Std. Error t value }\KeywordTok{Pr}\NormalTok{(>}\ErrorTok{|}\NormalTok{t|)   }
+            
+\NormalTok{(Intercept) }\FloatTok{59.86392}    \FloatTok{3.98754}  \FloatTok{15.013}   \NormalTok{<}\FloatTok{2e-16} \NormalTok{**}\ErrorTok{*}
+\NormalTok{Agriculture  }\FloatTok{0.10953}    \FloatTok{0.07848}   \FloatTok{1.396}   \FloatTok{0.1698}    
+\NormalTok{Catholic     }\FloatTok{0.11496}    \FloatTok{0.04274}   \FloatTok{2.690}   \FloatTok{0.0101} \NormalTok{*}\StringTok{ }
+\end{Highlighting}
+\end{Shaded}
 
 \end{frame}
 
-\begin{frame}{Плохое название}
+\begin{frame}{Особые моменты при проверки гипотез}
+
+\begin{itemize}
+\item
+  Плохое устоявшееся название гипотез
+\item
+  Смысл формулировки ``\(H_0\) не отвергается''
+\item
+  Значимость и существенность --- разные вещи
+\item
+  Проблема множественных сравнений
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Плохое устоявшееся название}
 
 Проверка значимости --- на самом деле проверка незначимости:
 
@@ -765,21 +883,21 @@ Catholic 0.11496 0.04274 2.690 0.0101 *
 \item
   ``Мы проверили значимость коэффициента при доходе''
 \item
-  Мы проверили $H_0: \beta_{inc}=0$.
+  Мы проверили \(H_0: \beta_{inc}=0\).
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{H0 не отвергается}
+\begin{frame}{Смысл ``\(H_0\) не отвергается''}
 
 \begin{itemize}
 \item
-  недостаточно данных чтобы отвергнуть H0
+  недостаточно данных чтобы отвергнуть \(H_0\)
 \item
-  имеющиеся данные не противоречат H0
+  имеющиеся данные не противоречат \(H_0\)
 \end{itemize}
 
-(много еще чему не противоречат)
+Вполне возможно, что данные не противоречат \(H_a\) (!)
 
 \end{frame}
 
@@ -791,13 +909,18 @@ Catholic 0.11496 0.04274 2.690 0.0101 *
   Коэффициент может быть значимым и совершенно несущественным
 \end{itemize}
 
-На огромных выборках --- все коэффиценты значимы
+На огромных выборках как правило все коэффиценты значимы
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Коэффициент может быть существенным но не значимым
+  Коэффициент может быть существенным, но незначимым
 \end{itemize}
+
+Значимость --- статистическое отвержение гипотезы о точном равенстве
+
+Существенность --- насколько данное отличие от нуля важно в прикладном
+смысле
 
 \end{frame}
 
@@ -813,9 +936,9 @@ Catholic 0.11496 0.04274 2.690 0.0101 *
   стандартизировать переменные:
 \end{itemize}
 
-$y^{st}_i:= \frac{y_i-\bar{y}}{sd(y)}$,
-$x^{st}_i:= \frac{x_i-\bar{x}}{sd(x)}$,
-$z^{st}_i:= \frac{z_i-\bar{z}}{sd(z)}$
+\(y^{st}_i:= \frac{y_i-\bar{y}}{sd(y)}\),
+\(x^{st}_i:= \frac{x_i-\bar{x}}{sd(x)}\),
+\(z^{st}_i:= \frac{z_i-\bar{z}}{sd(z)}\)
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -823,7 +946,7 @@ $z^{st}_i:= \frac{z_i-\bar{z}}{sd(z)}$
   переоценить модель:
 \end{itemize}
 
-$y^{st}_i=\beta_1^{st}+\beta_2^{st}x_i^{st}+\beta_3^{st}z_i^{st}+\varepsilon_i^{st}$
+\(y^{st}_i=\beta_1^{st}+\beta_2^{st}x_i^{st}+\beta_3^{st}z_i^{st}+\varepsilon_i^{st}\)
 
 \end{frame}
 
@@ -831,52 +954,65 @@ $y^{st}_i=\beta_1^{st}+\beta_2^{st}x_i^{st}+\beta_3^{st}z_i^{st}+\varepsilon_i^{
 
 \begin{itemize}
 \item
-  Исследователь хочет проверить гипотезу о том, что $\beta_{42}=0$. Ok.
+  Исследователь хочет проверить гипотезу о том, что \(\beta_{42}=0\).
+  Ok.
 \item
-  Исследователь хочет выяснить какие регрессоры из 100 значимы. Нужна
-  поправка.
+  Исследователь хочет выяснить какие регрессоры из 100 значимы. Плохой
+  метод.
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Проверка гипотезы об одном ограничении}
 
-Хотим проверить гипотезу о $\beta_2-\beta_3$.
+Хотим проверить гипотезу о \(\beta_2-\beta_3\).
 
 Статистика
-$t=\frac{\hat{\beta}_2-\hat{\beta}_3-(\beta_2-\beta_3)}{se(\hat{\beta}_2-\hat{\beta}_3)}$
+\(t=\frac{\hat{\beta}_2-\hat{\beta}_3-(\beta_2-\beta_3)}{se(\hat{\beta}_2-\hat{\beta}_3)}\)
 распределена
 
 \begin{itemize}
 \item
-  асимпотитически $N(0,1)$
+  асимптитически \(N(0,1)\)
 \item
-  при нормальности $t_{n-k}$
+  при нормальности \(t_{n-k}\)
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Переформулировка модели}
 
-Хотим проверить гипотезу о $\beta_2-\beta_3$.
+Хотим проверить гипотезу \(\beta_2=\beta_3\) или \(\beta_2-\beta_3=0\)
 
-Всегда можно переформулировать модель так, что $\beta_2-\beta_3$ станет
-новым коэффициентом $\beta_2'=\beta_2-\beta_3$.
-
-\end{frame}
-
-\begin{frame}{Пример у чудо-доски}
-
-\begin{itemize}
-\item
-  способ через ковариационную матрицу
-\item
-  способ через переформулировку модели
-\end{itemize}
+Всегда можно переформулировать модель так, что \(\beta_2-\beta_3\)
+станет новым коэффициентом \(\beta_2'=\beta_2-\beta_3\).
 
 \end{frame}
 
-\begin{frame}{Мораль:}
+\begin{frame}[fragile]{Пример проверки гипотезы о связи коэффициентов
+{[}у доски{]}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(model)}
+            \NormalTok{Estimate Std. Error t value }\KeywordTok{Pr}\NormalTok{(>}\ErrorTok{|}\NormalTok{t|)  }
+\NormalTok{(Intercept) }\FloatTok{59.86392}    \FloatTok{3.98754}  \FloatTok{15.013}   \NormalTok{<}\FloatTok{2e-16} \NormalTok{**}\ErrorTok{*}
+\NormalTok{Agriculture  }\FloatTok{0.10953}    \FloatTok{0.07848}   \FloatTok{1.396}   \FloatTok{0.1698}    
+\NormalTok{Catholic     }\FloatTok{0.11496}    \FloatTok{0.04274}   \FloatTok{2.690}   \FloatTok{0.0101} \NormalTok{*}\StringTok{ }
+\KeywordTok{vcov}\NormalTok{(model)}
+             \NormalTok{(Intercept)  Agriculture     Catholic}
+\NormalTok{(Intercept) }\FloatTok{15.900471817} \NormalTok{-}\FloatTok{0.256680712} \NormalTok{-}\FloatTok{0.006998292}
+\NormalTok{Agriculture -}\FloatTok{0.256680712}  \FloatTok{0.006159437} \NormalTok{-}\FloatTok{0.001345371}
+\NormalTok{Catholic    -}\FloatTok{0.006998292} \NormalTok{-}\FloatTok{0.001345371}  \FloatTok{0.001826622}
+\NormalTok{Residual standard error:}\StringTok{ }\FloatTok{11.07}
+\end{Highlighting}
+\end{Shaded}
+
+Проверьте гипотезу \(\beta_a=\beta_c\) (два способа)
+
+\end{frame}
+
+\begin{frame}{Мораль лекции 2:}
 
 В этой лекции мы научились:
 
@@ -886,7 +1022,7 @@ $t=\frac{\hat{\beta}_2-\hat{\beta}_3-(\beta_2-\beta_3)}{se(\hat{\beta}_2-\hat{\b
 \item
   проверять гипотезы об отдельном коэффициенте
 \item
-  сформулировали все стандартные предпосылки
+  сформулировали стандартные предпосылки
 \end{itemize}
 
 В следующей:

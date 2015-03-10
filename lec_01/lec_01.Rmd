@@ -164,7 +164,7 @@ Q=(0.6-\hat{\beta}_1-\hat{\beta}_2 6.68)^2+(3-\hat{\beta}_1-\hat{\beta}_2 6.68)^
 | Петя| 80| 181|
 
 Оцените модели:  
-$y_i=\beta x_i +\varepsilon_i$,   
+$y_i=\beta  +\varepsilon_i$,   
 $y_i=\beta_1+\beta_2 x_i +\varepsilon_i$  
 
 Маленькая подготовка: $n\bar{x}=\sum_i x_i=\sum_i \bar{x}$, $\sum_i (x_i - \bar{x})=0$.
