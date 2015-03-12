@@ -10,7 +10,7 @@ model1 <- glm(data=data, price ~ 0 + carat)
 model2 <- glm(data=data, price ~ carat + depth)
 summary(model2)
 
-model3 <- lm(data=data, price ~ carat+x+y+z)
+model3 <- lm(data=data, price ~ carat+x+y)
 summary(model3)
 
 model_ln <- lm(data=data, log(price) ~ carat)
