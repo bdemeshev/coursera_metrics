@@ -81,8 +81,11 @@ glimpse(h_st) # смотрим на новый набор данных
 # оцениваем модель по стандартизированным данным
 model_st <- lm(data=h_st, Fertility~Catholic+Agriculture+Examination)
 summary(model_st) # отчет о новой модели
-sjp.lm(model, showStandardBeta = TRUE) # графическое представление
 
+# графическое представление стандартизованных коэффициентов
+sjp.lm(model, showStandardBeta = TRUE) # в старой версии пакета sjPlot
+sjp.lm(model, type = "std") # в новой версии пакета sjPlot:
+# должна сработать одна из двух команд в зависимости от установленной версии
 
 # искусственный эксперимент
 
