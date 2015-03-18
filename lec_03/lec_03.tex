@@ -1,5 +1,9 @@
 \documentclass[ignorenonframetext,]{beamer}
-\usetheme{CambridgeUS}
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{:}
+\setbeamercolor{caption name}{fg=normal text.fg}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
@@ -18,6 +22,7 @@
     \usepackage[utf8]{inputenc}
       \fi
 \fi
+% use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
@@ -68,8 +73,15 @@
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \setcounter{secnumdepth}{0}
 \usepackage[russian]{babel}
+\author[Эконометрика. Лекция 3]{Эконометрика. Лекция 3}
+\newcommand{\e}{\varepsilon}
+\newcommand{\hy}{\hat{y}}
+\newcommand{\hb}{\hat{\beta}}
+\usepackage{lmodern}
+\usepackage{tikz}
 
-\title{Эконометрика. Лекция 3}
+\title{Прогнозы. Сравнение моделей}
+\date{}
 
 \begin{document}
 \frame{\titlepage}
@@ -87,46 +99,69 @@
 
 \begin{frame}{Прогнозирование}
 
-Модель: $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+Модель: \(y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i\)
 
 Точечный прогноз:
-$\hat{y}_i = \hat{\beta}_1 +\hat{\beta}_2 x_i + \hat{\beta}_3 z_i$
+\(\hat{y}_i = \hat{\beta}_1 +\hat{\beta}_2 x_i + \hat{\beta}_3 z_i\)
 
 \end{frame}
 
 \begin{frame}{Интервальное прогнозирование}
 
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  Доверительный интервал для $E(y_i | x_i, z_i)$:
-\end{itemize}
-
-$E(y_i | x_i, z_i)=\beta_1 + \beta_2 x_i + \beta_3 z_i$
+Что мы прогнозируем?
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Предиктивный интервал для $y_i$:
+  Средний \(y_i\) при данных регрессорах, \(E(y_i | x_i, z_i)\):
 \end{itemize}
 
-$y_i= \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+\(E(y_i | x_i, z_i)=\beta_1 + \beta_2 x_i + \beta_3 z_i\)
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Конкретный \(y_i\) при данных регрессорах:
+\end{itemize}
+
+\(y_i= \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i\)
+
+Возникает две разных ошибки прогноза!
 
 \end{frame}
 
-\begin{frame}{Две ошибки прогноза и их дисперсии}
+\begin{frame}{Ошибка прогнозирования среднего}
 
-Ошибка при прогнозировании условного среднего $E(y_i | X)$: \[
-Var(\hat{y}_i - E(y_i | X) | X )=Var(\hat{y}_i | X) = Var(\hat{\beta}_1 +\hat{\beta}_2 x_i + \hat{\beta}_3 z_i | X)
+\begin{itemize}
+\item
+  условное среднее, \(E(y_i | X)\)
+\item
+  ошибка прогноза условного среднего, \(\hat{y}_i - E(y_i | X)\)
+\item
+  дисперсия ошибки прогноза:
+\end{itemize}
+
+\[
+Var(\hy_i - E(y_i | X)  | X )=Var(\hat{y}_i | X)  =Var(\hat{\beta}_1 +\hat{\beta}_2 x_i + \hat{\beta}_3 z_i | X)
 \]
 
-Ошибка при предсказании конкретного значения
-$y_i = E(y_i | X) + \varepsilon_i$:
+\end{frame}
 
-\begin{multline} \nonumber
-Var(\hat{y}_i - y_i | X) | X )=Var(\hat{y}_i - E(y_i | X) - \varepsilon_i | X) = Var(\hat{y}_i - \varepsilon_i | X) = \\
-Var(\hat{y}_i|X) + Var( \varepsilon_i | X) = Var(\hat{\beta}_1 +\hat{\beta}_2 x_i + \hat{\beta}_3 z_i | X) + Var(\epsilon_i | X)
-\end{multline}
+\begin{frame}{Ошибка прогноза конкретного значения}
+
+\begin{itemize}
+\item
+  конкретное наблюдение, \(y_i\)
+\item
+  ошибка прогноза, \(\hy_i - y_i\)
+\item
+  дисперсия ошибки прогноза:
+
+  \begin{multline} \nonumber
+  Var(\hat{y}_i - y_i | X)=Var(\hat{y}_i - E(y_i | X) - \varepsilon_i | X) = Var(\hat{y}_i - \varepsilon_i | X) = \\
+  Var(\hat{y}_i|X) + Var( \varepsilon_i | X) = Var(\hat{\beta}_1 +\hat{\beta}_2 x_i + \hat{\beta}_3 z_i | X) + Var(\epsilon_i | X)
+  \end{multline}
+\end{itemize}
 
 \end{frame}
 
@@ -134,57 +169,56 @@ Var(\hat{y}_i|X) + Var( \varepsilon_i | X) = Var(\hat{\beta}_1 +\hat{\beta}_2 x_
 
 \begin{itemize}
 \item
-  $Var(\hat{y}_i |X )$, $Var(\epsilon_i | X)$ неизвестны, зависят от
-  $\sigma^2$
+  \(Var(\hat{y}_i |X )\), \(Var(\e_i | X)\) неизвестны, зависят от
+  \(\sigma^2\)
 \item
-  $\widehat{Var}(\hat{y}_i |X )$, $\widehat{Var}(\epsilon_i | X)$
-  известны
+  \(\widehat{Var}(\hat{y}_i |X )\), \(\widehat{Var}(\e_i | X)\) известны
 \item
   Используем стандартные ошибки:
-  $se(\hat{y}_i) = \sqrt{\widehat{Var}(\hat{y}_i |X )}$
+  \(se(\hat{y}_i) = \sqrt{\widehat{Var}(\hat{y}_i |X )}\)
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Доверительный интервал:}
+\begin{frame}{Доверительный интервал для среднего значения}
 
 \begin{itemize}
 \item
   Асимптотический:
-  $\frac{\hat{y}_i - E(y_i | X)}{se(\hat{y}_i)} \to N(0,1)$ \[
-  E(y_i | X) \in [\hat{y}_i - z_{cr} se(\hat{y}_i);\hat{y}_i - z_{cr} se(\hat{y}_i) ]
+  \(\frac{\hat{y}_i - E(y_i | X)}{se(\hat{y}_i)} \to N(0,1)\) \[
+  E(y_i | X) \in [\hat{y}_i - z_{cr} se(\hat{y}_i);\hat{y}_i + z_{cr} se(\hat{y}_i) ]
   \]
 \item
   При предположении о нормальности:
-  $\frac{\hat{y}_i - E(y_i | X)}{se(\hat{y}_i)} \sim t_{n-k}$
+  \(\frac{\hat{y}_i - E(y_i | X)}{se(\hat{y}_i)} \sim t_{n-k}\)
 \end{itemize}
 
 \[
-E(y_i | X) \in [\hat{y}_i - t_{cr} se(\hat{y}_i);\hat{y}_i - t_{cr} se(\hat{y}_i) ]
+E(y_i | X) \in [\hat{y}_i - t_{cr} se(\hat{y}_i);\hat{y}_i + t_{cr} se(\hat{y}_i) ]
 \]
 
 \end{frame}
 
-\begin{frame}{Предиктивный интервал}
+\begin{frame}{Предиктивный интервал для конкретного значения}
 
 \begin{itemize}
 \item
   Асимптотический:
-  $\frac{\hat{y}_i - y_i }{se(\hat{y}_i-\varepsilon_i)} \to N(0,1)$ \[
-  y_i  \in [\hat{y}_i - z_{cr} se(\hat{y}_i-\varepsilon_i);\hat{y}_i - z_{cr} se(\hat{y}_i-\varepsilon_i) ]
+  \(\frac{\hat{y}_i - y_i }{se(\hat{y}_i-\varepsilon_i)} \to N(0,1)\) \[
+  y_i  \in [\hat{y}_i - z_{cr} se(\hat{y}_i-\varepsilon_i);\hat{y}_i + z_{cr} se(\hat{y}_i-\varepsilon_i) ]
   \]
 \item
   При предположении о нормальности:
-  $\frac{\hat{y}_i - y_i }{se(\hat{y}_i-\varepsilon_i)} \sim t_{n-k}$
+  \(\frac{\hat{y}_i - y_i }{se(\hat{y}_i-\varepsilon_i)} \sim t_{n-k}\)
 \end{itemize}
 
 \[
-y_i  \in [\hat{y}_i - t_{cr} se(\hat{y}_i-\varepsilon_i);\hat{y}_i - t_{cr} se(\hat{y}_i-\varepsilon_i) ]
+y_i  \in [\hat{y}_i - t_{cr} se(\hat{y}_i-\varepsilon_i);\hat{y}_i + t_{cr} se(\hat{y}_i-\varepsilon_i) ]
 \]
 
 \end{frame}
 
-\begin{frame}[fragile]{Чудо-доска. Пример вычислений.}
+\begin{frame}[fragile]{Пример вычислений {[}у доски{]}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -193,7 +227,7 @@ y_i  \in [\hat{y}_i - t_{cr} se(\hat{y}_i-\varepsilon_i);\hat{y}_i - t_{cr} se(\
 \NormalTok{(Intercept)  }\FloatTok{8.53539}    \FloatTok{0.05183}  \FloatTok{164.68}   \NormalTok{<}\FloatTok{2e-16} \NormalTok{**}\ErrorTok{*}
 \KeywordTok{log}\NormalTok{(carat)   }\FloatTok{1.74685}    \FloatTok{0.07505}   \FloatTok{23.27}   \NormalTok{<}\FloatTok{2e-16} \NormalTok{**}\ErrorTok{*}
 \NormalTok{---}
-\NormalTok{Signif. codes:}\StringTok{  }\DecValTok{0} \NormalTok{‘***’ }\FloatTok{0.001} \NormalTok{‘**’ }\FloatTok{0.01} \NormalTok{‘*’ }\FloatTok{0.05} \NormalTok{‘.’ }\FloatTok{0.1} \NormalTok{‘ ’ }\DecValTok{1}
+\NormalTok{Signif. codes:}\StringTok{  }\DecValTok{0} \NormalTok{‘**}\ErrorTok{*}\NormalTok{’ }\FloatTok{0.001} \NormalTok{‘**’ }\FloatTok{0.01} \NormalTok{‘*’ }\FloatTok{0.05} \NormalTok{‘.’ }\FloatTok{0.1} \NormalTok{‘ ’ }\DecValTok{1}
 
 \NormalTok{Residual standard error:}\StringTok{ }\FloatTok{0.2771} \NormalTok{on }\DecValTok{38} \NormalTok{degrees of freedom}
 
@@ -206,36 +240,40 @@ y_i  \in [\hat{y}_i - t_{cr} se(\hat{y}_i-\varepsilon_i);\hat{y}_i - t_{cr} se(\
 
 \end{frame}
 
-\begin{frame}{Логарифм.}
+\begin{frame}{Логарифмирование}
 
 Четыре модели:
 
 \begin{itemize}
 \item
-  $y_i = \beta_1 + \beta_2 x_i + \varepsilon_i$
+  \(y_i = \beta_1 + \beta_2 x_i + \varepsilon_i\)
 \item
-  $\ln( y_i) = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i$
+  \(\ln( y_i) = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i\)
 \item
-  $\ln( y_i) = \beta_1 + \beta_2 x_i + \varepsilon_i$
+  \(\ln( y_i) = \beta_1 + \beta_2 x_i + \varepsilon_i\)
 \item
-  $y_i = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i$
+  \(y_i = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i\)
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Чудо-доска. Интерпретация-вывод}
+\begin{frame}{Вывод интерпретации {[}у доски{]}}
+
+Идея получения интерпретации логарифмических моделей:
+
+\(d \ln x= \frac{dx}{x}\) --- изменение \(x\) в долях
 
 \end{frame}
 
-\begin{frame}{Итого: две популярные версии}
+\begin{frame}{Две популярные версии}
 
 \begin{itemize}
 \item
-  $y_i = \beta_1 + \beta_2 x_i + \varepsilon_i$. С ростом $x$ на единицу
-  $y$ растет на $\beta$ единиц.
+  \(y_i = \beta_1 + \beta_2 x_i + \varepsilon_i\). С ростом \(x\) на
+  единицу \(y\) растет на \(\beta_2\) единиц.
 \item
-  $\ln( y_i) = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i$. С ростом
-  $x$ на один процент $y$ растет на $\beta$ процентов.
+  \(\ln( y_i) = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i\). С ростом
+  \(x\) на один процент \(y\) растет на \(\beta_2\) процентов.
 \end{itemize}
 
 \end{frame}
@@ -244,11 +282,11 @@ y_i  \in [\hat{y}_i - t_{cr} se(\hat{y}_i-\varepsilon_i);\hat{y}_i - t_{cr} se(\
 
 \begin{itemize}
 \item
-  $\ln( y_i) = \beta_1 + \beta_2 x_i + \varepsilon_i$. С ростом $x$ на
-  единицу $y$ растет на $100\beta$ процентов.
+  \(\ln( y_i) = \beta_1 + \beta_2 x_i + \varepsilon_i\). С ростом \(x\)
+  на единицу \(y\) растет на \(100\beta_2\) процентов.
 \item
-  $y_i = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i$. С ростом $x$ на
-  один процент $y$ растет на $0.01\beta$ единиц.
+  \(y_i = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i\). С ростом \(x\)
+  на один процент \(y\) растет на \(0.01\beta_2\) единиц.
 \end{itemize}
 
 \end{frame}
@@ -260,17 +298,17 @@ y_i  \in [\hat{y}_i - t_{cr} se(\hat{y}_i-\varepsilon_i);\hat{y}_i - t_{cr} se(\
   Объясняющая переменная, принимающая значение 0 или 1, называется
   дамми-переменной (dummy variable)
 \item
-  Например, переменная $male_i$ равна 1 для мужчин и 0 для женщин.
+  Например, пол респондента в опросе, переменная \(male_i\), равная 1
+  для мужчин и 0 --- для женщин.
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{С помощью дамми-переменных можно описывать разные части
-выборки}
+\begin{frame}{Дамми-переменные и разные зависимости на подвыборках}
 
 Пример 1. Базовая модель.
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i\)
 
 Зарплата мужчин и женщин в среднем одинаковая при равном опыте и
 образовании
@@ -279,55 +317,55 @@ $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
 
 \begin{frame}{Пример 2.}
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \varepsilon_i\)
 
 Для мужчин:
-$wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+\(wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i\)
 
 Для женщин:
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i\)
 
 \end{frame}
 
 \begin{frame}{Пример 3.}
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i exper_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i exper_i + \varepsilon_i\)
 
 Для мужчин:
-$wage_i = (\beta_1+\beta_4) + (\beta_2+\beta_5) exper_i + \beta_3 educ_i + + \varepsilon_i$
+\(wage_i = (\beta_1+\beta_4) + (\beta_2+\beta_5) exper_i + \beta_3 educ_i + + \varepsilon_i\)
 
 Для женщин:
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i\)
 
 \end{frame}
 
 \begin{frame}{Пример 4.}
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \varepsilon_i\)
 
 Для мужчин:
-$wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i$
+\(wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i\)
 
 Для женщин:
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i\)
 
 \end{frame}
 
 \begin{frame}{Пример 5.}
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \beta_6 male_i exper_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \beta_6 male_i exper_i + \varepsilon_i\)
 
 Для мужчин:
-$wage_i = (\beta_1+\beta_4) + (\beta_2 + \beta_6) exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i$
+\(wage_i = (\beta_1+\beta_4) + (\beta_2 + \beta_6) exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i\)
 
 Для женщин:
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i\)
 
 \end{frame}
 
 \begin{frame}{Факторная переменная принимает несколько значений}
 
-$season_i \in \{\text{ зима }, \text{ весна }, \text{ лето }, \text{ осень }  \}$
+\(season_i \in \{\text{ зима }, \text{ весна }, \text{ лето }, \text{ осень } \}\)
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -337,23 +375,41 @@ $season_i \in \{\text{ зима }, \text{ весна }, \text{ лето }, \text
   Вводим 3 (четыре сезона минус один базовый) дамми-переменных:
 \end{enumerate}
 
-$vesna_i$, $leto_i$, $osen_i$
+\(vesna_i\), \(leto_i\), \(osen_i\)
 
 \end{frame}
 
-\begin{frame}{Пример}
+\begin{frame}{Вводим дамми-переменные}
 
-$icecream_i=\beta_1 + \beta_2 price_i + \beta_3 vesna_i + \beta_4 leto_i + \beta_5 osen_i + \varepsilon_i$
+\begin{tabular}{ccccc}
+\hline 
+Наблюдение & Сезон & $vesna_i$ & $leto_i$ & $osen_i$  \\ 
+\hline 
+1 & Зима & 0 & 0 & 0 \\ 
+2 & Весна & 1 & 0 & 0 \\ 
+3 & Лето & 0 & 1 & 0 \\ 
+4 & Осень & 0 & 0 & 1 \\ 
+5 & Зима & 0 & 0 & 0 \\ 
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ 
+\hline 
+\end{tabular}
 
-Зима: $icecream_i=\beta_1 + \beta_2 price_i + \varepsilon_i$
+\end{frame}
+
+\begin{frame}{Модели для подвыборок на примере}
+
+\(icecream_i=\beta_1 + \beta_2 price_i + \beta_3 vesna_i + \beta_4 leto_i + \beta_5 osen_i + \varepsilon_i\)
+
+Зима: \(icecream_i=\beta_1 + \beta_2 price_i + \varepsilon_i\)
 
 Весна:
-$icecream_i=(\beta_1 + \beta_3) + \beta_2 price_i + \varepsilon_i$
+\(icecream_i=(\beta_1 + \beta_3) + \beta_2 price_i + \varepsilon_i\)
 
-Лето: $icecream_i=(\beta_1 + \beta_4) + \beta_2 price_i + \varepsilon_i$
+Лето:
+\(icecream_i=(\beta_1 + \beta_4) + \beta_2 price_i + \varepsilon_i\)
 
 Осень:
-$icecream_i=(\beta_1 + \beta_5) + \beta_2 price_i + \varepsilon_i$
+\(icecream_i=(\beta_1 + \beta_5) + \beta_2 price_i + \varepsilon_i\)
 
 \end{frame}
 
@@ -364,9 +420,9 @@ $icecream_i=(\beta_1 + \beta_5) + \beta_2 price_i + \varepsilon_i$
 
 Пример с ошибкой (!).
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 male_i + \beta_4 female_i +\varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 male_i + \beta_4 female_i +\varepsilon_i\)
 
-Выполнено соотношение $1 = male_i + female_i$.
+Выполнено соотношение \(1 = male_i + female_i\).
 
 \end{frame}
 
@@ -377,34 +433,34 @@ $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 male_i + \beta_4 female_i +\vareps
 \setcounter{enumi}{7}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  с вероятностью 1 среди регрессоров нет линейно зависимых
+  С вероятностью 1 среди регрессоров нет линейно зависимых
 \end{enumerate}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Синонимы в матричном виде: $rank(X)=k$ или $det(X'X)\neq 0$ или
-  $(X'X)^{-1}$ существует
+  Синонимы в матричном виде: \(rank(X)=k\) или \(det(X'X)\neq 0\) или
+  \((X'X)^{-1}\) существует
 \end{itemize}
 
-Регрессоры линейной зависимы. Не существует единственных оценок МНК.
+Регрессоры линейно зависимы. Не существует единственных оценок МНК.
 
 \end{frame}
 
 \begin{frame}{Проверка гипотез о нескольких ограничениях сразу}
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \varepsilon_i\)
 
 Для мужчин:
-$wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i$
+\(wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i\)
 
 Для женщин:
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i\)
 
-$H_0: \begin{cases} \beta_4 = 0 \\ \beta_5 = 0 \end{cases}$
+\(H_0: \begin{cases} \beta_4 = 0 \\ \beta_5 = 0 \end{cases}\)
 
-$H_a:$ хотя бы один коэффициент ($\beta_4$ или $\beta_5$) отличен от
-нуля
+\(H_a:\) хотя бы один коэффициент (\(\beta_4\) или \(\beta_5\)) отличен
+от нуля
 
 \end{frame}
 
@@ -414,12 +470,12 @@ $H_a:$ хотя бы один коэффициент ($\beta_4$ или $\beta_5$
 \def\labelenumi{\arabic{enumi}.}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Оценить неограниченную модель (unrestricter, ur)
+  Оценить неограниченную модель (unrestricted, ur)
 \end{enumerate}
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \varepsilon_i\)
 
-Посчитать $RSS_{UR}$
+Посчитать \(RSS_{UR}\)
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -429,9 +485,9 @@ $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 
   Оценить ограниченную модель (restricted, r)
 \end{enumerate}
 
-$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i  + \varepsilon_i$
+\(wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i\)
 
-Посчитать $RSS_{R}$
+Посчитать \(RSS_{R}\)
 
 \end{frame}
 
@@ -443,13 +499,13 @@ $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i  + \varepsilon_i$
 \chi^2=\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k_{UR})} \to \chi^2_r
 \]
 
-3.2. При нормальности ошибок, $\varepsilon_i |X \sim N(0,\sigma^2)$
+3.2. При нормальности ошибок, \(\varepsilon_i |X \sim N(0,\sigma^2)\)
 
 \[
 F=\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k_{UR})} \sim F_{r, n-k_{UR}}
 \]
 
-$r$ --- количество ограничений в $H_0$
+\(r\) --- количество ограничений в \(H_0\)
 
 \end{frame}
 
@@ -460,13 +516,39 @@ $r$ --- количество ограничений в $H_0$
 \setcounter{enumi}{3}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Если $F_{obs}>F_{cr}$ или $\chi^2_{obs}>\chi^2_{cr}$, то $H_0$
+  Если \(F_{obs}>F_{cr}\) или \(\chi^2_{obs}>\chi^2_{cr}\), то \(H_0\)
   отвергается
 \end{enumerate}
 
 \end{frame}
 
-\begin{frame}{Пример у чудо-доски}
+\begin{frame}[fragile]{Пример {[}у доски{]}}
+
+Проверьте гипотезу о двух ограничениях. RSS для двух моделей:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_1 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(}\DataTypeTok{data=}\NormalTok{h, }\KeywordTok{log}\NormalTok{(price)~}\KeywordTok{log}\NormalTok{(totsp)+}\KeywordTok{log}\NormalTok{(livesp)+}
+\StringTok{                }\KeywordTok{log}\NormalTok{(kitsp)+brick+metrdist+walk)}
+\NormalTok{model_2 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(}\DataTypeTok{data=}\NormalTok{h, }\KeywordTok{log}\NormalTok{(price)~}\KeywordTok{log}\NormalTok{(totsp)+}\KeywordTok{log}\NormalTok{(livesp)+}
+\StringTok{                }\KeywordTok{log}\NormalTok{(kitsp)+brick)}
+\KeywordTok{deviance}\NormalTok{(model_1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 62.56589
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{deviance}\NormalTok{(model_2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 69.29502
+\end{verbatim}
 
 \end{frame}
 
@@ -476,41 +558,57 @@ RSS ограниченной модели всегда больше:
 
 \begin{itemize}
 \item
-  $RSS_{UR} = \min_{\hat{\beta}_1, \hat{\beta}_2, \ldots} RSS$
+  \(RSS_{UR} = \min_{\hat{\beta}_1, \hat{\beta}_2, \ldots} RSS\)
 \item
-  $RSS_{R} = \min_{\hat{\beta}_1, \hat{\beta}_2, \ldots, \hat{\beta}_4=0} RSS$
+  \(RSS_{R} = \min_{\hat{\beta}_1, \hat{\beta}_2, \ldots, \hat{\beta}_4=0} RSS\)
 \end{itemize}
 
-TSS в моделях равны, т.к. $TSS=\sum ( y_i -\bar{y})^2$
+TSS в моделях равны, т.к. \(TSS=\sum ( y_i -\bar{y})^2\)
 
-Следовательно, $ESS_{UR}>ESS_R$ и $R^2_{UR}>R^2_R$.
+Следовательно, \(ESS_{UR}>ESS_R\) и \(R^2_{UR}>R^2_R\).
 
 \end{frame}
 
 \begin{frame}{Самый простой случай}
 
-Модель $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+Модель \(y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i\)
 
-Гипотеза $H_0$: все наши регрессоры абсолютно бесполезны
+Гипотеза \(H_0\): все наши регрессоры абсолютно бесполезны
 
-$H_0: \begin{cases} \beta_2 =0 \\ \beta_3 = 0 \end{cases}$
+\(H_0: \begin{cases} \beta_2 =0 \\ \beta_3 = 0 \\ ... \end{cases}\)
 
-Всего $(k-1)$ ограничение.
+Всего \((k-1)\) ограничение.
 
 Гипотеза о незначимости регрессии.
 
 \end{frame}
 
-\begin{frame}{Чудо-доска: F-статистика для гипотезы о незначимости
-регрессии}
+\begin{frame}{Доказательство формулы статистики для гипотезы о
+незначимости регрессии {[}у доски{]}}
+
+Для гипотезы:
+
+\(H_0: \begin{cases} \beta_2 =0 \\ \beta_3 = 0 \\ ... \\ \beta_k= 0 \end{cases}\)
+
+Статистика приобретает вид:
+
+\[
+F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
+\]
+
+Идея доказательства: ограниченной моделью будет модель
+\(y_i=\beta_1 + \e_i\).
+
+В ограниченной модели \(\hb_1=\bar{y}\) и \(RSS_R=TSS_R\), а
+\(ESS_R=0\).
 
 \end{frame}
 
 \begin{frame}{Проверка гипотезы о незначимости регрессии}
 
-Модель $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+Модель \(y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i\)
 
-$H_0: \begin{cases} \beta_2 =0 \\ \beta_3 = 0 \end{cases}$
+\(H_0: \begin{cases} \beta_2 =0 \\ \beta_3 = 0 \end{cases}\)
 
 \[
 F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
@@ -518,7 +616,16 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 
 \end{frame}
 
-\begin{frame}{Чудо-доска. пример вычислений.}
+\begin{frame}{Пример проверки гипотезы о незначимости регресии {[}у
+доски{]}}
+
+Для регрессии \[
+\widehat{wage}_i=-2.5+0.6 school_i + 0.157 exper_i
+\]
+
+Проверьте гипотезу о незначимости регрессии в целом.
+
+\(R^2=0.09\), \(n=3294\).
 
 \end{frame}
 
@@ -531,13 +638,13 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Истинная зависимость имеет вид
-  $y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i+\varepsilon_i$
+  \(y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i+\varepsilon_i\)
 \end{enumerate}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  В матричном виде: $y=X\beta + \varepsilon$
+  В матричном виде: \(y=X\beta + \varepsilon\)
 \end{itemize}
 
 \begin{enumerate}
@@ -545,13 +652,14 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \setcounter{enumi}{1}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  С помощью МНК оценивается регрессия $y$ на константу, $x_i$, $z_i$
+  С помощью МНК оценивается регрессия \(y\) на константу, \(x_i\),
+  \(z_i\)
 \end{enumerate}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  В матричном виде: $\hat{\beta}=(X'X)^{-1}X'y$
+  В матричном виде: \(\hat{\beta}=(X'X)^{-1}X'y\)
 \end{itemize}
 
 \begin{enumerate}
@@ -559,25 +667,26 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \setcounter{enumi}{2}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Наблюдений больше, чем оцениваемых коэффициентов $\beta$: $n>k$
+  Наблюдений больше, чем оцениваемых коэффициентов \(\beta\): \(n>k\)
 \end{enumerate}
 
 \end{frame}
 
-\begin{frame}{БСХС --- предположения на $\varepsilon_i$:}
+\begin{frame}{БСХС --- предположения на \(\varepsilon_i\):}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{3}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Строгая экзогенность: $E(\varepsilon_i | \text{ все регрессоры } )=0$
+  Строгая экзогенность:
+  \(E(\varepsilon_i | \text{ все регрессоры } )=0\)
 \end{enumerate}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  В матричном виде: $E(\varepsilon_i | X)=0$
+  В матричном виде: \(E(\varepsilon_i | X)=0\)
 \end{itemize}
 
 \begin{enumerate}
@@ -586,13 +695,13 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Условная гомоскедастичность:
-  $E(\varepsilon_i^2 | \text{ все регрессоры })=\sigma^2$
+  \(E(\varepsilon_i^2 | \text{ все регрессоры })=\sigma^2\)
 \end{enumerate}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  В матричном виде: $E(\varepsilon_i^2 | X)=\sigma^2$
+  В матричном виде: \(E(\varepsilon_i^2 | X)=\sigma^2\)
 \end{itemize}
 
 \begin{enumerate}
@@ -600,7 +709,7 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \setcounter{enumi}{5}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  $Cov(\varepsilon_i,\varepsilon_j | X)=0$ при $i \neq j$
+  \(Cov(\varepsilon_i,\varepsilon_j | X)=0\) при \(i \neq j\)
 \end{enumerate}
 
 \end{frame}
@@ -612,7 +721,7 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \setcounter{enumi}{6}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  векторы отдельных наблюдений $(x_i,z_i,y_i)$ --- независимы и
+  векторы отдельных наблюдений \((x_i,z_i,y_i)\) --- независимы и
   одинаково распределены
 \item
   с вероятностью 1 среди регрессоров нет линейно зависимых
@@ -621,50 +730,51 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Синонимы в матричном виде: $rank(X)=k$ или $det(X'X)\neq 0$ или
-  $(X'X)^{-1}$ существует
+  Синонимы в матричном виде: \(rank(X)=k\) или \(det(X'X)\neq 0\) или
+  \((X'X)^{-1}\) существует
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{БСХС --- асимптотические свойства (плюс новое)}
 
-При $n\to \infty$:
+При \(n\to \infty\):
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  $\hat{\beta}_j \to \beta_j$ по вероятности
+  \(\hat{\beta}_j \to \beta_j\) по вероятности
 \item
-  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$ по
+  \(\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)\) по
   распределению
 \item
-  $\hat{\sigma}^2 \to \sigma^2 $ по вероятности
+  \(\hat{\sigma}^2 \to \sigma^2\) по вероятности
 \item
   новое:
-  $\chi^2=\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k_{UR})} \to \chi^2_r$
+  \(\chi^2=\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k_{UR})} \to \chi^2_r\)
 \end{itemize}
 
-$\hat{\sigma}^2=\frac{RSS}{n-k}$
+\(\hat{\sigma}^2=\frac{RSS}{n-k}\)
 
 \end{frame}
 
 \begin{frame}{БСХС --- при нормальности}
 
-Если дополнительно известно, что $\varepsilon_i \sim N(0, \sigma^2)$:
+Если дополнительно известно, что \(\varepsilon_i \sim N(0, \sigma^2)\):
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Оценки эффективны среди несмещенных
 \item
-  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}|X \sim t_{n-k}$,
-  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}\sim t_{n-k}$
+  \(\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}|X \sim t_{n-k}\),
+  \(\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}\sim t_{n-k}\)
 \item
-  $RSS/\sigma^2 |X \sim \chi^2_{n-k}$, $RSS/\sigma^2 \sim \chi^2_{n-k}$
+  \(RSS/\sigma^2 |X \sim \chi^2_{n-k}\),
+  \(RSS/\sigma^2 \sim \chi^2_{n-k}\)
 \item
   новое:
-  $F=\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k_{UR})} |X \sim F_{r, n-k_{UR}}$
+  \(F=\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k_{UR})} |X \sim F_{r, n-k_{UR}}\)
 \end{itemize}
 
 \end{frame}
@@ -673,10 +783,10 @@ $\hat{\sigma}^2=\frac{RSS}{n-k}$
 
 \begin{itemize}
 \item
-  Истина: $y_i = \beta_1 + \beta_2 x_i +\varepsilon_i$
+  Истина: \(y_i = \beta_1 + \beta_2 x_i +\varepsilon_i\)
 \item
   Оценена регрессия:
-  $\hat{y}_i=\hat{\beta}_1 + \hat{\beta}_2 x_i + \hat{\beta}_3 z_i$
+  \(\hat{y}_i=\hat{\beta}_1 + \hat{\beta}_2 x_i + \hat{\beta}_3 z_i\)
 \item
   Потеряна: эффективность
 \end{itemize}
@@ -687,9 +797,9 @@ $\hat{\sigma}^2=\frac{RSS}{n-k}$
 
 \begin{itemize}
 \item
-  Истина: $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i +\varepsilon_i$
+  Истина: \(y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i +\varepsilon_i\)
 \item
-  Оценена регрессия: $\hat{y}_i=\hat{\beta}_1 + \hat{\beta}_2 x_i$
+  Оценена регрессия: \(\hat{y}_i=\hat{\beta}_1 + \hat{\beta}_2 x_i\)
 \item
   Всё плохо!
 \end{itemize}
@@ -700,7 +810,7 @@ $\hat{\sigma}^2=\frac{RSS}{n-k}$
 
 \begin{itemize}
 \item
-  Если в теории предполагается зависимость от переменной $z$, то её
+  Если в теории предполагается зависимость от переменной \(z\), то её
   лучше включить в модель, даже если она не значима.
 \item
   Если переменные значимы, то их лучше оставить в модели, даже если
@@ -718,9 +828,9 @@ $\hat{\sigma}^2=\frac{RSS}{n-k}$
   RESET-тест Рамсея
 \end{itemize}
 
-$H_0: y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+\(H_0: y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i\)
 
-$H_a:$ Есть неизвестные нам пропущенные регрессоры
+\(H_a:\) Есть неизвестные нам пропущенные регрессоры
 
 \end{frame}
 
@@ -731,27 +841,42 @@ $H_a:$ Есть неизвестные нам пропущенные регре�
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Оценить модель:
-  $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+  \(y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i\)
 \end{enumerate}
 
-Получить прогнозы $\hat{y}_i$
+Получить прогнозы \(\hat{y}_i\)
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
 \item
   Оценить модель:
-  $\hat{y}_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \gamma_1 \hat{y}^2_i + \gamma_2 \hat{y}^3_i + \ldots + \gamma_p \hat{y}_i^{p+1} + \varepsilon_i$
+  \(y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \gamma_1 \hat{y}^2_i + \gamma_2 \hat{y}^3_i + \ldots + \gamma_p \hat{y}_i^{p+1} + \varepsilon_i\)
 \item
-  Посчитать $F$-статистику проверяющую гипотезу о равенстве всех
-  $\gamma_i$ нулю.
+  Посчитать \(F\)-статистику проверяющую гипотезу о равенстве всех
+  \(\gamma_i\) нулю.
 \end{enumerate}
 
-Рамсей: при верной $H_0$ и нормальности остатков $F\sim F_{p,n-k-p}$
+Рамсей: при верной \(H_0\) и нормальности остатков \(F\sim F_{p,n-k-p}\)
 
 \end{frame}
 
-\begin{frame}{Пример чудо-доска}
+\begin{frame}{Пример теста Рамсея {[}у доски{]}}
+
+Для регрессии \[
+\widehat{wage}_i=-2.5+0.6 school_i + 0.157 exper_i
+\]
+
+Проверьте тест Рамсея, если:
+
+\begin{itemize}
+\item
+  \(R^2=0.091\) (в основной регрессии),
+\item
+  \(R^2_{aux}=0.095\) (во вспомогательной регрессии Рамсея),
+\item
+  \(n=3294\).
+\end{itemize}
 
 \end{frame}
 
@@ -760,12 +885,12 @@ $H_a:$ Есть неизвестные нам пропущенные регре�
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  $R^2$. Растет с добавлением регрессоров, $R^2_{ur}>R^2_r$
+  \(R^2\). Растет с добавлением регрессоров, \(R^2_{ur}>R^2_r\)
 \item
-  $R^2_{adj}=1-\frac{RSS/(n-k)}{TSS/(n-1)}=1-\frac{\hat{\sigma}^2}{TSS/(n-1)}$
+  \(R^2_{adj}=1-\frac{RSS/(n-k)}{TSS/(n-1)}=1-\frac{\hat{\sigma}^2}{TSS/(n-1)}\)
 \end{enumerate}
 
-Чем больше $R^2_{adj}$ тем меньше $\hat{\sigma}^2$.
+Чем больше \(R^2_{adj}\) тем меньше \(\hat{\sigma}^2\).
 
 \end{frame}
 
@@ -775,9 +900,9 @@ $H_a:$ Есть неизвестные нам пропущенные регре�
 
 \begin{itemize}
 \item
-  плохо предсказывает ($RSS$ большой)
+  плохо предсказывает (\(RSS\) большой)
 \item
-  сложная (много коэффицентов, большое $k$)
+  сложная (много коэффицентов, большое \(k\))
 \end{itemize}
 
 \begin{enumerate}
@@ -785,59 +910,32 @@ $H_a:$ Есть неизвестные нам пропущенные регре�
 \setcounter{enumi}{2}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Информационные критерии:
+  Информационные критерии (размер штрафа):
 \end{enumerate}
 
 \begin{itemize}
 \item
-  Акаике $AIC=n \ln (RSS/n) + 2k$
+  Акаике \(AIC=n \ln (RSS/n) + 2k\)
 \item
-  Шварца $BIC=n \ln (RSS/n) + \ln(n) k $
+  Шварца \(BIC=n \ln (RSS/n) + \ln(n) k\)
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Мораль}
 
+В этой лекции:
+
 \begin{itemize}
 \item
-  Гипотеза о нескольких ограничениях
-\item
   Прогнозирование
+\item
+  Гипотезы о нескольких ограничениях
 \item
   RESET-тест Рамсея
 \end{itemize}
 
 Далее: о неприятностях :)
-
-\end{frame}
-
-\begin{frame}{R}
-
-\begin{itemize}
-\item
-  пример с логарифмированием цен брилльянтов
-\item
-  четыре графика (чтобы понять лог-лог лог-лин лин-лин лин-лог)
-\item
-  пример с включением лишних дамми-переменных
-\item
-  Больше графиков
-\item
-  рассеяния и очень много наблюдений
-\item
-  количественная-качественная
-\item
-  много качественных
-\item
-  фасетки
-\item
-  маленькое исследование в R
-\item
-  waldtest()
-\item
-  RESET-тест
-\end{itemize}
 
 \end{frame}
 
