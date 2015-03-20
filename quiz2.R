@@ -194,3 +194,19 @@ round(,digits=3)
 p<-prcomp(X,scale=TRUE)
 p$x
 qplot(x=p$x[,1], y=p$x[,2])
+
+# Midterm
+a<-(5+6-10)/(0.7^2+0.5^2+0.25*2)^(0.5)
+round(a,digits=3)
+qplot(data = diamonds, log(price),color=cut)+facet_grid(~cut)
+qplot(data = diamonds, log(price),fill=cut)+facet_grid(~cut)
+qplot(data = diamonds, price,fill=cut)+facet_grid(~clarity)
+qplot(data = diamonds, price,fill=cut)+facet_wrap(~clarity)
+model <- lm(data=data, price ~ carat + table + x + y + z + depth)
+summary(model)
+model2 <- lm(data=data, price ~ carat + table + x + y + depth)
+summary(model2)
+confint(model2,level=0.90)
+round(-107.56266,digits=2)
+
+
