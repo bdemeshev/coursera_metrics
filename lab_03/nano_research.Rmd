@@ -1,6 +1,6 @@
 ---
 title: "Нано исследование"
-output: word_document
+output: pdf_document
 lang: russian
 ---
 
@@ -25,6 +25,7 @@ opts_chunk$set(echo=FALSE, message=FALSE)
 В нашем наборе данных `r nrow(f)` наблюдений. Средняя цена квартиры равна `r round(mean(f$price),0)` тысяч у.е.
 
 Распределение цен квартир в кирпичных и некирпичных домах:
+
 ```{r}
 f <- mutate_each(f, "factor", walk, brick, floor, code)
 qplot(data=f, log(price), fill=brick, position="dodge")
