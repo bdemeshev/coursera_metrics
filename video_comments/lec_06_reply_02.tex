@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\newcommand{\e}{\varepsilon}
+\renewcommand{\b}{\beta}
+\newcommand{\hb}{\hat{\b}}
+\newcommand{\hs}{\hat{\sigma}}
+\usepackage{graphicx}
+\begin{document}
+
+Глава 6, итерация 2
+
+6-1-1 Определение автокорреляции 
+
+\url{http://youtu.be/bdTcoQJ0oYA}
+
+0:36 исправить появляющуюся формулу на: (разница в начале формулы):
+
+$Cov(\e_i,\e_j|X)=E(\e_i \e_j|X)=0$ при $i\neq j$
+
+6-1-2 Свойства автокорреляции первого порядка [у доски]
+
+\url{http://youtu.be/X9AEqv7saRo} ок
+
+6-1-3 Последствия автокорреляции
+
+\url{http://youtu.be/NodAGvgYybA}
+
+0:26 исправить оставшуюся ошибку в формуле (в конце перед $u_t$ по-прежнему нет плюса), должно быть:
+
+$\e_{t}=\phi_1 \e_{t-1}+\phi_2 \e_{t-2} +\ldots + \phi_p \e_{t-p}+u_t$
+
+4:15 зарезана скобка в конце строки под корнем, нижняя строка должна быть такой:
+
+В частности, $\widehat{Var}(\hat{\beta}_j|X)=\frac{\hat{\sigma}^2}{RSS_j}$
+и $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
+
+5:58 --- 6:08 слева от формул должны быть <<буллеты>> (точки)
+
+6:48 убрать <<(---)>> перед третьей и четвертой формулами (т.е. слева от каждой формулой  должен быть буллет, а справа --- галка или крест, галки и кресты стоят верно).
+
+7:22 слово <<гипотезы>> убежало вверх строки, третий пункт должен иметь вид:
+
+* Используя обычные $se(\hb_j)$, нельзя строить доверительные интервалы или проверять гипотезы
+
+
+
+
+6-1-4
+
+\url{http://youtu.be/QlVSRkUXKmI}
+
+6-1-5
+
+\url{http://youtu.be/moI2LeRaXe4}
+
+6-2-1Работа с датами в R
+
+\url{http://youtu.be/QZQfP58SdoA} ок
+
+6-2-2 Базовые действия с временными рядами
+
+\url{http://youtu.be/ocoGYXZkQK0} ок
+
+6-2-3 Загрузка данных из внешних источников
+
+\url{http://youtu.be/jr0VmfrZ-Qo}  ок
+
+6-2-4 Построение робастных доверительных интервалов
+
+\url{http://youtu.be/cqEg4bZNc-w}
+
+от начала до 0:31 удалить
+
+6-2-5 Тесты на автокорреляцию
+
+\url{http://youtu.be/i6UMzh3EiTg}
+
+0:07 убираем <<кафедра публичной политики>>
+
+
+
+\end{document}
