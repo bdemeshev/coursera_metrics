@@ -109,7 +109,10 @@ waldtest(model1, model2)
 waldtest(model1, model3)
 waldtest(model2, model3)
 
-qplot(data=data, log(carat), log(price), color = clarity) + facet_wrap(~cut) 
+library("RColorBrewer")
+qplot(data=data, log(carat), log(price), color = clarity) + facet_wrap(~cut)
+# scale_color_brewer(palette="Spectral")
+# scale_color_manual(values=c("#CC6666", "#9999CC", "#66CC99"))
 
 round(pnorm(9, mean=7, sd=2), digits = 2)
 
@@ -187,6 +190,14 @@ m_l<-glmnet(X,y,alpha=1,lambda = lambdas)
 coef(m_l, s = 1)
 plot(m_l,xvar="dev")
 
+
+d <- na.omit(airquality)
+y<-d$Ozone
+X<-model.matrix(data = d, Ozone ~ 0 + Wind + Solar.R + Temp) 
+lambdas <- seq(50,0.1,length=30) 
+m_l<-glmnet(X,y,alpha=1,lambda = lambdas) 
+coef(m_l, s = 1)
+
 m_l<-glmnet(X,y,alpha=0,lambda = lambdas)
 coef(m_l, s = 2)
 round(,digits=3)
@@ -212,3 +223,23 @@ round(-107.56266,digits=2)
 
 ((230-150)-(230-190))*(75-5)/(2*(230-190))
 
+
+library("Ecdat")
+library(lmtest)
+data("BudgetFood")
+model <- lm(data=BudgetFood, wfood~totexp+size)
+reset(model)
+nd <- data.frame(size=4, totexp=70000)
+predict(model, newdata = nd, interval = "prediction",level=0.9)
+
+library(car)
+model <- lm(data=mtcars, mpg ~ disp + hp + wt)
+summary(model)
+vif(model)
+
+X<-model.matrix(data = mtcars, mpg ~ 0 + disp + hp + wt)
+p<-prcomp(X,scale=TRUE)
+max(p$x[,1])
+
+model1 <- lm(data=mtcars, mpg ~ p$x[,1] + p$x[,2])
+model2 <- lm(data=mtcars, mpg ~ p$x[,1] + p$x[,2] + p$x[,3])
