@@ -173,7 +173,7 @@ $\hat{\Omega}=diag( \hat{\varepsilon}_1^2, \ldots, \hat{\varepsilon}_n^2 )$
 
 * Современный вариант, HC3: 
 
-$\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \frac{\varepsilon_n^2}{(1-h_{nn})^2} \right)$
+$\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \frac{\hat{\varepsilon}_n^2}{(1-h_{nn})^2} \right)$
 
 
 ## Суть корректировки:
