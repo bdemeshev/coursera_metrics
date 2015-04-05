@@ -123,7 +123,7 @@ $H_a$: Хотя бы одно из $q$ условий не выполнено
 Тест отношения правдоподобия (Likelihood Ratio, LR):
 
 \[
-LR=2(l(\hat{\theta})-l(\hat{\theta}_{H0})) \sim \chi^2_q
+LR=2(l(\hat{\theta})-l(\hat{\theta}_{H_0})) \sim \chi^2_q
 \]
 
 ## Продолжение задачи у чудо-доски
