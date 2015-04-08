@@ -6,7 +6,6 @@ library("lubridate") # работа с датами
 library("sandwich") # vcovHC, vcovHAC
 library("lmtest") # тесты
 library("car") # еще тесты
-library("bstats") # больше тестов
 library("zoo") # временные ряды
 library("xts") # еще ряды
 library("dplyr") # манипуляции с данными
