@@ -68,7 +68,7 @@ plot(y,main = "Процесс с трендом, $y_t=5+6t+\\varepsilon_t$, $\\v
 Страница 13/62
 
 ```{r}
-y <- arima.sim(n=n, list(order=c(0,0,0)) )
+y <- 20*arima.sim(n=n, list(order=c(0,1,0))  ) + 2*(0:n)
 
 # tsdisplay(y)
 plot(y,main = "Случайное блуждание, $y_t=y_{t-1}+ 2 + \\varepsilon_t$")

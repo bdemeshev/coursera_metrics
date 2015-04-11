@@ -1,6 +1,9 @@
 library(forecast)
 
 n <- 200
+set.seed(42)
+y <- as.zoo(rnorm(200, sd=2))
+plot(y)
 
 y <- arima.sim(n=n, list(order=c(0,0,0)) )
 ?arima.sim

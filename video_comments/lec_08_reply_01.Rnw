@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage[left=1cm,right=1cm,top=1cm,bottom=2cm]{geometry}
+\newcommand{\e}{\varepsilon}
+\renewcommand{\b}{\beta}
+\newcommand{\hb}{\hat{\b}}
+\newcommand{\hs}{\hat{\sigma}}
+\usepackage{graphicx}
+
+<<include=FALSE>>=
+library("knitr")
+library("tikzsetup")
+tikzsetup()
+opts_chunk$set(echo=FALSE)
+@
+
+\begin{document}
+
+Глава 8, итерация 1
+
+8-1-1 Стационарный и нестационарный ряды. Примеры
+
+\url{http://www.youtube.com/watch?v=ou-LF3CQ32k}
+
+5:05 в этот момент нужен другой график
+
+<<echo=FALSE, warning=FALSE, message=FALSE, fig.height=4>>=
+library("zoo")
+set.seed(42)
+y <- as.zoo(rnorm(200, sd=2))
+plot(y,main = "Белый шум, $y_t=\\varepsilon_t \\sim N(0,4)$",xlab="",ylab="")
+@
+
+% 5:49 увеличить график немножко 
+
+6:46 исправить график на 
+
+<<echo=FALSE, warning=FALSE, message=FALSE, fig.height=4>>=
+n <- 200
+y <- 20*arima.sim(n=n, list(order=c(0,1,0))  ) + 2*(0:n)
+plot(y,main = "Случайное блуждание, $y_t=y_{t-1}+ 2 + \\varepsilon_t$",xlab="",ylab="")
+@
+
+
+8-1-2 Процесс скользящего среднего 
+
+\url{http://youtu.be/ThP_-zs0qRA}
+
+0:31 вставить в формулу пропущенный плюс:
+
+$y_t= \mu + \varepsilon_t + a_1 \varepsilon_{t-1} + \ldots + a_q \varepsilon_{t-q}$
+
+
+10:58 чуть раньше появляется немного исправленный второй пункт 
+
+* $L\cdot L\cdot y_t=L^2y_t=y_{t-2}$
+
+
+8-1-3 Автокорреляционная функция 
+
+\url{http://youtu.be/Pl4O7dcQIO4}
+
+0:47 картинка со стрелочками в этот момент не нужна (она появляется в другом видео фрагменте, нарисована изумительно!!!). Подпись <<$\rho_k$ --- на сколько в среднем изменится... >> нужна, появляется верно.
+
+
+4 \url{http://youtu.be/y3Fq5nJhlaA}
+
+5 \url{http://youtu.be/LBzHCcpCCi8}
+
+6 \url{http://youtu.be/A6mOMcmHlPI}
+
+7 \url{http://youtu.be/tZY3km0DXT4}
+
+8 \url{http://youtu.be/jWAyqMvak8Y}
+
+9 \url{http://youtu.be/aMRFiZdS48c}
+
+10 \url{http://youtu.be/pRos1eMB3iA}
+11 \url{http://youtu.be/9-W3pY8jgf0}
+
+1 \url{http://youtu.be/AJi1YXaf4M0}
+2 \url{http://youtu.be/vTflQFtmCQo}
+3 \url{http://youtu.be/NitO7H_RDno}
+4 \url{http://youtu.be/twkCTTiROGY}
+
+5 \url{http://youtu.be/zX_-ARokVyI}
+
+
+
+\end{document}

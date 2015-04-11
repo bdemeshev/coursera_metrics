@@ -105,7 +105,7 @@ y_t = y_{t-1} + 2 + \varepsilon_t
 Процесс представимый в виде 
 
 \[
-y_t= \mu + \varepsilon_t + a_1 \varepsilon_{t-1} + \ldots a_q \varepsilon_{t-q}
+y_t= \mu + \varepsilon_t + a_1 \varepsilon_{t-1} + \ldots + a_q \varepsilon_{t-q}
 \]
 
 # Обозначение процесса скользящего среднего 
