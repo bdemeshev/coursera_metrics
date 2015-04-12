@@ -243,3 +243,86 @@ max(p$x[,1])
 
 model1 <- lm(data=mtcars, mpg ~ p$x[,1] + p$x[,2])
 model2 <- lm(data=mtcars, mpg ~ p$x[,1] + p$x[,2] + p$x[,3])
+
+library(Ecdat)
+library(sandwich)
+library(lmtest)
+data("Griliches")
+model1 <- lm(data=Griliches, lw80 ~ age80 + iq + school80 + expr80)
+vcov(model1)
+
+vcovHC(model1, type = "HC3")
+coeftest(model1,vcov. = vcovHC(model1,type="HC0"))
+coeftest(model1,vcov. = vcovHC(model1,type="HC1"))
+coeftest(model1,vcov. = vcovHC(model1,type="HC2"))
+coeftest(model1,vcov. = vcovHC(model1,type="HC3"))
+
+coeftest(model1,vcov. = vcovHC(model1,type="HC4m"))
+coeftest(model1,vcov. = vcovHC(model1,type="HC5"))
+coeftest(model1,vcov. = vcovHC(model1,type="HC3"))
+coeftest(model1,vcov. = vcovHC(model1,type="HC1"))
+
+bptest(data=Griliches, lw80 ~ age80 + iq + school80 + expr80, varformula= ~ age80)
+bptest(data=Griliches, lw80 ~ age80 + iq + school80 + expr80, varformula= ~ iq)
+bptest(data=Griliches, lw80 ~ age80 + iq + school80 + expr80, varformula= ~ expr80)
+
+gqtest(data=Griliches, lw80 ~ age80 + iq + school80 + expr80, 
+       order.by = ~ age80, fraction=0.2)
+gqtest(data=Griliches, lw80 ~ age80 + iq + school80 + expr80, 
+       order.by = ~ iq, fraction=0.2)
+gqtest(data=Griliches, lw80 ~ age80 + iq + school80 + expr80, 
+       order.by = ~ expr80, fraction=0.2)
+
+data("Solow")
+model1 <- lm(data=Solow, q ~ k + A)
+vcov(model1)
+vcovHAC(model1)
+dwtest(model1)
+
+model2 <- lm(data=Solow, q ~ k)
+dwtest(model2)
+
+model3 <- lm(data=Solow, q ~ A)
+dwtest(model3)
+
+bgtest(model1,order=3)
+bgtest(model3,order=3)
+bgtest(model2,order=3)
+
+library(quantmod)
+Sys.setlocale("LC_TIME","C")
+getSymbols(Symbols = "AAPL",from="2010-01-01", to="2014-02-03",src="google")
+plot(AAPL$AAPL.Close, main = "")
+
+Sys.setlocale("LC_TIME","C")
+getSymbols(Symbols = "GOOG",from="2010-01-01", to="2014-02-03",src="google")
+plot(GOOG$GOOG.Close, main = "")
+
+Sys.setlocale("LC_TIME","C")
+getSymbols(Symbols = "MSFT",from="2010-01-01", to="2014-02-03",src="google")
+plot(MSFT$MSFT.Close, main = "")
+
+Sys.setlocale("LC_TIME","C")
+getSymbols(Symbols = "GOOG",from="2010-01-01", to="2014-02-03",src="google")
+a <- GOOG$GOOG.Close
+a1 <- lag(a,1)
+a2 <- lag(a,2)
+model5 <- lm(data=a, a ~ a1 + a2)
+summary(model5)
+
+Sys.setlocale("LC_TIME","C")
+getSymbols(Symbols = "MSFT",from="2010-01-01", to="2014-02-03",src="google")
+a <- MSFT$MSFT.Close
+a1 <- lag(a,1)
+a2 <- lag(a,2)
+model6 <- lm(data=a, a ~ a1 + a2)
+summary(model6)
+
+Sys.setlocale("LC_TIME","C")
+getSymbols(Symbols = "INTC",from="2010-01-01", to="2014-02-03",src="google")
+a <- INTC$INTC.Close
+a1 <- lag(a,1)
+a2 <- lag(a,2)
+model6 <- lm(data=a, a ~ a1 + a2)
+summary(model6)
+
