@@ -1,0 +1,57 @@
+---
+title: "Еще один простой пример"
+author: "Винни-Пух"
+date: "17 April 2015"
+output: html_document
+lang: russian
+---
+
+<!--
+Esli russkie bukvi prevratilis v krakozyabri to:
+File --- Reopen with encoding --- UTF-8 --- set as default --- ok
+-->
+
+
+Загрузим все пакеты для работы
+
+```{r, message=FALSE, warning=FALSE}
+library("pander")
+library("knitr")
+library("lmtest")
+library("psych")
+library("memisc")
+```
+
+Быстрое описание массива `cars`:
+
+```{r}
+a <- describe(cars)
+a[,1:5]
+```
+
+Описание симпатичной табличкой:
+
+```{r, results='asis'}
+pander(data.frame(a[,1:5]))
+```
+
+Результаты регрессии по-быстрому:
+
+```{r}
+model <- lm(data=cars, dist~speed)
+b <- coeftest(model)
+b
+```
+
+Результаты регрессии симпатичной табличкой:
+```{r}
+pander(b[,1:4])
+```
+
+
+Результаты сравнения двух моделей симпатичной табличкой:
+```{r}
+model_2 <- lm(data=cars, dist~speed+I(speed^2))
+pander(mtable(model, model_2))
+```
+
