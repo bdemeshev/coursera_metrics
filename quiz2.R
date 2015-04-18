@@ -326,3 +326,62 @@ a2 <- lag(a,2)
 model6 <- lm(data=a, a ~ a1 + a2)
 summary(model6)
 
+library(forecast)
+set.seed(30)
+y <- arima.sim(n=100, list(ar=0.7))
+tsdisplay(y)
+
+set.seed(3)
+y <- arima.sim(n=100, list(ar=0.99))
+tsdisplay(y)
+
+t<-c(1:100)
+t2 <- t^2
+t3 <- t^3
+
+model <- lm(data=y, y ~ t + t2 + t3)
+summary(model)
+
+set.seed(10)
+y <- arima.sim(n=100, list(ar=0.5))
+m <- Arima(x=y, order=c(0.5,0,2))
+summary(m)
+
+library("sophisthse")
+data <- sophisthse("HHI_Q_I")
+m <- Arima(x=data$HHI_Q_DIRI, order=c(0,0,2))
+summary(m)
+
+775.41
+698.12 
+752.81
+
+auto.arima(data$HHI_Q_DIRI[1:29])
+auto.arima(data$HHI_Q_DIRI[30:61])
+auto.arima(data$HHI_Q_DIRI[62:89])
+
+m <- Arima(x=data$HHI_Q_DIRI, order=c(2,1,0))
+forecast(m,h=3)
+
+library(hydroGOF)
+model <- Arima(x=data$HHI_Q_DIRI, order=c(1,1,3))
+pr <- as.numeric(forecast(model, h=89)$mean)
+mse(as.numeric(data$HHI_Q_DIRI),pr)
+
+
+model <- Arima(x=data$HHI_Q_DIRI, order=c(1,1,1), seasonal=c(0,0,1))
+summary(model)
+
+data$dum <- replicate(0, n=89)
+data$dum[62:69] <- replicate(1, n=8)
+model <- Arima(x=data$HHI_Q_DIRI, order=c(2,1,1), xreg=data$dum)
+summary(model)
+
+
+set.seed(70)
+  y1 <- arima.sim(n=100, list(ar=0.7))
+  plot(y1,type="l",axes=T, ylab = "variable Y")
+  rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")
+  rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")
+  par(new=TRUE)
+  plot(y1,type="l",ylab="")
