@@ -364,12 +364,12 @@ m <- Arima(x=data$HHI_Q_DIRI, order=c(2,1,0))
 forecast(m,h=3)
 
 library(hydroGOF)
-model <- Arima(x=data$HHI_Q_DIRI, order=c(1,1,3))
-pr <- as.numeric(forecast(model, h=89)$mean)
-mse(as.numeric(data$HHI_Q_DIRI),pr)
+model <- Arima(x=data$HHI_Q_DIRI[1:86], order=c(1,1,2))
+pr <- as.numeric(forecast(model, h=3)$mean)
+mse(as.numeric(data$HHI_Q_DIRI[87:89]),pr)
 
 
-model <- Arima(x=data$HHI_Q_DIRI, order=c(1,1,1), seasonal=c(0,0,1))
+model <- Arima(x=data$HHI_Q_DIRI[1:89], order=c(1,1,1), seasonal=c(1,0,0))
 summary(model)
 
 data$dum <- replicate(0, n=89)
