@@ -16,7 +16,7 @@ output:
   ioslides_presentation: default
 ---
 
-# Разложение в сумму не однозначно
+# Разложение в сумму неоднозначно
 
 \[
 4 = 3 + 1
@@ -193,6 +193,7 @@ Cov(x_i^*,w_i)=Cov(x_i+u_i,\varepsilon_i - \beta_2 u_i)=-\beta_2 Var(u_i) \neq 0
 \[
 y_i= 2 + 3x_i + \varepsilon_i
 \]
+
 
 Регрессор $x_i$ ненаблюдаем
 
