@@ -385,3 +385,22 @@ set.seed(70)
   rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")
   par(new=TRUE)
   plot(y1,type="l",ylab="")
+
+
+round(6*25/(25+16), digits=2)
+round(8*9/(9+16),digits=2)
+round(5*9/(9+36),digits=2)
+
+(6*25+4)/25
+(3*16+24)/16
+round((4*9+24)/9,digits=2)
+
+library(caret)
+library(ggplot2)
+df <- diamonds
+a <- createDataPartition(y = df$price, p = 0.8, list=FALSE)
+
+
+
+
+

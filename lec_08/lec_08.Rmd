@@ -153,7 +153,7 @@ y_t= \mu + \e_t + a_1 \e_{t-1} + \ldots + a_q \e_{t-q}
 $y_t \sim MA(q)$, Moving Average
 
 
-# Пример MA процесса [у даски]
+# Пример MA процесса [у доски]
 
 \[
 y_t = 5 + \e_t + 3 \e_{t-1} -2\e_{t-2}
