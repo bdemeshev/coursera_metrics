@@ -29,3 +29,21 @@ RSS/10^9
 
 
 # 
+
+
+data("CollegeDistance")
+h <- CollegeDistance
+help("CollegeDistance")
+
+model <- ivreg(data=h, wage~gender+unemp+ethnicity+education|gender+unemp+ethnicity+distance)
+model <- ivreg(data=h, wage~region+gender+unemp+ethnicity+education|region+gender+unemp+ethnicity+distance)
+model <- ivreg(data=h, wage~region+gender+unemp+education|region+gender+unemp+distance)
+
+
+summary(model)
+res <- coeftest(model)
+res["education","Estimate"]
+
+#model_0 <- ivreg(data=h, wage~gender+unemp+ethnicity+education)
+#summary(model_0)
+#summary(h$region)
