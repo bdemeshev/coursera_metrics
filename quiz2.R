@@ -32,6 +32,7 @@ qnorm(0.95, mean=0,sd=1)
 round(126.00-25.76*1.645, digits = 0)
 round(126.00+25.76*1.645, digits = 0)
 
+
 round(-1148.61-36.31*1.645, digits = 0)
 round(-1148.61+36.31*1.645, digits = 0)
 
@@ -400,7 +401,13 @@ library(ggplot2)
 df <- diamonds
 a <- createDataPartition(y = df$price, p = 0.8, list=FALSE)
 
+setwd("~/Documents/University/master_1_year/coursera_metrics/lab_07")
+data <- read.csv("titanic3.csv")
+model <- glm(data=data, survived~age+I(age^2)+sex+fare+sibsp, 
+             family=binomial(link="logit"))
+confint(model, level= 0.95)
 
-
+data("CollegeDistance")
+h <- CollegeDistance
 
 
