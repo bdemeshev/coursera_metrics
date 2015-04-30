@@ -30,7 +30,7 @@ RSS/10^9
 
 # 
 
-
+library("AER")
 data("CollegeDistance")
 h <- CollegeDistance
 help("CollegeDistance")

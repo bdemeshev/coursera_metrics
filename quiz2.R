@@ -361,6 +361,13 @@ auto.arima(data$HHI_Q_DIRI[1:29])
 auto.arima(data$HHI_Q_DIRI[30:61])
 auto.arima(data$HHI_Q_DIRI[62:89])
 
+y <- sophisthse("HHI_Q_I")
+y1 <- data.frame(y$HHI_Q_DIRI)
+y3 <- y1[62:89,]
+mod_a <- auto.arima(y3)
+summary(mod_a)
+
+
 m <- Arima(x=data$HHI_Q_DIRI, order=c(2,1,0))
 forecast(m,h=3)
 
@@ -407,7 +414,11 @@ model <- glm(data=data, survived~age+I(age^2)+sex+fare+sibsp,
              family=binomial(link="logit"))
 confint(model, level= 0.95)
 
+library("AER")
 data("CollegeDistance")
 h <- CollegeDistance
 
+round(20-4*1.645, digits = 2)
 
+educ3
+educ4
