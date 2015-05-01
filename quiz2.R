@@ -367,6 +367,10 @@ y3 <- y1[62:89,]
 mod_a <- auto.arima(y3)
 summary(mod_a)
 
+y <- sophisthse("HHI_Q_I")
+y4 <- data.frame(y[30:61,1])
+y4
+mod_a <- auto.arima(y4)
 
 m <- Arima(x=data$HHI_Q_DIRI, order=c(2,1,0))
 forecast(m,h=3)
