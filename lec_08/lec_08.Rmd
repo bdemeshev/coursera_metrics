@@ -1,17 +1,18 @@
 ---
 title: "Временные ряды"
 lang: russian
-header-includes: 
-  - \author[Эконометрика. Лекция 8]{Эконометрика. Лекция 8}
-  - \newcommand{\e}{\varepsilon}
-  - \usepackage{tikz}
-  - \usetikzlibrary{cd}
 output:
   beamer_presentation:
+    colortheme: whale
     keep_tex: yes
     theme: Madrid
-    colortheme: whale
   ioslides_presentation: default
+  slidy_presentation: default
+header-includes:
+- \author[Эконометрика. Лекция 8]{Эконометрика. Лекция 8}
+- \newcommand{\e}{\varepsilon}
+- \usepackage{tikz}
+- \usetikzlibrary{cd}
 ---
 
 
@@ -477,7 +478,7 @@ PACF --- partial autocorrelation function
 Получим $\hat{\phi}_k$ из оценки регрессии
 
 \[
-\hat{y}_t = * + * \cdot y_{t-1} + *  \cdot y_{t_2} + \ldots + *  \cdot y _{t-k+1} + \phi_k y_{t-k} + u_t
+\hat{y}_t = * + * \cdot y_{t-1} + * \cdot y_{t-2} + \ldots + *  \cdot y _{t-k+1} + \phi_k y_{t-k} + u_t
 \]
 
 # Примечания к расчету автокорреляционной функции
