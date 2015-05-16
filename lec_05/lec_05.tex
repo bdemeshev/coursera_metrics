@@ -1,6 +1,9 @@
 \documentclass[ignorenonframetext,]{beamer}
 \usetheme{Madrid}
 \usecolortheme{whale}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{:}
+\setbeamercolor{caption name}{fg=normal text.fg}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
@@ -19,6 +22,7 @@
     \usepackage[utf8]{inputenc}
       \fi
 \fi
+% use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
@@ -51,16 +55,15 @@
 \makeatletter
 \def\fnum@table{\tablename~\thetable}
 \makeatother
-\usepackage{letltxmacro}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
 \makeatother
-\AtBeginDocument{
-  \LetLtxMacro\Oldincludegraphics\includegraphics
-  \renewcommand{\includegraphics}[2][]{%
-    \Oldincludegraphics[#1,width=\maxwidth,height=\maxheight,keepaspectratio]{#2}}
-}
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 % Comment these out if you don't want a slide with just the
 % part/section/subsection/subsubsection title:
@@ -89,6 +92,7 @@
 \newcommand{\e}{\varepsilon}
 
 \title{Гетероскедастичность}
+\date{}
 
 \begin{document}
 \frame{\titlepage}
@@ -97,7 +101,7 @@
 
 Для проверки гипотез мы предполагали условную гомоскедастичность ошибок:
 
-$Var(\varepsilon_i | X)=E(\varepsilon_i^2 | X)=\sigma^2$
+\(Var(\varepsilon_i | X)=E(\varepsilon_i^2 | X)=\sigma^2\)
 
 Что произойдет если эта предпосылка будет нарушена?
 
@@ -106,16 +110,16 @@ $Var(\varepsilon_i | X)=E(\varepsilon_i^2 | X)=\sigma^2$
 \begin{frame}{Четыре разных понятия}
 
 Условная гомоскедастичность
-$Var(\varepsilon_i | X)=E(\varepsilon_i^2 | X)=\sigma^2$
+\(Var(\varepsilon_i | X)=E(\varepsilon_i^2 | X)=\sigma^2\)
 
 Условная гетероскедастичность
-$Var(\varepsilon_i | X)=E(\varepsilon_i^2 | X) \neq const$
+\(Var(\varepsilon_i | X)=E(\varepsilon_i^2 | X) \neq const\)
 
 Безусловная гомоскедастичность
-$Var(\varepsilon_i)=E(\varepsilon_i^2)=\sigma^2$
+\(Var(\varepsilon_i)=E(\varepsilon_i^2)=\sigma^2\)
 
 Безусловная гетероскедастичность
-$Var(\varepsilon_i)=E(\varepsilon_i^2) \neq \sigma^2$
+\(Var(\varepsilon_i)=E(\varepsilon_i^2) \neq \sigma^2\)
 
 \end{frame}
 
@@ -127,36 +131,34 @@ $Var(\varepsilon_i)=E(\varepsilon_i^2) \neq \sigma^2$
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Случай А: $\e_i$ независимы и одинаково распределены
+  Случай А: \(\e_i\) независимы и одинаково распределены
 \end{itemize}
 
 \begin{longtable}[c]{@{}lllll@{}}
-\toprule\addlinespace
-Вероятности & $\e_i=-10$ & $\e_i=-1$ & $\e_i=1$ & $\e_i=10$
-\\\addlinespace
-\midrule\endhead
-$x_i=1$ & 0 & 1/4 & 1/4 & 0
-\\\addlinespace
-$x_i=10$ & 0 & 1/4 & 1/4 & 0
-\\\addlinespace
+\toprule
+Вероятности & \(\e_i=-10\) & \(\e_i=-1\) & \(\e_i=1\) &
+\(\e_i=10\)\tabularnewline
+\midrule
+\endhead
+\(x_i=1\) & 0 & 1/4 & 1/4 & 0\tabularnewline
+\(x_i=10\) & 0 & 1/4 & 1/4 & 0\tabularnewline
 \bottomrule
 \end{longtable}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Случай B: $\e_i$ независимы и одинаково распределены
+  Случай B: \(\e_i\) независимы и одинаково распределены
 \end{itemize}
 
 \begin{longtable}[c]{@{}lllll@{}}
-\toprule\addlinespace
-Вероятности & $\e_i=-10$ & $\e_i=-1$ & $\e_i=1$ & $\e_i=10$
-\\\addlinespace
-\midrule\endhead
-$x_i=1$ & 1/4 & 0 & 0 & 1/4
-\\\addlinespace
-$x_i=10$ & 1/4 & 0 & 0 & 1/4
-\\\addlinespace
+\toprule
+Вероятности & \(\e_i=-10\) & \(\e_i=-1\) & \(\e_i=1\) &
+\(\e_i=10\)\tabularnewline
+\midrule
+\endhead
+\(x_i=1\) & 0 & 1/4 & 1/4 & 0\tabularnewline
+\(x_i=10\) & 1/4 & 0 & 0 & 1/4\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -170,30 +172,28 @@ $x_i=10$ & 1/4 & 0 & 0 & 1/4
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Случай C: $\e_i$ независимы
+  Случай C: \(\e_i\) независимы
 \end{itemize}
 
 \begin{longtable}[c]{@{}lllll@{}}
-\toprule\addlinespace
-Вероятности & $\e_1=-10$ & $\e_1=-1$ & $\e_1=1$ & $\e_1=10$
-\\\addlinespace
-\midrule\endhead
-$x_1=1$ & 0 & 1/4 & 1/4 & 0
-\\\addlinespace
-$x_1=10$ & 0 & 1/4 & 1/4 & 0
-\\\addlinespace
+\toprule
+Вероятности & \(\e_1=-10\) & \(\e_1=-1\) & \(\e_1=1\) &
+\(\e_1=10\)\tabularnewline
+\midrule
+\endhead
+\(x_1=1\) & 0 & 1/4 & 1/4 & 0\tabularnewline
+\(x_1=10\) & 0 & 1/4 & 1/4 & 0\tabularnewline
 \bottomrule
 \end{longtable}
 
 \begin{longtable}[c]{@{}lllll@{}}
-\toprule\addlinespace
-Вероятности & $\e_2=-10$ & $\e_2=-1$ & $\e_2=1$ & $\e_2=10$
-\\\addlinespace
-\midrule\endhead
-$x_2=1$ & 0 & 1/4 & 1/4 & 0
-\\\addlinespace
-$x_2=10$ & 1/4 & 0 & 0 & 1/4
-\\\addlinespace
+\toprule
+Вероятности & \(\e_2=-10\) & \(\e_2=-1\) & \(\e_2=1\) &
+\(\e_2=10\)\tabularnewline
+\midrule
+\endhead
+\(x_2=1\) & 1/4 & 0 & 0 & 1/4\tabularnewline
+\(x_2=10\) & 1/4 & 0 & 0 & 1/4\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -225,16 +225,16 @@ $x_2=10$ & 1/4 & 0 & 0 & 1/4
 
 Для оценок коэффициентов:
 
-$\hat{\beta}=(X'X)^{-1}X'y$
+\(\hat{\beta}=(X'X)^{-1}X'y\)
 
 Для оценки ковариационной матрицы оценок коэффициентов:
 
-$\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$
+\(\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}\)
 
 В частности:
 
-$\widehat{Var}(\hat{\beta}_j|X)=\frac{\hat{\sigma}^2}{RSS_j}$ и
-$se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
+\(\widehat{Var}(\hat{\beta}_j|X)=\frac{\hat{\sigma}^2}{RSS_j}\) и
+\(se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}\)
 
 \end{frame}
 
@@ -242,41 +242,42 @@ $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
 
 \begin{itemize}
 \item
-  конечная выборка без предположения о нормальности $\varepsilon$
+  конечная выборка без предположения о нормальности \(\varepsilon\)
 \item
-  конечная выборка с предположением о нормальности $\varepsilon$
+  конечная выборка с предположением о нормальности \(\varepsilon\)
 \item
   асимптотические свойства без предположения о нормальности
-  $\varepsilon$
+  \(\varepsilon\)
 \end{itemize}
 
 Что происходит в каждом случае?
 
 \end{frame}
 
-\begin{frame}{Малая выборка без нормальности $\varepsilon$}
+\begin{frame}{Малая выборка без нормальности \(\varepsilon\)}
 
 \begin{itemize}
 \item
-  (+) Линейность по $y$
+  (+) Линейность по \(y\)
 \item
-  (+) Несмещенность, $E(\hat{\beta}|X)=\beta$, $E(\hat{\beta})=\beta$
+  (+) Несмещенность, \(E(\hat{\beta}|X)=\beta\),
+  \(E(\hat{\beta})=\beta\)
 \item
-  (---) Оценки $\hat{\beta}$ эффективны
+  (---) Оценки \(\hat{\beta}\) эффективны
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Малая выборка с нормальными $\varepsilon$}
+\begin{frame}{Малая выборка с нормальными \(\varepsilon\)}
 
 \begin{itemize}
 \item
   (---)
-  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}$
+  \(\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}\)
 \item
-  (---) $\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$
+  (---) \(\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}\)
 \item
-  (---) $\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$
+  (---) \(\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}\)
 \end{itemize}
 
 \end{frame}
@@ -285,13 +286,13 @@ $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
 
 \begin{itemize}
 \item
-  (+) $\hat{\beta} \to \beta$
+  (+) \(\hat{\beta} \to \beta\)
 \item
-  (+) $\frac{RSS}{n-k} \to \sigma^2=Var(\e_i)$
+  (+) \(\frac{RSS}{n-k} \to \sigma^2=Var(\e_i)\)
 \item
-  (---) $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$
+  (---) \(\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)\)
 \item
-  (---) $\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k)} \to \chi^2_r$
+  (---) \(\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k)} \to \chi^2_r\)
 \end{itemize}
 
 \end{frame}
@@ -300,11 +301,11 @@ $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
 
 \begin{itemize}
 \item
-  Сами $\hat{\beta}$ можно интерпретировать и использовать
+  Сами \(\hat{\beta}\) можно интерпретировать и использовать
 \item
-  Стандартные ошибки $se(\hat{\beta}_j)$ несостоятельны
+  Стандартные ошибки \(se(\hat{\beta}_j)\) несостоятельны
 \item
-  Не можем строить доверительные интервалы для $\beta_j$ и проверять
+  Не можем строить доверительные интервалы для \(\beta_j\) и проверять
   гипотезы
 \end{itemize}
 
@@ -316,9 +317,9 @@ $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
 \item
   Исправить стандартные ошибки!
 \item
-  Другая формула для оценки $\widehat{Var}_{HC}(\hat{\beta}|X)$
+  Другая формула для оценки \(\widehat{Var}_{HC}(\hat{\beta}|X)\)
 \item
-  Следовательно, другие $se_{HC}(\hat{\beta}_j)$
+  Следовательно, другие \(se_{HC}(\hat{\beta}_j)\)
 \end{itemize}
 
 \end{frame}
@@ -332,11 +333,11 @@ $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
   Вместо
 \end{itemize}
 
-$\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$
+\(\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}\)
 
 использовать
 
-$\widehat{Var}_{HC}(\hat{\beta}|X)=(X'X)^{-1}X'\hat{\Omega}X(X'X)^{-1}$
+\(\widehat{Var}_{HC}(\hat{\beta}|X)=(X'X)^{-1}X'\hat{\Omega}X(X'X)^{-1}\)
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -344,7 +345,7 @@ $\widehat{Var}_{HC}(\hat{\beta}|X)=(X'X)^{-1}X'\hat{\Omega}X(X'X)^{-1}$
   Уайт, 1980, HC0:
 \end{itemize}
 
-$\hat{\Omega}=diag( \hat{\varepsilon}_1^2, \ldots, \hat{\varepsilon}_n^2 )$
+\(\hat{\Omega}=diag( \hat{\varepsilon}_1^2, \ldots, \hat{\varepsilon}_n^2 )\)
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -352,20 +353,21 @@ $\hat{\Omega}=diag( \hat{\varepsilon}_1^2, \ldots, \hat{\varepsilon}_n^2 )$
   Современный вариант, HC3:
 \end{itemize}
 
-$\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \frac{\hat{\varepsilon}_n^2}{(1-h_{nn})^2} \right)$
+\(\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \frac{\hat{\varepsilon}_n^2}{(1-h_{nn})^2} \right)\)
 
 \end{frame}
 
 \begin{frame}{Суть корректировки:}
 
-Мы меняем $se(\hat{\beta}_j)$ на $se_{HC}(\hat{\beta}_j)$
+Мы меняем \(se(\hat{\beta}_j)\) на \(se_{HC}(\hat{\beta}_j)\)
 
 Какие проблемы решены?
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  (+) $\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} \to N(0,1)$
+  (+)
+  \(\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} \to N(0,1)\)
   (УРА!)
 \end{itemize}
 
@@ -379,18 +381,18 @@ $\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \f
   (---) эффективность
 \end{itemize}
 
-Оценки $\hat{\beta}$ не меняются и остаются неэффективными!
+Оценки \(\hat{\beta}\) не меняются и остаются неэффективными!
 
-Даже при предположении о нормальности $\varepsilon$:
+Даже при предположении о нормальности \(\varepsilon\):
 
 \begin{itemize}
 \item
   (---)
-  $\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} | X \sim t_{n-k}$
+  \(\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} | X \sim t_{n-k}\)
 \item
-  (---) $\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$
+  (---) \(\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}\)
 \item
-  (---) $\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$
+  (---) \(\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}\)
 \end{itemize}
 
 \end{frame}
@@ -399,8 +401,8 @@ $\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \f
 
 \begin{itemize}
 \item
-  Новая формула для $\widehat{Var}_{HC}(\hat{\beta}|X)$, и,
-  следовательно, для $se_{HC}(\hat{\beta}_j)$
+  Новая формула для \(\widehat{Var}_{HC}(\hat{\beta}|X)\), и,
+  следовательно, для \(se_{HC}(\hat{\beta}_j)\)
 \item
   робастная ковариационная матрица в R (по умолчанию HC3):
 \end{itemize}
@@ -418,7 +420,7 @@ $\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \f
   С ней жизнь прекрасна!
 \end{itemize}
 
-(+) $\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} \to N(0,1)$
+(+) \(\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} \to N(0,1)\)
 
 \end{frame}
 
@@ -428,7 +430,7 @@ $\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \f
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Как только есть случайная выборка и объекты могут быть разного
-  ``размера'', использовать $se_{HC}(\hat{\beta}_j)$ для проверки
+  ``размера'', использовать \(se_{HC}(\hat{\beta}_j)\) для проверки
   гипотез!
 \end{itemize}
 
@@ -485,14 +487,14 @@ $\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \f
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Оценить основную регрессию, получить $\hat{\varepsilon}_i$
+  Оценить основную регрессию, получить \(\hat{\varepsilon}_i\)
 \item
   Оценить вспомогательную регрессию:
 \end{enumerate}
 
-$\hat{\varepsilon}^2_i = \gamma_1 + \gamma_2 z_{i2} + \ldots + \gamma_{m} z_{im}+ u_i$
+\(\hat{\varepsilon}^2_i = \gamma_1 + \gamma_2 z_{i2} + \ldots + \gamma_{m} z_{im}+ u_i\)
 
-$z_{i2}$, \ldots, $z_{im}$ --- факторы, определяющие форму
+\(z_{i2}\), \ldots, \(z_{im}\) --- факторы, определяющие форму
 гетероскедастичности.
 
 По умолчанию во вспомогательной регрессии берут исходные регрессоры, их
@@ -503,22 +505,22 @@ $z_{i2}$, \ldots, $z_{im}$ --- факторы, определяющие форм
 \setcounter{enumi}{2}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Посчитать $LM=nR^2_{aux}$
+  Посчитать \(LM=nR^2_{aux}\)
 \end{enumerate}
 
 \end{frame}
 
 \begin{frame}{Тест Уайта}
 
-При верной $H_0$ об условной гомоскедастичности:
+При верной \(H_0\) об условной гомоскедастичности:
 
-$H_0$: $Var(\e_i|X)=E(\varepsilon^2_i|X)=\sigma^2$
+\(H_0\): \(Var(\e_i|X)=E(\varepsilon^2_i|X)=\sigma^2\)
 
-$LM \sim \chi^2_{m-1}$, где $m$ --- число параметров во вспомогательной
-регрессии
+\(LM \sim \chi^2_{m-1}\), где \(m\) --- число параметров во
+вспомогательной регрессии
 
-Если наблюдаемое значение статистики $LM$ больше критического
-$\chi^2_{cr}$, то $H_0$ отвергается.
+Если наблюдаемое значение статистики \(LM\) больше критического
+\(\chi^2_{cr}\), то \(H_0\) отвергается.
 
 \end{frame}
 
@@ -533,7 +535,8 @@ $\chi^2_{cr}$, то $H_0$ отвергается.
   Какой регрессор скорее всего влияет на условную дисперсию ошибок?
 \end{itemize}
 
-Исследователь провел классический тест Уайта и получил $R^2_{aux}=0.2$.
+Исследователь провел классический тест Уайта и получил
+\(R^2_{aux}=0.2\).
 
 \begin{itemize}
 \item
@@ -570,21 +573,21 @@ $\chi^2_{cr}$, то $H_0$ отвергается.
   Оцениваем исходную модель отдельно по первым и по последним
   наблюдениям
 \item
-  Считаем $F=\frac{RSS_1/(n_1-k)}{RSS_2/(n_2-k)}$
+  Считаем \(F=\frac{RSS_1/(n_1-k)}{RSS_2/(n_2-k)}\)
 \end{enumerate}
 
 \end{frame}
 
 \begin{frame}{Тест Голдфельда-Квандта продолжение}
 
-При верной $H_0$ об условной гомоскедастичности:
+При верной \(H_0\) об условной гомоскедастичности:
 
-$H_0$: $Var(\e_i|X)=E(\varepsilon^2_i|X)=\sigma^2$
+\(H_0\): \(Var(\e_i|X)=E(\varepsilon^2_i|X)=\sigma^2\)
 
-$F\sim F_{n_1-k,n_2-k}$
+\(F\sim F_{n_1-k,n_2-k}\)
 
-Если наблюдаемое значение статистики $F$ больше критического $F_{cr}$,
-то $H_0$ отвергается.
+Если наблюдаемое значение статистики \(F\) больше критического
+\(F_{cr}\), то \(H_0\) отвергается.
 
 \end{frame}
 
@@ -595,7 +598,8 @@ $F\sim F_{n_1-k,n_2-k}$
 
 Чтобы проверить наличие гетероскедастичности исследователь оценил эту
 модель отдельно по 80 самым удаленным от метро киоскам, получил,
-$RSS_2=120$. По 80 самым близки к метро киоскам, получил, $RSS_1=210$.
+\(RSS_2=120\). По 80 самым близки к метро киоскам, получил,
+\(RSS_1=210\).
 
 Проведите тест Голдфельда-Квандта
 
@@ -618,15 +622,15 @@ $RSS_2=120$. По 80 самым близки к метро киоскам, по�
 
 \begin{frame}{Получение эффективных оценок {[}доска{]}}
 
-Модель $m_i = \beta_1 + \beta_2 r_i + \beta_3 t_i + \e_i$:
+Модель \(m_i = \beta_1 + \beta_2 r_i + \beta_3 t_i + \e_i\):
 
 \begin{itemize}
 \item
-  $m_i$ --- средний результат класса по математике
+  \(m_i\) --- средний результат класса по математике
 \item
-  $r_i$ --- количество учеников
+  \(r_i\) --- количество учеников
 \item
-  $t_i$ --- среднее время, потраченное на занятия математикой
+  \(t_i\) --- среднее время, потраченное на занятия математикой
 \item
   Какую структуру гетероскедастичности логично ожидать?
 \item
