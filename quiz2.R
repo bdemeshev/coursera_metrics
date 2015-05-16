@@ -32,7 +32,6 @@ qnorm(0.95, mean=0,sd=1)
 round(126.00-25.76*1.645, digits = 0)
 round(126.00+25.76*1.645, digits = 0)
 
-
 round(-1148.61-36.31*1.645, digits = 0)
 round(-1148.61+36.31*1.645, digits = 0)
 
@@ -328,11 +327,15 @@ model6 <- lm(data=a, a ~ a1 + a2)
 summary(model6)
 
 library(forecast)
-set.seed(30)
+set.seed(40)
 y <- arima.sim(n=100, list(ar=0.7))
 tsdisplay(y)
 
-set.seed(3)
+# set.seed(40)
+# z <- arima.sim(n=100, list(ar=0.7))
+# tsdisplay(z)
+
+set.seed(1)
 y <- arima.sim(n=100, list(ar=0.99))
 tsdisplay(y)
 
@@ -350,6 +353,7 @@ summary(m)
 
 library("sophisthse")
 data <- sophisthse("HHI_Q_I")
+data <- data[1:89]
 m <- Arima(x=data$HHI_Q_DIRI, order=c(0,0,2))
 summary(m)
 
@@ -357,20 +361,22 @@ summary(m)
 698.12 
 752.81
 
+# INVESTMENT<- sophisthse("INVFC_M_CHI_SA")
+
 auto.arima(data$HHI_Q_DIRI[1:29])
 auto.arima(data$HHI_Q_DIRI[30:61])
 auto.arima(data$HHI_Q_DIRI[62:89])
 
-y <- sophisthse("HHI_Q_I")
-y1 <- data.frame(y$HHI_Q_DIRI)
-y3 <- y1[62:89,]
-mod_a <- auto.arima(y3)
-summary(mod_a)
-
-y <- sophisthse("HHI_Q_I")
-y4 <- data.frame(y[30:61,1])
-y4
-mod_a <- auto.arima(y4)
+# y <- sophisthse("HHI_Q_I")
+# y1 <- data.frame(y$HHI_Q_DIRI)
+# y3 <- y1[62:89,]
+# mod_a <- auto.arima(y3)
+# summary(mod_a)
+# 
+# y <- sophisthse("HHI_Q_I")
+# y4 <- data.frame(y[30:61,1])
+# y4
+# mod_a <- auto.arima(y4)
 
 m <- Arima(x=data$HHI_Q_DIRI, order=c(2,1,0))
 forecast(m,h=3)
@@ -381,14 +387,27 @@ pr <- as.numeric(forecast(model, h=3)$mean)
 mse(as.numeric(data$HHI_Q_DIRI[87:89]),pr)
 
 
-model <- Arima(x=data$HHI_Q_DIRI[1:89], order=c(1,1,1), seasonal=c(1,0,0))
+model <- Arima(x=data$HHI_Q_DIRI[1:89], order=c(1,1,1), seasonal=c(0,0,1))
 summary(model)
 
+data <- sophisthse("HHI_Q_I")
+data <- data[1:89]
 data$dum <- replicate(0, n=89)
 data$dum[62:69] <- replicate(1, n=8)
-model <- Arima(x=data$HHI_Q_DIRI, order=c(2,1,1), xreg=data$dum)
+model <- Arima(x=data$HHI_Q_DIRI, order=c(1,1,1), xreg=data$dum)
 summary(model)
 
+# Arima(x=a$HHI_Q_DIRI, order=c(1,1,1), xreg=a$dum)
+# M12 <- arima(x=a$HHI_Q_DIRI, order=c(1,1,1), xreg = a$dummy)
+
+# data <- sophisthse("HHI_Q_I")
+# a <- data$HHI_Q_DIRI
+# am <- a[1:89] # возьмем наблюдения с 1 по 89
+# am$dummy <- replicate(0,n=89)
+
+# data <- sophisthse("HHI_Q_I")
+# a <- data[1:89] # возьмем наблюдения с 1 по 89
+# a$dummy <- replicate(0,n=89)
 
 set.seed(70)
   y1 <- arima.sim(n=100, list(ar=0.7))
@@ -412,11 +431,22 @@ library(ggplot2)
 df <- diamonds
 a <- createDataPartition(y = df$price, p = 0.8, list=FALSE)
 
+library(erer)
 setwd("~/Documents/University/master_1_year/coursera_metrics/lab_07")
 data <- read.csv("titanic3.csv")
-model <- glm(data=data, survived~age+I(age^2)+sex+fare+sibsp, 
-             family=binomial(link="logit"))
+model <- glm(data=data, survived~age+I(age^2)+sex+pclass+sibsp, 
+             family=binomial(link="probit"),x=TRUE)
+vcov(model)
+maBina(model)
 confint(model, level= 0.95)
+
+# library(dplyr)
+# t <- read.csv("titanic3.csv")
+# t <- mutate(t,sex=as.factor(sex),pclass=as.factor(pclass),survived=as.factor(survived))
+# m_probit1 <- glm(data=t, survived~age+I(age^2)+sex+pclass+sibsp,
+#                  family=binomial(link="probit"),x=TRUE)
+# maBina(m_probit1)
+
 
 library("AER")
 data("CollegeDistance")
@@ -424,5 +454,124 @@ h <- CollegeDistance
 
 round(20-4*1.645, digits = 2)
 
-educ3
-educ4
+
+4.5+0.05*3.4^2+2*3.4*(-0.23)+1200
+
+
+library(ggplot2)
+data <- read.csv("titanic3.csv")
+qplot(data = data, age, geom = "histogram", fill=pclass) + facet_wrap(~pclass)
+
+
+df <- diamonds
+ggplot(data=df, aes(price, carat)) + geom_point(color="lightblue") + facet_wrap(~color)
+
+
+library("AER")
+data("CollegeDistance")
+h <- CollegeDistance
+set.seed(42)
+train_ind <- createDataPartition(h$wage, p=0.9, list=FALSE)
+h_train <- h[train_ind,]
+h_test <- h[-train_ind,]
+
+model <- lm(data=h_train, wage~region+gender+unemp+ethnicity+education)
+summary(model)
+
+
+model1 <- ivreg(data=h_train, wage~region+gender+unemp+ethnicity+education|region+gender+unemp+ethnicity+distance)
+summary(model1)
+round(0.626923, digits=2)
+
+h_test$y_hat <- predict(model1, newdata = h_test, type = "response")
+round(10.085335, digits=3)
+res <- coeftest(model1)
+
+library(lmtest)
+m <- mtcars
+model <- lm(data=m, mpg~hp+wt+am)
+m$hp2 <- m$hp^2
+m$wt2 <- m$wt^2
+
+bptest(data=m, mpg~hp+wt+am, varformula= ~ hp+hp2+wt+wt2)
+
+gqtest(data=m, mpg~hp+wt+am, 
+       order.by = ~ wt, fraction=0.3)
+
+library(sandwich)
+vcovHC(model, type = "HC2")
+coeftest(model,vcov. = vcovHC(model,type="HC0"))
+
+set.seed(12)
+  y<-arima.sim(model = list (ar = c(0.1, 0.6), ma = -0.3), n=100)
+  x1<-rnorm(100, 15, 5)
+  x2<-runif(100, 45, 50)
+model1 <- lm(data=y, y~x1+x2)
+coeftest(model1,vcov. = vcovHAC)
+bgtest(model1,order=3)
+
+ggplot(data=model1, aes(lag(resid(model1),1),resid(model1))) + geom_point()
+
+
+set.seed(123)
+y<-arima.sim(model = list(ar = c(0.5, 0.1), ma = c(0.3,0.2)), n = 100)
+model3 <- Arima(x=y, order=c(0,1,2))
+summary(model3)
+
+model4 <- Arima(x=y, order=c(3,0,3), fixed=c(0, NA, NA, 0, NA, NA, NA))
+summary(model4)
+
+
+4.5+0.05*20^2+2*20*(-0.23)+1200
+
+# library(forecast)
+# library(lmtest)
+# set.seed(2)
+# y <- arima.sim(n=100, list(ar=0.99))
+# tsdisplay(y)
+# df1 <- as.data.frame(y)
+# df1$t <- as.numeric(rownames(df1))
+# a <- poly(df1$t, degree = 3, raw=TRUE)
+# model <- lm(data=df1, x~a)
+# model_2 <- lm(data=df1, x~t+I(t^2)+I(t^3))
+# coeftest(model)
+# coeftest(model_2)
+
+setwd("~/Desktop")
+fl <- read.csv("data.csv")
+d <- ts(fl[,2],frequency = 12, start = c(2005,10))
+print(ts(d,start=c(2005,10),frequency=12),calendar=F)
+arima(d, order=c(1,1,1))
+
+# setwd("~/Documents/University/master_1_year/coursera_metrics/lab_07")
+# data <- read.csv("titanic3.csv")
+# t <- data 
+# m_logit<-glm(data=t,survived~age+I(age^2)+sex+fare+sibsp,family=binomial(link="logit"))
+# nd2<-data.frame(age=50,sex="male",sibsp=2,fare=200)
+# prognoz <- predict(m_logit, newdata = nd2, type="response", se.fit=TRUE)
+# prognoz$fit - 1.96*prognoz$se.fit
+
+# library(ggplot2)
+# library(caret)
+# h <- diamonds
+# set.seed(12345) 
+# train_ind <- createDataPartition(h$price, p=0.8, list=FALSE) 
+# h_train <- h[train_ind,] 
+# h_test <- h[-train_ind,] 
+# mod1 <- lm(data=h_train, log(price)~log(carat)+log(depth)+clarity)
+# pred_1 <- predict(mod1, h_test)
+# h2 <- exp(pred_1)
+# x <- (sum(h2-h_test$price)^2)/10^9
+# x
+# 
+# set.seed(12345) 
+# df <-diamonds
+# train_ind <- createDataPartition(df$price, p=0.8, list=FALSE) 
+# df_train <- df[train_ind,] 
+# df_test <- df[-train_ind,] 
+# model_1=lm(data=df_train,log(price)~log(carat)+log(depth)+log(table)+clarity)
+# y=(df_test$price)
+# y_hat_1=predict(model_1,df_test)
+# y2=exp(y_hat_1)
+# sum((y-y2)^2)/(10^9)
+
