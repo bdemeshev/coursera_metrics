@@ -1,0 +1,1906 @@
+<quiz>
+  <metadata>
+    <title><![CDATA[Тест 2: Проверка гипотез]]></title>
+    <open_time>2015-03-09 0001</open_time>
+    <soft_close_time>2015-03-23 2359</soft_close_time>
+    <hard_close_time>2015-03-30 2359</hard_close_time>
+    <duration>0</duration>
+    <retry_delay>0</retry_delay>
+    <maximum_submissions>3</maximum_submissions>
+    <modified_time>1426676753606</modified_time>
+    <is_ace_exam_flag>none</is_ace_exam_flag>
+    <authentication_required>1</authentication_required>
+    <parameters>
+      <show_explanations>
+        <question>before_soft_close_time</question>
+        <option>before_soft_close_time</option>
+        <score>before_soft_close_time</score>
+      </show_explanations>
+    </parameters>
+    <maximum_score>22</maximum_score>
+  </metadata>
+  <preamble><![CDATA[<b>Чтоб не спотыкаться о все кочки,
+<br>
+В качестве десятичного разделителя используй ТОЧКУ! <br>
+
+
+Только цифры и точку в ответ вводи,
+<br>
+А если уж ввёл что ещё, то извини :) <br>
+</b>]]></preamble>
+  <data>
+    <question_groups>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="4a6314da602f240aad97653502ed03a5" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберете из перечисленных те варианты, которые являются корректными действиями при проверке гипотез]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="c13ec428459471dbca92db1bc22f133a" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Выписать условия применимости теста]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="23df2046ca249d94954a3f4b46f2c6a7" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Сформулировать нулевую и альтернативную гипотезы и указать уровень значимости]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="7ed916158b5ab39ee05a82394b63960e" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Всегда сравнивать полученное наблюдаемое значение статистики с нулем]]></text>
+                  <explanation><![CDATA[Ключевое слово - всегда. С чем мы сравниваем, зависит от того, какая нулевая гипотеза проверяется]]></explanation>
+                </option>
+                <option id="ac5563ddac7b9c5d51c8a9e70a13cf55" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Делать вывод о том, отвергается ли альтернативная гипотеза или нет]]></text>
+                  <explanation><![CDATA[Мы можем делать вывод только о нулевой гипотезе]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ec4f0a85eedbf0ebcaa3be3da8054536" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберете из перечисленных те варианты, которые являются корректными действиями при проверке гипотез]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="2c4c70fe0c798f75badb76559e95a4d7" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Рассчитать значение тестовой статистики]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="7acdbc9919400f78db37877e853f11d3" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Определить область, в которой нулевая гипотеза не отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="1a2ba3e45532ff93f935a66afb266b1a" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Вне зависимости от вида гипотезы всегда предполагать, что при верной нулевой гипотезе наблюдаемая статитистика имеет нормальное распределение]]></text>
+                  <explanation><![CDATA[В зависимости от типа проверяемой гипотезы распределение будет меняться]]></explanation>
+                </option>
+                <option id="7a866f96c2b01004226ba14e58d69a1e" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Делать вывод о том, принимается ли альтернативная гипотеза или нет]]></text>
+                  <explanation><![CDATA[Двойная ошибка: мы делаем вывод только о нулевой гипотезе и этот вывод идет в формате "отвергается/ не отвергается"]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="0fb6000331520206e9e29213bc046d26" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберете из перечисленных те варианты, которые являются корректными действиями при проверке гипотез]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="d7a14054d73f990b6824bbfcc29c37e3" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Сформулировать нулевую и альтернативную гипотезы и указать уровень значимости]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1d9a818dbb70c9bd5620c263f40b6560" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Рассчитать значение тестовой статистики]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="646ea6d246c36dd64c9af9df5764c5d8" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Делать вывод о том, отвергается ли альтернативная гипотеза или нет]]></text>
+                  <explanation><![CDATA[Мы можем делать вывод только о нулевой гипотезе]]></explanation>
+                </option>
+                <option id="3163883afdf50d7925609108e9064daa" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Вне зависимости от вида гипотезы всегда предполагать, что при верной нулевой гипотезе наблюдаемая статитистика имеет нормальное распределение]]></text>
+                  <explanation><![CDATA[В зависимости от типа проверяемой гипотезы распределение будет меняться]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="a90d6fd06e0e161b830d08324af8c821" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Проверив гипотезу, можно сделать статистический вывод о том, что ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="55dc353e959a6d14844a0d517638ded1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[нулевая гипотеза отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="85ef17f6a989f22238a13a77c2600f20" selected_score="0" unselected_score="0">
+                  <text><![CDATA[нулевая гипотеза принимается]]></text>
+                  <explanation><![CDATA[Нулевая гипотеза может только отвергаться или не отвергаться]]></explanation>
+                </option>
+                <option id="724cd2d7c355f1ac7abbbe39259b9d7f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[альтернативная гипотеза принимается
+]]></text>
+                  <explanation><![CDATA[Только нулевая гипотеза может отвергаться или не отвергаться]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5fb3f70706f5d140db0bca49dee9e1ac" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Проверив гипотезу, можно сделать статистический вывод о том, что]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="66cde708c0b96683878abb00b84898c2" selected_score="1" unselected_score="0">
+                  <text><![CDATA[нулевая гипотеза не отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="1985c9eff423c2952a686d3a27528a63" selected_score="0" unselected_score="0">
+                  <text><![CDATA[нулевая гипотеза не принимается]]></text>
+                  <explanation><![CDATA[Нулевая гипотеза может только отвергаться или не отвергаться]]></explanation>
+                </option>
+                <option id="5e299548bdfe1df3f9c870e988bcb3a1" selected_score="0" unselected_score="0">
+                  <text><![CDATA[альтернативная гипотеза отвергается]]></text>
+                  <explanation><![CDATA[Только нулевая гипотеза может отвергаться или не отвергаться]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="200e875f311c600bca6495c7e6601369" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Проверив гипотезу, можно сделать статистический вывод о том, что]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="8f1a21e1d04dd6858ecb5cfa0ccb2cd6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[нулевая гипотеза отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="e383e527652aeb4930d0c58320b3533a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[альтернативная гипотеза принимается]]></text>
+                  <explanation><![CDATA[Только нулевая гипотеза может отвергаться или не отвергаться]]></explanation>
+                </option>
+                <option id="52b963204f2145deae056745c240fbe0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[нулевая гипотеза не принимается]]></text>
+                  <explanation><![CDATA[Нулевая гипотеза может только отвергаться или не отвергаться]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="69e7ef463150e4b73cd202f0f36f6b91" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какие из приведенных ниже свойств входят в БСХС (Большой Список Хороших Свойств)?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="a325af11c68a91052750851e0a2afa0b" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[$$E({\varepsilon}_i |$$ все регрессоры $$) = 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9dba47d6284426a616ea840b68ece5ab" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[$$E({\varepsilon}_i^2 |$$ все регрессоры $$) = \sigma^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="57457c210d1bb5bd08540881826cda21" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Матрица X может быть неполного ранга]]></text>
+                  <explanation><![CDATA[Тогда мы не сможем получить оценки]]></explanation>
+                </option>
+                <option id="2ec874cdfd972d7a9ff9d4644ecb523b" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Векторы могут быть зависимы]]></text>
+                  <explanation><![CDATA[Независимы!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="929698098e6eecfe0fa42c020a322962" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какие из приведенных ниже свойств входят в БСХС (Большой Список Хороших Свойств)?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="1a6cf0a3ee84a743582ffdb21e68d3eb" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[$$Cov({\varepsilon}_i, {\varepsilon}_j |X) = 0$$ при $$i \not= j$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="de640d31af73f21b51604261c4358dab" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[$$det(X′X) \not= 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="624f028e1b93afa7009122c55e1d3ffd" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Наблюдений может быть меньше, чем оцениваемых коэффициентов]]></text>
+                  <explanation><![CDATA[А как мы тогда получим оценки?]]></explanation>
+                </option>
+                <option id="cb0df517434e2c46d223f31b9699ae14" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[$$Var(\hat{\beta}|X) = \sigma(X′X)^{−1}$$]]></text>
+                  <explanation><![CDATA[А возвести $$\sigma$$ в квадрат?]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="87d67f5667f11dfd7deca8cde68a4a98" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какие из приведенных ниже свойств входят в БСХС (Большой Список Хороших Свойств)?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="3a2a2ce597c6030cb052b8682c3e424a" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[$$Var(\hat{\beta}|X) = \sigma^2(X′X)^{−1}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="cd7e4b030e5afc80b48721aeeea2ecb2" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[$$Var(\hat{\beta}_j^{alt}|X) \geq Var(\hat{\beta}_j|X)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="127949315fead389c8d07c722f64fbdf" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[$$E({\varepsilon}_i^2 |$$ все регрессоры $$) = 0$$]]></text>
+                  <explanation><![CDATA[$$E({\varepsilon}_i^2 |$$ все регрессоры $$) = \sigma^2$$]]></explanation>
+                </option>
+                <option id="5f8f1450d60d09ce78b9b5ec3c3f94ba" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[$$Cov({\varepsilon}_i, {\varepsilon}_j |X) = \gamma$$ при $$i \not= j$$, $$\gamma \not= 0$$]]></text>
+                  <explanation><![CDATA[$$Cov({\varepsilon}_i, {\varepsilon}_j |X) = 0$$ при $$i \not= j$$]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="d47503f7957819e7c46318f1b8d4ab77" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Понятие несмещенности оценок означает, что ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="3db8a0dfebc020434e03bde2bb758d9f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$E(\hat{\beta}_j | X) = \beta_j$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="ac16db7fe1719fdf8d900d5d4b672ba7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\hat{\beta}_j | X) = X$$]]></text>
+                  <explanation><![CDATA[Смотрите БСХС]]></explanation>
+                </option>
+                <option id="fd55815be2daac68835cbff8528f79f2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\hat{\beta}_j | X) = 0$$]]></text>
+                  <explanation><![CDATA[Смотрите БСХС]]></explanation>
+                </option>
+                <option id="0af3e7a44e8c506ae7d8661fa0f7e762" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\hat{\beta}_j | X) = 1$$]]></text>
+                  <explanation><![CDATA[Смотрите БСХС]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="a3b5ccff612d34971991c1e20168b69c" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Понятие линейности оценок означает, что оценки имеют следующий вид]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="74534a97b04289d88c67a60ddc3f713b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta}_j = c_1y_1 + ... + c_ny_n$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="99065ae73e39ea916eb4901e4e5119a2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta}_j = c_1y_1^2 + ... + c_ny_n^2$$]]></text>
+                  <explanation><![CDATA[Смотрите определение линейности в БСХС]]></explanation>
+                </option>
+                <option id="d9a53e4c6926dbbbfde6738efa756483" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta}_j = \exp(c_1y_1 + ... + c_ny_n)$$]]></text>
+                  <explanation><![CDATA[Смотрите определение линейности в БСХС]]></explanation>
+                </option>
+                <option id="edb088b19e8d7907a8a483791f1eee3b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta}_j = c (y_1 + ... + y_n)$$]]></text>
+                  <explanation><![CDATA[Смотрите определение линейности в БСХС]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="b4b367ca745399c7c8c1ab5cadc043e6" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Понятие эффективности оценок среди линейных и несмещенных означает, что ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="2fe5ab9d36b9cfa7654c925af14a5ca7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$Var(\hat{\beta}_j^{alt} | X) \geq Var(\hat{\beta}_j | X)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="dd33c48e357907a04a68f399590b31a5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Var(\hat{\beta}_j^{alt} | X) \leq Var(\hat{\beta}_j | X)$$]]></text>
+                  <explanation><![CDATA[Чем меньше дисперсия, тем лучше]]></explanation>
+                </option>
+                <option id="5129ac300e2cf283e09ae76c28d665e8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Var(\hat{\beta}_j | X) < 0$$]]></text>
+                  <explanation><![CDATA[Не может быть < 0]]></explanation>
+                </option>
+                <option id="069f4ae04154cda2fd5b499afe6b7f4d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Var(\hat{\beta}_j | X) = const$$]]></text>
+                  <explanation><![CDATA[Смотрите определение эффективности в БСХС]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="6ac15c1ddb247a834d6222883b4ace12" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что может означать $$\bar{X} ± t_{\alpha/2}(n-1) \frac{\sigma}{\sqrt{n}}$$? ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="d6b7c29899e3fe488d917e0173d467dd" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для математического ожидания]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="56f583a3f4962788a4cf29a4f0ef0e78" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для дисперсии]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1c4370f6f75bae9a9fb7a96ad7a03ec0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для стандартного отклонения]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9531775ab18cea5e48b06f70af2ed957" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для коэффициента в регрессии]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="4a7f3ac1e79c2bbd5400bb70e06a662b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что может означать $$\hat{\beta}_1 ± se(\hat{\beta}_1) \cdot t_{\alpha/2}(n-k) $$?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="8881d20b90d25a998eb1f1b484845bf8" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для коэффициента в регрессии]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="1352ef7e82a30414145627a049089ba3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для математического ожидания]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0a4c292edfe51cd88c76b6f59439d0fe" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для стандартного отклонения]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="63b735fe457810f95f57390d8c2fa9d5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для оценки коэффициента в регрессии]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="80a4d8c4fb10d9b17b02fb3f9a696564" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что может означать $$ \hat{\beta}_1 - se(\hat{\beta}_1) \cdot t_{\alpha/2}(n-k) < \beta_1 < \hat{\beta}_1 + se(\hat{\beta}_1) \cdot t_{\alpha/2}(n-k)  $$?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="e30962cf0f6e6b90244333dc65cb3f9a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для коэффициента $$\beta_1$$ в регрессии]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="eceedf51bea410564857c979a6e86501" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для математического ожидания]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="532ebda057a911e6144e38d3faa4584c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для оценки коэффициента $$\hat{\beta}_1$$ в регрессии]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="fcee9a206efd6a28c9b94220c95dab13" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Формулу доверительного интервала для стандартного отклонения]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="a854221b65c68b13ff12fbab9f5df3b3" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 1 000 наблюдениям была оценена следующая зависимость стоимости квадратного метра квартиры $$\it{price}_i$$ ($) от времени до ближайшего общественного транспорта $$\it{time}_i$$ (минуты) и расстояния до центра города $$\it{distance}_i$$ (км):
+<br><br>
+$$\widehat{price}_i$$ = 230 - 0.37 $$\it{time}_i$$ - 0.58 $$\it{distance}_i$$. <br><br>При увеличении времени до транспорта на одну минуту на сколько долларов падает цена?]]></text>
+            <explanation><![CDATA[Смотрим на коэффициент при времени]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="b7545424b2a5c88c77924da108bd72bd" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.37]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="d7f983948b308b58f0c963e1d60bdcf2" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 2 000 наблюдениям была оценена следующая зависимость стоимости квадратного метра квартиры $$\it{price}_i$$ ($) от времени до ближайшего общественного транспорта $$\it{time}_i$$ (минуты) и расстояния до центра города $$\it{distance}_i$$ (км):<br><br> $$\widehat{price}_i$$ = 245 - 0.44 $$\it{time}_i$$ - 0.58 $$\it{distance}_i$$.  <br><br>При увеличении расстояния до центра города на один километр на сколько долларов падает цена?]]></text>
+            <explanation><![CDATA[Смотрим на коэффициент при расстоянии]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="7db05b122dbda956fe22978d5f2d4280" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.58]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c52ceeb536cf745d2b81032dd58e7421" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 3 000 наблюдениям была оценена следующая зависимость стоимости квадратного метра квартиры $$\it{price}_i$$ ($) от времени до ближайшего общественного транспорта $$\it{time}_i$$ (минуты) и от жилой площади $$\it{area}_i$$ ($$м^2$$): <br><br>$$\widehat{price}_i$$ = 210 - 0.37 $$\it{time}_i$$ + 1.5 $$\it{area}_i$$.  <br><br>При увеличении жилой площади на 1 $$м^2$$ на сколько долларов растёт цена?]]></text>
+            <explanation><![CDATA[Смотрим на коэффициент при жилой площади]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="8b1805ff06feb04da4d128521400c1c2" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1.5]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="faa4ee68244123d09bdb47ddbdbdcd6f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 62 наблюдениям оценена модель зависимости заработной платы $$\it{wage}_i$$ ($) от длительности обучения $$\it{schooling}_i$$ (годы). Оценённая модель имеет вид: <br><br>$$\widehat{wage}_i = 300 + 20schooling_i$$ <br><br>Стандартное отклонение оценки коэффициента при $$\it{schooling}_i$$ равно 5. На уровне значимости 10% проверьте гипотезу о влиянии длительности обучения на заработную плату.]]></text>
+            <explanation><![CDATA[$$test-statistic =\frac{\hat{\beta}-\beta}{se(\hat{\beta})}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="1">
+                <option id="3ec41e822abfd3d3be0fe076007fca37" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Нулевая гипотеза отвергается ]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="de55f4e403a3ed2516166fc22a61a73d" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Коэффициент значим]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="018d927f5e9ce7510c3d86b59cfaf703" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нулевая гипотеза не отвергается]]></text>
+                  <explanation><![CDATA[А если подумать? Нулевая гипотеза $$\beta_2 = 0$$]]></explanation>
+                </option>
+                <option id="7cad315e19540009980a3a287d80f267" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Недостаточно информации]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="663acd21b6e3d6429a995e38f5384d15" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Коэффициент незначим]]></text>
+                  <explanation><![CDATA[Незначим, то есть $$\beta_2 = 0$$]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="29ced859bd7bec818ad888f40fc803e7" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 32 наблюдениям оценена модель зависимости заработной платы $$\it{wage}_i$$ ($) от длительности обучения $$\it{schooling}_i$$ (годы). Оценённая модель имеет вид: <br><br>$$\widehat{wage}_i = 300 + 10schooling_i$$ <br><br>Стандартное отклонение оценки коэффициента при $$\it{schooling}_i$$ равно 5. На уровне значимости 5% проверьте гипотезу о влиянии длительности обучения на заработную плату.]]></text>
+            <explanation><![CDATA[ $$test-statistic =\frac{\hat{\beta}-\beta}{se(\hat{\beta})}$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="e01dba3646cae7c138081bb314c3b1fc" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Нулевая гипотеза не отвергается ]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="5ad5cc8244e163918006440620233d7e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Коэффициент незначим]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="9328b9ce56ee3c4e7650f324134ded1d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Альтернативная гипотеза отвергается]]></text>
+                  <explanation><![CDATA[Мы делаем вывод только о нулевой гипотезе]]></explanation>
+                </option>
+                <option id="8ee7b8662e44ecd37775f0b9bddef1f0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нулевая гипотеза отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="52f263420f503b7365a21d3a922e6d08" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Коэффициент значим]]></text>
+                  <explanation><![CDATA[Значим, то есть $$\beta_2 \not= 0$$]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="001e9079d7ac9ff60eaefb7a6b7eacdb" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 52 наблюдениям оценена модель зависимости заработной платы $$\it{wage}_i$$ ($) от длительности обучения $${schooling}_i$$ (годы). Оценённая модель имеет вид: <br><br>$$\widehat{wage}_i = 500+30schooling_i$$ <br><br>Стандартное отклонение оценки коэффициента при $${schooling}_i$$ равно 5. На уровне значимости 1% проверьте гипотезу о влиянии длительности обучения на заработную плату.]]></text>
+            <explanation><![CDATA[$$test-statistic =\frac{\hat{\beta}-\beta}{se(\hat{\beta})}$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="120c513cb9cd92b7bdfacf0b8aa59780" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Нулевая гипотеза отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="47ca2ffef63b07e16b059574eae3de12" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Коэффициент значим]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="eea13a8f3e01e5dd671052f637f965f5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Альтернативная гипотеза отвергается]]></text>
+                  <explanation><![CDATA[Мы делаем вывод только о нулевой гипотезе]]></explanation>
+                </option>
+                <option id="3e2d333ab253dc8b2886422a727cc9c3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Коэффициент незначим]]></text>
+                  <explanation><![CDATA[Незначим - это $$\beta_2 = 0$$]]></explanation>
+                </option>
+                <option id="56ea8e2819c48970096c9434141bc7aa" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нулевая гипотеза принимается]]></text>
+                  <explanation><![CDATA[Нулевая гипотеза может только отвергаться или не отвергаться, более того, она отвергается]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="c4806b5fea91273e5f8cb8c66ea70256" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+              <preserve_order>absolute</preserve_order>
+              <split>
+                <regexp>/[\s,]+/</regexp>
+                <limit>2</limit>
+              </split>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценённая по 30 наблюдениям модель имеет вид: <br><br>$$\hat{y}_i = 1.5 + 2x_i - 3z_i$$ <br><br>Стандартное отклонение для $$\hat{\beta}_x$$ равно 0.3.  Постройте 90% доверительный интервал для $$\beta_x$$.  <b> Округляйте до двух знаков после запятой. Ответ должен иметь следующий вид c пробелом между числами и без скобок или знаков препинания: x.xx y.yy </b> <br>
+$$\textit{P.S. В R есть функция, которая округляет,  round(a, digits = 2)}$$]]></text>
+            <explanation><![CDATA[$$\hat{\beta} - se \cdot t_{cr} < \beta < \hat{\beta} + se \cdot t_{cr}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="01e2511c38a7d57fcfc5e7460ca44adf" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[1.49]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ba0b82285f8a64608e0aa09327882753" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[2.51]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="a47ce7a49f4dbaf22fdb9efaffb60514" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+              <preserve_order>absolute</preserve_order>
+              <split>
+                <regexp>/[\s,]+/</regexp>
+                <limit>2</limit>
+              </split>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценённая по 30 наблюдениям модель имеет вид: <br><br>$$\hat{y}_i = 1.5 + 2x_i - 3z_i$$ <br><br>Стандартное отклонение для $$\hat{\beta}_z$$ равно 0.5.  Постройте 90% доверительный интервал для $$\beta_z$$. <b> Округляйте до двух знаков после запятой. Ответ должен иметь следующий вид c пробелом между числами и без скобок или знаков препинания: -x.xx -y.yy </b> <br>
+$$\textit{P.S. В R есть функция, которая округляет,  round(a, digits = 2)}$$]]></text>
+            <explanation><![CDATA[$$\hat{\beta} - se \cdot t_{cr} < \beta < \hat{\beta} + se \cdot t_{cr}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="0bde3c7a859c09f3d02627ef4f41ae35" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[-3.85]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="70be7542561f108c128641c3a2177672" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[-2.15]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="71acb83f91765d2d7695545c11c9721e" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+              <preserve_order>absolute</preserve_order>
+              <split>
+                <regexp>/[\s,]+/</regexp>
+                <limit>2</limit>
+              </split>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценённая по 30 наблюдениям модель имеет вид: <br><br>$$\hat{y}_i = 7.3 + 5x_i - 6z_i$$ <br><br>Стандартное отклонение для $$\hat{\beta}_x$$ равно 1. Постройте 90% доверительный интервал для $$\beta_x$$.  <b> Округляйте до двух знаков после запятой. Ответ должен иметь следующий вид c пробелом между числами и без скобок или знаков препинания: x.xx y.yy </b> <br>
+$$\textit{P.S. В R есть функция, которая округляет,  round(a, digits = 2)}$$]]></text>
+            <explanation><![CDATA[$$\hat{\beta} - se \cdot t_{cr} < \beta < \hat{\beta} + se \cdot t_{cr}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="40801b66983621bfadde44e823baec6f" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[3.30]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b0734ff312eea4873543bbba51bb60c3" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[6.70]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="d38b1dadb97a4f236dcb6a211051bd33" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При проверке гипотезы о значимости коэффициента нулевая гипотеза имеет следующий вид:]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="6177e663278cade3409331b637ef728f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\beta = 0 $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="3220719f27753d39994df144da1772da" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} = 0 $$]]></text>
+                  <explanation><![CDATA[Мы проверяем гипотезу о неизвестном параметре $$\beta$$, $$\hat{\beta}$$ нам известна]]></explanation>
+                </option>
+                <option id="87f26f1d6deb84bc08f1e1ec54ba6387" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} \not= 0 $$]]></text>
+                  <explanation><![CDATA[Мы проверяем гипотезу о неизвестном параметре $$\beta$$, $$\hat{\beta}$$ нам известна]]></explanation>
+                </option>
+                <option id="eea1941ceef889c0e883650b2695434a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\beta > 0 $$]]></text>
+                  <explanation><![CDATA[Гипотеза о значимости, значит, вид нулевой гипотезы может быть только $$=$$ ]]></explanation>
+                </option>
+                <option id="f236a391e2a04e30789605ce1fc4bd79" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} > 0 $$]]></text>
+                  <explanation><![CDATA[Мы проверяем гипотезу о неизвестном параметре $$\beta$$, $$\hat{\beta}$$ нам известна]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="7e4ff57c54c02f0d2372dcccb78f5e74" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При проверке гипотезы о значимости коэффициента альтернативная гипотеза имеет следующий вид:]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="cd37d35668773ae50fd7b6048e66ab41" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\beta \not= 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="f872ade22b376a8d52e2fe85de9a56bf" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} \not= 0$$]]></text>
+                  <explanation><![CDATA[Мы проверяем гипотезу о неизвестном параметре $$\beta$$, $$\hat{\beta}$$ нам известна]]></explanation>
+                </option>
+                <option id="c86d3ca1d064a1ce9eb59fecf4e305b4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\beta > 0$$]]></text>
+                  <explanation><![CDATA[При проверке гипотезы о значимости альтернативная гипотеза может формулироваться только в виде $$\not=$$]]></explanation>
+                </option>
+                <option id="52f5f4ce6afa1a119990b7b7e3e5af09" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\beta < 0$$]]></text>
+                  <explanation><![CDATA[При проверке гипотезы о значимости альтернативная гипотеза может формулироваться только в виде $$\not=$$]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="4b77e1a1df06b23053abcffa1dbc96e8" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[С помощью какого распределения проверяется гипотеза о значимости коэффициента?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="3c7f73f4dd008108a728ba2cd9e2b79f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[t-распределения]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="29032f2874a6f606ff3c1a0944c500c9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[F-распределения]]></text>
+                  <explanation><![CDATA[Это не гипотеза о нескольких линейных ограничениях]]></explanation>
+                </option>
+                <option id="95507db7e00ff3057a1398351845f901" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\chi^2$$-распределения]]></text>
+                  <explanation><![CDATA[Это не гипотеза о равенстве дисперсии какому-то числу]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="c1f2bf8ba4597916e57648d8ae26693d" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Симметричные 90%-ые доверительные интервалы для коэффициентов $$\beta_2$$ и $$\beta_3$$ в регрессии $$y_i = \beta_1 + \beta_2x_i + \beta_3z_i + \varepsilon_i$$ имеют вид $$\beta_2 \in (-0.15,0.65)$$ и  $$\beta_3 \in (0.5,1.5)$$. Найдите $$\hat{\beta}_2$$.]]></text>
+            <explanation><![CDATA[$$\begin{cases} \hat{\beta} - se \cdot t_{cr} = value_{left}  \\ \hat{\beta} + se \cdot t_{cr} =  value_{right} \end{cases}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="84db1ac068e6361f7ab3bc4465781c2f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[(0.24,0.26)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="13690e737224f24d2596a959b289cd27" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Симметричные 90%-ые доверительные интервалы для коэффициентов $$\beta_2$$ и $$\beta_3$$ в регрессии $$y_i = \beta_1 + \beta_2x_i + \beta_3z_i + \varepsilon_i$$ имеют вид $$\beta_2 \in (-0.15,0.65)$$ и  $$\beta_3 \in (0.5,1.5)$$. Найдите $$\hat{\beta}_3$$.]]></text>
+            <explanation><![CDATA[$$\begin{cases} \hat{\beta} - se \cdot t_{cr} = value_{left}  \\ \hat{\beta} + se \cdot t_{cr} =  value_{right} \end{cases}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="ea503470856aa27b675549db7b1b29ab" selected_score="1" unselected_score="0">
+                  <text><![CDATA[(0.99,1.01)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="0205d50ad8cd508495a9d483a5270dd1" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Симметричные 90%-ые доверительные интервалы для коэффициентов $$\beta_2$$ и $$\beta_3$$ в регрессии $$y_i = \beta_1 + \beta_2x_i + \beta_3z_i + \varepsilon_i$$ имеют вид $$\beta_2 \in (-0.15,0.75)$$ и  $$\beta_3 \in (0.5,1.5)$$. Найдите $$\hat{\beta}_2$$.]]></text>
+            <explanation><![CDATA[$$\begin{cases} \hat{\beta} - se \cdot t_{cr} = value_{left}  \\ \hat{\beta} + se \cdot t_{cr} =  value_{right} \end{cases}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="3fbd24d1da7976dfe658d65f62d2df48" selected_score="1" unselected_score="0">
+                  <text><![CDATA[(0.29,0.31)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="44fcc628e9e2f05ae9fd54432d44407c" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Используя команду R <b><i>pnorm(..., mean = ..., sd = ...)</b></i>, посчитайте вероятность $$P(Z < 9)$$, если Z имеет нормальное распределение, $$E(Z)=7$$ и $$Var(Z)=4$$. Округляйте до двух знаков после запятой.]]></text>
+            <explanation><![CDATA[Команда в R: pnorm(..., mean=..., sd=...)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="f531782005daa79dfbd91c3e5cb59a45" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.84]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="1ee9fc7132dfae4b51799e9868f45fc5" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Используя команду R <b><i>pchisq(..., df=...)</b></i>, посчитайте вероятность $$P(Z < 9)$$, если Z имеет $$\chi^2$$ распределение с 10 степенями свободы. Округляйте до двух знаков после запятой.]]></text>
+            <explanation><![CDATA[Команда в R: pchisq(..., df=...)
+]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="c0d54941d257fe0c6519a27586b83975" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.47]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="2ed143d682b89ac756af6b8006b77a85" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Используя команду R <b><i>pt(..., df=...)</b></i>, посчитайте вероятность $$P(Z < 4)$$, если Z имеет $$t$$-распределение с 2 степенями свободы. Округляйте до двух знаков после запятой.]]></text>
+            <explanation><![CDATA[Команда в R: pt(..., df=...)
+]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="ba90bb754a7da8f215a87c6e7846dc7a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.97]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b851daaee15b32c46cfaa5066f8ef40b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Регрессионная модель, которая имеет вид $$y_i = \beta_1 + \beta_2x_i + \varepsilon_i$$, в R оценивается, например, с помощью команды <b><i>model <- lm(y ~ x, data)</b></i>. C помощью какой команды в R можно посмотреть на оценки коэффициентов в этой регрессии, их t-статистики и p-значения? ]]></text>
+            <explanation><![CDATA[Попробуйте запустить все команды в R. Что подходит?
+<br><br>
+Не забудьте, что в команду <b><i>model <- lm(y ~ x, data)</b></i> вместо <b><i>x, y, data</b></i> нужно вставить свои переменные!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="216cb2dd1a0dcd2722e38770a5c4f7ad" selected_score="1" unselected_score="0">
+                  <text><![CDATA[summary(model)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="a6e4b546df205c5a680100ae16d1b5de" selected_score="0" unselected_score="0">
+                  <text><![CDATA[mean(model)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="cb6c9abb497e70d27c7b865f1a4e4335" selected_score="0" unselected_score="0">
+                  <text><![CDATA[summary(x)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="3c60fc948c0468331450d761c285a9be" selected_score="0" unselected_score="0">
+                  <text><![CDATA[summary(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6d82b7c131e788d10937a20abb63e747" selected_score="0" unselected_score="0">
+                  <text><![CDATA[glimpse(model)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="bc9fba37e2fba465bacad5e520e5bbae" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Регрессионная модель, которая имеет вид $$y_i = \beta_1 + \beta_2x_i + \varepsilon_i$$, в R оценивается, например, с помощью команды <b><i>regression <- glm(y ~ x, data)</b></i>. C помощью какой команды в R можно посмотреть на стандартные ошибки оценок коэффициентов в этой регрессии и их t-статистики? ]]></text>
+            <explanation><![CDATA[Попробуйте запустить все команды в R. Что подходит?
+<br><br>
+Не забудьте, что в команду <b><i>regression <- glm(y ~ x, data)</b></i> вместо <b><i>x, y, data</b></i> нужно вставить свои переменные!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="63729a667638ef788de1115d5ad7a75c" selected_score="1" unselected_score="0">
+                  <text><![CDATA[summary(regression)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="bab60f8a704b904e1d452c0ca067ec66" selected_score="0" unselected_score="0">
+                  <text><![CDATA[coef(regression)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d6ad5affd3ad761a3fc291935c149ad2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[str(regression)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ec1585ea41df5afb1d959981207803f6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[summary(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6435454920538ad278cf1a8c58d8b654" selected_score="0" unselected_score="0">
+                  <text><![CDATA[mean(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="7699d6af33d3394447d5c5be921994ca" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Регрессионная модель, которая имеет вид $$z_i = \beta_1 + \beta_2x_i + \varepsilon_i$$, в R оценивается, например, с помощью команды <b><i>reg <- lm(z ~ x, data)</b></i>. C помощью какой команды в R можно посмотреть на оценки коэффициентов в этой регрессии? ]]></text>
+            <explanation><![CDATA[Попробуйте запустить все команды в R. Что подходит?
+<br><br>
+Не забудьте, что в команду <b><i>reg <- lm(z ~ x, data)</b></i> вместо <b><i>x, y, data</b></i> нужно вставить свои переменные!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="a06849962a4ddd12c16b3af8afd56ba0" selected_score="1" unselected_score="0">
+                  <text><![CDATA[summary(reg)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="adbb804ae76e5c4e311edd48959ec445" selected_score="1" unselected_score="0">
+                  <text><![CDATA[coef(reg)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="78f181efe5e5d89e55217d1d5a4bb633" selected_score="1" unselected_score="0">
+                  <text><![CDATA[coefficients(reg)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="582a0df974de6fe35798d26587f039a8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[coefficients(z)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6d71e7c5baf66bc87e63942e8f4fbd52" selected_score="0" unselected_score="0">
+                  <text><![CDATA[View(reg)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="dc371c90b84b968866ba2355527015b1" selected_score="0" unselected_score="0">
+                  <text><![CDATA[coef(x)
+]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[  <p style="color:#ff0000">
+<b> Для выполнения следующих заданий с 13 по 20 понадобятся данные из R. Необходимо подгрузить данные по бриллиантам (diamonds) из пакета ggplot2 и поместить их в табличку data. Это можно сделать командами: <br>
+library("ggplot2") <br>
+df <- diamonds  <b>
+</p>
+]]></preamble>
+        <question id="a37f98e87eef1c5b0bf36c32aa580cb6" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Чему равна средняя цена бриллиантов? Выберите наиболее близкое значение.]]></text>
+            <explanation><![CDATA[Среднее можно посмотреть с помощью команд mean() и summary()]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="084fdcd1a026f78be5345038efa6c8ba" selected_score="1" unselected_score="0">
+                  <text><![CDATA[3933]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="f599634327f90d6e9c22dd4513d61f69" selected_score="0" unselected_score="0">
+                  <text><![CDATA[5324]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c655014f6f286da6cb4d7677c1c9df1b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[2401]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a0d4bbda85d8f8cecc4d3049921bdcca" selected_score="0" unselected_score="0">
+                  <text><![CDATA[18820]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e9cb94c1d89e5c9226e57aaa798ee2c4" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Чему равна минимальная цена бриллиантов? Выберите наиболее близкое значение.]]></text>
+            <explanation><![CDATA[Минимальное значение можно посмотреть с помощью команд min() и summary()]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="2d837c823586cf9a0017ca66d21e3378" selected_score="1" unselected_score="0">
+                  <text><![CDATA[326]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="b4261ce988760578c9fc27486c2c4c8f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[950]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="584749a7614af31c844382103863f9fd" selected_score="0" unselected_score="0">
+                  <text><![CDATA[3933]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="14e9820a5fa7f4576f29ba011fffbe45" selected_score="0" unselected_score="0">
+                  <text><![CDATA[18820]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="eab52bb27d5722d21b5271eaa923bf1a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Чему равна максимальная цена бриллиантов? Выберите наиболее близкое значение.]]></text>
+            <explanation><![CDATA[Максимальное значение можно посмотреть с помощью команд max() и summary()]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="abbc2f1759a07b5ea9cbcfda25387b22" selected_score="1" unselected_score="0">
+                  <text><![CDATA[18820]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="fe135cfe06870d79c0a9c0c5911b1db1" selected_score="0" unselected_score="0">
+                  <text><![CDATA[3933]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="14501dc4dd5166b0716963589cecc8c7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[326]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="24b818be602bf1fa3940f7208c423aa2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[2401]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[Для ответа на этот вопрос используйте команду table()]]></preamble>
+        <question id="adc8a25d9717596e5325e43685c00ff3" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какое количество бриллиантов обладает идеальной огранкой?]]></text>
+            <explanation><![CDATA[Команда в R: table()]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="dc235303e60cf022b2940326f9992ef3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[21551]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="2d36f8361e539a010ee05d78864669e4" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какое количество бриллиантов обладает очень хорошей (very good) огранкой?]]></text>
+            <explanation><![CDATA[Команда в R: table()]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="9f4bc941f2d030092d220ad045e982fb" selected_score="1" unselected_score="0">
+                  <text><![CDATA[12082]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="3557932d12e462f88a447038f7f33334" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какое количество бриллиантов обладает премиум огранкой?]]></text>
+            <explanation><![CDATA[Команда в R: table()]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="0c527b4ab99f72a001e84bdca736c7a1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[13791]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="284ca89f8b1e14c76e2a38ccf22a7fbd" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[С помощью какой команды в R можно оценить регрессию цены бриллиантов на количество карат без свободного члена?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="f5af741f886333923e838da1b886a196" selected_score="1" unselected_score="0">
+                  <text><![CDATA[model <- glm(data=df, price ~ 0 + carat)]]></text>
+                  <explanation><![CDATA[ Это регрессия без свободного члена]]></explanation>
+                </option>
+                <option id="1fef3deea8ff7363eafb7be60020b9b8" selected_score="1" unselected_score="0">
+                  <text><![CDATA[model <- lm(data=df, price ~ 0 + carat)]]></text>
+                  <explanation><![CDATA[ Это регрессия без свободного члена]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="cdc82b29f2c371dd307bfff42330019d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[model <- glm(data=df, price ~ carat)]]></text>
+                  <explanation><![CDATA[ Это регрессия со свободным членом]]></explanation>
+                </option>
+                <option id="1f4787e3e4bd4e4397e2f66886d6deff" selected_score="0" unselected_score="0">
+                  <text><![CDATA[model <- lm(data=df, price ~ carat)]]></text>
+                  <explanation><![CDATA[Это регрессия со свободным членом]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="415b7fe32a8e73b839151e45606b155d" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[С помощью какой команды в R можно оценить регрессию цены бриллиантов на количество карат со свободным членом?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="ff4349968895fa8c97afe8883794b1b0" selected_score="1" unselected_score="0">
+                  <text><![CDATA[model <- glm(data=df, price ~ carat)]]></text>
+                  <explanation><![CDATA[ Это регрессия со свободным членом]]></explanation>
+                </option>
+                <option id="a5e374b13a80abf1977a7f02bb6ba802" selected_score="1" unselected_score="0">
+                  <text><![CDATA[model <- lm(data=df, price ~ carat)]]></text>
+                  <explanation><![CDATA[ Это регрессия со свободным членом]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="30ef4852a5b16cf74cb3a3c7b12a4611" selected_score="0" unselected_score="0">
+                  <text><![CDATA[model <- glm(data=df, price ~ 0 + carat)]]></text>
+                  <explanation><![CDATA[Это регрессия без свободного члена]]></explanation>
+                </option>
+                <option id="a00abcff5bab9cf9e1886d49950b31e1" selected_score="0" unselected_score="0">
+                  <text><![CDATA[model <- lm(data=df, price ~ 0 + carat)]]></text>
+                  <explanation><![CDATA[Это регрессия без свободного члена]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="14b5dae6b132e27c36ae000b15a763c0" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[С помощью какой команды в R можно оценить регрессию цены бриллиантов на количество карат и прозрачность без свободного члена?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="d164401b84f3c2f8206421b0356dade9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[model <- glm(data=df, price ~ 0 + carat + clarity)]]></text>
+                  <explanation><![CDATA[ Это регрессия без свободного члена]]></explanation>
+                </option>
+                <option id="cb850c4eb0679615392f9baa11ad68b2" selected_score="1" unselected_score="0">
+                  <text><![CDATA[model <- lm(data=df, price ~ 0 + carat + clarity)]]></text>
+                  <explanation><![CDATA[ Это регрессия без свободного члена]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="2f03a80f1bbd66356510c79f0953958d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[model <- glm(data=df, price ~ carat + clarity)]]></text>
+                  <explanation><![CDATA[ Это регрессия со свободным членом]]></explanation>
+                </option>
+                <option id="68b89981e3f14933729d6e1c7d6c7532" selected_score="0" unselected_score="0">
+                  <text><![CDATA[model <- lm(data=df, price ~ 0 + carat)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="c7701e5859d7799de012bd74c9841db6" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Чему равна $$se(\hat{\beta}_2)$$ в оценённой модели $$\widehat{price}_i = \hat{\beta}_1 + \hat{\beta}_2{carat}_i$$? Округляйте до двух знаков после запятой.]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), а после посмотреть summary() модели]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="1bedd09a7e4491f13f9e3aaad0f5127b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[14.07]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5d0d0ec380df63a10b4f38e2252121ad" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Чему равна $$se(\hat{\beta}_1)$$ в оценённой модели $$\widehat{price}_i = \hat{\beta}_1 + \hat{\beta}_2{carat}_i$$? Округляйте до двух знаков после запятой.]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), а после посмотреть summary() модели]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="d3d9eb1a98385266440f78ff59f5dbdd" selected_score="1" unselected_score="0">
+                  <text><![CDATA[13.06]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="d423f0ad00a3b8c836acb849081bf052" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Чему равно $$se(\hat{\beta}_3)$$ в оценённой модели $$\widehat{price}_i = \hat{\beta}_1 + \hat{\beta}_2{carat}_i + \hat{\beta}_3 {table}_i$$? Округляйте до трёх знаков после запятой.]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), а после посмотреть summary() модели]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="944c0746a29184b088df35bf9f69765a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[3.018]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="18646587839df22101d1ff20394c3594" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В модели $${price}_i = \beta_1 + \beta_2 {carat}_i + {\varepsilon}_i$$ на уровне значимости 5% проверьте гипотезу о том, что количество карат не оказывает влияния на стоимость бриллиантов.]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), а после посмотреть summary() модели и P-значение]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="58bd3df989e310ef6a27545e8299d8c1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Оказывает влияние]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="7f0edc4b4e8459c75dadacf0e693987f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Нулевая гипотеза отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4a3b720fa979624c136365e702401322" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Коэффициент значим]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="c274b62059ae5c2065b9f2d9afa8c6ba" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Не оказывает влияния]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="dad30cdef799d8c30c4e6f4e5271f00b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Коэффициент незначим]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="8b286d4b1f72fa0950da942fd36e0140" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нулевая гипотеза не отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5a2a4b847af4b739df9d7ae9345808e1" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В модели $${price}_i = \beta_1 + \beta_2 {carat}_i+ {\varepsilon}_i$$ на уровне значимости 5% проверьте гипотезу о том, что количество карат не оказывает влияния на стоимость бриллиантов.]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), а после посмотреть summary() модели и P-значение]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="6beb0cb24b769ab4ab4b009ef4caf2f2" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Коэффициент значим на любом разумном уровне значимости]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="3f7154e14cacdb9477914805368d7d43" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Коэффициент значим только на уровне $$10\%$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f1dff2de6fe80fdd42230b0748dbe6ed" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Коэффициент значим только на уровне $$5\%$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="eb65688925e46a3c95fb3e73fcb75f31" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Коэффициент значим только на всех уровнях кроме $$5\%$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="65032019cf73bac38e3d2b8988a9465b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В модели $${price}_i = \beta_1 + \beta_2 {carat}_i + {\varepsilon}_i$$ на уровне значимости 5% проверьте гипотезу о том, что количество карат не оказывает влияния на стоимость бриллиантов.]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), а после посмотреть summary() модели и P-значение]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="ed47541fae8226a353f3d518937a8813" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Количество карат оказывает влияние на стоимость бриллиантов]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="73d848b54ce4799871e368cfb6e683f7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Коэффициент незначим]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="86b4323532953d371cf0d1601c88553f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Коэффициент значим только на уровне $$1\%$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="3c6f409794d39e36521626209c62e6f4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нулевая гипотеза не отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="39f70740caa4256c47e8c8b35e381024" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В модели $${price}_i = \beta_1 + \beta_2 {carat}_i + \beta_3 {x}_i +  \beta_4 {y}_i  + {\varepsilon}_i$$  при проверке гипотезы о влиянии ширины камня на стоимость бриллиантов на уровне значимости 1% чему равно P-значение?]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), после посмотреть summary() модели и P-значение]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="0ac5c46b09469b9c25553afd3a8df0cc" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0,0.01)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5b40c7514cdfa423814a4cfa90fb383c" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В модели $${price}_i = \beta_1 + \beta_2 {carat}_i + \beta_3 x_i + \beta_4 y_i + \beta_5 z_i + {\varepsilon}_i$$  при проверке гипотезы о влиянии ширины бриллианта (<b><i>y</b></i>) на его стоимость на уровне значимости 1% чему равно P-значение?]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), после посмотреть summary() модели и P-значение]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="92898eeddb2a25d57d3d0802616315a7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0,0.01)
+]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="80ce0979733d1b89f060118bd032e019" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В модели $${price}_i = \beta_1 + \beta_2 {carat}_i + \beta_3 x_i + \beta_4 y_i + \beta_5 {table}_i + {\varepsilon}_i$$  при проверке гипотезы о влиянии ширины бриллианта (<b><i>y</b></i>) на его стоимость на уровне значимости 1% чему равно P-значение?]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), после посмотреть summary() модели и P-значение]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="2a0af2aab33a1fb0a11bacea08b47871" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0,0.01)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="ba23c68e306552205b7041550c78e9b4" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Сначала оценили модель $${price}_i = \beta_1 + \beta_2{carat}_i + {\varepsilon}_i$$, потом оценили другую модель $${price}_i = \beta_1 + \beta_2{carat}_i + \beta_3y_i + {\varepsilon}_i$$. Изменилась ли интерпретация коэффициента при количестве карат?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="18393c0a6bdf09ced93b1598120dd22f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Изменилась. Рассматривается влияние количества карат при фиксированной ширине бриллианта]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="11393c81b0c7b73c8266ddf315f57506" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Не изменилась]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="578257292f0632af080c58d368eba4e6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Изменилась. Рассматривается влияние количества карат при меняющейся ширине бриллианта]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="231c05ed1d1c4fc0b5c88e95a65f305e" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Сначала оценили модель $${price}_i = \beta_1 + \beta_2{y}_i + {\varepsilon}_i$$, потом оценили другую модель $${price}_i = \beta_1 + \beta_2{carat}_i + \beta_3y_i + {\varepsilon}_i$$. Изменилась ли интерпретация коэффициента при ширине бриллианта?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="5c07c8b4eac491611f531db732a1260e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Изменилась. Рассматривается влияние ширины бриллианта при фиксированном количестве карат]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="ebddc002f3f1967351629d046a5d0b15" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Не изменилась]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="2b60ca87dacf024d27b98921600b8bfe" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Изменилась. Рассматривается влияние ширины бриллианта при изменяющемся количестве карат]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="a0691a7cfb472f870650e4555339e149" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Сначала оценили модель $${price}_i = \beta_1 + \beta_2{carat}_i + {\varepsilon}_i$$, потом оценили другую модель $${price}_i = \beta_1 + \beta_2{carat}_i + \beta_3y_i + \beta_4x_i + {\varepsilon}_i$$. Изменилась ли интерпретация коэффициента при количестве карат?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="905cc23b43609ed01deb26f576718fc6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Изменилась. Рассматривается влияние
+количества карат при фиксированной ширине и длине бриллианта ]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="90786dd11da779566855f02dc7d48837" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Не изменилась]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="94ebc0fdeeceed24799c6e7fa04d078f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Изменилась. Рассматривается влияние
+количества карат при фиксированной ширине бриллианта ]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="56d0a01193e6a3cda53871dd3a6766ca" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Изменилась. Рассматривается влияние
+количества карат при фиксированной длине бриллианта ]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="124f01454b70a780fdd8ee29df711fe4" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+              <preserve_order>absolute</preserve_order>
+              <split>
+                <regexp>/[\s,]+/</regexp>
+                <limit>2</limit>
+              </split>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель $${price}_i = \beta_1 + \beta_2{carat}_i + \beta_3y_i + \beta_4x_i + {\varepsilon}_i$$. Постройте $$90\%$$-ный доверительный интервал для оценки коэффициента при количестве карат.  <br> <b> Критическое значение должно содержать три знака после запятой. <br> Финальный ответ округляйте до двух знаков после запятой. <br> Левую границу интервала вводите слева, правую - справа. <br> Ответ должен иметь следующий вид c пробелом между числами и без скобок или знаков препинания: x.xx y.yy </b> <br> ]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), после посмотреть summary() модели и подставить в формулу для доверительного интервала $$\hat{\beta} - se \cdot t_{cr} < \beta < \hat{\beta} + se \cdot t_{cr}$$
+]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="4f15fd1f538c6c6e01da2ea1e8dfae83" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[(10015,10017)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ea669a17f77031a57cc8e2393f971c57" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[(10220,10222)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c10ce3e81ad7670a3c0171bebd2039f5" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+              <preserve_order>absolute</preserve_order>
+              <split>
+                <regexp>/[\s,]+/</regexp>
+                <limit>2</limit>
+              </split>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель $${price}_i = \beta_1 + \beta_2{carat}_i + \beta_3y_i + \beta_4x_i + {\varepsilon}_i$$. Постройте $$90\%$$-ный доверительный интервал для оценки коэффициента при ширине бриллианта.  <br> <b> Критическое значение должно содержать три знака после запятой. <br> Финальный ответ округляйте до двух знаков после запятой. <br> Левую границу интервала вводите слева, правую - справа. <br> Ответ должен иметь следующий вид c пробелом между числами и без скобок или знаков препинания: x.xx y.yy </b> <br> ]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), после посмотреть summary() модели и подставить в формулу для доверительного интервала $$\hat{\beta} - se \cdot t_{cr} < \beta < \hat{\beta} + se \cdot t_{cr}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="a7ac78059c3c3205b151dabf49960ef2" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[(83,85)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0d73155bf4dc99d09a39b9bff76f3515" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[(167,169)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e0ab59127d96debd8581214496385282" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+              <preserve_order>absolute</preserve_order>
+              <split>
+                <regexp>/[\s,]+/</regexp>
+                <limit>2</limit>
+              </split>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель $${price}_i = \beta_1 + \beta_2{carat}_i + \beta_3y_i + \beta_4x_i + {\varepsilon}_i$$. Постройте $$90\%$$-ный доверительный интервал для оценки коэффициента при длине бриллианта. <br> <b> Критическое значение должно содержать три знака после запятой. <br> Финальный ответ округляйте до двух знаков после запятой. <br> Левую границу интервала вводите слева, правую - справа. <br>  Ответ должен иметь следующий вид c пробелом между числами и без скобок или знаков препинания: x.xx y.yy </b> <br> ]]></text>
+            <explanation><![CDATA[Можно оценить регрессию с помощью команды lm() или glm(), после посмотреть summary() модели и подставить в формулу для доверительного интервала $$\hat{\beta} - se \cdot t_{cr} < \beta < \hat{\beta} + se \cdot t_{cr}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="f8c22c60787d25367b955677f9bbb3d5" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[(-1209,-1207)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6acf4a78352eae9aadde2a69935e1c03" selected_score="0.5" unselected_score="0">
+                  <text><![CDATA[(-1090,-1088)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+    </question_groups>
+  </data>
+</quiz>

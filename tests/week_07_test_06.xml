@@ -1,0 +1,1697 @@
+<quiz>
+  <metadata>
+    <title><![CDATA[Тест 6]]></title>
+    <open_time>2015-04-13 0001</open_time>
+    <soft_close_time>2015-04-27 2359</soft_close_time>
+    <hard_close_time>2015-05-04 2359</hard_close_time>
+    <duration>0</duration>
+    <retry_delay>0</retry_delay>
+    <maximum_submissions>3</maximum_submissions>
+    <modified_time>1430853539624</modified_time>
+    <is_ace_exam_flag>none</is_ace_exam_flag>
+    <authentication_required>1</authentication_required>
+    <parameters>
+      <show_explanations>
+        <question>before_soft_close_time</question>
+        <option>before_soft_close_time</option>
+        <score>before_soft_close_time</score>
+      </show_explanations>
+    </parameters>
+    <maximum_score>23</maximum_score>
+  </metadata>
+  <preamble><![CDATA[]]></preamble>
+  <data>
+    <question_groups>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="fdd7ea983989cbec1c6da81334fda5d1" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь проверял гипотезу $$H_0: \theta\cdot \kappa=1$$ на 5%-ом уровне значимости используя LR статистику отношения правдоподобия. Максимизируя  логарифмическую функцию правдоподобия без учёта гипотезы $$H_0$$  он получил её наибольшее значение, равное $$\ell=-100$$. Максимизируя логарфмическую функцию правдоподобия с учётом ограничения $$H_0$$, наибольшее значение оказалось равно $$\ell=-110$$. ]]></text>
+            <explanation><![CDATA[$$LR=2\cdot (\ell(\hat{\theta},\hat{\kappa})-\ell(\hat{\theta}_{H_0},\hat{\kappa}_{H_0}))$$ при верной $$H_0$$ имеет хи-квадрат распределение с одной степенью свободы (одно ограничение).
+]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="731034eb681b03455bb574922359ab38" selected_score="1" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 3.84, гипотеза $$H_0$$ отвергается]]></text>
+                  <explanation><![CDATA[Всё ок :)]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="4e0ca4cdf7a808cb41a8f8940cd6b017" selected_score="0" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 5.99, гипотеза $$H_0$$ отвергается]]></text>
+                  <explanation><![CDATA[Здесь должна быть одна степень свободы у хи-квадрат распределения, т.к. одно ограничение, хотя параметров оценивается два]]></explanation>
+                </option>
+                <option id="09d47c449340405f24cdf45df31e8e05" selected_score="0" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 5.99, гипотеза $$H_0$$ не отвергается]]></text>
+                  <explanation><![CDATA[Здесь должна быть одна степень свободы у хи-квадрат распределения, т.к. одно ограничение, хотя параметров оценивается два]]></explanation>
+                </option>
+                <option id="57fc40e46994b82d6a7f9006cd009685" selected_score="0" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 3.84, гипотеза $$H_0$$ не отвергается]]></text>
+                  <explanation><![CDATA[Если LR статистика больше критического значения, гипотеза должна отвергаться]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="24178dc250c0dcf7ab640f75c6856b0a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь проверял гипотезу $$H_0: \theta + \kappa=1$$ на 10%-ом уровне значимости используя LR статистику отношения правдоподобия. Максимизируя  логарифмическую функцию правдоподобия без учёта гипотезы $$H_0$$  он получил её наибольшее значение, равное $$\ell=-200$$. Максимизируя логарфмическую функцию правдоподобия с учётом ограничения $$H_0$$, наибольшее значение оказалось равно $$\ell=-210$$. ]]></text>
+            <explanation><![CDATA[$$LR=2\cdot (\ell(\hat{\theta},\hat{\kappa})-\ell(\hat{\theta}_{H_0},\hat{\kappa}_{H_0}))$$ при верной $$H_0$$ имеет хи-квадрат распределение с одной степенью свободы (одно ограничение).]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="49923d85ea2711231f1a72001479b4e8" selected_score="1" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 2.71, гипотеза $$H_0$$ отвергается]]></text>
+                  <explanation><![CDATA[Да :)]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="168e05c04a23193c26d021f1a10df139" selected_score="0" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 4.61, гипотеза $$H_0$$ не отвергается]]></text>
+                  <explanation><![CDATA[Здесь должна быть одна степень свободы у хи-квадрат распределения, т.к. одно ограничение, хотя параметров оценивается два]]></explanation>
+                </option>
+                <option id="35dc1a484764c4294bdc946d12ab7159" selected_score="0" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 2.71, гипотеза $$H_0$$ не отвергается]]></text>
+                  <explanation><![CDATA[Если LR статистика больше критического значения, гипотеза должна отвергаться]]></explanation>
+                </option>
+                <option id="634fe1083864864a45cb4c1f62ea9e13" selected_score="0" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 4.61, гипотеза $$H_0$$ отвергается]]></text>
+                  <explanation><![CDATA[Здесь должна быть одна степень свободы у хи-квадрат распределения, т.к. одно ограничение, хотя параметров оценивается два]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="6f3c285a32b6bbe375faab56c6ba021f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь проверял гипотезу $$H_0: \theta + \kappa=0$$ на 1%-ом уровне значимости используя LR статистику отношения правдоподобия. Максимизируя  логарифмическую функцию правдоподобия без учёта гипотезы $$H_0$$  он получил её наибольшее значение, равное $$\ell=-300$$. Максимизируя логарфмическую функцию правдоподобия с учётом ограничения $$H_0$$, наибольшее значение оказалось равно $$\ell=-310$$. ]]></text>
+            <explanation><![CDATA[$$LR=2\cdot (\ell(\hat{\theta},\hat{\kappa})-\ell(\hat{\theta}_{H_0},\hat{\kappa}_{H_0}))$$ при верной $$H_0$$ имеет хи-квадрат распределение с одной степенью свободы (одно ограничение).]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="3d314cf5d7484520a6e3c59c62010602" selected_score="1" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 6.63, гипотеза $$H_0$$ отвергается]]></text>
+                  <explanation><![CDATA[Да :)]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="41a33bc51edb9308c0013c193f45d0b3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 9.21, гипотеза $$H_0$$ не отвергается]]></text>
+                  <explanation><![CDATA[Здесь должна быть одна степень свободы у хи-квадрат распределения, т.к. одно ограничение, хотя параметров оценивается два]]></explanation>
+                </option>
+                <option id="bfda72c1c62a5dd44cc893ff34c36196" selected_score="0" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 9.21, гипотеза $$H_0$$ отвергается]]></text>
+                  <explanation><![CDATA[Здесь должна быть одна степень свободы у хи-квадрат распределения, т.к. одно ограничение, хотя параметров оценивается два]]></explanation>
+                </option>
+                <option id="6bf2f58aa2cc97c5ef0203aafcfc8454" selected_score="0" unselected_score="0">
+                  <text><![CDATA[LR статистика равна 20, критическое значение равно 6.63, гипотеза $$H_0$$ не отвергается]]></text>
+                  <explanation><![CDATA[Если LR статистика больше критического значения, гипотеза должна отвергаться]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="2ff9a05f9bfe26eb0ee18c8c147e3384" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь оценил пробит-модель. В качестве объясняемой переменной он взял предпочитаемый индивидом тип мороженого, фисташковое или шоколадное. А именно, $$y_i=1$$, если $$i$$-ый респондент больше любит фисташковое и $$y_i=0$$, если - шоколадное. В качестве объясняющей переменной исследователь взял количество шоколадок, съедамое респондентом ежемесячно.
+
+Получил оценку для скрытой переменной: $$\hat{y}_i^*=2-0.3x_i$$.
+<br><br>
+Оцените вероятность того, что индивид, съедающий 5 шоколадок в месяц, предпочитает фисташковое мороженое.
+<br><br>
+Подсказка: в R функция распределения нормальной стандартной случайной величины называется `pnorm`, ответ округляйте до двух знаков после запятой.]]></text>
+            <explanation><![CDATA[$$F(\hat{\beta}_1+\hat{\beta}_2x_i)$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="d66a3c31ea141c6f7b7ff0fd9ab9f8ed" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.69,0.7]]]></text>
+                  <explanation><![CDATA[Ок!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="7f03ff98e3f8764ceb13f31e3e9adaeb" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь оценил пробит-модель. В качестве объясняемой переменной он взял предпочитаемый индивидом тип мороженого, фисташковое или шоколадное. А именно, $$y_i=1$$, если $$i$$-ый респондент больше любит фисташковое и $$y_i=0$$, если - шоколадное. В качестве объясняющей переменной исследователь взял количество шоколадок, съедамое респондентом ежемесячно.
+
+Получил оценку для скрытой переменной: $$\hat{y}_i^*=2-0.3x_i$$.
+<br><br>
+Оцените вероятность того, что индивид, съедающий 4 шоколадки в месяц, предпочитает фисташковое мороженое.
+<br><br>
+Подсказка: в R функция распределения нормальной стандартной случайной величины называется `pnorm`, ответ округляйте до двух знаков после запятой.]]></text>
+            <explanation><![CDATA[$$F(\hat{\beta}_1+\hat{\beta}_2x_i)$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="545161933d5cdd5aa6a2a4c874767a41" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.78,0.79]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="41cf8d5748923b6e7af09c5b5df69f07" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь оценил пробит-модель. В качестве объясняемой переменной он взял предпочитаемый индивидом тип мороженого, фисташковое или шоколадное. А именно, $$y_i=1$$, если $$i$$-ый респондент больше любит фисташковое и $$y_i=0$$, если - шоколадное. В качестве объясняющей переменной исследователь взял количество шоколадок, съедамое респондентом ежемесячно.
+
+Получил оценку для скрытой переменной: $$\hat{y}_i^*=2-0.3x_i$$.
+<br><br>
+Оцените вероятность того, что индивид, съедающий 6 шоколадок в месяц, предпочитает фисташковое мороженое.
+<br><br>
+Подсказка: в R функция распределения нормальной стандартной случайной величины называется `pnorm`, ответ округляйте до двух знаков после запятой.]]></text>
+            <explanation><![CDATA[$$F(\hat{\beta}_1+\hat{\beta}_2x_i)$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="cc3b116d2896760d026b200659e89213" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.57,0.58]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="502c93c0c85555098c6a2d1747ac6b57" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 100 прошлым наблюдениям Винни-Пух оценивает количество мёда $$m$$ (кг) у Пчёл на Высоком Дубу методом максимального правдоподобия. Он получил точечную оценку $$\hat{m}=5$$ и посчитал вторую производную логарифмической функции правдоподобия, $$\ell''(\hat{m})=-4$$. Помогите Винни-Пуху построить 95%-ый доверительный интервал (не удивляйтесь, у Винни-Пуха опилки в голове и он ответы привел с округлением, выберите самый похожий на правду)!]]></text>
+            <explanation><![CDATA[$$[\hat{m} - 2se(\hat{m}); \hat{m} + 2se(\hat{m})]$$, $$se=(-(\ell''(\hat{m}))^{-1})^{1/2}$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="44d710ba8c7127e7bba49584c4b08dd7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[4 ; 6]]]></text>
+                  <explanation><![CDATA[Да! Верно!]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="85b410cca2b718d0a5df1a39faf57b84" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Это неправильные Пчёлы! Вторая производная должна быть положительной в точке максимума!]]></text>
+                  <explanation><![CDATA[Нет, это ж-ж-ж неспроста! В точке максимума вторая производная не может быть положительной :)]]></explanation>
+                </option>
+                <option id="cca2ba230a09d2b55032dd0afee04439" selected_score="0" unselected_score="0">
+                  <text><![CDATA[[3 ; 7]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d72801d3f05713b591b595630275d358" selected_score="0" unselected_score="0">
+                  <text><![CDATA[[2 ; 8]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a501c2d96ce4fada2d4aa98e996cf2c7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[[1 ; 9]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5a9ff02f9fba282ba96659bd06116226" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 200 прошлым наблюдениям Винни-Пух оценивает количество мёда $$m$$ (кг) у Пчёл на Высоком Дубу методом максимального правдоподобия. Он получил точечную оценку $$\hat{m}=6$$ и посчитал вторую производную логарифмической функции правдоподобия, $$\ell''(\hat{m})=-16$$. Помогите Винни-Пуху построить 95%-ый доверительный интервал (не удивляйтесь, у Винни-Пуха опилки в голове и он ответы привел с округлением, выберите самый похожий на правду)!]]></text>
+            <explanation><![CDATA[$$[\hat{m} - 2se(\hat{m}); \hat{m} + 2se(\hat{m})]$$, $$se=(-(\ell''(\hat{m}))^{-1})^{1/2}$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="d6fe34bc61974a49bf943c446e140a62" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[5.5 ; 6.5]]]></text>
+                  <explanation><![CDATA[Да!]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="4262bee73631086ec997876cc0ad31ae" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Это неправильные Пчёлы! Вторая производная должна быть положительной в точке максимума!]]></text>
+                  <explanation><![CDATA[Нет, это ж-ж-ж неспроста! В точке максимума вторая производная не может быть положительной :)]]></explanation>
+                </option>
+                <option id="9229ce7a02df5e9dc65dac3420b4cab4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[[5 ; 7]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="418f6c46cee60d2ef32ec877a656d849" selected_score="0" unselected_score="0">
+                  <text><![CDATA[[4.5 ; 7.5]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1ce0d57fb75148e55e710efcd77ea791" selected_score="0" unselected_score="0">
+                  <text><![CDATA[[4 ; 8]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="d87bdf78ba1df1c7145ba7c682648a98" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 300 прошлым наблюдениям Винни-Пух оценивает количество мёда $$m$$ (кг) у Пчёл на Высоком Дубу методом максимального правдоподобия. Он получил точечную оценку $$\hat{m}=7$$ и посчитал вторую производную логарифмической функции правдоподобия, $$\ell''(\hat{m})=-25$$. Помогите Винни-Пуху построить 95%-ый доверительный интервал (не удивляйтесь, у Винни-Пуха опилки в голове и он ответы привел с округлением, выберите самый похожий на правду)!]]></text>
+            <explanation><![CDATA[$$[\hat{m} - 2se(\hat{m}); \hat{m} + 2se(\hat{m})]$$, $$se=(-(\ell''(\hat{m}))^{-1})^{1/2}$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="bc9f1bbd8c84a1a042a1ad2389590969" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[6.6 ; 7.4]]]></text>
+                  <explanation><![CDATA[Да!]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="a5d8c02c2ab3f60c4ff2740e07c1ebe2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Это неправильные Пчёлы! Вторая производная должна быть положительной в точке максимума!]]></text>
+                  <explanation><![CDATA[Нет, это ж-ж-ж неспроста! В точке максимума вторая производная не может быть положительной :)]]></explanation>
+                </option>
+                <option id="bdd6539a561b7c08eeee32639c0b9a92" selected_score="0" unselected_score="0">
+                  <text><![CDATA[[6.2 ; 7.8]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c669b6314a34bec406432a38f4e8df9b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[[5.8 ; 8.2]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ac894c19b2553bc97e786773fb546f19" selected_score="0" unselected_score="0">
+                  <text><![CDATA[[5.4 ; 8.6]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="05b55248320f3dfa2addc135d4d97a79" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Винни-Пух оценил логит-модель для правильности Пчёл, которые, как известно, бывают правильные ($$y_i=1$$) и неправильные ($$y_i=0$$). В качестве регрессоров Винни-Пух выбрал количество производимого мёда, $$x$$ и высоту дерева, на котором они проживают, $$z$$.
+<br><br>
+В результате оценивания логит-модели оказалось, что $$\hat{y}_i^*=-1+0.2x_i + 0.05z_i$$.
+<br><br>
+Высота данного дерева равна $$z_i=10$$ метрам. При каком количестве производимого мёда $$x_i$$ величина предельного эффекта $$\frac{\partial \hat{P}(y_i=1)}{\partial z}$$ будет максимальной?
+
+]]></text>
+            <explanation><![CDATA[Предельный эффект равен $$\frac{\partial \hat{P}(y_i=1)}{\partial z}=\frac{\partial F(-1+0.2x_i + 0.05z_i)}{\partial z}=f(-1+0.2x_i + 0.05z_i)\cdot 0.05$$. И максимален, когда максимально значение функции плотности $$f$$, а она максимальна, когда выражение внутри равно нулю.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="90e6cc3f557e0649860b26f5bce1acb5" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[2.49,2.51]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="41daed7cc1da290ab94004fcd6fd38ec" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Винни-Пух оценил логит-модель для правильности Пчёл, которые, как известно, бывают правильные ($$y_i=1$$) и неправильные ($$y_i=0$$). В качестве регрессоров Винни-Пух выбрал количество производимого мёда, $$x$$ и высоту дерева, на котором они проживают, $$z$$.
+<br><br>
+В результате оценивания логит-модели оказалось, что $$\hat{y}_i^*=-1+0.25x_i + 0.05z_i$$.
+<br><br>
+Высота данного дерева равна $$z_i=10$$ метрам. При каком количестве производимого мёда $$x_i$$ величина предельного эффекта $$\frac{\partial \hat{P}(y_i=1)}{\partial z}$$ будет максимальной?]]></text>
+            <explanation><![CDATA[Предельный эффект равен $$\frac{\partial \hat{P}(y_i=1)}{\partial z}=\frac{\partial F(-1+0.25x_i + 0.05z_i)}{\partial z}=f(-1+0.25x_i + 0.05z_i)\cdot 0.05$$. И максимален, когда максимально значение функции плотности $$f$$, а она максимальна, когда выражение внутри равно нулю.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="991d325dee460c894698875421713666" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[1.9,2.1]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c1fbfb17ce88b1c077304b7a7cfc14c9" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Винни-Пух оценил логит-модель для правильности Пчёл, которые, как известно, бывают правильные ($$y_i=1$$) и неправильные ($$y_i=0$$). В качестве регрессоров Винни-Пух выбрал количество производимого мёда, $$x$$ и высоту дерева, на котором они проживают, $$z$$.
+<br><br>
+В результате оценивания логит-модели оказалось, что $$\hat{y}_i^*=-1+0.1x_i + 0.05z_i$$.
+<br><br>
+Высота данного дерева равна $$z_i=10$$ метрам. При каком количестве производимого мёда $$x_i$$ величина предельного эффекта $$\frac{\partial \hat{P}(y_i=1)}{\partial z}$$ будет максимальной?]]></text>
+            <explanation><![CDATA[Предельный эффект равен $$\frac{\partial \hat{P}(y_i=1)}{\partial z}=\frac{\partial F(-1+0.1x_i + 0.05z_i)}{\partial z}=f(-1+0.1x_i + 0.05z_i)\cdot 0.05$$. И максимален, когда максимально значение функции плотности $$f$$, а она максимальна, когда выражение внутри равно нулю.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="09be5d201091e1e97de4f11a9146014a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[4.9,5.1]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="1665b9096c831212d17c25b65a88433f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Случайные величины $$X_i$$ независимы, принимают значение на отрезке $$[0;2]$$ и имеют функцию плотности $$f(x)=\frac{a}{2}(x/2)^{a-1}$$. По 100 наблюдениям оценивается неизвестный параметр $$a$$ методом максимального правдоподобия.
+<br><br>
+Как выглядит логарифмическая функция правдоподобия?]]></text>
+            <explanation><![CDATA[Функция правдоподобия имеет вид $$\ln \Pi f(x_i)=\sum \ln f(x_i)$$ ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="bec332eeb4c319e96362383b1bc72503" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$n\ln a - an\ln 2 + (a-1) \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="02df0de0c9a2a399a1bf95434f40fc52" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$n\ln a - an\ln 2 + a \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="25419f2f4471bf3b892300840ad63aa3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$n\ln (a-1) - an\ln 2 + (a-1) \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="337446a7ce13a00ddb0d81d5f9b4bf3d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$n\ln a - (a-1)n\ln 2 + (a-1) \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="da6d3f17137c4b7ffd17f464f646533f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Случайные величины $$X_i$$ независимы, принимают значение на отрезке $$[0;3]$$ и имеют функцию плотности $$f(x)=\frac{a}{3}(x/3)^{a-1}$$. По 100 наблюдениям оценивается неизвестный параметр $$a$$ методом максимального правдоподобия.
+<br><br>
+Как выглядит логарифмическая функция правдоподобия?]]></text>
+            <explanation><![CDATA[Функция правдоподобия имеет вид $$\ln \Pi f(x_i)=\sum \ln f(x_i)$$ ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="fd9a57e18bbb44319b84ca795d6d02a4" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$n\ln a - an\ln 3 + (a-1) \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="083440604e25a5d94eda8484832b216e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$n\ln a - an\ln 3 + a \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c87f64c52d45a4c6720037e07e74ae51" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$n\ln (a-1) - an\ln 3 + (a-1) \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="96d06f47b8ad3fda895fba78937d9441" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$n\ln a - (a-1)n\ln 3 + (a-1) \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c1fcc0894ebb6625f21c8f198e260084" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Случайные величины $$X_i$$ независимы, принимают значение на отрезке $$[0;4]$$ и имеют функцию плотности $$f(x)=\frac{a}{4}(x/4)^{a-1}$$. По 100 наблюдениям оценивается неизвестный параметр $$a$$ методом максимального правдоподобия.
+<br><br>
+Как выглядит логарифмическая функция правдоподобия?]]></text>
+            <explanation><![CDATA[Функция правдоподобия имеет вид $$\ln \Pi f(x_i)=\sum \ln f(x_i)$$ ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="6e6b12974bbd581443281a918bf40eb0" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$n\ln a - an\ln 4 + (a-1) \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="3098d8b859886c66f8bac6f6d1d0dcc3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$n\ln a - an\ln 4 + a \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c8fd36b54a7c4256a0433015f1731135" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$n\ln (a-1) - an\ln 4 + (a-1) \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d7ed87c878183c1eb936859f9fa05ae4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$n\ln a - (a-1)n\ln 4 + (a-1) \sum \ln x_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="ebf93e435bcfeb4ae3a1feda4adcb7cc" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Если функция правдоподобия имеет вид $$\ell(a)=n\ln a +(a-1)\sum \ln x_i - an\ln 2$$, и по 100 наблюдениям оказалось, что $$\Pi x_i=7.78\cdot 10^{-20}$$. Найдите оценку $$\hat{a}$$ методом максимального правдоподобия.
+<br><br>
+Ответ указывайте с точностью в два знака после запятой или точнее.
+]]></text>
+            <explanation><![CDATA[Приравниваем производную по $$a$$ к нулю и находим ML оценку, $$\sum \ln x_i = \ln \Pi x_i$$.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="ab21e034c6fb8f75f5d3587d2f2c16f5" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.87,0.89]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ea932013efae53be34fe3d18d6103797" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Если функция правдоподобия имеет вид $$\ell(a)=n\ln a +(a-1)\sum \ln x_i - an\ln 2$$, и по 200 наблюдениям оказалось, что $$\Pi x_i=7.78\cdot 10^{-20}$$. Найдите оценку $$\hat{a}$$ методом максимального правдоподобия.
+<br><br>
+Ответ указывайте с точностью в два знака после запятой или точнее.]]></text>
+            <explanation><![CDATA[Приравниваем производную по $$a$$ к нулю и находим ML оценку, $$\sum \ln x_i = \ln \Pi x_i$$.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="48a8afd9182d42bfecddde679a5b54a8" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[1.08,1.10]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="93ae35ed1239dce81fee34fd8edab47e" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Если функция правдоподобия имеет вид $$\ell(a)=n\ln a +(a-1)\sum \ln x_i - an\ln 2$$, и по 300 наблюдениям оказалось, что $$\Pi x_i=7.78\cdot 10^{-20}$$. Найдите оценку $$\hat{a}$$ методом максимального правдоподобия.
+<br><br>
+Ответ указывайте с точностью в два знака после запятой или точнее.]]></text>
+            <explanation><![CDATA[Приравниваем производную по $$a$$ к нулю и находим ML оценку, $$\sum \ln x_i = \ln \Pi x_i$$.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="7b4794a6cc2bc6b320e69143c082d268" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[1.18,1.20]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="a25ab6c7d8e0122a3e7e0a4a4e15c3e5" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Отметьте все верные утверждения ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="2ae3ca1f7b191119dca258a0a5ca9ea9" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Оценки коэффициентов в логит модели примерно в 1.6 раза больше, чем оценки коэффициентов в пробит модели]]></text>
+                  <explanation><![CDATA[Да, предпосылки на $$\varepsilon_i$$ в логит и пробит модели разные. Если логистически распределенное $$\varepsilon_i$$ поделить на 1.6 то примерно получится стандартное нормальное распределение.]]></explanation>
+                </option>
+                <option id="b372074bb815f4858ea84b8dd0864a21" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Логит и пробит модели оценивается с помощью метода максимального правдоподобия]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="90e500d4a3be2b143b05c9dc974ffcd4" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Оценки коэффициентов логит и пробит моделей являеются асимптотически нормальными]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="8092a3630c0bbb2459d4d12a030edda3" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Оценки коэффициентов логит моделей можно интерпретировать в терминах логарифмического отношения шансов]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="d4a52b70a2a0e86f43b43db7b370e185" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Для конкретного наблюдения прогноз вероятности в логит модели примерно в 1.6 раза больше, чем прогноз вероятности в пробит модели ]]></text>
+                  <explanation><![CDATA[Нет, логит модель по прогнозам и предельным эффектам практически идентична пробит модели]]></explanation>
+                </option>
+                <option id="db0d13f2e099e6959c1a953cee955bf8" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Оценки коэффициентов в логит и пробит модели всегда существуют]]></text>
+                  <explanation><![CDATA[Нет, бывает ситуация "совершенного прогнозирования", в которой оценки не существуют]]></explanation>
+                </option>
+                <option id="e73011d58ae2f856ac2efddff0d871f6" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Логит и пробит модели оцениваются с помощью метода наименьших квадратов]]></text>
+                  <explanation><![CDATA[Нет, неверно. ]]></explanation>
+                </option>
+                <option id="aab048d98651b8c8bfc950d3fc3095c1" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Если ошибки нормально распределены, то оценки коэффициентов логит и пробит моделей имеют t-распределение с $$n-k$$ степенями свободы, где $$n$$ - количество наблюдений, а $$k$$ - количество оцениваемых коэффициентов]]></text>
+                  <explanation><![CDATA[Нет, есть теорема, которая гарантирует асимптотическую нормальность оценок ML и не более.]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="43a561e52f31e4072a62d2515c58482d" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Винни-Пух исследует зависимость правильности Пчёл ($$y_i=1$$, если Пчёлы на дереве правильные и $$y_i=0$$, если неправильные) от высоты дерева $$x_i$$. Пока что Винни-Пух собрал всего 3 наблюдения: $$x_1=10$$, $$y_1=1$$, $$x_2=12$$, $$y_2=0$$, $$x_3=14$$, $$y_3=1$$.
+<br><br>
+Как выглядит нелогарифмированная функция правдоподобия для логит-модели со скрытой переменной $$y_i^*=\beta_1+\beta_2 x_i + \varepsilon_i$$?
+<br><br>
+В ответе можно использовать функцию распределения $$F$$ и функцию плотности $$f$$ логистической случайной величины]]></text>
+            <explanation><![CDATA[Функция правдоподобия равна $$P(y_1=1)\cdot P(y_2=0) \cdot P(y_3=1)$$, а $$P(y_i=1)=F(\beta_1 + \beta_2 x_i)$$.]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="b0b6bc237f37ff8f9669d7e0f1a43856" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$F(\beta_1 + 10\beta_2)\cdot (1-F(\beta_1 + 12\beta_2))\cdot F(\beta_1 + 14\beta_2)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="075f92dec0f9c6351c8efdcfdb49d5af" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$F(\beta_1 + 10\beta_2)\cdot F(\beta_1 + 12\beta_2)\cdot F(\beta_1 + 14\beta_2)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="207a6bce4eaaeefb3669adbdb4870a61" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$(1-F(\beta_1 + 10\beta_2))\cdot F(\beta_1 + 12\beta_2)\cdot (1-F(\beta_1 + 14\beta_2))$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="946b988fea7c810d9c704234c97b125e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$f(\beta_1 + 10\beta_2)\cdot f(\beta_1 + 12\beta_2)\cdot f(\beta_1 + 14\beta_2)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="9017e114fe558d490e25910718cdec90" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Винни-Пух исследует зависимость правильности Пчёл ($$y_i=1$$, если Пчёлы на дереве правильные и $$y_i=0$$, если неправильные) от высоты дерева $$x_i$$. Пока что Винни-Пух собрал всего 3 наблюдения: $$x_1=10$$, $$y_1=0$$, $$x_2=12$$, $$y_2=0$$, $$x_3=14$$, $$y_3=1$$.
+<br><br>
+Как выглядит нелогарифмированная функция правдоподобия для логит-модели со скрытой переменной $$y_i^*=\beta_1+\beta_2 x_i + \varepsilon_i$$?
+<br><br>
+В ответе можно использовать функцию распределения $$F$$ и функцию плотности $$f$$ логистической случайной величины]]></text>
+            <explanation><![CDATA[Функция правдоподобия равна $$P(y_1=0)\cdot P(y_2=0) \cdot P(y_3=1)$$, а $$P(y_i=1)=F(\beta_1 + \beta_2 x_i)$$.]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="ba4a263fab266f1e01dce32d0e7ccde8" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$(1-F(\beta_1 + 10\beta_2))\cdot (1-F(\beta_1 + 12\beta_2))\cdot F(\beta_1 + 14\beta_2)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="b88c32ee6aa2d6436526fbd7c523b4d6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$F(\beta_1 + 10\beta_2)\cdot F(\beta_1 + 12\beta_2)\cdot F(\beta_1 + 14\beta_2)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b2f594f0a4879aea39682044fb45ce1d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$F(\beta_1 + 10\beta_2)\cdot F(\beta_1 + 12\beta_2)\cdot (1-F(\beta_1 + 14\beta_2))$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="cddb3fa7d23cd842d187614c5191b211" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$f(\beta_1 + 10\beta_2)\cdot f(\beta_1 + 12\beta_2)\cdot f(\beta_1 + 14\beta_2)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="b4e72b3bcd8c1a4e5f6889473e7d8492" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Винни-Пух исследует зависимость правильности Пчёл ($$y_i=1$$, если Пчёлы на дереве правильные и $$y_i=0$$, если неправильные) от высоты дерева $$x_i$$. Пока что Винни-Пух собрал всего 3 наблюдения: $$x_1=10$$, $$y_1=1$$, $$x_2=12$$, $$y_2=0$$, $$x_3=14$$, $$y_3=0$$.
+<br><br>
+Как выглядит нелогарифмированная функция правдоподобия для логит-модели со скрытой переменной $$y_i^*=\beta_1+\beta_2 x_i + \varepsilon_i$$?
+<br><br>
+В ответе можно использовать функцию распределения $$F$$ и функцию плотности $$f$$ логистической случайной величины]]></text>
+            <explanation><![CDATA[Функция правдоподобия равна $$P(y_1=1)\cdot P(y_2=0) \cdot P(y_3=0)$$, а $$P(y_i=1)=F(\beta_1 + \beta_2 x_i)$$.]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="814c7d63f543c911a2a8ef1195a69234" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$F(\beta_1 + 10\beta_2)\cdot (1-F(\beta_1 + 12\beta_2))\cdot (1- F(\beta_1 + 14\beta_2))$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="001e305d21a310b6738ee1f7049bf829" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$F(\beta_1 + 10\beta_2)\cdot F(\beta_1 + 12\beta_2)\cdot F(\beta_1 + 14\beta_2)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="daec647f8f710fddcf9cf3fb9bab3d0f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$(1-F(\beta_1 + 10\beta_2))\cdot F(\beta_1 + 12\beta_2)\cdot F(\beta_1 + 14\beta_2)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="5082db0126839e9fec3338837c2abb8f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$f(\beta_1 + 10\beta_2)\cdot f(\beta_1 + 12\beta_2)\cdot f(\beta_1 + 14\beta_2)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="973f87caa4d2c63af09fd39a0715345c" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что произойдет с оценками логит-модели, если в значениях зависимой переменной поменять 0 и 1 местами?
+<br>
+Отметьте все верные утверждения]]></text>
+            <explanation><![CDATA[В логит модели объясняемая переменная равна 1, если скрытая переменная больше нуля. Значит, замена 0 и 1 местами, это смена знака в скрытой переменной.]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="be0e9ec429a81029b788d7dfe225ffbb" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[все оценки коэффиентов поменяют знак]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4f4c9ca2c801ea9a24994cd19a2d2d0a" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[значение логарифмической функции правдоподобия в точке оптимума останется неизменным]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d091c3fee26502db59860f1f66c05c8d" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[стандартные ошибки коэффициентов останутся неизменными]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="5191a0fc685aebee4b4f00737a514dcb" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[значимые коэффициенты останутся значимыми, а незначимые - незначимыми]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="cf5b097035292617b5b53b2b8e08cc66" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[все значимые коэффициенты станут незначимыми, и наоборот]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="bf7423b159df9d6ea5d0769aac5f06fc" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[свободный член поменяет знак, все остальные коэффициенты останутся неизменными]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="8eb9cd97e82fa57a3ef3d17f39e1d725" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[свободный член поменяет свою значимость (если был значимым, станет незначимым и наоборот)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="933d27aca1ff6581753199f0625d2450" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[все коэффициенты кроме свободного члена поменяют свой знак]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="1f955e793676309c3e620cce16142e73" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исходя из мозаичного графика по полу, цвету волос и цвету глаз для выборки из 592 студентов:
+<br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/sex_hair_eye.png"; style="width:750px"; align = "center">
+<br>
+
+Отметьте верные для данной выборки утверждения.
+
+<br>
+Словарик. Глаза: blue - голубые, hazel - ореховые (зеленый+коричневый), green - зеленые, brown - карие. Волосы: blond - светлые, brown - коричневые, black - черные, red - рыжие.
+]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="1994bda8e0682536362e6fb66d65993d" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Мужчин и женщин в выборке примерно равное количество]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e34550763847e6aea15eaaa6e591d3bc" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Больше всего мужчин с коричневыми волосами, на втором месте по численности - черноволосые мужчины]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="5723672231ee483453223583749e79f7" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Доля блондинок среди женщин выше доли блондинов среди мужчин]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c960af73ce3478d2b26b66ed601ade57" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Среди блондинок чаще всего встречаются голубоглазые]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="fe384305f4a9146730a1733fc27d1401" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Если рассматривать женщин с чёрными волосами, самым редким цветом глаз окажется голубой. ]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="719f400dd590b6a70a5062b064f6d903" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Среди коричноволосых мужчин зеленоглазых и голубоглазых примерно равное количество]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="88cdf6673ec5f5b23a3e2c5b62b882ea" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Блондинов больше, чем блондинок]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b86d1b890226207e1993f946dc924eab" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Среди блондинов чаще всего встречаются кареглазые]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="a2109753a3937fd573351d024a8e111f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Мозаичный график
+<br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/sex_hair_eye.png"; style="width:750px"; align = "center">
+<br>
+
+можно построить командой]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="6ecc977e50036e954c74b5a1e4fdbb4d" selected_score="1" unselected_score="0">
+                  <text><![CDATA[`mosaic(data=HairEyeColor,~Sex+Hair+Eye, shade=TRUE)`]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="d02dcdb13376b8d9ba800b1c31bc27c6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[`mosaic(data=HairEyeColor,Sex~Hair+Eye, shade=TRUE)`]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="7fa96dd329a392a35ed086a47649dc8d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[`mosaic(data=HairEyeColor,~Hair+Sex+Eye, shade=TRUE)`]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e49bbf5b841d4fe7c79bce3c4b6ec45e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[`mosaic(data=HairEyeColor,~Eye+Hair+Sex, shade=TRUE)`]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="d0e3ddfb33d7f0f3231be5be7163fcb2" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Мозаичный график
+<br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/sex_eye_hair.png"; style="width:750px"; align = "center">
+<br>
+
+можно построить командой]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="52a83908098c8501acf2f7cf622eeddc" selected_score="1" unselected_score="0">
+                  <text><![CDATA[`mosaic(data=HairEyeColor,~Sex+Eye+Hair, shade=TRUE)`]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="fcd4cec3ff27aa2989560337d33b47a6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[`mosaic(data=HairEyeColor,Sex~Eye+Hair, shade=TRUE)`]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="8c1276958f840ae575e0120e27f326c2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[`mosaic(data=HairEyeColor,~Hair+Sex+Eye, shade=TRUE)`]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9eb84ec691777051dc2dbef0aa3f6dae" selected_score="0" unselected_score="0">
+                  <text><![CDATA[`mosaic(data=HairEyeColor,~Eye+Hair+Sex, shade=TRUE)`]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[<b><font color = "red"> Для выполнения заданий c 12 по 20 Вам понадобится набор данных по пассажирам Титаника. Он содержится в файле `titanic3.csv` в архиве для компьютерной части лекции.
+<br>
+Помимо этого, Вам могут понадобиться такие пакеты, как lmtest, dplyr, broom, vcd и ggplot2.
+</b> ]]></preamble>
+        <question id="3a2bb5004e9a4b305efd8ca9b1f645b6" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Чему равна оценка коэффициента при количестве братьев/сестер/мужей/жен на корабле? Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[`glm(data=... , survived~ ... , family=binomial(link="logit"))`]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="1dad7451bb145fe66e5638e076f85e9b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.47,-0.45]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="a79a91a7655aa514206bee394a26f934" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Чему равна оценка коэффициента при количестве братьев/сестер/мужей/жен на корабле? Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[`glm(data=... , survived~ ... , family=binomial(link="logit"))`]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="3470885ec609edb4119b8e6f2e9107f3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.40,-0.38]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ecf42c93a4ac359fdcb720315aef91d7" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$, количество родителей/детей, $$parch$$.
+<br><br>
+Чему равна оценка коэффициента при количестве братьев/сестер/мужей/жен на корабле? Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[`glm(data=... , survived~ ... , family=binomial(link="logit"))`]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="7246682db5a420bfa7ce004d285b3bdc" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.38,-0.36]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="82a8757e716208adb7ae3b00a20de7d5" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Вспомнив формулу абсциссы вершины параболы, $$x^*=-b/2a$$, оцените, при каком возрасте вероятность выжить в данной модели минимальна. Ответ вводите с точностью до одного знака после запятой.]]></text>
+            <explanation><![CDATA[`glm(data=... , survived~ ... , family=binomial(link="logit"))`]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="0a54d92d771b4b220f7803a08a3f8ab1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[44,45]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ceab5ae6f7ec2bb1c380819edcf53239" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$, количество родителей/детей, $$parch$$.
+<br><br>
+Вспомнив формулу абсциссы вершины параболы, $$x^*=-b/2a$$, оцените, при каком возрасте вероятность выжить в данной модели минимальна. Ответ вводите с точностью до одного знака после запятой.]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="0f6f371ac372e89675637b4800750df2" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[44,45]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="698ecd71435a3bf30e4c4187b3a89913" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, квадрат тарифа, $$fare^2$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Вспомнив формулу абсциссы вершины параболы, $$x^*=-b/2a$$, оцените, при каком возрасте вероятность выжить в данной модели минимальна. Ответ вводите с точностью до одного знака после запятой.]]></text>
+            <explanation><![CDATA[`glm(data=... , survived~ ... , family=binomial(link="logit"))`]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="cb9181c782c5e7393fdbee2a504972b9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[47,48]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="8772dead299388b41d35ad35b6809ee7" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Чему равна левая граница 95%-ого доверительного интервала для коэффициента при количестве братьев/сестер/мужей/жен на корабле? Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data=... , survived~ ... , family=binomial(link="logit"))
+<br>
+confint(model, level= ...)
+]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="2af700df7902ec52be1ebd8bea0ae173" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.67,-0.66]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="2049570b5498e6ac9780f2d00bab0606" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, квадрат тарифа, $$fare^2$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Чему равна левая граница 95%-ого доверительного интервала для коэффициента при количестве братьев/сестер/мужей/жен на корабле? Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data=... , survived~ ... , family=binomial(link="logit"))
+<br>
+confint(model, level= ...)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="76d4f7de6f8673aacdb8affb48f43f45" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.73,-0.71]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="93f8c3a56078f00acf4b69d57fa6f070" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$, количество родителей/детей, $$parch$$.
+<br><br>
+Чему равна левая граница 95%-ого доверительного интервала для коэффициента при количестве братьев/сестер/мужей/жен на корабле? Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data=... , survived~ ... , family=binomial(link="logit"))
+<br>
+confint(model, level= ...)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="432b7afd681d1f4ae31e72d4334a3403" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.65,-0.64]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b2ee15241470b692674d0d81a9ddf10c" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Спрогнозируйте вероятность выжить для мужчины 30 лет с 2 сестрами на борту и заплатившего за себя 200 фунтов. Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data= ..., survived~... , family=binomial(link="logit") )
+<br>
+nd <- data.frame(...)
+<br>
+predict(model, newdata = nd, type="response", se.fit=TRUE)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="b039c55b822937216eaf03b9669435c0" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.43,0.44]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="51945d76f0c555ab412e9a5cc0b5db2f" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Спрогнозируйте вероятность выжить для мужчины 40 лет с 2 сестрами на борту и заплатившего за себя 200 фунтов. Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data= ..., survived~... , family=binomial(link="logit") )
+<br>
+nd <- data.frame(...)
+<br>
+predict(model, newdata = nd, type="response", se.fit=TRUE)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="16154109811c6e9be6631a64dfe6e8d4" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.39,0.41]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="d649e4df7384577da4be4bbd3c3b3977" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Спрогнозируйте вероятность выжить для мужчины 50 лет с 2 сестрами на борту и заплатившего за себя 200 фунтов. Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data= ..., survived~... , family=binomial(link="logit") )
+<br>
+nd <- data.frame(...)
+<br>
+predict(model, newdata = nd, type="response", se.fit=TRUE)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="623ebf48a8e3f994a1b392459cc13dcb" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.39,0.41]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="8f62fa1dee786c9eebd0fd5d38b275f4" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Найдите левую границу 95%-ого интервала для вероятность выжить для мужчины 30 лет с 2 сестрами на борту и заплатившего за себя 200 фунтов. Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data= ..., survived~... , family=binomial(link="logit") )
+<br>
+nd <- data.frame(...)
+<br>
+prognoz <- predict(model, newdata = nd, type="response", se.fit=TRUE)
+<br>
+prognoz$fit - ...*prognoz$se.fit]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="ab0df9c64841c6421802096275134ff9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.25,0.28]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="2e14f3fcfdd63081a674a625bd8464b6" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Найдите левую границу 95%-ого интервала для вероятность выжить для мужчины 40 лет с 2 сестрами на борту и заплатившего за себя 200 фунтов. Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data= ..., survived~... , family=binomial(link="logit") )
+<br>
+nd <- data.frame(...)
+<br>
+prognoz <- predict(model, newdata = nd, type="response", se.fit=TRUE)
+<br>
+prognoz$fit - ...*prognoz$se.fit]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="ff82639dd591319cddfa333b4a507a22" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.22,0.25]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5aadd6d97de8725040d2930a4d2b302e" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Найдите левую границу 95%-ого интервала для вероятность выжить для мужчины 50 лет с 2 сестрами на борту и заплатившего за себя 200 фунтов. Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data= ..., survived~... , family=binomial(link="logit") )
+<br>
+nd <- data.frame(...)
+<br>
+prognoz <- predict(model, newdata = nd, type="response", se.fit=TRUE)
+<br>
+prognoz$fit - ...*prognoz$se.fit]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="034924faeb754713559809e45542363a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.22,0.25]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="9397dad69c187bb0a7f7edd1ec44a4b9" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Найдите предельный эффект увеличения количества братьев/сестер/мужей/жен на вероятность выжить для среднестатистического индивида. Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data= ..., survived~... , family=binomial(link="logit") , x = TRUE)
+<br>
+maBina(model)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="6657f27b054bf7dcd8af8071d5b17e37" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.12,-0.10]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="22c0c66dd429f6afdc55a4df673490d6" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, квадрат тарифа, $$fare^2$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Найдите предельный эффект увеличения количества братьев/сестер/мужей/жен на вероятность выжить для среднестатистического индивида. Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data= ..., survived~... , family=binomial(link="logit") , x = TRUE)
+<br>
+maBina(model)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="3cb14b02577d4c05d456416104b9ed06" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.13,-0.11]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="7772b36a24a32bd63eddbaba5199efa3" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$, количество родителей/детей, $$parch$$.
+<br><br>
+Найдите предельный эффект увеличения количества братьев/сестер/мужей/жен на вероятность выжить для среднестатистического индивида. Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[model <- glm(data= ..., survived~... , family=binomial(link="logit") , x = TRUE)
+<br>
+maBina(model)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="4535eec0f5798a48da32c8b4866a2938" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.11,-0.09]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="cf3f564378a6ad338bbdae7784bbfbca" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Отберите из всего массива данных переменные age, sibsp, sex, fare, parch, survived в отдельную табличку `d`. Очистите табличку `d` от пропущенных наблюдений. По полученной выборке оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, квадрат тарифа, $$fare^2$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+С помощью LR теста проверьте гипотезу, что тариф никак не влияет на вероятность выжить. ]]></text>
+            <explanation><![CDATA[d <- dplyr::select(...)
+<br>
+d_clean <- na.omit(d)
+<br>
+model <- glm(data=d_clean, ...., family=binomial(link="logit"))
+<br>
+...
+<br>
+lrtest(..., model)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="7e925d3d86c8fd352322673e206b48ce" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Значение LR статистики равно 56, гипотеза об отсутствии влияния тарифа отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="6e89f62dd547c7a7c149483f3896193e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Значение LR статистики равно 56, гипотеза об отсутствии влияния тарифа не отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="3fcb8696b8128c41b05929b7b88efd7d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Значение LR статистики равно 5.6, гипотеза об отсутствии влияния тарифа  отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b7f70772b1ae2168f0334232839d96f5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Значение LR статистики равно 5.6, гипотеза об отсутствии влияния тарифа не отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="0d0466cdc4aea5e9ac22cd1f9937cb70" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Отберите из всего массива данных переменные age, sibsp, sex, fare, parch, survived в отдельную табличку `d`. Очистите табличку `d` от пропущенных наблюдений. По полученной выборке оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, квадрат тарифа, $$fare^2$$, количество братьев/сестер/мужей/жен, $$sibsp$$, количества родителей/детей, $$parch$$.
+<br><br>
+С помощью LR теста проверьте гипотезу, что тариф никак не влияет на вероятность выжить. ]]></text>
+            <explanation><![CDATA[d <- dplyr::select(...)
+<br>
+d_clean <- na.omit(d)
+<br>
+model <- glm(data=d_clean, ...., family=binomial(link="logit"))
+<br>
+...
+<br>
+lrtest(..., model)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="f49201eaa3eda6e4328faeb43465a668" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Значение LR статистики равно 58.7, гипотеза об отсутствии влияния тарифа отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="5994c4eceb33638fde6ee7d3b1c6b3ef" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Значение LR статистики равно 58.7, гипотеза об отсутствии влияния тарифа не отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1b4f2f2468a755e24f9a53ec2b101167" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Значение LR статистики равно 5.8, гипотеза об отсутствии влияния тарифа отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f214fef2dafde5b1bdd68b04e08fb850" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Значение LR статистики равно 5.8, гипотеза об отсутствии влияния тарифа не отвергается]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="c83e00a43911c16ccb5854296245c703" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Отберите из всего массива данных переменные age, sibsp, sex, fare, survived в отдельную табличку `d`. Очистите табличку `d` от пропущенных наблюдений. По полученной выборке оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Спрогнозируйте вероятность выжить для каждого пассажира. Постройте бинарный прогноз выживет/не выживет, взяв в качестве пороговой вероятности 0.6. Посчитайте долю (от 0 до 1) корректных предсказаний среди выживших пассажиров (этот показатель называется чувствительность). Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[d <- dplyr::select(...)
+<br>
+d_clean <- na.omit(d)
+<br>
+model <- glm(data=d_clean, familty=binomial(link="logit"), ...)
+<br>
+d_clean$probs <- predict(model, type="response")
+<br>
+...
+<br>
+table(d_clean$survived, ...)
+]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="d85926c24af0372b5ccfd638aa25f532" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.66,0.67]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9d5d00c24ae2a8a1b0708910f0ee0502" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[66,67]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="1b991bacae60dd7a9b626057bb14b8bb" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Отберите из всего массива данных переменные age, sibsp, sex, fare, survived в отдельную табличку `d`. Очистите табличку `d` от пропущенных наблюдений. По полученной выборке оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Спрогнозируйте вероятность выжить для каждого пассажира. Постройте бинарный прогноз выживет/не выживет, взяв в качестве пороговой вероятности 0.7. Посчитайте долю (от 0 до 1) корректных предсказаний среди выживших пассажиров (этот показатель называется чувствительность). Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[d <- dplyr::select(...)
+<br>
+d_clean <- na.omit(d)
+<br>
+model <- glm(data=d_clean, familty=binomial(link="logit"), ...)
+<br>
+d_clean$probs <- predict(model, type="response")
+<br>
+...
+<br>
+table(d_clean$survived, ...)
+]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="949341b48e0a2bac1ff9495c0d4f6866" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.53,0.55]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="7242a851b6d1ae27f30c997f21af88b6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[53,55]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="abbc7ffc9227684a7337fa479ee3d228" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Отберите из всего массива данных переменные age, sibsp, sex, fare, survived в отдельную табличку `d`. Очистите табличку `d` от пропущенных наблюдений. По полученной выборке оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Спрогнозируйте вероятность выжить для каждого пассажира. Постройте бинарный прогноз выживет/не выживет, взяв в качестве пороговой вероятности 0.65. Посчитайте долю (от 0 до 1) корректных предсказаний среди выживших пассажиров (этот показатель называется чувствительность). Ответ укажите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[d <- dplyr::select(...)
+<br>
+d_clean <- na.omit(d)
+<br>
+model <- glm(data=d_clean, familty=binomial(link="logit"), ...)
+<br>
+d_clean$probs <- predict(model, type="response")
+<br>
+...
+<br>
+table(d_clean$survived, ...)
+]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="b4e603ffef39548af899c4962c8ffb9d" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.62,0.64]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9beeb7b8b515379f6cf5e4d4fd5421f5" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[62,64]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="8f7af0d802ce779bee921841d2056dd9" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Найдите оценку дисперсии коэффициента при переменной $$sibsp$$. Ответ укажите с тремя знаками после запятой. Обратите внимание, что модель оценивается по исходному набору данных, не по наборам с удаленными NA!]]></text>
+            <explanation><![CDATA[Можно возвести стандартную ошибку в квадрат, можно воспользоваться функцией `vcov(model)`.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="443d20aaf8267c7cbc455487a4e26241" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.009,0.011]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="26ef054303dcb00dbef503a6fbda7bdf" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Найдите оценку дисперсии свободного члена. Ответ укажите с двумя знаками после запятой. Обратите внимание, что модель оценивается по исходному набору данных, не по наборам с удаленными NA!]]></text>
+            <explanation><![CDATA[Можно возвести стандартную ошибку в квадрат, можно воспользоваться функцией `vcov(model)`.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="86a6d0be0f45ec1b463d497ff1d605f6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.11,0.13]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="b13f2cd926606ea76ef25c8749515ef5" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените логит-модель для вероятности выжить на Титанике, взяв в качестве объясняющих переменных возраст, $$age$$, квадрат возраста, $$age^2$$, пол, $$sex$$, тариф, $$fare$$, количество братьев/сестер/мужей/жен, $$sibsp$$.
+<br><br>
+Найдите оценку дисперсии коэффициента при дамми-переменной, равной 1 для мужчин. Ответ укажите с тремя знаками после запятой. Обратите внимание, что модель оценивается по исходному набору данных, не по наборам с удаленными NA!]]></text>
+            <explanation><![CDATA[Можно возвести стандартную ошибку в квадрат, можно воспользоваться функцией `vcov(model)`.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="dd881856fa7e026a39568d034f92217a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.025,0.027]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+    </question_groups>
+  </data>
+</quiz>
