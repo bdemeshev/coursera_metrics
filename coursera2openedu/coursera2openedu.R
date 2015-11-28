@@ -32,6 +32,8 @@ GetNumberOfQuestions <- function(doc) {
   return(number_of_questions)  
 }
 
+
+
 GetNumberOfQuestions(doc)
 
 # obtain all versions of a question from coursera xml
@@ -55,6 +57,12 @@ GetVersion <- function(doc, question_no, version_no) {
   return(version)
 }
 
+# get number of version of specific question
+GetNumberOfVersions <- function(doc, question_no) {
+  question <- GetQuestion(doc, question_no)
+  n_versions <- xmlSize(question) - 1
+  return(n_versions)
+}
 
 # get child names of an xml node
 ChildNames <- function(node) {
@@ -120,8 +128,9 @@ point_explanation <- GetNumPointExplanation(v_num)
 
 
 v_checkbox[["data"]]
-v_radio[["data"]]
 
+v_radio[["data"]][["option_groups"]][["option_group"]] %>% ChildNames()
+v_radio[["data"]][["option_groups"]] 
 
 GetText(v_num)
 
@@ -150,9 +159,7 @@ dd2brackets <- function(output_string) {
 cat(dd2brackets(a))
 
 
-edx_xml <- xmlNode("problem")
-edx_xml
-?xmlNode
+
 
 # create edx xml
 
@@ -187,3 +194,80 @@ create_numeric <- function(
   }
   return(problem_node)
 }
+
+# short summary (number of versions for each question)
+QuestionSummary <- function(doc) {
+  n_questions <- GetNumberOfQuestions(doc)
+  q_summary <- data_frame(question_no = 1:n_questions, n_versions = NA)
+  for (i in 1:n_questions) {
+    q_summary$n_versions[i] <- GetNumberOfVersions(doc, i)
+  }
+  return(q_summary)
+}
+QuestionSummary(doc)
+
+
+GetNumberOfOptionGroups <- function(version) {
+  n_option_groups <- XML::xmlSize(
+    version[["data"]][["option_groups"]])
+  return(n_option_groups)
+}
+
+# long summary
+VersionSummary <- function(doc) {
+  q_summary <- QuestionSummary(doc)
+  v_summary <- data_frame(
+          question_no = rep(q_summary$question_no, 
+                  times = q_summary$n_versions))
+  v_summary <- v_summary %>% group_by(question_no) %>% 
+    mutate(version_no = row_number())
+  v_summary <- ungroup(v_summary) %>% 
+    mutate(type = NA, n_option_groups = NA)
+  tot_n_versions <- nrow(v_summary)
+  
+  for (i in 1:tot_n_versions) {
+    version <- GetVersion(doc, 
+                              v_summary$question_no[i],
+                              v_summary$version_no[i])
+    v_summary$type[i] <- GetType(version)
+    v_summary$n_option_groups[i] <- GetNumberOfOptionGroups(version)
+  }
+  
+  return(v_summary)
+}
+
+GetOptionGroup <- function(version, option_group_no) {
+  option_group <- version[["data"]][["option_groups"]][[option_group_no]]
+  return(option_group)
+}
+
+
+OptionGroupSummary <- function(doc) {
+  v_summary <- VersionSummary(doc)
+  tot_n_versions <- nrow(v_summary)
+  indexes <- rep(1:tot_n_versions, v_summary$n_option_groups)
+  og_summary <- v_summary[indexes, ]
+  og_summary <- group_by(og_summary, question_no, version_no) %>%
+    mutate(option_group_no = row_number()) %>% ungroup()
+  og_summary <- mutate(og_summary, n_options = NA, select = NA)
+  
+  for (i in 1:nrow(og_summary)) {
+    version <- GetVersion(doc, 
+                          og_summary$question_no[i],
+                          og_summary$version_no[i])
+    option_group <- GetOptionGroup(version, 
+                                   og_summary$option_group_no[i])
+    og_summary$n_options[i] <- XML::xmlSize(option_group)
+    og_summary$select[i] <- XML::xmlAttrs(option_group, "select")
+  }
+  
+  return(og_summary)
+}
+
+og <- OptionGroupSummary(doc)
+v <- VersionSummary(doc)
+
+v_radio[["data"]][["option_groups"]] %>% xmlSize()
+v_radio %>% GetNumberOfOptionGroups()
+
+
