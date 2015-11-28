@@ -13,6 +13,7 @@ GetTitle = function(doc) {
     root[["metadata"]][["title"]][[1]])
   return(test_name)
 }
+GetTitle(doc)
 
 # obtain preamble of a test from coursera xml
 GetPreamble = function(doc) {
@@ -20,7 +21,7 @@ GetPreamble = function(doc) {
   preamble <- XML::xmlValue(root[["preamble"]])
   return(preamble)
 }
-GetTitle(doc)
+
 GetPreamble(doc)
 
 
@@ -44,24 +45,28 @@ GetQuestion <- function(doc, question_no) {
     stop("Question number ", question_no, " requested, but total number of question is ",
          number_of_questions)
   }
-  return(root[[3]][[1]][[question_no]])
+  return(root[["data"]][["question_groups"]][[question_no]])
 }
 
 q17 <- GetQuestion(doc, 17)
 
 
-# obtain specific version of a question from coursera xml
-GetVersion <- function(doc, question_no, version_no) {
-  question <- GetQuestion(doc, question_no)
-  version <- question[[1 + version_no]]
-  return(version)
-}
+
 
 # get number of version of specific question
 GetNumberOfVersions <- function(doc, question_no) {
   question <- GetQuestion(doc, question_no)
   n_versions <- xmlSize(question) - 1
   return(n_versions)
+}
+
+GetNumberOfVersions(doc, 17)
+
+# obtain specific version of a question from coursera xml
+GetVersion <- function(doc, question_no, version_no) {
+  question <- GetQuestion(doc, question_no)
+  version <- question[[1 + version_no]]
+  return(version)
 }
 
 # get child names of an xml node
@@ -73,6 +78,8 @@ ChildNames <- function(node) {
 v_num <- GetVersion(doc, 10, 1)
 v_checkbox <- GetVersion(doc, 4, 1)
 v_radio <- GetVersion(doc, 3, 1)
+
+ChildNames(v_num)
 
 # get type of a version (numeric/checkbox/radio)
 GetType <- function(version) {
@@ -91,14 +98,16 @@ GetText <- function(version) {
   text <- XML::xmlValue(version[["data"]][["text"]])
   return(text)
 }
+GetText(v_num)
 
 # get question-level explanation from a version 
 GetQExplanation <- function(version) {
   question_explanation <- XML::xmlValue(version[["data"]][["explanation"]])
   return(question_explanation)
 }
+GetQExplanation(v_num)
 
-# get answer from numeric question
+# get answer from numeric question (we assume it's unique!!!)
 GetNumAnswer <- function(version) {
   answer <- XML::xmlValue(version[["data"]][["option_groups"]][["option_group"]][["option"]][["text"]])
   return(answer)
@@ -126,14 +135,7 @@ answer <- GetNumAnswer(v_num)
 point_explanation <- GetNumPointExplanation(v_num)
 
 
-
-v_checkbox[["data"]]
-
-v_radio[["data"]][["option_groups"]][["option_group"]] %>% ChildNames()
-v_radio[["data"]][["option_groups"]] 
-
-GetText(v_num)
-
+# abandoned function. should make markdown questions
 Version2edx <- function(version) {
   text <- GetText(version) %>% dd2brackets()
   output <- paste0(">>", text, "<<\n")
@@ -164,7 +166,7 @@ cat(dd2brackets(a))
 # create edx xml
 
 
-create_numeric <- function(
+CreateNumeric <- function(
   text = "Кому на Руси жить хорошо?",
   point_explanation = "here is the hint",
   answer = 4,
@@ -195,7 +197,7 @@ create_numeric <- function(
   return(problem_node)
 }
 
-# short summary (number of versions for each question)
+# summary on questions
 QuestionSummary <- function(doc) {
   n_questions <- GetNumberOfQuestions(doc)
   q_summary <- data_frame(question_no = 1:n_questions, n_versions = NA)
@@ -213,7 +215,7 @@ GetNumberOfOptionGroups <- function(version) {
   return(n_option_groups)
 }
 
-# long summary
+# summary on versions of questions
 VersionSummary <- function(doc) {
   q_summary <- QuestionSummary(doc)
   v_summary <- data_frame(
@@ -241,7 +243,7 @@ GetOptionGroup <- function(version, option_group_no) {
   return(option_group)
 }
 
-
+# summary on option groups
 OptionGroupSummary <- function(doc) {
   v_summary <- VersionSummary(doc)
   tot_n_versions <- nrow(v_summary)
@@ -264,10 +266,62 @@ OptionGroupSummary <- function(doc) {
   return(og_summary)
 }
 
+GetTotalNumberOfOptions <- function(version) {
+  n_option_groups <- GetNumberOfOptionGroups(version)
+  tot_n_options <- 0
+  for (i in 1:n_option_groups) {
+    option_group <- GetOptionGroup(version, i)
+    tot_n_options <- tot_n_options + XML::xmlSize(option_group)
+  }
+  return(tot_n_options)
+}
+
+GetTotalNumberOfOptions(v_radio)
+GetTotalNumberOfOptions(v_num)
+GetTotalNumberOfOptions(v_checkbox)
+
 og <- OptionGroupSummary(doc)
 v <- VersionSummary(doc)
 
-v_radio[["data"]][["option_groups"]] %>% xmlSize()
-v_radio %>% GetNumberOfOptionGroups()
+# remove <br>, transform $$...$$ to \( ... \)
+ddbr <- function(input_string) {
+  output_string <- nobr(dd2brackets(input_string))
+  return(output_string)
+}
 
+
+GetNumberOfOptionGroups(v_radio)
+
+
+# 
+TransformNumeric <- function(version) {
+  text <- GetText(version) %>% ddbr()
+  answer <- GetNumAnswer(version) %>% ddbr()
+  question_explanation <- GetQExplanation(version) %>% ddbr()
+  point_explanation <- NULL
+  hints <- NULL
+  
+  # Check
+  type <- GetType(version)
+  n_og <- GetNumberOfOptionGroups(version)
+  tot_n_options <- GetTotalNumberOfOptions(version)
+  if (!type == "numeric") {
+    warning("The question should be numeric, but type = ", type)
+  }
+  if (n_og > 1) {
+    warning("The question should have one option group, but has = ", n_og)
+  }
+  if (tot_n_options > 1) {
+    warning("The question should have one option in total, but has = ", tot_n_options)
+  }
+  
+  
+  
+  edx_question <- CreateNumeric(text = text, answer = answer, 
+      hints = NULL, question_explanation = question_explanation,
+      point_explanation = point_explanation)
+  return(edx_question)
+}
+
+TransformNumeric(v_num)
 
