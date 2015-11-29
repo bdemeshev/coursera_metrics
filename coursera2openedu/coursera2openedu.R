@@ -3,7 +3,7 @@ library("XML")
 library("stringr")
 library("dplyr")
 
-doc <- xmlTreeParse("~/Downloads/econometrics-001/01__1/test_01.xml")
+doc <- xmlTreeParse("~/Documents/coursera_metrics/tests/week_01_test_01.xml")
 # r <- xmlRoot(doc)
 
 # obtain preamble of a test from coursera xml
@@ -452,5 +452,31 @@ Coursera2edx <- function(doc, wd = getwd()) {
 
 a <- GetText(GetVersion(doc, 17, 1))
 a
+
+og_summary <- OptionGroupSummary(doc)
+q <- GetVersion(doc, 20, 2)
+TransformNumeric(q)
+
+# img tag 13.2, 12.2, 14.2 i/b mismatch 15.2, 16
+
+filename <- "~/Documents/coursera_metrics/tests/week_01_test_01.xml"
+
+# in our econometrics xml we have wrong <i><b>...</i></b> tags
+# correct them to <b><i>...</i></b>
+CorrectIBtags <- function(filename) {
+  all <- paste(readLines(filename), collapse="\n")
+  all <- str_replace_all(all, 
+                         pattern = "<i> *<b>", 
+                         replacement = "<b><i>")
+  all <- str_replace_all(all, 
+                  pattern = "</b> *</i>", 
+                  replacement = "</i></b>")
+  new_filename <- paste0(str_sub(filename, end = -5), "_ibcorr.xml")
+  writeLines(all, con = new_filename)
+}
+
+CorrectIBtags(filename)
+
+
 
 
