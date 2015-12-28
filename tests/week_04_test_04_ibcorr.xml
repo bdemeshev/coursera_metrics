@@ -1,0 +1,1582 @@
+<quiz>
+  <metadata>
+    <title><![CDATA[Тест 4: Мультиколлинеарность]]></title>
+    <open_time>2015-03-23 0001</open_time>
+    <soft_close_time>2015-04-06 2359</soft_close_time>
+    <hard_close_time>2015-04-13 2359</hard_close_time>
+    <duration>0</duration>
+    <retry_delay>0</retry_delay>
+    <maximum_submissions>3</maximum_submissions>
+    <modified_time>1427271842027</modified_time>
+    <is_ace_exam_flag>none</is_ace_exam_flag>
+    <authentication_required>1</authentication_required>
+    <parameters>
+      <show_explanations>
+        <question>before_soft_close_time</question>
+        <option>before_soft_close_time</option>
+        <score>before_soft_close_time</score>
+      </show_explanations>
+    </parameters>
+    <maximum_score>22</maximum_score>
+  </metadata>
+  <preamble><![CDATA[]]></preamble>
+  <data>
+    <question_groups>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="bf4768373b185eb1f0d0369f1f7e0afe" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В каком из этих случаев Вы получите строгую мультиколлинеарность?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="a45e640c88dcba555e76e75904bde5b3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Включение в одну модель показателей расхода топлива в литрах на 100 километров и расхода в галлонах на 100 миль.]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="8d3cf34526f87b86f76258f11f64c5fe" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Включение в одну модель возраста человека и числа лет, прошедших с его совершеннолетия (если совершеннолетие у всех наступает в 18 лет, а все люди в выборке - совершеннолетние). ]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e794779cf1ddedd9371207f4e5f10c12" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Включение в одну модель возраста человека и числа лет, оставшихся ему до пенсии (считая, что все люди выходят на пенсию в одинаковом возрасте!). ]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="311e8b47c28cfa1d6892ccc1ea690e5d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Включение в одну модель возраста и квадрата возраста]]></text>
+                  <explanation><![CDATA[Строгая мультиколлинеарность - это линейная зависимость! Здесь же у нас квадратичная. Более того, это приём, очень распространенный на практике - включать показатель и его квадрат в одну модель, чтобы учесть убывающее или, наоборот, возрастающее влияние показателя. ]]></explanation>
+                </option>
+                <option id="a27e23e9f6cc3f7353a03c703ba19f9a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Включение в одну модель возраста человека и числа лет, оставшихся ему до пенсии (считая, что возраст выхода на пенсию зависит от пола и профессии человека). ]]></text>
+                  <explanation><![CDATA[За счёт зависимости от пола и профессии строгой линейной связи не получится]]></explanation>
+                </option>
+                <option id="ddf42891ccb452cfed1062fbf8d128e4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Включение в одну модель показателей расхода топлива в литрах на 100 километров и запаса хода в милях на 1 галлоне топлива]]></text>
+                  <explanation><![CDATA[Запас хода - величина, обратная к расходу топлива, это нелинейная зависимость, строгой мультиколлинеарности не будет]]></explanation>
+                </option>
+                <option id="9dded807749e71d897b7223e5d226517" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Включение в одну модель роста человека и его веса]]></text>
+                  <explanation><![CDATA[Эти показатели конечно связаны, но явно не строгой линейной зависимостью!]]></explanation>
+                </option>
+                <option id="33824a55c1ef55b5bdf6dfd4b6cfd315" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Включение в одну модель константы, дамми-переменной на возраст до 18 и дамми-переменной на возраст больше 25]]></text>
+                  <explanation><![CDATA[Проблемы возникли бы если одна дамми была на возраст до 18, а другая - больше 18. В постановке "до 18" и "больше 25" никаких проблем не возникает. ]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="5e2028e77d334939799195e42ee55020" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какая из этих матриц данных даст строгую мультиколлинеарность?]]></text>
+            <explanation><![CDATA[Строгая мультиколлинеарность - это линейная зависимость между столбцами матрицы. Проверьте, можно ли выразить один столбец через другие. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="92c3dcbff84a5ff1779a92791122dcfa" selected_score="1" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 1 & 2 & 2 \\ 3 & 4 & 2 \\ 3 & 4 & 2 \\ 3 & 4 & 2 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="25c9c61486b1c55b0666eab78fc3ed59" selected_score="0" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 1 & 2 & 2 \\ 3 & 4 & 2 \\ 3 & 4 & 2 \\ 4 & 4 & 2 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="5933d14884be0f212506f5de2c0a8540" selected_score="0" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 1 & 2 & 2 \\ 3 & 4 & 3 \\ 3 & 4 & 2 \\ 3 & 5 & 2 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="039ae18ac2ebe8d88bc06da4f7fb6630" selected_score="0" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 1 & 2 & 2 \\ 3 & 4 & 2 \\ 3 & 4 & 0 \\ 3 & 4 & 0 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="23c78449dcc20f33f8ae43cef5ef9409" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какая из этих матриц данных даст строгую мультиколлинеарность?]]></text>
+            <explanation><![CDATA[Строгая мультиколлинеарность - это линейная зависимость между столбцами матрицы. Проверьте, можно ли выразить один столбец через другие. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="c8e2516790aa6afc54059db3b264c721" selected_score="1" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 1 & 3 & 2 \\ 2 & 0 & 1 \\ 0 & 6 & 3 \\ 2 & 0 & 1 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="3cb0c672addae75177b48787ce5278ee" selected_score="0" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 1 & 3 & 2 \\ 2 & 0 & 1 \\ 0 & 6 & 3 \\ 2 & 0 & 0 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="616e1704b77b3eab73c335699416f33e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 0 & 3 & 2 \\ 2 & 0 & 1 \\ 0 & 6 & 3 \\ 2 & 0 & 1 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="7c81d04a55fdf28b58cd7952279223ef" selected_score="0" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 1 & 3 & 2 \\ 2 & 0 & 1 \\ 0 & 1 & 3 \\ 2 & 0 & 1 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="9222c6d775eff4a988bb9513496f7900" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какая из этих матриц данных даст строгую мультиколлинеарность?]]></text>
+            <explanation><![CDATA[Строгая мультиколлинеарность - это линейная зависимость между столбцами матрицы. Проверьте, можно ли выразить один столбец через другие. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="0c0b41a0ea4231bc8c5836b5656f3f4d" selected_score="1" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 1 & 3 & 1 \\ 3 & 5 & 1 \\ 3 & 5 & 1 \\ 5 & 7 & 1 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="d1c9dabf959d421ee33f78308864b1c6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 1 & 3 & 1 \\ 3 & 5 & 1 \\ 3 & 5 & 0 \\ 5 & 7 & 1 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="cbf0e95c8cb0c732f33bc8028cbbd7a7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 3 & 3 & 1 \\ 3 & 5 & 1 \\ 3 & 5 & 1 \\ 5 & 7 & 1 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a52a86cc77217f654dace6a5597d00ff" selected_score="0" unselected_score="0">
+                  <text><![CDATA[\begin{pmatrix} 3 & 3 & 1 \\ 3 & 5 & 1 \\ 3 & 5 & 1 \\ 5 & 5 & 1 \end{pmatrix}]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="e8c039e1ff9908a016f8ceaecf9e462d" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого НЕ может сделать компьютер, если в данных есть строгая мультиколлинеарность?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="b0a0543f25ebe40ff7f983d57b78bb21" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Выдать оценки всех коэффициентов модели]]></text>
+                  <explanation><![CDATA[А он точно сможет это сделать в условиях строгой мультиколлинеарности?]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="7863c7b9b370db0749e6a440871d3f53" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Сообщить об ошибке]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b0fb3005ab6f9bc352146d4a61936cdb" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Автоматически исключить одну из переменных]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c4d9a2d0b7c893d5d0c11ba6f6a2196b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какое из этих действий может совершить компьютер, если в данных есть строгая мультиколлинеарность?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="75dcedc1c73317582f5e2b30cd553277" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Сообщить об ошибке]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="5e308e498c34b97707e3ead32604ad7b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Выдать оценки всех коэффициентов модели]]></text>
+                  <explanation><![CDATA[А он точно сможет это сделать в условиях строгой мультиколлинеарности?]]></explanation>
+                </option>
+                <option id="080ef3ac5114cb672ce7971a3e1ff71c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Корректно построить регрессию]]></text>
+                  <explanation><![CDATA[А он точно сможет это сделать в условиях строгой мультиколлинеарности?]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="bf66642913576bcecd3b4e147fe22312" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какое из этих действий может совершить компьютер, если в данных есть строгая мультиколлинеарность?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="8be431808ecac244e16fad56f18a784b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Автоматически исключить одну из переменных]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="09e52913797e91732605787ff0711ec6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Выдать оценки всех коэффициентов модели]]></text>
+                  <explanation><![CDATA[А он точно сможет это сделать в условиях строгой мультиколлинеарности?]]></explanation>
+                </option>
+                <option id="3de4c9f2abaeab39824f8afd79998201" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Корректно построить регрессию]]></text>
+                  <explanation><![CDATA[А он точно сможет это сделать в условиях строгой мультиколлинеарности?]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="aa31c21df52396ef3f02614f3db6f413" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какие сочетания регрессоров могут привести к нестрогой мультиколлинеарности?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="2">
+                <option id="e2f753b227924563fcb4a94cd4b7e743" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Возраст и стаж работы]]></text>
+                  <explanation><![CDATA[Как правило, чем больше возраст человека, тем дольше он работает]]></explanation>
+                </option>
+                <option id="31c5e65e822d1ae5deb5857456bc0b98" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Цена нефти марки Brent и марки WTI]]></text>
+                  <explanation><![CDATA[Обычно цены разных марок одного продукта изменяются примерно одинаково]]></explanation>
+                </option>
+                <option id="0b3d92e90a26787f8a69160f6ed40b35" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Зарплата человека в марте и зарплата того же человека в апреле]]></text>
+                  <explanation><![CDATA[Учитывая то, что большинство людей за месяц поменять работу не успеют зарплаты в соседние месяцы будут примерно одинаковыми]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="1d434c2165831ec1784488c0fb0391b2" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Зарплата человека и уровень его здоровья]]></text>
+                  <explanation><![CDATA[Большая зарплата конечно позволяет больше тратить на здоровье, но другие показатели (к примеру, возраст или образ жизни) влияют на здоровье гораздо больше и могут нивелировать влияние зарплаты]]></explanation>
+                </option>
+                <option id="63c810590c763a4c2b61c8b840ea7704" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Стоимость акций Газпрома и стоимость акций Microsoft]]></text>
+                  <explanation><![CDATA[Нет оснований считать, что компании из разных отраслей и разных стран должны быть связаны достаточно сильно, чтобы привести к появлению мультиколлинеарности]]></explanation>
+                </option>
+                <option id="1e7b5da541e5a74542e052b5501271a0" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Образование человека и стаж работы без учёта возраста]]></text>
+                  <explanation><![CDATA[Если не учитывать возраст, то человек с одним и тем же образованием может иметь любой стаж (зависящий как раз от возраста)]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="fa14df1f3d69dd512e85fdcf961df983" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого может стать причиной нестрогой мультиколлинеарности?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="cc2f530637d5d50fc86d2034baf226ae" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Наличие регрессоров, измеряющих один и тот же показатель в разные, но близкие моменты времени]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="e80b36f2ff9ede97aeccfa35ea8d3687" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Наличие регрессоров, не связанных друг с другом, но измеренных в один момент времени]]></text>
+                  <explanation><![CDATA[Если они не связаны, то и мультиколлинеарность возникнуть не должна]]></explanation>
+                </option>
+                <option id="cccd6b3d70df32fcf2b9e699cb45aa7a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Наличие регрессоров, не связанных друг с другом, но измеренных одним и тем же человеком]]></text>
+                  <explanation><![CDATA[Совершенно неважно, кто измеряет показатели]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="b85392cea4fbddfdcba579a7374aaaf9" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого НЕ может стать причиной нестрогой мультиколлинеарности?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="8504397a47f8037184e4baadbd3c786f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Наличие регрессоров, не связанных друг с другом, но измеренных в один момент времени]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="9cfcb34b896f6f2e1c6abc702a6d122e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Наличие регрессоров, измеряющих один и тот же показатель в разные, но близкие моменты времени]]></text>
+                  <explanation><![CDATA[Обычно значения показателя в близкие моменты времени оказываются близкими]]></explanation>
+                </option>
+                <option id="26272aa99615fab39fd5b491c8bba93c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Наличие регрессоров, связанных друг с другом естественным образом (как, к примеру, возраст и стаж работы)]]></text>
+                  <explanation><![CDATA[А вспомните, что такое слабая мультиколлинеарность]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="3f269c73194ab4a329554436fa7f7464" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого НЕ может стать причиной нестрогой мультиколлинеарности?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="028e7545a4bbee46506f7364da5f5f5b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Наличие регрессоров, не связанных друг с другом, но измеренных одним и тем же человеком]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="994f3a5382bda63c5e8da5456e96c4f8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Наличие в одной модели одного и того же показателя, возведенного в разные степени (к примеру, одновременно возраста, квадрата возраста и куба возраста)]]></text>
+                  <explanation><![CDATA[Строгой связи это конечно не создаст, но разные степени одного показателя всё-таки связаны]]></explanation>
+                </option>
+                <option id="d68941c68d1379ff0236aa8a71566c8a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Наличие регрессоров, измеряющих один и тот же показатель в разные, но близкие моменты времени]]></text>
+                  <explanation><![CDATA[Обычно значения показателя в близкие моменты времени оказываются близкими]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="3b2b8efba1ab375e63794d17bc46c8c5" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого можно отнести к последствиям нестрогой мультиколлинеарности?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="8af36f6c6c8c14d44052c05f208b8c22" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Высокие стандартные ошибки коэффициентов регрессии]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="2c603849ef7da27e035978506bfd929b" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Очень широкие доверительные интервалы коэффициентов]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="3553e6b2e9935efe50ea6ecc65579677" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Высокий $$R^2$$, когда коэффициенты модели незначимы]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="fab9b3609d323d7f7f40d23274e645ee" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Смещенные оценки коэффициентов]]></text>
+                  <explanation><![CDATA[Мультиколлинеарность не нарушает стандартный набор предпосылок!]]></explanation>
+                </option>
+                <option id="a552bee007ef7ff91efeafe46eeb79d6" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Невозможность проверять значимость коэффициентов]]></text>
+                  <explanation><![CDATA[Мультиколлинеарность не нарушает стандартный набор предпосылок!]]></explanation>
+                </option>
+                <option id="ac18c456e6640694e65584c86bfa556b" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Ненормальность остатков регрессии]]></text>
+                  <explanation><![CDATA[Мультиколлинеарность не нарушает стандартный набор предпосылок!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b0e08e5a33f266482cce4d75cb5b8c0b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какой из этих показателей Вы бы стали использовать для проверки наличия мультиколлинеарности?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="6c8411cba0a0c2fe4a4134b1ab26fe1e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[VIF (коэффициент вздутия дисперсии)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="704e20a9e5e5a9dacd096a3dbfbf5847" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$R^2$$ исходной модели]]></text>
+                  <explanation><![CDATA[Он показывает, влияют ли регрессоры в совокупности на зависимую переменную, а не связь между регрессорами]]></explanation>
+                </option>
+                <option id="b07221104915fa25b3952b9fb8b8cbc4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$F$$-тест на совместную значимость регрессоров]]></text>
+                  <explanation><![CDATA[Он показывает, значимы ли регрессоры в совокупности, а не связь между регрессорами]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="8f74bb325a2c7f0c7b55e4ff67247924" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какой из этих показателей Вы бы стали использовать для проверки наличия мультиколлинеарности?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="23d3adee1a1aeb69247062f8789d39df" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Выборочные корреляции между регрессорами]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="cefc27c7d9b8b97ce344a6371a02a8dc" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$R^2$$ исходной модели]]></text>
+                  <explanation><![CDATA[Он показывает, влияют ли регрессоры в совокупности на зависимую переменную, а не связь между регрессорами]]></explanation>
+                </option>
+                <option id="3584a6d71e78cf8e1c72646cda048bd9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$R^2$$ вспомогательной регрессии одного из (исходных) регрессоров на (исходную) зависимую переменную]]></text>
+                  <explanation><![CDATA[Он никак не измеряет связь между регрессорами]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="39ad65d3f66e9371ba249db84624b5d8" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какой из этих показателей Вы бы НЕ стали использовать для проверки наличия мультиколлинеарности?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="731e68732dc6fc15dc0b8d0b9d6eb35f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$F$$-тест на совместную значимость регрессоров]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="8bebd6f8337013d054b6130e0a74b125" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Выборочные корреляции между регрессорами]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="fd27c38f1159b1e64185ccd3298ab031" selected_score="0" unselected_score="0">
+                  <text><![CDATA[VIF (коэффициент вздутия дисперсии)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="019317b91b2073fedb56ccd409e12625" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 52 наблюдениям оценена модель зависимости заработной платы $$\it{wage}_i$$ ($) от длительности обучения $$\it{schooling}_i$$, опыта работы $$\it{experience}_i$$ и возраста $$\it{age}_i$$.
+Оценённая модель имеет вид:
+
+<br><br>$$\widehat{wage}_i = 300 + 20schooling_i +10experience_i+ 5age_i$$ <br><br>
+
+Вспомогательная регрессия $$\it{schooling}_i$$ на $$\it{experience}_i$$ и $$\it{age}_i$$ дала коэффициент $$R^2$$, равный 0.8. Найдите коэффициент вздутия дисперсии $$VIF_{schooling}$$]]></text>
+            <explanation><![CDATA[$$VIF_j = \frac{1}{1-R^2_j}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="46710cd026b15bddc7ba1f6257934018" selected_score="1" unselected_score="0">
+                  <text><![CDATA[5]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e6ada00880576eab439e03adf67b1b66" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 104 наблюдениям оценена модель зависимости заработной платы $$\it{wage}_i$$ ($) от длительности обучения $$\it{schooling}_i$$, опыта работы $$\it{experience}_i$$ и возраста $$\it{age}_i$$.
+Оценённая модель имеет вид:
+
+<br><br>$$\widehat{wage}_i = 430 + 15schooling_i +19experience_i+ 25age_i$$ <br><br>
+
+Вспомогательная регрессия $$\it{experience}_i$$ на $$\it{schooling }_i$$ и $$\it{age}_i$$ дала коэффициент $$R^2$$, равный 0.6. Найдите коэффициент вздутия дисперсии $$VIF_{experience}$$]]></text>
+            <explanation><![CDATA[$$VIF_j = \frac{1}{1-R^2_j}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="e7857a4dd03890f0ed6c719aebd987a6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[2.5]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="a6016b4fccd9566547472940a5962460" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[По 83 наблюдениям оценена модель зависимости заработной платы $$\it{wage}_i$$ ($) от длительности обучения $$\it{schooling}_i$$, опыта работы $$\it{experience}_i$$ и возраста $$\it{age}_i$$.
+Оценённая модель имеет вид:
+
+<br><br>$$\widehat{wage}_i = 740 + 11schooling_i +5experience_i+ 37age_i$$ <br><br>
+
+Вспомогательная регрессия $$\it{age}_i$$ на $$\it{schooling }_i$$ и $$\it{experience }_i$$ дала коэффициент $$R^2$$, равный 0.75. Найдите коэффициент вздутия дисперсии $$VIF_{age}$$]]></text>
+            <explanation><![CDATA[$$VIF_j = \frac{1}{1-R^2_j}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="0f6b504b596c8839514b608d8db89766" selected_score="1" unselected_score="0">
+                  <text><![CDATA[4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="4ce51b152bf3085e37851bfadb515a85" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого можно считать признаком наличия мультиколлинеарности в данных?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="8998b8d095593ebb0b0337a80d8c62f9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Самый большой из $$VIF$$-ов больше 10]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a7c234f3a08f0cd15c3edbbd3dc91be0" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Выборочная корреляция между какими-то двумя из регрессоров равна 0.97]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9305dc2c05d21ba71c04c03993764909" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Выборочная корреляция между какими-то двумя из регрессоров равна -0.98]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="cd8eb329f7dac2634c2680e4acd16315" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Один из $$VIF$$-ов равен 2]]></text>
+                  <explanation><![CDATA[Как правило, считается, что $$VIF$$ должен быть больше 10]]></explanation>
+                </option>
+                <option id="75bb577419dd48079ebccc05d908a56a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Отсутствие значимых регрессоров]]></text>
+                  <explanation><![CDATA[Только когда регрессоры совместно значимы]]></explanation>
+                </option>
+                <option id="9a720badb6ef3f050cfb30a52f0c3fba" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Средняя корреляция между регрессорами равна 0.4]]></text>
+                  <explanation><![CDATA[Ни о чём не говорит]]></explanation>
+                </option>
+                <option id="a4f1c80e9e719c0b9c256f898569f154" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Большой $$R^2$$]]></text>
+                  <explanation><![CDATA[Только если коэффициенты при этом незначимы]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b3d40fbb5e936c13ae2a49da1acaf62d" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что НЕ имеет смысла делать для борьбы с мультиколлинеарностью?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="1">
+                <option id="0185b78023c37d88a4486286e2819d68" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Прологарифмировать зависимую переменную]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c90fb56f60a42c42ec31bb79a600c7af" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Увеличить число регрессоров]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="bd745a1adcd23b19da97157e49acf39c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Взять больше данных]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="23264129a9df6bab867364b53445ee68" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Уменьшить число регрессоров]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6d176f0d1b27da1d49121e4cc01da4c0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Использовать МНК со штрафом]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b1852846bebacac9d717769a4318cdc8" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какой из этих методов НЕ используется для борьбы с мультиколлинеарностью?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="c1691897a78b3cf114cffcdcf26c5eea" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Квантильная регрессия]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1167fce88917c450ece46737102a7312" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Робастные ошибки]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e83d330e953d1b93622997cf65555d8a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Тест Рамсея]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="6747f655816b78fdb688d035538605fa" selected_score="0" unselected_score="0">
+                  <text><![CDATA[LASSO]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c0c3a37966fe9a2506a155ed8cade092" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Метод главных компонент]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b211c55d2d0814aec49c7e96432d2d58" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Ридж-регрессия]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="0ba09f4e122b5e1add593fa06e817da6" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какую задачу решает Ридж-регрессия?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="e21ec6ff215b768634d6cc17873f2c59" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda \sum_{j=1}^k \hat{\beta}_j^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="40150142cbd2cc85a229ce7e0836fb5b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda \sum_{j=1}^k |\hat{\beta}_j|$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="10ef8019aa9c888ddf9dd3e491f1e8f7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda_1 \sum_{j=1}^k |\hat{\beta}_j| + \lambda_2 \sum_{j=1}^k \hat{\beta}_j^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="324edb32381be94a96a0725689e05819" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какую задачу решает метод LASSO?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="803b74acfc50f330a23743386a408ff9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda \sum_{j=1}^k |\hat{\beta}_j|$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="3e716452f0ba02da4ea8cd25865a63c6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda \sum_{j=1}^k \hat{\beta}_j^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ba54a15a7d7e728da3a46741528f38a0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda_1 \sum_{j=1}^k |\hat{\beta}_j| + \lambda_2 \sum_{j=1}^k \hat{\beta}_j^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e093e4b32522d1c51d712858e720e64a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какую задачу решает метод эластичной сети?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="012612744d8f7cd08433504a766fec3e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda_1 \sum_{j=1}^k |\hat{\beta}_j| + \lambda_2 \sum_{j=1}^k \hat{\beta}_j^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="aaa10222d1e9a26ebc7e50858dbfb0c5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda \sum_{j=1}^k \hat{\beta}_j^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="da6a5fd0ecc69f9d3fd64ef589265fc0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda \sum_{j=1}^k |\hat{\beta}_j|$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b0f9c7a14e17be93d90b40b30e777b1f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какое из этих утверждений является верным?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="25cf20cd1368ee254e6d6070fca360f4" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Метод главных компонент позволяет уменьшить число переменных, выбрав самые изменчивые]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="95238a4ddd42f22f7e16188cf3ca6295" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Новые переменные, полученные с помощью метода главных компонент, некоррелированы друг с другом]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="45ee9f1f95fed6ac6f1393298dc19e22" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Все $$VIF$$-ы для новых переменных, полученных методом главных компонент, равны 1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="f3b816dc5c88df7db757d83675f6aa8e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Метод главных компонент позволяет уменьшить число переменных, выбрав самые постоянные]]></text>
+                  <explanation><![CDATA[Наоборот, не постоянные, а изменчивые!]]></explanation>
+                </option>
+                <option id="fa266e64ff44be2eb566ff1096d61f7f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Корреляция переменных, полученных методом главных компонент, равна наименьшей из корреляций исходных регрессоров]]></text>
+                  <explanation><![CDATA[Она равна нулю]]></explanation>
+                </option>
+                <option id="3c44910b977fbe2994dbea6f19cdc61b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Метод главных компонент позволяет сделать коэффициенты при старых переменных более значимыми]]></text>
+                  <explanation><![CDATA[Метод главных компонент не влияет на старые переменные, он создаёт новые]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b11622ad3dcd85b4b4230b63e5064afe" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Для чего может быть использован метод главных компонент?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="94df192aacc6036d478a35348deb32f4" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Для борьбы с мультиколлинеарностью и сам по себе (для визуализации данных, поиска выбросов и др.)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="fd3e44482cc003a62c573c0e6d04cd09" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Только для борьбы с мультиколлинеарностью]]></text>
+                  <explanation><![CDATA[Не только]]></explanation>
+                </option>
+                <option id="3264c6a6b560de4dc395cacfc8772111" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Только сам по себе (для визуализации данных, поиска выбросов и др.)]]></text>
+                  <explanation><![CDATA[Не только]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ce2ae360d7c041199c9ff8a79d3c88bd" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что НЕ позволяет сделать метод главных компонент?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="12ef846b1a72a02223954546f7cfe2b7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Оценить влияние отдельных регрессоров на зависимую переменную]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="86402ff188cdc58f00ac9b615c56047e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Визуализировать данные]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9f9c9a97ed8d85b92f8a81eaa834ce75" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Перейти к некоррелированным переменным]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="7eda8ee6a3106bdd069ced75cf2efab5" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что НЕ позволяет сделать метод главных компонент?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="78c0d8acd5cbf3df51eba1ab91d85749" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Повысить $$R^2$$ модели]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="b9f95de6b4fc8e6053db0057290505f9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Увидеть самые информативные переменные]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0d74ba01151b0fe47545e78d9002d781" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Перейти к некоррелированным переменным]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[ <p style="color:#ff0000">
+Для выполнения следующих заданий Вам понадобятся данные из набора <b>airquality</b>.
+<br>
+В этом наборе представлены данные по качеству воздуха в Нью-Йорке за период с мая по сентябрь 1973 года. <br><br>
+Здесь содержатся следующие переменные:
+<br>
+<b>Ozone</b> -  содержание озона в воздухе
+<br>
+<b>Solar.R</b> - уровень солнечной радиации
+<br>
+<b>Wind</b> - средняя скорость ветра
+<br>
+<b>Temp</b> - максимальная дневная температура
+<br>
+А также переменные месяца и дня замера.
+<br><br>
+Более подробно можно почитать в справке
+</p>]]></preamble>
+        <question id="ae58596359fd477592222fab8161f86c" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Начнем с визуального анализа данных. На графике представлена диаграмма рассеивания для каких-то двух показателей. Для каких?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/OzoneSolar.jpeg"; style="width:500px"; align = "center">
+<br><br>
+<i>Подсказка: такой график можно получить при помощи команды qplot из пакета ggplot2</i>]]></text>
+            <explanation><![CDATA[Команда выглядит следующим образом: qplot(data = "название Вашего набора данных", "Переменная 1", "Переменная 2"). Просто попробуйте построить все графики и сравните, что получается]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="a9216c5d14d89a18bacd79a46a5a6bad" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Ozone и Solar.R]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="d9b075a249c3cc9878f97a4b1df6f402" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Ozone и Temp]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="556b8de62516de93be8230a79624cc8e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Ozone и Wind]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d29b7c7ee8b695df630e59a0b54f8792" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Temp и Wind]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5ea091306b188693f7eef9ed40ad22b6" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Начнем с визуального анализа данных. На графике представлена диаграмма рассеивания для каких-то двух показателей. Для каких?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/OzoneTemp.jpeg"; style="width:500px"; align = "center">
+<br><br>
+<i>Подсказка: такой график можно получить при помощи команды qplot из пакета ggplot2</i>]]></text>
+            <explanation><![CDATA[Команда выглядит следующим образом: qplot(data = "название Вашего набора данных", "Переменная 1", "Переменная 2"). Просто попробуйте построить все графики и сравните, что получается]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="79c95c9ac797118a5fa6032ae11feac9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Ozone и Temp]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="c3a74ae969b258efc9b97ca2c98b876e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Ozone и Wind]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6be2920e60a608b82dd64c13204018c1" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Solar.R и Temp]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f04df6eba5a6338cf3a256df98270d93" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Wind и Temp]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="f97bd974b31571d89b48fca8fedc3b26" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Начнем с визуального анализа данных. На графике представлена диаграмма рассеивания для каких-то двух показателей. Для каких?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/OzoneWind.jpeg"; style="width:500px"; align = "center">
+<br><br>
+<i>Подсказка: такой график можно получить при помощи команды qplot из пакета ggplot2</i>]]></text>
+            <explanation><![CDATA[Команда выглядит следующим образом: qplot(data = "название Вашего набора данных", "Переменная 1", "Переменная 2"). Просто попробуйте построить все графики и сравните, что получается]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="d1302987dcb2d8cb95608ed91ecfff85" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Ozone и Wind]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="7884b807b5628d943357b48e934c824c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Solar.R и Wind]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4790e44fbcef662db73ffc816cf7c9ce" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Temp и Wind]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0ee6f956050d7fc4d9e97f0916f620c7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Temp и Solar.R]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="520d03a53c3cca6b711ed79649380635" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените зависимость содержания озона от солнечной радиации, скорости ветра и температуры воздуха. Рассчитайте $$VIF$$-ы для всех регрессоров. В ответ введите $$VIF$$ для солнечной радиации с точностью до третьего знака после запятой (то есть, в форме 1.123 вместо 1.123456). Не забывайте об округлении!]]></text>
+            <explanation><![CDATA[Модель можно построить с помощью команды lm: model<-lm(y ~ x1 + x2 + x3, data = "название переменной с данными"), вместо y и x-ов вводятся названия переменных. $$VIF$$-ы можно рассчитать с помощью команды vif из пакета car: vif(model). ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="d8c359fcc2a79378b314d1b69fbb3988" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1.095]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="0768a885d03e87b3fabf7f0ab05912d6" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените зависимость содержания озона от солнечной радиации, скорости ветра и температуры воздуха. Рассчитайте $$VIF$$-ы для всех регрессоров. В ответ введите $$VIF$$ для скорости ветра с точностью до третьего знака после запятой (то есть, в форме 1.123 вместо 1.123456). Не забывайте об округлении!]]></text>
+            <explanation><![CDATA[Модель можно построить с помощью команды lm: model<-lm(y ~ x1 + x2 + x3, data = "название переменной с данными"), вместо y и x-ов вводятся названия переменных. $$VIF$$-ы можно рассчитать с помощью команды vif из пакета car: vif(model). ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="a6e68e70c9605791ffb4218e6ca19c21" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1.329]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="d0e24e041a2af0af254817fb60db1bd0" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените зависимость содержания озона от солнечной радиации, скорости ветра и температуры воздуха. Рассчитайте $$VIF$$-ы для всех регрессоров. В ответ введите $$VIF$$ для температуры воздуха с точностью до третьего знака после запятой (то есть, в форме 1.123 вместо 1.123456). Не забывайте об округлении!]]></text>
+            <explanation><![CDATA[Модель можно построить с помощью команды lm: model<-lm(y ~ x1 + x2 + x3, data = "название переменной с данными"), вместо y и x-ов вводятся названия переменных. $$VIF$$-ы можно рассчитать с помощью команды vif из пакета car: vif(model). ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="8494e0e8ebe66a29d40ab5b66c9953a1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1.431]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="e3042cd6c243c5d8ee5f9a8746326714" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценим ту же самую модель методом LASSO! Для этого нам надо сделать ряд вещей (в том же порядке, в каком они делались на лекциях): <br><br>
+
+0) На подготовительном этапе нужно убрать все наблюдения, где есть NA (пропущенные значения). Это делается командой na.omit. К примеру, если Ваши данные находятся в переменной data, команда будет: data<-na.omit(data). Это убирает из data все строки, где есть NA и позволяет работать с данными, не думая о пропущенных значениях.
+<br>
+1) Выделим зависимую переменную в отдельный вектор, а регрессоры (Wind, Solar.R и Temp) - в отдельный объект model.matrix
+<br>
+2) Создадим вспомогательную последовательность значений параметра $$\lambda$$ следующим образом: seq(50,0.1,length=30)
+<br>
+3) Оценим модель при помощи команды glmnet (из пакета glmnet), используя построенные на шаге 2 lambda и параметр alpha = 1 (что соответствует LASSO, при других alpha можно получить Ридж-регрессию или эластичную сеть)
+<br><br>
+Посмотрим на коэффициенты модели при lambda = 1. Для этого используем команду coef с опцией s=1. В ответ введите коэффициент при переменной Wind с точностью до третьего знака после запятой. Не забывайте про округление!]]></text>
+            <explanation><![CDATA[По шагам: <br><br>
+1) Выделим зависимую переменную в вектор y: y<-d$Ozone; регрессоры в отдельный объект:  X<-model.matrix(data = d, Ozone ~ 0 + Wind + Solar.R + Temp)
+<br>
+2) Создаём lambda: lambdas <- seq(50,0.1,length=30)
+<br>
+3) Для оценки модели используем команду: m_l<-glmnet(X,y,alpha=1,lambda = lambdas)
+<br><br>
+Коэффициенты смотрим командой coef(m_l, s = 1)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="0f43d5252df14341abefff93342247f9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[-3.139]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c06a77c5b59d92706729214137fbd53e" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценим ту же самую модель методом LASSO! Для этого нам надо сделать ряд вещей (в том же порядке, в каком они делались на лекциях): <br><br>
+0) На подготовительном этапе нужно убрать все наблюдения, где есть NA (пропущенные значения). Это делается командой na.omit. К примеру, если Ваши данные находятся в переменной data, команда будет: data<-na.omit(data). Это убирает из data все строки, где есть NA и позволяет работать с данными, не думая о пропущенных значениях.
+<br>
+1) Выделим зависимую переменную в отдельный вектор, а регрессоры (Wind, Solar.R и Temp) - в отдельный объект model.matrix
+<br>
+2) Создадим вспомогательную последовательность значений параметра $$\lambda$$ следующим образом: seq(50,0.1,length=30)
+<br>
+3) Оценим модель при помощи команды glmnet (из пакета glmnet), используя построенные на шаге 2 lambda и параметр alpha = 1 (что соответствует LASSO, при других alpha можно получить Ридж-регрессию или эластичную сеть)
+<br><br>
+Посмотрим на коэффициенты модели при lambda = 1. Для этого используем команду coef с опцией s=1. В ответ введите коэффициент при переменной Solar.R с точностью до третьего знака после запятой. Не забывайте про округление!]]></text>
+            <explanation><![CDATA[По шагам: <br><br>
+1) Выделим зависимую переменную в вектор y: y<-d$Ozone; регрессоры в отдельный объект:  X<-model.matrix(data = d, Ozone ~ 0 + Wind + Solar.R + Temp)
+<br>
+2) Создаём lambda: lambdas <- seq(50,0.1,length=30)
+<br>
+3) Для оценки модели используем команду: m_l<-glmnet(X,y,alpha=1,lambda = lambdas)
+<br><br>
+Коэффициенты смотрим командой coef(m_l, s = 1)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="771feb49d334ac3a12cb08f72ba98563" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.051]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5a54b13818b3df232d406a61067163cb" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценим ту же самую модель методом LASSO! Для этого нам надо сделать ряд вещей (в том же порядке, в каком они делались на лекциях): <br><br>
+0) На подготовительном этапе нужно убрать все наблюдения, где есть NA (пропущенные значения). Это делается командой na.omit. К примеру, если Ваши данные находятся в переменной data, команда будет: data<-na.omit(data). Это убирает из data все строки, где есть NA и позволяет работать с данными, не думая о пропущенных значениях.
+<br>
+1) Выделим зависимую переменную в отдельный вектор, а регрессоры (Wind, Solar.R и Temp) - в отдельный объект model.matrix
+<br>
+2) Создадим вспомогательную последовательность значений параметра $$\lambda$$ следующим образом: seq(50,0.1,length=30)
+<br>
+3) Оценим модель при помощи команды glmnet (из пакета glmnet), используя построенные на шаге 2 lambda и параметр alpha = 1 (что соответствует LASSO, при других alpha можно получить Ридж-регрессию или эластичную сеть)
+<br><br>
+Посмотрим на коэффициенты модели при lambda = 1. Для этого используем команду coef с опцией s=1. В ответ введите коэффициент при переменной Temp с точностью до третьего знака после запятой. Не забывайте про округление!]]></text>
+            <explanation><![CDATA[По шагам: <br><br>
+1) Выделим зависимую переменную в вектор y: y<-d$Ozone; регрессоры в отдельный объект:  X<-model.matrix(data = d, Ozone ~ 0 + Wind + Solar.R + Temp)
+<br>
+2) Создаём lambda: lambdas <- seq(50,0.1,length=30)
+<br>
+3) Для оценки модели используем команду: m_l<-glmnet(X,y,alpha=1,lambda = lambdas)
+<br><br>
+Коэффициенты смотрим командой coef(m_l, s = 1)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="dc8a1613c3fe6d17ea4ccb661f648d0c" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1.607]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="f4c1a04c011fa7239056c09fce95d16c" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценим ту же самую модель при помощи Ридж-регрессии (через пакет glmnet)! Для этого нам надо повторить предыдущий пункт, с теми же переменными и lambda, но взять alpha=0.
+<br><br>
+Посмотрим на коэффициенты модели при lambda = 2. Для этого используем команду coef с опцией s=2. В ответ введите коэффициент при переменной Wind с точностью до третьего знака после запятой. Не забывайте про округление!]]></text>
+            <explanation><![CDATA[Здесь надо повторить предыдущий пункт, взяв другую alpha при оценке модели и другой s в команде coef. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="1dc93c4590612725498837735ad674e1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[-3.242]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="7a294d1b853c93777b6f21a048775976" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценим ту же самую модель при помощи Ридж-регрессии (через пакет glmnet)! Для этого нам надо повторить предыдущий пункт, с теми же переменными и lambda, но взять alpha=0.
+<br><br>
+Посмотрим на коэффициенты модели при lambda = 2. Для этого используем команду coef с опцией s=2. В ответ введите коэффициент при переменной Solar.R с точностью до третьего знака после запятой. Не забывайте про округление!]]></text>
+            <explanation><![CDATA[Здесь надо повторить предыдущий пункт, взяв другую alpha при оценке модели и другой s в команде coef. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="87eecd8d2b53c02d9078ca9e9868c1ec" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.059]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="8738fdab7ea7d49be69bc449ab64d14a" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценим ту же самую модель при помощи Ридж-регрессии (через пакет glmnet)! Для этого нам надо повторить предыдущий пункт, с теми же переменными и lambda, но взять alpha=0.
+<br><br>
+Посмотрим на коэффициенты модели при lambda = 2. Для этого используем команду coef с опцией s=2. В ответ введите коэффициент при переменной Temp с точностью до третьего знака после запятой. Не забывайте про округление!]]></text>
+            <explanation><![CDATA[Здесь надо повторить предыдущий пункт, взяв другую alpha при оценке модели и другой s в команде coef. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="fa54e64d1ecc60a58741cfad4d1f1a7a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1.576]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="03bd20307957bfe1f9661744bad3dabf" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вернемся к модели, оцененной методом LASSO. Какой из этих команд (m_l - переменная с моделью) можно получить такой график?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/4-19-d.jpeg"; style="width:500px"; align = "center">]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="428f65d17ec23cff588f3d0c76dd0b4b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[plot(m_l,xvar="dev")]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="c70170d8d03059b87e1c7e8cadb719e2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[plot(m_l,xvar="norm")]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e8f25f9b85d1b974072125ca83da7589" selected_score="0" unselected_score="0">
+                  <text><![CDATA[plot(m_l,xvar="lambda")]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="7ce7fbb144ceaa24b93986d8ffd75ded" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вернемся к модели, оцененной методом LASSO. Какой из этих команд (m_l - переменная с моделью) можно получить такой график?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/4-19-l.jpeg"; style="width:500px"; align = "center">]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="d0cd7e5a0b0dfb50f1b7f46556e2bf03" selected_score="1" unselected_score="0">
+                  <text><![CDATA[plot(m_l,xvar="lambda")]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="dd3aea26e6f1b39b9a8ee19ed2802596" selected_score="0" unselected_score="0">
+                  <text><![CDATA[plot(m_l,xvar="dev")]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="834161f6c2fda97c6a137d6e6ac5bf64" selected_score="0" unselected_score="0">
+                  <text><![CDATA[plot(m_l,xvar="norm")]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5f9fcb63a6d56fb77bbabb0dc2710830" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вернемся к модели, оцененной методом LASSO. Какой из этих команд (m_l - переменная с моделью) можно получить такой график?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/4-19-n.jpeg"; style="width:500px"; align = "center">]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="ae311a1a6a61a2600b5a5dc44076fcc4" selected_score="1" unselected_score="0">
+                  <text><![CDATA[plot(m_l,xvar="norm")]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="d35a7324fd111d75d4c84f75fbbc7bc8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[plot(m_l,xvar="dev")]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c4deb532180ffd60a9f1ca0e601c3aa5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[plot(m_l,xvar="lambda")]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="3d6ac1e36a0d233501b710196fd07a6a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Закончим мы методом главных компонент. Давайте построим главные компоненты для нашей матрицы регрессоров (состоящей из трех переменных: Wind, Solar.R и Temp), используя нормировку регрессоров, чтобы они имели единичную дисперсию <i>(подсказка: в качестве матрицы данных проще всего использовать уже созданную в вопросе 17 матрицу)</i>. Делается это при помощи команды prcomp, для нормировки ставим опцию scale = TRUE. <br><br>
+На графике изображена диаграмма рассеивания для каких-то двух из главных компонент. Каких? <br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/pca12.jpeg"; style="width:500px"; align = "center">]]></text>
+            <explanation><![CDATA[Главные компоненты получаем командой p<-prcomp(X,scale=TRUE) (где X - матрица данных).  <br>
+Чтобы получить доступ к самим компонентам, используем p$x. В этой матрице первый столбик - это первая главная компонента, второй - вторая и так далее. График строим командой qplot. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="ff2b291121db00deb9eb49d5edc5aa27" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1-ой и 2-ой]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="e55cc8abbd0ea0b5cbf260a14ff342d9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[1-ой и 3-ей]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="911a6a1faf9e96e7e9d4d47e476aaebf" selected_score="0" unselected_score="0">
+                  <text><![CDATA[2-ой и 3-ей]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="f0cdee54c54346e99548c00e9ac5e1e6" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Закончим мы методом главных компонент. Давайте построим главные компоненты для нашей матрицы регрессоров (состоящей из трех переменных: Wind, Solar.R и Temp), используя нормировку регрессоров, чтобы они имели единичную дисперсию <i>(подсказка: в качестве матрицы данных проще всего использовать уже созданную в вопросе 17 матрицу)</i>. Делается это при помощи команды prcomp, для нормировки ставим опцию scale = TRUE. <br><br>
+На графике изображена диаграмма рассеивания для каких-то двух из главных компонент. Каких? <br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/pca13.jpeg"; style="width:500px"; align = "center">]]></text>
+            <explanation><![CDATA[Главные компоненты получаем командой p<-prcomp(X,scale=TRUE) (где X - матрица данных).  <br>
+Чтобы получить доступ к самим компонентам, используем p$x. В этой матрице первый столбик - это первая главная компонента, второй - вторая и так далее. График строим командой qplot. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="2e9b61c95522dca6ebdd8efaf22099a1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1-ой и 3-ей]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="c8b6930d0bd98c959250394a914c38f0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[1-ой и 2-ой]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="84a64060b363f49abe4d5c807e27f3cd" selected_score="0" unselected_score="0">
+                  <text><![CDATA[2-ой и 3-ей]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="f4fea298ef86373a7116f9126504a8d2" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Закончим мы методом главных компонент. Давайте построим главные компоненты для нашей матрицы регрессоров (состоящей из трех переменных: Wind, Solar.R и Temp), используя нормировку регрессоров, чтобы они имели единичную дисперсию <i>(подсказка: в качестве матрицы данных проще всего использовать уже созданную в вопросе 17 матрицу)</i>. Делается это при помощи команды prcomp, для нормировки ставим опцию scale = TRUE. <br><br>
+На графике изображена диаграмма рассеивания для каких-то двух из главных компонент. Каких? <br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/pca23.jpeg"; style="width:500px"; align = "center">]]></text>
+            <explanation><![CDATA[Главные компоненты получаем командой p<-prcomp(X,scale=TRUE) (где X - матрица данных).  <br>
+Чтобы получить доступ к самим компонентам, используем p$x. В этой матрице первый столбик - это первая главная компонента, второй - вторая и так далее. График строим командой qplot. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="bb65f87ce26133c7c766cee7d45a2d6b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[2-ой и 3-ей]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="b84645b5a5db2e5f97c5640b0bc6034e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[1-ой и 2-ой]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="bd596f3cfda34e3c0c16d2e73098d7de" selected_score="0" unselected_score="0">
+                  <text><![CDATA[1-ой и 3-ей]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+    </question_groups>
+  </data>
+</quiz>

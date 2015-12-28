@@ -1,0 +1,1770 @@
+<quiz>
+  <metadata>
+    <title><![CDATA[Тест 7: Временные ряды]]></title>
+    <open_time>2015-04-20 0001</open_time>
+    <soft_close_time>2015-05-04 2359</soft_close_time>
+    <hard_close_time>2015-05-11 2359</hard_close_time>
+    <duration>0</duration>
+    <retry_delay>0</retry_delay>
+    <maximum_submissions>4</maximum_submissions>
+    <modified_time>1430805927694</modified_time>
+    <is_ace_exam_flag>none</is_ace_exam_flag>
+    <authentication_required>1</authentication_required>
+    <parameters>
+      <show_explanations>
+        <question>before_soft_close_time</question>
+        <option>before_soft_close_time</option>
+        <score>before_soft_close_time</score>
+      </show_explanations>
+    </parameters>
+    <maximum_score>22</maximum_score>
+  </metadata>
+  <preamble><![CDATA[<b>Общее замечание по всему тесту: числа нужно вводить с округлением до десятых, если в условии задачи не сказано иное! </b>]]></preamble>
+  <data>
+    <question_groups>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="dce5433587e992eaf05697c4b97b5d64" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого НЕ относится к одномерным временным рядам?]]></text>
+            <explanation><![CDATA[Одномерный - это один показатель; временной ряд - данные упорядочены по времени]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="3873572201d90b7b849dd05ba752c895" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ВВП и инвестиции в России ежегодно за последние 20 лет]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="7bc0092423d66f6fb738ae91732db965" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ВВП стран Еврозоны за 2014 год]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="19ce3aa94434a32d4d9e3e6e5a6363be" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ВВП стран Еврозоны в пострановой разбивке за 10 лет]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="6f362930054e2815f341f4db8fb27e50" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ВВП России поквартально за последние 20 лет]]></text>
+                  <explanation><![CDATA[Это одномерный временной ряд!]]></explanation>
+                </option>
+                <option id="cf3bb58d60d47716003de9f0d6293e34" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Отношение инвестиций к ВВП России ежегодно за последние 20 лет]]></text>
+                  <explanation><![CDATA[Это одномерный временной ряд (отношение - это один показатель)!]]></explanation>
+                </option>
+                <option id="d8c52b0b5f7afddd2cc181885d878d1d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Отношение ВВП России к суммарному ВВП стран Еврозоны за 15 лет]]></text>
+                  <explanation><![CDATA[Это одномерный временной ряд (отношение - это один показатель)!]]></explanation>
+                </option>
+                <option id="8ac58385fd41e81c01b39072483e70e6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Суммарный ВВП стран Еврозоны за 10 лет]]></text>
+                  <explanation><![CDATA[Это одномерный временной ряд (суммарный, значит, один показатель)!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="163e8ee77096954728c5bb43c6f2b0de" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого НЕ является условием стационарности временного ряда?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="8ff931add552e59d70883c20dfc40b9d" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$Cov(y_1,y_2)=Cov(y_1,y_3)=Cov(y_1,y_4)=\ldots=\gamma_2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9e55d23aec9370409f45a6487a1e74d7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$E(y_1)+E(y_2)+E(y_3)+\ldots = const$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f7c5f30c68876815b37a132c905ab7eb" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$Var(y_1)+Var(y_2)= Cov(y_1, y_2)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="d36ee760345b2525f189be492a3a932a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(y_1)=E(y_2)=E(y_3)=\ldots$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4ef511ba8944f05d28b65186ab4401b3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Var(y_1)=Var(y_2)=Var(y_3)=\ldots=\gamma_0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e414f985212c92730733cfd9b7bc8dc8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Cov(y_1,y_2)=Cov(y_2,y_3)=Cov(y_3,y_4)=\ldots=\gamma_1$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b015b8165a1d81ab907e43b947c37157" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Cov(y_1,y_5)=Cov(y_2,y_6)=Cov(y_3,y_7)=\ldots=\gamma_4$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="edfb8c22b626a16fdfbd97f5303198b2" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[К какому типу Вы бы отнесли данные, представленные следующим графиком?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/gr_AR0.5.jpeg"; style="width:550px"; align = "center">
+<br><br>
+<i>PS: Если не можете сказать с ходу, попробуйте сгенерировать ряд каждого из типов командой arima.sim, построить такой же график командой tsdisplay и сравнить результаты. Советуем обращать внимание на поведение ACF и PACF</i>]]></text>
+            <explanation><![CDATA[Если не получается - стройте графики!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="1840f3959aa53048c20493ae65d0c1e9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[AR(1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="dd4b5a7e3160b63d86b074f2f832a44e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[MA(1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="22daedf2b584076cf79ec903f7d32395" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Белый шум]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d6049d32044cbf33adb3bc9f97363dc5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,1,1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="0e2237ed5df84c581655b3f83d400c7b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[К какому типу Вы бы отнесли данные, представленные следующим графиком?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/gr_MA0.5.jpeg"; style="width:550px"; align = "center">
+<br><br>
+<i>PS: Если не можете сказать с ходу, попробуйте сгенерировать ряд каждого из типов командой arima.sim, построить такой же график командой tsdisplay и сравнить результаты. Советуем обращать внимание на поведение ACF и PACF</i>]]></text>
+            <explanation><![CDATA[Если не получается - стройте графики!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="f7ec39f0c199dafe23ac14f542e4be6c" selected_score="1" unselected_score="0">
+                  <text><![CDATA[MA(1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="05c93ee4dedeeaf92bd7dfd2da985707" selected_score="0" unselected_score="0">
+                  <text><![CDATA[AR(1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e2d2c6dd92cbee809fe63ddcc4c17391" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARMA(1,4)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="126fd42388aedc84197e472a08e5d1ca" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Белый шум]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="26d74d87e0fcc4c6be3924295ff45c0b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[К какому типу Вы бы отнесли данные, представленные следующим графиком?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/gr_WN.jpeg"; style="width:550px"; align = "center">
+<br><br>
+<i>PS: Если не можете сказать с ходу, попробуйте сгенерировать ряд каждого из типов командой arima.sim, построить такой же график командой tsdisplay и сравнить результаты. Советуем обращать внимание на поведение ACF и PACF</i>]]></text>
+            <explanation><![CDATA[Если не получается - стройте графики!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="e1467af6e31592bba95b3e4f0fb26761" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Белый шум]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="17b613bcdff59d4deb78e91b6d0edf90" selected_score="0" unselected_score="0">
+                  <text><![CDATA[AR(1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="2037f577d2cfe05393a9c08b561737eb" selected_score="0" unselected_score="0">
+                  <text><![CDATA[MA(1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="3791a677040849265b7c400e85c7d472" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,1,1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="772ba0fffc3e805bd357a505afc617f1" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого НЕ является обязательным требованием для того, чтобы ряд $$\varepsilon_t$$ был отнесен к белому шуму?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="c9bebf7cb16afbb578e350365db15fca" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon \sim N(0,4)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="246720e346b12cf934008dbcffdaf77c" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_t)>0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="093f6f84056e366d60b20095b1e314e9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$Var(\varepsilon_t)=0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="17483264dbeece1a704b143a1eb9bdb8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_t)=0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d8a57ae6c484600e9dff0ec1ac08e796" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Var(\varepsilon_t)=\sigma^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="cfabccbccd1cca448eade52256a16e82" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Cov(\varepsilon_t,\varepsilon_{t-k})=0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="6c0365f23ad562636fa5a8d84eecdfac" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какие из этих процессов скорее всего (в обычных условиях, не учитывая всевозможные редкие и необычные ситуации) будут нестационарными?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="daec2a9510ae72b19c9445159f29dbec" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Число клиентов шиномонтажа по месяцам]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="afdb968fd892600b2dab7eba22e9e6de" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Количество пассажиров метро по часам]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f9403e4e2467e0833a6d1af95c01d78b" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Высота самого высокого здания на Земле по годам]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="6dd22f775cec5f620566ed187cce7bf2" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Раз в час в случайный момент времени (в течение этого часа) Вы записываете количество секунд на часах в этот момент времени]]></text>
+                  <explanation><![CDATA[Нет зависимости ни от времени, ни от предыдущих значений]]></explanation>
+                </option>
+                <option id="2f03332a5a08dd92439cc098730b1f27" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Количество опечаток в домашних работах слушателей нашего курса :)]]></text>
+                  <explanation><![CDATA[Это вообще не временной ряд!]]></explanation>
+                </option>
+                <option id="dd1b30773ffcfde39328c7d62808a5ae" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Номера проезжающих мимо Вас машин, записанные в том порядке, в каком Вы их видите]]></text>
+                  <explanation><![CDATA[Нет причин ожидать, что тут будет какая-то зависимость от времени]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="567ee893b20149f252a8748d0f637e0c" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какая из этих моделей соответствует процессу ARMA(2,1)?]]></text>
+            <explanation><![CDATA[Первое число отвечает за количество лагов в AR-части, второе - в MA-части]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="73a908d3616ff57d8e8a97089619f51c" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_1 y_{t-1} + b_2 y_{t-2} +\varepsilon_t + a_1 \varepsilon_{t-1} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="5c9c90a4061eddbf939a881b5959c526" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_2 y_{t-2} +\varepsilon_t + a_1 \varepsilon_{t-1} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ad7f9c101f7147d255ee5970032e6a81" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_1 y_{t-1} + b_2 y_{t-2} +\varepsilon_t + a_1 \varepsilon_{t-1} + a_2 \varepsilon_{t-2} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="24f2ceb4e0ee94853aea5e847538154f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_1 y_{t-1} +\varepsilon_t + a_1 \varepsilon_{t-1} + a_2 \varepsilon_{t-2} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="b494317a432d2479d1e5c75cddb85224" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какая из этих моделей соответствует процессу ARMA(1,2)?]]></text>
+            <explanation><![CDATA[Первое число отвечает за количество лагов в AR-части, второе - в MA-части]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="363a15d4d7cae3c918be48e672939400" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_1 y_{t-1} +\varepsilon_t + a_1 \varepsilon_{t-1} + a_2 \varepsilon_{t-2} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="38c0277919f3f07b429d8643a0a1c357" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_1 y_{t-1} + b_2 y_{t-2} +\varepsilon_t + a_1 \varepsilon_{t-1} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="7a4e1f883c29f64cda2d3348cb79c7fd" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_1 y_{t-1} + b_2 y_{t-2} +\varepsilon_t + a_1 \varepsilon_{t-1} + a_2 \varepsilon_{t-2} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9c043c6092cd60e3b54242d2b26bafe5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_2 y_{t-2} +\varepsilon_t + a_1 \varepsilon_{t-1} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="2ed23afc924f7deb1212fdf2caa2bf05" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какая из этих моделей соответствует процессу ARMA(2,2)?]]></text>
+            <explanation><![CDATA[Первое число отвечает за количество лагов в AR-части, второе - в MA-части]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="2e5a55a390dafbddc87cafe18342c6e3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_1 y_{t-1} + b_2 y_{t-2} +\varepsilon_t + a_1 \varepsilon_{t-1} + a_2 \varepsilon_{t-2} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="3482e4ff58e186f22d5637a21be36bff" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_1 y_{t-1} +\varepsilon_t + a_1 \varepsilon_{t-1} + a_2 \varepsilon_{t-2} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="8c48ae7234d92c48484fc2c7b23f34d9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_1 y_{t-1} + b_2 y_{t-2} +\varepsilon_t + a_1 \varepsilon_{t-1} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="063ac9e154f7e7b7bc16533334f53130" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t= b_2 y_{t-2}  + a_2 \varepsilon_{t-2} $$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="9fe4a989e3c7f168f7766e200bafe37a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберите верное утверждение]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="73eb775c0e92d1e25c37c6371c637cc8" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Для оценки каждого значения выборочной автокорреляционной функции строится отдельная регрессия]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="2c0658c394d6e0da53a25412e335570c" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Точно зная, что Ваш ряд либо AR, либо MA, по графикам PACF и ACF можно понять, к какому типу он относится]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="45a55e9a67bde3e505c63e12178c9111" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Частная автокорреляционная функция измеряет прямой эффект воздействия одного из предыдущих значений ряда на текущее, устранив воздействие через промежуточные значения]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="4b2ec24ff815e384a26e4cec857e5835" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Для оценки всех значений выборочной автокорреляционной функции достаточно одной регрессии]]></text>
+                  <explanation><![CDATA[Нет! Строится отдельная регрессия для каждого значения]]></explanation>
+                </option>
+                <option id="80e08c3b797996738ddb852b733f2f8e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[По графику PACF можно однозначно сказать, является ли ряд стационарным]]></text>
+                  <explanation><![CDATA[Не правда, PACF для нестационарных рядов вообще плохо подходит]]></explanation>
+                </option>
+                <option id="708f8fb553225df590f699924124eb92" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Автокорреляционная функция (ACF) измеряет прямой эффект воздействия одного из предыдущих значений ряда на текущее, устранив воздействие через промежуточные значения]]></text>
+                  <explanation><![CDATA[Это делает PACF!]]></explanation>
+                </option>
+                <option id="1c6b138430292de2744eda808aa32c2f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Частная автокорреляционная функция измеряет общий эффект воздействия одного из предыдущих значений ряда на текущее, включая воздействие через промежуточные значения]]></text>
+                  <explanation><![CDATA[Это делает ACF!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="cbe14cebd3f7c0b59bee901e0a37e05c" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какой из этих AR-процессов будет стационарным?]]></text>
+            <explanation><![CDATA[Просто рассчитайте корни характеристического многочлена]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="84597d685203b447762e0e81f7631fec" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$y_t=0.9y_{t-1}-0.5y_{t-2} +\varepsilon_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ded3a12d08a86fe2607b03696ddfe195" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$y_t=0.8y_{t-1}-0.5y_{t-2} +\varepsilon_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="49635a2d6a0b9ff9bc06deebb74611e7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$y_t=0.5y_{t-1}+0.1y_{t-2} +\varepsilon_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="b93a89fc6f8c6b8269a73df71c960486" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t=0.3y_{t-1}-1.5y_{t-2} +\varepsilon_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="630e59c05f2d0188a3fe8f267ab7a199" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t=0.9y_{t-1}+0.5y_{t-2} +\varepsilon_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1ab7fcc9cdfcfff9a8f75d6f21d52283" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t=2y_{t-1}-0.5y_{t-2} +\varepsilon_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="32a576558451aae8f001667ad96ba5c6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t=2y_{t-1}+0.5y_{t-2} +\varepsilon_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e9e7544f13760f629106d482b1e25280" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$y_t=0.1y_{t-1}-1.3y_{t-2} +\varepsilon_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="2d1aa7dcfa40ed5c0a7dde36110150b6" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Постройте точечный прогноз на 1 шаг вперёд для модели $$y_t=1+0.3y_{t-1}-0.2y_{t-2}+\varepsilon_t$$, зная последние значения: $$y_{100} = 14, \; y_{99} = 12$$]]></text>
+            <explanation><![CDATA[Для построения прогноза нужно просто подставить в оценку уравнения приведенные данные]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="f6686304cbe2528eaa3ea1340a7646d0" selected_score="1" unselected_score="0">
+                  <text><![CDATA[2.8]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="03b1199bf430bd8955749323cf628973" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Постройте точечный прогноз на 1 шаг вперёд для модели $$y_t=10+0.6y_{t-1}+0.3y_{t-2}+\varepsilon_t$$ зная последние значения: $$y_{100} = 11, \; y_{99} = 12$$]]></text>
+            <explanation><![CDATA[Для построения прогноза нужно просто подставить в оценку уравнения приведенные данные]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="adf59c15007f63086ce6379f8ec368a3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[20.2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e9821406dc34165d172f54b5048c248f" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Постройте точечный прогноз на 1 шаг вперёд для модели $$y_t=4-0.1y_{t-1}-0.4y_{t-2}+\varepsilon_t$$ зная последние значения: $$y_{100} = 3, \; y_{99} = 2$$]]></text>
+            <explanation><![CDATA[Для построения прогноза нужно просто подставить в оценку уравнения приведенные данные]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="5fdfe32a7c5b953e346da2aff326a6c2" selected_score="1" unselected_score="0">
+                  <text><![CDATA[2.9]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="85528695e2a6101f9c9f875b0b4e46f0" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберите все верные утверждения]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="1247efe1842f871618c58b419aa1fb17" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Любой стационарный AR-процесс можно представить в виде процесса $$MA(\infty)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="38f56046c7e3b7c9a1adff4c317e9f16" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Для оценки ARMA-моделей обычно используется метод максимального правдоподобия]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c3787527165e64ffa869cd40121aafd0" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Белый шум можно представить в форме ARMA(1,1) модели с какими-то коэффициентами]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d15de1415be34a06fc5740341caf7b1d" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Случайное блуждание можно превратить в стационарный ряд взятием разностей]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="3b453b7f1b2988f5242dcf030ff622ec" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Любой AR-процесс можно представить в виде процесса $$MA(\infty)$$]]></text>
+                  <explanation><![CDATA[Только стационарный!]]></explanation>
+                </option>
+                <option id="1e388f911b493121c3171f458ebd9824" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Ряд с линейным трендом остаётся стационарным, если коэффициент при переменной времени в тренде меньше 1]]></text>
+                  <explanation><![CDATA[Нет. Он всё равно будет нестационарным!]]></explanation>
+                </option>
+                <option id="bc286805f5aff1dea50496c338ae6a7c" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Белый шум нельзя представить в форме ARMA(1,1) модели с какими-то коэффициентами]]></text>
+                  <explanation><![CDATA[Можно. С нулевыми!]]></explanation>
+                </option>
+                <option id="d72714a004afffdd90de005438632c54" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Не существует способа превратить случайное блуждание в стационарный ряд ]]></text>
+                  <explanation><![CDATA[Существует. Надо просто взять разности (вычесть из текущего значения предыдущее)]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="86d7578d3d54deba0506d70ab2562f7a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какой последовательностью команд можно получить такой график?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/gr_q11_10.jpeg"; style="width:550px"; align = "center">
+<br><br>
+<i>PS: Очень полезная команда set.seed() делает очень полезную вещь: фиксирует набор случайных чисел, которые использует компьютер. Использовав set.seed с каким-то параметром, Вы  (и не только) сможете получить в точности такие же результаты в другое время на другом компьютере, просто ещё раз использовав set.seed с тем же параметром</i>]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="a4b14d74c009c7f7182d35d40f040935" selected_score="1" unselected_score="0">
+                  <text><![CDATA[set.seed(10) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="bcaec6323597fb1bf323a5cce53bd1f7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(20) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="7ecb6c4ec9087dc9ff09db81c510bc0e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(30) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="10b2855a4966a8b146b5a151b9b8aab0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(40) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="15b951bcbbda7189265dd37d8e3d481a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какой последовательностью команд можно получить такой график?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/gr_q11_20.jpeg"; style="width:550px"; align = "center">
+<br><br>
+<i>PS: Очень полезная команда set.seed() делает очень полезную вещь: фиксирует набор случайных чисел, которые использует компьютер. Использовав set.seed с каким-то параметром, Вы  (и не только) сможете получить в точности такие же результаты в другое время на другом компьютере, просто ещё раз использовав set.seed с тем же параметром</i>]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="d59e2297000ee23ffe9ce42c7b43ac83" selected_score="1" unselected_score="0">
+                  <text><![CDATA[set.seed(20) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="94917df6a15ac3d338777b1a4d0316e5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(10) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d35f8f6d8b853bf2b45f594322bb6530" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(30) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="fa8ef5ea4df6e7bba0ec3e17a36e419e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(40) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="fe9b06d457e10866d3fd487f7771d58f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какой последовательностью команд можно получить такой график?
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/gr_q11_30.jpeg"; style="width:550px"; align = "center">
+<br><br>
+<i>PS: Очень полезная команда set.seed() делает очень полезную вещь: фиксирует набор случайных чисел, которые использует компьютер. Использовав set.seed с каким-то параметром, Вы  (и не только) сможете получить в точности такие же результаты в другое время на другом компьютере, просто ещё раз использовав set.seed с тем же параметром</i>]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="3263d9acb75e219042894a0bb9df32b6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[set.seed(30) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="5846be2ca6869ba16bd6a8f2514b256b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(10) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1e870d70f499b9fc10e63d75609353e8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(20) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="22a6b11d7ac8d2af5fe995d996734c4a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(40) <br>
+y <- arima.sim(n=100, list(ar=0.7)) <br>
+tsdisplay(y)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="fa683655a00535ef081b6ef562ed3fb8" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Сгенерируйте ряд данных следующей последовательностью команд:<br><br>
+
+set.seed(1)<br>
+y <- arima.sim(n=100, list(ar=0.99))<br>
+tsdisplay(y)<br><br>
+
+Оцените обычную линейную регрессию этого ряда на кубический тренд (подумайте, как можно это сделать) и приведите в качестве ответа значение F-статистики на совместную значимость всех коэффициентов. Ответ приведите с округлением до целых (хотя можно и более точно)
+<br><br>
+<i>Не забудьте, что регрессия на кубический тренд - это регрессия на время, его квадрат и куб, а не только на куб!</i>]]></text>
+            <explanation><![CDATA[Чтобы построить кубический тренд, Вам нужно получить ряд с переменной времени, её квадратом и кубом. Ряд со временем проще всего получить командой такого рода: t<-c(1:100)<br>
+После этого получение квадрата и куба тривиально. Получив их, оценить модель и найти F-статистику (в summary) очень несложно. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="9e916badf0f3efbfb1a7678b0ccaa0a9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[615,616]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="09c9c936248c526035c73bb8ef323383" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Сгенерируйте ряд данных следующей последовательностью команд:<br><br>
+
+set.seed(2)<br>
+y <- arima.sim(n=100, list(ar=0.99))<br>
+tsdisplay(y)<br><br>
+
+Оцените обычную линейную регрессию этого ряда на кубический тренд (подумайте, как можно это сделать) и приведите в качестве ответа значение F-статистики на совместную значимость всех коэффициентов. Ответ приведите с округлением до целых (хотя можно и более точно)
+<br><br>
+<i>Не забудьте, что регрессия на кубический тренд - это регрессия на время, его квадрат и куб, а не только на куб!</i>]]></text>
+            <explanation><![CDATA[Чтобы построить кубический тренд, Вам нужно получить ряд с переменной времени, её квадратом и кубом. Ряд со временем проще всего получить командой такого рода: t<-c(1:100)<br>
+После этого получение квадрата и куба тривиально. Получив их, оценить модель и найти F-статистику (в summary) очень несложно. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="eec620205764f62a052c911f05e45452" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[392,394]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="8348a3edd93006a16810cb05f5ab99c4" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Сгенерируйте ряд данных следующей последовательностью команд:<br><br>
+
+set.seed(3)<br>
+y <- arima.sim(n=100, list(ar=0.99))<br>
+tsdisplay(y)<br><br>
+
+Оцените обычную линейную регрессию этого ряда на кубический тренд (подумайте, как можно это сделать) и приведите в качестве ответа значение F-статистики на совместную значимость всех коэффициентов. Ответ приведите с округлением до целых (хотя можно и более точно)
+<br><br>
+<i>Не забудьте, что регрессия на кубический тренд - это регрессия на время, его квадрат и куб, а не только на куб!</i>]]></text>
+            <explanation><![CDATA[Чтобы построить кубический тренд, Вам нужно получить ряд с переменной времени, её квадратом и кубом. Ряд со временем проще всего получить командой такого рода: t<-c(1:100)<br>
+После этого получение квадрата и куба тривиально. Получив их, оценить модель и найти F-статистику (в summary) очень несложно. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="fde1877e693947feb99a61903ebf06c5" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[23,24]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="77e2634f3205a082148e46481538a9b9" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Как известно, любую стационарную AR-модель можно представить в виде MA$$(\infty)$$. Давайте попробуем сгенерировать данные как AR-процесс:<br><br>
+
+
+set.seed(1)<br>
+y <- arima.sim(n=100, list(ar=0.5))
+
+<br><br>
+
+И оценить на этих данных MA-модель. Сколько максимально лагов можно взять в MA-модели, чтобы коэффициенты при всех них были значимыми на 5% уровне значимости?]]></text>
+            <explanation><![CDATA[Можно оценить модель командой Arima, и потом посмотреть на summary]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="ad09d88b33f439ed268ad6c33e09c66e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="9a6b597a6095ce57600c242f2ef98e75" selected_score="0" unselected_score="0">
+                  <text><![CDATA[1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="53bd1cb832e63c8b333c1ed90ec9b89b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[3]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a9ba2129cb77b82492595541321957f3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="55392118a2cccb335fd15abae349ec10" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Как известно, любую стационарную AR-модель можно представить в виде MA$$(\infty)$$. Давайте попробуем сгенерировать данные как AR-процесс:<br><br>
+
+
+set.seed(5)<br>
+y <- arima.sim(n=100, list(ar=0.5))
+
+<br><br>
+
+И оценить на этих данных MA-модель. Сколько максимально лагов можно взять в MA-модели, чтобы коэффициенты при всех них были значимыми на 5% уровне значимости?]]></text>
+            <explanation><![CDATA[Можно оценить модель командой Arima, и потом посмотреть на summary]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="a79c1f55554e98cf4341847d9d424fce" selected_score="1" unselected_score="0">
+                  <text><![CDATA[2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="40ed8bdb7714ffe9683cfd1a81bb4b88" selected_score="0" unselected_score="0">
+                  <text><![CDATA[1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ec62b8f1fee074e740dbfb74f38d67ba" selected_score="0" unselected_score="0">
+                  <text><![CDATA[3]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1313d3e078878c80eadf9add0c2b0b2e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="84a824621f65d0979c9ad046da59b4d8" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Как известно, любую стационарную AR-модель можно представить в виде MA$$(\infty)$$. Давайте попробуем сгенерировать данные как AR-процесс:<br><br>
+
+
+set.seed(10)<br>
+y <- arima.sim(n=100, list(ar=0.5))
+
+<br><br>
+
+И оценить на этих данных MA-модель. Сколько максимально лагов можно взять в MA-модели, чтобы коэффициенты при всех них были значимыми на 5% уровне значимости?]]></text>
+            <explanation><![CDATA[Можно оценить модель командой Arima, и потом посмотреть на summary]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="9a0b12dc2cb350aee2533079aab70e42" selected_score="1" unselected_score="0">
+                  <text><![CDATA[2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="9d4dfc63979caeeab460f010b794606e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="974c224f244e3b0c01bb77dcdf6c36eb" selected_score="0" unselected_score="0">
+                  <text><![CDATA[3]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="35e49e7896270af25ac44b09526f130d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b812c8d8766bcb1246f39d6b28cf000b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При помощи пакета sophisthse подгрузите квартальные данные по реальным денежным доходам населения (таблица HHI_Q_I). Мы будем работать с индексом реальных денежных доходов населения (HHI_Q_DIRI), для удобства можно сохранить его в отдельную переменную. <b> Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года! </b>  Попробуем подобрать модель, которая лучше всего будет описывать этот ряд. <br>Какая из этих моделей является лучшей по информационному критерию Акаике (AIC)?]]></text>
+            <explanation><![CDATA[Данные загружаются простейшей командой sophisthse("HHI_Q_I"), модель оценивается командой Arima. Также не стоит забывать, что для информационных критериев чем меньше - тем лучше! ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="167ac5d9acaf74c769474ba8589e8bba" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,1,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="81bfd8664204de8caf87bbb843be89ad" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,0,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f371f3af2ddba5c0542bb4455cdb8c78" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(2,0,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="766a0171216a60d5261b1907824e1ab5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(3,0,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="22b7737886db4e765c9fff770d474a35" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При помощи пакета sophisthse подгрузите квартальные данные по реальным денежным доходам населения (таблица HHI_Q_I). Мы будем работать с индексом реальных денежных доходов населения (HHI_Q_DIRI), для удобства можно сохранить его в отдельную переменную.  <b> Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года! </b> Попробуем подобрать модель, которая лучше всего будет описывать этот ряд. <br>Какая из этих моделей является лучшей по информационному критерию Акаике (AIC)?]]></text>
+            <explanation><![CDATA[Данные загружаются простейшей командой sophisthse("HHI_Q_I"), модель оценивается командой Arima. Также не стоит забывать, что для информационных критериев чем меньше - тем лучше! ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="5c1133d61ebbf967060f6db1af652bce" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ARIMA(3,1,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="99d9a32c66afd869938f43b1c405ffa7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,1,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a1dcfdfe8d1a5703efb277b580da7f78" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(2,1,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f84071b4e044b067c2fb70823bdebaef" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,1,1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="56ee1120f19899beb56d6af554b5622a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При помощи пакета sophisthse подгрузите квартальные данные по реальным денежным доходам населения (таблица HHI_Q_I). Мы будем работать с индексом реальных денежных доходов населения (HHI_Q_DIRI), для удобства можно сохранить его в отдельную переменную. <b> Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года! </b> Попробуем подобрать модель, которая лучше всего будет описывать этот ряд. <br>Какая из этих моделей является лучшей по информационному критерию Акаике (AIC)?]]></text>
+            <explanation><![CDATA[Данные загружаются простейшей командой sophisthse("HHI_Q_I"), модель оценивается командой Arima. Также не стоит забывать, что для информационных критериев чем меньше - тем лучше! ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="1b9737a1e69367475a9a422530818e88" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ARIMA(0,1,2)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="fd33126346a7afd104757c7259bbde84" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(0,1,1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="bd9f412621afa06215839f5c72b15d61" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(0,0,1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c5b4c33fd5dc04326bac292d86de1241" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(0,0,2)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="e49335ad8f4c53651e251e598dd3bdb7" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При помощи команды auto.arima подберите модель, которая лучше всего описывает поведение индекса реальных денежных доходов населения (HHI_Q_DIRI) на участке до конца 1999 года (с начала ряда до 4 квартала 1999 включительно). В ответ введите AIC этой модели. ]]></text>
+            <explanation><![CDATA[Команда auto.arima используется просто "в лоб", AIC также легко вычисляется соответствующей командой.  Если возникают проблемы - убедитесь, что взяли правильный участок ряда]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="5138502ec52e9b186f14542198d9b5f7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[196,197]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="db68ebf69b215d9627bca8c44edffb00" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[209,210]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c52c2e9dd1548162417cd4af7a031e12" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При помощи команды auto.arima подберите модель, которая лучше всего описывает поведение индекса реальных денежных доходов населения (HHI_Q_DIRI) на участке c начала 2000 года до конца 2007 (с 1 квартала 2000 до 4 квартала 2007 включая оба конца). В ответ введите AIC этой модели. ]]></text>
+            <explanation><![CDATA[Команда auto.arima используется просто "в лоб", AIC также легко вычисляется соответствующей командой.  Если возникают проблемы - убедитесь, что взяли правильный участок ряда]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="8434a904759deefa137fb7aa4684e031" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[157,158]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a7d1482373b7ec37ec403466ebf0d691" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[244,245]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ded6bf3a08b511702c669591cd40bdcd" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При помощи команды auto.arima подберите модель, которая лучше всего описывает поведение индекса реальных денежных доходов населения (HHI_Q_DIRI) на участке c начала 2008 года (с 1 квартала 2008 года до 4 квартала 2014 года включительно). В ответ введите AIC этой модели. ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="068ef7d1154f04199d46fdb67db6ff9f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[136,138]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="944bcc53dd515c5ce8d146356614785a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[250,251]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="4c319e5b99ab6d1a37a585944cbe0331" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Всё по тем же данным об индексе реальных денежных доходов населения HHI_Q_DIRI <b> (Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года!)</b>  оцените модель ARIMA(2,1,0). Постройте прогноз на 3 шага вперёд. В ответ введите верхнюю границу 95% доверительного интервала для прогноза на 1-ый квартал 2015 года. ]]></text>
+            <explanation><![CDATA[Модель оценивается командой Arima, прогноз строится командой forecast]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="ca25876aa2d372aaa616b871e4a2affb" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[272,274]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ed587d357bbdd26980d7bc4648caff2a" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Всё по тем же данным об индексе реальных денежных доходов населения HHI_Q_DIRI <b> (Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года!) </b> оцените модель ARIMA(2,1,0). Постройте прогноз на 3 шага вперёд. В ответ введите верхнюю границу 95% доверительного интервала для прогноза на 2-oй квартал 2015 года. ]]></text>
+            <explanation><![CDATA[Модель оценивается командой Arima, прогноз строится командой forecast]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="61fb76ee9f2703e5de223cfc16916bd7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[286,288]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="51d3030b849309982a58687933ac6879" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Всё по тем же данным об индексе реальных денежных доходов населения HHI_Q_DIRI  <b> (Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года!) </b> оцените модель ARIMA(2,1,0). Постройте прогноз на 3 шага вперёд. В ответ введите верхнюю границу 95% доверительного интервала для прогноза на 3-ий квартал 2015 года. ]]></text>
+            <explanation><![CDATA[Модель оценивается командой Arima, прогноз строится командой forecast]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="2418894f2673d1dd574bce01fa569790" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[288,289]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="fa50f3c088dff2ba8abacba595ac6a00" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Есть такой способ проверки точности построенных моделей. Вы строите модель по данным, выкидывая несколько последних точек. Потом по построенной модели делаете прогноз на эти точки и смотрите, насколько он похож на то, что случилось в реальности. В качестве критерия используют, к примеру, такую величину, как MSE (Mean Squared Error): <br>
+$$MSE = \frac{1}{n} \sum_{i=1}^{n} (Y_i - \widehat{Y_i})^2$$, <br>
+где $$n$$ - количество точек, на которые Вы строите прогноз, $$Y_i$$ - исходные данные а $$\widehat{Y_i}$$ - прогнозы. Чем меньше MSE, тем точнее модель предсказала реальность. <br><br>
+
+Давайте попробуем использовать MSE (можете как найти пакет, который считает MSE (попробуйте сделать это сами :), так и посчитать его руками) для выбора лучшей модели для описания индекса реальных денежных доходов населения HHI_Q_DIRI. Проверять будем так: оценим модель, выкинув последние 3 точки <b> (по наблюдениям с 1 по 86 включительно) </b>, построим прогноз на 3 шага вперёд и сравним его с реальными данными (MSE, соответственно, будем рассчитывать по этим 3 точкам, не по всему ряду).
+<br>Какая из моделей будет лучшей по этому критерию?
+<br><br>
+<i>PS: Если у Вас возникают ошибки вида "invalid argument type:...", попробуйте к используемым в расчётах MSE переменным применить as.numeric(). Это приведёт разнородные форматы прогноза и исходных данных к простому числовому формату, после чего пользоваться ими станет несколько удобнее</i>]]></text>
+            <explanation><![CDATA[Функция для расчёта mse есть, к примеру, в пакете hydroGOF (так и называется, mse), либо же её можно написать руками: взять прогноз (чтобы вытащить точечные прогнозы, используйте forecast(...)$mean; кстати, при использовании готового пакета это тоже пригодится), взять данные, вычесть одно из другого, возвести в квадрат и просуммировать. Не забывайте, что чем меньше MSE, тем лучше!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="6c41c5d54f6ffcc7e8fc7899ea9c998e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ARIMA(3,1,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="88784c85253852fa006b4e52f75615a0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,1,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="06025d9ee5d95834ab8b5e83db0df7c4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(2,1,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="45ce13455d49529cf78074e93c97b3dd" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(2,1,1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="073c85bd1646df03a2917ec706513356" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Есть такой способ проверки точности построенных моделей. Вы строите модель по данным, выкидывая несколько последних точек. Потом по построенной модели делаете прогноз на эти точки и смотрите, насколько он похож на то, что случилось в реальности. В качестве критерия используют, к примеру, такую величину, как MSE (Mean Squared Error): <br>
+$$MSE = \frac{1}{n} \sum_{i=1}^{n} (Y_i - \widehat{Y_i})^2$$, <br>
+где $$n$$ - количество точек, на которые Вы строите прогноз, $$Y_i$$ - исходные данные а $$\widehat{Y_i}$$ - прогнозы. Чем меньше MSE, тем точнее модель предсказала реальность. <br><br>
+
+Давайте попробуем использовать MSE (можете как найти пакет, который считает MSE (попробуйте сделать это сами :), так и посчитать его руками) для выбора лучшей модели для описания индекса реальных денежных доходов населения HHI_Q_DIRI. Проверять будем так: оценим модель, выкинув последние 3 точки <b> (по наблюдениям с 1 по 86 включительно) </b>, построим прогноз на 3 шага вперёд и сравним его с реальными данными (MSE, соответственно, будем рассчитывать по этим 3 точкам, не по всему ряду).
+<br>Какая из моделей будет лучшей по этому критерию?
+<br><br>
+<i>PS: Если у Вас возникают ошибки вида "invalid argument type:...", попробуйте к используемым в расчётах MSE переменным применить as.numeric(). Это приведёт разнородные форматы прогноза и исходных данных к простому числовому формату, после чего пользоваться ими станет несколько удобнее</i>]]></text>
+            <explanation><![CDATA[Функция для расчёта mse есть, к примеру, в пакете hydroGOF (так и называется, mse), либо же её можно написать руками: взять прогноз (чтобы вытащить точечные прогнозы, используйте forecast(...)$mean; кстати, при использовании готового пакета это тоже пригодится), взять данные, вычесть одно из другого, возвести в квадрат и просуммировать. Не забывайте, что чем меньше MSE, тем лучше!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="930b8320e75149f36a3e9b42682bb1a3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,1,2)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="51689672f4ef7382ce09248387e744b5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,0,2)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1985ce08dda50d0ee2ce3ba41905f090" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(0,1,1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f8ee46a951a3b7112b515e19451ec997" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,1,1)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="fde9f0d098d3288cfc5e11cd66f14457" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Есть такой способ проверки точности построенных моделей. Вы строите модель по данным, выкидывая несколько последних точек. Потом по построенной модели делаете прогноз на эти точки и смотрите, насколько он похож на то, что случилось в реальности. В качестве критерия используют, к примеру, такую величину, как MSE (Mean Squared Error): <br>
+$$MSE = \frac{1}{n} \sum_{i=1}^{n} (Y_i - \widehat{Y_i})^2$$, <br>
+где $$n$$ - количество точек, на которые Вы строите прогноз, $$Y_i$$ - исходные данные а $$\widehat{Y_i}$$ - прогнозы. Чем меньше MSE, тем точнее модель предсказала реальность. <br><br>
+
+Давайте попробуем использовать MSE (можете как найти пакет, который считает MSE (попробуйте сделать это сами :), так и посчитать его руками) для выбора лучшей модели для описания индекса реальных денежных доходов населения HHI_Q_DIRI. Проверять будем так: оценим модель, выкинув последние 3 точки <b> (по наблюдениям с 1 по 86 включительно) </b>, построим прогноз на 3 шага вперёд и сравним его с реальными данными (MSE, соответственно, будем рассчитывать по этим 3 точкам, не по всему ряду).
+<br>Какая из моделей будет лучшей по этому критерию?
+<br><br>
+<i>PS: Если у Вас возникают ошибки вида "invalid argument type:...", попробуйте к используемым в расчётах MSE переменным применить as.numeric(). Это приведёт разнородные форматы прогноза и исходных данных к простому числовому формату, после чего пользоваться ими станет несколько удобнее</i>]]></text>
+            <explanation><![CDATA[Функция для расчёта mse есть, к примеру, в пакете hydroGOF (так и называется, mse), либо же её можно написать руками: взять прогноз (чтобы вытащить точечные прогнозы, используйте forecast(...)$mean; кстати, при использовании готового пакета это тоже пригодится), взять данные, вычесть одно из другого, возвести в квадрат и просуммировать. Не забывайте, что чем меньше MSE, тем лучше!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="d55f94d42b064026303a8aa46c181b3b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,1,3)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="925e07528dbfa08a747ba969b1e1618b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(2,1,2)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="823728b1f9e4703e9aae697d0834e9ad" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(0,1,0)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6bd71506f105d5b07d1627de2de791b6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[ARIMA(1,1,2)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="e1fa905cc6d3bad8e9e14557e15adf60" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В экономических (и не только, разумеется) временных рядах часто встречается такое явление, как сезонность: повторяющееся из года в год в одно и то же время года поведение ряда (самое простое: в сельском хозяйстве происходит спад зимой, в количестве туристов на морских курортах - скачок летом и так далее). Во многих случаях это явление стоит учитывать для повышения качества прогноза. Давайте попробуем добавить в модель для индекса реальных денежных доходов населения HHI_Q_DIRI  <b> (Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года!) </b>  сезонную составляющую! Оцените модель ARIMA(1,1,0)xSARIMA(0,0,1) <i>(на практике в SARIMA-часть модели редко вставляют больше одного MA или AR лага, а сезонные разности берут, если в данных обнаруживается сезонный единичный корень).</i>
+<br>В ответ введите AIC
+<br><br>
+<i>PS: Из интереса можете сравнить модели с SARIMA-частями с обычными ARIMA по MSE и понять, насколько это полезная штука!</i>]]></text>
+            <explanation><![CDATA[За порядок модели ARIMA отвечает опция order = c( , , ); за порядок SARIMA - опция seasonal = c( , , ).]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="411fe90c1a64014c9dd85b7eaca7d0b1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[711,724]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e1866b42bdcc205878b1120d462e6134" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[775,776]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="0d0e916e82186c5a4c5555bd55fb4aad" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В экономических (и не только, разумеется) временных рядах часто встречается такое явление, как сезонность: повторяющееся из года в год в одно и то же время года поведение ряда (самое простое: в сельском хозяйстве происходит спад зимой, в количестве туристов на морских курортах - скачок летом и так далее). Во многих случаях это явление стоит учитывать для повышения качества прогноза. Давайте попробуем добавить в модель для индекса реальных денежных доходов населения HHI_Q_DIRI  <b> (Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года!) </b> сезонную составляющую! Оцените модель ARIMA(1,1,1)xSARIMA(1,0,0) <i>(на практике в SARIMA-часть модели редко вставляют больше одного MA или AR лага, а сезонные разности берут, если в данных обнаруживается сезонный единичный корень).</i>
+<br>В ответ введите AIC
+<br><br>
+<i>PS: Из интереса можете сравнить модели с SARIMA-частями с обычными ARIMA по MSE и понять, насколько это полезная штука!</i>]]></text>
+            <explanation><![CDATA[За порядок модели ARIMA отвечает опция order = c( , , ); за порядок SARIMA - опция seasonal = c( , , ).]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="8c9562f5a18e8fe0493ba187ea62b67c" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[621,628]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0d3fe773ff1d4c4ded6dd1f3cb645bc9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[767,768]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c52004ea5ca5cbc807ccbaab79511ac2" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В экономических (и не только, разумеется) временных рядах часто встречается такое явление, как сезонность: повторяющееся из года в год в одно и то же время года поведение ряда (самое простое: в сельском хозяйстве происходит спад зимой, в количестве туристов на морских курортах - скачок летом и так далее). Во многих случаях это явление стоит учитывать для повышения качества прогноза. Давайте попробуем добавить в модель для индекса реальных денежных доходов населения HHI_Q_DIRI  <b> (Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года!) </b> сезонную составляющую! Оцените модель ARIMA(1,1,1)xSARIMA(0,0,1) <i>(на практике в SARIMA-часть модели редко вставляют больше одного MA или AR лага, а сезонные разности берут, если в данных обнаруживается сезонный единичный корень).</i>
+<br>В ответ введите AIC
+<br><br>
+<i>PS: Из интереса можете сравнить модели с SARIMA-частями с обычными ARIMA по MSE и понять, насколько это полезная штука!</i>]]></text>
+            <explanation><![CDATA[За порядок модели ARIMA отвечает опция order = c( , , ); за порядок SARIMA - опция seasonal = c( , , ).]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="4a81e5bbc3a035cc5e8394fac5cee719" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[707,719]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c6d72e292d754f5ca09ab4ade337e810" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[767,768]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="4c6f1ea290ec1f64015425f18d564fa8" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Часто бывает полезно добавить в модель какие-нибудь внешние переменные (чтобы повысить точность прогнозирования, убрать из оценок интересующих Вас коэффициентов влияние "лишних" переменных или наоборот - изучить влияние какой-то переменной или какого-то события на изучаемый показатель). Именно этим мы сейчас и займёмся!  <b> Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года! </b> <br>
+Давайте создадим дамми-переменную, соответствующую кризису 2008-2009 годов. Сделаем это следующим образом: она равна нулю везде (сгенерируем последовательность из 89 нулей), кроме 2008 и 2009 года (целиком - то есть, заменяем 8 значений на 1. Да, конечно, это неправильные границы, но во избежание споров все будем делать именно так! А если интересно - можете определить границы, как считаете нужным и сделать то же самое). И эту переменную добавим в модель ARIMA(1,1,1) (простую ARIMA, без сезонной части) для индекса реальных денежных доходов населения HHI_Q_DIRI (опцией xreg = <i>НашаДаммиПеременная</i>). <br>
+Чему равен коэффициент при дамми-переменной?]]></text>
+            <explanation><![CDATA[Сгенерировать 89 (длина ряда HHI_Q_DIRI) нулей для дамми-переменной можно командой dummy <- rep(0,89). Заменить все значения можно командой dummy[ ... : ...] <- 1. Вставляем эту переменную опцией xreg = dummy в команде Arima.]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="7d0d2ddeaa77ff8cf8d22e9006b63af4" selected_score="1" unselected_score="0">
+                  <text><![CDATA[-3.3367]]></text>
+                  <explanation><![CDATA[Заметим при этом, что переменная незначима, то есть ввод так определенного кризиса не имеет большого смысла]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="57763457651f1de7c63f6540137e1303" selected_score="0" unselected_score="0">
+                  <text><![CDATA[9.1199]]></text>
+                  <explanation><![CDATA[Это стандартное отклонение!]]></explanation>
+                </option>
+                <option id="33bd5aaa3c427b2482ef328828745ab2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[-0.5197]]></text>
+                  <explanation><![CDATA[Это другой коэффициент!]]></explanation>
+                </option>
+                <option id="b8dfddac133e0d2de57fa50057cd15f6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[-0.3537]]></text>
+                  <explanation><![CDATA[Это другой коэффициент!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="6974f55587e7f147d9cc373fdd5165cd" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Часто бывает полезно добавить в модель какие-нибудь внешние переменные (чтобы повысить точность прогнозирования, убрать из оценок интересующих Вас коэффициентов влияние "лишних" переменных или наоборот - изучить влияние какой-то переменной или какого-то события на изучаемый показатель). Именно этим мы сейчас и займёмся!  <b> Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года! </b> <br>
+Давайте создадим дамми-переменную, соответствующую кризису 2008-2009 годов. Сделаем это следующим образом: она равна нулю везде (сгенерируем последовательность из 89 нулей), кроме 2008 и 2009 года (целиком - то есть, заменяем 8 значений на 1. Да, конечно, это неправильные границы, но во избежание споров все будем делать именно так! А если интересно - можете определить границы, как считаете нужным и сделать то же самое). И эту переменную добавим в модель ARIMA(1,1,2) (простую ARIMA, без сезонной части) для индекса реальных денежных доходов населения HHI_Q_DIRI (опцией xreg = <i>НашаДаммиПеременная</i>). <br>
+Чему равен коэффициент при дамми-переменной?]]></text>
+            <explanation><![CDATA[Сгенерировать 89 (длина ряда HHI_Q_DIRI) нулей для дамми-переменной можно командой dummy <- rep(0,89). Заменить все значения можно командой dummy[ ... : ...] <- 1. Вставляем эту переменную опцией xreg = dummy в команде Arima.]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="ab22f2ccdcea59767e64eb2be56cb2b1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[-8.2701]]></text>
+                  <explanation><![CDATA[Заметим при этом, что переменная незначима, то есть ввод так определенного кризиса не имеет большого смысла]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="357453e396a9d4361ea3f97d77ea6c79" selected_score="0" unselected_score="0">
+                  <text><![CDATA[7.7748]]></text>
+                  <explanation><![CDATA[Это стандартное отклонение!]]></explanation>
+                </option>
+                <option id="2259eaf035004d8ec59812e9b0b836aa" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.8095]]></text>
+                  <explanation><![CDATA[Это другой коэффициент!]]></explanation>
+                </option>
+                <option id="ef5caffd4fcfadeef3580f7b5febd98e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[-1.3068]]></text>
+                  <explanation><![CDATA[Это другой коэффициент!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="bae8c09d3e5d7b28ce09420a4801596a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Часто бывает полезно добавить в модель какие-нибудь внешние переменные (чтобы повысить точность прогнозирования, убрать из оценок интересующих Вас коэффициентов влияние "лишних" переменных или наоборот - изучить влияние какой-то переменной или какого-то события на изучаемый показатель). Именно этим мы сейчас и займёмся!  <b> Отберите только первые 89 наблюдений, то есть последнее наблюдение будет за 4ый квартал 2014 года! </b> <br>
+Давайте создадим дамми-переменную, соответствующую кризису 2008-2009 годов. Сделаем это следующим образом: она равна нулю везде (сгенерируем последовательность из 89 нулей), кроме 2008 и 2009 года (целиком - то есть, заменяем 8 значений на 1. Да, конечно, это неправильные границы, но во избежание споров все будем делать именно так! А если интересно - можете определить границы, как считаете нужным и сделать то же самое). И эту переменную добавим в модель ARIMA(2,1,1) (простую ARIMA, без сезонной части) для индекса реальных денежных доходов населения HHI_Q_DIRI (опцией xreg = <i>НашаДаммиПеременная</i>). <br>
+Чему равен коэффициент при дамми-переменной?]]></text>
+            <explanation><![CDATA[Сгенерировать 89 (длина ряда HHI_Q_DIRI) нулей для дамми-переменной можно командой dummy <- rep(0,89). Заменить все значения можно командой dummy[ ... : ...] <- 1. Вставляем эту переменную опцией xreg = dummy в команде Arima.]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="0ab1b79de61f1507a4d30987aada15d7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[-3.3173]]></text>
+                  <explanation><![CDATA[Заметим при этом, что переменная незначима, то есть ввод так определенного кризиса не имеет большого смысла]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="df9fa8224979618c50da0f8e89379463" selected_score="0" unselected_score="0">
+                  <text><![CDATA[9.0913]]></text>
+                  <explanation><![CDATA[Это стандартное отклонение!]]></explanation>
+                </option>
+                <option id="b6a0826c2eb7db44a1d2993d75f56c69" selected_score="0" unselected_score="0">
+                  <text><![CDATA[-0.5137]]></text>
+                  <explanation><![CDATA[Это другой коэффициент!]]></explanation>
+                </option>
+                <option id="4d72efc19e8a5e6b0d21198d5f2c1339" selected_score="0" unselected_score="0">
+                  <text><![CDATA[-0.0119]]></text>
+                  <explanation><![CDATA[Это другой коэффициент!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="e0f0f0f7b7d48f0a578306d51060f1a1" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При работе с графиками временных рядов иногда возникает необходимость отметить цветом какие-то периоды времени (тот же кризис). В самом простом варианте такие графики выглядят так:
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/gr_q20_10.jpeg"; style="width:550px"; align = "center">
+<br><br>
+Какой последовательностью команд можно получить этот график?]]></text>
+            <explanation><![CDATA[Сами полосы рисуются командами rect. В качестве опций вводим координаты крайних (левой нижней и правой верхней) точек (-1000 и 1000 - это координаты по вертикальной оси, вида "очень низко" и "очень высоко", чтобы это была именно полоса, а не прямоугольник из середины графика; 20,25 / 70,80 - это координаты по горизонтальной оси, то есть, координаты начала,конца интервалов, которые мы хотим отметить). ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="a277a77d7bb97ea8562d38cf90a692f8" selected_score="1" unselected_score="0">
+                  <text><![CDATA[set.seed(10)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="l",axes=T, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")<br>
+rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="ed604f5ffe926d9a5f450ae51f34891b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(30)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="l",axes=F, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")<br>
+rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="336094b525ee8d3cf56d969fba0c649b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(50)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="l",axes=T, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")<br>
+rect(70,-1000,80,1000,col="#44CCEE",border="#44CCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c4252c91a1728a1acd8f281be4ceb8b6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(70)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="l",axes=T, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#22CCAA")<br>
+rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="148e5c8e561f5db30e6c83f664b9888e" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При работе с графиками временных рядов иногда возникает необходимость отметить цветом какие-то периоды времени (тот же кризис). В самом простом варианте такие графики выглядят так:
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/gr_q20_30.jpeg"; style="width:550px"; align = "center">
+<br><br>
+Какой последовательностью команд можно получить этот график?]]></text>
+            <explanation><![CDATA[Сами полосы рисуются командами rect. В качестве опций вводим координаты крайних (левой нижней и правой верхней) точек (-1000 и 1000 - это координаты по вертикальной оси, вида "очень низко" и "очень высоко", чтобы это была именно полоса, а не прямоугольник из середины графика; 20,25 / 70,80 - это координаты по горизонтальной оси, то есть, координаты начала,конца интервалов, которые мы хотим отметить). ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="7c37c45ceb31a1c2a21e15fa3469e30a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[set.seed(30)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="l",axes=T, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")<br>
+rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="de53c715c6be4c75a33413b7b7b7101e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(10)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="p",axes=T, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")<br>
+rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="351e52b4d37de3d9d1e198b6f812798b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(50)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="l",axes=F, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")<br>
+rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="bfc95de7ba946de8ab59322f331a83a2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(70)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="l",axes=T, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")<br>
+rect(70,0,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="f87a80638a78b647db8db2e9fa42e900" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[При работе с графиками временных рядов иногда возникает необходимость отметить цветом какие-то периоды времени (тот же кризис). В самом простом варианте такие графики выглядят так:
+<br><br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/gr_q20_70.jpeg"; style="width:550px"; align = "center">
+<br><br>
+Какой последовательностью команд можно получить этот график?]]></text>
+            <explanation><![CDATA[Сами полосы рисуются командами rect. В качестве опций вводим координаты крайних (левой нижней и правой верхней) точек (-1000 и 1000 - это координаты по вертикальной оси, вида "очень низко" и "очень высоко", чтобы это была именно полоса, а не прямоугольник из середины графика; 20,25 / 70,80 - это координаты по горизонтальной оси, то есть, координаты начала,конца интервалов, которые мы хотим отметить). ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="4beff6517690784ef9c901bf07b3b9f6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[set.seed(70)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="l",axes=T, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")<br>
+rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="119790292a1bba51d3f26ed98f1fedb4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(10)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="l",axes=F, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")<br>
+rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="531b9db92735221e38408ce8487e1060" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(30)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="l",axes=T, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#00CCEE",border="#FFCCEE")<br>
+rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d3dd02adc31f80325a226c3d9289b467" selected_score="0" unselected_score="0">
+                  <text><![CDATA[set.seed(30)<br>
+y1 <- arima.sim(n=100, list(ar=0.7))<br>
+plot(y1,type="p",axes=F, ylab = "variable Y")<br>
+rect(20,-1000,25,1000,col="#FFCCEE",border="#FFCCEE")<br>
+rect(70,-1000,80,1000,col="#FFCCEE",border="#FFCCEE")<br>
+par(new=TRUE)<br>
+plot(y1,type="l",ylab="")<br>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+    </question_groups>
+  </data>
+</quiz>

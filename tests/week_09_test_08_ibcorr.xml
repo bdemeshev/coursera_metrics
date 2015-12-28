@@ -1,0 +1,1286 @@
+<quiz>
+  <metadata>
+    <title><![CDATA[Тест 8: Эндогенность]]></title>
+    <open_time>2015-05-04 0001</open_time>
+    <soft_close_time>2015-05-11 2359</soft_close_time>
+    <hard_close_time>2015-05-18 2359</hard_close_time>
+    <duration>0</duration>
+    <retry_delay>0</retry_delay>
+    <maximum_submissions>3</maximum_submissions>
+    <modified_time>1431070110630</modified_time>
+    <is_ace_exam_flag>none</is_ace_exam_flag>
+    <authentication_required>1</authentication_required>
+    <parameters>
+      <show_explanations>
+        <question>before_soft_close_time</question>
+        <option>before_soft_close_time</option>
+        <score>before_soft_close_time</score>
+      </show_explanations>
+    </parameters>
+    <maximum_score>20</maximum_score>
+  </metadata>
+  <preamble><![CDATA[]]></preamble>
+  <data>
+    <question_groups>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="7ab06e77856455e6a1b3a756fde8f5c9" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Эндогенность --- это ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="2de393b3c0bae65dad633db2a027e3fa" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Коррелированность регрессоров и случайных ошибок]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="4347241514a344d2b9b7687d8a41804a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Некоррелированность регрессоров и случайных ошибок]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="df3df14a881411eeef9f730b13d24a35" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Некоррелированность случайных ошибок и $$\hat{y}_i$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="8e1e95a28e7aeea0ca84e36849e0ca26" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Эндогенность возникает, когда]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="e1e07b1ee1a6f587a4d620a97fd4fac9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$Cov(\varepsilon_i, x_i) \not= 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="0de41cf47d402392d24a8ca4314e156f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Cov(\varepsilon_i, x_i) =0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ba936ee53080a8bcb66e6f6eaede470e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Cov(\varepsilon_i^2, x_i^2) =0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="82645bc7dddb2d35564e09601ce5d3ae" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберите верное определение эндогенности: ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="779f95aa3ee2e585d3de716e53edf284" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Коррелированность регрессоров и случайных ошибок]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="3c819b1f9a4bd33ef0298473a714c5a9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Cov(\varepsilon_i, x_i) =0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="78fb68bb0d8f156b37cb382844af4b47" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$Cov(\varepsilon_i^2, x_i) =0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="5d3dc1ccb873edbe0abdb556a570b44f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Расшифруйте смысл предпосылки $$E(\varepsilon_i|X)=0$$. Из нее следует, что]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="2e6ec21da64423c72bd1b539b3b01b0f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i) = 0$$, <br>
+$$Cov(x_i,\varepsilon_i) = 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="112ff124f76d07c7e48e4796488d4787" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i) = const \not= 0$$, <br>
+$$Cov(x_i,\varepsilon_i) = 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="2fb424d714fb3d6a4a3598c81578d519" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i) = 0$$, <br>
+$$Cov(x_i,\varepsilon_i) = const \not= 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="66f718c1a45052a5e8374199ef9ad8d1" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i) = const \not= 0$$, <br>
+$$Cov(x_i,\varepsilon_i) = const \not= 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c731b8eee35791d950c3da4139623347" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i) < 0$$, <br>
+$$Cov(x_i,\varepsilon_i) = const \not= 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="29ff4090e4cb857b41affc967adc6eb4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i) > 0$$, <br>
+$$Cov(x_i,\varepsilon_i) = const \not= 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4879cc7cf95f59fb1bc9c43c5efdebe9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i) = 0$$, <br>
+$$Cov(x_i,\varepsilon_i) < 0$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="8e57a5c82d01ea5c398574bdc7b0f144" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберите одну причину эндогенности в перекрёстных выборках.]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="8f9de615fe997b0cc56b13a32fdb37ac" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Ошибка измерения регрессора]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="03eac990e45d16ecf6da58697ecd6532" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Пропущенный регрессор]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="825216d46c75008a355bd857fa7bff0e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Одновременность определения значения переменных]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="f2aeecc74539cebc3f8967882e676722" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Строгая линейная зависимость между регрессорами]]></text>
+                  <explanation><![CDATA[Это причина мультиколлинеарности]]></explanation>
+                </option>
+                <option id="683cea3b073227e325e013fa322b290e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нестрогая линейная зависимость между регрессорами]]></text>
+                  <explanation><![CDATA[Это причина мультиколлинеарности]]></explanation>
+                </option>
+                <option id="d8b8a07fe92a5725d6b4f580a96f2686" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Коррелированность ошибок между собой]]></text>
+                  <explanation><![CDATA[Это причина автокорреляции]]></explanation>
+                </option>
+                <option id="c0bb1a16c310e0ce32459bba4ca9327d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Рост разброса ошибок]]></text>
+                  <explanation><![CDATA[Это причина гетероскедастичности]]></explanation>
+                </option>
+                <option id="51426a21def6f500798e62248a96cb62" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Дополнительный регрессор]]></text>
+                  <explanation><![CDATA[Это просто неправильная спецификация модели]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="d074c789be50647916e4c58a55f8f510" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь Вениамин пытается оценить модель регрессии заработной платы $$wage_i$$ от опыта работа $$exp_i$$. Однако на самом деле заработная плата зависит от опыта работа и ненаблюдаемых способностей $$ability_i$$: $$wage_i = 10 + 1\cdot exp_i + 2\cdot ability_i + u_i$$. Случайная ошибка $$u_i$$ некоррелирована с регрессорами. У Вениамина в распоряжении очень большая выборка. Известны выборочные дисперсии, $$sVar(exp)=4$$, $$sVar(ability)=9$$, выборочная ковариация, $$sCov(ability,exp)=1$$.
+<br>
+Насколько примерно будет отличаться оценка Вениамина коэффициента при опыте работы от истинного коэффиента? Если оценка Вениамина выше истинной, то ответ вносите со знаком плюс, иначе - со знаком минус.]]></text>
+            <explanation><![CDATA[В силу большой выборки, выборочные ковариации примерно равны истинным. А оценка коэффициента в парной регрессии стремиться к $$Cov(wage_i,exp_i)/Var(exp_i)$$.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="c959aeb750fe343e807c2c96174f3af6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.4,0.6]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="1feea090952e19f508a019a395636a31" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь Вениамин пытается оценить модель регрессии заработной платы $$wage_i$$ от опыта работа $$exp_i$$. Однако на самом деле заработная плата зависит от опыта работа и ненаблюдаемых способностей $$ability_i$$: $$wage_i = 10 + 1\cdot exp_i + 2\cdot ability_i + u_i$$. Случайная ошибка $$u_i$$ некоррелирована с регрессорами. У Вениамина в распоряжении очень большая выборка. Известны выборочные дисперсии, $$sVar(exp)=4$$, $$sVar(ability)=9$$, выборочная ковариация, $$sCov(ability,exp)=3$$.
+<br>
+Насколько примерно будет отличаться оценка Вениамина коэффициента при опыте работы от истинного коэффиента? Если оценка Вениамина выше истинной, то ответ вносите со знаком плюс, иначе - со знаком минус.]]></text>
+            <explanation><![CDATA[В силу большой выборки, выборочные ковариации примерно равны истинным. А оценка коэффициента в парной регрессии стремиться к $$Cov(wage_i,exp_i)/Var(exp_i)$$.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="577c83904d61e2bb6dfc22f16de1b409" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[1.4,1.6]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="12052bbc7c8f89d664db1ac5923f0af2" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь Вениамин пытается оценить модель регрессии заработной платы $$wage_i$$ от опыта работа $$exp_i$$. Однако на самом деле заработная плата зависит от опыта работа и ненаблюдаемых способностей $$ability_i$$: $$wage_i = 10 + 1\cdot exp_i + 2\cdot ability_i + u_i$$. Случайная ошибка $$u_i$$ некоррелирована с регрессорами. У Вениамина в распоряжении очень большая выборка. Известны выборочные дисперсии, $$sVar(exp)=4$$, $$sVar(ability)=9$$, выборочная ковариация, $$sCov(ability,exp)=2$$.
+<br>
+Насколько примерно будет отличаться оценка Вениамина коэффициента при опыте работы от истинного коэффиента? Если оценка Вениамина выше истинной, то ответ вносите со знаком плюс, иначе - со знаком минус.]]></text>
+            <explanation><![CDATA[В силу большой выборки, выборочные ковариации примерно равны истинным. А оценка коэффициента в парной регрессии стремиться к $$Cov(wage_i,exp_i)/Var(exp_i)$$.]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="6586acb0dc083aeb2005cf1ecd23726f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.9,1.1]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="5d57aaa23b04cefc9fdec831412d3bae" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Истинная зависимость имеет вид: $$y_i = 4 + 6x_i + \varepsilon_i$$. Регрессор $$x_i$$ ненаблюдаем. Мы наблюдаем $$x_i^* = x_i + u_i, Var(x_i) = 25, Var(u_i) = 16, Var(\varepsilon_i) = 1$$. <br>
+$$Cov(\varepsilon_i, x_j) = 0, Cov(\varepsilon_i, u_j) = 0, Cov(u_i, x_j) = 0$$ для любых $$i, j$$. <br>
+К чему стремится МНК оценка $$\beta_2$$ модели $$\hat{y}_i = \hat{\beta}_1 + \hat{\beta}_2 x_i^*$$? <br>
+$$\textit{P.S. Округляйте до 2-х знаков после запятой}$$]]></text>
+            <explanation><![CDATA[$$plim_{n \to \infty} (\hat{\beta}_2) = plim_{n \to \infty} \frac{sCov(y, x^*)}{sVar(x^*)} = \frac{Cov(y_i, x_i^*)}{Var(x_i^*)} = \frac{Cov(y_i, x_i+u_i)}{Var(x_i+u_i)}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="f196cb33c1b672899dbe8a4e716e11d3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[3.65,3.67]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e437c9130e217c650dcb6986cf660f36" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Истинная зависимость имеет вид: $$y_i = 7 + 8x_i + \varepsilon_i$$. Регрессор $$x_i$$ ненаблюдаем. Мы наблюдаем $$x_i^* = x_i + u_i, Var(x_i) = 9, Var(u_i) = 16, Var(\varepsilon_i) = 1$$. <br>
+$$Cov(\varepsilon_i, x_j) = 0, Cov(\varepsilon_i, u_j) = 0, Cov(u_i, x_j) = 0$$ для любых $$i, j$$. <br>
+К чему стремится МНК оценка $$\beta_2$$ модели $$\hat{y}_i = \hat{\beta}_1 + \hat{\beta}_2 x_i^*$$? <br>
+$$\textit{P.S. Округляйте до 2-х знаков после запятой}$$]]></text>
+            <explanation><![CDATA[$$plim_{n \to \infty} (\hat{\beta}_2) = plim_{n \to \infty} \frac{sCov(y, x^*)}{sVar(x^*)} = \frac{Cov(y_i, x_i^*)}{Var(x_i^*)} = \frac{Cov(y_i, x_i+u_i)}{Var(x_i+u_i)}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="ae626d24683f23a61c00eca601768d49" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[2.87,2.89]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="6de90fbe64aed094e97d6b824bfe4e04" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Истинная зависимость имеет вид: $$y_i = 9 + 5x_i + \varepsilon_i$$. Регрессор $$x_i$$ ненаблюдаем. Мы наблюдаем $$x_i^* = x_i + u_i, Var(x_i) = 9, Var(u_i) = 36, Var(\varepsilon_i) = 1$$. <br>
+$$Cov(\varepsilon_i, x_j) = 0, Cov(\varepsilon_i, u_j) = 0, Cov(u_i, x_j) = 0$$ для любых $$i, j$$. <br>
+К чему стремится МНК оценка $$\beta_2$$ модели $$\hat{y}_i = \hat{\beta}_1 + \hat{\beta}_2 x_i^*$$? <br>
+$$\textit{P.S. Округляйте до целых}$$]]></text>
+            <explanation><![CDATA[$$plim_{n \to \infty} (\hat{\beta}_2) = plim_{n \to \infty} \frac{sCov(y, x^*)}{sVar(x^*)} = \frac{Cov(y_i, x_i^*)}{Var(x_i^*)} = \frac{Cov(y_i, x_i+u_i)}{Var(x_i+u_i)}$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="dbfb0312663de8748d8055a261c1e1bb" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.9,1.1]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="fb390734d226a3085ac1d4174bea1c73" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь Вениамин полагает, что сбережения $$y_i$$ зависят от ожидаемой людьми процентной ставки $$x_i$$. Однако такую переменную измерить, конечно, невозможно. У Вениамина есть прогнозы двух экспертов, $$x_i^a$$ и $$x_i^b$$, которые можно считать неправильно измеренным $$x_i$$. Эксперты независимы, то есть один из них добавляет свою ошибку к $$x_i$$, а другой - свою, и эти ошибки экспертов - независимые случайные величины, которые не связаны ни с одним из имеющихся показателей. Истинная зависимость имеет вид $$y_i=3-2x_i+u_i$$, где случайная ошибка $$u_i$$ не коррелирована с $$x_i$$. Вениамин, конечно, истинных коэффициентов не знает, зато у него очень большая выборка.
+<br>
+Какую оценку коэффициента $$\beta_2$$ получит Вениамин, если будет оценивать модель $$y_i=\beta_1+\beta_2 x_i^a+w_i$$ методом инструментальных переменных, взяв $$x_i^b$$ в качестве инструмента?]]></text>
+            <explanation><![CDATA[Заметим, что $$sCov(x^a,x^b)=sCov(x + r^a,x + r^b)=sCov(x,x)=sVar(x)$$. Аналогично, $$sCov(x^b,y)=sCov(x,y)$$. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="83785a6a22af7e1d071e6084b99af195" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-2.1,-1.9]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="dd5c8fc2f9f493c7ac81ea8c1a61d726" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь Вениамин полагает, что сбережения $$y_i$$ зависят от ожидаемой людьми процентной ставки $$x_i$$. Однако такую переменную измерить, конечно, невозможно. У Вениамина есть прогнозы двух экспертов, $$x_i^a$$ и $$x_i^b$$, которые можно считать неправильно измеренным $$x_i$$. Эксперты независимы, то есть один из них добавляет свою ошибку к $$x_i$$, а другой - свою, и эти ошибки экспертов - независимые случайные величины, которые не связаны ни с одним из имеющихся показателей. Истинная зависимость имеет вид $$y_i=3-3x_i+u_i$$, где случайная ошибка $$u_i$$ не коррелирована с $$x_i$$. Вениамин, конечно, истинных коэффициентов не знает, зато у него очень большая выборка.
+<br>
+Какую оценку коэффициента $$\beta_2$$ получит Вениамин, если будет оценивать модель $$y_i=\beta_1+\beta_2 x_i^a+w_i$$ методом инструментальных переменных, взяв $$x_i^b$$ в качестве инструмента?]]></text>
+            <explanation><![CDATA[Заметим, что $$sCov(x^a,x^b)=sCov(x + r^a,x + r^b)=sCov(x,x)=sVar(x)$$. Аналогично, $$sCov(x^b,y)=sCov(x,y)$$. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="0354ecc4973ddf458c7f3d109e2299d3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-3.1,-2.9]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="0066edca2b2c4e18d621b27244e5b13b" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь Вениамин полагает, что сбережения $$y_i$$ зависят от ожидаемой людьми процентной ставки $$x_i$$. Однако такую переменную измерить, конечно, невозможно. У Вениамина есть прогнозы двух экспертов, $$x_i^a$$ и $$x_i^b$$, которые можно считать неправильно измеренным $$x_i$$. Эксперты независимы, то есть один из них добавляет свою ошибку к $$x_i$$, а другой - свою, и эти ошибки экспертов - независимые случайные величины, которые не связаны ни с одним из имеющихся показателей. Истинная зависимость имеет вид $$y_i=3-4x_i+u_i$$, где случайная ошибка $$u_i$$ не коррелирована с $$x_i$$. Вениамин, конечно, истинных коэффициентов не знает, зато у него очень большая выборка.
+<br>
+Какую оценку коэффициента $$\beta_2$$ получит Вениамин, если будет оценивать модель $$y_i=\beta_1+\beta_2 x_i^a+w_i$$ методом инструментальных переменных, взяв $$x_i^b$$ в качестве инструмента?]]></text>
+            <explanation><![CDATA[Заметим, что $$sCov(x^a,x^b)=sCov(x + r^a,x + r^b)=sCov(x,x)=sVar(x)$$. Аналогично, $$sCov(x^b,y)=sCov(x,y)$$. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="e9e144d50be2830fd9525c78b120aa6a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-4.1,-3.9]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="985188d752a4eea0a01e3339200b5417" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Рассмотрим модель $$y_i=\beta_1 + \beta_2 x_i + u_i$$ с эндогенностью. Известно, что $$Cov(x_i,u_i)=-1$$, $$Var(u_i)=4$$. Также доступна инструментальная переменная $$z_i$$. По очень большой выборке выборочные характеристики равны $$sVar(x)=10$$, $$sVar(z)=8$$, $$sCov(z,x)=2$$. Исследователь Вениамин вместо применения двухшагового МНК просто строит регрессию $$y_i$$ на инструментальную переменную.
+<br> <br>
+На сколько процентов оценка коэффициента $$\beta_2$$, полученная Вениамином, будет отличаться от истинного $$\beta_2$$? Если Вениамин ошибся в большую сторону, ответ вводите со знаком "плюс", иначе - со знаком "минус". Ответ вводите либо в долях с точностью до двух знаков после запятой, либо в процентах с точностью до целых, но без знака "%".]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="c346a0548540c4e53cc36c73dc2caab7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-76,-74]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0baf8a04cb9850730911ddba6d8a19d1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.76,-0.74]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="9b7a42bd3e3c5d7f0a1a3f56aa080ea8" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Рассмотрим модель $$y_i=\beta_1 + \beta_2 x_i + u_i$$ с эндогенностью. Известно, что $$Cov(x_i,u_i)=-1$$, $$Var(u_i)=4$$. Также доступна инструментальная переменная $$z_i$$. По очень большой выборке выборочные характеристики равны $$sVar(x)=10$$, $$sVar(z)=8$$, $$sCov(z,x)=4$$. Исследователь Вениамин вместо применения двухшагового МНК просто строит регрессию $$y_i$$ на инструментальную переменную.
+<br> <br>
+На сколько процентов оценка коэффициента $$\beta_2$$, полученная Вениамином, будет отличаться от истинного $$\beta_2$$? Если Вениамин ошибся в большую сторону, ответ вводите со знаком "плюс", иначе - со знаком "минус". Ответ вводите либо в долях с точностью до двух знаков после запятой, либо в процентах с точностью до целых, но без знака "%".]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="1b94f6b708be6eecd3868ca761447ef1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-51,-49]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1d1d3097e555a49b64fbe8ec346632e1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.51,-0.49]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="f5f3e170921a7fa58fc89e0314417884" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Рассмотрим модель $$y_i=\beta_1 + \beta_2 x_i + u_i$$ с эндогенностью. Известно, что $$Cov(x_i,u_i)=-1$$, $$Var(u_i)=4$$. Также доступна инструментальная переменная $$z_i$$. По очень большой выборке выборочные характеристики равны $$sVar(x)=10$$, $$sVar(z)=8$$, $$sCov(z,x)=6$$. Исследователь Вениамин вместо применения двухшагового МНК просто строит регрессию $$y_i$$ на инструментальную переменную.
+<br> <br>
+На сколько процентов оценка коэффициента $$\beta_2$$, полученная Вениамином, будет отличаться от истинного $$\beta_2$$? Если Вениамин ошибся в большую сторону, ответ вводите со знаком "плюс", иначе - со знаком "минус". Ответ вводите либо в долях с точностью до двух знаков после запятой, либо в процентах с точностью до целых, но без знака "%".]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="51fbc2198cdbe9f8b7926f20afe3e8c1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-0.26,-0.24]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="facfa9dfe2bce20ae7d6b7743b5ad40b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-26,-24]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="927c81f67757b667f373b2d6d14f754b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь Вениамин хочет оценить средний процент по вкладам, предлагаемым банками частным лицам в городе N. Для этого он считает среднее арифметическое по процентным ставкам, написанным на случайно увиденных им рекламных объявлениях о вкладах.
+<br>
+Оценка, получаемая Вениамином]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="b2e4f99f0a493efa7ebb879cf22315ce" selected_score="1" unselected_score="0">
+                  <text><![CDATA[будет смещенной и, вероятно, завышенной, т.к. Вениамин работает с данными наблюдений, а не случайно выбирает банки]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="0e8810da6f1a96f21b87c6c2c2d3bea8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[будет несмещенной, так как он случайно выбирает рекламные плакаты]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9d742b1a12cd0c228c41e6b2f0f6d287" selected_score="0" unselected_score="0">
+                  <text><![CDATA[будет смещенной и, вероятно, заниженной, т.к. Вениамин работает с данными наблюдений, а не случайно выбирает банки]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="56020725ea2256003db068fe19fe64b3" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Двоечника Вовочку родители лишают сладкого, когда он приносит домой плохие оценки, и дарят подарки - когда хорошие. Когда Вовочка возвращается домой, он иногда подробно рассказывает о том, что было в школе, а иногда почему-то умалчивает. Папа Вовочки решил оценить среднюю оценку Вовочки. Для этого он выбрал случайно несколько дней, когда Вовочка сообщал о своей оценке и посчитал среднее арифметическое.
+<br>
+Полученная оценка среднего балла будет]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="06212bfed560a18f8f65d64b7503ee9d" selected_score="1" unselected_score="0">
+                  <text><![CDATA[будет смещенной и, вероятно, завышенной, т.к. папа Вовочки работает с данными наблюдений, а не случайно выбирает оценки из всех имеющихся]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="2e26e1ec628c6fe9bb6aa6a90a1f3879" selected_score="0" unselected_score="0">
+                  <text><![CDATA[будет несмещенной, так как папа Вовочки случайно выбирает дни с доступной информацией]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f6a36ce04beff7161aed8ec289d3b909" selected_score="0" unselected_score="0">
+                  <text><![CDATA[будет смещенной и, вероятно, заниженной, т.к. папа Вовочки работает с данными наблюдений, а не случайно выбирает оценки из всех имеющихся]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="776a5f65201e6813e5f878c97d852057" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь пытается определить, помогают ли дельфины уставшим пловцам. Для этого он опрашивает пловцов, сталкившихся с дельфинами в море, в какую сторону их подталкивали дельфины, к берегу или от берега.
+<br>
+Кратко охарактеризуйте этот подход.]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="a03e0e6d2774c550cddd0e57cd75bcc6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Подход не верен, так как исследователь работает с данными наблюдений, а его выборка содержит только выживших пловцов]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="a51e00afbbee9060b0de03518cf2c5e5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Подход верен, если исследователь выбирает опрашивать ли каждого пловца видевшего дельфина случайным образом, с помощью подкидывания монетки]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0073bde321d79ad5eea9317013da3b8c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Подход верен всегда]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e1a415cdc4d4291032fe57a8081ee6f8" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Начинающий предприниматель Вениамин очень хочет быть успешным. Предположим, что существуют некие привычки и правила жизни, благоприятные успеху в бизнесе, и существуют также неблагоприятные привычки. Вениамин решил отобрать привычки, благоприятные успеху. Для этого он прочитал 50 книг самых успешных бизнесменов об их привычках и правилах жизни и планомерно внедряет эти правила в свою жизнь.
+<br>
+Кратко охарактеризуйте выборку Вениамина.]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="06ccc4e6f9c520e650b5e05de75206ee" selected_score="1" unselected_score="0">
+                  <text><![CDATA[выборка Вениамина не содержит неуспешных предпринимателей, возможно они использовали те же правила жизни, что и успешные, правильнее работать с выборкой содержащей два типа предпринимателей]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="0f998fc41a3b415f8811ecbda5bb2c70" selected_score="0" unselected_score="0">
+                  <text><![CDATA[50 книг - это довольно большая выборка и в предположении причинно-следственной связи от привычек к успеху Вениамин использует абсолютно правильную выборку для своей задачи]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4ab91295486f30fed3694cf692866772" selected_score="0" unselected_score="0">
+                  <text><![CDATA[50 книг - это очень маленькая выборка и в предположении причинно-следственной связи от привычек к успеху Вениамин использует абсолютно правильную выборку для своей задачи]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="6a7baee5c74dd40402ae890f2d6bf5c5" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[На схеме причинно-следственные связи изображены стрелочками,  $$u_i$$ - случайная ошибка, $$y_i$$ - зависимая переменная, $$a_i$$, $$b_i$$, $$c_i$$, $$d_i$$ - потенциальные регрессоры или инструментальные переменные. Рассмотрим модель $$y_i=\beta_1 + \beta_2 b_i +\beta_3 c_i + u_i$$
+<br>
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/causality.png"; style="width:700px"; align = "center">
+<br>
+Выберите все верные утверждения]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="428d2bb8184028610778c354c1f6e85b" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Переменные $$a$$ и $$d$$ могут быть использованы как инструменты для эндогенных переменных $$b$$ и $$c$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9c83dda58cf74407edf6e8477ad2f205" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Переменная $$b$$ является эндогенной]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="21323d33f67b684e25c67a916ed1a10f" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Переменная $$с$$ является эндогенной]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4cf7a8718147413b345edc12968441f4" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Переменные $$d$$ и $$a$$ некоррелированы]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="6277a3a19f91c28fcc39b673848220eb" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Переменная $$d$$ является эндогенной]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="7aa8f6ac2156a47c1b647efedf891849" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Переменная $$a$$ является эндогенной]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b82d1814a64a7ff718bcdf090bc18f78" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Переменная $$b$$ может является инструментом для переменной $$c$$, а переменная $$d$$ - инструментом для переменной $$b$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ac7dbf4d699bfb28cca80e5f7fa89701" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Переменные $$a$$ и $$c$$ некоррелированы]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="27c11a26ca70338205123c171bc5126b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберите верные утверждения]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="d2f4d9fd8a58be1cd5a434b31aab55b8" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Чтобы проверить, коррелирована ли инструментальная переменная с эндогенным регрессором, можно просто посчитать выборочную корреляцию и проверить, близка ли она к нулю]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="2956c72ad618a45a942c15eb384688a2" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Коррелированность регрессоров между собой не означает наличия эндогенности]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="3a379e7a7387c5b27df1a7b268434b94" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Коррелированность регрессоров и зависимой переменной не означает наличия эндогенности]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c5a87546c9bcd5588ef6d71a7aa14abe" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Наличие корреляции между зависимой переменной и случайной ошибкой не означает наличия эндогенности]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="c8aec97052d87d8c8bb5777ddb8cb0c9" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Проблема эндогенности не касается логит и пробит-моделей, т.к. зависимая переменная принимает только значения 0 или 1.]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="8f80f0fc0a30eebb46091f479dc405f7" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Идеальная инструментальная переменная некоррелирована ни со случайной ошибкой, ни с эндогенным регрессором]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6d41dd4d44f399cd6cad5c2aaf05921c" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Чтобы проверить, коррелирована ли случайная ошибка с инструментом, можно просто посчитать выборочную корреляцию и посмотреть, близка ли она к нулю]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="648905f8e94f5140a1bc9daea7cd4c40" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Эндогенная переменная может быть инструментальной переменной сама для себя]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="721371a17789d79ca237287225c2d8ab" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Зависимость $$y_i = 4 + 6x_i - 2d_i + \varepsilon_i$$ является истинной, но у нас нет данных по $$d_i$$, поэтому мы оцениваем модель $$y_i = \beta_1 + \beta_2 x_i + u_i$$, $$Var(x_i) = Var(d_i) = 25, Var(\varepsilon_i) = 1, Cov(x_i, d_i) = -2$$, $$Cov(x_i, \varepsilon_i) = Cov(d_i, \varepsilon_i) = 0.$$<br>
+При этих условиях найдите, чему равна $$\hat{\beta}_2$$ при $$n \to \infty$$? <br>
+$$\textit{P.S. Округляйте до 2-х знаков после запятой}$$]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="f54c94b52d3739d590a74e1947b3141f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[6.15,6.17]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ba52342e06dbea31fc1c35aed09a49cf" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Зависимость $$y_i = 2 + 3x_i - 6d_i + \varepsilon_i$$ является истинной, но у нас нет данных по $$d_i$$, поэтому мы оцениваем модель $$y_i = \beta_1 + \beta_2 x_i + u_i$$, $$Var(x_i) = Var(d_i) = 16, Var(\varepsilon_i) = 1, Cov(x_i, d_i) = -4$$, $$Cov(x_i, \varepsilon_i) = Cov(d_i, \varepsilon_i) = 0.$$ <br>
+При этих условиях найдите, чему равна $$\hat{\beta}_2$$ при $$n \to \infty$$? <br>
+$$\textit{P.S. Округляйте до 1-ого знака после запятой}$$]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="be617057d4ab81da4057162e1a5d4969" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[4.4,4.6]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="91f278702583d4cb7b6282ddc30e3cae" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Зависимость $$y_i = 8 + 4x_i - 3d_i + \varepsilon_i$$ является истинной, но у нас нет данных по $$d_i$$, поэтому мы оцениваем модель $$y_i = \beta_1 + \beta_2 x_i + u_i$$, $$Var(x_i) = Var(d_i) = 9, Var(\varepsilon_i) = 1, Cov(x_i, d_i) = -8$$, $$Cov(x_i, \varepsilon_i) = Cov(d_i, \varepsilon_i) = 0.$$ <br>
+При этих условиях найдите, чему равна $$\hat{\beta}_2$$ при $$n \to \infty$$? <br>
+$$\textit{P.S. Округляйте до 2-х знаков после запятой}$$]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="79dde41626070844fb4d7978d59da740" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[6.66,6.68]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="a64ef077c4f79f60e23c8fc8f71e2e1a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Когда мы хотим оценить зависимость заработной платы человека от таких факторов, как образование и возраст, возникает вероятность эндогенности, так как заработная плата влияет на образование и образование влияет на заработную плату. Что может быть хорошим инструментом для образования?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="5a7846e6ea48d0134b808c65c78b8b98" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Образование матери]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c77df752766f3567fcd8f950e0c066fd" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Образование отца]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="5820234cb3a85a8c8be3e173200dbfdc" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Доход отца]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="c70c5c0faef29cb5c74a0f2dad04b32a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Возраст в квадрате]]></text>
+                  <explanation><![CDATA[Может быть нужен в основную регрессию, но это не инструмент для образования]]></explanation>
+                </option>
+                <option id="ceffb941f2ed208f46b5d9a251b431a3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Количество съеденных пироженых за неделю]]></text>
+                  <explanation><![CDATA[Это явно не в тему :)]]></explanation>
+                </option>
+                <option id="af8e4c03a6d9fceedaac219dc6e384fb" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Место получения паспорта]]></text>
+                  <explanation><![CDATA[Каково влияние место получения паспорта на образование?]]></explanation>
+                </option>
+                <option id="c758a3bd19787c99fd1d83effbe1fc7f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Национальность]]></text>
+                  <explanation><![CDATA[Как инструмент для образования будет работать плохо]]></explanation>
+                </option>
+                <option id="9dc25795853b21b7c72fbb7a1d1d70d7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Количество раз, сколько человек переезжал]]></text>
+                  <explanation><![CDATA[Как инструмент для образования будет работать плохо]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="10d068f6ea1d253c84352e21b15708df" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Как выглядит оценка, полученная с помощью метода инструментальных переменных?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="0b0e841cadc319329f387e5dd292b88a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} = \frac{sCov(z,y)}{sCov(z,x)}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="7f098878f306e785c11ef0a09aaa331e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} = \frac{sCov(x,y)}{sVar (x)}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="eefaab1acba15fdc339fcbe1e9c84d81" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} = \frac{sCov(x,y)}{sVar(y)}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="da26a55c88b5f631fb4d4b863175cd12" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} = \frac{sCov(z,y)}{sVar(x)}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="8dee584bc554fb42f74363911e67b7e0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} = \frac{sCov(z,y)}{sVar(z)}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e9620ad906850310b9d40b37b3b49c1c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} = \frac{sCov(z,y)}{sVar(y)}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b89d956f31321f2473037810618b9cc0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\hat{\beta} = \frac{sVar(z)}{sCov(z,y)}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="e85d7d8ad2bad28930739ec98a0fb66f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Нужно ли бороться с эндогенностью? Если да, то зачем?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="2598aec8cf538ece317d44c13eb1ecba" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Нет. Если модель используется для прогнозирования, то формы записи с эндогенностью возможно не нужны.]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="93c523bbdc7d73c221b19b13d107641e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Да. В некоторых случаях форма записи с эндогенностью легче интерпретируется]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="73f7d5bc447652594b7d07f83c4b8a63" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нет. Эндогенность --- самая лёгкая проблема, с которой вообще бороться не нужно]]></text>
+                  <explanation><![CDATA[Это самая страшная проблема, которая может быть]]></explanation>
+                </option>
+                <option id="47f7f35857f107a79855f9efb425317c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нет. При эндогенности оценки состоятельны.]]></text>
+                  <explanation><![CDATA[Они несостоятельны]]></explanation>
+                </option>
+                <option id="0c555305d4266bddc9bb82265fbbb1bd" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нет. При эндогенности оценки состоятельны и несмещены.]]></text>
+                  <explanation><![CDATA[Они несостоятельны и смещены]]></explanation>
+                </option>
+                <option id="6d76a9547d954fa924ac423947d8cc59" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Да. При эндогенности выполнены все свойства кроме состоятельности]]></text>
+                  <explanation><![CDATA[А несмещённость?]]></explanation>
+                </option>
+                <option id="5c6095d3cbec3007de59a8bf7305e553" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Да. При эндогенности выполнены все свойства кроме несмещённости]]></text>
+                  <explanation><![CDATA[А состоятельность?]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="645ce021ea5d0803e2e33a31a5588c24" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Подгрузите данные по бриллиантам из пакета ggplot2. C помощью какой команды можно отобрать случайным образом номера наблюдений так, чтобы мы случайным образом отобрали 80% наблюдений в нашей выборке? Отбор производите по переменной price. <br>]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="8ec85bd3acb6f673003925ae55e9705d" selected_score="1" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$price, p = 0.8, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="8acf2d6999c4ebdeda498a1cbfe79c5e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$price, p = 0.2, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="36cf221773aac30f13868ab486a8afde" selected_score="0" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$cut, p = 0.8, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9a1d5a90ba43d2be9f429c26666c7d32" selected_score="0" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$color, p = 0.2, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5c3fa759b5be4a559418b0b3e6f4ef2f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Подгрузите данные по бриллиантам из пакета ggplot2. C помощью какой команды можно отобрать случайным образом номера наблюдений так, чтобы мы случайным образом отобрали 20% наблюдений в нашей выборке? Отбор производите по переменной price. <br>]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="3e08e23b148526febc50ab6dafb0f52c" selected_score="1" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$price, p = 0.2, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="4c9c002e33fd74db42b05e855d085fb9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$price, p = 0.8, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="2c7493e4587d2f5e5d35569b8950b8db" selected_score="0" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$cut, p = 0.2, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="62767d6a966fe05feef7d8b4409ce869" selected_score="0" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$color, p = 0.8, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e6a68de4b5059215ac67558a5bbbd26f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Подгрузите данные по бриллиантам из пакета ggplot2. C помощью какой команды можно отобрать случайным образом номера наблюдений так, чтобы мы случайным образом отобрали 70% наблюдений в нашей выборке? Отбор производите по переменной price. <br>]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="4d98898867847e0704d524082fc66586" selected_score="1" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$price, p = 0.7, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="b3839ea93b87ce7c600bb0c6b0be1554" selected_score="0" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$price, p = 0.3, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c754b39cd31bf2c2d12036f9d04e3ff8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$cut, p = 0.7, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="85b106b3704fcb5e308a54c3591c63c6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[a <- createDataPartition(y = df$color, p = 0.3, list=FALSE)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="67d355497349d8757e1c5322fd372981" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Подключите пакеты `ggplot2` и `caret`. Мы будем работать со строенным набором данных `diamonds` из пакета `ggplot2`.
+<br>
+Разделите весь набор данных (h - это наши данные) на обучающую (80%) и тестовую (20%) части командами:
+<br> <br>
+set.seed(12345) <br>
+train_ind <- createDataPartition(h$price, p=0.8, list=FALSE) <br>
+h_train <- h[train_ind,] <br>
+h_test <- h[-train_ind,]
+<br> <br>
+Команда `set.seed(12345)` необходима для того, чтобы случайное разбиение выборки на обучающую и тестовую давало на разных компьютерах одинаковый результат, она задаёт на всех компьютерах одинаковое стартовое значение (зерно) генератора случайных чисел.
+<br> <br>
+По обучающей части оцените модель в которой логарифм цены линейно объясняется переменными $$log(carat)$$, $$log(depth)$$, $$log(table)$$ и $$clarity$$. Спрогнозируйте значения цены (именно для цены, а не логарифма) по тестовой части выборки. В ответ укажите сумму квадратов остатков, деленную на миллиард, по тестовой части выборки с точностью до целых.
+]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="525b6a823c91e1a80b369ac2a60e197e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[16,18]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="98fc15afa6616eb8557f6fe10379ce6b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[15999418333,17999418333]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="0ef5179284de238d3142a0a9c80af9d9" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Подключите пакеты `ggplot2` и `caret`. Мы будем работать со строенным набором данных `diamonds` из пакета `ggplot2`.
+<br>
+Разделите весь набор данных (h - это наши данные) на обучающую (80%) и тестовую (20%) части командами:
+<br> <br>
+set.seed(12345) <br>
+train_ind <- createDataPartition(h$price, p=0.8, list=FALSE) <br>
+h_train <- h[train_ind,] <br>
+h_test <- h[-train_ind,]
+<br> <br>
+Команда `set.seed(12345)` необходима для того, чтобы случайное разбиение выборки на обучающую и тестовую давало на разных компьютерах одинаковый результат, она задаёт на всех компьютерах одинаковое стартовое значение (зерно) генератора случайных чисел.
+<br> <br>
+По обучающей части оцените модель в которой логарифм цены линейно объясняется переменными $$log(carat)$$, $$log(table)$$ и $$clarity$$. Спрогнозируйте значения цены (именно для цены, а не логарифма) по тестовой части выборки. В ответ укажите сумму квадратов остатков, деленную на миллиард, по тестовой части выборки с точностью до целых.
+]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="c5334542a4aa2fcac9235d08694c0454" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[16,18]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="df05c9554b14e96eb5c7da679c7b373b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[16221144529,18221144529]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="49be4bc26fd0720e04d2925504989830" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Подключите пакеты `ggplot2` и `caret`. Мы будем работать со строенным набором данных `diamonds` из пакета `ggplot2`.
+<br>
+Разделите весь набор данных (h - это наши данные) на обучающую (80%) и тестовую (20%) части командами:
+<br> <br>
+set.seed(12345) <br>
+train_ind <- createDataPartition(h$price, p=0.8, list=FALSE) <br>
+h_train <- h[train_ind,] <br>
+h_test <- h[-train_ind,]
+<br> <br>
+Команда `set.seed(12345)` необходима для того, чтобы случайное разбиение выборки на обучающую и тестовую давало на разных компьютерах одинаковый результат, она задаёт на всех компьютерах одинаковое стартовое значение (зерно) генератора случайных чисел.
+<br> <br>
+По обучающей части оцените модель в которой логарифм цены линейно объясняется переменными $$log(carat)$$, $$log(depth)$$ и $$clarity$$. Спрогнозируйте значения цены (именно для цены, а не логарифма) по тестовой части выборки. В ответ укажите сумму квадратов остатков, деленную на миллиард, по тестовой части выборки с точностью до целых.
+]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="9d0b7f79e98306a874d8d9a249187bb3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[16,18]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ac59c2a84e7f8a47b439f75528a95e68" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[16181741107,18181741107]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="eef25aee78b054cde2d19e36ac5b3eef" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Поместите встроенный набор данных "CollegeDistance" по заработной плате и уровню образования в табличку "h" командами:
+<br> <br>
+data("CollegeDistance") <br>
+h <- CollegeDistance
+<br> <br>
+Мы предполагаем, что заработная плата, $$wage$$, линейно зависит от пола, $$gender$$, этнической группы, $$ethnicity$$, безработицы в регионе, $$unemp$$ и числа лет обучения, $$education$$ и способностей индивида. Способности ненаблюдаемы и коррелированы с числом лет обучения и некоррелированы с остальными регрессорами. Таким образом, получается, что переменная $$education$$ коррелирована с ошибкой, т.к. в ошибку входят ненаблюдаемые способности. Предположим, что близость жилья к колледжу, $$distance$$, коррелирована с количеством лет обучения, но не коррелирована со способностями, и потому может служить инструментальной переменной для количестве лет обучения.
+<br> <br>
+В рамках предполагаемой зависимости заработной платы оцените с помощью двухшагового МНК влияние лишнего года обучения, используя в качестве инструментов все переменные, некоррелированные со способностями ($$gender$$, $$ethnicity$$, $$unemp$$, $$distance$$). Ответ вводите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[ivreg(data=h, ....|...)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="ca2e80a9e1cdcdaef7fd58c27d273110" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.67,0.69]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="cae3d037ffc6bc4fc41e012447ab3833" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Поместите встроенный набор данных "CollegeDistance" по заработной плате и уровню образования в табличку "h" командами:
+<br> <br>
+data("CollegeDistance") <br>
+h <- CollegeDistance
+<br> <br>
+Мы предполагаем, что заработная плата, $$wage$$, линейно зависит от региона, $$region$$, пола, $$gender$$, этнической группы, $$ethnicity$$, безработицы в регионе, $$unemp$$, и числа лет обучения, $$education$$ и способностей индивида. Способности ненаблюдаемы и коррелированы с числом лет обучения и некоррелированы с остальными регрессорами. Таким образом, получается, что переменная $$education$$ коррелирована с ошибкой, т.к. в ошибку входят ненаблюдаемые способности. Предположим, что близость жилья к колледжу, $$distance$$, коррелирована с количеством лет обучения, но не коррелирована со способностями, и потому может служить инструментальной переменной для количестве лет обучения.
+<br> <br>
+В рамках предполагаемой зависимости заработной платы оцените с помощью двухшагового МНК влияние лишнего года обучения, используя в качестве инструментов все переменные, некоррелированные со способностями ($$region$$, $$gender$$, $$ethnicity$$, $$unemp$$, $$distance$$). Ответ вводите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[ivreg(data=h, ...|...)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="d0a54c94e05f5a74eef6af5a02b5a489" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.65,0.67]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="cec7b5be901074f9b4bd329f36857c4b" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Поместите встроенный набор данных "CollegeDistance" по заработной плате и уровню образования в табличку "h" командами:
+<br> <br>
+data("CollegeDistance") <br>
+h <- CollegeDistance
+<br> <br>
+Мы предполагаем, что заработная плата, $$wage$$, линейно зависит от региона, $$region$$, пола, $$gender$$, безработицы в регионе, $$unemp$$, и числа лет обучения, $$education$$ и способностей индивида. Способности ненаблюдаемы и коррелированы с числом лет обучения и некоррелированы с остальными регрессорами. Таким образом, получается, что переменная $$education$$ коррелирована с ошибкой, т.к. в ошибку входят ненаблюдаемые способности. Предположим, что близость жилья к колледжу, $$distance$$, коррелирована с количеством лет обучения, но не коррелирована со способностями, и потому может служить инструментальной переменной для количестве лет обучения.
+<br> <br>
+В рамках предполагаемой зависимости заработной платы оцените с помощью двухшагового МНК влияние лишнего года обучения, используя в качестве инструментов все переменные, некоррелированные со способностями ($$region$$, $$gender$$, $$unemp$$, $$distance$$). Ответ вводите с двумя знаками после запятой.]]></text>
+            <explanation><![CDATA[ivreg(data=h, ...|...)]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="6683903459c21267b27bbc6c65d62943" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.62,0.64]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+    </question_groups>
+  </data>
+</quiz>

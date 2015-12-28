@@ -459,7 +459,6 @@ TransformNumeric(q)
 
 # img tag 13.2, 12.2, 14.2 i/b mismatch 15.2, 16
 
-filename <- "~/Documents/coursera_metrics/tests/week_01_test_01.xml"
 
 # in our econometrics xml we have wrong <i><b>...</i></b> tags
 # correct them to <b><i>...</i></b>
@@ -475,8 +474,13 @@ CorrectIBtags <- function(filename) {
   writeLines(all, con = new_filename)
 }
 
+filename <- "~/Documents/coursera_metrics/tests/week_01_test_01.xml"
 CorrectIBtags(filename)
 
-
+folder <- "~/Documents/coursera_metrics/tests/"
+fnames <- list.files(folder, full.names = TRUE)
+for (filename in fnames) {
+  CorrectIBtags(filename)
+}
 
 

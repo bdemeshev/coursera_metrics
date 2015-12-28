@@ -1,0 +1,1847 @@
+<quiz>
+  <metadata>
+    <title><![CDATA[Тест 5: Гетероскедастичность и автокорреляция]]></title>
+    <open_time>2015-04-06 0000</open_time>
+    <soft_close_time>2015-04-20 2259</soft_close_time>
+    <hard_close_time>2015-04-27 2259</hard_close_time>
+    <duration>0</duration>
+    <retry_delay>0</retry_delay>
+    <maximum_submissions>3</maximum_submissions>
+    <modified_time>1429277754958</modified_time>
+    <is_ace_exam_flag>none</is_ace_exam_flag>
+    <authentication_required>1</authentication_required>
+    <parameters>
+      <show_explanations>
+        <question>before_soft_close_time</question>
+        <option>before_soft_close_time</option>
+        <score>before_soft_close_time</score>
+      </show_explanations>
+    </parameters>
+    <maximum_score>21</maximum_score>
+  </metadata>
+  <preamble><![CDATA[]]></preamble>
+  <data>
+    <question_groups>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="079a29be22cd4cef4546fed8a3a4863a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Условная гомоскедастичность - это:]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="ba0b57249b5f9acb7933cd1708acfcf5" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2 | X) = \sigma^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="3288781713a211fad2f5d5a7551907c3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2 | X) \ne const$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a2ce37fc02e5a59c0dc7d3150baa4b13" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2 ) = \sigma^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="182914a018dd9f9d8e78f47137bf7921" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2) \ne const$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="3ff2fb70067f72b57bf586efda94a302" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Условная гетероскедастичность - это:]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="93f68a43baaad94e346c9e87ba920743" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2 | X) \ne const$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="fb57f94fa4f42400e8a819da4095d231" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2 | X) = \sigma^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="767d5a9348412c546609a23eee2971cf" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2 ) = \sigma^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4c2aadc18e6011a1681ba87617741cb4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2) \ne const$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="82b42e9df3f7768173f389712d00f4ee" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Безусловная гетероскедастичность - это:]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="bc17fe34a74b5f1a0a6fcde669881dd0" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2) \ne const$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="18837a6b86931eb74b1b010a43ca4802" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2 | X) \ne const$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a563760ad2f4467cb36485c89076101b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2 | X) = \sigma^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="bbca2cf5709e9a493d6cbbbd42d3f1f4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$E(\varepsilon_i^2 ) = \sigma^2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="c80d8ebafa24edb4002c906b8d4b878f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какое из этих свойств теряется при наличии гетероскедастичности в данных для случая конечной выборки без предположения о нормальности $$\varepsilon$$?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="a9150611010f2172ca5d92db1ab5a35e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Эффективность оценок]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="51724067a8859fb027dcc5a98fbcc9ba" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Линейность по $$y$$]]></text>
+                  <explanation><![CDATA[Не теряется!]]></explanation>
+                </option>
+                <option id="fb7e3c3ed77a6552e4e090130bc94f12" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Условная несмещенность ($$E(\widehat{\beta} | X) = \beta$$)]]></text>
+                  <explanation><![CDATA[Не теряется!]]></explanation>
+                </option>
+                <option id="e609c30f57e38612bb9d8914c0c07f14" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нет верного ответа]]></text>
+                  <explanation><![CDATA[Он таки есть!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5be2e468ad00a8dbe8de78e2b3cf8988" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какое из этих свойств НЕ теряется при наличии гетероскедастичности в данных для случая конечной выборки при предположении о нормальности $$\varepsilon$$?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="2aaebcae539409e1e277e068574866fa" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Нет верного ответа]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="516677c6a278b48323d53d2c1a355b02" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$ \frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}$$]]></text>
+                  <explanation><![CDATA[Теряется!]]></explanation>
+                </option>
+                <option id="bb357e0ab9582baba3d83a5af684ecee" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$$]]></text>
+                  <explanation><![CDATA[Теряется!]]></explanation>
+                </option>
+                <option id="1a833d18bf1a3ce1583739f190ee3245" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$$]]></text>
+                  <explanation><![CDATA[Теряется!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="a1305d8eb24ae2869ab2e4c53e4124a5" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какое из этих свойств теряется при наличии гетероскедастичности в данных для асимптотического случая?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="776645a483e365f2d2c04babd9afcdbc" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="47d6a8247d5ec07e02bbca6e039ae019" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$ \hat{\beta} \to \beta\ $$]]></text>
+                  <explanation><![CDATA[Не теряется!]]></explanation>
+                </option>
+                <option id="39e49ae076cc7a5a9ab9f7914899a726" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$ \frac{RSS}{n-k} \to \sigma^2 $$]]></text>
+                  <explanation><![CDATA[Не теряется!]]></explanation>
+                </option>
+                <option id="c8cd9dba2f6fe0fe160d2a1274beefb9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Нет верного ответа]]></text>
+                  <explanation><![CDATA[Он таки есть!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="a966e18ac55913e61aa931f7defa60be" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какой из этих величин можно доверять в присутствии гетероскедастичности? ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="2ec1d132c1c6331f2b0fd40d1ed04a05" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Оценкам $$\hat {\beta}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4c79ee01de5544996677a3fc884e0156" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Прогнозам, полученным по модели (точечным оценкам)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="9aef6f4e96847b6d506911294d30f256" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Стандартным ошибкам $$se(\hat{\beta})$$]]></text>
+                  <explanation><![CDATA[Они несостоятельны, им нельзя доверять!]]></explanation>
+                </option>
+                <option id="f5d30403846e08e76b60c412d1006758" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Доверительным интервалам для коэффициентов]]></text>
+                  <explanation><![CDATA[Стандартные ошибки несостоятельны, поэтому доверительным интервалам нельзя доверять!]]></explanation>
+                </option>
+                <option id="c10a5f96cd035984d0720011239debd0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[p-значениям в тестах на значимость отдельных коэффициентов]]></text>
+                  <explanation><![CDATA[Стандартные ошибки несостоятельны, поэтому $$p-value$$ нельзя доверять!]]></explanation>
+                </option>
+                <option id="f1e47167acbaaa4db09ccf05e58729fe" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Тестам на значимость группы коэффициентов]]></text>
+                  <explanation><![CDATA[Стандартные ошибки несостоятельны, поэтому тестам нельзя доверять!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="81c794150f24a91e93b44e21478e7aa7" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Как выглядит устойчивая к гетероскедастичности оценка ковариационной матрицы $$\widehat{Var}_{HC}(\hat{\beta}|X)$$?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="9904b4b5b1295e74423623e37857d554" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$(X'X)^{-1}X'\hat{\Omega}X(X'X)^{-1}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="530457d2dea4c81756572c51284143dd" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$(X'X)^{-1}\hat{\Omega}(X'X)^{-1}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="7e946be4cde8175b3cb2b029871c8a4d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$(X'X)^{-1}X'X(X'X)^{-1}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="2a61b22ab6dbb82be1c99bc2c4188d33" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$(X'X)^{-1}X'\hat{\Omega}(X'X)^{-1}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="af23b101b6404d3338819f2e10e3fa57" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что используется в качестве оценки $$\hat{\Omega}$$ для построения робастных стандартных ошибок в версии Уайта (1980, HC0)?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="e037aadd6133bb262c73afd148160997" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$diag( \hat{\varepsilon}_1^2, \ldots, \hat{\varepsilon}_n^2 )$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="dd054a9b80897c5a6b4295d54237e42e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \frac{\hat{\varepsilon}_n^2}{(1-h_{nn})^2} \right)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="677ad47560f0200921f3964abecd416d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$diag( \hat{\varepsilon}_1, \ldots, \hat{\varepsilon}_n )$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="cb5244ecf4c492478c41c9692af64d71" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})}, \ldots, \frac{\hat{\varepsilon}_n^2}{(1-h_{nn})} \right)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="4886b3b21f05768f04e6e0b60ff44f5d" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что используется в качестве оценки $$\hat{\Omega}$$ для построения робастных стандартных ошибок в современной версии (HC3)?]]></text>
+            <explanation><![CDATA[Вспомните лекцию!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="6be1bdb8aa4c28cfcd88c6cd5e786e4b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \frac{\hat{\varepsilon}_n^2}{(1-h_{nn})^2} \right)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="38c023df6838e6da8415be59c34e5dee" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$diag( \hat{\varepsilon}_1^2, \ldots, \hat{\varepsilon}_n^2 )$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="8e9a74c4ab1308d2ea4e73c7bf0fbfbb" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$diag( \hat{\varepsilon}_1, \ldots, \hat{\varepsilon}_n )$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="797fe8481ce20107d08a78f9bec75621" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})}, \ldots, \frac{\hat{\varepsilon}_n^2}{(1-h_{nn})} \right)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="144c5c047141e3bd217895dd321a9bd7" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого нужно сделать при проведении теста Уайта? ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="d9ba1bdcc1d28e8e99baac336615b727" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Оценить исходную модель по всем данным]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6c4acd23371ae57472a4af281ae22b01" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Оценить вспомогательную модель: $$ \hat{\varepsilon}^2_i = \gamma_1 + \gamma_2 z_{i2} + \ldots + \gamma_{i,k} z_{im}+ u_i $$, где $$z_{i2}, \ldots, z_{im}$$ - факторы, определяющие форму гетероскедастичности (исходные регрессоры, их квадраты, перекрестные произведения, и т.д.)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0f2b0eccb8824b0208d75941aa038193" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Использовать статистику $$LM=nR^2_{aux}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="73b6959486ea4b5e880fdbd24e7f8396" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Выкинуть часть наблюдений (отобранную по какому-то критерию)]]></text>
+                  <explanation><![CDATA[Это тест Голдфельда-Квандта!]]></explanation>
+                </option>
+                <option id="f7ea206fc42269e9c40a010762d53d08" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Оценить исходную модель по разным наборам данных]]></text>
+                  <explanation><![CDATA[Это тест Голдфельда-Квандта!]]></explanation>
+                </option>
+                <option id="30fe0983111f7ade6fc67ffd3885d6aa" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Использовать статистику $$ F=\frac{RSS_1/(n_1-k)}{RSS_2/(n_2-k)}$$]]></text>
+                  <explanation><![CDATA[Это тест Голдфельда-Квандта!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="adaa765105624a4d0be78bf72d512abf" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что из этого нужно сделать при проведении теста Голдфельда-Квандта? ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="e0ea17e09b9449cf2ba83033c82b4cec" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Выкинуть часть наблюдений (отобранную по какому-то критерию)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9d30cb8e87ed20648f0fcb70d55edfc1" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Оценить исходную модель по разным наборам данных]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="13e7289a5fb87474024cb1430a54c4cf" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Использовать статистику $$ F=\frac{RSS_1/(n_1-k)}{RSS_2/(n_2-k)}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="06ff0c7eb0b508a1a6c4f72b78be9044" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Оценить исходную модель по всем данным]]></text>
+                  <explanation><![CDATA[Это тест Уайта!]]></explanation>
+                </option>
+                <option id="053287f2ec6c51086117e5c1302df4bc" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Оценить вспомогательную модель: $$ \hat{\varepsilon}^2_i = \gamma_1 + \gamma_2 z_{i2} + \ldots + \gamma_{i,k} z_{im}+ u_i $$, где $$z_{i2}, \ldots, z_{im}$$ - факторы, определяющие форму гетероскедастичности (исходные регрессоры, их квадраты, перекрестные произведения, и т.д.)]]></text>
+                  <explanation><![CDATA[Это тест Уайта!]]></explanation>
+                </option>
+                <option id="d90e0ae52d0dce2b9ec1da04513f1fe5" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Использовать статистику $$LM=nR^2_{aux}$$]]></text>
+                  <explanation><![CDATA[Это тест Уайта!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="9fa5ec9793d280f1203f116e94049ad7" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[На каком из этих графиков явно видна гетероскедастичность (везде по горизонтальной оси откладывается один из регрессоров, по вертикальной - квадрат остатка)? ]]></text>
+            <explanation><![CDATA[Гетероскедастичность - это зависимость разброса остатков от переменной. На каком из графиков разброс меняется?]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="0b32bfa686c940ad4793670e81271e99" selected_score="1" unselected_score="0">
+                  <text><![CDATA[<Img src="https://d396qusza40orc.cloudfront.net/econometrics/hsk1.jpeg" style="width:400px"></a>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="302e6232efc0d4a60c395b37d3ea133b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[<img src="https://d396qusza40orc.cloudfront.net/econometrics/hsk2.jpeg" style="width:400px"></a>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="729af964fedd473fd605fc04d687a93b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[<img src="https://d396qusza40orc.cloudfront.net/econometrics/hsk_n1.jpeg" style="width:400px"></a>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c31fc20695b3b1d19029e411eb92b50c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[<img src="https://d396qusza40orc.cloudfront.net/econometrics/hsk_n2.jpeg" style="width:400px"></a>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6cbd8e31e200ea40a520606e2a7c8a80" selected_score="0" unselected_score="0">
+                  <text><![CDATA[<img src="https://d396qusza40orc.cloudfront.net/econometrics/hsk_n3.jpeg" style="width:400px"></a>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="04764a8cfe3d3a99e75098017fa7aae6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[<img src="https://d396qusza40orc.cloudfront.net/econometrics/hsk_n4.jpeg" style="width:400px"></a>]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="875ddc3911cf10d59ac39bbc1e4ea697" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В каком из этих случаев может возникнуть автокорреляция?]]></text>
+            <explanation><![CDATA[Автокорреляция возникает в случаев временных рядов и пространственных данных!]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="f49e4e03e632a7f6c544b41472ac9c73" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Моделирование квартальных данных по ВВП]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b6cd99795e654db3b3afa42cd0493be6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Моделирование показателей развития регионов России]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="921f4f2bf91f6f996b3aa19cc8fbb07f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Моделирование доходов жителей одного дома]]></text>
+                  <explanation><![CDATA[Здесь нет ни времени, ни географии (считать, что если жители 11 этажа зарабатывают много, то и жители 12 и 10 тоже должны иметь большие доходы - довольно странно)]]></explanation>
+                </option>
+                <option id="cc0a3782a01da158cf931a042dfe96b4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Моделирование цены бриллиантов]]></text>
+                  <explanation><![CDATA[Здесь нет ни времени, ни географии ]]></explanation>
+                </option>
+                <option id="0daed98143cad8f632ca8fa8bd650074" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Моделирование длины тормозного пути автомобиля]]></text>
+                  <explanation><![CDATA[Здесь нет ни времени, ни географии ]]></explanation>
+                </option>
+                <option id="f4ebe4fdcf6d47422809feaa05ef936e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Моделирование эффективности лекарства (проводимое следующим образом: берут 2 группы людей, одним дают плацебо, другим - лекарство, и через, к примеру, месяц (один раз, а не каждый месяц в течение длительного времени), смотрят, значимы ли различия в самочувствии людей этих двух групп и от чего они зависят)]]></text>
+                  <explanation><![CDATA[Здесь нет ни времени (тот месяц, что есть в условии, не в счёт, потому что наблюдаете именно за эффективностью лекарства Вы только 1 раз), ни географии ]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="58280ff9dcf23496160c47c61500bb07" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Каким из этих уравнений описывается автокорреляция первого порядка?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="b9b3262c420b3752c4db97e933513dd3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho \varepsilon_{t-1}+u_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="3b301466945167609685e06862fe436a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_1 \varepsilon_{t-1}+\rho_2 \varepsilon_{t-2}+u_t$$]]></text>
+                  <explanation><![CDATA[Это не первый порядок!]]></explanation>
+                </option>
+                <option id="91856e7a2a19f22a3c40b5ddf526c1d9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_1 \varepsilon_{t-2}+u_t$$]]></text>
+                  <explanation><![CDATA[Это не первый порядок!]]></explanation>
+                </option>
+                <option id="837c4f69cb334938e078fa3dd30db83f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_1 x_{t-1}+u_t$$]]></text>
+                  <explanation><![CDATA[Это не автокорреляция!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="25fec10e6fd9e2b841dad0d272f8e949" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Каким из этих уравнений описывается автокорреляция второго порядка?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="2a1db7683337b085b6145f2d5744ea64" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_1 \varepsilon_{t-1}+\rho_2 \varepsilon_{t-2}+u_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="42bcf9bef6a167f38a2c905d8130b58c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_1 \varepsilon_{t-1}+u_t$$]]></text>
+                  <explanation><![CDATA[Это не второй порядок!]]></explanation>
+                </option>
+                <option id="80d1dbbc65357dcf1af1bdbe03309043" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_2 x_{t-2}+u_t$$]]></text>
+                  <explanation><![CDATA[Это не автокорреляция!]]></explanation>
+                </option>
+                <option id="2c3243edb32b4d8cda7935c150ec0647" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_1 x_{t-1}+\rho_2 x_{t-2}+u_t$$]]></text>
+                  <explanation><![CDATA[Это не автокорреляция!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e7053f216194eb832b4642ca371ad02f" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Каким из этих уравнений НЕ описывается автокорреляция?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="d32cd9749b87d64c87a767573cf816d3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_1 x_{t-1}+u_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="41c681dbb38abadd384fc38422195d39" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_1 \varepsilon_{t-1}+u_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ed405a9453b441bee1462f27dd0a34a3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_1 \varepsilon_{t-1}+\rho_2 \varepsilon_{t-2}+u_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="39a63a35697ea660d111e861738f22b3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$\varepsilon_{t}=\rho_1 \varepsilon_{t-3}+u_t$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="392e8ce373e501074d1b7e99b8d052fa" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какие из этих свойств можно потерять из-за автокорреляции?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="67e53507755f77305bdf5ea76a7aedaf" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Эффективность оценок]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="52b921e8821ac63d20d2735450bf357a" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Асимптотическую нормальность оценок $$\hat{\beta}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1b2f8aaa8f6c7d7257f3951250e669e0" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Возможность использовать F-статистику для проверки гипотезы о совместной значимости группы коэффициентов]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="1f60d12b627ed94365f781e5f7856a11" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Линейность по $$y$$]]></text>
+                  <explanation><![CDATA[Это свойство сохраняется!]]></explanation>
+                </option>
+                <option id="6a145c80b60a45aa688ef5a0567e8fa1" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Условная несмещенность, $$E(\hat{\beta}|X)=\beta$$]]></text>
+                  <explanation><![CDATA[Это свойство сохраняется!]]></explanation>
+                </option>
+                <option id="b1445b741880c96538036078bb0bc3ca" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[$$\hat{\beta} \to \beta$$ в асимптотике]]></text>
+                  <explanation><![CDATA[Это свойство сохраняется!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="dd5399a0044f66da66b64e289f070292" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберите верное утверждение]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="1d5d22e9875900d692abcc2af39eb995" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Стандартные ошибки в форме Нью-Веста имеют вид $$\hat{\Phi} = \sum_{j=-k}^k \frac{k-|j|}{k} \left(  \sum_t \hat{\varepsilon}_t\hat{\varepsilon}_{t+j} x_{t\,\cdot}'x_{t+j\,\cdot} \right)$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="11ba226ee9008ca54f015ca8545b0140" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Стандартные ошибки в форме Нью-Веста имеют вид $$\hat{\Phi} = \sum_{j=0}^k \frac{k-|j|}{k} \left(  \sum_t \hat{\varepsilon}_t\hat{\varepsilon}_{t+j} x_{t\,\cdot}'x_{t+j\,\cdot} \right)$$]]></text>
+                  <explanation><![CDATA[Не такую!]]></explanation>
+                </option>
+                <option id="a166795f3fcf39dd415a5e0773850e9a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Робастные стандартные ошибки по-прежнему не позволяют проверять никакие гипотезы]]></text>
+                  <explanation><![CDATA[Позволяют! С использованием новых стандартных ошибок]]></explanation>
+                </option>
+                <option id="9969596bc6ead72f7b07b77ee3648f50" selected_score="0" unselected_score="0">
+                  <text><![CDATA[При использовании робастных стандартных ошибок мы получаем новые оценки $$\hat{\beta}$$, которые позволяют проверять гипотезы вида: $$\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$$]]></text>
+                  <explanation><![CDATA[Такие гипотезы - не позволяют]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="b4567e4ebebda51321ca20f39229c9af" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберите верное утверждение]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="5007600d738f6aec18d03cdf6c05c6a9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Тест Дарбина-Уотсона проверяет автокорреляцию только первого порядка]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="9d91180bd4e0cfc6b51be8f9f55a6f13" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Тест Дарбина-Уотсона проверяет автокорреляцию произвольного порядка]]></text>
+                  <explanation><![CDATA[Не произвольного!]]></explanation>
+                </option>
+                <option id="9e582981e4432109df18ba324ef92fe4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Статистика Дарбина-Уотсона имеет вид $$DW=\frac{\sum_{i=2}^n(\hat{\varepsilon}_i-\hat{\varepsilon}_{i-1})^2}{\sum_{i=2}^n \hat{\varepsilon}_i^2}$$]]></text>
+                  <explanation><![CDATA[Немного не такой!]]></explanation>
+                </option>
+                <option id="e5c6f0e695d954a1712d43c1c4678069" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$DW\approx 0$$ означает отрицательную автокорреляцию]]></text>
+                  <explanation><![CDATA[Положительную!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="bd1a5e7b8e01c814c321c60d7b0f91f3" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Выберите НЕверное утверждение]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="394773ce71658357b7a958796345c0b0" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Тест Бройша-Годфри проверяет автокорреляцию только первого порядка]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="e2e17511ef25d8cdb4b7478a547cf36f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Тест Бройша-Годфри проверяет автокорреляцию произвольного порядка]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="44018051607c4fa66cb4e3009880aef7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Тест Бройша-Годфри требует построения вспомогательной регрессии $$\hat{\varepsilon}_t$$ на
+  исходные регрессоры, $$\hat{\varepsilon}_{t-1}$$,
+  $$\hat{\varepsilon}_{t-2}$$, $$\ldots{}$$, $$\hat{\varepsilon}_{t-p}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0ee3511b6ef20bfb28d9d692b3be5517" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Статистика в тесте Бройша-Годфри имеет вид $$BG=(n-p)R^2_{aux}$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[<b><font color = "red">
+Для выполнения следующих 5 заданий Вам понадобится набор данных Griliches из пакета Ecdat. Здесь содержатся данные по заработной плате и ряду других показателей для 758 человек (США, 1980 год).
+Помимо этого, Вам могут понадобиться такие пакеты, как sandwich, lmtest, car, dplyr, broom и ggplot2.
+</b>]]></preamble>
+        <question id="eb9d88b98b339dbfa68e4528f53e09cf" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Построим самую простую модель зависимости зарплаты (все показатели будем рассматривать для 1980 года, поэтому возьмём переменную <b>lw80</b>) от возраста (<b>age80</b>), коэффициента интеллекта (<b>iq</b>), образования (<b>school80</b>, переменная посчитана в годах, преобразовывать её не надо), и опыта работы (<b>expr80</b>). <br><br>
+
+Оцените ковариационную матрицу коэффициентов регрессии. В ответ введите ковариацию между <b>iq</b> и <b>age80</b>. <br><br>
+
+<i>Примечание: обратите внимание, что R выводит очень маленькие числа в формате 1.234567e-08, ответ нужно ввести в таком же формате!</i>]]></text>
+            <explanation><![CDATA[Ковариационная матрица оценивается командой vcov(model), где model - объект типа lm, полученный соответствующей командой]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="5cfc38429862031f21c567c70bed740b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[5.90e-07,5.99e-07]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="d8842bfa2176ab026a9987951fe9c6d5" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Построим самую простую модель зависимости зарплаты (все показатели будем рассматривать для 1980 года, поэтому возьмём переменную <b>lw80</b>) от возраста (<b>age80</b>), коэффициента интеллекта (<b>iq</b>), образования (<b>school80</b>, переменная посчитана в годах, преобразовывать её не надо), и опыта работы (<b>expr80</b>). <br><br>
+
+Оцените ковариационную матрицу коэффициентов регрессии. В ответ введите ковариацию между <b>iq</b> и <b>school80</b>. <br><br>
+
+<i>Примечание: обратите внимание, что R выводит очень маленькие числа в формате 1.234567e-08, ответ нужно ввести в таком же формате!</i>]]></text>
+            <explanation><![CDATA[Ковариационная матрица оценивается командой vcov(model), где model - объект типа lm, полученный соответствующей командой]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="346d93d8c1f641aa92727b685f64f826" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-4.7e-06,-4.6e-06]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ed79ff8a684fb3690f06ed9e5f55eceb" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Построим самую простую модель зависимости зарплаты (все показатели будем рассматривать для 1980 года, поэтому возьмём переменную <b>lw80</b>) от возраста (<b>age80</b>), коэффициента интеллекта (<b>iq</b>), образования (<b>school80</b>, переменная посчитана в годах, преобразовывать её не надо), и опыта работы (<b>expr80</b>). <br><br>
+
+Оцените ковариационную матрицу коэффициентов регрессии. В ответ введите ковариацию между <b>iq</b> и <b>expr80</b>. <br><br>
+
+<i>Примечание: обратите внимание, что R выводит очень маленькие числа в формате 1.234567e-08, ответ нужно ввести в таком же формате!</i>]]></text>
+            <explanation><![CDATA[Ковариационная матрица оценивается командой vcov(model), где model - объект типа lm, полученный соответствующей командой]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="4604ee7a33147e83b218ece1e75e9165" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[-2.7e-07,-2.6e-07]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b86d738d1a662d2ccd67a1f40e14e768" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Построим самую простую модель зависимости зарплаты (все показатели будем рассматривать для 1980 года, поэтому возьмём переменную <b>lw80</b>) от возраста (<b>age80</b>), коэффициента интеллекта (<b>iq</b>), образования (<b>school80</b>, переменная посчитана в годах, преобразовывать её не надо), и опыта работы (<b>expr80</b>). <br><br>
+
+Оцените ковариационную матрицу коэффициентов регрессии, устойчивую к гетероскедастичности, типа HC3. Сравните с полученной на предыдущем шаге.
+В ответ введите модуль изменения ковариации между <b>iq</b> и <b>age80</b> (ковариация в обычной матрице минус ковариация в устойчивой к гетероскедастичности матрице, и всё это по модулю).
+<br><br>
+
+<i>Примечание: обратите внимание, что R выводит очень маленькие числа в формате 1.234567e-08, ответ нужно ввести в таком же формате!</i>]]></text>
+            <explanation><![CDATA[Устойчивая к гетероскедастичности матрица оценивается командой vcovHC(model, type = "HC3")
+]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="7e6b7579e21c2e72de2e454de1b6f523" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[1.2e-07,1.3e-07]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="3aaae2e56b26060ef549eb747e8aa288" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Построим самую простую модель зависимости зарплаты (все показатели будем рассматривать для 1980 года, поэтому возьмём переменную <b>lw80</b>) от возраста (<b>age80</b>), коэффициента интеллекта (<b>iq</b>), образования (<b>school80</b>, переменная посчитана в годах, преобразовывать её не надо), и опыта работы (<b>expr80</b>). <br><br>
+
+Оцените ковариационную матрицу коэффициентов регрессии, устойчивую к гетероскедастичности, типа HC3. Сравните с полученной на предыдущем шаге.
+В ответ введите модуль изменения ковариации между <b>iq</b> и <b>school80</b> (ковариация в обычной матрице минус ковариация в устойчивой к гетероскедастичности матрице, и всё это по модулю).
+<br><br>
+
+<i>Примечание: обратите внимание, что R выводит очень маленькие числа в формате 1.234567e-08, ответ нужно ввести в таком же формате!</i>]]></text>
+            <explanation><![CDATA[Устойчивая к гетероскедастичности матрица оценивается командой vcovHC(model, type = "HC3")]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="2be88f35704901518da45dec7c477cd5" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[5.1e-07,5.2e-07]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="365d58a61893756a97d013135639b5e9" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Построим самую простую модель зависимости зарплаты (все показатели будем рассматривать для 1980 года, поэтому возьмём переменную <b>lw80</b>) от возраста (<b>age80</b>), коэффициента интеллекта (<b>iq</b>), образования (<b>school80</b>, переменная посчитана в годах, преобразовывать её не надо), и опыта работы (<b>expr80</b>). <br><br>
+
+Оцените ковариационную матрицу коэффициентов регрессии, устойчивую к гетероскедастичности, типа HC3. Сравните с полученной на предыдущем шаге.
+В ответ введите модуль изменения ковариации между <b>iq</b> и <b>expr80</b> (ковариация в обычной матрице минус ковариация в устойчивой к гетероскедастичности матрице, и всё это по модулю).
+<br><br>
+
+<i>Примечание: обратите внимание, что R выводит очень маленькие числа в формате 1.234567e-08, ответ нужно ввести в таком же формате!</i>]]></text>
+            <explanation><![CDATA[Устойчивая к гетероскедастичности матрица оценивается командой vcovHC(model, type = "HC3")]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="ba0e20787a9ed165da0952608cad1241" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[4.5e-08,4.51e-08]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="29cd4672788c6c99870788fb5d3f333e" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Попробуем сравнить разные оценки ковариационной матрицы. При каком из этих типов оценка стандартной ошибки при <b>age80</b> будет самой большой?]]></text>
+            <explanation><![CDATA[Посмотреть нужные нам оценки можно командой coeftest(model,vcov. = vcovHC(model,type="HC0")), где в type вместо HC0 можно вводить тот тип, который Вы изучаете. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="f866ebe7ec8e5a0462fb31e8883b736a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[HC3]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="fad80d6d2b4f23a484c651aba957bdef" selected_score="0" unselected_score="0">
+                  <text><![CDATA[HC0]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="425c6e5503cb0c3753b9ff3506a1103f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[HC1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="91eea3a35949d359df3b46108a71a588" selected_score="0" unselected_score="0">
+                  <text><![CDATA[HC2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="0d2a12b1de728f94f4336a5733da9e8d" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Попробуем сравнить разные оценки ковариационной матрицы. При каком из этих типов оценка стандартной ошибки при <b>school80</b> будет самой маленькой?]]></text>
+            <explanation><![CDATA[Посмотреть нужные нам оценки можно командой coeftest(model,vcov. = vcovHC(model,type="HC0")), где в type вместо HC0 можно вводить тот тип, который Вы изучаете. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="dedcbb1e991b5ca844af00df3f5b53ac" selected_score="1" unselected_score="0">
+                  <text><![CDATA[HC0]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="52140e33cea0c184931d0567a3460860" selected_score="0" unselected_score="0">
+                  <text><![CDATA[HC2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c642f2ea819ce7d8b4c4fc9a80b8b72d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[HC4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="28bdc05f7fd157395e3241c9f480dca2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[HC5]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c17d00978b3a7b8d2ce9a67197a77fff" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Попробуем сравнить разные оценки ковариационной матрицы. При каком из этих типов оценка стандартной ошибки при <b>expr80</b> будет самой большой?]]></text>
+            <explanation><![CDATA[Посмотреть нужные нам оценки можно командой coeftest(model,vcov. = vcovHC(model,type="HC0")), где в type вместо HC0 можно вводить тот тип, который Вы изучаете. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="d823390414a9fd8f43677b9b6d5b5896" selected_score="1" unselected_score="0">
+                  <text><![CDATA[HC4m]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="d5a7df45ed2f57da791b26e0ded8a5ed" selected_score="0" unselected_score="0">
+                  <text><![CDATA[HC5]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9333acfde4c6dac9190d8af31f3c9162" selected_score="0" unselected_score="0">
+                  <text><![CDATA[HC3]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="166cf980daafe7723ccea2a88c32359d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[HC1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="09f8d165a1b65f3c0d061b0ae1bdf927" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Проверим наличие гетероскедастичности в нашей модели при помощи теста Бройша-Пагана. Предположим, что разброс остатков зависит только от возраста (от <b>age80</b>, только от него и в первой степени, без полиномов). Какое значение тестовой статистики мы получим?]]></text>
+            <explanation><![CDATA[Тест Бройша-Пагана проводится командой bptest. Не забудьте прописать опцию <b>varformula = ~ ВашаПеременная</b>, которая задаёт предполагаемую модель для остатков. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="f2763d330b9e3076c831e123d5491a2a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[5.478]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="70c3ee408988c956c8cc3c2d43bd4053" selected_score="0" unselected_score="0">
+                  <text><![CDATA[8.0968]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="00f23e9f18d324d18c6a4779b7074dd3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[10.1422]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="5d915be6f59f21d93b70bb13130832e0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[9.2505]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="cf629b8fde668d9a03883250ed625177" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Проверим наличие гетероскедастичности в нашей модели при помощи теста Бройша-Пагана. Предположим, что разброс остатков зависит только от коэффициента интеллекта (от <b>iq</b>, только от него и в первой степени, без полиномов). Какое значение тестовой статистики мы получим?]]></text>
+            <explanation><![CDATA[Тест Бройша-Пагана проводится командой bptest. Не забудьте прописать опцию <b>varformula = ~ ВашаПеременная</b>, которая задаёт предполагаемую модель для остатков. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="304cebeb63dc25960fa48f46ede499b9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.2242]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="4962efbb3b8202bfdb0b3e89d303ba93" selected_score="0" unselected_score="0">
+                  <text><![CDATA[10.1422]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c343db866e74b4c1f0c02859d14317ec" selected_score="0" unselected_score="0">
+                  <text><![CDATA[8.0968]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0eccca60d077f9e732bff89e3f970c38" selected_score="0" unselected_score="0">
+                  <text><![CDATA[5.478]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="614ca3197f020f57ac9fce76597b3166" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Проверим наличие гетероскедастичности в нашей модели при помощи теста Бройша-Пагана. Предположим, что разброс остатков зависит только от опыта работы (от <b>expr80</b>, только от него и в первой степени, без полиномов). Какое значение тестовой статистики мы получим?]]></text>
+            <explanation><![CDATA[Тест Бройша-Пагана проводится командой bptest. Не забудьте прописать опцию <b>varformula = ~ ВашаПеременная</b>, которая задаёт предполагаемую модель для остатков. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="a50d4a641360afa05bb63b78601e486b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[8.0968]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="698d0bc014808c2a6cf6c04a6731bc48" selected_score="0" unselected_score="0">
+                  <text><![CDATA[10.1422]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="1f05494004fe60384cf24131bd15685e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[5.478]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="70837901dc5c097f723511df8a6217a3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[9.2505]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="71a5b0929654cec1a8b8c9fefa22884b" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Проверим наличие гетероскедастичности в нашей модели при помощи теста Голдфельда-Квандта. Предположим, что разброс остатков зависит от возраста (<b>age80</b>), выкидывать будем 20% наблюдений. Какое значение тестовой статистики мы получим?]]></text>
+            <explanation><![CDATA[Тест Голдфельда-Квандта проводится при помощи команды gqtest. Опции: order.by = ~ <b>ПеременнаяПоКоторойУпорядочиваем</b>, fraction = <b>ДоляВыкинутыхНаблюдений</b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="532fe82cfe0f0adf6999c3523677a491" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.6,0.7]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ff921437401b6dee8292193733b8fc8d" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Проверим наличие гетероскедастичности в нашей модели при помощи теста Голдфельда-Квандта. Предположим, что разброс остатков зависит от коэффициента интеллекта(<b>iq</b>), выкидывать будем 20% наблюдений. Какое значение тестовой статистики мы получим?]]></text>
+            <explanation><![CDATA[Тест Голдфельда-Квандта проводится при помощи команды gqtest. Опции: order.by = ~ <b>ПеременнаяПоКоторойУпорядочиваем</b>, fraction = <b>ДоляВыкинутыхНаблюдений</b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="04a996c50908254dd6e193fcf407f606" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[1,1.02]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="968d7ae69eddf155442d051c18db051b" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Проверим наличие гетероскедастичности в нашей модели при помощи теста Голдфельда-Квандта. Предположим, что разброс остатков зависит от опыта работы (<b>expr80</b>), выкидывать будем 20% наблюдений. Какое значение тестовой статистики мы получим?]]></text>
+            <explanation><![CDATA[Тест Голдфельда-Квандта проводится при помощи команды gqtest. Опции: order.by = ~ <b>ПеременнаяПоКоторойУпорядочиваем</b>, fraction = <b>ДоляВыкинутыхНаблюдений</b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="a8978c58fbe7c1532067c5df812cfcce" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.6,0.7]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[<b><font color = "red">
+Для выполнения следующих 5 заданий Вам понадобятся пакеты, использованные в лекциях недели 6, а также набор данных Solow (классический набор данных, где содержатся годовые данные по выпуску, объёму капитала и уровню технологий в США в 1909 - 1949 гг.) из пакета Ecdat.
+</b>]]></preamble>
+        <question id="018055499ce0cfdf8c6142be8a06bddb" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель зависимости объёма выпуска (<b>q</b>) от капитала (<b>k</b>) и технологий (<b>A</b>). Оцените обычную ковариационную матрицу и матрицу, устойчивую к гетероскедастичности и автокорреляции. <br><br>
+
+Насколько изменилась оценка дисперсии константы? В ответ введите модуль разности оценок для обычной и устойчивой к гетероскедастичности и автокорреляции матриц. <br><br>
+
+<i>Примечание: обратите внимание, что R выводит очень маленькие числа в формате 1.234567e-08, ответ нужно ввести в таком же формате!</i>]]></text>
+            <explanation><![CDATA[Обычная ковариационная матрица оценивается командой vcov, устойчивая к гетероскедастичности и автокорреляции - командой vcovHAC]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="1cb44180ab8907264ad6a0e323dd31d4" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[4.4e-06,4.5e-06]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ab328516da8e8d4a4d521957264fcced" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель зависимости объёма выпуска (<b>q</b>) от капитала (<b>k</b>) и технологий (<b>A</b>). Оцените обычную ковариационную матрицу и матрицу, устойчивую к гетероскедастичности и автокорреляции. <br><br>
+
+Насколько изменилась оценка дисперсии коэффициента при капитале (<b>k</b>)? В ответ введите модуль разности оценок для обычной и устойчивой к гетероскедастичности и автокорреляции матриц. <br><br>
+
+<i>Примечание: обратите внимание, что R выводит очень маленькие числа в формате 1.234567e-08, ответ нужно ввести в таком же формате!</i>]]></text>
+            <explanation><![CDATA[Обычная ковариационная матрица оценивается командой vcov, устойчивая к гетероскедастичности и автокорреляции - командой vcovHAC]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="314dba25b4228003359be21e7324676c" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[3.3e-06,3.4e-06]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="af4ab0bc6fdc9f82fb1b55bebdaf9b3d" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель зависимости объёма выпуска (<b>q</b>) от капитала (<b>k</b>) и технологий (<b>A</b>). Оцените обычную ковариационную матрицу и матрицу, устойчивую к гетероскедастичности и автокорреляции. <br><br>
+
+Насколько изменилась оценка дисперсии коэффициента при технологиях (<b>A</b>)? В ответ введите модуль разности оценок для обычной и устойчивой к гетероскедастичности и автокорреляции матриц. <br><br>
+
+<i>Примечание: обратите внимание, что R выводит очень маленькие числа в формате 1.234567e-08, ответ нужно ввести в таком же формате!</i>]]></text>
+            <explanation><![CDATA[Обычная ковариационная матрица оценивается командой vcov, устойчивая к гетероскедастичности и автокорреляции - командой vcovHAC]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="072aaa714343a662b7df429840060fbf" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[4.0e-05,4.1e-05]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="2168eee3e5d3b6f02e418e1e5a40f1ed" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель зависимости объёма выпуска (<b>q</b>) от капитала (<b>k</b>) и технологий (<b>A</b>). Проведите тест Дарбина-Уотсона. Чему равно значение тестовой статистики (статистики Дарбина-Уотсона)?<br><br>
+
+<i>Примечание: возможны небольшие расхождения в 4-5 порядке, связанные с особенностями округления, не удивляйтесь, если Ваш ответ отличается на 1 десятитысячную от нашего!</i>]]></text>
+            <explanation><![CDATA[Для проведения теста Дарбина-Уотсона используется команда dwt(model). ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="629e0b64d5cf18ba1767d5c9356336f7" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.6134221]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="db8346bdd88be5bceb06bce1ed12ce4d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.6273489]]></text>
+                  <explanation><![CDATA[Это автокорреляция, а нужна тестовая статистика!]]></explanation>
+                </option>
+                <option id="471163738dd21304c81aeb57360ed8c4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a20116ee258c116ae081d2064b23d9d6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.0947387]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="f22c75ee760868aee4a2973c83f526f1" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель зависимости объёма выпуска (<b>q</b>) только от капитала (<b>k</b>). Проведите тест Дарбина-Уотсона. Чему равно значение тестовой статистики (статистики Дарбина-Уотсона)?<br><br>
+
+<i>Примечание: возможны небольшие расхождения в 4-5 порядке, связанные с особенностями округления, не удивляйтесь, если Ваш ответ отличается на 1 десятитысячную от нашего!</i>]]></text>
+            <explanation><![CDATA[Для проведения теста Дарбина-Уотсона используется команда dwt(model). ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="d51948e33d6ecba4eeb3058858ee7d0f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.04040492]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="d93a821083cb43ef8eca6a6a32f5e750" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.926645]]></text>
+                  <explanation><![CDATA[Это автокорреляция, а нужна тестовая статистика!]]></explanation>
+                </option>
+                <option id="fbed0ee8cb23fa2ff3d4e45d9d229738" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.6273489]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6293ac88705549c17cd4aed406ede65c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.6134221]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e5f49b6d2566c445976601854ad2c44b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель зависимости объёма выпуска (<b>q</b>) только от технологий (<b>A</b>). Проведите тест Дарбина-Уотсона. Чему равно значение тестовой статистики (статистики Дарбина-Уотсона)?<br><br>
+
+<i>Примечание: возможны небольшие расхождения в 4-5 порядке, связанные с особенностями округления, не удивляйтесь, если Ваш ответ отличается на 1 десятитысячную от нашего!</i>]]></text>
+            <explanation><![CDATA[Для проведения теста Дарбина-Уотсона используется команда dwt(model). ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="62c28b3c5fe70b6ec91db5260fd2afda" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.1620081]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="ae743d07b7d3c0ae7695c47d70e3e2e7" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.8963686]]></text>
+                  <explanation><![CDATA[Это автокорреляция, а нужна тестовая статистика!]]></explanation>
+                </option>
+                <option id="eb06f4433b897c58622fabc94294a2b8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.6134221]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="619e9f7498b3f644d33eca1e76314319" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.04040492]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="4d843b4e800a318e1e0dc86ef1df4396" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель зависимости объёма выпуска (<b>q</b>) от капитала (<b>k</b>) и технологий (<b>A</b>). Проведите тест Бройша-Годфри с максимальным порядком корреляции, равным 3. Чему равно значение тестовой статистики?<br><br>
+
+<i>Примечание: возможны небольшие расхождения в 4-5 порядке, связанные с особенностями округления, не удивляйтесь, если Ваш ответ отличается на 1 десятитысячную от нашего!</i>]]></text>
+            <explanation><![CDATA[Для проведения теста Бройша-Годфри используется команда bgtest(model, order = МаксимальныйПорядокКорреляции). ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="16ed5f30e0b44c566ba3411031737e97" selected_score="1" unselected_score="0">
+                  <text><![CDATA[20.0399]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="c1f4df070f7b4bd376f80900b6993f05" selected_score="0" unselected_score="0">
+                  <text><![CDATA[33.6253]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c87da3f969fb6514aa4b9ca927376d96" selected_score="0" unselected_score="0">
+                  <text><![CDATA[18.6679]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c0736649c48c96bb6d7cd398756fa7c8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[20.038]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c8473b9cd736c02a6be21e0de390383c" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель зависимости объёма выпуска (<b>q</b>) только от технологий (<b>A</b>). Проведите тест Бройша-Годфри с максимальным порядком корреляции, равным 3. Чему равно значение тестовой статистики?<br><br>
+
+<i>Примечание: возможны небольшие расхождения в 4-5 порядке, связанные с особенностями округления, не удивляйтесь, если Ваш ответ отличается на 1 десятитысячную от нашего!</i>]]></text>
+            <explanation><![CDATA[Для проведения теста Бройша-Годфри используется команда bgtest(model, order = МаксимальныйПорядокКорреляции). ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="c05ba0dde46c334bee25453cfe6661ac" selected_score="1" unselected_score="0">
+                  <text><![CDATA[33.6253]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="efe87420b2c78fa2f89346a3e93274c2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[20.0399]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="57330b5be785f0dab845b42600fbe1d8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[38.877]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="80a4bc77b9c4c90c07a60a8287c83252" selected_score="0" unselected_score="0">
+                  <text><![CDATA[33.5989]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="2ef1a14c8aed4cf653aa929834b194ac" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оцените модель зависимости объёма выпуска (<b>q</b>) только от капитала (<b>k</b>). Проведите тест Бройша-Годфри с максимальным порядком корреляции, равным 3. Чему равно значение тестовой статистики?<br><br>
+
+<i>Примечание: возможны небольшие расхождения в 4-5 порядке, связанные с особенностями округления, не удивляйтесь, если Ваш ответ отличается на 1 десятитысячную от нашего!</i>]]></text>
+            <explanation><![CDATA[Для проведения теста Бройша-Годфри используется команда bgtest(model, order = МаксимальныйПорядокКорреляции). ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="bdaa6bdd554ae85f60fe2da17552b068" selected_score="1" unselected_score="0">
+                  <text><![CDATA[38.877]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="dbbff0c7428c4e4e0aef0add855a5e2a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[33.6253]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="5b238202c340dc73c9c64299fb73ed7a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[20.0399]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="34d963a31c6b1fa72fcaf8fd1de726ec" selected_score="0" unselected_score="0">
+                  <text><![CDATA[38.863]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="93aeb434051dc171ef2c424e325238af" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какая последовательность команд позволит построить такой график? <br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/aapl.jpeg", width = "500px">]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="e60847d7e84c2445d073998357b738fa" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "AAPL",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(AAPL$AAPL.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Apple)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="fb17917c149e6e96c1fff40833ea6ed0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "GOOG",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(GOOG$GOOG.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Google)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f6e438933b60f1e74f0c07fded4bdf83" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "MSFT",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(MSFT$MSFT.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Microsoft)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0b1e56ee3194f5c6e3a4f117898e90bf" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "INTC",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(INTC$INTC.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Intel)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="7d096076ad6eaddfed821d0dfc22642e" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какая последовательность команд позволит построить такой график?<br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/goog.jpeg", width = "500px">]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="8508193064229690dc3fcc7ee01d3281" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "GOOG",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(GOOG$GOOG.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Google)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="d79ddacb1da05bb7cf9739897ea18b8b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "AAPL",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(AAPL$AAPL.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Apple)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b41dd9bd7f1c5fbd1d0e44da9ce296ea" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "MSFT",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(MSFT$MSFT.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Microsoft)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f96784db9216403c46d802a11cc15657" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "INTC",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(INTC$INTC.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Intel)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="9b030ecf66712b3ced2aa79c181a9954" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какая последовательность команд позволит построить такой график?<br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/msft.jpeg", width = "500px">]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="630c7933c57aeab2ee24b92edafd7386" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "MSFT",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(MSFT$MSFT.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Microsoft)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="19103d801610e59bbf3a717e5dd6a6f2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "AAPL",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(AAPL$AAPL.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Apple)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="eb17d8ee88036e69363f9d4325a2b0fc" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "GOOG",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(GOOG$GOOG.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Google)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="976c7de528a2fe1b8d059febd5681053" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "INTC",from="2010-01-01", to="2014-02-03",src="google")
+<br>
+plot(INTC$INTC.Close, main = "")
+<br><br>
+
+(получим график цены закрытия акций Intel)]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="558e4f4210bad013f6dc65159a9c8cf9" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[На всякий случай ещё раз выполните следующие команды из предыдущего вопроса:
+
+<br><br>
+Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "GOOG",from="2010-01-01", to="2014-02-03",src="google")
+
+<br><br>
+
+И (для удобства) сохраните цену закрытия акций Google (GOOG$GOOG.Close) в отдельную переменную, с которой мы и будем дальше работать. Оцените регрессию цены на два её лага (прошлое и позапрошлое значения). В ответ введите $$R^2$$ этой модели округленный до двух знаков после запятой. <br><br>
+
+<i>Примечание: если у Вас получились GOOG.Close и GOOG.Close.1, используйте просто GOOG.Close</i>]]></text>
+            <explanation><![CDATA[Получить лаг можно командой lag(data, n), где n - порядок лага. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="4695b9bff77d2fbdb374ca7468c4b679" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.99,1.00]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="200c1f63f8d438165707835bc2c84dfd" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[На всякий случай ещё раз выполните следующие команды из предыдущего вопроса:
+
+<br><br>
+Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "MSFT",from="2010-01-01", to="2014-02-03",src="google")
+
+<br><br>
+
+И (для удобства) сохраните цену закрытия акций Microsoft (MSFT$MSFT.Close) в отдельную переменную, с которой мы и будем дальше работать. Оцените регрессию цены (цены закрытия) на два её лага (прошлое и позапрошлое значения). В ответ введите $$R^2$$ этой модели, округленный до двух знаков после запятой. <br><br>
+
+<i>Примечание: если у Вас получились MSFT.Close и MSFT.Close.1, используйте просто MSFT.Close</i>]]></text>
+            <explanation><![CDATA[Получить лаг можно командой lag(data, n), где n - порядок лага. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="16a215350d4b3316344c582fd3b08caa" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.98,0.99]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="e942689ecc65c65b7559935019e84718" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[На всякий случай ещё раз выполните следующие команды из предыдущего вопроса:
+
+<br><br>
+Sys.setlocale("LC_TIME","C")
+<br>
+getSymbols(Symbols = "INTC",from="2010-01-01", to="2014-02-03",src="google")
+
+<br><br>
+
+И (для удобства) сохраните цену закрытия акций Intel (INTC$INTC.Close) в отдельную переменную, с которой мы и будем дальше работать. Оцените регрессию цены (цены закрытия) на два её лага (прошлое и позапрошлое значения). В ответ введите $$R^2$$ этой модели, округленный до двух знаков после запятой. <br><br>
+
+<i>Примечание: если у Вас получились INTC.Close и INTC.Close.1, используйте просто INTC.Close</i>]]></text>
+            <explanation><![CDATA[Получить лаг можно командой lag(data, n), где n - порядок лага. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="59d923a1347ff13fb26edb8660245c0b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[[0.97,0.98]]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+    </question_groups>
+  </data>
+</quiz>
