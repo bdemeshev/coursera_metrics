@@ -3,7 +3,8 @@ library("XML")
 library("stringr")
 library("dplyr")
 
-doc <- xmlTreeParse("~/Documents/coursera_metrics/tests/week_01_test_01.xml")
+doc <- xmlTreeParse("~/Documents/coursera_metrics/tests/week_01_test_01_ibcorr.xml")
+
 # r <- xmlRoot(doc)
 
 # obtain preamble of a test from coursera xml
@@ -304,6 +305,10 @@ OptionGroupSummary <- function(doc) {
     og_summary$select[i] <- XML::xmlAttrs(option_group, "select")
   }
   
+  og_summary <- mutate(og_summary, 
+            select_num = as.numeric(ifelse(select == "all", n_options, select)),
+            cardinality = choose(n = n_options, k = select_num) )
+
   return(og_summary)
 }
 
@@ -357,7 +362,8 @@ TextToNodes0 <- function(input_text, node_name = "p", replace_dollars = TRUE) {
   
   list_of_nodes <- list()
   for (i in 1:length(fragments)) {
-    parsed_fragment <- XML::xmlTreeParse(file = fragments[i], asText = TRUE)
+    parsed_fragment <- XML::xmlTreeParse(file = fragments[i], 
+                                         asText = TRUE, isHTML = TRUE)
     list_of_nodes[[i]] <- XML::xmlRoot(parsed_fragment)
   }
   
@@ -455,7 +461,7 @@ a
 
 og_summary <- OptionGroupSummary(doc)
 q <- GetVersion(doc, 20, 2)
-TransformNumeric(q)
+# TransformNumeric(q)
 
 # img tag 13.2, 12.2, 14.2 i/b mismatch 15.2, 16
 
@@ -474,13 +480,6 @@ CorrectIBtags <- function(filename) {
   writeLines(all, con = new_filename)
 }
 
-filename <- "~/Documents/coursera_metrics/tests/week_01_test_01.xml"
-CorrectIBtags(filename)
 
-folder <- "~/Documents/coursera_metrics/tests/"
-fnames <- list.files(folder, full.names = TRUE)
-for (filename in fnames) {
-  CorrectIBtags(filename)
-}
 
 
