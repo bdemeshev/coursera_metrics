@@ -1,0 +1,1605 @@
+<quiz>
+  <metadata>
+    <title><![CDATA[Тест 1: МНК, введение в R]]></title>
+    <open_time>2015-02-28 0000</open_time>
+    <soft_close_time>2015-03-16 2359</soft_close_time>
+    <hard_close_time>2015-03-23 2359</hard_close_time>
+    <duration>0</duration>
+    <retry_delay>0</retry_delay>
+    <maximum_submissions>3</maximum_submissions>
+    <modified_time>1425800606483</modified_time>
+    <is_ace_exam_flag>none</is_ace_exam_flag>
+    <authentication_required>1</authentication_required>
+    <parameters>
+      <show_explanations>
+        <question>before_soft_close_time</question>
+        <option>before_soft_close_time</option>
+        <score>before_soft_close_time</score>
+      </show_explanations>
+    </parameters>
+    <maximum_score>21</maximum_score>
+  </metadata>
+  <preamble><![CDATA[<b>Чтоб не спотыкаться о все кочки,
+<br>
+В качестве десятичного разделителя используй ТОЧКУ! <br>
+
+
+Только цифры и точку в ответ вводи,
+<br>
+А если уж ввёл что ещё, то извини :) <br>
+</b>]]></preamble>
+  <data>
+    <question_groups>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="45c1e27f4f9095d91bef0d9db87d66b9" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вспомним теорию вероятностей! Рассчитайте математическое ожидание случайной величины $$X$$, принимающей значения $$\{0,1,2\}$$ с вероятностями, соответственно, $$\{0.1, 0.2,0.7\}$$
+]]></text>
+            <explanation><![CDATA[Не забудьте, что $$E(X) = \sum_{i = 1}^n p_i X_i $$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="fe574621bbe462e02c5ad1b7ef641ea6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1.6]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="89f0ad678cc515fa51137bd2183f93b8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="acfeca369466f889ffce8e84801bb2d0" selected_score="0" unselected_score="0">
+                  <text><![CDATA[1.2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d507322050af7b51f141386d4e2fb082" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.6]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="80dc0b05fb7e80ed315cc179244e526a" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вспомним теорию вероятностей! Рассчитайте математическое ожидание случайной величины $$X$$, принимающей значения $$\{0,2,4\}$$ с вероятностями, соответственно, $$\{0.6, 0.2,0.2\}$$
+]]></text>
+            <explanation><![CDATA[Не забудьте, что $$E(X) = \sum_{i = 1}^n p_i X_i $$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="c7c79e932803a0055711642bff03e917" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1.2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="15080ec82bf2b5ced01346dec48ca6ac" selected_score="0" unselected_score="0">
+                  <text><![CDATA[2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4457bf0895e6e1246cdf2219647c3e82" selected_score="0" unselected_score="0">
+                  <text><![CDATA[1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="dc25053f11fbe6b62b83206427471ef9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[2.4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="32ede41b0afc899b6c8b5720d0ea5856" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вспомним теорию вероятностей! Рассчитайте математическое ожидание случайной величины $$X$$, принимающей значения $$\{-1,0,1\}$$ с вероятностями, соответственно, $$\{0.3, 0.2,0.5\}$$
+]]></text>
+            <explanation><![CDATA[Не забудьте, что $$E(X) = \sum_{i = 1}^n p_i X_i $$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="51ba3b26dd20b94331455b53bd20a9ac" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="f3fb59adfa9a38a644a1b3ad961ae31f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c9f073aff411c0570dc76dbc0dd20628" selected_score="0" unselected_score="0">
+                  <text><![CDATA[-1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="09c329af08dd3b98670a3f1724134f5e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[0.6]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="a7030260b0ac4a88b36275794379b089" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вспомним теорию вероятностей! Известно, что $$E(X) = 1$$, $$E(Y) = 3$$, $$Var(X) = 4$$, $$Var(Y) = 1$$, $$Cov(X,Y) = 1$$. Найдите $$E(2X+Y)$$]]></text>
+            <explanation><![CDATA[По свойствам математического ожидания, $$ E(aX + bY + c) = aE(X) + bE(Y) + c$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="6321af6771f966763ded92d61adfe3c5" selected_score="1" unselected_score="0">
+                  <text><![CDATA[5]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="43acac9a5e3774387c311c98d2975167" selected_score="0" unselected_score="0">
+                  <text><![CDATA[4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="671c5abe3291eeaa0f1a39d313738e5d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[6]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="07855d643a44fec5c911b5d281468d2b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="ba1fb451a51c7e12113f88bed53d8675" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вспомним теорию вероятностей! Известно, что $$E(X) = 3$$, $$E(Y) = 1$$, $$Var(X) = 4$$, $$Var(Y) = 1$$, $$Cov(X,Y) = 1$$. Найдите $$E(3X-Y)$$]]></text>
+            <explanation><![CDATA[По свойствам математического ожидания, $$ E(aX + bY + c) = aE(X) + bE(Y) + c$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="6c4977d040cdd60207420df2616a900f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[8]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="9f87e234c0f7410dd243198d9059a54b" selected_score="0" unselected_score="0">
+                  <text><![CDATA[10]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d4d9921ceddc424d21b2a58d594fbe22" selected_score="0" unselected_score="0">
+                  <text><![CDATA[9]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="a030f659dfbdff4a0a800f723e5216eb" selected_score="0" unselected_score="0">
+                  <text><![CDATA[7]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="a8271fb6e057707793a51ea1fea71e77" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вспомним теорию вероятностей! Известно, что $$E(X) = 4$$, $$E(Y) = 1$$, $$Var(X) = 4$$, $$Var(Y) = 1$$, $$Cov(X,Y) = 1$$. Найдите $$E(X+2Y)$$]]></text>
+            <explanation><![CDATA[По свойствам математического ожидания, $$ E(aX + bY + c) = aE(X) + bE(Y) + c$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="93774b47429f23918182520861bea4a9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[6]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="21513a36c300ed5bb6be4e5d9e6e4f50" selected_score="0" unselected_score="0">
+                  <text><![CDATA[7]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="c973f8f621e2f5c8346f6a28f0c534bc" selected_score="0" unselected_score="0">
+                  <text><![CDATA[8]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="19ad5f2bce094a7ae5fdd4d989f17f59" selected_score="0" unselected_score="0">
+                  <text><![CDATA[5]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="01190a8da11be6cb1396a94ebc353b31" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вспомним теорию вероятностей! Известно, что $$E(X) = 1$$, $$E(Y) = 3$$, $$Var(X) = 4$$, $$Var(Y) = 1$$, $$Cov(X,Y) = 1$$. Найдите $$Var(X+2Y)$$]]></text>
+            <explanation><![CDATA[По свойствам математического ожидания, $$ Var(aX + bY + c) = a^2 Var(X) + b^2 Var(Y) + 2abCov(X,Y)$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="e1d60d234747f505bb76e81061a26cd4" selected_score="1" unselected_score="0">
+                  <text><![CDATA[12]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="f86bfe9ad3a57a0c81f0af91bff3e7f1" selected_score="0" unselected_score="0">
+                  <text><![CDATA[10]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6809f952727ed2372598af78bb86a243" selected_score="0" unselected_score="0">
+                  <text><![CDATA[8]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="2ae3727b6fd432583e03d2da4d0af8f3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[11]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="4edf331360422d23711f9f714f1fedfc" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вспомним теорию вероятностей! Известно, что $$E(X) = 1$$, $$E(Y) = 3$$, $$Var(X) = 4$$, $$Var(Y) = 9$$, $$Cov(X,Y) = 1$$. Найдите $$Var(X-Y)$$]]></text>
+            <explanation><![CDATA[По свойствам математического ожидания, $$ Var(aX + bY + c) = a^2 Var(X) + b^2 Var(Y) + 2abCov(X,Y)$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="0f733815641ee3c8503e98997f274768" selected_score="1" unselected_score="0">
+                  <text><![CDATA[11]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="b0b32c7a6edcc55078c5eb371f8887bf" selected_score="0" unselected_score="0">
+                  <text><![CDATA[13]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="cc69de001f847fa9588883c4c788ee01" selected_score="0" unselected_score="0">
+                  <text><![CDATA[-5]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="d77c916e0a4e37236225f6f6dc8cc1dc" selected_score="0" unselected_score="0">
+                  <text><![CDATA[15]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="589f2b5571c9ebeec4baa352fa90d394" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Вспомним теорию вероятностей! Известно, что $$E(X) = 1$$, $$E(Y) = 3$$, $$Var(X) = 2$$, $$Var(Y) = 4$$, $$Cov(X,Y) = 2$$. Найдите $$Var(3X+Y)$$]]></text>
+            <explanation><![CDATA[По свойствам математического ожидания, $$ Var(aX + bY + c) = a^2 Var(X) + b^2 Var(Y) + 2abCov(X,Y)$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="f5e15f52ed196411bf04daec1b201225" selected_score="1" unselected_score="0">
+                  <text><![CDATA[34]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="82f55c10314f8840c31b7cdd62dea3d6" selected_score="0" unselected_score="0">
+                  <text><![CDATA[26]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="ae0e2d51e2942ddb1a90c5a2a5d4f24e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[10]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="5b59285c4542fbe970ad822f3b1ce925" selected_score="0" unselected_score="0">
+                  <text><![CDATA[22]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="1b1fd52959b53a2bd74b0fc58487abbf" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>2</rescale_score>
+              <choice_type>checkbox</choice_type>
+              <partial_credit>true</partial_credit>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какие из этих задач, по Вашему мнению, имеет смысл решать при помощи линейной регрессии?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="2">
+                <option id="0248a6eecb77ce005aaa23ba3bab0ab7" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Определение факторов, влияющих на цену квартиры]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="4717360cbcee89bbd987be76843ce5ee" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Прогнозирование заработной платы выпускника ВУЗа]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0161eab9d4007f3186309b4d453a544a" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Оценка влияния дохода человека на его расходы на покупку сладостей]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="f7945b112a06256fe49c55b820dfb116" selected_score="0.5" unselected_score="-0.25">
+                  <text><![CDATA[Установление рыночной цены подержанной машины]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="2">
+                <option id="4d2b0c205eacf33b90d127ea494d0642" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Установление причинно-следственных связей между образованием и продолжительностью жизни человека]]></text>
+                  <explanation><![CDATA[Частая ошибка! При помощи регрессии невозможно установить причинно-следственные связи, только корреляции]]></explanation>
+                </option>
+                <option id="460602c263b8f9ce755ec0027e8f32a5" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Поиск факторов, влияющих на решение человека работать в той или иной профессиональной области]]></text>
+                  <explanation><![CDATA[Для случая качественных зависимых переменных используются другие модели, о них будет рассказано позднее]]></explanation>
+                </option>
+                <option id="9117edb28a3490f5f54ba0618676c0d0" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Распознавание лиц на фотографии]]></text>
+                  <explanation><![CDATA[Для классификации объектов используются другие модели]]></explanation>
+                </option>
+                <option id="190353f1d0ace46e053139a17b9341f3" selected_score="-0.25" unselected_score="0.5">
+                  <text><![CDATA[Оценка вероятности падения крупного метеорита на Землю]]></text>
+                  <explanation><![CDATA[Решать такие задачи эконометрическими методами не получается за недостатком статистики (и пусть так и остаётся!)]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="d7c615d80a51f91ca605d721c589d2d9" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Метод наименьших квадратов, как следует из названия, заключается в минимизации суммы квадратов ... ]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="108354321e4dce18988c79b0d781f538" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Отклонений реальных данных от предсказаний по модели]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="f38edc483057d455d441280f09fedacf" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Ошибок измерения]]></text>
+                  <explanation><![CDATA[Они никак не зависят от выбора модели]]></explanation>
+                </option>
+                <option id="366a468c7fddbbd422cc2f44c464ad1e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Отклонений коэффициентов модели от теоретических значений]]></text>
+                  <explanation><![CDATA[Мы работаем с данными, а не с теорией!]]></explanation>
+                </option>
+                <option id="c2c7de87f5661d3685d472ebdf464a76" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Отклонений предсказаний, полученных по модели, от экспертных прогнозов]]></text>
+                  <explanation><![CDATA[Мы работаем с данными, а не с экспертами!]]></explanation>
+                </option>
+                <option id="0a89046adf693b0f4e10bf126edf2459" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Погрешностей вычисления переменных]]></text>
+                  <explanation><![CDATA[Они от нас никак не зависят]]></explanation>
+                </option>
+                <option id="56cba941f8cc42b26d960137cccfb026" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Отклонений реальных данных от теоретических значений]]></text>
+                  <explanation><![CDATA[Мы работаем с данными, а не с теорией!]]></explanation>
+                </option>
+                <option id="21c3c8b4426965f6684d6bccc75def13" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Отклонений реальных данных от экспертных прогнозов]]></text>
+                  <explanation><![CDATA[Мы работаем с данными, а не с экспертами!]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="c3f0d712eb9a603c3d8a02980eab304b" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[В модели множественной регрессии ...]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="f26afa3961d9017c72c661aaaec83555" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Одна зависимая переменная объясняется при помощи набора независимых]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6368f9a6ea80b051919ab6d34f5348b1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Одна зависимая переменная объясняется при помощи одного или нескольких регрессоров]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="eeaed1c21e7b09b196986b6c0c20879f" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Набор зависимых переменных объясняется при помощи набора независимых]]></text>
+                  <explanation><![CDATA[Это уже система уравнений]]></explanation>
+                </option>
+                <option id="efe7dd675bb72cfa69655e5a05255332" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Набор зависимых переменных объясняется при помощи одной независимой]]></text>
+                  <explanation><![CDATA[Это уже система уравнений]]></explanation>
+                </option>
+                <option id="66967cae3c64421f87e1fefc848aa732" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Одна зависимая переменная объясняется при помощи разных моделей с одной независимой переменной, среди которых выбирается наилучшая]]></text>
+                  <explanation><![CDATA[Сколько нам нужно моделей?]]></explanation>
+                </option>
+                <option id="b8535dc33d9931adfeba5f727c7c61a8" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Один регрессор объясняется при помощи нескольких зависимых переменных]]></text>
+                  <explanation><![CDATA[Регрессор - это независимая переменная]]></explanation>
+                </option>
+                <option id="61adcacd53e772a87631c81a5b91575d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Множество переменных используется для предсказаний значений друг друга]]></text>
+                  <explanation><![CDATA[Это уже другая модель]]></explanation>
+                </option>
+                <option id="d6545f92a68120fb0c4177ac7119993d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Одна зависимая переменная объясняется при помощи разных моделей с несколькими независимыми переменными, среди которых выбирается наилучшая]]></text>
+                  <explanation><![CDATA[Сколько нам нужно моделей?]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="3e958a5683b07bab97da17de8c47c121" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Какие из этих показателей могут быть равны нулю? (при наличии нескольких правильных ответов выберите самый полный)]]></text>
+            <explanation><![CDATA[Если Вы ошиблись, просто выпишите уравнение, связывающее значения этих трёх показателей и ещё раз подумайте]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="3">
+                <option id="6f84f46cfd25d18583bcf266c8c992b9" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$RSS$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="52ad9a866678b61862677ba0cfc81a34" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$TSS$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="b9ede1ac498f9f1a036df6a15541f95a" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$ESS$$ и $$RSS$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="8a97bdbd8a48d62bd99a115f88eec626" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$ESS$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="86259c24790a0cbe33849775949e49e3" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$ESS$$ и $$TSS$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="2fc8675661317f25bf70afe48f9955b4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$TSS$$ и $$RSS$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="7fafd97af27b6e45049c43369749cc75" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$ESS$$, $$TSS$$ и $$RSS$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="d80a73a5ab7fb4b93d7b01b4858fe6bd" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Исследователь анализирует влияние образования человека на его доход. Построив модель, он получил значения $$TSS$$, $$RSS$$, $$ESS$$ и $$R^2$$. Какие сочетания значений этих показателей возможны?]]></text>
+            <explanation><![CDATA[Не забудьте, что $$TSS=RSS+ESS$$, $$R^2=\frac{ESS}{TSS}$$]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="22399bc40c4f941b449291d50d933018" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$TSS=10$$, $$RSS=8$$, $$ESS=2$$, $$R^2=0.2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="94ac79ecc2763d06f14d2916d66c3090" selected_score="1" unselected_score="0">
+                  <text><![CDATA[$$TSS=20$$, $$RSS=8$$, $$ESS=12$$, $$R^2=0.6$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="a05c22ce4e959659927b90c216cb175d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$TSS=10$$, $$RSS=8$$, $$ESS=4$$, $$R^2=0.4$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="9b44158db0637b49d77c4c3e95dcbd8d" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$TSS=10$$, $$RSS=7$$, $$ESS=2$$, $$R^2=0.2$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="13ed0d3f0b19d2003934c6978a6bce5c" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$TSS=20$$, $$RSS=8$$, $$ESS=6$$, $$R^2=0.6$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="bc719bd68891f0291feb1c287a18042e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[$$TSS=20$$, $$RSS=9$$, $$ESS=12$$, $$R^2=0.6$$]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b7b2049ae0e671fa08eda31eae619998" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Что показывает коэффициент детерминации $$R^2$$?]]></text>
+            <explanation><![CDATA[]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="1">
+                <option id="8a53a0f4fb9a575c38b1a2971a7f7165" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Долю объясненной моделью дисперсии]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="dba1bef8ddda21a14d9f24c3da6922a1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Точность "подгонки" модели к данным]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="3">
+                <option id="35ffa433c0ab14f4778ec0ba42edd5b2" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Прогнозную силу модели]]></text>
+                  <explanation><![CDATA[Можно сделать модель с $$R^2 = 1$$, по которой будет невозможно прогнозировать. К примеру, введя фиктивные переменные на каждую точку]]></explanation>
+                </option>
+                <option id="c8d8bea5029384f02cc90f220f1ba230" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Количество регрессоров в модели]]></text>
+                  <explanation><![CDATA[Вспомните, как рассчитывается $$R^2$$]]></explanation>
+                </option>
+                <option id="8b385a411064a2c265e2ab73b4ad6ceb" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Наличие или отсутствие причинно-следственной связи между зависимой и независимой переменными]]></text>
+                  <explanation><![CDATA[Причинно-следственные связи мы не устанавливаем]]></explanation>
+                </option>
+                <option id="bd32cbaa5b55b4887390f34c9f86e988" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Точность "подгонки" модели к теории]]></text>
+                  <explanation><![CDATA[Теорией мы не занимаемся, мы работаем с данными!]]></explanation>
+                </option>
+                <option id="fd92244c852f9aab3f1defb7f1262fd5" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Меру разброса исходных данных]]></text>
+                  <explanation><![CDATA[Это показывает показатель $$TSS$$]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="d7c2c2cc09341a615471d3274ee80f6e" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценив уравнение регрессии с константой и двумя регрессорами по 10 точкам, Вы получили $$TSS = 100$$, $$RSS = 70$$. Найдите величину $$R^2$$]]></text>
+            <explanation><![CDATA[Помните, что $$R^2 = \frac{ESS}{TSS} = 1 - \frac{RSS}{TSS} $$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="9539e15db9a9a3213e0800851a7afd35" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.3]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c6c1a04a4bd13a5f8c9ec05b74606136" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценив уравнение регрессии с константой и двумя регрессорами по 21 точке, Вы получили $$TSS = 100$$, $$RSS = 91$$. Найдите величину $$R^2$$]]></text>
+            <explanation><![CDATA[Помните, что $$R^2 = \frac{ESS}{TSS} = 1 - \frac{RSS}{TSS} $$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="6d4025bbf12faf29c3eee97aa90fe0bc" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.09]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="79e358ddfe16fd54dda09908bfe6dc12" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Оценив уравнение регрессии с константой и двумя регрессорами по 8 точкам, Вы получили $$TSS = 100$$, $$RSS = 20$$. Найдите величину $$R^2$$]]></text>
+            <explanation><![CDATA[Помните, что $$R^2 = \frac{ESS}{TSS} = 1 - \frac{RSS}{TSS} $$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="2bc4d2c4308d14974fdd76beed7cb523" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.8]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="83f472111ced07f5d0403dd64ca4d51c" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Построенная Вами модель имеет $$R^2 = 0.7$$, $$TSS = 130$$. Найдите $$RSS$$]]></text>
+            <explanation><![CDATA[Помните, что $$R^2 = \frac{ESS}{TSS}$$, $$TSS = ESS + RSS$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="539f3dfd56b7685888f4cb47a165600e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[39]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="9ffbecd7ab45d3ddf1fa045a7cdd43dc" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Построенная Вами модель имеет $$R^2 = 0.2$$, $$TSS = 40$$. Найдите $$RSS$$]]></text>
+            <explanation><![CDATA[Помните, что $$R^2 = \frac{ESS}{TSS}$$, $$TSS = ESS + RSS$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="d33a8a5e8ff20ac5efb5a8d0bbf63c33" selected_score="1" unselected_score="0">
+                  <text><![CDATA[32]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="cc61e38c1ae0c24607502cb30211342b" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Построенная Вами модель имеет $$R^2 = 0.6$$, $$TSS = 320$$. Найдите $$RSS$$]]></text>
+            <explanation><![CDATA[Помните, что $$R^2 = \frac{ESS}{TSS}$$, $$TSS = ESS + RSS$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="fbb83ed9afd5a64fb221b571fca543d6" selected_score="1" unselected_score="0">
+                  <text><![CDATA[128]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="b8d1acac41e1106621d1a92c90febd47" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Ваши данные представлены следующим графиком: <br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/Pic1.jpeg"; style="width:450px"; align = "center">
+
+<br>
+<br> Чему равен показатель $$TSS$$?]]></text>
+            <explanation><![CDATA[Здесь необходимо вспомнить, что $$TSS = \sum_{i=1}^{n} (Y_i - \bar{Y})^2$$, а $$\bar{Y} = \frac{1}{n}\sum_{i=1}^{n} Y_i $$. На основании предоставленных данных можно рассчитать как среднее, так и $$TSS$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="fb40f9a546c7c79caadfb13fd653ebe9" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c033d4a60b5fc50b4299ff45f25f26f5" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Ваши данные представлены следующим графиком: <br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/Pic1a.jpeg"; style="width:450px"; align = "center">
+
+<br>
+<br> Чему равен показатель $$TSS$$?]]></text>
+            <explanation><![CDATA[Здесь необходимо вспомнить, что $$TSS = \sum_{i=1}^{n} (Y_i - \bar{Y})^2$$, а $$\bar{Y} = \frac{1}{n}\sum_{i=1}^{n} Y_i $$. На основании предоставленных данных можно рассчитать как среднее, так и $$TSS$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="15f3f7557fcfc677ea8f998541df728b" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="4f77d91591e2724ae557b83591c7b616" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Ваши данные представлены следующим графиком: <br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/Pic1b.jpeg"; style="width:450px"; align = "center">
+
+<br>
+<br> Чему равен показатель $$TSS$$?]]></text>
+            <explanation><![CDATA[Здесь необходимо вспомнить, что $$TSS = \sum_{i=1}^{n} (Y_i - \bar{Y})^2$$, а $$\bar{Y} = \frac{1}{n}\sum_{i=1}^{n} Y_i $$. На основании предоставленных данных можно рассчитать как среднее, так и $$TSS$$]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="a252803c39b4a23f7dd2df264debf2bb" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="3cf3fd53999ae65a74e9584dd517d513" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Ваши данные представлены следующим графиком (точки - наблюдения, линия - оцененная регрессия): <br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/Pic2.jpeg"; style="width:450px"; align = "center">
+
+<br>
+<br> Найдите показатель $$R^2$$
+
+]]></text>
+            <explanation><![CDATA[Вспомните, как рассчитывается $$R^2$$ и подумайте, чему равен $$ESS$$, когда все $$\hat{y}_i$$ равны]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="79ff62b380fab13e9fe42eff23e868d1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="2f52a06498e72073683c2aaf20d68604" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Ваши данные представлены следующим графиком (точки - наблюдения, линия - оцененная регрессия): <br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/Pic2a.jpeg"; style="width:450px"; align = "center">
+
+<br>
+<br> Найдите показатель $$R^2$$]]></text>
+            <explanation><![CDATA[Вспомните, как рассчитывается $$R^2$$ и подумайте, чему равен $$ESS$$, когда все $$\hat{y}_i$$ равны]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="d5770624e1f73e8647b1453108a0b37a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="688cdb111d80c137d7aea71b9c2ff0c1" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Ваши данные представлены следующим графиком (точки - наблюдения, линия - оцененная регрессия): <br><br>
+
+<img src="https://d396qusza40orc.cloudfront.net/econometrics/Pic2b.jpeg"; style="width:450px"; align = "center">
+
+<br>
+<br> Найдите показатель $$R^2$$]]></text>
+            <explanation><![CDATA[Вспомните, как рассчитывается $$R^2$$ и подумайте, чему равен $$ESS$$, когда все $$\hat{y}_i$$ равны]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="931344d90fc2d8dc15f8f7b86736e5fb" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="cda597800b03d5cc421d410ffe490af6" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите значение, стоящее в 6-ой строчке 1-ого столбца]]></text>
+            <explanation><![CDATA[Интересующая нас переменная -  <i><b>sleep</i></b>. Значение <i><b>i</i></b>-ой строчки <i><b>j</i></b>-ого столбца матрицы <i><b>a</i></b> можно получить командой <i><b>a[i,j]</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="230b63346742a307c149a564ca1a9c9a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[3.4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="bcc456bbd8da6e8bd79aaff3bb8a4ad4" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите значение, стоящее в 7-ой строчке 1-ого столбца]]></text>
+            <explanation><![CDATA[Интересующая нас переменная -  <i><b>sleep</i></b>. Значение <i><b>i</i></b>-ой строчки <i><b>j</i></b>-ого столбца матрицы <i><b>a</i></b> можно получить командой <i><b>a[i,j]</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="c2e045bffc58882961be2cc3bba63d08" selected_score="1" unselected_score="0">
+                  <text><![CDATA[3.7]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="af972c4ad890c655b8928901852e490d" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите значение, стоящее в 8-ой строчке 1-ого столбца]]></text>
+            <explanation><![CDATA[Интересующая нас переменная -  <i><b>sleep</i></b>. Значение <i><b>i</i></b>-ой строчки <i><b>j</i></b>-ого столбца матрицы <i><b>a</i></b> можно получить командой <i><b>a[i,j]</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="564688be0a4aa337144ec0b109334583" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.8]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="db50b87bdef67612226abb8978d4bea7" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите среднее по всем испытуемым изменение продолжительности сна
+<br>
+В ответ введите квадрат этого числа с точностью до второго знака после запятой, не забудьте про округление! (число вида 1.23 вместо 1.2345, 1.24 вместо 1.2356)]]></text>
+            <explanation><![CDATA[Среднее рассчитывается при помощи команды <i><b>mean</i></b>, а интересующая нас переменная -  <i><b>sleep$extra</i></b>. Чтобы возвести число <i><b>a</i></b> в квадрат, нужно ввести команду <i><b>a^2</i></b>. Не забудьте, что число нужно ввести с точностью до второго знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="8d456f57a59f8e160a37e26d80510e9a" selected_score="1" unselected_score="0">
+                  <text><![CDATA[2.37]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="61e513b7c14df391a02d6cb50fab0536" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите среднее по всем испытуемым изменение продолжительности сна
+<br>
+В ответ введите куб этого числа с точностью до второго знака после запятой, не забудьте про округление! (число вида 1.23 вместо 1.2345, 1.24 вместо 1.2356)]]></text>
+            <explanation><![CDATA[Среднее рассчитывается при помощи команды <i><b>mean</i></b>, а интересующая нас переменная -  <i><b>sleep$extra</i></b>. Чтобы возвести число <i><b>a</i></b> в куб, нужно ввести команду <i><b>a^3</i></b>. Не забудьте, что число нужно ввести с точностью до второго знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="39fc3a0c44e0be53b7f706be59cbea92" selected_score="1" unselected_score="0">
+                  <text><![CDATA[3.65]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="6eb687d6f5fd5cefd6513fc7ceaf0a6a" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите среднее по всем испытуемым изменение продолжительности сна
+<br>
+В ответ введите корень (квадратный) из этого числа с точностью до второго знака после запятой, не забудьте про округление! (число вида 1.23 вместо 1.2345, 1.24 вместо 1.2356)]]></text>
+            <explanation><![CDATA[Среднее рассчитывается при помощи команды <i><b>mean</i></b>, а интересующая нас переменная -  <i><b>sleep$extra</i></b>. Чтобы взять корень из числа <i><b>a</i></b>, нужно ввести команду <i><b>a^0.5</i></b>, либо команду <i><b>sqrt(a)</i></b>. Не забудьте, что число нужно ввести с точностью до второго знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="44f465750ece3f166887e4bede38b166" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1.24]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="3c01a097ed8e1513249f22053244d720" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите разность между максимальным и минимальным изменением продолжительности сна]]></text>
+            <explanation><![CDATA[Интересующая нас переменная -  <i><b>sleep$extra</i></b>. Команды для получения максимального и минимального значения (для вектора <i><b>vector</i></b>) - это, соответственно, <i><b>max(vector)</i></b> и <i><b>min(vector)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="87331ff8de51c13d85e1749629bb33ae" selected_score="1" unselected_score="0">
+                  <text><![CDATA[7.1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="af1df51889174382957e68d4f0e7ad57" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите сумму максимального и минимального изменения продолжительности сна]]></text>
+            <explanation><![CDATA[Интересующая нас переменная -  <i><b>sleep$extra</i></b>. Команды для получения максимального и минимального значения (для вектора <i><b>vector</i></b>) - это, соответственно, <i><b>max(vector)</i></b> и <i><b>min(vector)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="95d5a7f0493815ed444d2d8cb1cb353e" selected_score="1" unselected_score="0">
+                  <text><![CDATA[3.9]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="5213a5c30046513fc9d73c82b1303fea" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите произведение максимального и минимального изменения продолжительности сна]]></text>
+            <explanation><![CDATA[Интересующая нас переменная -  <i><b>sleep$extra</i></b>. Команды для получения максимального и минимального значения (для вектора <i><b>vector</i></b>) - это, соответственно, <i><b>max(vector)</i></b> и <i><b>min(vector)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="9dd0bbee37d1d68dc25cb8c6c71532a2" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ -8.8]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="80c5e0ba30c2fb12c1d1af1ae51ef888" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите дисперсию (несмещенную оценку) изменения продолжительности сна по строчкам с 1 по 10 с точностью до 1-ого знака после запятой, не забудьте про округление!]]></text>
+            <explanation><![CDATA[Дисперсия рассчитывается при помощи команды <i><b>var</i></b>, а интересующая нас переменная -  <i><b>sleep$extra</i></b>. Чтобы взять значения с <i><b>a</i></b> по <i><b>b</i></b> вектора <i><b>vector</i></b>, нужно ввести команду <i><b>vector[a:b]</i></b>. Не забудьте, что число нужно ввести с точностью до первого знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="bd08563acf4bda4ecb3791ce2c018649" selected_score="1" unselected_score="0">
+                  <text><![CDATA[3.2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="6a3e5ddca576866acfca9b64c6a35248" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите дисперсию (несмещенную оценку) изменения продолжительности сна по строчкам с 5 по 14 с точностью до 1-ого знака после запятой, не забудьте про округление!]]></text>
+            <explanation><![CDATA[Дисперсия рассчитывается при помощи команды <i><b>var</i></b>, а интересующая нас переменная -  <i><b>sleep$extra</i></b>. Чтобы взять значения с <i><b>a</i></b> по <i><b>b</i></b> вектора <i><b>vector</i></b>, нужно ввести команду <i><b>vector[a:b]</i></b>. Не забудьте, что число нужно ввести с точностью до первого знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="2f5602e014425cf919137c45c7eac278" selected_score="1" unselected_score="0">
+                  <text><![CDATA[1.8]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="3418a4a5831b99f1a1fd7c2596a439e3" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием sleep. Для этого введите команду:
+<br><br><i><b>data(sleep)</i></b><br><br>
+После этого в переменной sleep будут храниться требуемые данные. <br>
+Здесь содержится информация по воздействию двух снотворных на продолжительность сна. Есть три переменные: extra (изменение продолжительности сна после начала приёма снотворного), group (1 или 2 - показывает, какой из двух препаратов принимал испытуемый), ID (номер испытуемого). 
+<br>
+Найдите дисперсию (несмещенную оценку) изменения продолжительности сна по строчкам с 10 по 20 с точностью до 1-ого знака после запятой, не забудьте про округление!]]></text>
+            <explanation><![CDATA[Дисперсия рассчитывается при помощи команды <i><b>var</i></b>, а интересующая нас переменная -  <i><b>sleep$extra</i></b>. Чтобы взять значения с <i><b>a</i></b> по <i><b>b</i></b> вектора <i><b>vector</i></b>, нужно ввести команду <i><b>vector[a:b]</i></b>. Не забудьте, что число нужно ввести с точностью до первого знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="edb0f74ea12863e80c652592814b2855" selected_score="1" unselected_score="0">
+                  <text><![CDATA[3.6]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="3c2bb96d3a18bc091d42135c07d2f2f1" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием mtcars. Для этого введите команду:
+<br><br><i><b>data(mtcars)</i></b><br><br>
+После этого в переменной mtcars будут храниться требуемые данные. <br>
+Здесь содержатся данные по 32 двум моделям автомобилей 1973-1974 гг. 
+<br>
+Постройте регрессию показателя расхода топлива (переменная <i><b>mpg</i></b> - запас хода в милях на один галлон топлива) на рабочий объём двигателя (<i><b>disp</i></b>), мощность (<i><b>hp</i></b>), вес автомобиля (<i><b>wt</i></b>) и тип коробки передач (<i><b>am</i></b>). Насколько точно эти показатели предсказывают расход топлива?
+<br>
+<br>
+В ответ введите показатель $$R^2$$ с точностью до второго знака после запятой, не забудьте про округление!]]></text>
+            <explanation><![CDATA[Регрессия переменной $$y$$ на переменные $$x_1$$, $$x_2$$ на наборе данных <i><b>dat</i></b> оценивается командой <br>
+<i><b>model<-lm(data = dat, $$y$$ ~ $$x_1$$ + $$x_2$$) </i></b> <br>
+$$R^2$$ можно посмотреть при помощи команды 
+<i><b>summary(model) </i></b><br>
+Не забудьте, что число нужно ввести с точностью до второго знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="52e96dea57f21ac920571e3bd05aa008" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.84]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="f297f5dd0f06547f90f7172136d3d095" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием mtcars. Для этого введите команду:
+<br><br><i><b>data(mtcars)</i></b><br><br>
+После этого в переменной mtcars будут храниться требуемые данные. <br>
+Здесь содержатся данные по 32 двум моделям автомобилей 1973-1974 гг. 
+<br>
+Постройте регрессию показателя расхода топлива (переменная <i><b>mpg</i></b> - запас хода в милях на один галлон топлива) на рабочий объём двигателя (<i><b>disp</i></b>), мощность (<i><b>hp</i></b>) и вес автомобиля (<i><b>wt</i></b>). Насколько точно эти показатели предсказывают расход топлива?
+<br>
+<br>
+В ответ введите показатель $$R^2$$ с точностью до второго знака после запятой, не забудьте про округление!]]></text>
+            <explanation><![CDATA[Регрессия переменной $$y$$ на переменные $$x_1$$, $$x_2$$ на наборе данных <i><b>dat</i></b> оценивается командой <br>
+<i><b>model<-lm(data = dat, $$y$$ ~ $$x_1$$ + $$x_2$$) </i></b> <br>
+$$R^2$$ можно посмотреть при помощи команды 
+<i><b>summary(model) </i></b><br>
+Не забудьте, что число нужно ввести с точностью до второго знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="030500e4fc94db36e7659e04086a12f1" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.83]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="8fc5bbcea22edad9d21dd6d09b11b35f" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием mtcars. Для этого введите команду:
+<br><br><i><b>data(mtcars)</i></b><br><br>
+После этого в переменной mtcars будут храниться требуемые данные. <br>
+Здесь содержатся данные по 32 двум моделям автомобилей 1973-1974 гг. 
+<br>
+Постройте регрессию показателя расхода топлива (переменная <i><b>mpg</i></b> - запас хода в милях на один галлон топлива) на число цилиндров (<i><b>cyl</i></b>), мощность (<i><b>hp</i></b>), вес автомобиля (<i><b>wt</i></b>) и тип коробки передач (<i><b>am</i></b>). Насколько точно эти показатели предсказывают расход топлива?
+<br>
+<br>
+В ответ введите показатель $$R^2$$ с точностью до второго знака после запятой, не забудьте про округление!]]></text>
+            <explanation><![CDATA[Регрессия переменной $$y$$ на переменные $$x_1$$, $$x_2$$ на наборе данных <i><b>dat</i></b> оценивается командой <br>
+<i><b>model<-lm(data = dat, $$y$$ ~ $$x_1$$ + $$x_2$$) </i></b> <br>
+$$R^2$$ можно посмотреть при помощи команды 
+<i><b>summary(model) </i></b><br>
+Не забудьте, что число нужно ввести с точностью до второго знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="e7c304f3a9aca9ffca88a711bb8f7f10" selected_score="1" unselected_score="0">
+                  <text><![CDATA[0.85]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="cc932d2f6dd05528a865dccd43e4e8df" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием mtcars. Для этого введите команду:
+<br><br><i><b>data(mtcars)</i></b><br><br>
+После этого в переменной mtcars будут храниться требуемые данные. <br>
+Здесь содержатся данные по 32 двум моделям автомобилей 1973-1974 гг. 
+<br>
+Постройте регрессию показателя расхода топлива (переменная <i><b>mpg</i></b> - запас хода в милях на один галлон топлива) на рабочий объём двигателя (<i><b>disp</i></b>), мощность (<i><b>hp</i></b>), вес автомобиля (<i><b>wt</i></b>) и тип коробки передач (<i><b>am</i></b>). Как влияет мощность двигателя на его расход топлива? 
+<br>
+<br>
+В ответ введите коэффициент при мощности двигателя с точностью до второго знака после запятой, не забудьте про округление!]]></text>
+            <explanation><![CDATA[Регрессия переменной $$y$$ на переменные $$x_1$$, $$x_2$$ на наборе данных <i><b>dat</i></b> оценивается командой <br>
+<i><b>model<-lm(data = dat, $$y$$ ~ $$x_1$$ + $$x_2$$) </i></b> <br>
+Коэффициенты модели можно посмотреть при помощи команды 
+<i><b>summary(model) </i></b><br>
+Не забудьте, что число нужно ввести с точностью до второго знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="456a0f3b5f40de3fb355fe4a75bd20b3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[-0.04]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="013897fbcfa6d61a4523aeb75efe8656" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием mtcars. Для этого введите команду:
+<br><br><i><b>data(mtcars)</i></b><br><br>
+После этого в переменной mtcars будут храниться требуемые данные. <br>
+Здесь содержатся данные по 32 двум моделям автомобилей 1973-1974 гг. 
+<br>
+Постройте регрессию показателя расхода топлива (переменная <i><b>mpg</i></b> - запас хода в милях на один галлон топлива) на рабочий объём двигателя (<i><b>disp</i></b>), мощность (<i><b>hp</i></b>), вес автомобиля (<i><b>wt</i></b>) и тип коробки передач (<i><b>am</i></b>). Как влияет вес автомобиля на его расход топлива? 
+<br>
+<br>
+В ответ введите коэффициент при весе автомобиля с точностью до второго знака после запятой, не забудьте про округление!]]></text>
+            <explanation><![CDATA[Регрессия переменной $$y$$ на переменные $$x_1$$, $$x_2$$ на наборе данных <i><b>dat</i></b> оценивается командой <br>
+<i><b>model<-lm(data = dat, $$y$$ ~ $$x_1$$ + $$x_2$$) </i></b> <br>
+Коэффициенты модели можно посмотреть при помощи команды 
+<i><b>summary(model) </i></b><br>
+Не забудьте, что число нужно ввести с точностью до второго знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="478b4647af13111be1187b5120adfb59" selected_score="1" unselected_score="0">
+                  <text><![CDATA[-3.05]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="c40e75b3961f0167d6377322df3e5567" type="GS_Short_Answer_Question_Simple">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <type>numeric</type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием mtcars. Для этого введите команду:
+<br><br><i><b>data(mtcars)</i></b><br><br>
+После этого в переменной mtcars будут храниться требуемые данные. <br>
+Здесь содержатся данные по 32 двум моделям автомобилей 1973-1974 гг. 
+<br>
+Постройте регрессию показателя расхода топлива (переменная <i><b>mpg</i></b> - запас хода в милях на один галлон топлива) на рабочий объём двигателя (<i><b>disp</i></b>), мощность (<i><b>hp</i></b>), вес автомобиля (<i><b>wt</i></b>) и тип коробки передач (<i><b>am</i></b>). Как влияет тип коробки передач автомобиля на его расход топлива? 
+<br>
+<br>
+В ответ введите коэффициент при типе коробки передач с точностью до второго знака после запятой, не забудьте про округление!]]></text>
+            <explanation><![CDATA[Регрессия переменной $$y$$ на переменные $$x_1$$, $$x_2$$ на наборе данных <i><b>dat</i></b> оценивается командой <br>
+<i><b>model<-lm(data = dat, $$y$$ ~ $$x_1$$ + $$x_2$$) </i></b> <br>
+Коэффициенты модели можно посмотреть при помощи команды 
+<i><b>summary(model) </i></b><br>
+Не забудьте, что число нужно ввести с точностью до второго знака после запятой! Чтобы округлить число  <i><b>a</i></b> до  <i><b>i</i></b>-ого знака после запятой, введите команду  <i><b>round(a , digits = i)</i></b>]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="4451dfb3e4c8f000d0ef2dacc7b52a7f" selected_score="1" unselected_score="0">
+                  <text><![CDATA[ 2.16]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+      <question_group select="1">
+        <preamble><![CDATA[]]></preamble>
+        <question id="0af5270d5de19e10817aef54459b06e2" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием mtcars. Для этого введите команду:
+<br><br><i><b>data(mtcars)</i></b><br><br>
+После этого в переменной mtcars будут храниться требуемые данные. <br>
+Здесь содержатся данные по 32 двум моделям автомобилей 1973-1974 гг. 
+<br>
+<br>
+Рассмотрим несколько альтернативных моделей: <br>
+<br>Модель 1: $$mpg_i = \beta_0 + \beta_1 disp_i + \beta_2 hp_i + \beta_3 wt_i + \beta_4 am_i+ \varepsilon_i$$
+<br>Модель 2: $$mpg_i = \beta_0 + \beta_1 cyl_i + \beta_2 hp_i + \beta_3 wt_i + \beta_4 am_i+ \varepsilon_i$$
+<br>Модель 3: $$mpg_i = \beta_0 + \beta_1 disp_i + \beta_2 cyl_i + \beta_3 wt_i + \beta_4 am_i+ \varepsilon_i$$
+<br>Модель 4: $$mpg_i = \beta_0 + \beta_1 disp_i + \beta_2 hp_i + \beta_3 cyl_i + \beta_4 am_i+ \varepsilon_i$$
+<br><br>Какую из них Вы бы выбрали, используя критерий $$R^2$$?
+]]></text>
+            <explanation><![CDATA[Регрессия переменной $$y$$ на переменные $$x_1$$, $$x_2$$ на наборе данных <i><b>dat</i></b> оценивается командой <br>
+<i><b>model<-lm(data = dat, $$y$$ ~ $$x_1$$ + $$x_2$$) </i></b> <br>
+$$R^2$$ можно посмотреть при помощи команды 
+<i><b>summary(model) </i></b><br>
+Сравнивая модели с одинаковым числом переменных по $$R^2$$ надо выбирать ту, у которой этот показатель точности модели выше. ]]></explanation>
+            <option_groups randomize="false">
+              <option_group select="all">
+                <option id="a4f14304a850aa9461858bf497c02548" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Модель 2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="84a43dff1cbb295192da8462c84d6646" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Модель 1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="6b4eefc65cd9ac701db7a2460ef8e172" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Модель 3]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="55d6ccbbf61438f8d775a83562314efe" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Модель 4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="507300435d57b5a4afa12c983311068c" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием mtcars. Для этого введите команду:
+<br><br><i><b>data(mtcars)</i></b><br><br>
+После этого в переменной mtcars будут храниться требуемые данные. <br>
+Здесь содержатся данные по 32 двум моделям автомобилей 1973-1974 гг. 
+<br>
+<br>
+Рассмотрим несколько альтернативных моделей: <br>
+<br>Модель 1: $$mpg_i = \beta_0 + \beta_1 disp_i + \beta_2 hp_i + \beta_3 wt_i + \varepsilon_i$$
+<br>Модель 2: $$mpg_i = \beta_0 + \beta_1 cyl_i + \beta_2 hp_i + \beta_3 wt_i + \varepsilon_i$$
+<br>Модель 3: $$mpg_i = \beta_0 + \beta_1 disp_i + \beta_2 cyl_i + \beta_3 wt_i + \varepsilon_i$$
+<br>Модель 4: $$mpg_i = \beta_0 + \beta_1 disp_i + \beta_2 hp_i + \beta_3 cyl_i + \varepsilon_i$$
+<br><br>Какую из них Вы бы выбрали, используя критерий $$R^2$$?
+]]></text>
+            <explanation><![CDATA[Регрессия переменной $$y$$ на переменные $$x_1$$, $$x_2$$ на наборе данных <i><b>dat</i></b> оценивается командой <br>
+<i><b>model<-lm(data = dat, $$y$$ ~ $$x_1$$ + $$x_2$$) </i></b> <br>
+$$R^2$$ можно посмотреть при помощи команды 
+<i><b>summary(model) </i></b><br>
+Сравнивая модели с одинаковым числом переменных по $$R^2$$ надо выбирать ту, у которой этот показатель точности модели выше. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="96e17c3cb68c690b09c4250a5a9831ca" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Модель 2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="d96778a727f68e6c8a8b59c8ce3c52ce" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Модель 1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="556dfd0a5f26b79e4c32d7fef867198e" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Модель 3]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="0bb2f883a33be40100dd1c4f0293d018" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Модель 4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+        <question id="503d5d4ffd26b3a8d295196429a21f40" type="GS_Choice_Answer_Question">
+          <metadata>
+            <parameters>
+              <rescale_score>1</rescale_score>
+              <choice_type>radio</choice_type>
+            </parameters>
+          </metadata>
+          <data>
+            <text><![CDATA[Откройте встроенный в R набор данных под названием mtcars. Для этого введите команду:
+<br><br><i><b>data(mtcars)</i></b><br><br>
+После этого в переменной mtcars будут храниться требуемые данные. <br>
+Здесь содержатся данные по 32 двум моделям автомобилей 1973-1974 гг. 
+<br>
+<br>
+Рассмотрим несколько альтернативных моделей: <br>
+<br>Модель 1: $$mpg_i = \beta_0 + \beta_1 hp_i + \beta_2 wt_i + \beta_3 am_i+ \varepsilon_i$$
+<br>Модель 2: $$mpg_i = \beta_0 + \beta_1 cyl_i + \beta_2 hp_i + \beta_3 wt_i + \varepsilon_i$$
+<br>Модель 3: $$mpg_i = \beta_0 + \beta_1 cyl_i + \beta_2 wt_i + \beta_3 am_i+ \varepsilon_i$$
+<br>Модель 4: $$mpg_i = \beta_0 + \beta_1 hp_i + \beta_2 cyl_i + \beta_3 am_i+ \varepsilon_i$$
+<br><br>Какую из них Вы бы выбрали, используя критерий $$R^2$$?
+]]></text>
+            <explanation><![CDATA[Регрессия переменной $$y$$ на переменные $$x_1$$, $$x_2$$ на наборе данных <i><b>dat</i></b> оценивается командой <br>
+<i><b>model<-lm(data = dat, $$y$$ ~ $$x_1$$ + $$x_2$$) </i></b> <br>
+$$R^2$$ можно посмотреть при помощи команды 
+<i><b>summary(model) </i></b><br>
+Сравнивая модели с одинаковым числом переменных по $$R^2$$ надо выбирать ту, у которой этот показатель точности модели выше. ]]></explanation>
+            <option_groups randomize="true">
+              <option_group select="all">
+                <option id="695903d3b4530a175d4edfd2f6d178c3" selected_score="1" unselected_score="0">
+                  <text><![CDATA[Модель 2]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+              <option_group select="all">
+                <option id="f8266886efa2e641d551f57d85ebf8c4" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Модель 1]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="033d5b9cbb5a7e5670c56d13486e72be" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Модель 3]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+                <option id="e3e70ec29f13c3ce217b7fec3d09b3b1" selected_score="0" unselected_score="0">
+                  <text><![CDATA[Модель 4]]></text>
+                  <explanation><![CDATA[]]></explanation>
+                </option>
+              </option_group>
+            </option_groups>
+          </data>
+        </question>
+      </question_group>
+    </question_groups>
+  </data>
+</quiz>

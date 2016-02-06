@@ -13,8 +13,10 @@ version_card <- group_by(og, question_no, version_no, type, n_option_groups) %>%
        summarise(cardinality = prod(cardinality)) %>% ungroup()
 version_card
 
-# 
-q <- GetVersion(doc, 12, 2)
+#
+q = GetVersion(doc, 12, 2)
+
+
 qedu <- TransformNumeric(q)
 qedu
 
