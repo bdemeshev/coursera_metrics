@@ -12,7 +12,7 @@ library("AUC") # для ROC кривой
 
 # при загрузке файлов R автоматом переделывает все строковые переменные в факторные
 # эта шаманская команда просит R так не делать :)
-options(stringsAsFactors=FALSE)
+options(stringsAsFactors = FALSE)
 
 # читаем данные по пассажирам Титаника
 t <- read.csv("titanic3.csv")

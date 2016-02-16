@@ -1,160 +1,160 @@
-# Esli russkie bukvi prevratilitis v krakozyabry,
-# to File - Reopen with encoding... - UTF-8 - Set as default - OK
+# Esli russkie bukvi prevratilitis v krakozyabry, to File - Reopen with
+# encoding... - UTF-8 - Set as default - OK
 
-library("sandwich") # vcovHC, vcovHAC
-library("lmtest") # тесты
-library("car") # еще тесты
-library("dplyr") # манипуляции с данными
-library("broom") # манипуляции
-library("ggplot2") # графики
+library("sandwich")  # vcovHC, vcovHAC
+library("lmtest")  # тесты
+library("car")  # еще тесты
+library("dplyr")  # манипуляции с данными
+library("broom")  # манипуляции
+library("ggplot2")  # графики
 
 
 ## Пример функции
 
-f <- function(x) { # функция получает x на входе
-  res <- x^2 # возводит его в квардарт 
-  return(res) # и выдаёт на выходе значение res
+f <- function(x) {
+  # функция получает x на входе
+  res <- x^2  # возводит его в квардарт
+  return(res)  # и выдаёт на выходе значение res
 }
 
 f(3)
 f(-1)
 
 
-# функция с необязательным параметром
-fs <- function(x, stepen=2) { # функция получает x на входе, если не указать, то stepen=2
-  res <- x^2 # возводит его в stepen 
-  return(res) # и выдаёт на выходе значение res
+# функция с необязательным параметром функция получает x на входе, если не
+# указать, то stepen=2
+fs <- function(x, stepen = 2) {
+  res <- x^2  # возводит его в stepen
+  return(res)  # и выдаёт на выходе значение res
 }
 
 fs(4)
-fs(2,stepen=5)
+fs(2, stepen = 5)
 
 
 # функция считающая процент пропущенных наблюдений в data.frame
 
-na_perc <- function(d) { # функция получает таблицу d на входе
-  # проверяем корректность того, что d --- таблица:
-  if (!is.data.frame(d)) stop("d should be a data.frame!")
-  res <- sum(is.na(d))/nrow(d)/ncol(d) # делим количество NA на количество строк и количество столбцов
-  return(res) # функция  выдаёт на выходе значение res
+na_perc <- function(d) {
+  # функция получает таблицу d на входе проверяем корректность того, что d ---
+  # таблица:
+  if (!is.data.frame(d))
+    stop("d should be a data.frame!")
+  res <- sum(is.na(d))/nrow(d)/ncol(d)  # делим количество NA на количество строк и количество столбцов
+  return(res)  # функция  выдаёт на выходе значение res
 }
 
 # тестируем функцию:
 
 d <- cars
-d[1,2] <- NA # искусствено внесем пропуски в таблицу
-d[3,1] <- NA
-na_perc(d) # получаем два процента пропусков 
+d[1, 2] <- NA  # искусствено внесем пропуски в таблицу
+d[3, 1] <- NA
+na_perc(d)  # получаем два процента пропусков
 
-x <- c(5,6,7)
-na_perc(x) # с векторами наша функция не работает :)
+x <- c(5, 6, 7)
+na_perc(x)  # с векторами наша функция не работает :)
 
 
 ## Пример цикла:
 
-for (i in 5:10) { # переменная i пробежит значения от 5 до 10
-  k <- i^2 
-  cat("i=",i," i^2=",k,"\n") # значок \n означает новую строку
+for (i in 5:10) {
+  # переменная i пробежит значения от 5 до 10
+  k <- i^2
+  cat("i=", i, " i^2=", k, "\n")  # значок \n означает новую строку
 }
 
 all_data <- NULL
-for (fname in c("file01.csv","file02.csv")) { # имя файла пробежит оба значения
-  temp <- read.csv(fname) # прочитаем файл с очередным именем
-  all_data <- rbind(all_data,temp) # подклеим прочитанную табличку в конец таблички all_data
+for (fname in c("file01.csv", "file02.csv")) {
+  # имя файла пробежит оба значения
+  temp <- read.csv(fname)  # прочитаем файл с очередным именем
+  all_data <- rbind(all_data, temp)  # подклеим прочитанную табличку в конец таблички all_data
 }
 
 
 
 ## Гетероскедастичность
 
-# в этот момент нужно установить рабочую папку
-# Session - Set working directory - To source file location
-# читаем данные из файла в таблицу h
-h <- read.table("flats_moscow.txt", header=TRUE)
+# в этот момент нужно установить рабочую папку Session - Set working directory -
+# To source file location читаем данные из файла в таблицу h
+h <- read.table("flats_moscow.txt", header = TRUE)
 
 # смотрим, что всё корректно загрузилось
-head(h) # носик
-tail(h) # хвостик
+head(h)  # носик
+tail(h)  # хвостик
 
-qplot(data=h, x=totsp, y=price) # диаграмма рассеяния
+qplot(data = h, x = totsp, y = price)  # диаграмма рассеяния
 
-# на первом шаге оценим модель с помощью МНК
-# проигнорировав возможную гетероскедастичность
-model <- lm(price~totsp, data=h) # простая модель парной регрессии
+# на первом шаге оценим модель с помощью МНК проигнорировав возможную
+# гетероскедастичность
+model <- lm(price ~ totsp, data = h)  # простая модель парной регрессии
 
-summary(model) # отчет по модели
-coeftest(model) # тесты незначимости коэффициентов 
-confint(model) # доверительные интервалы
+summary(model)  # отчет по модели
+coeftest(model)  # тесты незначимости коэффициентов
+confint(model)  # доверительные интервалы
 
 
 # добавляем в исходную таблицу h прогнозы, остатки из модели model
-h <- augment(model,h) 
-glimpse(h) # смотрим, что добавилось в таблицу h
+h <- augment(model, h)
+glimpse(h)  # смотрим, что добавилось в таблицу h
 
 # строим зависимость модуля (функция abs) остатков от общей площади
-qplot(data=h,totsp,abs(.resid))
+qplot(data = h, totsp, abs(.resid))
 # наличие любой зависимости на этом графике означает гетероскедастичность
 
 
-# простая оценка ковариационной матрицы
-# верная в условиях гомоскедастичности
+# простая оценка ковариационной матрицы верная в условиях гомоскедастичности
 # неверная в условиях гетероскедастичности
-vcov(model) 
+vcov(model)
 
 
 
-# робастная оценка ковариационной матрицы 
-# устойчивая к гетероскедастичности
-vcovHC(model,type="HC0") # формула Уайта
-vcovHC(model) # современный вариант формулы Уайта "HC3"
-vcovHC(model,type="HC2") # еще один вариант
+# робастная оценка ковариационной матрицы устойчивая к гетероскедастичности
+vcovHC(model, type = "HC0")  # формула Уайта
+vcovHC(model)  # современный вариант формулы Уайта 'HC3'
+vcovHC(model, type = "HC2")  # еще один вариант
 
 
 # проверяем незначимость коэффициентов с помощью:
-coeftest(model) # обычной оценки ковариационной матрицы
+coeftest(model)  # обычной оценки ковариационной матрицы
 
 # робастной оценки ковариационной матрицы:
-coeftest(model,vcov. = vcovHC(model))
+coeftest(model, vcov. = vcovHC(model))
 
-# строим руками доверительные интервалы
-# робастные к гетероскедастичности
+# строим руками доверительные интервалы робастные к гетероскедастичности
 
 # сначала сохраним таблицу с коэффициентами и робастными ст. ошибками
-conftable <- coeftest(model,vcov. = vcovHC(model))
+conftable <- coeftest(model, vcov. = vcovHC(model))
 
 # возьмем из этой таблицы два столбика (1-ый и 2-ой) и поместим в таблицу ci
-ci <- data.frame(estimate=conftable[,1],
-                 se_hc=conftable[,2])
-ci # глянем на таблицу ci
+ci <- data.frame(estimate = conftable[, 1], se_hc = conftable[, 2])
+ci  # глянем на таблицу ci
 # добавим в ci левую и правую границу доверительного интервала
-ci <- mutate(ci,left_ci=estimate-1.96*se_hc,
-             right_ci=estimate+1.96*se_hc)
-ci # смотрим на результат
+ci <- mutate(ci, left_ci = estimate - 1.96 * se_hc, right_ci = estimate + 1.96 *
+  se_hc)
+ci  # смотрим на результат
 
 # для сравнение доверительные интервалы
-confint(model) # по формулам корректным для гомоскедастичности
+confint(model)  # по формулам корректным для гомоскедастичности
 
-# тест Бройша-Пагана
-# Во вспомогательной регрессии квадраты остатков зависят от исходных регрессоров 
+# тест Бройша-Пагана Во вспомогательной регрессии квадраты остатков зависят от
+# исходных регрессоров
 bptest(model)
 
-# тест Уайта
-# Во вспомогательной регрессии квадраты остатков 
-# зависят от totsp и totsp^2
-bptest(model, data=h, varformula = ~ totsp + I(totsp^2) )
+# тест Уайта Во вспомогательной регрессии квадраты остатков зависят от totsp и
+# totsp^2
+bptest(model, data = h, varformula = ~totsp + I(totsp^2))
 # альтернативный вариант включить totsp и totsp^2
-bptest(model, data=h, varformula = ~ poly(totsp, 2) )
+bptest(model, data = h, varformula = ~poly(totsp, 2))
 
 # тест Голдфельда-Квандта
-gqtest(model, order.by = ~totsp, data=h, fraction = 0.2)
+gqtest(model, order.by = ~totsp, data = h, fraction = 0.2)
 
 # диаграмма рассеяния в логарифмах
-qplot(data=h, log(totsp), log(price))
+qplot(data = h, log(totsp), log(price))
 # визуально гетероскедастичность меньше выражена
 
 # модель парной регрессии в логарифмах
-model2 <- lm(data=h, log(price)~log(totsp))
+model2 <- lm(data = h, log(price) ~ log(totsp))
 
 # тест Голдфельда-Квандта для модели в логарифмах
-gqtest(model2, order.by = ~totsp, data=h, fraction = 0.2)
+gqtest(model2, order.by = ~totsp, data = h, fraction = 0.2)
 # гетероскедастичность есть, но гораздо менее выраженная
