@@ -1,85 +1,9 @@
-\documentclass[ignorenonframetext,]{beamer}
-\usetheme{Madrid}
-\usecolortheme{whale}
-\setbeamertemplate{caption}[numbered]
-\setbeamertemplate{caption label separator}{:}
-\setbeamercolor{caption name}{fg=normal text.fg}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-\usepackage{lmodern}
-\ifxetex
-  \usepackage{fontspec,xltxtra,xunicode}
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \newcommand{\euro}{€}
-\else
-  \ifluatex
-    \usepackage{fontspec}
-    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-    \newcommand{\euro}{€}
-  \else
-    \usepackage[T1]{fontenc}
-    \usepackage[utf8]{inputenc}
-      \fi
-\fi
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
-\usepackage{longtable,booktabs}
-\usepackage{caption}
-% These lines are needed to make table captions work with longtable:
-\makeatletter
-\def\fnum@table{\tablename~\thetable}
-\makeatother
-\usepackage{graphicx}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-
-% Comment these out if you don't want a slide with just the
-% part/section/subsection/subsubsection title:
-\AtBeginPart{
-  \let\insertpartnumber\relax
-  \let\partname\relax
-  \frame{\partpage}
-}
-\AtBeginSection{
-  \let\insertsectionnumber\relax
-  \let\sectionname\relax
-  \frame{\sectionpage}
-}
-\AtBeginSubsection{
-  \let\insertsubsectionnumber\relax
-  \let\subsectionname\relax
-  \frame{\subsectionpage}
-}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\setcounter{secnumdepth}{0}
-\usepackage[russian]{babel}
-\author[Эконометрика. Лекция 1]{Эконометрика. Лекция 1}
-\usepackage{tikz}
-
-\title{Метод наименьших квадратов}
-\date{}
-
-\begin{document}
-\frame{\titlepage}
-
 \begin{frame}{Эконометрика на одном слайде :)}
 
 \begin{block}{Вопросы:}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Как устроен мир? Как переменная \(x\) влияет на переменную \(y\)?
 \item
@@ -97,7 +21,7 @@
 \begin{block}{Например:}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \(y_i=\beta_1+\beta_2 x_i + \varepsilon_i\) 
 \end{itemize}
@@ -109,7 +33,7 @@
 \begin{frame}{Основные типы данных:}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Временные ряды
 \item
@@ -168,7 +92,7 @@ Cочетание первых двух: данные по нескольким 
 \begin{frame}{Данные --- обозначения}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Одна зависимая, объясняемая, переменная: \(y\)
 \item
@@ -211,11 +135,11 @@ Cочетание первых двух: данные по нескольким 
 Пример: \(y_i=\beta_1 + \beta_2 x_i + \varepsilon_i\)
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Наблюдаемые переменные: \(y\), \(x\)
 \item
-  Неизвестные параметры: \(\beta_2\), \(\beta_2\)
+  Неизвестные параметры: \(\beta_1\), \(\beta_2\)
 \item
   Случайная составляющая, ошибка: \(\varepsilon\)
 \end{itemize}
@@ -223,14 +147,15 @@ Cочетание первых двух: данные по нескольким 
 \begin{block}{План действий}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   придумать адекватную модель\\
 \item
   получить оценки неизвестных параметров: \(\hat{\beta}_1\),
   \(\hat{\beta}_2\)\\
 \item
-  прогнозировать, заменив неизвестные параметры на оценки:\\\[
+  прогнозировать, заменив неизвестные параметры на оценки:\\
+  \[
   \hat{y}_i=\hat{\beta}_1 + \hat{\beta}_2 x_i
   \]
 \end{itemize}
@@ -242,7 +167,7 @@ Cочетание первых двух: данные по нескольким 
 \begin{frame}{Метод наименьших квадратов}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Способ получить оценки неизвестных параметров модели исходя из
   реальных данных.
@@ -297,8 +222,9 @@ Q=(0.6-\hat{\beta}_1-\hat{\beta}_2 6.68)^2+(3-\hat{\beta}_1-\hat{\beta}_2 6.68)^
 \bottomrule
 \end{longtable}
 
-Оцените
-модели:\\\(y_i=\beta +\varepsilon_i\),\\\(y_i=\beta_1+\beta_2 x_i +\varepsilon_i\)
+Оцените модели:\\
+\(y_i=\beta +\varepsilon_i\),\\
+\(y_i=\beta_1+\beta_2 x_i +\varepsilon_i\)
 
 Маленькая подготовка: \(n\bar{x}=\sum_i x_i=\sum_i \bar{x}\),
 \(\sum_i (x_i - \bar{x})=0\).
@@ -450,9 +376,11 @@ X=\begin{pmatrix}
 
 Квадрат длины вектора, \(|y|^2=y_1^2+y_2^2+\ldots + y_n^2=\sum_i y_i^2\)
 
-Примеры:\\\(RSS=\sum \hat{\varepsilon}_i^2\) --- квадрат длины вектора
-\(\hat{\varepsilon}\)\\\(TSS=\sum (y_i-\bar{y})^2\) --- квадрат длины
-вектора \((y-\bar{y}\cdot \vec{1})\)
+Примеры:\\
+\(RSS=\sum \hat{\varepsilon}_i^2\) --- квадрат длины вектора
+\(\hat{\varepsilon}\)\\
+\(TSS=\sum (y_i-\bar{y})^2\) --- квадрат длины вектора
+\((y-\bar{y}\cdot \vec{1})\)
 
 \(\begin{pmatrix} y_1-\bar{y} \\ y_2-\bar{y} \\ \vdots \\ y_n-\bar{y} \end{pmatrix} = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix} - \bar{y}\begin{pmatrix} 1 \\ 1 \\ \vdots \\ 1 \end{pmatrix}=y-\bar{y}\cdot \vec{1}\)
 
@@ -527,7 +455,7 @@ x \perp y  \Leftrightarrow  \sum_i x_i y_i=0
 оценки МНК единственны, то:
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \(\sum \hat{\varepsilon}_i=0\)\\
 \item
@@ -544,8 +472,9 @@ x \perp y  \Leftrightarrow  \sum_i x_i y_i=0
 
 В моделях со свободным членом \(R^2=ESS/TSS\)
 
-\(TSS\) --- общий разброс \(y\)\\\(ESS\) --- объясненный регрессорами
-разброс\\\(R^2\) --- доля объясненного разброса в общем разбросе
+\(TSS\) --- общий разброс \(y\)\\
+\(ESS\) --- объясненный регрессорами разброс\\
+\(R^2\) --- доля объясненного разброса в общем разбросе
 
 Теорема. Если в регрессию включён свободный член,
 \(y_i=\beta_1 + \ldots\), и оценки МНК единственны, то \(R^2\) равен
@@ -613,4 +542,20 @@ y_n
 
 \end{frame}
 
-\end{document}
+\begin{frame}{Источники мудрости:}
+
+\begin{itemize}
+\item
+  Артамонов Н.В., Введение в эконометрику: главы 1.1, 1.2, 2.1
+\item
+  Борзых Д.А., Демешев Б.Б. Эконометрика в задачах и упражнениях: глава
+  1
+\item
+  Катышев П.К., Пересецкий А. А. Эконометрика. Начальный курс: главы
+  2.1, 2.2, 3.1, 3.2
+\item
+  Себер Дж., Линейный регрессионный анализ: главы 1.0, 1.1, 1.2, 2.1,
+  3.1
+\end{itemize}
+
+\end{frame}
