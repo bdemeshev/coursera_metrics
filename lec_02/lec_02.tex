@@ -1,31 +1,39 @@
-\documentclass[ignorenonframetext,]{beamer}
-\usetheme{Madrid}
-\usecolortheme{whale}
+\documentclass[russian,ignorenonframetext,]{beamer}
 \setbeamertemplate{caption}[numbered]
-\setbeamertemplate{caption label separator}{:}
+\setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+\usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
-\usepackage{lmodern}
-\ifxetex
-  \usepackage{fontspec,xltxtra,xunicode}
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \newcommand{\euro}{€}
-\else
-  \ifluatex
-    \usepackage{fontspec}
-    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-    \newcommand{\euro}{€}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
   \else
-    \usepackage[T1]{fontenc}
-    \usepackage[utf8]{inputenc}
-      \fi
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
+\usetheme{Madrid}
+\usecolortheme{whale}
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
-\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=russian]{babel}
+\else
+  \usepackage{polyglossia}
+  \setmainlanguage[]{}
+\fi
+\newif\ifbibliography
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -40,14 +48,31 @@
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
 \newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
 \newcommand{\NormalTok}[1]{{#1}}
 \usepackage{longtable,booktabs}
 \usepackage{caption}
@@ -56,17 +81,22 @@
 \def\fnum@table{\tablename~\thetable}
 \makeatother
 
-% Comment these out if you don't want a slide with just the
-% part/section/subsection/subsubsection title:
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+
 \AtBeginPart{
   \let\insertpartnumber\relax
   \let\partname\relax
   \frame{\partpage}
 }
 \AtBeginSection{
-  \let\insertsectionnumber\relax
-  \let\sectionname\relax
-  \frame{\sectionpage}
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
 }
 \AtBeginSubsection{
   \let\insertsubsectionnumber\relax
@@ -74,11 +104,10 @@
   \frame{\subsectionpage}
 }
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
-\usepackage[russian]{babel}
 \usepackage{etex}
 \author[Эконометрика. Лекция 2]{Эконометрика. Лекция 2}
 \newcommand{\e}{\varepsilon}
@@ -341,7 +370,7 @@ Var(\varepsilon|X) = \begin{pmatrix}
 Предпосылки:
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \(Var(\varepsilon|X)=\sigma^2 \cdot I_{n\times n}\)
 \item
@@ -477,7 +506,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 а именно: \(\widehat{Var}(\hat{\beta}_j| X)=\hat{\sigma}^2/RSS_j\)
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \(se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j | X)}\)
 \end{itemize}
@@ -487,7 +516,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 
 \end{frame}
 
-\begin{frame}{Оценка ковариационной матрицы}
+\begin{frame}[fragile]{Оценка ковариационной матрицы}
 
 \[
 \widehat{Var}(\hat{\beta}|X)=\begin{pmatrix}
@@ -511,7 +540,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \begin{frame}{БСХС --- Большой Список Хороших Свойств}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Базовые:
 \end{itemize}
@@ -520,7 +549,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \(\varepsilon_i\)
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Асимптотические:
 \end{itemize}
@@ -529,7 +558,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \(\varepsilon_i\)
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   При нормальности:
 \end{itemize}
@@ -544,14 +573,14 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Истинная зависимость имеет вид
   \(y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i+\varepsilon_i\)
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   В матричном виде: \(y=X\beta + \varepsilon\)
 \end{itemize}
@@ -559,14 +588,14 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   С помощью МНК оценивается регрессия \(y\) на константу, \(x_i\),
   \(z_i\)
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   В матричном виде: \(\hat{\beta}=(X'X)^{-1}X'y\)
 \end{itemize}
@@ -574,7 +603,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{2}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Наблюдений больше, чем оцениваемых коэффициентов \(\beta\): \(n>k\)
 \end{enumerate}
@@ -588,14 +617,14 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{3}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Строгая экзогенность:
   \(E(\varepsilon_i | \text{ все регрессоры } )=0\)
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   В матричном виде: \(E(\varepsilon_i | X)=0\)
 \end{itemize}
@@ -603,14 +632,14 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{4}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Условная гомоскедастичность:
   \(E(\varepsilon_i^2 | \text{ все регрессоры })=\sigma^2\)
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   В матричном виде: \(E(\varepsilon_i^2 | X)=\sigma^2\)
 \end{itemize}
@@ -618,7 +647,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{5}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \(Cov(\varepsilon_i,\varepsilon_j | X)=0\) при \(i \neq j\)
 \end{enumerate}
@@ -632,7 +661,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{6}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   векторы отдельных наблюдений \((x_i,z_i,y_i)\) --- независимы и
   одинаково распределены
@@ -641,7 +670,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Синонимы в матричном виде: \(rank(X)=k\) или \(det(X'X)\neq 0\) или
   \((X'X)^{-1}\) существует
@@ -669,7 +698,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 То:
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Оценки эффективны среди линейных и несмещенных
 \end{itemize}
@@ -687,7 +716,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 То:
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Ковариационная матрица: \(Var(\hat{\beta} | X )=\sigma^2 (X'X)^{-1}\)
 \end{itemize}
@@ -695,7 +724,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 Диспрерсии: \(Var(\hat{\beta}_j| X)=\sigma^2/RSS_j\)
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \(Cov(\hat{\beta}_j,\hat{\varepsilon}_i | X)=0\)
 \item
@@ -710,7 +739,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 То при \(n\to \infty\):
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \(\hat{\beta}_j \to \beta_j\) по вероятности
 \item
@@ -730,7 +759,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 то:
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Оценки эффективны среди несмещенных
 \item
@@ -765,7 +794,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \begin{frame}{Описание любого теста:}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   предпосылки теста
 \end{itemize}
@@ -773,7 +802,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 например: асимптотический или требующий нормальности ошибок \(\e_i\)
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   проверяемая \(H_0\) против \(H_a\)
 \item
@@ -788,7 +817,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   выбираем уровень значимости \(\alpha\),
   \(\alpha=P(H_0 \text{ отвергнута }| H_0 \text{ верна })\)
@@ -805,7 +834,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{4}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   вывод: ``\(H_0\) отвергается'' или ``\(H_0\) не отвергается''
 \end{enumerate}
@@ -828,7 +857,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \end{Shaded}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   проверьте гипотезу \(\beta_a=0\)
 \item
@@ -904,7 +933,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \begin{frame}{Значимость и существенность}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Коэффициент может быть значимым и совершенно несущественным
 \end{itemize}
@@ -912,7 +941,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 На огромных выборках как правило все коэффиценты значимы
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Коэффициент может быть существенным, но незначимым
 \end{itemize}
@@ -931,7 +960,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 Например:
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   стандартизировать переменные:
 \end{itemize}
@@ -941,7 +970,7 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
 \(z^{st}_i:= \frac{z_i-\bar{z}}{sd(z)}\)
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   переоценить модель:
 \end{itemize}
@@ -1032,6 +1061,23 @@ Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
   более сложные гипотезы
 \item
   прогнозирование
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Источники мудрости:}
+
+\begin{itemize}
+\item
+  Артамонов Н.В., Введение в эконометрику: главы 1.3
+\item
+  Борзых Д.А., Демешев Б.Б. Эконометрика в задачах и упражнениях: глава
+  2, 3
+\item
+  Катышев П.К., Пересецкий А. А. Эконометрика. Начальный курс: главы
+  2.4, 2.5, 2.6, 3.2, 3.3
+\item
+  Себер Дж., Линейный регрессионный анализ: главы 3.2, 3.3, 3.4
 \end{itemize}
 
 \end{frame}

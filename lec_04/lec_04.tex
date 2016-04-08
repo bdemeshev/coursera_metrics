@@ -1,43 +1,56 @@
-\documentclass[ignorenonframetext,]{beamer}
-\usetheme{Madrid}
-\usecolortheme{whale}
+\documentclass[russian,ignorenonframetext,]{beamer}
 \setbeamertemplate{caption}[numbered]
-\setbeamertemplate{caption label separator}{:}
+\setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+\usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
-\usepackage{lmodern}
-\ifxetex
-  \usepackage{fontspec,xltxtra,xunicode}
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \newcommand{\euro}{€}
-\else
-  \ifluatex
-    \usepackage{fontspec}
-    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-    \newcommand{\euro}{€}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
   \else
-    \usepackage[T1]{fontenc}
-    \usepackage[utf8]{inputenc}
-      \fi
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
+\usetheme{Madrid}
+\usecolortheme{whale}
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
-\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=russian]{babel}
+\else
+  \usepackage{polyglossia}
+  \setmainlanguage[]{}
+\fi
+\newif\ifbibliography
 
-% Comment these out if you don't want a slide with just the
-% part/section/subsection/subsubsection title:
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+
 \AtBeginPart{
   \let\insertpartnumber\relax
   \let\partname\relax
   \frame{\partpage}
 }
 \AtBeginSection{
-  \let\insertsectionnumber\relax
-  \let\sectionname\relax
-  \frame{\sectionpage}
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
 }
 \AtBeginSubsection{
   \let\insertsubsectionnumber\relax
@@ -45,11 +58,10 @@
   \frame{\subsectionpage}
 }
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
-\usepackage[russian]{babel}
 \author[Эконометрика. Лекция 4]{Эконометрика. Лекция 4}
 \newcommand{\e}{\varepsilon}
 
@@ -64,7 +76,7 @@
 Мультиколлинеарность --- наличие линейной зависимости между регрессорами
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   строгая мультиколлинеарность --- идеальная линейная зависимость
 \item
@@ -145,7 +157,7 @@ X=\begin{pmatrix}
 мультиколлинеарностью, то пакет может:
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   выдать сообщение об ошибке
 \item
@@ -162,7 +174,7 @@ X=\begin{pmatrix}
 Причины:
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   регрессоры, измеряющие примерно одно и то же: валютный курс на начало
   и на конец дня
@@ -198,7 +210,7 @@ se^2(\hat{\beta}_j)=\frac{\hat{\sigma}^2}{RSS_j}=\frac{\hat{\sigma}^2}{TSS_j\cdo
 \begin{frame}{Неприятные проявления высоких стандартных ошибок}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   очень широкие доверительные интервалы
 \item
@@ -225,7 +237,7 @@ se^2(\hat{\beta}_j)=\frac{\hat{\sigma}^2}{RSS_j}=\frac{\hat{\sigma}^2}{TSS_j\cdo
 \begin{frame}{Количественные признаки мультиколлинеарности}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   коэффициент вздутия дисперсии (Variance Inflation Factor)
 \end{itemize}
@@ -239,7 +251,7 @@ se^2(\hat{\beta}_j)=VIF_j \cdot \frac{\hat{\sigma}^2}{TSS_j}
 \]
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   выборочные корреляции между регрессорами
 \end{itemize}
@@ -251,7 +263,7 @@ se^2(\hat{\beta}_j)=VIF_j \cdot \frac{\hat{\sigma}^2}{TSS_j}
 \begin{frame}{Что делать?}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Не так страшен чёрт! Оценки \(\hat{\beta}_j\) обладают наименьшей
   дисперсией среди несмещенных оценок. На доверительных интервалах для
@@ -270,7 +282,7 @@ se^2(\hat{\beta}_j)=VIF_j \cdot \frac{\hat{\sigma}^2}{TSS_j}
 мультиколлинеарность.
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   выкинуть часть регрессоров
 \end{itemize}
@@ -279,7 +291,7 @@ se^2(\hat{\beta}_j)=VIF_j \cdot \frac{\hat{\sigma}^2}{TSS_j}
 коэффициентов.
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   использовать МНК со штрафом
 \end{itemize}
@@ -295,7 +307,7 @@ se^2(\hat{\beta}_j)=VIF_j \cdot \frac{\hat{\sigma}^2}{TSS_j}
 \(R^2_2=0.5\), \(R^2_3=0.95\), \(R^2_4=0.98\)
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Рассчитайте коэффициенты вздутия дисперсии
 \item
@@ -311,7 +323,7 @@ se^2(\hat{\beta}_j)=VIF_j \cdot \frac{\hat{\sigma}^2}{TSS_j}
 Общая идея МНК со штрафом:
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Обычный МНК
 \end{itemize}
@@ -321,7 +333,7 @@ RSS \to \min
 \]
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   МНК со штрафом
 \end{itemize}
@@ -335,7 +347,7 @@ RSS + \lambda \cdot (\text{суммарный размер всех коэффи
 \begin{frame}{Три популярных варианта оштрафовать МНК}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Ридж-регрессия
 \end{itemize}
@@ -345,7 +357,7 @@ RSS + \lambda \cdot (\text{суммарный размер всех коэффи
 \]
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   LASSO
 \end{itemize}
@@ -355,7 +367,7 @@ RSS + \lambda \cdot (\text{суммарный размер всех коэффи
 \]
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Метод эластичной сети
 \end{itemize}
@@ -414,7 +426,7 @@ RSS + \lambda \cdot (\text{суммарный размер всех коэффи
 \begin{frame}{Новые переменные}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \(pc_1\) имеет максимальную выборочную дисперсию \(sVar(pc_1)\)
 \item
@@ -501,7 +513,7 @@ sVar(pc_1)+ sVar(pc_2) + \ldots + sVar(pc_k)
 \begin{frame}{Что дают главные компоненты?}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   визуализировать сложный набор данных
 \item
@@ -517,7 +529,7 @@ sVar(pc_1)+ sVar(pc_2) + \ldots + sVar(pc_k)
 \begin{frame}{Подводные камни на практике}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   разные единицы измерения
 \item
@@ -559,7 +571,7 @@ sVar(pc_1)+ sVar(pc_2) + \ldots + sVar(pc_k)
 \begin{frame}{Метод главных компонент}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   прежде всего полезен сам по себе (!)
 \item
@@ -581,6 +593,20 @@ sVar(pc_1)+ sVar(pc_2) + \ldots + sVar(pc_k)
   Либо не бороться, либо жертвовать несмещенностью.
 \item
   LASSO, Ridge --- два варианта МНК со штрафом
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Источники мудрости:}
+
+\begin{itemize}
+\item
+  Артамонов Н.В., Введение в эконометрику: глава 2.9
+\item
+  Борзых Д.А., Демешев Б.Б. Эконометрика в задачах и упражнениях: глава
+  7
+\item
+  Катышев П.К., Пересецкий А. А. Эконометрика. Начальный курс: главы 4.1
 \end{itemize}
 
 \end{frame}

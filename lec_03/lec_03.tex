@@ -1,31 +1,39 @@
-\documentclass[ignorenonframetext,]{beamer}
-\usetheme{Madrid}
-\usecolortheme{whale}
+\documentclass[russian,ignorenonframetext,]{beamer}
 \setbeamertemplate{caption}[numbered]
-\setbeamertemplate{caption label separator}{:}
+\setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+\usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
-\usepackage{lmodern}
-\ifxetex
-  \usepackage{fontspec,xltxtra,xunicode}
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \newcommand{\euro}{€}
-\else
-  \ifluatex
-    \usepackage{fontspec}
-    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-    \newcommand{\euro}{€}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
   \else
-    \usepackage[T1]{fontenc}
-    \usepackage[utf8]{inputenc}
-      \fi
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
+\usetheme{Madrid}
+\usecolortheme{whale}
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
-\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=russian]{babel}
+\else
+  \usepackage{polyglossia}
+  \setmainlanguage[]{}
+\fi
+\newif\ifbibliography
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -40,27 +48,49 @@
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
 \newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
 \newcommand{\NormalTok}[1]{{#1}}
 
-% Comment these out if you don't want a slide with just the
-% part/section/subsection/subsubsection title:
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+
 \AtBeginPart{
   \let\insertpartnumber\relax
   \let\partname\relax
   \frame{\partpage}
 }
 \AtBeginSection{
-  \let\insertsectionnumber\relax
-  \let\sectionname\relax
-  \frame{\sectionpage}
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
 }
 \AtBeginSubsection{
   \let\insertsubsectionnumber\relax
@@ -68,11 +98,10 @@
   \frame{\subsectionpage}
 }
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
-\usepackage[russian]{babel}
 \author[Эконометрика. Лекция 3]{Эконометрика. Лекция 3}
 \newcommand{\e}{\varepsilon}
 \newcommand{\hy}{\hat{y}}
@@ -111,7 +140,7 @@
 Что мы прогнозируем?
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Средний \(y_i\) при данных регрессорах, \(E(y_i | x_i, z_i)\):
 \end{itemize}
@@ -119,7 +148,7 @@
 \(E(y_i | x_i, z_i)=\beta_1 + \beta_2 x_i + \beta_3 z_i\)
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Конкретный \(y_i\) при данных регрессорах:
 \end{itemize}
@@ -431,13 +460,13 @@ $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{7}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   С вероятностью 1 среди регрессоров нет линейно зависимых
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Синонимы в матричном виде: \(rank(X)=k\) или \(det(X'X)\neq 0\) или
   \((X'X)^{-1}\) существует
@@ -468,7 +497,7 @@ $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Оценить неограниченную модель (unrestricted, ur)
 \end{enumerate}
@@ -480,7 +509,7 @@ $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Оценить ограниченную модель (restricted, r)
 \end{enumerate}
@@ -514,7 +543,7 @@ F=\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k_{UR})} \sim F_{r, n-k_{UR}}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{3}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Если \(F_{obs}>F_{cr}\) или \(\chi^2_{obs}>\chi^2_{cr}\), то \(H_0\)
   отвергается
@@ -524,20 +553,50 @@ F=\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k_{UR})} \sim F_{r, n-k_{UR}}
 
 \begin{frame}[fragile]{Пример {[}у доски{]}}
 
+\begin{verbatim}
+## Error in file(file, "rt"): cannot open the connection
+\end{verbatim}
+
+\begin{verbatim}
+## Error in is.data.frame(data): object 'h' not found
+\end{verbatim}
+
+\begin{verbatim}
+## Error in is.data.frame(data): object 'h' not found
+\end{verbatim}
+
 Проверьте гипотезу о двух ограничениях. RSS для двух моделей:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{model_1 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(}\DataTypeTok{data=}\NormalTok{h, }\KeywordTok{log}\NormalTok{(price)~}\KeywordTok{log}\NormalTok{(totsp)+}\KeywordTok{log}\NormalTok{(livesp)+}
 \StringTok{                }\KeywordTok{log}\NormalTok{(kitsp)+brick+metrdist+walk)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error in is.data.frame(data): object 'h' not found
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{model_2 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(}\DataTypeTok{data=}\NormalTok{h, }\KeywordTok{log}\NormalTok{(price)~}\KeywordTok{log}\NormalTok{(totsp)+}\KeywordTok{log}\NormalTok{(livesp)+}
 \StringTok{                }\KeywordTok{log}\NormalTok{(kitsp)+brick)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error in is.data.frame(data): object 'h' not found
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{deviance}\NormalTok{(model_1)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 62.56589
+## Error in deviance(model_1): object 'model_1' not found
 \end{verbatim}
 
 \begin{Shaded}
@@ -547,7 +606,7 @@ F=\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k_{UR})} \sim F_{r, n-k_{UR}}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 69.29502
+## Error in deviance(model_2): object 'model_2' not found
 \end{verbatim}
 
 \end{frame}
@@ -635,14 +694,14 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Истинная зависимость имеет вид
   \(y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i+\varepsilon_i\)
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   В матричном виде: \(y=X\beta + \varepsilon\)
 \end{itemize}
@@ -650,14 +709,14 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   С помощью МНК оценивается регрессия \(y\) на константу, \(x_i\),
   \(z_i\)
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   В матричном виде: \(\hat{\beta}=(X'X)^{-1}X'y\)
 \end{itemize}
@@ -665,7 +724,7 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{2}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Наблюдений больше, чем оцениваемых коэффициентов \(\beta\): \(n>k\)
 \end{enumerate}
@@ -677,14 +736,14 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{3}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Строгая экзогенность:
   \(E(\varepsilon_i | \text{ все регрессоры } )=0\)
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   В матричном виде: \(E(\varepsilon_i | X)=0\)
 \end{itemize}
@@ -692,14 +751,14 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{4}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Условная гомоскедастичность:
   \(E(\varepsilon_i^2 | \text{ все регрессоры })=\sigma^2\)
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   В матричном виде: \(E(\varepsilon_i^2 | X)=\sigma^2\)
 \end{itemize}
@@ -707,7 +766,7 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{5}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \(Cov(\varepsilon_i,\varepsilon_j | X)=0\) при \(i \neq j\)
 \end{enumerate}
@@ -719,7 +778,7 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{6}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   векторы отдельных наблюдений \((x_i,z_i,y_i)\) --- независимы и
   одинаково распределены
@@ -728,7 +787,7 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \end{enumerate}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Синонимы в матричном виде: \(rank(X)=k\) или \(det(X'X)\neq 0\) или
   \((X'X)^{-1}\) существует
@@ -741,7 +800,7 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 При \(n\to \infty\):
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \(\hat{\beta}_j \to \beta_j\) по вероятности
 \item
@@ -763,7 +822,7 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 Если дополнительно известно, что \(\varepsilon_i \sim N(0, \sigma^2)\):
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Оценки эффективны среди несмещенных
 \item
@@ -838,7 +897,7 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Оценить модель:
   \(y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i\)
@@ -908,7 +967,7 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{2}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   Информационные критерии (размер штрафа):
 \end{enumerate}
@@ -936,6 +995,22 @@ F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
 \end{itemize}
 
 Далее: о неприятностях :)
+
+\begin{block}{Источники мудрости:}
+
+\begin{itemize}
+\item
+  Артамонов Н.В., Введение в эконометрику: главы 2.4, 2.5, 3.2
+\item
+  Борзых Д.А., Демешев Б.Б. Эконометрика в задачах и упражнениях: глава
+  3
+\item
+  Катышев П.К., Пересецкий А. А. Эконометрика. Начальный курс: главы 3.5
+\item
+  Себер Дж., Линейный регрессионный анализ: главы 4.1, 5.1, 5.2, 5.3
+\end{itemize}
+
+\end{block}
 
 \end{frame}
 
