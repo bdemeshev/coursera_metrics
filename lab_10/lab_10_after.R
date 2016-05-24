@@ -30,8 +30,9 @@ base <- qplot(data = f, totsp, price)
 base
 
 # добавляем к базовому графику две линии квантильной регрессии
-base_q <- base + stat_smooth(method = "rq", tau = 0.1, se = FALSE) + stat_smooth(method = "rq",
-  tau = 0.9, se = FALSE)
+base_q <- base + stat_smooth(method = "rq", method.args = list(tau = 0.1), se = FALSE) +
+  stat_smooth(method = "rq", method.args = list(tau = 0.9), se = FALSE)
+base_q
 
 # добавляем к графику дележку в зависимости от того, кирпичный дом или нет
 base_q + aes(colour = factor(brick))
