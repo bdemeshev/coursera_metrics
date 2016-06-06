@@ -19,10 +19,11 @@ output:
 ```{r, include=FALSE}
 library("knitr")
 library("pander")
-opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library("rattle")
 #library("caret")
 library("rpart")
+library("rpart.plot")
 library("quantreg")
 library("ggplot2")
 library("tikzsetup")
@@ -93,9 +94,9 @@ Med(y_i|x_i)=\beta x_i
 Набор данных:
 
 ```{r}
-x <- c(1,5,5)
-y <- c(1,2,6)
-df <- data.frame(y=y,x=x)
+x <- c(1, 5, 5)
+y <- c(1, 2, 6)
+df <- data.frame(y = y, x = x)
 pander(df)
 ```
 
@@ -177,17 +178,18 @@ $\widehat{price}_i =  -102.4 + 3.6 totsp_i$
 # Квантильная регрессия стоимости на графике
 
 ```{r}
-f <- read.table("flats_moscow.txt", header = TRUE, sep="\t")
+f <- read.table("flats_moscow.txt", header = TRUE, sep = "\t")
 
-model <- rq(data=f, price~totsp, tau=c(0.1,0.5,0.9))
+model <- rq(data = f, price ~ totsp, tau = c(0.1, 0.5, 0.9))
 #summary(model)
 
-base <- qplot(data=f, y=price, x=totsp, xlab="Общая площадь, м2",ylab="Цена, тысяч у.е.") 
+base <- qplot(data = f, y = price, x = totsp, xlab = "Общая площадь, м2",
+              ylab = "Цена, тысяч у.е.") 
 # base
-base_q <- base + stat_smooth(se=FALSE, method = "rq", tau=0.1) + 
-  stat_smooth(se=FALSE, method = "rq", tau=0.9) 
+base_q <- base + stat_smooth(se = FALSE, method = "rq", tau = 0.1) + 
+  stat_smooth(se = FALSE, method = "rq", tau = 0.9) 
 #base_q 
-ggsave(filename = "base_q.png",plot = base_q)
+ggsave(filename = "base_q.png", plot = base_q)
 ```
 ![alt text](base_q.png)
 
@@ -210,15 +212,16 @@ ggsave(filename = "base_q.png",plot = base_q)
 Набор данных
 
 ```{r}
-t <- data.frame(y=c(1,1,2,10,20), x=c(1,0,0,0,1), z=c(-2,3,-4,9,9))
+t <- data.frame(y = c(1, 1, 2, 10, 20), 
+                x = c(1, 0, 0, 0, 1), z = c(-2, 3, -4, 9, 9))
 pander(t)
 ```
 
 # Каждый мужчина должен посадить дерево
 
 ```{r}
-fit <- rpart(data=t, y~x+z, control = rpart.control(minsplit = 2))
-fancyRpartPlot(fit,sub="")
+fit <- rpart(data = t, y ~ x + z, control = rpart.control(minsplit = 2))
+fancyRpartPlot(fit, sub = "")
 ```
 <!--
 (рассказываю, что прогнозировать легко)
@@ -269,8 +272,8 @@ $\{ 1, 1, 2, 10, 20\}$, $\hy=\bar{y}=6.8$,
 
 ```{r}
 x <- 1:5
-y <- c(1,2,9,10,10)
-df <- data.frame(y=y,x=x)
+y <- c(1, 2, 9, 10, 10)
+df <- data.frame(y = y, x = x)
 pander(df)
 ```
 
@@ -352,10 +355,10 @@ f(\theta|y)= \frac{f(y|\theta)\cdot f(\theta)}{f(y)} \sim f(y|\theta)\cdot f(\th
 # Как описать сложную функцию плотности?
 
 ```{r, fig.width=5, fig.height=5}
-x1 <- rnorm(50, mean=0, sd=1)
-x2 <- rnorm(70, mean=4, sd=1)
-x <- c(x1,x2)
-qplot(x, geom="density") + geom_rug() + xlab("r") + ylab("") 
+x1 <- rnorm(50, mean = 0, sd = 1)
+x2 <- rnorm(70, mean = 4, sd = 1)
+x <- c(x1, x2)
+qplot(x, geom = "density") + geom_rug() + xlab("r") + ylab("") 
 ```
 
 # Сколь угодно точное описание любой плотности!
@@ -455,9 +458,9 @@ d & 0 & 0 & \ldots \\
 # Пример проблемной ситуации
 
 ```{r}
-x <- c(1,2,3)
-y <- c(0,0,1)
-df <- data.frame(y=y,x=x)
+x <- c(1, 2, 3)
+y <- c(0, 0, 1)
+df <- data.frame(y = y, x = x)
 pander(df)
 ```
 
