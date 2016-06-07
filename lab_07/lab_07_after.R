@@ -36,8 +36,13 @@ qplot(data = t, x = survived, y = age, geom = "violin")
 qplot(data = t, x = survived, y = age, geom = "boxplot")
 
 # два варианта сглаженной функции плотности
-qplot(data = t, x = age, y = ..count.., fill = survived, geom = "density", position = "stack")
-qplot(data = t, x = age, y = ..count.., fill = survived, geom = "density", position = "fill")
+ggplot(data = t, aes(x = age, y = ..count.., fill = survived)) + geom_density(position = "stack")
+ggplot(data = t, aes(x = age, y = ..count.., fill = survived)) + geom_density(position = "fill")
+
+# !!!! отличие от видеолекции !!!!
+# вместо ggplot() в видеолекции 7.2.1. используется qplot()
+# опция `position` исчезла из команды qplot() при обновлении пакета ggplot2 до версии 2.0
+
 
 # Оценивание логит и пробит моделей
 m_logit <- glm(data = t, survived ~ sex + age + pclass + fare, family = binomial(link = "logit"),
