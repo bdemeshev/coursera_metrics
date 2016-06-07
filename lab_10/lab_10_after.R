@@ -34,6 +34,11 @@ base_q <- base + stat_smooth(method = "rq", method.args = list(tau = 0.1), se = 
   stat_smooth(method = "rq", method.args = list(tau = 0.9), se = FALSE)
 base_q
 
+# !!!! отличие от видеолекции !!!!
+# по сравнению с видеофрагментом 10.2.1 опция tau передается пакету quantreg с внутри method.args
+# необходимость method.args появилась при обновлении пакета ggplot2 до версии 2.0
+
+
 # добавляем к графику дележку в зависимости от того, кирпичный дом или нет
 base_q + aes(colour = factor(brick))
 
@@ -93,7 +98,7 @@ h <- mutate(cars, speed = 1.61 * speed, dist = 0.3 * dist)
 
 # добавим квадрат скорости и мусорную переменную nrow(h) --- количество строк в
 # таблице h
-h <- mutate(h, speed2 = speed^2, junk = rnorm(nrow(h)))
+h <- mutate(h, speed2 = speed ^ 2, junk = rnorm(nrow(h)))
 
 # обычная регрессия с мусорной переменной
 model_lm <- lm(data = h, dist ~ speed + junk)
