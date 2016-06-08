@@ -1,9 +1,9 @@
 ---
 title: "handout_1 2 3"
+lang: russian
+babel-lang: russian
 output:
   pdf_document:
-    includes:
-      in_header: header.tex
     keep_tex: yes
     toc: yes
     toc_depth: 3

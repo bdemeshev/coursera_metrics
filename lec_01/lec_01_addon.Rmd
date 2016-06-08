@@ -2,6 +2,7 @@
 title: "Неделя 1. МНК. Дополнительные материалы"
 output: pdf_document
 lang: russian
+babel-lang: russian
 header-includes: 
   - \usepackage{dcolumn}
   - \DeclareMathOperator{\plim}{plim}
