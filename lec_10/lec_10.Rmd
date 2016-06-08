@@ -1,6 +1,7 @@
 ---
 title: "Три сюжета напоследок"
 lang: russian
+babel-lang: russian
 header-includes: 
   - \author[Эконометрика. Лекция 10]{Эконометрика. Лекция 10}
   - \usepackage{dcolumn}
@@ -26,8 +27,6 @@ library("rpart")
 library("rpart.plot")
 library("quantreg")
 library("ggplot2")
-library("tikzsetup")
-#tikzsetup()
 ```
 
 
@@ -178,7 +177,7 @@ $\widehat{price}_i =  -102.4 + 3.6 totsp_i$
 # Квантильная регрессия стоимости на графике
 
 ```{r}
-f <- read.table("flats_moscow.txt", header = TRUE, sep = "\t")
+f <- read.table("../datasets/flats_moscow.txt", header = TRUE, sep = "\t")
 
 model <- rq(data = f, price ~ totsp, tau = c(0.1, 0.5, 0.9))
 #summary(model)
@@ -186,8 +185,8 @@ model <- rq(data = f, price ~ totsp, tau = c(0.1, 0.5, 0.9))
 base <- qplot(data = f, y = price, x = totsp, xlab = "Общая площадь, м2",
               ylab = "Цена, тысяч у.е.") 
 # base
-base_q <- base + stat_smooth(se = FALSE, method = "rq", tau = 0.1) + 
-  stat_smooth(se = FALSE, method = "rq", tau = 0.9) 
+base_q <- base + stat_smooth(method = "rq", method.args = list(tau = 0.1), se = FALSE) +
+  stat_smooth(method = "rq", method.args = list(tau = 0.9), se = FALSE)
 #base_q 
 ggsave(filename = "base_q.png", plot = base_q)
 ```

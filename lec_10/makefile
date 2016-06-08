@@ -1,27 +1,27 @@
-# makefile
-# .Rmd extension is automatically added
-fname = lec_10
-header = header.tex
+# makefile: Rmd -> md -> tex -> pdf
+# v 2.0
+# .Rnw extension is automatically added
+file_name = lec_10
 
-all: md word tex pdf html
+$(file_name).pdf: $(file_name).tex
+	# protection against biber error
+	# http://tex.stackexchange.com/questions/140814/
+	rm -rf `biber --cache`
 
-md: $(fname).Rmd
-	Rscript -e "library(knitr); knit('$(fname).Rmd')"
+	# create pdf
+	# will automatically run pdflatex/biber if necessary
+	latexmk -pdf $(file_name).tex
 
-word: $(fname).md
-	pandoc -s $(fname).md -o $(fname).docx
+	# clean auxillary files
+	latexmk -c $(file_name).tex
 
-header: # will overwrite header.tex 
-	echo "\usepackage[utf8]{inputenc}" > $(header) 
-	echo "\usepackage[russian]{babel}" >> $(header) # add line
+$(file_name).tex : $(file_name).md
+	pandoc $(file_name).md --to beamer --self-contained  --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash-implicit_figures --output $(file_name).tex --variable theme=Madrid --variable colortheme=whale --highlight-style tango
 
-tex: $(fname).md # $(header)
-	# pandoc -s --include-in-header=$(header) $(fname).md -o $(fname).tex
-	pandoc -s $(fname).md -o $(fname).tex
+$(file_name).md : $(file_name).Rmd
+	Rscript -e "library(knitr); knit('$(file_name).Rmd')"
 
-pdf: $(fname).tex
-	latexmk -pdf $(fname).tex # create pdf
-	latexmk -c $(fname).tex  # clean auxillary files
-	
-html: $(fname).md
-	pandoc -s $(fname).md -o $(fname).html
+clean:
+	rm $(file_name).md
+	rm $(file_name).pdf
+	rm $(file_name).tex
