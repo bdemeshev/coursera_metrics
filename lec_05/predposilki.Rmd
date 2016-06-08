@@ -1,6 +1,7 @@
 ---
 title: "Куча предпосылок"
 lang: russian
+babel-lang: russian
 output:
   beamer_presentation:
     keep_tex: yes
