@@ -46,6 +46,7 @@ base_q + aes(colour = factor(brick))
 
 # делим набор данных на две части: обучающую (75%) и тестовую получаем номера
 # наблюдений из обучающей части
+set.seed(42) # для точной воспроизводимости случайного разбиения
 in_sample <- createDataPartition(f$price, p = 0.75, list = FALSE)
 head(in_sample)  # несколько номеров наблюдений, входящих в обучающую выборку
 
@@ -55,6 +56,7 @@ f_test <- f[-in_sample, ]  # отбираем наблюдения с номер
 # обычная регрессия
 model_lm <- lm(data = f_train, price ~ totsp + kitsp + livesp + brick)
 # случайный лес
+set.seed(42) # для точной воспроизводимости случайного леса
 model_rf <- randomForest(data = f_train, price ~ totsp + kitsp + livesp + brick)
 
 # поместим цену в отдельную переменную
@@ -65,9 +67,9 @@ yhat_lm <- predict(model_lm, f_test)
 yhat_rf <- predict(model_rf, f_test)
 
 # сумма квадратов остатков прогнозов по тестовой выборке: МНК
-sum((y - yhat_lm)^2)
+sum((y - yhat_lm) ^ 2)
 # сумма квадратов остатков прогнозов по тестовой выборке: случайные лес
-sum((y - yhat_rf)^2)
+sum((y - yhat_rf) ^ 2)
 
 #################################### Байесовский подход: логит-модель
 
@@ -83,11 +85,11 @@ summary(model_logit)  # отчет по модели
 # яркий симптом такой ситуации --- огромные стандартные ошибки
 
 # байесовский подход априорное распределение: beta ~ N(0, 50^2)
-model_mcmc_logit <- MCMClogit(data = bad, y ~ x, b0 = 0, B0 = 1/50^2)
+model_mcmc_logit <- MCMClogit(data = bad, y ~ x, b0 = 0, B0 = 1 / 50 ^ 2)
 summary(model_mcmc_logit)  # отчет по байесовской логит-модели
 
 # байесовский подход априорное распределение: beta ~ N(0, 10^2)
-model_mcmc_logit <- MCMClogit(data = bad, y ~ x, b0 = 0, B0 = 1/10^2)
+model_mcmc_logit <- MCMClogit(data = bad, y ~ x, b0 = 0, B0 = 1 / 10 ^ 2)
 summary(model_mcmc_logit)  # отчет по байесовской логит-модели
 
 #################################### Регрессия пик-плато (spike and slab regression)
