@@ -304,7 +304,7 @@ $r$ --- количество ограничений в $H_0$
 ```{r, results='asis', message=FALSE, warning=FALSE, echo=FALSE}
 library("pander")
 library("memisc")
-h <- read.csv("../lab_03/flats_moscow.txt", header = TRUE, sep = "\t")
+h <- read.csv("../datasets/flats_moscow.txt", header = TRUE, sep = "\t")
 model_1 <- lm(data = h, log(price) ~ log(totsp) + log(livesp) +
                 log(kitsp) + brick + metrdist + walk)
 model_2 <- lm(data = h, log(price) ~ log(totsp) + log(livesp) +
