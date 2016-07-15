@@ -12,7 +12,7 @@ install.packages("mfx") # не используется в курсе, хоро�
 
 install.packages("ggplot2") # грамматика графиков
 install.packages("GGally")
-install.packages("lattice") 
+install.packages("lattice")
 install.packages("vcd") # мозаичный график
 install.packages("hexbin") # график из шестиугольников
 install.packages("sjPlot") # визуализация результатов МНК
@@ -50,11 +50,11 @@ install.packages("rugarch") # не используется в курсе, хо�
 
 install.packages("quantmod") # загрузка с finance.google.com
 install.packages("Quandl") # загрузка с Quandl
+install.packages("sophisthse") # read data from sophist.hse.ru
 
 # non-CRAN packages:
 
 devtools::install_github("bdemeshev/rlms") # read RLMS data
-devtools::install_github("bdemeshev/sophisthse") # read data from sophist.hse.ru
 
 # дополнение к quantmod для загрузки данных с finam.ru
 install.packages("rusquant", repos = "http://r-forge.r-project.org", type = "source")
