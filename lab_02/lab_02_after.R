@@ -78,9 +78,11 @@ model_st <- lm(data = h_st, Fertility ~ Catholic + Agriculture + Examination)
 summary(model_st)  # отчет о новой модели
 
 # графическое представление стандартизованных коэффициентов
-sjp.lm(model, showStandardBeta = TRUE)  # в старой версии пакета sjPlot
-sjp.lm(model, type = "std")  # в новой версии пакета sjPlot:
-# должна сработать одна из двух команд в зависимости от установленной версии
+sjp.lm(model_st)
+# должна работать команда не требующая явной оценки модели со стандартизованными переменными:
+# sjp.lm(model, type = "std")
+# но не работает из-за ошибки в пакете sjPlot
+# https://github.com/sjPlot/devel/issues/148
 
 # искусственный эксперимент
 
