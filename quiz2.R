@@ -96,7 +96,8 @@ resettest(model3)
 
 qplot(data = data, log(price))
 qplot(data = data, log(price), fill=cut)
-qplot(data = data, log(price), fill=cut, position = "dodge")
+ggplot(data = data, aes(log(price), fill = cut)) + geom_histogram(position = "dodge")
+
 qplot(data = data, log(price), fill=cut, geom = "density", alpha = 0.5) + facet_grid(~cut)
 
 qplot(data = data, log(price), fill=clarity, geom = "density", alpha = 0.5) + facet_wrap(~clarity)
