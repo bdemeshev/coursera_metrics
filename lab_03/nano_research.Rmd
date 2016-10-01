@@ -1,6 +1,6 @@
 ---
 title: "Нано исследование"
-output: pdf_document
+output: word_document
 lang: russian
 ---
 
@@ -33,12 +33,14 @@ ggplot(data = f, aes(log(price), fill = brick)) +
   geom_histogram(position = "dodge")
 ```
 
-Оценим и сравним три модели
+Оценим и сравним три модели:
+
 ```{r, results='asis'}
 model_0 <- lm(data = f, log(price) ~ log(totsp))
 model_1 <- lm(data = f, log(price) ~ log(totsp) + brick)
 model_2 <- lm(data = f, log(price) ~ log(totsp) + brick + brick:log(totsp))
-pander(mtable(model_0, model_1, model_2))
+table <- mtable(model_0, model_1, model_2)
+write.mtable(table, format = "delim", colsep = " | ", rowsep = "\n\n")
 ```
 
 У нас лучше оказалась модель 2.
