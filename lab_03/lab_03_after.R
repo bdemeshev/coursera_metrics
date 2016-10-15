@@ -88,7 +88,7 @@ exp(predict(model_2, newdata = nw))
 predict(model_2, newdata = nw, interval = "confidence")  # для логарифма
 exp(predict(model_2, newdata = nw, interval = "confidence"))  # для исходной переменной
 
-# предиктивный интервал для конкретного значения y
+# предиктивный интервал для будущего значения y
 predict(model_2, newdata = nw, interval = "prediction")
 exp(predict(model_2, newdata = nw, interval = "prediction"))
 
