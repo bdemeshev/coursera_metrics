@@ -13,7 +13,7 @@ install.packages("erer") # подборка пакетов для эмпирич
 install.packages("AUC") # подсчёт показателя AUC
 install.packages("mfx") # не используется в курсе, хорош для предельных эффектов в logit/probit
 
-# install.packages("ggplot2") # грамматика графиков, включен в коллекцию tidyverse
+
 install.packages("GGally") # матрица диаграмм рассеяния
 install.packages("lattice") # конкурент ggplot2
 install.packages("vcd") # мозаичный график
@@ -21,11 +21,9 @@ install.packages("hexbin") # график из шестиугольников
 install.packages("sjPlot") # визуализация результатов МНК
 
 
-# install.packages("dplyr") # базовые манипуляции с данными, включен в коллекцию tidyverse
+
 install.packages("reshape2") # длинные <-> широкие таблицы
 install.packages("psych") # описательные статистики
-# install.packages("broom") # стандартизация вывода моделей, включен в коллекцию tidyverse
-# install.packages("tidyr") # причёсывание наборов данных, включен в коллекцию tidyverse
 
 
 install.packages("glmnet") # LASSO
@@ -45,7 +43,7 @@ install.packages("caret") # подбор параметров с помощью 
 install.packages("AER")
 install.packages("ivpack") # интсрументальные переменные
 
-# install.packages("lubridate") # работа с датами, включен в коллекцию tidyverse
+
 install.packages("zoo") # нерегулярные временные ряды
 install.packages("xts") # еще ряды
 install.packages("forecast") # ARMA, экспоненциальное сглаживание
