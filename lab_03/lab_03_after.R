@@ -1,13 +1,11 @@
 library("memisc")
 library("lmtest")
-library("ggplot2")
-library("dplyr")
 library("foreign")
 library("vcd")
-library("devtools")
 library("hexbin")
 library("pander")
 library("sjPlot")
+library("tidyverse")
 library("knitr")
 
 # ESLI RUSSKIE BUKVI NE VIDNI ---> File -- Reopen with encoding --- utf8 --- set
@@ -42,7 +40,7 @@ glimpse(f)  # краткое содержимое таблички f
 qplot(data = f, log(price))  # гистограмма
 
 # гистограмма для кирпичных и некирпичных домов
-qplot(data = f, log(price), fill = brick)  # быстрый вариант А
+qplot(data = f, log(price), fill = brick)  # вариант А
 ggplot(data = f, aes(log(price), fill = brick)) +
   geom_histogram(position = "dodge") # вариант Б с большими возможностями настройки
 
@@ -88,7 +86,7 @@ exp(predict(model_2, newdata = nw))
 predict(model_2, newdata = nw, interval = "confidence")  # для логарифма
 exp(predict(model_2, newdata = nw, interval = "confidence"))  # для исходной переменной
 
-# предиктивный интервал для будущего значения y
+# предиктивный интервал для конкретного значения y
 predict(model_2, newdata = nw, interval = "prediction")
 exp(predict(model_2, newdata = nw, interval = "prediction"))
 
