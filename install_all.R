@@ -55,7 +55,9 @@ install.packages("sophisthse") # read data from sophist.hse.ru
 
 # non-CRAN packages:
 
-devtools::install_github("bdemeshev/rlms") # read RLMS data
+devtools::install_github("bdemeshev/rlms") # чтение и авточистка данных RLMS 
+
+devtools::install_github('hughjonesd/huxtable') # красивые таблички для latex/markdown/html
 
 # дополнение к quantmod для загрузки данных с finam.ru
 install.packages("rusquant", repos = "http://r-forge.r-project.org", type = "source")
