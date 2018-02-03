@@ -1,23 +1,28 @@
 ---
 title: "Нано исследование"
 output: word_document
-lang: russian
+lang: ru-RU
+editor_options: 
+  chunk_output_type: console
 ---
+
+Важный комментарий! Для корректной работы этого кода необходимо установить пакет `huxtable` командой:
+```{r, eval=FALSE}
+devtools::install_github('hughjonesd/huxtable')
+```
+Команду нужно выполнить один раз, после этого этот комментарий можно стереть из файла :)
+
+
+
 
 В этом исследовании мы рассмотрим цены на квартиры в Москве.
 
+
 ```{r, include=FALSE}
-library("memisc")
-library("lmtest")
-library("ggplot2")
-library("dplyr")
-library("foreign")
-library("vcd")
-library("devtools")
-library("hexbin")
-library("pander")
-library("sjPlot")
-library("knitr")
+library(huxtable) # перевод табличек в markdown, tex, html, word...
+library(tidyverse) # коллекция, куда входят dplyr, ggplot2, ...
+library(pander) # перевод разных объектов в маркдаун
+library(knitr) # настройки обработки кусков кода
 f <- read.csv("flats_moscow.txt", sep = "\t",
   header = TRUE, dec = ".")
 opts_chunk$set(echo = FALSE, message = FALSE)
@@ -28,19 +33,24 @@ opts_chunk$set(echo = FALSE, message = FALSE)
 Распределение цен квартир в кирпичных и некирпичных домах:
 
 ```{r}
-f <- mutate_each(f, "factor", walk, brick, floor, code)
+# синтаксис mutate_each из видео устарел :)
+# у mutate_at аргументы: табличка, названия переменных, функция
+f <- mutate_at(f, c("walk", "brick", "floor", "code"), factor)
 ggplot(data = f, aes(log(price), fill = brick)) +
   geom_histogram(position = "dodge")
 ```
 
 Оценим и сравним три модели:
 
-```{r, results='asis'}
+```{r, results='asis', warning=FALSE}
 model_0 <- lm(data = f, log(price) ~ log(totsp))
 model_1 <- lm(data = f, log(price) ~ log(totsp) + brick)
 model_2 <- lm(data = f, log(price) ~ log(totsp) + brick + brick:log(totsp))
-table <- mtable(model_0, model_1, model_2)
-write.mtable(table, format = "delim", colsep = " | ", rowsep = "\n\n")
+
+reg_table <- huxreg(model_0, model_1, model_2)
+print_md(reg_table)
 ```
 
 У нас лучше оказалась модель 2.
+
+

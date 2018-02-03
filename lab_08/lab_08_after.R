@@ -99,7 +99,8 @@ plot(prognoz_a)
 Sys.setlocale("LC_TIME", "C")
 
 # загружаем данные по стоимости акций Гугла
-getSymbols(Symbols = "GOOG", from = "2014-01-01", to = "2014-12-01")
+getSymbols(Symbols = "GOOGL", from = "2014-01-01", to = "2016-05-11", src = "google")
+
 
 
 head(GOOG)  # начало набора данных
