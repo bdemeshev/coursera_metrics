@@ -3,19 +3,20 @@
 
 # lab 09
 
-library("dplyr")  # манипуляции с данными
-library("caret")  # стандартизованный подход к регрессионным и классификационным моделям
-library("AER")  # инструментальные переменные
-library("ggplot2")  # графики
-library("sandwich")  # робастные стандартные ошибки
-library("ivpack")  # дополнительные плющки для инструментальных переменных
-library("memisc")  # табличка mtable
+# подключаем пакеты
+library(caret) # стандартизованный подход к регрессионным и классификационным моделям
+library(AER) # инструментальные переменные
+library(sandwich) # робастные стандартные ошибки
+library(ivpack) # дополнительные плющки для инструментальных переменных
+library(memisc) # табличка mtable
+library(rio) # импорт файлов разных форматов
+library(tidyverse) # графики и манипуляции с данными, подключаются пакеты dplyr, ggplot2, etc
+
 
 ######################### задача прогнозирования
 
-# прочитаем данные из .txt файла есть заголовок, header = TRUE разделитель данных
-# - табуляция, sep='\t' разделитель дробной части - точка, dec='.'
-h <- read.csv("flats_moscow.txt", header = TRUE, sep = "\t", dec = ".")
+# прочитаем данные из .txt файла 
+h <- import("flats_moscow.txt")
 
 glimpse(h)  # бросим взгляд на данные
 
@@ -58,8 +59,9 @@ qplot(data = h, price, packs)
 # отберем данные относящиеся к 1995 году
 h2 <- filter(h, year == "1995")
 # создадим новые переменные
-h2 <- mutate(h2, rprice = price/cpi, rincome = income/cpi/population, tdiff = (taxs -
-  tax)/cpi)
+h2 <- mutate(h2, rprice = price/cpi, 
+             rincome = income/cpi/population, 
+             tdiff = (taxs - tax)/cpi)
 # снова глянем на диаграмму рассеяния
 qplot(data = h2, price, packs)
 
@@ -81,15 +83,15 @@ h2$logprice_hat <- fitted(st_1)
 # Шаг 2. Строим регрессию зависимой переменной на прогнозы с первого шага
 st_2 <- lm(data = h2, log(packs) ~ logprice_hat)
 coeftest(st_2)
-# здесь функция coeftest использует неверные стандартные ошибки (даже при
-# гомоскедастичности)
+# здесь функция coeftest использует неверные стандартные ошибки 
+# (даже при гомоскедастичности)
 
 
 help(ivreg)  # документация по команде ivreg
 
 # двухшаговый МНК в одну строчку
 model_iv <- ivreg(data = h2, log(packs) ~ log(rprice) | tdiff)
-coeftest(model_iv)  # здесь стандартные ошибки --- корректные
+coeftest(model_iv)  # здесь стандартные ошибки — корректные
 
 # сравним три модели в одной табличке
 mtable(model_0, model_iv, st_2)
@@ -100,14 +102,14 @@ coeftest(model_iv, vcov = vcovHC)
 
 # модель с одной экзогенной, log(rincome), и одной эндогенной переменной,
 # log(rprice)
-iv_model_2 <- ivreg(data = h2, log(packs) ~ log(rprice) + log(rincome) | log(rincome) +
-  tdiff)
+iv_model_2 <- ivreg(data = h2, 
+        log(packs) ~ log(rprice) + log(rincome) | log(rincome) + tdiff)
 # тестируем гипотезы с использованием робастных стандартных ошибок
 coeftest(iv_model_2, vcov = vcovHC)
 
 # модель с одной экзогенной, одной эндогенной и двумя инструментальными
 # переменными для эндогенной
-iv_model_3 <- ivreg(data = h2, log(packs) ~ log(rprice) + log(rincome) | log(rincome) +
-  tdiff + I(tax/cpi))
+iv_model_3 <- ivreg(data = h2, 
+      log(packs) ~ log(rprice) + log(rincome) | log(rincome) + tdiff + I(tax/cpi))
 # тестируем гипотезы с использованием робастных стандартных ошибок
 coeftest(iv_model_3, vcov = vcovHC)
