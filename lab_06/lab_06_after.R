@@ -1,21 +1,22 @@
 # Esli russkie bukvi prevratilitis v krakozyabry, to File - Reopen with
 # encoding... - UTF-8 - Set as default - OK
 
-library("lubridate")  # работа с датами
+# lab 6
 
-library("sandwich")  # vcovHC, vcovHAC
-library("lmtest")  # тесты
-library("car")  # еще тесты
-library("zoo")  # временные ряды
-library("xts")  # еще ряды
-library("dplyr")  # манипуляции с данными
-library("broom")  # манипуляции
-library("ggplot2")  # графики
-
-library("quantmod")  # загрузка с finance.google.com
-library("rusquant")  # загрузка с finam.ru
-library("sophisthse")  # загрузка с sophist.hse.ru
-library("Quandl")  # загрузка с Quandl
+# подключаем пакеты
+library(lubridate)  # работа с датами
+library(sandwich)  # vcovHC, vcovHAC
+library(lmtest)  # тесты
+library(car)  # ещё тесты
+library(zoo)  # временные ряды
+library(xts)  # ещё ряды
+library(broom)  # манипуляции с моделями
+library(estimatr) # модели с робастными стандартными ошибками
+library(tidyverse) # графики и манипуляции с данными, подключаются пакеты dplyr, ggplot2, etc
+library(quantmod)  # загрузка с finance.google.com
+library(rusquant)  # загрузка с finam.ru
+library(sophisthse)  # загрузка с sophist.hse.ru
+library(Quandl)  # загрузка с Quandl
 
 # задаём даты в виде простого текста
 x <- c("2012-04-15", "2011-08-17")
@@ -50,7 +51,6 @@ dplyr::lag(ts, -1)  # не должна сработать
 dplyr::lag(ts, 1)  # лаг, то есть прошлое значение ряда
 
 
-# сравните с др
 diff(ts)  # приращение ряда
 
 # те же пять чисел, только оформленные как квартальные данные
@@ -86,10 +86,10 @@ b <- Quandl("FRED/GNP")
 b
 # это огромная база, по ней есть удобный поиск https://www.quandl.com/
 
-# загрузка данных finance.google.com
+# загрузка данных finance.yahoo.com (Гугл прекратил предоставление финансовых данных в марте 2018)
 Sys.setlocale("LC_TIME", "C")  # это шаманское заклинание позволяет избежать проблем с русской кодировкой месяцев под windows
 # цены акций компании Apple:
-getSymbols(Symbols = "AAPL", from = "2010-01-01", to = "2014-02-03", src = "google")
+getSymbols(Symbols = "AAPL", from = "2010-01-01", to = "2014-02-03", src = "yahoo")
 head(AAPL)
 tail(AAPL)
 
