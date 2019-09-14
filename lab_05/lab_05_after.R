@@ -1,12 +1,16 @@
 # Esli russkie bukvi prevratilitis v krakozyabry, to File - Reopen with
 # encoding... - UTF-8 - Set as default - OK
 
-library("sandwich")  # vcovHC, vcovHAC
-library("lmtest")  # тесты
-library("car")  # еще тесты
-library("dplyr")  # манипуляции с данными
-library("broom")  # манипуляции
-library("ggplot2")  # графики
+# lab 5
+
+# подключаем пакеты
+library(sandwich) # vcovHC, vcovHAC
+library(lmtest) # тесты
+library(car) # ещё тесты
+library(broom) # манипуляции с моделями
+library(rio) # импорт файлов разных форматов
+library(estimatr) # модели с робастными стандартными ошибками
+library(tidyverse) # графики и манипуляции с данными, подключаются пакеты dplyr, ggplot2, etc
 
 
 ## Пример функции
@@ -35,8 +39,8 @@ fs(2, stepen = 5)
 # функция считающая процент пропущенных наблюдений в data.frame
 
 na_perc <- function(d) {
-  # функция получает таблицу d на входе проверяем корректность того, что d ---
-  # таблица:
+  # функция получает таблицу d 
+  # на входе проверяем корректность того, что d — таблица:
   if (!is.data.frame(d))
     stop("d should be a data.frame!")
   res <- sum(is.na(d))/nrow(d)/ncol(d)  # делим количество NA на количество строк и количество столбцов
@@ -65,7 +69,7 @@ for (i in 5:10) {
 all_data <- NULL
 for (fname in c("file01.csv", "file02.csv")) {
   # имя файла пробежит оба значения
-  temp <- read.csv(fname)  # прочитаем файл с очередным именем
+  temp <- import(fname)  # прочитаем файл с очередным именем
   all_data <- rbind(all_data, temp)  # подклеим прочитанную табличку в конец таблички all_data
 }
 
@@ -75,7 +79,7 @@ for (fname in c("file01.csv", "file02.csv")) {
 
 # в этот момент нужно установить рабочую папку Session - Set working directory -
 # To source file location читаем данные из файла в таблицу h
-h <- read.table("flats_moscow.txt", header = TRUE)
+h <- import("flats_moscow.txt")
 
 # смотрим, что всё корректно загрузилось
 head(h)  # носик
@@ -105,32 +109,22 @@ qplot(data = h, totsp, abs(.resid))
 # неверная в условиях гетероскедастичности
 vcov(model)
 
+# переоценим модель с ковариационной матрицей устойчивой к гетероскедастичности
+model_hc0 = lm_robust(price ~ totsp, data = h, se_type = "HC0") # историческая формула Уайта
+vcov(model_hc0)
 
-
-# робастная оценка ковариационной матрицы устойчивая к гетероскедастичности
-vcovHC(model, type = "HC0")  # формула Уайта
-vcovHC(model)  # современный вариант формулы Уайта 'HC3'
-vcovHC(model, type = "HC2")  # еще один вариант
+model_hc3 = lm_robust(price ~ totsp, data = h, se_type = "HC3") # современная корректировка HC3
+vcov(model_hc3)
 
 
 # проверяем незначимость коэффициентов с помощью:
 coeftest(model)  # обычной оценки ковариационной матрицы
 
 # робастной оценки ковариационной матрицы:
-coeftest(model, vcov. = vcovHC(model))
+coeftest(model_hc3)
 
 # строим руками доверительные интервалы робастные к гетероскедастичности
-
-# сначала сохраним таблицу с коэффициентами и робастными ст. ошибками
-conftable <- coeftest(model, vcov. = vcovHC(model))
-
-# возьмем из этой таблицы два столбика (1-ый и 2-ой) и поместим в таблицу ci
-ci <- data.frame(estimate = conftable[, 1], se_hc = conftable[, 2])
-ci  # глянем на таблицу ci
-# добавим в ci левую и правую границу доверительного интервала
-ci <- mutate(ci, left_ci = estimate - 1.96 * se_hc, right_ci = estimate + 1.96 *
-  se_hc)
-ci  # смотрим на результат
+confint(model_hc3)
 
 # для сравнение доверительные интервалы
 confint(model)  # по формулам корректным для гомоскедастичности
