@@ -3,19 +3,22 @@
 
 # lab 07
 
-library("dplyr")  # манипуляции с данными
-library("erer")  # расчет предельных эффектов
-library("vcd")  # графики для качественных данных
-library("ggplot2")  # графики
-library("reshape2")  # манипуляции с данными
-library("AUC")  # для ROC кривой
+# подключаем пакеты
+library(mfx)  # расчет предельных эффектов
+library(vcd)  # графики для качественных данных
+library(reshape2)  # манипуляции с данными
+library(skimr) # описательные статистики (вместо psych в видеолекциях)
+library(AUC)  # для ROC кривой
+library(rio) # импорт файлов разных форматов
+library(tidyverse) # графики и манипуляции с данными, подключаются пакеты dplyr, ggplot2, etc
+
 
 # при загрузке файлов R автоматом переделывает все строковые переменные в
 # факторные эта шаманская команда просит R так не делать :)
 options(stringsAsFactors = FALSE)
 
 # читаем данные по пассажирам Титаника
-t <- read.csv("titanic3.csv")
+t <- import("titanic3.csv")
 # источник и описание:
 # http://lib.stat.cmu.edu/S/Harrell/data/descriptions/titanic.html
 
@@ -23,8 +26,8 @@ t <- read.csv("titanic3.csv")
 glimpse(t)
 
 # объясняем R, какие переменные считать факторными
-t <- mutate(t, sex = as.factor(sex), pclass = as.factor(pclass), survived = as.factor(survived))
-summary(t)
+t <- mutate_at(t, vars(sex, pclass, survived, embarked), factor)
+skim(t)
 
 # мозаичный график
 mosaic(data = t, ~sex + pclass + survived, shade = TRUE)
@@ -86,17 +89,21 @@ qplot(data = newdata_pr, x = age, y = prob, geom = "line") + geom_ribbon(aes(ymi
 # создадим набор данных t2 без пропущенных значений и на нем оценим короткую и
 # длинную модели H0: beta(pclass)=0, beta(fare)=0
 t2 <- select(t, sex, age, pclass, survived, fare) %>% na.omit()
+# если команда select не работает, возможно подключен пакет, переопределяющий команду select
+# чтобы решить проблему, вместо select() явно пишем dplyr::select()
+
 # оцениваем ограниченную модель
-m_logit2 <- glm(data = t2, survived ~ sex + age, family = binomial(link = "logit"),
-  x = TRUE)
+m_logit2 <- glm(data = t2, survived ~ sex + age, 
+                family = binomial(link = "logit"), x = TRUE)
 # проводим LR тест
 lrtest(m_logit, m_logit2)
 
 
-maBina(m_logit)  # предельные эффекты для среднестатистического пассажира
+# предельные эффекты для среднестатистического пассажира
+logitmfx(data = t, survived ~ sex + age + pclass + fare)
 
 # усредненные предельные эффекты по всем пассажирам
-maBina(m_logit, x.mean = FALSE)
+logitmfx(data = t, survived ~ sex + age + pclass + fare, atmean = FALSE)
 
 # обычный МНК
 m_ols <- lm(data = t, as.numeric(survived) ~ sex + age + pclass + fare)
@@ -119,16 +126,17 @@ select(t, age, survived, prob)
 roc.data <- roc(t$prob, t$survived)
 str(roc.data)
 
-# три графика для выбора порога отсечения по горизонтали --- пороги, по вертикали
-# --- чувствительность чувствительность = число выживших верно предсказанных
+# три графика для выбора порога отсечения по горизонтали — пороги, по вертикали
+# — чувствительность чувствительность = число выживших верно предсказанных
 # выжившими / общее количество выживших
 qplot(x = roc.data$cutoffs, y = roc.data$tpr, geom = "line")
 
-# по горизонтали --- пороги, по вертикали --- процент ложноположительных
+# по горизонтали — пороги, по вертикали — процент ложноположительных
 # прогнозов процент ложно положительных прогнозов = число погибших ошибочно
 # предсказанных выжившими/общее число погибших
 qplot(x = roc.data$cutoffs, y = roc.data$fpr, geom = "line")
 
-# по горизонтали --- процент ложноположительных прогнозов по вертикали ---
+# по горизонтали — процент ложноположительных прогнозов по вертикали ---
 # чувствительность
 qplot(x = roc.data$fpr, y = roc.data$tpr, geom = "line")
+

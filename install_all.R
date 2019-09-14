@@ -12,7 +12,7 @@ install.packages("lmtest") # тесты в линейных моделях
 install.packages("sandwich") # оценки ковариационной матрицы робастные к гетероскедастичности
 install.packages("erer") # подборка пакетов для эмпирических исследований
 install.packages("AUC") # подсчёт показателя AUC
-install.packages("mfx") # не используется в курсе, хорош для предельных эффектов в logit/probit
+install.packages("mfx") # для предельных эффектов в logit/probit
 install.packages("estimatr") # модели с робастными стандартными ошибками
 
 install.packages("GGally") # матрица диаграмм рассеяния
@@ -29,7 +29,7 @@ install.packages("skimr") # описательные статистики
 install.packages("glmnet") # LASSO
 install.packages("HSAUR")
 install.packages("sgof")
-install.packages("car") # для тестирования линейных гипотез
+install.packages("car") # для тестирования линейных гипотез, подсчёта vif
 
 install.packages("spikeslab") # байесовская регрессия пик-плато
 install.packages("quantreg") # квантильная регрессия
