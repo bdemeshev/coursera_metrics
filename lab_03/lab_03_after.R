@@ -1,15 +1,17 @@
-library("memisc")
-library("lmtest")
-library("foreign")
-library("vcd")
-library("hexbin")
-library("pander")
-library("sjPlot")
-library("tidyverse")
-library("knitr")
+# if you see KRAKOZYABRY then do 'File' - 'Reopen with encoding' - 'UTF-8' - 
+# (Set as default) - OK
 
-# ESLI RUSSKIE BUKVI NE VIDNI ---> File -- Reopen with encoding --- utf8 --- set
-# as default --- ok
+# lab 3
+
+# подключаем пакеты
+library(memisc) # две и более регрессий в одной табличке
+library(skimr) # описательные статистики (вместо psych в видеолекциях)
+library(lmtest) # тестирование гипотез в линейных моделях
+library(rio) # загрузка данных в разных форматах (вместо foreign в видеолекциях)
+library(vcd) # мозаичные графики
+library(hexbin) # графики
+library(sjPlot) # визуализация результатов регрессии
+library(tidyverse) # графики и манипуляции с данными, подключаются пакеты dplyr, ggplot2, etc
 
 # помещаем встроенный набор данных по бриллиантам в табличку h
 h <- diamonds
@@ -21,9 +23,10 @@ qplot(data = h, carat, price)
 bg <- qplot(data = h, log(carat), log(price))
 bg + geom_hex()  # диаграмма рассеяния и шестиугольники плотности
 
-# загружаем данные по стоимости квартир в Москве предварительно нужно установить
-# рабочую папку Session --- Set working directory --- To source file location
-f <- read.csv("flats_moscow.txt", sep = "\t", header = TRUE, dec = ".")
+# загружаем данные по стоимости квартир в Москве 
+# предварительно нужно установить рабочую папку:
+# Session — Set working directory — To source file location
+f <- import("flats_moscow.txt")
 
 glimpse(f)  # краткое содержимое таблички f
 qplot(data = f, totsp, price)  # диаграмма рассеяния
@@ -58,7 +61,7 @@ g2 + facet_grid(~floor)
 model_0 <- lm(data = f, log(price) ~ log(totsp))
 model_1 <- lm(data = f, log(price) ~ log(totsp) + brick)
 model_2 <- lm(data = f, log(price) ~ log(totsp) + brick + brick:log(totsp))
-# двоеточие в формуле модели в R --- произведение регрессоров
+# двоеточие в формуле модели в R — произведение регрессоров
 
 summary(model_0)  # базовый вариант отчета о модели
 mtable(model_2)  # альтернативный вариант отчета
@@ -71,7 +74,7 @@ model_2b <- lm(data = f, log(price) ~ brick * log(totsp))
 mtable(model_2, model_2b)
 
 # оценки коэффициентов визуально
-sjp.lm(model_2)
+plot_model(model_2)
 
 # создаем новый набор данных для прогнозирования
 nw <- data.frame(totsp = c(60, 60), brick = factor(c(1, 0)))

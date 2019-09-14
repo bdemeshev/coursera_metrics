@@ -6,15 +6,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-Важный комментарий! Для корректной работы этого кода необходимо установить пакет `huxtable` командой:
-```{r, eval=FALSE}
-devtools::install_github('hughjonesd/huxtable')
-```
-Команду нужно выполнить один раз, после этого этот комментарий можно стереть из файла :)
-
-
-
-
 В этом исследовании мы рассмотрим цены на квартиры в Москве.
 
 
@@ -23,8 +14,8 @@ library(huxtable) # перевод табличек в markdown, tex, html, word
 library(tidyverse) # коллекция, куда входят dplyr, ggplot2, ...
 library(pander) # перевод разных объектов в маркдаун
 library(knitr) # настройки обработки кусков кода
-f <- read.csv("flats_moscow.txt", sep = "\t",
-  header = TRUE, dec = ".")
+library(rio) # чтение файлов разных форматов
+f <- import("flats_moscow.txt")
 opts_chunk$set(echo = FALSE, message = FALSE)
 ```
 

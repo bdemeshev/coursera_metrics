@@ -1,19 +1,19 @@
-# if you see KRAKOZYABRY then do 'File' - 'Reopen with encoding' - 'UTF-8' - (Set
-# as default) - OK
+# if you see KRAKOZYABRY then do 'File' - 'Reopen with encoding' - 'UTF-8' - 
+# (Set as default) - OK
 
 # lab 2
 
-# загружаем пакеты
-library("memisc")  # две и более регрессий в одной табличке
-library("psych")  # описательные статистики
-library("lmtest")  # тестирование гипотез в линейных моделях
-library("sjPlot")  # графики
-library("sgof")
-library("foreign")  # загрузка данных в разных форматах
-library("car")
-library("hexbin")  # графики
-library("tidyverse") # вместо ggplot2 (графики) и dplyr (манипуляции с данными)
-library("rlms")  # загрузка данных в формате rlms (spss)
+# подключаем пакеты
+library(memisc) # две и более регрессий в одной табличке
+library(skimr) # описательные статистики (вместо psych в видеолекциях)
+library(lmtest) # тестирование гипотез в линейных моделях
+library(sjPlot) # визуализация результатов регрессии
+library(rio) # загрузка данных в разных форматах (вместо foreign в видеолекциях)
+library(car) # тестирование линейных гипотез
+library(hexbin) # графики
+library(rlms) # загрузка данных в формате rlms (spss)
+library(tidyverse) # графики и манипуляции с данными, подключаются пакеты dplyr, ggplot2, etc
+
 
 # генерируем случайные величины Z_1, ...., Z_100 ~ N(5, 9)
 z <- rnorm(100, mean = 5, sd = 3)
@@ -58,7 +58,8 @@ summary(model)
 coeftest(model)
 
 confint(model)  # доверительные интервалы для коэффициентов
-sjp.lm(model)  # графическое представление интервалов
+plot_model(model)  # графическое представление интервалов
+# функция sjp.lm() устарела и заменена на plot_model() :)
 
 # проверка гипотезы b_Cath=b_Agri построение вспомогательной модели
 model_aux <- lm(data = h, Fertility ~ Catholic + I(Catholic + Agriculture) + Examination)
@@ -77,9 +78,9 @@ model_st <- lm(data = h_st, Fertility ~ Catholic + Agriculture + Examination)
 summary(model_st)  # отчет о новой модели
 
 # графическое представление стандартизованных коэффициентов
-sjp.lm(model_st)
+plot_model(model_st)
 # в качестве альтернативы можно воспользоваться готовой командой:
-sjp.lm(model, type = "std")
+plot_model(model, type = "std")
 
 # искусственный эксперимент
 
@@ -99,19 +100,19 @@ compar_12
 
 # сохранение результатов работы
 stuff <- list(data = h, model = model2)  # список ценных объектов
-saveRDS(file = "mydata.RDS", stuff)  # сохраняем всё ценное в файл
+export(stuff, "mydata.RDS")  # сохраняем всё ценное в файл
 
-mylist <- readRDS("mydata.RDS")  # читаем из файла что там есть
+mylist <- import("mydata.RDS")  # читаем из файла что там есть
 summary(mylist$model)
 
 # формат csv. comma separated values
 
-# первая (сознательно неудачная) попытка чтения файла
-t <- read.csv("flats_moscow.txt")
+# автоматическая попытка чтения файла
+t <- import("datasets/flats_moscow.txt")
 glimpse(t)
 
-# попытка чтения файла с указанием параметров:
-t <- read.csv("flats_moscow.txt", sep = "\t", dec = ".", header = TRUE)
+# если автоматика не работает, то всегда можно перейти на ручное управление
+t <- import("flats_moscow.txt", sep = "\t", dec = ".", header = TRUE)
 glimpse(t)
 
 # простая модель зависимости цены от общей площади и кирпичности дома
@@ -124,12 +125,12 @@ summary(mod_3)
 # 21 волна, индивиды, репрезентативная выборка
 
 # командой из пакета rlms
-h <- rlms_read("r21i_os24a.sav")
+h <- rlms_read("r21i_os_31.sav")
 # последняя буква в названии файла может отличаться! 
 # данные RLMS периодически немного уточняются
 # если пакет rlms почему-то не установился, то 
 # можно выполнить следующую строку: 
-# h <- read.spss('r21i_os24a.sav', to.data.frame=TRUE, reencode='UTF-8')
+# h <- import('r21i_os24a.sav')
 glimpse(h)
 
 # отбираем часть переменных из таблички h в табличку h2
@@ -138,16 +139,21 @@ h2 <- select(h, qm1, qm2, qh6, qh5)
 # подключён другой пакет, переопределяющий команду select
 # чтобы воспользоваться нужной командой select пишем
 # h2 <- dplyr::select(h, qm1, qm2, qh6, qh5)
-glimpse(h2)  # смотрим на df_sel
+glimpse(h2)  # смотрим на табличку h2
 
 # переименовываем переменные
 h3 <- rename(h2, ves = qm1, rost = qm2, sex = qh5, b_year = qh6)
+
+# преобразуем типы! важно!
+h3 <- mutate(h3, ves = as.numeric(ves), rost = as.numeric(rost), sex = as_factor(sex), b_year = as.numeric(b_year))
+
 # добавляем возраст
 h3 <- mutate(h3, vozrast = 2012 - b_year)
+glimpse(h3) # смотрим на табличку h2
 
-describe(h3)  # описательные статистики
+skim(h3)  # описательные статистики
 
-summary(h3$sex)  # таблица частот
+table(h3$sex)  # таблица частот
 
 # отберём мужчин в отдельную табличку
 h4 <- filter(h3, sex == "МУЖСКОЙ")

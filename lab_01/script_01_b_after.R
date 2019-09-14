@@ -1,18 +1,17 @@
 # if you see KRAKOZYABRY then do File-Reopen with encoding - UTF-8 - (Set as
 # default) - OK
 
-
-library("psych")  # описательные статистики
-library("dplyr")  # манипуляции с данными
-library("ggplot2")  # графики
-library("GGally")  # еще графики
+# подключаем пакеты
+library(tidyverse) # графики + манипуляции с данными, включает dplyr, ggplot2, ...
+library(skimr) # описательные статистики — стильная замена для psych
+library(GGally)  # ещё графики
 
 d <- cars  # встроенный набор данных по машинам
 glimpse(d)  # что там?
 help(cars)  # справка. действует для встроенных наборов данных
 head(d)  # начало таблички d (первые 6 строк)
 tail(d)  # хвостик таблички d
-describe(d)  # среднее, мода, медиана и т.д.
+skim(d)  # среднее, мода, медиана и т.д. (в видеолекция decribe() из пакета psych)
 ncol(d)  # число столбцов
 nrow(d)  # число строк
 str(d)  # структура (похоже на glimpse)
