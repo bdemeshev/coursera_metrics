@@ -1,14 +1,17 @@
-# ESLI RUSSKIE BUKVI NE VIDNI ---> File -- Reopen with encoding --- utf8 --- set
-# as default --- ok
+# ESLI RUSSKIE BUKVI NE VIDNI ---> File -- Reopen with encoding utf8 — set
+# as default — ok
 
+# lab 4
 
-library("HSAUR")  # из этого пакета возьмем набор данных по семиборью
-library("dplyr")  # манипуляции с данными
-library("psych")  # описательные статистики
-library("lmtest")  # тесты для линейных моделей
-library("glmnet")  # LASSO + ridge
-library("ggplot2")  # графики
-library("car")  # vif
+# подключаем пакеты
+library(HSAUR)  # из этого пакета возьмем набор данных по семиборью
+library(skimr) # описательные статистики (вместо psych в видеолекциях)
+library(lmtest)  # тесты для линейных моделей
+library(glmnet)  # LASSO + ridge
+library(car)  # vif
+library(factoextra) # симпатичные графики для метода главных компонент
+library(tidyverse) # графики и манипуляции с данными, подключаются пакеты dplyr, ggplot2, etc
+
 
 # Последствия мультиколлинеарности
 
@@ -86,7 +89,7 @@ plot(m_lasso, xvar = "lambda", label = TRUE)
 # по горизонтали: доля объясненной дисперсии по вертикали: оценки коэффициентов
 # какой долей объяснённой дисперсии мы жертвуем, отказываясь от МНК оценок?
 plot(m_lasso, xvar = "dev", label = TRUE)
-# правая граница --- это МНК (лямбда=0) видно, что небольшая жертва в доле
+# правая граница — это МНК (лямбда=0) видно, что небольшая жертва в доле
 # объясненной дисперсии (по горизонтали) приводит к существенному сокращению
 # коэффициента 1
 
@@ -134,7 +137,7 @@ h <- heptathlon  # набор данных по семиборью
 help(heptathlon)  # он встроенный, поэтому глянем справку
 glimpse(h)  # бросим взглян на набор данных
 h <- select(h, -score)  # удалим итоговый результат спортсмена
-describe(h)  # описательные статистики
+skim(h)  # описательные статистики
 
 # корреляционная матрица
 cor(h)
@@ -159,7 +162,7 @@ summary(h.pca)
 cor(heptathlon$score, pca1)
 
 # выборочная дисперсия каждой компоненты на графике:
-plot(h.pca)
+fviz_eig(h.pca) # более симпатичная версия вместо plot(h.pca)
 
-# исходный набор данных в новых осях по горизонтали --- pc1 по вертикали --- pc2
-biplot(h.pca, xlim = c(-1, 1))
+# исходный набор данных в новых осях по горизонтали — pc1 по вертикали — pc2
+fviz_pca_biplot(h.pca, repel = TRUE) # более симпатичная версия вместо biplot(h.pca, xlim = c(-1, 1))
