@@ -71,7 +71,7 @@ linearHypothesis(model, "Catholic-Agriculture=0")
 # стандартизированные коэффициенты
 
 # масштабируем каждую переменную (вычитаем среднее, делим на стандартную ошибку)
-h_st <- mutate_each(h, "scale")
+h_st <- mutate_all(h, ~as.vector(scale(.)))
 glimpse(h_st)  # смотрим на новый набор данных
 # оцениваем модель по стандартизированным данным
 model_st <- lm(data = h_st, Fertility ~ Catholic + Agriculture + Examination)

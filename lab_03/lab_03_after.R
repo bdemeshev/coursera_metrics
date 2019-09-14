@@ -37,7 +37,7 @@ qplot(data = f, log(totsp), log(price))  # диаграмма рассеяния
 mosaic(data = f, ~walk + brick + floor, shade = TRUE)
 
 # преобразуем переменны walk, brick, floor, code в факторные
-f <- mutate_each(f, "factor", walk, brick, floor, code)
+f <- mutate_at(f, vars(walk, brick, floor, code), factor)
 glimpse(f)  # краткое содержимое таблички f
 
 qplot(data = f, log(price))  # гистограмма
