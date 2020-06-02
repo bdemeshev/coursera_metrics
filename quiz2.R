@@ -468,9 +468,14 @@ df <- diamonds
 ggplot(data=df, aes(price, carat)) + geom_point(color="lightblue") + facet_wrap(~color)
 
 
-library("AER")
-data("CollegeDistance")
+library(AER)
+
+data(CollegeDistance)
 h <- CollegeDistance
+
+RNGkind(sample.kind = "Rounding") # to reproduce old results
+RNGkind(sample.kind = "default") # to reproduce new results
+
 set.seed(42)
 train_ind <- createDataPartition(h$wage, p=0.9, list=FALSE)
 h_train <- h[train_ind,]
@@ -482,10 +487,10 @@ summary(model)
 
 model1 <- ivreg(data=h_train, wage~region+gender+unemp+ethnicity+education|region+gender+unemp+ethnicity+distance)
 summary(model1)
-round(0.626923, digits=2)
+round(model1$coefficients[7], digits=2)
 
 h_test$y_hat <- predict(model1, newdata = h_test, type = "response")
-round(10.085335, digits=3)
+round(h_test$y_hat[1], digits=3)
 res <- coeftest(model1)
 
 library(lmtest)
@@ -523,7 +528,7 @@ model4 <- Arima(x=y, order=c(3,0,3), fixed=c(0, NA, NA, 0, NA, NA, NA))
 summary(model4)
 
 
-4.5+0.05*20^2+2*20*(-0.23)+1200
+4.5 + 0.05 * 20 ^ 2 + 2 * 20 * (-0.23) + 1200
 
 # library(forecast)
 # library(lmtest)
