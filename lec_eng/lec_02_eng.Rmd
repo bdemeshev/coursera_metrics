@@ -1,0 +1,607 @@
+---
+title: "Statistical properties of estimates"
+lang: english
+babel-lang: english
+header-includes: 
+  - \usepackage{etex}
+  - \author[Econometrics. Lecture 2]{Econometrics. Lecture 2}
+  - \newcommand{\e}{\varepsilon}
+  - \newcommand{\hy}{\hat{y}}
+  - \newcommand{\hb}{\hat{\beta}}
+  - \usepackage{lmodern}
+  - \usepackage{tikz}
+  - \usetikzlibrary{decorations.pathmorphing}
+  - \tikzset{snake it/.style={decorate, decoration=snake}}
+output:
+  beamer_presentation:
+    keep_tex: yes
+    theme: Madrid
+    colortheme: whale
+  ioslides_presentation: default
+---
+
+## Statistical properties of coefficient estimates
+
+- standard assumptions for a linear regression model
+
+- confidence intervals for coefficients
+
+- hypotheses concerning coefficients
+
+
+## Conditional expectation
+
+
+$r$ — one random variable
+
+$s$ — one random variable
+
+$E(s|r)$ — a function of the random variable $r$ such that it is most similar to the random variable $s$.
+
+## Conditional expectation. Formally
+
+$E(s|r)$ is a random variable $\tilde{s}$ such that:
+
+1. it can be represented as $\tilde{s}=f(r)$
+
+2. $E(\tilde{s})=E(s)$
+
+3. $Cov(s-\tilde{s},g(r))=0$ for every $g(r)$.
+
+Or: $Cov(s,g(r))=Cov(\tilde{s}, g(r))$
+
+## Practically
+
+
+Theorem: 
+
+If the $r$ value is discrete and takes on values $a$, $b$ or $c$, then 
+\[
+E(s|r)=\begin{cases}
+E(s|r=a), \text{ if } r=a \\
+E(s|r=b), \text{ if } r=b \\
+E(s|r=c), \text{ if } r=c 
+\end{cases}
+\]
+
+## Problem [at the blackboard]
+
+
+$s,r$ | $r=1$ | $r=2$   
+------|-------|-------
+$s=0$ |  0.25 | 0.2
+$s=10$| 0.25  | 0.3
+
+Find: $E(s|r)$, $E(s^2|r)$
+
+
+## If the quantities are continuous and there is a joint density function
+
+Theorem: 
+
+If a pair of values $r$, $s$ has a density function $f(r, s)$,  then 
+\[
+E(s|r)=\int_{-\infty}^{\infty} s \cdot f(s|r) dx
+\]
+
+where $f(s|r)=f(r, s)/f(r)$ is the conditional density function
+
+## Properties of conditional expectation
+
+Let $a$, $b$ be constant, $s$, $r$ — random variables.
+
+Idea: the properties of $E(s|r)$ are similar to those of $E(s)$ if we assume that both $r$ and any function $h(r)$ are constant.
+
+## Properties of conditional expectation
+
+* $E(E(s|r))=E(s)$
+
+* $E(as+b|r)=aE(s|r)+b$
+
+* $E(h(r)|r)=h(r)$
+
+* $E(h(r)s|r)=h(r)E(s|r)$
+
+## Conditional variance and covariance
+
+Ordinary variance: $Var(s)=E(s^2)-(E(s))^2$
+
+Conditional variance: $Var(s|r)=E(s^2|r)-(E(s|r))^2$
+
+Ordinary covariance: $Cov(s_1,s_2)=E(s_1 s_2)-E(s_1)E(s_2)$
+
+Conditional covariance: $Cov(s_1,s_2|r)=E(s_1 s_2|r)-E(s_1|r)E(s_2|r)$
+
+## Problem [at the blackboard]
+
+$s,r$ | $r=1$ | $r=2$   
+------|-------|-------
+$s=0$ |  0.25 | 0.2
+$s=10$| 0.25  | 0.3
+
+Find: $Var(s|r)$
+
+
+## Properties of conditional variance
+
+Let $a$, $b$ be constant, $s$, $r$ — random variables.
+
+Idea: the properties of $Var(s|r)$ are similar to those of $Var(s)$ if we assume that both $r$ and any function $h(r)$ are constant.
+
+## Properties of conditional variance
+
+$Var(as+b|r)=a^2Var(s|r)$
+
+$Var(s+h(r)|r)=Var(s|r)$
+
+$Var(h(r)s|r)=h^2(r)Var(s|r)$
+
+$Var(s)=Var(E(s|r))+E(Var(s|r))$
+
+## Geometric interpretation [at the blackboard]
+
+
+\begin{figure}
+\begin{tikzpicture}
+\draw [->, thick] (0,0) -- (3,3);
+\draw [->, thick] (0,0) -- (3,0);
+\draw [blue] (0,0) -- (5,2);
+\draw [blue] (0,0) -- (4,-1.5);
+\draw [draw=blue,snake it] (4,-1.5) -- (5,2);
+\draw [dashed, thick] (3,3) -- (3,0);
+\node [above] at (2.8,2.8) {$s$};
+\node [below] at (3,0) {$E(s|r)$};
+\node [above] at (4,0.8) {$\{f(r)\}$};
+\end{tikzpicture}
+\end{figure}
+
+
+## Summing up the geometric interpretation:
+
+If we consider $Cov(r,s)$ to be the dot product, then
+
+- the squared length of random variable $r$ is the variance, $Var(r)$
+
+- the cosine of the angle between random variables is correlation, $Corr(s,r)$
+
+"School" theorems hold: the Pythagoras theorem, the intercept theorem, etc.
+
+
+## Assumptions for errors 
+
+* $E(\varepsilon_i |X)=0$
+
+* $E(\varepsilon_i^2|X)=\sigma^2$ or $Var(\varepsilon_i|X)=\sigma^2$
+
+* $E(\varepsilon_i \varepsilon_j|X)=0$ or $Cov(\varepsilon_i,\varepsilon_j|X)=0$
+
+## Covariance matrix
+
+Covariance matrix of the $\varepsilon$ vector:
+
+\[
+Var(\varepsilon)=\begin{pmatrix}
+Var(\varepsilon_1) & Cov(\varepsilon_1,\varepsilon_2) & Cov(\varepsilon_1,\varepsilon_3) & \ldots \\
+Cov(\varepsilon_2,\varepsilon_1) & Var(\varepsilon_2) &  Cov(\varepsilon_2,\varepsilon_3) & \ldots \\
+Cov(\varepsilon_3,\varepsilon_1) & Cov(\varepsilon_3,\varepsilon_2) & Var(\varepsilon_3) &   \ldots \\
+\vdots & & 
+\end{pmatrix}
+\]
+
+## Writing assumptions in terms of covariance matrix
+
+\[
+Var(\varepsilon|X) = \begin{pmatrix}
+\sigma^2 & 0 & 0 & \ldots \\
+0 & \sigma^2 & 0 & \ldots \\
+0 & 0 & \sigma^2 & \ldots \\
+\vdots & \vdots &\vdots  & \\
+\end{pmatrix}
+= \sigma^2 \begin{pmatrix}
+1 & 0 & 0 & \ldots \\
+0 & 1 & 0 & \ldots \\
+0 & 0 & 1 & \ldots \\
+\vdots & \vdots &  \vdots & \\
+\end{pmatrix}=\sigma^2 \cdot I_{n\times n}
+\]
+
+## Variance and covariance of coefficient estimates
+
+Assumptions:
+
+* $Var(\varepsilon|X)=\sigma^2 \cdot I_{n\times n}$
+  * $Var(\varepsilon_i|X)=\sigma^2$
+  * $Cov(\varepsilon_i,\varepsilon_j|X)=0$
+* $y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i +\varepsilon_i$
+
+Allow us to calculate $Var(\hat{\beta}_j|X)$, $Cov(\hat{\beta}_j,\hat{\beta}_l|X)$
+
+
+## Pair regression calculation example [at the blackboard]
+
+In the model $y_i=\beta_1 + \beta_2 x_i + \varepsilon_i$
+
+Let's assume that: $Var(\varepsilon_i|X)=\sigma^2$, $Cov(\varepsilon_i, \e_j|X)=0$
+
+Find $Var(\hat{\beta}_2|X)$, $Cov(\hat{\beta}_1,\hat{\beta}_2 |X)$, $Var(\hat{\beta}_1|X)$
+
+## In total for pair regression:
+
+* $Var(\hat{\beta}_2|X)=\frac{\sigma^2}{\sum (x_i-\bar{x})^2}$
+
+* $Cov(\hat{\beta}_1,\hat{\beta}_2 |X)=\frac{-\bar{x}\sigma^2}{\sum (x_i-\bar{x})^2}$
+
+* $Var(\hat{\beta}_1|X)=\frac{\sigma^2 \sum x_i^2}{n\sum (x_i-\bar{x})^2}$
+
+
+## Question: 
+
+- Why consider conditional variance if all properties are similar to ordinary variance?
+
+- It is considered exactly so as to calculate everything as easily as with ordinary variance! The real unconditional variance of coefficient estimates is much more complicated than the conditional one.
+
+
+##  Theorem (without proof):
+\[
+Var(\hat{\beta}_j| X)=\sigma^2/RSS_j
+\]
+$RSS_j$ — residual sum of squares of the regression of the $j$-th explanatory variable on other explanatory variables (including the intercept)
+
+## LINEAR ALGEBRA. Covariance matrix of coefficient estimates
+
+Using linear algebra one can prove that:
+
+$Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}$
+
+## LINEAR ALGEBRA. Preliminary information to the proof:
+
+Property: $Var(Ay)=A\cdot Var(y) \cdot A'$
+
+This is a matrix analogue of the $Var(a\cdot y_1)=a^2\cdot Var(y_1)$ property.
+
+Recall that $(AB)'=B'A'$ и $(A^{-1})'=(A')^{-1}$ 
+
+Thus:
+
+* $(X'X)'=X'X''=X'X$
+
+* $((X'X)^{-1})'=(X'X)^{-1}$
+
+## LINEAR ALGEBRA. Proof of the formula  [at the blackboard]
+
+If LS-estimates exist and are unique, $Var(\varepsilon|X)=\sigma^2 I_{n\times n}$ ,
+
+then the covariance matrix equals to:
+
+$Var(\hat{\beta}|X)=\sigma^2 (X'X)^{-1}$
+
+
+
+## How to estimate $\sigma^2$?
+
+The $\sigma^2$ constant is unknown.
+
+The $\hat{\sigma}^2=\frac{RSS}{n-k}$ random variable is a wonderful estimate for $\sigma^2$.
+
+Wonderful in a sense that:
+
+- $E(\hat{\sigma}^2)=\sigma^2$, on average is estimated correctly
+
+- $\hat{\sigma}^2 \to \sigma^2$ in probability with the growth of $n$
+
+
+## Estimating the covariance matrix
+
+Idea: let's replace $\sigma^2$ by $\hat{\sigma}^2$ in all formulae:
+
+* True variance: $Var(\hat{\beta}_j | X)=\sigma^2 \cdot f(X)$
+
+* Variance estimate: $\widehat{Var}(\hat{\beta}_j | X)=\hat{\sigma}^2 \cdot f(X)$ 
+
+namely: $\widehat{Var}(\hat{\beta}_j| X)=\hat{\sigma}^2/RSS_j$
+
+* $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j | X)}$
+
+For example, in the model $y_i=\beta_1 + \beta_2 x_i + \varepsilon_i$: $se(\hat{\beta}_2)=\sqrt{\frac{\hat{\sigma}^2}{\sum (x_i-\bar{x})^2}}$
+
+## Estimating the covariance matrix
+
+\[
+\widehat{Var}(\hat{\beta}|X)=\begin{pmatrix}
+\widehat{Var}(\hat{\beta}_1|X) & \widehat{Cov}(\hat{\beta}_1,\hat{\beta}_2|X) & \widehat{Cov}(\hat{\beta}_1,\hat{\beta}_3|X) & \ldots \\
+\widehat{Cov}(\hat{\beta}_2,\hat{\beta}_1|X) & \widehat{Var}(\hat{\beta}_2|X) &  \widehat{Cov}(\hat{\beta}_2,\hat{\beta}_3|X) & \ldots \\
+\widehat{Cov}(\hat{\beta}_3,\hat{\beta}_1|X) & \widehat{Cov}(\hat{\beta}_3,\hat{\beta}_2|X) & \widehat{Var}(\hat{\beta}_3|X) &   \ldots \\
+\vdots & & 
+\end{pmatrix}
+\]
+
+
+* LINEAR ALGEBRA: $\widehat{Var}(\hat{\beta} | X)=\hat{\sigma}^2 \cdot (X'X)^{-1}$
+
+* In R: `vcov(model)`
+
+## BLGP — Big List of Good Properties
+
+* Basic: 
+
+hold even for small samples without the assumption of normality of $\varepsilon_i$
+
+* Asymptotic: 
+
+hold for big samples even without the assumption of normality of $\varepsilon_i$
+
+* If normal: 
+
+hold if $\varepsilon_i$ are normal even for small samples
+
+## BLGP --- assumption about the relationship between $y$ and regressors
+
+If:
+
+1. the true dependence has the form $y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i+\varepsilon_i$
+  * in matrix form: $y=X\beta + \varepsilon$
+2. using the LS method, the regression of $y$ on the intercept is estimated, $x_i$, $z_i$
+  * in matrix form: $\hat{\beta}=(X'X)^{-1}X'y$
+3. there are more observations than estimated $\beta$ coefficients: $n>k$
+
+## BLGP --- assumptions for $\varepsilon_i$:
+
+If:
+
+4. strict exogeneity: $E(\varepsilon_i | \text{ all regressors } )=0$
+  * in matrix form: $E(\varepsilon_i | X)=0$
+5. conditional homoscedasticity: $E(\varepsilon_i^2 | \text{ all regressors })=\sigma^2$
+  * in matrix form: $E(\varepsilon_i^2 | X)=\sigma^2$
+6. $Cov(\varepsilon_i,\varepsilon_j | X)=0$ for $i \neq j$
+
+## BLGP --- assumptions for regressors
+
+If:
+
+7. the vectors of individual observations $(x_i,z_i,y_i)$ are independent and identically distributed
+8. with probability 1 there are no linearly dependent regressors
+* synonyms in matrix form: $rank(X)=k$ or $det(X'X)\neq 0$ or $(X'X)^{-1}$ exists
+
+
+## BLGP --- basic properties (Gauss-Markov Thm.)
+
+Then:
+
+* the estimates $\hat{\beta}_j$ are linear in $y_i$:
+$\hat{\beta_j}=c_1 y_1 + \ldots + c_n y_n$
+
+* The estimates are unbiased:
+$E(\hat{\beta}_j |X )=\beta_j$, in particular $E(\hat{\beta}_j)=\beta_j$
+
+## BLGP — basic properties (Gauss-Markov Thm.)
+
+Then:
+
+* Estimates are effective among linear and unbiased
+
+For every linear in $y_i$ and unbiased alternative estimate $\hat{\beta}^{alt}$:
+
+$Var(\hat{\beta}_j^{alt} | X)\geq Var(\hat{\beta}_j | X)$ и
+$Var(\hat{\beta}_j^{alt} )\geq Var(\hat{\beta}_j )$
+
+## BLGP — basic properties
+
+Then:
+
+* Covariance matrix: $Var(\hat{\beta} | X )=\sigma^2 (X'X)^{-1}$ 
+
+Variances: $Var(\hat{\beta}_j| X)=\sigma^2/RSS_j$
+
+* $Cov(\hat{\beta}_j,\hat{\varepsilon}_i | X)=0$
+* $E(\hat{\sigma}^2 |X ) = \sigma^2$, и $E(\hat{\sigma}^2 ) = \sigma^2$ 
+
+
+## BLGP — asymptotic properties
+
+Then for $n\to \infty$:
+
+* $\hat{\beta}_j \to \beta_j$ in probability
+* $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$ in distribution
+* $\hat{\sigma}^2 \to \sigma^2$ in probability
+
+$\hat{\sigma}^2=\frac{RSS}{n-k}$
+
+## BLGP — if normal 
+
+If we additionally know that $\varepsilon_i \sim N(0, \sigma^2)$, then:
+
+* Estimates are effective among unbiased
+*  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}|X \sim t_{n-k}$, $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}\sim t_{n-k}$
+*  $RSS/\sigma^2 |X \sim \chi^2_{n-k}$, $RSS/\sigma^2 \sim \chi^2_{n-k}$
+
+
+## Confidence intervals for coefficients
+
+Two approaches can be used for constructing:
+
+* Asymptotically: $t=\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$
+
+* If normal: $t=\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \sim t_{n-k}$
+
+Approximate 95% interval:
+
+$[\hat{\beta}_j-2se(\hat{\beta}_j);\hat{\beta}_j+2se(\hat{\beta}_j) ]$
+
+## Description of any test:
+
+* test assumptions  
+
+e.g., asymptotical or requiring the normality of errors $\e_i$
+
+* tested $H_0$ vs $H_a$
+* formula for statistics calculating
+* the distribution law of the statistics for true $H_0$
+
+
+## Practical action sequence
+
+1. choose the level of significance $\alpha$, $\alpha=P(H_0 \text{ rejected }| H_0 \text{ true })$
+2. find the observed value of the statistic $S_{obs}$
+3. find the critical value of the statistic $S_{cr}$ 
+4. compare critical and observed $S_{obs}$ and $S_{cr}$
+
+(one can also compare p-value with the level of significance $\alpha$)
+
+5. Conclusion: "$H_0$ is rejected" or "$H_0$ is not rejected"
+
+
+##  Hypotheses testing and confidence intervals construction [at the blackboard]
+
+```{r, eval=FALSE, results='asis'}
+summary(model)
+            Estimate Std. Error t value Pr(>|t|)  
+(Intercept) 59.86392    3.98754  15.013   <2e-16 ***
+Agriculture  0.10953    0.07848   1.396   0.1698    
+Catholic     0.11496    0.04274   2.690   0.0101 * 
+Residual standard error: 11.07
+```
+
+- test the $\beta_a=0$ hypothesis
+- construct a confidence interval for $\beta_a$ 
+- construct a confidence interval for $\sigma^2$
+
+
+## standard errors are often written under the coefficients
+$\widehat{Fertility}_i=\underset{(3.98)}{59.8} + \underset{(0.078)}{0.109} Agriculture_i + \underset{(0.042)}{0.115} Catholic_i$
+
+
+## Standard table in any statistical package [at the blackboard]
+
+
+```{r, eval=FALSE, results='asis'}
+            Estimate Std. Error t value Pr(>|t|)   
+            
+(Intercept) 59.86392    3.98754  15.013   <2e-16 ***
+Agriculture  0.10953    0.07848   1.396   0.1698    
+Catholic     0.11496    0.04274   2.690   0.0101 * 
+```
+
+## Special points when testing hypotheses
+
+* Bad established name for hypotheses
+
+* The meaning of the wording "$H_0$ is not rejected"
+
+* Significance and essentiality are different things
+
+* Multiple comparisons problem
+
+
+## Bad established name
+
+Significance testing is actually insignificance testing:
+
+* "We have tested the significance of the income coefficient"
+
+* We have tested $H_0: \beta_{inc}=0$.
+
+
+## The meaning of "$H_0$ is not rejected"
+
+* we don't have enogh data to reject $H_0$
+
+* the data we have doesn't contradict with $H_0$
+
+That can be that the data doesn'c contradict with $H_a$ (!)
+
+
+## Significance and essentiality
+
+* A coefficient can be significant and totally inessential
+
+For huge samples all coefficients are usually significant
+
+* A coefficient can be essential but insignificant
+
+Significance is the statistical rejection of the exact equality hypothesis
+
+Essentiality means how important this difference from zero is in an applied sense
+
+
+## Standardized coefficients
+
+Essentiality — you can give different mathematical meanings
+
+For example: 
+
+* standardize the variables: 
+
+$y^{st}_i:= \frac{y_i-\bar{y}}{sd(y)}$, $x^{st}_i:= \frac{x_i-\bar{x}}{sd(x)}$, $z^{st}_i:= \frac{z_i-\bar{z}}{sd(z)}$
+
+* re-estimate the model: 
+
+$y^{st}_i=\beta_1^{st}+\beta_2^{st}x_i^{st}+\beta_3^{st}z_i^{st}+\varepsilon_i^{st}$
+
+## Multiple comparisons problem
+
+* The researcher wants to test the hypothesis that $\beta_{42}=0$. Ok.
+
+* The researcher wants to find out which regressors out of 100 are significant. Bad approach.
+
+
+## Testing a hypothesis about one constraint
+
+We want to test the hypothesis for $\beta_2-\beta_3$.
+
+
+The statistic for $t=\frac{\hat{\beta}_2-\hat{\beta}_3-(\beta_2-\beta_3)}{se(\hat{\beta}_2-\hat{\beta}_3)}$  is distributed
+
+* asymptotically $N(0,1)$
+
+* in case of normality $t_{n-k}$
+
+## Reformulating the model
+
+We want to test the hypothesis $\beta_2=\beta_3$ or $\beta_2-\beta_3=0$ 
+
+We can always reformulate a mosel so as to make $\beta_2-\beta_3$ a new coefficient $\beta_2'=\beta_2-\beta_3$.
+
+## Example of testing the hypothesis about the coefficient relationship [at the blackboard]
+
+```{r, eval=FALSE, results='asis'}
+summary(model)
+            Estimate Std. Error t value Pr(>|t|)  
+(Intercept) 59.86392    3.98754  15.013   <2e-16 ***
+Agriculture  0.10953    0.07848   1.396   0.1698    
+Catholic     0.11496    0.04274   2.690   0.0101 * 
+vcov(model)
+             (Intercept)  Agriculture     Catholic
+(Intercept) 15.900471817 -0.256680712 -0.006998292
+Agriculture -0.256680712  0.006159437 -0.001345371
+Catholic    -0.006998292 -0.001345371  0.001826622
+Residual standard error: 11.07
+```
+
+Test the hypothesis $\beta_a=\beta_c$ (two approaches)
+
+
+## Summing up lecture 2:
+
+In this lecture we've learnt how to:
+
+- construct confidence intervals
+
+- test the hypothesis about an individual coefficient
+
+- formulate standard assumptions
+
+In the next lecture: 
+
+- more complex hypotheses
+
+- forecasting
+
+## Sources of wisdom:
+
+* Artamonov N.V., Introduction to Econometrics: chapter 1.3
+
+* Borzykh D.A., Demeshev B.B., Econometrics in Problems and Exercises: chapters 2, 3
+
+* Katyshev P.K., Peresetskiy A.A., Econometrics. Beginners' Course: chapters 2.4, 2.5, 2.6, 3.2, 3.3
+
+* Seber G., Linear Regression Analysis: chapters 3.2, 3.3, 3.4

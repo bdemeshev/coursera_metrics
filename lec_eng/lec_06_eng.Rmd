@@ -1,0 +1,414 @@
+---
+title: "Autocorrelation"
+babel-lang: english
+lang: english
+header-includes: 
+  - \author[Econometrics. Lecture 6]{Econometrics. Lecture 6}
+  - \newcommand{\e}{\varepsilon}
+output:
+  beamer_presentation:
+    keep_tex: yes
+    theme: Madrid
+    colortheme: whale
+  ioslides_presentation: default
+---
+
+
+
+# Autocorrelation
+
+Autocorrelation is the violation of the following assumption:
+
+$Cov(\e_i,\e_j|X)=E(\e_i \e_j | X)=0$ for $i\neq j$
+
+# Former assumption
+
+For hypothesis testing we assumed the conditional uncorrelatedness of errors:
+
+$Cov(\e_i,\e_j|X)=E(\e_i \e_j | X)=0$ for $i\neq j$
+
+What will happen if this assumption is violated?
+
+
+# When should we expect autocorrelation?
+
+* "proximity" of observations in time or space
+
+* presence of an unobservable factor affecting "neighboring" observations
+
+# Autocorrelation is studied in detail!
+
+* time series analysis
+
+* spatial econometrics
+
+* panel data analysis
+
+# Autocorrelation might be not that harmless
+
+* it might lead to inconsistency of $\hat{\beta}$ estimates
+
+# Example at the blackboard
+
+We know that all errors are equal to each other and take on values +1 or -1 with equal probability, i.e.
+
+$\e_1=\e_2=\ldots=\e_n=\pm 1$
+
+Will the LS coefficient estimates of the $y_i=\beta_1 + \beta_2 x_i + \e_i$ model be consistent?
+
+Note that $E(\e_1\e_2 | X)=1$
+
+# Autocorrelation can have a very complex and rich structure
+
+Don't be afraid, these scary words just mean a certain type of autocorrelation structure:
+
+* AR, MA, ARMA, ARIMA, VAR, VMA, VARMA, VECM, ARCH, GARCH, EGARCH, FIGARCH, TARCH, AVARCH, ZARCH, CCC, DCC, BEKK, VEC, DLM, ... 
+
+
+# We will consider autocorrelation of order $p$
+
+* Let's start with first-order autocorrelation, $p=1$
+
+ $\e_{t}=\rho \e_{t-1}+u_t$
+
+# Assumptions 
+
+* $\e_{t}=\rho \e_{t-1}+u_t$
+
+* $u_t$ are independent between each other, 
+
+* $u_t$ are independent of regressors,
+
+* $u_t$ are identically distributed,
+
+* $E(u_t)=0$, $Var(u_t)=\sigma^2_u$
+
+
+# Exercise [at the blackboard]
+
+How does $Corr(\e_{t}, \e_{t-k})$ look like if autocorrelation is of first order?
+
+# Autocorrelation of order $p$:
+
+$\e_{t}=\phi_1 \e_{t-1}+\phi_2 \e_{t-2} +\ldots + \phi_p \e_{t-p}+u_t$
+
+Allows for richer structure of $Corr(\e_i, \e_j)$
+
+As for the first-order autocorrelation case,
+\[
+\lim_{k\to\infty} Corr(\e_t, \e_{t-k})=0
+\]
+
+# Conditional autocorrelation and other assumptions
+
+* the assumption about the independency of observations $(x_{i.}, y_i)$  is automatically violated  
+
+* in time series the $E(\e_t | X)=0$ assumption is usually violated
+
+For example, using $y_{t-1}$ as a regressor violates $E(\e_t | X)=0$
+
+We will analyze the situation where other assumptions except error uncorrelatedness are fulfilled.
+
+# We use original formulae:
+
+* for coefficient estimates:
+$\hat{\beta}=(X'X)^{-1}X'y$
+
+* for estimating the covariance matrix of coefficient estimates:
+$\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$
+
+* in particular, $\widehat{Var}(\hat{\beta}_j|X)=\frac{\hat{\sigma}^2}{RSS_j}$
+and $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
+
+
+# Three groups of properties:
+
+* finite sample without the $\e$ normality assumption
+
+* finite sample with the $\e$ normality assumption
+
+* asymptotic properties without the $\e$ normality assumption
+
+What happens in every case?
+
+# Finite sample without the $\e$ normality assumption
+
+* (+) Linear in $y$
+
+* (+) Unbiased, $E(\hat{\beta}|X)=\beta$, $E(\hat{\beta})=\beta$
+
+* (---) Estimates are inefficient
+
+#  Finite sample with the $\e$ normality assumption
+
+* (---) $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}$
+
+* (---) $\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$
+
+* (---) $\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$
+
+#  Asymptotic properties:
+
+* (+) $\hat{\beta} \to \beta$
+
+* (+) $\frac{RSS}{n-k} \to \sigma^2$ 
+
+* (---) $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$
+
+* (---) $\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k)} \to \chi^2_r$
+
+# Summing up:
+
+* The $\hat{\beta}$ themselves can be interpreted and used
+
+* Standard errors $se(\hat{\beta}_j)$ are inconsistent
+
+* We can't construct confidence intervals for $\beta_j$ and test hypotheses for $\beta_j$
+
+# What should we do?
+
+* Correct standard errors! 
+
+* Another formula for estimating $\widehat{Var}_{HAC}(\hat{\beta}|X)$
+
+* Hence, other $se_{HAC}(\hat{\beta}_j)$
+
+# Estimate of the covariance matrix, robust (sustained) to conditional heteroscedasticity and autocorrelation
+
+* Instead of $\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$ 
+
+use
+\[
+\widehat{Var}_{HAC}(\hat{\beta}|X)=(X'X)^{-1}\hat{\Phi}(X'X)^{-1}
+\]
+
+* Newey-West, 1987  (many variants exist)
+
+\[
+\hat{\Phi} = \sum_{j=-k}^k \frac{k-|j|}{k} \left(  \sum_t \hat{\e}_t\hat{\e}_{t+j} x_{t\,\cdot}'x_{t+j\,\cdot} \right)
+\]
+
+# The essence of the adjustment:
+
+We change $se(\hat{\beta}_j)$ for $se_{HAC}(\hat{\beta}_j)$
+
+Which problems are solved?
+
+* (+) $\frac{\hat{\beta}_j-\beta_j}{se_{HAC}(\hat{\beta}_j)} \to N(0,1)$ (HOORAY!)
+
+# Which problems aren't solved?
+
+* (---) the $\hat{\beta}$ estimates do not change and stay inefficient
+
+
+Even if we assume the normality of $\e$:
+
+* (---) $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}$
+
+* (---) $\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$
+
+* (---) $\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$
+
+# From the practical point of view:
+
+* The new formula for $\widehat{Var}_{HAC}(\hat{\beta}|X)$, and, hence, for  $se_{HAC}(\hat{\beta}_j)$
+
+* Robust estimate of covariance matrix in R:
+```{r, eval=FALSE}
+model <- lm(y~x, data=data)
+vcovHAC(model)
+```
+
+* With it life is wonderful!
+
+$\frac{\hat{\beta}_j-\beta_j}{se_{HAC}(\hat{\beta}_j)} \to N(0,1)$
+
+# When should we use it
+
+* When we suspect autocorrelation and do not want to spend time modelling it
+
+# Autocorrelation detection
+
+* Estimate the model of interest using LS method
+
+* Construct residuals graph in axes $\hat{\e}_{t-1}$, $\hat{\e}_{t}$
+
+# Positive autocorrelation
+
+$\e_t=0.9\e_{t-1}+u_t$
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library("ggplot2")
+n <- 100
+eps <- arima.sim(model=list(ar=0.9),n=n)
+x <- rnorm(n)
+y <- 2+3*x+eps
+model <- lm(y~x)
+r <- resid(model)
+qplot(head(r,-1),tail(r,-1),ylab="e_t",xlab="e_{t-1}")
+```
+
+
+# Negative autocorrelation
+
+$\e_t=-0.9\e_{t-1}+u_t$
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+n <- 100
+eps <- arima.sim(model=list(ar=-0.9),n=n)
+x <- rnorm(n)
+y <- 2+3*x+eps
+model <- lm(y~x)
+r <- resid(model)
+qplot(head(r,-1),tail(r,-1),ylab="e_t",xlab="e_{t-1}")
+```
+
+
+# No autocorrelation
+
+$\e_t$ are independent
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+n <- 100
+eps <- rnorm(n)
+x <- rnorm(n)
+y <- 2+3*x+eps
+model <- lm(y~x)
+r <- resid(model)
+qplot(head(r,-1),tail(r,-1),ylab="e_t",xlab="e_{t-1}")
+```
+
+
+# Formal autocorrelation tests
+
+* Durbin-Watson test
+
+* Breusch-Godfrey test
+
+
+# Durbin-Watson test, assumptions:
+
+* First-order autocorrelation in residuals
+
+\[
+\e_t=\rho \e_{t-1} + u_t
+\]
+
+* normality of $\e$ errors
+
+* strong exogeneity, $E(\e_t | X)=0$
+
+* $H_0$ about the absence of autocorrelation, $\rho=0$
+
+# Durbin-Watson test procedure
+
+* Step 1. Estimate the main regression, obtain $\hat{\e}_i$
+
+* Step 2. Calculate the statistic
+$$DW=\frac{\sum_{i=2}^n(\hat{\e}_i-\hat{\e}_{i-1})^2}{\sum_{i=1}^n \hat{\e}_i^2}$$
+
+# $DW$ statistic distribution
+
+* $H_0$ about the absence of autocorrelation, $\rho=0$
+
+* The exact distribution law of $DW$ statistic depends on $X$ in a complex way
+
+* If $\hat{\rho}$ is a sample correlation of residuals, then $DW=2(1-\hat{\rho})$
+
+# Qualitative conclusions on $DW$ statistics
+
+$DW=2(1-\hat{\rho})$, thus $0<DW<4$
+
+* $DW\approx 0$ means positive autocorrelation $\hat{\rho}\approx 1$
+
+* $DW\approx 2$ means absence of autocorrelation $\hat{\rho}\approx 0$
+
+* $DW\approx 4$ means negative autocorrelation $\hat{\rho}\approx -1$
+
+<!--
+# illustration (picture attached: Durbin-Watson graph)
+tex notes for graphs:
+$H_0$ is not rejected
+$H_0$ is rejected
+$DW_{cr}$
+$H_0$: $\rho=0$
+-->
+
+# From practical point of view: 
+
+* `R` calculates the exact p-values for the $DW$ test
+
+* If the p-value is smaller than the $\alpha$ level of significance, then the $H_0$ about the absence of autocorrelation is rejected
+
+* For history lovers there are statistical tables of critical value ranges
+
+
+# Breusch-Godfrey test, assumptions
+
+* for testing the autocorrelation of order $p$ in errors
+\[
+\e_t=\phi_1 \e_{t-1} + \ldots + \phi_p \e_{t-p} + u_t
+\]
+
+* does not require residuals normality
+
+* holds even with some violations of the $E(\e_t | X)=0$ assumption
+
+* asymptotic
+
+$H_0$: $\phi_1=\phi_2=\ldots=\phi_p=0$
+
+# Breusch-Godfrey test procedure
+
+* Step 1. Estimate the original model, obtain the residuals $\hat{\e}_t$
+
+* Step 2. Construct an auxiliary regression  $\hat{\e}_t$ on original regressors, $\hat{\e}_{t-1}$, $\hat{\e}_{t-2}$, ..., $\hat{\e}_{t-p}$, find $R^2_{aux}$
+
+* Step 3. Calculate the statistic $BG=(n-p)R^2_{aux}$
+
+# $BG$ statistic distribution
+
+* If $H_0$ about the absence of autocorrelation is true
+
+$H_0$: $\phi_1=\phi_2=\ldots=\phi_p=0$
+
+$BG=(n-p)R^2_{aux} \sim \chi^2_p$
+
+* If the $BG$ statistic is bigger than the critical value $\chi^2_{cr}$, then the $H_0$ about the absence of autocorrelation is rejected.
+<!--
+Here BG distribution graph (picture attached)
+Graph notes:
+$H_0$ is not rejected
+$H_0$ is rehected
+$\chi^2_{cr}$
+$H_0$: $\phi_1=\phi_2=\ldots=\phi_p=0$
+-->
+ 
+# Breusch-Godfrey test requires less assumptions
+
+Although Durbin-Watson test is widely spread, Breusch-Godfrey test should be preferred.
+
+# Example of Durbin-Watson and Breusch-Godfrey tests [at the blackboard]
+
+
+
+# Summing up
+
+* We discussed the situation of the violation of conditional uncorrelatedness assumption in the model
+
+* It is violated in time series and cross-sectional data
+ 
+* In simplest case it's enough to use special standard errors $se_{HAC}$ for hypotheses testing
+ 
+* If you'd like to study the structure of autocorrelation seriously, there are separate disciplines for that.
+
+
+# Sources of wisdom:
+
+* Artamonov N.V., Introduction to Econometrics: chapters 3.4, 3.5
+
+* Borzykh D.A., Demeshev B.B., Econometrics in Problems and Exercises: chapter 11
+
+* Katyshev P.K., Peresetskiy A.A., Econometrics. Beginners' Course: chapter 6.2
+
+* Seber G., Linear Regression Analysis: chapter 6.2

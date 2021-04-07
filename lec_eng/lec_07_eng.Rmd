@@ -1,0 +1,308 @@
+---
+title: "About binary choice models with maximal likelihood"
+babel-lang: english
+lang: english
+header-includes: 
+  - \author[Econometrics. Lecture 7]{Econometrics. Lecture 7}
+  - \newcommand{\e}{\varepsilon}
+output:
+  beamer_presentation:
+    keep_tex: yes
+    theme: Madrid
+    colortheme: whale
+  ioslides_presentation: default
+---
+
+## Maximum likelihood method
+
+Observations: I see a working fountain
+
+Hypothesis 1: the fountain works every day
+
+Hypothesis 2: the fountain is turned on once a year
+
+
+## Maximum likelihood method
+
+For which hypothesis the probability of the available data is maximal?
+
+## Likelihood. More formally
+
+Maximum likelohood method
+
+As an estimate of the unknown parameter $\theta$ we'll take a number $\hat{\theta}$, such that the probability of the available data is maximal.
+
+
+## Problem. Discrete case [at the blackboard]
+
+Observations: $y_1=0$, $y_2=1$, $y_3=2$, $y_4=0$.
+
+Model: the observations $y_i$ are independent,
+
+
+| $y_i$ | 0 | 1 | 2 |
+|-----:|----:|----:|---:|
+| Probability |  $p$ | $2p$ | $1-3p$ |  
+
+Find $\hat{p}$ using the maximum likelihood method
+
+## Likelihood. Continuous case
+
+For continuous random variables we maximize the probability density
+
+For independent observations: $f(y_1,y_2,...,y_n|\theta)=f(y_1|\theta)\cdot f(y_2|\theta)\cdot ...\cdot f(y_n|\theta)=\prod f(y_i|\theta)$ 
+
+Logarithm trick: $\ell(\theta)=\ln\left( \prod f(y_i|\theta) \right) = \sum \ln f(y_i|\theta)$
+
+## Problem. Continuous case [at the blackboard]
+
+100 observations: $y_1=1.1$, $y_2=2.7$, ..., $y_{100}=1.5$. 
+
+Sum, $\sum y_i=200$.
+
+Model: the observations are independent, $f(y)=\lambda e^{-\lambda x}$ for $x>0$.
+
+Find $\hat{\lambda}$ using the maximum likelihood method
+
+
+## ML is good!
+
+The $\hat{\theta}_{ML}$ estimate is a random variable
+
+ML estimates are:
+
+* Consistent: $\hat{\theta}_{ML} \to \theta$ for $n\to \infty$
+* Asymptotically unbiased: $E(\hat{\theta}_{ML}) \to \theta$ for $n\to \infty$
+* Asymptotically efficient: 
+
+$Var(\hat{\theta}_{ML})$ is the smallest among the asymptotically unbiased estimates
+
+## ML is normal!
+
+* Asymptotically normal: 
+
+$\hat{\theta}_{ML} \sim N(\theta, I^{-1})$ for $n>>0$
+
+$I$ is Fisher information, $I=-E\left( \ell''(\theta) \right)$
+
+In the multidimensional case: $I=-E( H )$, $H$ is Hessian matrix
+
+
+## ML estimate as a random variable
+
+<!-- The $\hat{\theta}_{ML}$ estimate is random. For $n>>0$ -->
+
+Mean: $E(\hat{\theta}_{ML}) \approx \theta$, variance: $Var(\hat{\theta}_{ML}) \approx I^{-1}$
+
+Variance estimate: $\widehat{Var}(\hat{\theta}_{ML})=\hat{I}^{-1}$
+
+Observed Fisher information $\hat{I}=-\ell''(\hat{\theta})$ 
+
+## Confidence interval
+
+Confidence interval:
+
+\[
+\theta \in [\hat{\theta}_{ML}-z_{cr}se(\hat{\theta});\hat{\theta}_{ML}+z_{cr}se(\hat{\theta})],
+\]
+
+$se(\hat{\theta})=\sqrt{\widehat{Var}(\hat{\theta}_{ML})}=\sqrt{-(l''(\hat{\theta}))^{-1}}$
+
+
+## Problem (cont.) [at the blackboard]
+
+100 observations: $y_1=1.1$, $y_2=2.7$, ..., $y_{100}=1.5$. 
+
+Sum, $\sum y_i=200$.
+
+Model: the observations are independent, $f(y)=\lambda e^{-\lambda x}$ for $x>0$.
+
+
+Construct a 95\% confidence interval for $\lambda$.
+
+
+## Hypotheses testing
+
+
+$H_0$: the system of $q$ equations on unknown parameters
+
+$H_a$: at least one of the $q$ conditions is not fulfilled
+
+Likelihood ratio test (LR):
+
+\[
+LR=2(\ell(\hat{\theta})-\ell(\hat{\theta}_{H_0})) \sim \chi^2_q
+\]
+
+## Problem (cont.) [at the blackboard]
+
+100 observations: $y_1=1.1$, $y_2=2.7$, ..., $y_{100}=1.5$. 
+
+Sum, $\sum y_i=200$.
+
+Model: the observations are independent, $f(y)=\lambda e^{-\lambda x}$ for $x>0$.
+
+Test the hypothesis $H_0$: $\lambda=1$.
+
+## Logit and probit models
+
+Binary response: $y_i \in \{0,1\}$.
+
+Latent unobserved variable: $y^*_i=\beta_1 +\beta_2 x_i +\varepsilon_i$.
+
+$y_i=\begin{cases}
+1, y^*_i \geq 0 \\
+0, y^*_i <0
+\end{cases}$
+
+## Difference between logit and probit
+
+* Probit model: $\varepsilon_i \sim N(0,1)$.
+
+* Logit model: $\varepsilon_i \sim logistic$, $f(t)=e^{-x}/(1+e^{-x})^2$
+
+* Logistic distribution is similar to normal $N(0,1.6^2)$
+
+
+## Probability
+
+\begin{multline}
+\nonumber
+P(y_i=1)=P(y^*_i\geq 0)=P(\beta_1 +\beta_2 x_i +\varepsilon_i \geq 0)=\\
+=P( -\varepsilon_i \leq \beta_1 +\beta_2 x_i  ) = 
+P( \varepsilon_i \leq \beta_1 +\beta_2 x_i  ) = \\
+=F(\beta_1 +\beta_2 x_i) 
+\end{multline}
+
+## Exercise [at the blackboard]
+
+For a logit model find $P(y_i=1)$, $\ln P(y_i=1)/P(y_i=0)$
+
+
+## Log-odds ratio
+
+For a logit model:
+
+* Probability:
+
+\[
+P(y_i=1)=\frac{exp(\beta_1+\beta_2 x_i)}{1+exp(\beta_1+\beta_2 x_i)}=\frac{1}{1+exp(-(\beta_1+\beta_2 x_i))}
+\]
+
+* Log-odds ratio:
+
+\[
+\ln \frac{P(y_i=1)}{P(y_i=0)}=\beta_1 +\beta_2 x_i
+\]
+
+## Likelihood function
+
+Observations: $y_1=1$, $y_2=0$, $y_3=1$, ...
+
+Model: logit.
+
+Likelihood function:
+\[ 
+P(y_1=1, y_2=0, ...)=P(y_1=1)\cdot P(y_2=0)\cdot P(y_3=1)\cdot ...
+\]
+
+## Probability and odds ratio [at the blackboard]
+
+## Interpretation
+
+Coefficients are hard to interpret
+
+The marginal effect is the derivative of the probability:
+
+\[
+\frac{dP(y=1)}{dx}=\frac{dF(\beta_1+\beta_2 x)}{dx}=\beta_2 \cdot f(\beta_1+\beta_2x)
+\]
+
+Depends on $x$ (!)
+
+## Two average marginal effects:
+
+Average marginal effect on observations:
+
+\[
+\frac{\sum \beta_2 \cdot f(\beta_1+\beta_2 x_i)}{n}
+\]
+
+Marginal effect for the median observation:
+
+\[
+\beta_2 \cdot f(\beta_1+\beta_2 \bar{x})
+\]
+
+## Forecasting
+
+
+* Latent variable forecast: $\hat{y}^*_f=\hat{\beta}_1+\hat{\beta}_2 x_f$
+
+* Probability point forecast: $\hat{P}(y_f=1)=F(\hat{y}^*_f)$
+
+* Confidence interval for $E(\hat{y}^*_f)$:
+
+\[
+[\hat{y}^*_f-z_{cr}se(\hat{y}^*_f);\hat{y}^*_f+z_{cr}se(\hat{y}^*_f)]
+\]
+
+* Confidence interval for probability:
+
+\[
+[F(\hat{y}^*_f-z_{cr}se(\hat{y}^*_f));F(\hat{y}^*_f+z_{cr}se(\hat{y}^*_f))]
+\]
+
+* In R: logistic distribution function, $F(.)=plogis(.)$, normal $F(.)=pnorm(.)$.
+
+
+## Logit-probit difference in practice
+
+In practice logit and probit coefficient differ by a factor of $\sim 1.6$:
+
+* Logit model: $y^*_i=\beta_1+\beta_2 x_i + u_i$, 
+where $u_i$ is approximately $N(0,1.6^2)$
+
+* Logit model: $\frac{y^*_i}{1.6}=\frac{\beta_1}{1.6}+\frac{\beta_2}{1.6} x_i + \frac{u_i}{1.6}$,
+where $\frac{u_i}{1.6}$ is approximately $N(0,1)$
+
+* Probit model: $y^*_i=\beta_1+\beta_2 x_i +\e_i$, where $\e_i \sim N(0,1)$
+
+* $\{y_i=1\} \Leftrightarrow \{y_i^*>0\} \Leftrightarrow \{y_i^*/1.6>0\}$ 
+
+
+## The problem of logit and probit models [at the blackboard]
+
+"Ideal forecasting":
+
+| $y_1=0$ | $y_2=0$ | $y_3=1$ |
+|-------:|-------:|------:|
+| $x_1=1$ | $x_2=2$ | $x_3=3$ |
+
+ML estimates do not exist!
+
+## The problem of logit and probit models
+
+* Sometimes appears when there are many dummy regressors
+
+* Signs: ML does not converge, 
+
+R: "fitted probabilities numerically 0 or 1 occurred"
+
+* Solutions: regularization (adding penalty to $\ell()$), bayesian approach
+
+## Summing up
+
+* Maximum likelihood method. Allows to obtain the estimates of unknown parameters.
+
+* Logit and probit models. Models for the response that takes up only $0$ or $1$ values.
+
+* OLS shouldn't be used when modelling a binary response
+
+## Sources of wisdom:
+
+* Borzykh D.A., Demeshev B.B., Econometrics in Problems and Exercises: chapter 5
+
+* Katyshev P.K., Peresetskiy A.A., Econometrics. Beginners' Course: chapters 10.1, 10.2, 12.1
+
+* Nosko V.P., Econometrics for Beginners, additional chapters[(www.iep.ru/files/persona/nosko/Book.pdf)](www.iep.ru/files/persona/nosko/Book.pdf) : chapters 1.1 -- 1.4

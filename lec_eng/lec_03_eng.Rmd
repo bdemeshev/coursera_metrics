@@ -1,0 +1,550 @@
+---
+title: "Forecasts. Model comparison"
+lang: english
+babel-lang: english
+header-includes: 
+  - \author[Econometrics. Lecture 3]{Econometrics. Lecture 3}
+  - \newcommand{\e}{\varepsilon}
+  - \newcommand{\hy}{\hat{y}}
+  - \newcommand{\hb}{\hat{\beta}}
+  - \usepackage{lmodern}
+  - \usepackage{tikz}
+output:
+  beamer_presentation:
+    keep_tex: yes
+    theme: Madrid
+    colortheme: whale
+  ioslides_presentation: default
+---
+
+## Lecture 3
+
+* Forecasting
+
+* Choosing the "best" model
+
+
+## Forecasting
+
+Model: $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+
+Point forecast: $\hat{y}_i = \hat{\beta}_1 +\hat{\beta}_2 x_i + \hat{\beta}_3 z_i$
+
+
+## Interval forecasting
+
+What do we forecast?
+
+* Mean $y_i$ with the regressors given, $E(y_i | x_i, z_i)$:
+
+$E(y_i | x_i, z_i)=\beta_1 + \beta_2 x_i + \beta_3 z_i$
+
+* Specific $y_i$ with the regressors given:
+
+$y_i= \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+
+We get two different forecast errors!
+
+## Mean forecast error
+
+* conditional expectation, $E(y_i | X)$
+
+* conditional mean forecast error, $\hat{y}_i - E(y_i | X)$
+
+* forecast error variance:
+
+\[
+Var(\hy_i - E(y_i | X)  | X )=Var(\hat{y}_i | X)  =Var(\hat{\beta}_1 +\hat{\beta}_2 x_i + \hat{\beta}_3 z_i | X)
+\]
+
+## Forecast error for a specific value 
+
+* specific observation, $y_i$
+
+* forecast error, $\hy_i - y_i$
+
+* forecast error variance:
+\begin{multline} \nonumber
+Var(\hat{y}_i - y_i | X)=Var(\hat{y}_i - E(y_i | X) - \varepsilon_i | X) = Var(\hat{y}_i - \varepsilon_i | X) = \\
+Var(\hat{y}_i|X) + Var( \varepsilon_i | X) = Var(\hat{\beta}_1 +\hat{\beta}_2 x_i + \hat{\beta}_3 z_i | X) + Var(\epsilon_i | X)
+\end{multline}
+
+## Variance estimate
+
+* $Var(\hat{y}_i |X )$, $Var(\e_i | X)$ are unknown, depend on $\sigma^2$
+
+* $\widehat{Var}(\hat{y}_i |X )$, $\widehat{Var}(\e_i | X)$ are known
+
+* Let's use standard errors: $se(\hat{y}_i) = \sqrt{\widehat{Var}(\hat{y}_i |X )}$ 
+
+## Confidence interval for mean value
+
+* Asymptotic: $\frac{\hat{y}_i - E(y_i | X)}{se(\hat{y}_i)} \to N(0,1)$
+\[
+E(y_i | X) \in [\hat{y}_i - z_{cr} se(\hat{y}_i);\hat{y}_i + z_{cr} se(\hat{y}_i) ]
+\]
+
+* When assuming normality: $\frac{\hat{y}_i - E(y_i | X)}{se(\hat{y}_i)} \sim t_{n-k}$ 
+
+\[
+E(y_i | X) \in [\hat{y}_i - t_{cr} se(\hat{y}_i);\hat{y}_i + t_{cr} se(\hat{y}_i) ]
+\]
+
+## Predictive interval for a specific value
+
+* Asymptotic: $\frac{\hat{y}_i - y_i }{se(\hat{y}_i-\varepsilon_i)} \to N(0,1)$
+\[
+y_i  \in [\hat{y}_i - z_{cr} se(\hat{y}_i-\varepsilon_i);\hat{y}_i + z_{cr} se(\hat{y}_i-\varepsilon_i) ]
+\]
+
+* When assuming normality: $\frac{\hat{y}_i - y_i }{se(\hat{y}_i-\varepsilon_i)} \sim t_{n-k}$ 
+
+\[
+y_i  \in [\hat{y}_i - t_{cr} se(\hat{y}_i-\varepsilon_i);\hat{y}_i + t_{cr} se(\hat{y}_i-\varepsilon_i) ]
+\]
+
+## Calculation example [at the blackboard]
+
+```{r, eval=FALSE, echo=TRUE}
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  8.53539    0.05183  164.68   <2e-16 ***
+log(carat)   1.74685    0.07505   23.27   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Residual standard error: 0.2771 on 38 degrees of freedom
+vcov(mod)
+            (Intercept)  log(carat)
+(Intercept) 0.002686470 0.002078281
+log(carat)  0.002078281 0.005632675
+```
+
+## Taking the logarithms
+
+Four models:
+
+* $y_i = \beta_1 + \beta_2 x_i + \varepsilon_i$
+
+* $\ln( y_i) = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i$
+
+* $\ln( y_i) = \beta_1 + \beta_2 x_i + \varepsilon_i$
+
+* $y_i = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i$
+
+## Interpretation derivation [at the blackboard]
+
+The idea of obtaining logarithmic models interpretation:
+
+$d \ln x= \frac{dx}{x}$ --- fractional change of $x$
+
+## Two popular versions
+
+* $y_i = \beta_1 + \beta_2 x_i + \varepsilon_i$. When $x$ grows by one unit,$y$ grows by $\beta_2$ units.
+
+* $\ln( y_i) = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i$. When $x$ grows by one percent, $y$ grows by $\beta_2$ percent.
+
+## Semilogarithmic model
+
+* $\ln( y_i) = \beta_1 + \beta_2 x_i + \varepsilon_i$. When $x$ grows by one unit, $y$ grows by $100\beta_2$ percent.
+
+* $y_i = \beta_1 + \beta_2 \ln( x_i) + \varepsilon_i$. When $x$ grows by one percent, $y$ grows by $0.01\beta_2$ units.
+
+## Dummy variables
+
+* Explanatory variable that takes on values 0 and 1 only is called dummy variable
+
+* For example, the gender of survey respondents: the random variable $male_i$ equals 1 for men and 0 for women.
+
+## Dummy variables and different dependencies on subsamples
+
+Example 1. Basic model.
+
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+
+The salaries of men and women with equal experience and education are the same on average
+
+## Example 2. 
+
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \varepsilon_i$
+
+For men: $wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+
+For women: $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+
+## Example 3. 
+
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i exper_i + \varepsilon_i$
+
+For men: $wage_i = (\beta_1+\beta_4) + (\beta_2+\beta_5) exper_i + \beta_3 educ_i + + \varepsilon_i$
+
+For women: $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+
+## Example 4. 
+
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \varepsilon_i$
+
+For men: $wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i$
+
+For women: $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+
+## Example 5. 
+
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \beta_6 male_i exper_i + \varepsilon_i$
+
+For men: $wage_i = (\beta_1+\beta_4) + (\beta_2 + \beta_6) exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i$
+
+For women: $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+
+## Factor variable takes on multiple values
+
+$season_i \in \{\text{ winter }, \text{ spring }, \text{ summer }, \text{ autumn }  \}$
+
+1. Choose the base value of the factor variable: winter.
+
+2. Introduce 3 (four seasons minus one base season) dummy variables:
+
+$vesna_i$, $leto_i$, $osen_i$
+
+## Introducing dummy variables
+
+\begin{tabular}{ccccc}
+\hline 
+Observation & Season & $vesna_i$ & $leto_i$ & $osen_i$  \\ 
+\hline 
+1 & Winter & 0 & 0 & 0 \\ 
+2 & Spring & 1 & 0 & 0 \\ 
+3 & Summer & 0 & 1 & 0 \\ 
+4 & Autumn & 0 & 0 & 1 \\ 
+5 & Winter & 0 & 0 & 0 \\ 
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ 
+\hline 
+\end{tabular} 
+
+## Example for subsample models
+
+$icecream_i=\beta_1 + \beta_2 price_i + \beta_3 vesna_i + \beta_4 leto_i + \beta_5 osen_i + \varepsilon_i$
+
+Winter: $icecream_i=\beta_1 + \beta_2 price_i + \varepsilon_i$
+
+Spring: $icecream_i=(\beta_1 + \beta_3) + \beta_2 price_i + \varepsilon_i$
+
+Summer: $icecream_i=(\beta_1 + \beta_4) + \beta_2 price_i + \varepsilon_i$
+
+Autumn: $icecream_i=(\beta_1 + \beta_5) + \beta_2 price_i + \varepsilon_i$
+
+## A common mistake!
+
+To include dummy variables for all values of the factor variable and constant in the regression. Noble dons and duenas do not do that!
+
+Example with the mistake (!).
+
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 male_i + \beta_4 female_i +\varepsilon_i$
+
+The relation $1 = male_i + female_i$ holds. 
+
+## common mistake --- violation of the assumption
+
+8. With probability 1 there are no linearly dependent regressors
+* Synonyms in matrix form: $rank(X)=k$ or $det(X'X)\neq 0$ or $(X'X)^{-1}$ exists
+
+The regressors are linearly dependent. Unique LS estimates do not exist.
+
+## Testing hypotheses about multiple constraints
+
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \varepsilon_i$
+
+For men: $wage_i = (\beta_1+\beta_4) + \beta_2 exper_i + (\beta_3 + \beta_5) educ_i + \varepsilon_i$
+
+For women: $wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \varepsilon_i$
+
+$H_0: \begin{cases} \beta_4 = 0 \\
+\beta_5 = 0
+\end{cases}$
+
+$H_a:$  at least one coefficient ($\beta_4$ or $\beta_5$) is nonzero
+
+## Testing the hypothesis
+
+1. Estimate the unrestricted (ur) model
+
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i + \beta_4 male_i + \beta_5 male_i educ_i + \varepsilon_i$
+
+Calculate $RSS_{UR}$
+
+2. Estimate the restricted (r) model
+
+$wage_i = \beta_1 + \beta_2 exper_i + \beta_3 educ_i  + \varepsilon_i$
+
+Calculate $RSS_{R}$
+
+## Two approaches:
+
+3.1. Asymptotically:
+
+\[
+\chi^2=\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k_{UR})} \to \chi^2_r
+\]
+
+3.2. If errors are normal, $\varepsilon_i |X \sim N(0,\sigma^2)$
+
+\[
+F=\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k_{UR})} \sim F_{r, n-k_{UR}}
+\]
+
+$r$ --- the number of restrictions in $H_0$
+
+## Conclusion:
+
+4. If $F_{obs}>F_{cr}$ or $\chi^2_{obs}>\chi^2_{cr}$, then $H_0$ is rejected
+
+## Example [at the blackboard]
+
+```{r, results='asis', message=FALSE, warning=FALSE, echo=FALSE}
+library("pander")
+library("memisc")
+h <- read.csv("../datasets/flats_moscow.txt", header = TRUE, sep = "\t")
+model_1 <- lm(data = h, log(price) ~ log(totsp) + log(livesp) +
+                log(kitsp) + brick + metrdist + walk)
+model_2 <- lm(data = h, log(price) ~ log(totsp) + log(livesp) +
+                log(kitsp) + brick)
+# pander(mtable(model_1, model_2, summary.stats = c("N", "Deviance")))
+```
+
+Check the hypothesis about two restrictions. RSS for the two models:
+
+```{r}
+model_1 <- lm(data = h, log(price) ~ log(totsp) + log(livesp) +
+                log(kitsp) + brick + metrdist + walk)
+model_2 <- lm(data = h, log(price) ~ log(totsp) + log(livesp) +
+                log(kitsp) + brick)
+deviance(model_1)
+deviance(model_2)
+```
+
+
+## Note. 
+
+RSS of a restricted model is always bigger:
+
+* $RSS_{UR} = \min_{\hat{\beta}_1, \hat{\beta}_2, \ldots} RSS$
+
+* $RSS_{R} = \min_{\hat{\beta}_1, \hat{\beta}_2, \ldots, \hat{\beta}_4=0} RSS$
+
+TSS in the models are equal since $TSS=\sum ( y_i -\bar{y})^2$
+
+So, $ESS_{UR}>ESS_R$ and $R^2_{UR}>R^2_R$.
+
+## The simplest case
+
+Model $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+
+$H_0$ hypothesis: all our regressors are absolutely useless
+
+$H_0: \begin{cases}
+\beta_2 =0 \\
+\beta_3 = 0 \\
+\ldots
+\end{cases}$
+
+$(k-1)$ restrictions in total.
+
+The hypothesis of regression insignificance.
+
+## Proof of the statistic formula for the hypothesis of regression insignificance [at the blackboard]
+
+For the hypothesis:
+
+$H_0: \begin{cases}
+\beta_2 =0 \\
+\beta_3 = 0 \\
+\ldots \\
+\beta_k= 0 
+\end{cases}$
+
+The statistic takes the form:
+
+\[
+F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
+\]
+
+The idea of the proof: model $y_i=\beta_1 + \e_i$ will be the restricted one.
+
+In the resticted model $\hb_1=\bar{y}$, $RSS_R=TSS_R$, $ESS_R=0$.
+
+
+## Testing the hypothesis of regression insignificance
+
+Model $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+
+$H_0: \begin{cases}
+\beta_2 =0 \\
+\beta_3 = 0
+\end{cases}$
+
+\[
+F=\frac{ESS/(k-1)}{RSS/(n-k)} \sim F_{k-1, n-k}
+\]
+
+## Example of testing the hypothesis of regression insignificance [at the blackboard]
+
+For the regression
+\[
+\widehat{wage}_i=-2.5+0.6 school_i + 0.157 exper_i
+\]
+
+test the hypothesis of regression insignificance on the whole.
+
+$R^2=0.09$, $n=3294$.
+
+## BLGP again --- assumptions
+
+If:
+
+1. the true dependence has the form $y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i+\varepsilon_i$
+  * in matrix form: $y=X\beta + \varepsilon$
+2. using the LS method, the regression of $y$ on the intercept is estimated, $x_i$, $z_i$
+  * in matrix form: $\hat{\beta}=(X'X)^{-1}X'y$
+3. there are more observations than estimated $\beta$ coefficients: $n>k$
+
+## BLGP --- assumptions for $\varepsilon_i$:
+4. strict exogeneity: $E(\varepsilon_i | \text{ all regressors } )=0$
+  * in matrix form: $E(\varepsilon_i | X)=0$
+5. conditional homoscedasticity: $E(\varepsilon_i^2 | \text{ all regressors })=\sigma^2$
+  * in matrix form: $E(\varepsilon_i^2 | X)=\sigma^2$
+6. $Cov(\varepsilon_i,\varepsilon_j | X)=0$ for $i \neq j$
+
+## BLGP --- assumptions for regressors
+7. the vectors of individual observations $(x_i,z_i,y_i)$ are independent and identically distributed
+8. with probability 1 there are no linearly dependent regressors
+* synonyms in matrix form: $rank(X)=k$ or $det(X'X)\neq 0$ or $(X'X)^{-1}$ exists
+
+
+## BLGP --- asymptotical properties (plus new)
+ 
+If $n\to \infty$:
+
+* $\hat{\beta}_j \to \beta_j$ in probability
+* $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$ in distribution
+* $\hat{\sigma}^2 \to \sigma^2$ in probability
+* new: $\chi^2=\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k_{UR})} \to \chi^2_r$
+
+
+
+$\hat{\sigma}^2=\frac{RSS}{n-k}$
+
+## BLGP --- in case of normality
+
+If it's additionally known that $\varepsilon_i \sim N(0, \sigma^2)$:
+
+* Estimates are effective among unbiased
+*  $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}|X \sim t_{n-k}$, $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)}\sim t_{n-k}$
+*  $RSS/\sigma^2 |X \sim \chi^2_{n-k}$, $RSS/\sigma^2 \sim \chi^2_{n-k}$
+* new: $F=\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k_{UR})} |X \sim F_{r, n-k_{UR}}$
+
+## Unecessary variables
+
+* True: $y_i = \beta_1 + \beta_2 x_i +\varepsilon_i$
+
+* Estimated regression: $\hat{y}_i=\hat{\beta}_1 + \hat{\beta}_2 x_i + \hat{\beta}_3 z_i$
+
+* Lost: efficiency
+
+## Omitted variables
+
+* True: $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i +\varepsilon_i$
+
+* Estimated regression: $\hat{y}_i=\hat{\beta}_1 + \hat{\beta}_2 x_i$
+
+* Everything is bad!
+
+## Summing up:
+
+* If the theory assumes dependence on the variable $z$, then it is better to include it in the model even if it is not significant.
+
+* If the variables are significant, then it is better to leave them in the model even if the theory says that there should be no dependence on them.
+
+## Seeing something that does not exist
+
+* How to check if missing variables are not omitted?
+
+* Ramsey RESET test
+
+$H_0: y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+
+$H_a:$ There are omitted regressors unknown to us
+
+## Ramsey test algorithm:
+
+1. Estimate the model: $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i$
+
+Acquire forecasts $\hat{y}_i$
+
+2. Estimate the model: $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i + \gamma_1 \hat{y}^2_i + \gamma_2 \hat{y}^3_i + \ldots + \gamma_p \hat{y}_i^{p+1} + \varepsilon_i$
+
+3. Calculate the $F$-statistic that tests the hypothesis of all $\gamma_i$ being equal to zero.
+
+Ramsey: if $H_0$ is true and residuals are normal, $F\sim F_{p,n-k-p}$
+
+## Ramsey test example [at the blackboard]
+
+For the regression
+\[
+\widehat{wage}_i=-2.5+0.6 school_i + 0.157 exper_i
+\]
+
+Check the Ramsey test if:
+
+* $R^2=0.091$ (for main regression), 
+
+* $\hat y_i^2$ and $\hat y_i^3$ are included in Ramsey's auxiliary regression,
+
+* $R^2_{aux}=0.095$ (for Ramsey's auxiliary regression),
+
+* $n=3294$.
+
+
+## Simple quality indicators
+
+1. $R^2$. Grows with adding regressors, $R^2_{ur}>R^2_r$
+
+2. $R^2_{adj}=1-\frac{RSS/(n-k)}{TSS/(n-1)}=1-\frac{\hat{\sigma}^2}{TSS/(n-1)}$
+
+The bigger $R^2_{adj}$, the smaller $\hat{\sigma}^2$.
+
+## Information criteria
+
+A model is bad if: 
+
+* its forecasts are bad ($RSS$ is big)
+
+* it is complex (many coefficients, big $k$)
+
+3. Information criteria (amount of the penalty):
+
+* Akaike $AIC=n \ln (RSS/n) + 2k$
+
+* Schwarz $BIC=n \ln (RSS/n) + \ln(n) k$
+
+
+## Summing up
+
+In this lecture:
+
+* Forecasting
+
+* Multiple constraint hypotheses
+
+* Ramsey RESET test
+
+Next: about troubles :)
+
+
+## Sources of wisdom:
+
+* Artamonov N.V., Introduction to Econometrics: chapters 2.4, 2.5, 3.2
+
+* Borzykh D.A., Demeshev B.B., Econometrics in Problems and Exercises: chapter 3
+
+* Katyshev P.K., Peresetskiy A.A., Econometrics. Beginners' Course: chapter 3.5
+
+* Seber G., Linear Regression Analysis: chapters 4.1, 5.1, 5.2, 5.3

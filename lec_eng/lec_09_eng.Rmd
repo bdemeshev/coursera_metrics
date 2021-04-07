@@ -1,0 +1,478 @@
+---
+title: "Endogeneity"
+lang: english
+babel-lang: english
+header-includes: 
+  - \author[Econometrics. Lecture 9]{Econometrics. Lecture 9}
+  - \usepackage{dcolumn}
+  - \usepackage{tikz}
+  - \usepackage{tikz-cd}
+  - \DeclareMathOperator*{\plim}{plim}
+  - \newcommand{\e}{\varepsilon}
+  - \newcommand{\hb}{\hat{\beta}}
+output:
+  beamer_presentation:
+    keep_tex: yes
+    theme: Madrid
+    colortheme: whale
+  ioslides_presentation: default
+---
+
+# Sum decomposition is nonunique
+
+\[
+4 = 3 + 1
+\]
+
+\[
+4 = 2 + 2
+\]
+
+# Several correct forms of one model
+
+Model А:
+\[
+y_i=2x_i + \varepsilon_i
+\]
+
+Model B:
+\[
+y_i=3x_i + u_i
+\]
+
+Models A and B are equivalent if $\varepsilon_i=x_i+u_i$
+
+# OLS properties. If...
+
+If:
+
+a model is presented in the form
+
+\[
+y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i + \varepsilon_i
+\]
+where $E(\varepsilon_i | X)=0$ and [other assumptions]
+
+# OLS properties. Then...
+
+Then:
+
+OLS estimates are consistent
+\[
+\hat{\beta} \to \beta
+\]
+
+and unbiased
+\[
+E(\hat{\beta}|X)=\beta, \; E(\hat{\beta})=\beta
+\]
+
+# The essence of the $E(\varepsilon_i | X)=0$ assumption
+
+The mean of $\varepsilon_i$ does not depend on the values of explanatory variables and equals zero.
+In particular, 
+\[
+E(\varepsilon_i | X)=0   \; \Rightarrow 
+\begin{cases}
+E(\varepsilon_i)=0 \\ 
+Cov(x_i,\varepsilon_i)=0
+\end{cases}
+\]
+
+# The effects of assumption violation
+
+If $Cov(x_i, \varepsilon_i) \neq 0$, then th LS estimates are inconsistent:
+
+\[
+\hat{\beta} \not \to \beta
+\]
+
+and biased
+\[
+E(\hat{\beta}|X) \neq \beta, \; E(\hat{\beta}) \neq \beta
+\]
+
+# Example at the neon board
+
+\[
+y_i=2+3x_i + \varepsilon_i
+\]
+where $Var(x_i)=4$, $Var( \varepsilon_i)=3$, $Cov(x_i , \varepsilon_i) = -2$
+
+Estimate the $\beta_2$ parameter using OLS, get $\hb_2$.
+
+Find $\plim \hat{\beta}_2$ (limit in probability)
+
+# Useful denotations
+
+Sample covariance
+\[
+sCov(x,y)=\frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{n-1}
+\]
+
+Sample variance
+\[
+sVar(x)=\frac{\sum (x_i-\bar{x})^2}{n-1}
+\]
+
+# Useful fact
+
+The corollary of the law of large numbers:
+
+If a sample $(x_i,y_i)$ is random, then
+
+\[
+\plim_{n\to\infty} sCov(x,y) = Cov(x_i,y_i)
+\]
+
+\[
+\plim_{n\to\infty} sVar(x) = Var(x_i)
+\]
+
+# Endogeneity
+
+Nonzero correlation between the regressors and random errors, $Cov(x_i, \e_i )\neq 0$,  is called endogeneity
+
+# Why should we deal with endogeneity?
+
+Any model has a form of expression, such that $E(\varepsilon_i|X)=0$ for it.
+
+Why do we need the expressions where $E(\varepsilon_i|X) \neq 0$?
+
+# Two answers
+
+* If the model is used for forecasting, then the expressions with endogeneity might be of zero use.
+
+* In some cases the expression with endogeneity is easier to interpret
+
+
+# Some endogeneity causes in cross-sectional samples
+
+* An error in regressor measurement
+
+* Omitted regressor
+
+* Simultaneous determination of the variables' value
+
+# Regressor measurement error. Original model form.
+
+Model in form А:
+\[
+y_i=\beta_1 + \beta_2 x_i + \varepsilon_i
+\]
+and $Cov(x_i, \varepsilon_i)=0$.
+
+We observe $y_i$ and $x_i^*=x_i + u_i$, where $u_i$, the error in $x_i$ regressor measurement, does not depend on $x_i$ and $\varepsilon_i$
+
+# Regressor measurement error. Deriving another model form.
+
+Substitute $x_i=x_i^*-u_i$ in the form A and get:
+
+\[
+y_i=\beta_1 + \beta_2 (x_i^*-u_i) + \varepsilon_i
+\]
+
+and model of form B:
+\[
+y_i=\beta_1 + \beta_2 x_i^*  + w_i, \; w_i=\varepsilon_i - \beta_2 u_i
+\]
+
+# Endogeneity in form B:
+\[
+y_i=\beta_1 + \beta_2 x_i^*  + w_i, \; w_i=\varepsilon_i - \beta_2 u_i
+\]
+
+In form B:
+\[
+Cov(x_i^*,w_i)=Cov(x_i+u_i,\varepsilon_i - \beta_2 u_i)=-\beta_2 Var(u_i) \neq 0
+\]
+
+OLS estimates for the form B are inconsistent
+
+# Example at the neon board
+
+\[
+y_i= 2 + 3x_i + \varepsilon_i
+\]
+
+
+The $x_i$ regressor is unobservable
+
+We observe $x_i^*=x_i+u_i$, $Var(x_i)=9$, $Var(u_i=4)$, $Var(\varepsilon_i)=1$.
+
+What does the LS estimate of the $\hat{y}_i = \hat{\beta}_1 + \hat{\beta}_2 x_i^*$ model converge to?
+
+
+# Summing up:
+
+Model with regressor measurement error:
+
+\[
+y_i= \beta_1 + \beta_2 x_i + \varepsilon_i, \; \text{ where observed } x_i^*=x_i+u_i
+\]
+
+
+* We want to estimate $\beta_2$, i.e. how much $y_i$ grows if real $x_i$ grows by one unit
+
+# Summing up. OLS is inconsistent for our aim.
+
+If we estimate the regression
+\[
+\hat{y}_i = \hat{\beta}_1 + \hat{\beta}_2 x_i^*
+\]
+using OLS, we get the $\hat{\beta}_2$ estimate which is inconsistent for $\beta_2$
+
+* OLS estimates how much the $y_i$ grows if the observed $x_i^*$ (the one including the error) grows by one unit
+
+# Omitted explanatory variable
+
+We want to estimate the expression form :
+\[
+y_i=\beta_1 + \beta_2 x_i + \beta_3 d_i + \e_i
+\]
+where $Cov(x_i,d_i)\neq 0$, $Cov(x_i,\e_i)=0$, $Cov(d_i,\e_i)=0$.
+
+We do not observe $d_i$.
+
+# Omitted explanatory variable. 
+
+Expression form B:
+\[
+y_i=\beta_1 + \beta_2 x_i + u_i\, \; u_i=\beta_3 d_i + \e_i
+\]
+
+Endogeneity:
+\[
+Cov(x_i,u_i)=Cov(x_i,\beta_3 d_i + \e_i)=\beta_3 Cov(x_i, d_i)
+\]
+
+# Example at the neon board
+
+\[
+y_i= 2 + 3x_i -2d_i + \varepsilon_i
+\]
+
+The $d_i$ regressor is unobservable.
+
+$Var(x_i)=Var(d_i)=9$, $Var(\varepsilon_i)=1$, $Cov(x_i,d_i)=-6$.
+
+What does the OLS estimate of the $\hat{y}_i = \hat{\beta}_1 + \hat{\beta}_2 x_i$ model converge to?
+
+# Summing up
+
+A model with an omitted regressor:
+
+\[
+y_i= \beta_1 + \beta_2 x_i + \beta_3 d_i + \varepsilon_i, \; \text{ regressor } d_i \text{ is not observed }
+\]
+
+* We want to estimate $\beta_2$, i.e. how much the $y_i$ grows if $x_i$ grows by one unit with fixed $d_i$
+
+# Summing up. OLS is inconsistent for our aim.
+
+When estimating a
+\[
+\hat{y}_i = \hat{\beta}_1 + \hat{\beta}_2 x_i
+\]
+regression using OLS, we obtain the $\hat{\beta}_2$ estimate which is inconsistent for $\beta_2$
+
+* OLS estimates how much $y_i$ grows if $x_i$ grows by one unitу (and conjugate changes in $d_i$)
+
+
+# Example at the neon board
+
+The equilibrium price and sales volume are determined from the system:
+\[
+\begin{cases}
+q_i= 3-p_i + \e_i, \; \text{demand logarithm} \\
+q_i= 3+2p_i + u_i, \; \text{supply logarithm}
+\end{cases}
+\]
+
+The errors $u_i$ and $\e_i$ are independent and normal $N(0,1)$
+
+What does the price coefficient estimate converge to if we estimate the demand equation using OLS?
+
+
+# Instrumental variables
+
+We want to consistently estimate $\beta_2$ in the following expression form:
+
+\[
+y_i=\beta_1 + \beta_2 x_i + \beta_3 d_i + \e_i, \; Cov(x_i,\e_i)\neq 0
+\]
+
+Possible way out: find "instrumental variables" $z_i$:
+
+* $Cov(z_i, \e_i)=0$
+
+* $Cov(z_i, x_i) \neq 0$
+
+# How to use instrumental variables?
+
+
+Model:
+\[
+y_i = \beta_1 + \beta_2 x_i + \beta_3 d_i + \e_i
+\]
+where $Cov(x_i,\e_i) \neq 0$ and $Cov(d_i,\e_i)=0$.
+
+* one can't just change a problematic regressor for an instrumental variable
+
+# Two-step OLS:
+
+Step 1. Construct a regression for every $x_i$ that correlates with $\e_i$ on instrumental variables. Obtain the forecasts $\hat{x}_i$.
+
+Step 2. Estimate the original model changing $x_i$ for $\hat{x}_i$
+
+\[
+y_i = \beta_1 + \beta_2 \hat{x}_i + \beta_3 d_i + u_i
+\]
+
+Obtain $\hat{\beta}_1^{IV}$, $\hat{\beta}_2^{IV}$ and $\hat{\beta}_3^{IV}$
+
+# Instrumental variables method
+
+Two-step OLS method is also called the instrumental variables method:
+
+\[
+\hat{\beta}^{2OLS}=\hat{\beta}^{IV}
+\]
+
+# The simplest case of two-step OLS
+
+\[
+y_i=\beta_1+\beta_2 x_i + \e_i
+\]
+
+OLS: 
+\[
+\hat{\beta}_2^{OLS}=\frac{sCov(x,y)}{sVar(x)}
+\]
+Instrumental variables method:
+\[
+\hat{\beta}_2^{IV}=\frac{sCov(z,y)}{sCov(z,x)}
+\]
+
+# Example at the neon board. Salvation.
+
+\[
+y_i= \beta_1 + \beta_2 x_i + \beta_3 d_i + \varepsilon_i
+\]
+
+The $d_i$ regressor is unobserved. 
+
+$Var(x_i)=Var(d_i)=9$, $Var(\varepsilon_i)=1$, $Cov(x_i,d_i)=-6$.
+
+What does the IV estimate of the $\hat{y}_i = \hat{\beta}_1 + \hat{\beta}_2 x_i$ model converge to?
+
+There is an instrumental variable $z_i$, $Cov(x_i,z_i)=1$.
+
+# How to find the instrumental variable?
+
+The instrumental variable $z_i$ for the $x_i$ regressor can influence on $y_i$ through the $x_i$ regressor, but not through the $\e_i$ error.
+
+# Instrumental variable links {.fragile}
+
+Model with endogeneity:
+\[
+y_i = \beta_1 + \beta_2 x_i + \e_i
+\]
+
+
+\begin{tikzcd}
+z_i \arrow[r] & x_i  \arrow[r]              & y_i \\
+              & \e_i \arrow[u] \arrow[ur]   & \\ 
+\end{tikzcd}
+
+<!-- The "fragile" option is required for the slide! -->
+
+The arrows indicate the direction of influence.
+
+
+# Statistical connection doesn't mean causality
+
+![correlation][correlation]
+
+Randall Munroe, [https://xkcd.com/552/](https://xkcd.com/552/)
+
+# Data types
+
+* Observation data
+
+* Experimental data
+
+# Observation data
+
+Every morning I go out to the balcony and write down whether I see people with umbrellas and whether it is raining
+
+Morning | People with umbrellas | Rain
+---:|----:|-----:
+1 | 0| 1
+2 | 1| 1
+3 | 0| 0
+4 | 1| 1
+
+* Observational data can not determine the direction of the causal relationship.
+
+
+# Experimental data
+
+Every morning I toss a coin and, depending on the coin, I either take an umbrella or not.
+
+Morning | Coin | I'm with an umbrella | Rain 
+---:|----:|----:|-----:
+1 | Heads | 0| 1
+2 | Tails | 1| 1
+3 | Tails | 1| 0
+4 | Heads | 0| 1
+
+# Experiments
+
+* Artificial. Held by humans.
+
+* Natural. Arise by themselves in nature.
+
+# Cause-and-effect identification strategy
+
+* Come up with an ideal experiment
+
+* Find a similar natural experiment
+
+# Three small notes on observation data
+
+* Publishing bias
+
+* Selective error correction
+
+* The tale of Abraham Wald
+
+# Publishing bias
+
+* A sensational result has a better chance of being published
+
+# Selective error correction
+
+A researcher called Benjamin believes in $H_0$, but conducts a fair research
+
+* No errors. Benjamin will honestly publish the study.
+* There is an error biasing the result in favor of $H_0$.
+Benjamin will be delighted with the result and won't notice the error probably.
+* There is an error biasing the result in favor of $H_a$.
+Benjamin will be surprised, recheck the work three times and find the error.
+
+# The tale of Abraham Wald
+
+A study was carried out of the damage received by the aircraft returning from the departure. It was supposed to strengthen them where they take most damage.
+
+Abraham Wald drew attention to the fact that statistics are collected specifically on aircraft returning from departure. And, therefore, the damaged areas do not prevent the aircraft from returning. This means that it is necessary to strengthen the armor in those areas where there are no hits. 
+
+
+# Summing up
+
+* Endogeneity means nonzero correlation between random error and regressor
+* The instrumental variables method allows to evaluate the model of the desired form
+* Statistical relationship does not mean causality
+* It is important to remember that experimental data differs from observation data.
+
+[correlation]: correlation.png "http://xkcd.com/552/"

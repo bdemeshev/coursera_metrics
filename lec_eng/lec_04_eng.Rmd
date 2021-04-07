@@ -1,0 +1,383 @@
+---
+title: "Multicollinearity"
+lang: english
+babel-lang: english
+header-includes: 
+  - \author[Econometrics. Lecture 4]{Econometrics. Lecture 4}
+  - \newcommand{\e}{\varepsilon}
+output:
+  beamer_presentation:
+    keep_tex: yes
+    theme: Madrid
+    colortheme: whale
+  ioslides_presentation: default
+---
+
+
+## The definition of multicollinearity
+
+
+Multicollinearity is the presence of linear relationship between regressors
+
+* strict multicollinearity --- ideal linear dependence
+* nonstrict multicollinearity --- approximate linear relationship
+
+## Strict multicollinearity
+
+Strict multicollinearity --- ideal linear dependence between the regressors.
+
+Example:
+
+\[
+X=\begin{pmatrix}
+1 & 4 & 12 & 8 \\ 
+1 & 3 & 3 & 3 \\ 
+1 & 1 & 7 & 4 \\ 
+1 & 2 & 4 & 3 \\
+1 & 3 & 5 & 4 \\
+\vdots & \vdots & \vdots & \vdots
+\end{pmatrix} 
+\]
+
+Here: $x_{\cdot 2}+x_{\cdot 3}=2x_{\cdot 4}$
+
+## Strict multicollinearity
+
+Common cause: dummy variables are included incorrectly
+
+Example with a mistake: 
+
+\[
+wage_i=\beta_1 + \beta_2 male_i + \beta_3 female_i + \beta_4 educ_i + \varepsilon_i
+\]
+
+Here:  $x_{\cdot 1}=x_{\cdot 2}+x_{\cdot 3}$
+
+\[
+X=\begin{pmatrix}
+1 & 1 & 0 & 16 \\ 
+1 & 1 & 0 & 11 \\ 
+1 & 0 & 1 & 18 \\ 
+1 & 1 & 0 & 10 \\ 
+\vdots & \vdots & \vdots & \vdots
+\end{pmatrix} 
+\]
+
+
+## Consequences of strict multicollinearity
+
+In theory: LS estimates are not unique. 
+
+Three following models are equivalent:
+
+\[
+\widehat{wage}_i=15 + 3 male_i -2 female_i + 3 educ_i 
+\]
+
+\[
+\widehat{wage}_i=28 -10 male_i -15 female_i + 3 educ_i 
+\]
+
+\[
+\widehat{wage}_i=18 + 0 male_i -5 female_i + 3 educ_i 
+\]
+
+
+
+## Strict multicollinearity in practice
+
+If you ask a computer package to estimate a regression with strict multicollinearity, then the package can:
+
+* give an error message
+* automatically delete a variable  [R]
+
+## Nonstrict multicollinearity
+
+Nonstrict multicollinearity is an approximate linear relationship between regressors
+
+Cause: 
+
+* regressors measuring approximately the same: exchange rate at the beginning and at the end of the day
+* natural relationships between regressors: age, employment period and the number of years of study
+
+## Consequences of nonstrict multicollinearity
+
+Nonstrict multicollinearity does not violate standard assumptions
+
+The estimates $\hat{\beta}_j$ are unbiased and asymptotically normal, one can test hypotheses and construct confidence intervals
+
+## Consequences of nonstrict multicollinearity
+
+At least one of the regressors is well-explained by other regressors
+
+\[
+se^2(\hat{\beta}_j)=\frac{\hat{\sigma}^2}{RSS_j}=\frac{\hat{\sigma}^2}{TSS_j\cdot (1-R^2_j)}=
+\frac{1}{1-R^2_j}\frac{\hat{\sigma}^2}{TSS_j}
+\]
+
+High standard errors $se(\hat{\beta}_j)$
+
+## Unpleasant manifestations of high standard errors
+
+* very wide confidence intervals
+* insignificant coefficients
+* sensitivity of the model to adding/removing an observation
+
+
+## Practical sign of nonstrict multicollinearity
+
+
+In practice we can mention multicollinearity if:
+
+* several coefficients are insignificant individually
+
+* the hypothesis of their simultaneous equality to zero is rejected
+
+## Quantitative signs of multicollinearity
+
+
+* variance inflation factor
+
+\[
+VIF_j=\frac{1}{1-R^2_j}
+\]
+
+\[
+se^2(\hat{\beta}_j)=VIF_j \cdot \frac{\hat{\sigma}^2}{TSS_j}
+\]
+
+* sample correlations between regressors
+
+Some sources: $VIF_j > 10$, $sCorr(x,z)>0.9$
+
+## What should we do?
+
+* Things are never as bad as they seem! The estimates $\hat{\beta}_j$ have the smallest variance among unbiased estimates.  The confidence intervals for forecasting are not affected by multicollinearity
+* We sacrifice some unbiasedness to greatly reduce variance
+* The dream is to get more observations
+
+## Sacrificing unbiasedness
+
+There is multicollinearity in the model $y_i=\beta_1 + \beta_2 x_i +\beta_3 z_i + \ldots + \e_i$.
+
+* throw out some of the regressors
+
+We sacrifice: the knowledge of the thrown-out coefficient and the unbiasedness of the remaining coefficients.
+
+* use LS method with penalty
+
+We sacrifice: the unbiasedness of the coefficients and confidence intervals.
+
+## Exercise [at the blackboard]
+
+$y_i=\beta_1 + \beta_2 x_i + \beta_3 z_i + \beta_4 w_i + \e_i$
+
+$R^2_2=0.5$, $R^2_3=0.95$, $R^2_4=0.98$
+
+* Calculate the variance inflation factors
+* Is there nonstrict multicollinearity?
+* Which variables demonstrate significant linear relationship?
+
+## LS with penalty
+
+General idea of the penalized LS:
+
+* Ordinary Least Squares
+
+\[
+RSS \to \min
+\]
+
+* Least Squares with penalty
+
+\[
+RSS + \lambda \cdot (\text{total size of all coefficients}) \to \min
+\]
+
+## Three popular ways to penalize the LS
+
+* Ridge regression
+
+\[
+\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda \sum_{j=1}^k \hat{\beta}_j^2
+\]
+
+* LASSO
+
+\[
+\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda \sum_{j=1}^k |\hat{\beta}_j|
+\]
+
+* Elastic net method
+
+\[
+\min_{\hat{\beta}} \sum_{i=1}^n (y_i-\hat{y}_i)^2 + \lambda_1 \sum_{j=1}^k |\hat{\beta}_j| + \lambda_2 \sum_{j=1}^k \hat{\beta}_j^2
+\]
+
+
+
+## Exercise [at the blackboard]
+
+Derive the estimate $\hat{\beta}_{Ridge}$ in the model $y_i=\beta x_i + \varepsilon_i$
+
+## Principal component analysis
+
+Idea:
+
+Allows to reduce the number of variables by selecting the most volatile.
+
+Details:
+
+* New variables are constructed from old variables.
+
+* The new variables (principal components) are linear combinations of the old ones.
+
+* The original variables are demeaned beforehand (i.e., the mean is subtracted from each variable).
+
+
+##  Switching to new variables
+
+For example:
+
+Original variables (centered): $x_1$ и $x_2$
+
+New variables (principal components): 
+
+$pc_1=\frac{1}{\sqrt{2}}x_1+\frac{1}{\sqrt{2}}x_2$ 
+
+$pc_2=\frac{1}{2}x_1-\frac{\sqrt{3}}{2}x_2$.
+
+The sum of the squared weights of the original variables participating in every new variable equals 1.
+
+## New variables
+
+
+* $pc_1$ has maximal sample variance $sVar(pc_1)$
+* $pc_2$ is not correlated with $pc_1$ and has maximal $sVar(pc_2)$
+* $pc_3$ is not correlated with $pc_1$, $pc_2$ and has maximal $sVar(pc_3)$
+* ...
+
+
+## Toylike example to clarify the idea
+
+\begin{tabular}{cc}
+Biology & Mathematics \\ 
+\hline 
+4 & 5 \\ 
+4 & 2 \\ 
+4 & 5 \\ 
+4 & 4 \\ 
+4 & 3 \\ 
+4 & 4 \\ 
+3 & 3 \\ 
+5 & 3 \\ 
+\end{tabular} 
+
+Simplified:
+
+First principal component --- mathematics
+
+Second principal component --- biology
+
+## Exercise [at the blackboard]
+
+Find the first principal component
+
+\begin{tabular}{cc}
+$a_1$ & $a_2$ \\ 
+\hline 
+2 & 5 \\ 
+4 & 1 \\ 
+0 & 3 \\ 
+\end{tabular} 
+
+Don't forget to demean the variables! 
+
+## Properties of principal components
+
+$pc_1=v_{11} \cdot x_1 +  v_{21} \cdot x_2 + \ldots + v_{k1} \cdot x_k$
+
+...
+
+$pc_k=v_{1k} \cdot x_1 +  v_{2k} \cdot x_2 + \ldots + v_{kk} \cdot x_k$
+
+
+\[
+sCorr(pc_j,pc_m)=0
+\]
+ 
+\[
+sVar(x_1)+ sVar(x_2) + \ldots + sVar(x_k) =
+sVar(pc_1)+ sVar(pc_2) + \ldots + sVar(pc_k)
+\]
+
+
+
+## A bit about the linear algebra of principal components
+
+If: all variables are demeaned, $\bar{x}_j=0$
+
+Then: $pc_j=X \cdot v_j$ and $|pc_j|^2=\lambda_j$, where
+
+$\lambda_j$ are eigenvalues, $v_{j}$ eigenvectors of the $X'X$ matrix
+
+## What do principal components give us?
+
+
+* visualize a complex dataset
+* reveal the most informative variables
+* reveal special observations
+* switch to uncorrelated variables
+
+## Pitfalls in practice
+
+* different units of measurement 
+* pre-regression application
+
+## Different units of measurement
+
+The first principal component will "catch" the variable with the smallest units of measurement.
+
+Instead of the most informative variable, the noisiest one will become the first component.
+
+Solution:
+
+Normalize variables before applying principal component analysis:
+
+$x_j=\frac{a_j-\bar{a}_j}{sd(a_j)}$
+
+## Pre-regression application
+
+Very often regression is constructed on the first few principal components, e.g. on $pc_1$, $pc_2$.
+
+Careful: 
+
+A well-explanatory variable can be nearly constant.
+
+The approach is applicable, but one must be sure that the strong variability of the regressor is statistically related to the dependent variable.
+
+## Principal component analysis
+* first of all is useful itself (!)
+* is sometimes used to fight multicollinearity
+
+## Summing up - multicollinearity
+
+
+* Multicollinearity is a nonstrict linear relationship between regressors
+
+* Main consequence: high standard errors. Hence, wide confidence intervals for the coefficients.
+
+* Either not fight or sacrifice unbiasedness.
+
+* LASSO, Ridge --- two variants of LS with penalty
+
+
+
+## Sources of wisdom:
+
+* Artamonov N.V., Introduction to Econometrics: chapter 2.9
+
+* Borzykh D.A., Demeshev B.B., Econometrics in Problems and Exercises: chapter 7
+
+* Katyshev P.K., Peresetskiy A.A., Econometrics. Beginners' Course: chapter 4.1
+

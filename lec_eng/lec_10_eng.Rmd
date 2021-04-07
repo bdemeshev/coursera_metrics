@@ -1,0 +1,526 @@
+---
+title: "Three situations for the finale"
+lang: english
+babel-lang: english
+header-includes: 
+  - \author[Econometrics. Lecture 10]{Econometrics. Lecture 10}
+  - \usepackage{dcolumn}
+  - \DeclareMathOperator{\plim}{plim}
+  - \newcommand{\e}{\varepsilon}
+  - \newcommand{\hy}{\hat{y}}
+  - \newcommand{\hb}{\hat{\beta}}
+output:
+  beamer_presentation:
+    keep_tex: yes
+    theme: Madrid
+    colortheme: whale
+  ioslides_presentation: default
+---
+
+```{r, include=FALSE}
+library("knitr")
+library("pander")
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library("rattle")
+#library("caret")
+library("rpart")
+library("rpart.plot")
+library("quantreg")
+library("ggplot2")
+```
+
+
+# Three situations
+
+* Quantile regression
+
+* Random forest algorithm
+
+* Bayesian approach
+
+# Quantile regression
+
+We can model not only the mean, but also the median or any other specific quantile.
+
+# Classical regression is the model for the mean
+
+Classical model assumptions:
+
+* $y_i=\beta_1 + \beta_2 x_i + \e_i$
+
+* exogeneity, $E(\e_i | x_i)=0$ 
+
+* other assumptions
+
+Consequence:
+
+\[
+E(y_i|x_i)=\beta_1 + \beta_2 x_i
+\]
+
+# Minimizing the sum of squares
+
+Model: $E(y_i|x_i)=\beta_1 + \beta_2 x_i$
+
+* Residual sum of squares, $Q(\hb_1,\hb_2)=\sum_i (y_i - \hy_i)^2$
+
+* By minimizing $Q(\hb_1,\hb_2)$ we get consistent estimates $\hb_1$, $\hb_2$
+
+# Median regression
+
+Model: $Med(y_i|x_i)=\beta_1 + \beta_2 x_i$
+
+For a big sample:
+
+Mathematical expectation is the arithmetic mean of the $y_i$ response for a given $x_i$
+
+Median, $Med(y_i|x_i)$ is a number such that exactly a half of $y_i$ is bigger than it for a given $x_i$
+
+
+# Algorithm for obtaining estimates
+
+* Residual sum of absolute values, $M(\hb_1,\hb_2)=\sum_i |y_i - \hy_i|$
+
+* By minimizing $M(\hb_1,\hb_2)$ we obtain consistent estimates $\hb_1$, $\hb_2$
+
+# Example at the neon board
+
+Find the $\hb$ estimate for the median regression: 
+\[
+Med(y_i|x_i)=\beta x_i
+\]
+
+Data set:
+
+```{r}
+x <- c(1, 5, 5)
+y <- c(1, 2, 6)
+df <- data.frame(y = y, x = x)
+pander(df)
+```
+
+
+# Median and classical regressions
+
+* Classical: which factors does $E(y_i|x_i)$ depend on?
+
+* Median: which factors does $Med(y_i|x_i)$ depend on?
+
+* The $\hat{\beta}_j$ and $se(\hat{\beta}_j)$ estimates are calculated using different formulae
+
+* If the $\e_i$ distribution is symmetric, then both approaches give asymptotically equal estimates
+
+* Similar hypothesis testing: $t=\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$
+
+
+
+# Median regression: drawbacks
+
+* No explicit formulae for coefficient estimates and standard errors
+
+* Only asymptotic properties of coefficient estimates
+
+# Median regression: advantages
+
+* Exploring the data from a different angle
+
+* More robust estimates in the case of "outliers" in $\e_i$
+
+
+# Arbitrary quantile
+
+* Median, $Med(y_i)$, is a 50\% quantile
+
+$P(y_i \leq Med(y_i))=0.5$
+
+* Quantile of order $\tau$, $q_{\tau}$:
+
+$P(y_i \leq q_{\tau})=\tau$
+
+* For example:
+
+10% quantile for $y_i$ is a number $q_{0.1}$, such that the probability of $y_i$ being smaller than this number is 10%.
+
+# Quantile regression
+
+Model: $q_{\tau}(y_i|x_i)=\beta_1^{\tau} + \beta_2^{\tau} x_i$
+
+* The dependency can be different for different quantiles!
+
+
+# Asymmetric residual sum of absolute values: 
+
+$M(\hb_1,\hb_2)=\sum_i w_i \cdot |y_i - \hy_i|$
+
+where the $w_i$ weights equal:
+
+\[
+w_i=\begin{cases}
+(1-\tau), \; y_i < \hy_i \\
+\tau, \; y_i \geq \hy_i \\
+\end{cases}
+\]
+
+* By minimizing $M(\hb_1,\hb_2)$ we obtain consistent estimates $\hb_1$, $\hb_2$
+
+# Quantile regression of flat prices
+
+cheap housing (10\% quantile):
+
+$\widehat{price}_i  = 3.9 +  1.3 totsp_i$
+
+expensive housing (90\% quantile):
+
+$\widehat{price}_i =  -102.4 + 3.6 totsp_i$
+
+
+# Quantile regression of the price plotted
+
+```{r}
+f <- read.table("../datasets/flats_moscow.txt", header = TRUE, sep = "\t")
+model <- rq(data = f, price ~ totsp, tau = c(0.1, 0.5, 0.9))
+#summary(model)
+base <- qplot(data = f, y = price, x = totsp, xlab = "Total area, m2",
+              ylab = "Price, ths c.u.") 
+# base
+base_q <- base + stat_smooth(method = "rq", method.args = list(tau = 0.1), se = FALSE) +
+  stat_smooth(method = "rq", method.args = list(tau = 0.9), se = FALSE)
+#base_q 
+ggsave(filename = "base_q.png", plot = base_q)
+```
+![alt text](base_q.png)
+
+
+# Random forest algorithm
+
+* Is great at forecasting
+
+* Does not reveal the structure of the data
+
+# Two types of the algorithm
+
+* For continuous $y_i$
+
+* For categorical $y_i$
+
+
+# Every man should plant a tree
+
+Data set
+
+```{r}
+t <- data.frame(y = c(1, 1, 2, 10, 20), 
+                x = c(1, 0, 0, 0, 1), z = c(-2, 3, -4, 9, 9))
+pander(t)
+```
+
+# Every man should plant a tree
+
+```{r}
+fit <- rpart(data = t, y ~ x + z, control = rpart.control(minsplit = 2))
+fancyRpartPlot(fit, sub = "")
+```
+<!--
+(telling that it's easy to forecast)
+-->
+
+# How to plant a tree?
+
+* From the $k$ variables available randomly choose $k'=\lceil k/3 \rceil$ variables
+
+* From the chosen $k'$ variables choose the one that provides the best division of a tree branch into two
+
+* Repeat until there're less than $nodesize=5$ observations in every terminal node
+
+# Best division
+
+Before the division: $RSS=274.8$
+
+$\{ 1, 1, 2, 10, 20\}$, $\hy=\bar{y}=6.8$, 
+
+After the division: $RSS=RSS_1+RSS_2=50.67$
+
+On the left: $\{ 1, 1, 2 \}$,  $\hy=\bar{y}=1.33$, $RSS_1=0.67$ 
+
+On the right: $\{10,20\}$, $\hy=\bar{y}=15$, $RSS_2=50$
+
+
+# The algorithm is random
+
+Reapplying the algorithm to the same data set will provide slightly different estimates.
+
+
+# A man with R can plant a whole forest!
+
+* Randomly choose (with repetitions) $n$ observations from the original $n$ observations
+
+* Plant a tree on a random subsample
+
+* Repeat until you get $n_{tree}=500$ trees
+
+# Random forest forecast:
+
+* Every of $n_{tree}=500$ trees gives its own forecast $\hy_i$
+
+* Aberage and get the final forecast
+
+# Neon board. An example of constructing the regression tree
+
+
+```{r}
+x <- 1:5
+y <- c(1, 2, 9, 10, 10)
+df <- data.frame(y = y, x = x)
+pander(df)
+```
+
+
+
+# Bayesian approach
+
+Let's describe our lack of knowledge of the $\theta$ parameter in terms of a prior distribution law!
+
+# Example. Unknown probability
+
+* $p \in [0;1]$  
+
+Prior density:
+
+\[
+f(p)=\begin{cases}
+1, \; p\in[0;1] \\
+0, \; \text{ else }
+\end{cases}
+\]
+
+
+# Example. Unknown positive coefficient
+
+* $\beta \in [0;+\infty)$ 
+
+Prior density:
+
+\[
+f(\beta)=\begin{cases}
+exp(-\beta), \; \beta \in[0;\infty) \\
+0, \; \text{ else }
+\end{cases}
+\]
+
+# Model
+
+The model defines the distribution law of observations, $y_i$, with parameter values being fixed
+
+For example,
+
+\[
+y_i = \beta_1 + \beta_2 x_i + \e_i, \; \e_i \sim N(0,\sigma^2)
+\]
+
+# Crystal-clear logic of Bayesian approach
+
+Define:
+
+* Prior distribution, $f(\theta)$
+
+* Model for the data, $f(y|\theta)$
+
+Using the conditional probability formula obtain:
+
+* Posterior distribution, $f(\theta|y)$
+
+# Conditional probability formula
+
+\[
+f(\theta|y)= \frac{f(y|\theta)\cdot f(\theta)}{f(y)} \sim f(y|\theta)\cdot f(\theta)
+\]
+
+# Example at the neon board
+
+Observations: a pike and 2 crucian carps were caught.
+
+Individual observations are independent, the probability of catching a pike and a crucian carp is stable over time.
+
+Find the posterior probability density of catching a crucian carp in the pond.
+
+* no information
+
+* Grandma: crucian carps are more common than pikes!
+
+
+
+# How to describe a complex density function?
+
+```{r, fig.width=5, fig.height=5}
+x1 <- rnorm(50, mean = 0, sd = 1)
+x2 <- rnorm(70, mean = 4, sd = 1)
+x <- c(x1, x2)
+qplot(x, geom = "density") + geom_rug() + xlab("r") + ylab("") 
+```
+
+# An arbitrarily accurate description of any density!
+
+* A big sample of independent values of the $r$ random variable: 
+
+$r_1$, $r_2$, $r_3$, \ldots, $r_{10000}$
+
+
+* We can estimate everything: $E(r)$, $E(r^2)$, $P(r>0)$
+
+# Markov Chain Monte Carlo
+
+MCMC (Markov Chain Monte Carlo)
+
+Replaces the conditional probability formula
+
+# MCMC algorithm
+
+Input:
+
+* Prior distribution, $f(\theta)$
+
+* Model for the data, $f(y|\theta)$
+
+Output: 
+
+* A big sample from the posterior distribution, $f(\theta|y)$
+
+
+# The algorithm is random
+
+Reapplying the algorithm to the same data set will provide slightly different estimates.
+
+# Bayesian approach advantages
+
+* One can ask questions about the unknown parameters:
+
+$P(\beta_3 >0 | y)$, $P(\beta_3=0 | y)$, $E(\beta_3 | y)$?
+
+* The posterior distribution always exists!
+
+even in the situation of strict multicollinearity and total absence of observations
+
+# Bayesian approach drawbacks
+
+* Not everyone knows about it
+
+* Might be computationally intensive
+
+# MCMC and logit
+
+"Ideal forecasting" is a situation when the ML estimates of a logit model do not exist
+
+
+# Logit model
+
+$y_i \in \{0,1\}$.
+
+$y_i=\begin{cases}
+1, y^*_i \geq 0 \\
+0, y^*_i <0
+\end{cases}$
+
+Latent variable: $y^*_i=\beta_1 +\beta_2 x_i +\varepsilon_i$.
+
+# Prior distribution for a logit model
+
+
+$\beta \sim N(b_0, B_0^{-1})$
+
+Hyperparameters:
+
+$b_0$ --- prior mean
+
+$B_0$ --- prior precision matrix
+
+$B_0^{-1}=Var(\beta)$
+
+# Choosing prior hyperparameters
+
+Traditionally:
+
+$b_0 = (0, 0, \ldots, 0)'$
+
+$B_0 = \begin{pmatrix}
+d & 0 & 0 & \ldots \\
+0 & d & 0 & \ldots \\
+0 & 0 & d & \ldots \\
+\vdots & \vdots & \vdots & \\
+\end{pmatrix}$
+
+Number $d$ is small
+
+I.e.: $\beta_1 \sim N(0, 1/d)$, $\beta_2 \sim N(0, 1/d)$, ...
+
+# An example of problematic situation
+
+```{r}
+x <- c(1, 2, 3)
+y <- c(0, 0, 1)
+df <- data.frame(y = y, x = x)
+pander(df)
+```
+
+Logit and probit estimates do not exist
+
+# Logit with Bayes taste
+
+Prior: $\beta_1 \sim N(0, 10^2)$, $\beta_2 \sim N(0, 10^2)$
+
+Posterior means:
+
+$\hy_i^*=-10.8 + 4.5 x_i$
+
+$y_i=\begin{cases}
+1, y^*_i \geq 0 \\
+0, y^*_i <0
+\end{cases}$
+
+
+# Peak-plateau regression
+
+Model: $y_i = \beta_1 + \beta_2 x_i + \beta_3 z_i +\e_i$, $\e_i \sim N(0, \sigma^2)$
+
+
+# A variant of a prior peak-plateau distribution
+
+* $\beta_j | \gamma_j, \tau^2_j  \sim N(0, \gamma_j \cdot \tau^2_j )$
+
+* $\gamma_j = \begin{cases}
+1, \text{ with probability } 1/2 \\
+0, \text{ with probability } 1/2 
+\end{cases}$
+
+* $\tau_j^2 \sim \Gamma^{-1}(a_1,a_2)$
+
+* $\sigma^2 \sim \Gamma^{-1}(b_1,b_2)$
+
+Hyperparameters: $a_1$, $a_2$, $b_1$, $b_2$
+
+# Peak-plateau regression
+
+Allows to directly answer the question:
+
+What does the probability $P(\beta_2 = 0 | y)$ equal to?
+
+# Cars example
+
+Posterior means of coefficients:
+
+$\widehat{dist}_i =  12.81 + 0.28 speed_i + 0.01 speed_i^2$
+
+Posterior probabilities:
+
+$P(\beta_{speed}=0 | y )=0.15$
+
+$P(\beta_{speed^2}=0 | y )=0.05$
+
+# Thank you very much
+
+We were not able to solve all our problems. 
+
+
+The solutions we find only raise new questions for us. In a sense, we know as little as before. But we believe that our ignorance has become deeper and that we do not know even more important things.
+
+
+Thanks a lot to those who completed this course with us till the end!

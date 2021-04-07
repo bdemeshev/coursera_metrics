@@ -1,0 +1,365 @@
+---
+title: "Heteroscedasticity"
+babel-lang: english
+lang: english
+header-includes: 
+  - \author[Econometrics. Lecture 5]{Econometrics. Lecture 5}
+  - \newcommand{\e}{\varepsilon}
+output:
+  beamer_presentation:
+    keep_tex: yes
+    theme: Madrid
+    colortheme: whale
+  ioslides_presentation: default
+---
+
+
+
+## Homoscedasticity
+
+When testing hypotheses we assume conditional homoscedasticity of errors:
+
+$Var(\varepsilon_i | X)=E(\varepsilon_i^2 | X)=\sigma^2$
+
+What will happen if this assumption is violated?
+
+## Four different concepts
+
+Conditional homoscedasticity $Var(\varepsilon_i | X)=E(\varepsilon_i^2 | X)=\sigma^2$
+
+Conditional heteroscedasticity  $Var(\varepsilon_i | X)=E(\varepsilon_i^2 | X) \neq const$
+
+Unconditional homoscedasticity $Var(\varepsilon_i)=E(\varepsilon_i^2)=\sigma^2$
+
+Unconditional heteroscedasticity $Var(\varepsilon_i)=E(\varepsilon_i^2) \neq \sigma^2$
+
+
+## Examples [at the blackboard]
+
+Is there conditional/unconditional heteroscedasticity in any of the following cases?
+
+* Case А: $\e_i$ are independent and identically distributed
+
+|   Probabilities | $\e_i=-10$ | $\e_i=-1$ | $\e_i=1$ |  $\e_i=10$ |
+|-----------------|------------|-----------|----------|------------|
+| $x_i=1$ | 0 | 1/4 | 1/4 | 0 |
+| $x_i=10$ | 0 | 1/4 | 1/4 | 0 |
+
+* Case B: $\e_i$ are independent and identically distributed
+
+|   Probabilities | $\e_i=-10$ | $\e_i=-1$ | $\e_i=1$ |  $\e_i=10$ |
+|-----------------|------------|-----------|----------|------------|
+| $x_i=1$ | 0 | 1/4 | 1/4 | 0 |
+| $x_i=10$ | 1/4 | 0 | 0 | 1/4 |
+
+## Examples [at the blackboard]
+
+Is there conditional/unconditional heteroscedasticity in any of the following cases?
+
+* Case C: $\e_i$ are independent
+
+|   Probabilities | $\e_1=-10$ | $\e_1=-1$ | $\e_1=1$ |  $\e_1=10$ |
+|-----------------|------------|-----------|----------|------------|
+| $x_1=1$ | 0 | 1/4 | 1/4 | 0 |
+| $x_1=10$ | 0 | 1/4 | 1/4 | 0 |
+
+
+|   Probabilities | $\e_2=-10$ | $\e_2=-1$ | $\e_2=1$ |  $\e_2=10$ |
+|-----------------|------------|-----------|----------|------------|
+| $x_2=1$ | 1/4 | 0 | 0 | 1/4 |
+| $x_2=10$ | 1/4 | 0 | 0 | 1/4 |
+
+
+
+## When should we expect heteroscedasticity?
+
+* there can't be unconditional heteroscedasticity in a random sample
+
+* conditional heteroscedasticity might occur if an object has "size"
+
+* conditional heteroscedasticity occurs nearly always
+
+
+## Except this, everything is ok
+
+Conditional homoscedasticity assumption is violated.
+
+All other assumptions of a classical model with stochastic regressors for a random sample are fulfilled.
+
+
+##  We use our old formulas:
+
+For coefficient estimates:
+
+$\hat{\beta}=(X'X)^{-1}X'y$
+
+For the estimate of the covariance matrix of coefficient estimates:
+
+$\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$
+
+In particular: 
+
+$\widehat{Var}(\hat{\beta}_j|X)=\frac{\hat{\sigma}^2}{RSS_j}$
+and $se(\hat{\beta}_j)=\sqrt{\widehat{Var}(\hat{\beta}_j|X)}$
+
+
+## Three groups of properties:
+
+- finite sample without $\varepsilon$ normality assumption
+
+- finite sample with $\varepsilon$ normality assumption
+
+- asymptotic properties without $\varepsilon$ normality assumption
+
+What happens in every case?
+
+## Small sample without $\varepsilon$ normality
+
+* (+) Linear in $y$
+
+* (+) Unbiased, $E(\hat{\beta}|X)=\beta$, $E(\hat{\beta})=\beta$
+
+* (---) $\hat{\beta}$ estimates are effective
+
+
+##  Small sample with normal $\varepsilon$
+
+* (---) $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} | X \sim t_{n-k}$
+
+* (---) $\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$
+
+* (---) $\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$
+
+##  Asymptotic properties
+
+* (+) $\hat{\beta} \to \beta$
+
+* (+) $\frac{RSS}{n-k} \to \sigma^2=Var(\e_i)$
+
+* (---) $\frac{\hat{\beta}_j-\beta_j}{se(\hat{\beta}_j)} \to N(0,1)$
+
+* (---) $\frac{RSS_R-RSS_{UR}}{RSS_{UR}/(n-k)} \to \chi^2_r$
+
+
+## Summing up:
+
+* $\hat{\beta}$ themselves can be interpreted and used
+
+* Standard errors $se(\hat{\beta}_j)$ are inapplicable
+
+* We can't construct confidence intervals for $\beta_j$ and test hypotheses
+
+## What should we do?
+
+* Correct standard errors! 
+
+* Another estimate formula $\widehat{Var}_{HC}(\hat{\beta}|X)$
+
+* Hence, other $se_{HC}(\hat{\beta}_j)$
+
+
+## Robust (stable) to heteroscedasticity covariance matrix estimate
+
+* Instead of
+
+$\widehat{Var}(\hat{\beta}|X)=\frac{RSS}{n-k}(X'X)^{-1}$ 
+
+we use
+
+$\widehat{Var}_{HC}(\hat{\beta}|X)=(X'X)^{-1}X'\hat{\Omega}X(X'X)^{-1}$
+
+* White, 1980, HC0: 
+
+$\hat{\Omega}=diag( \hat{\varepsilon}_1^2, \ldots, \hat{\varepsilon}_n^2 )$
+
+* Modern version, HC3: 
+
+$\hat{\Omega}=diag \left( \frac{\hat{\varepsilon}_1^2}{(1-h_{11})^2}, \ldots, \frac{\hat{\varepsilon}_n^2}{(1-h_{nn})^2} \right)$
+
+
+## The essence of the adjustment:
+
+We change from $se(\hat{\beta}_j)$ to $se_{HC}(\hat{\beta}_j)$
+
+What problems are solved?
+
+* (+) $\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} \to N(0,1)$ (HOORAY!)
+
+## What problems aren't solved?
+
+* (---) efficiency
+
+The $\hat{\beta}$ estimates do not change and stay inefficient!
+
+Even if we assume normality of $\varepsilon$:
+
+* (---) $\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} | X \sim t_{n-k}$
+
+* (---) $\frac{RSS}{\sigma^2} |X \sim \chi^2_{n-k}$
+
+* (---) $\frac{(RSS_R-RSS_{UR})/r}{RSS_{UR}/(n-k)} \sim F_{r,n-k}$
+
+## From practical point of view:
+
+* New formula for $\widehat{Var}_{HC}(\hat{\beta}|X)$, and, hence, for  $se_{HC}(\hat{\beta}_j)$
+
+* robust covariance matrix in R (HC3 by default):
+
+```{r, eval=FALSE}
+model <- lm(y~x, data=data)
+vcovHC(model)
+```
+
+
+* Life is wonderful with it!
+
+(+) $\frac{\hat{\beta}_j-\beta_j}{se_{HC}(\hat{\beta}_j)} \to N(0,1)$
+
+## When should we use robust standard errors?
+
+* When there is a random sample and the objects might be of different "size", use $se_{HC}(\hat{\beta}_j)$ for hypotheses testing!
+
+
+## Detecting heteroscedasticity
+
+* Estimate the model of interest using LS
+
+* Plot the squares (absolute values) of residuals depending on the regressor
+
+## Conditional homoscedasticity
+
+![a](graph_01_gomo.png)
+
+## Conditional heteroscedasticity
+
+![b](graph_02_getero.png)
+
+
+## Formal heteroscedasticity tests
+
+* White test
+
+* Goldfeld-Quandt test
+
+## White test
+
+* asymptotic
+
+* does not require the normality of residuals
+
+## White test, algorithm
+
+1. Estimate the main regression, get $\hat{\varepsilon}_i$
+
+2. Estimate the auxiliary regression:
+
+$\hat{\varepsilon}^2_i = \gamma_1 + \gamma_2 z_{i2} + \ldots + \gamma_{m} z_{im}+ u_i$
+
+$z_{i2}$, \ldots, $z_{im}$ --- factors that derive the form of heteroscedasticity.
+
+By default the auxiliary regression includes original regressors, their squares and pairwise products
+
+3. Calculate $LM=nR^2_{aux}$
+
+## White test
+
+If $H_0$ about conditional homoscedasticity is true:
+
+$H_0$: $Var(\e_i|X)=E(\varepsilon^2_i|X)=\sigma^2$
+
+$LM \sim \chi^2_{m-1}$, where $m$ is the number of parameters in the auxiliary regression
+
+
+If the observed statistic value $LM$ is bigger than the critical value $\chi^2_{cr}$, then $H_0$ is rejected.
+
+## White test [at the blackboard]
+
+For 200 ice cream stalls, the researcher estimated the dependence of demand (q) on price (p), variety of assortments (a), and distance from the subway (d).
+
+* Which regressor is most likely to affect the conditional error variance?
+
+The researcher has conducted classical White test and got $R^2_{aux}=0.2$.
+
+* How does the auxiliary regression for the White test look like?
+
+* Is there conditional heteroscedasticity?
+
+## Goldfeld-Quandt test
+
+* We assume that there's a variable on which the conditional error variance depends monotonously
+
+* Normality of errors is required
+
+* Test can be conducted on small samples
+
+## Goldfeld-Quandt test procedure
+
+1. Sort the observations by the assumed decrease of conditional variance
+
+2. Throw out the middle part of observations (say, 20\%)
+
+3. Estimate the original model separately for first and last observations
+
+4. Calculate $F=\frac{RSS_1/(n_1-k)}{RSS_2/(n_2-k)}$
+
+## Goldfeld-Quandt test procedure
+
+If $H_0$ about conditional homoscedasticity is true:
+
+$H_0$: $Var(\e_i|X)=E(\varepsilon^2_i|X)=\sigma^2$
+
+$F\sim F_{n_1-k,n_2-k}$
+
+If the observed statistic value $F$ is bigger than the critical value $F_{cr}$, then $H_0$ is rejected.
+
+
+## Goldfeld-Quandt test [at the blackboard]
+
+For 200 ice cream stalls, the researcher estimated the dependence of demand (q) on price (p), variety of assortments (a), and distance from the subway (d).
+
+To check the presence of heteroscedasticity, the researcher estimated this model separately for 80 stalls farthest from the subway and got $RSS_2=120$. For 80 stalls closest to the subway he got $RSS_1=210$. 
+
+Conduct the Goldfeld-Quandt test
+
+## How about estimates' efficiency?
+
+* Yes, we have to deal with the inefficiency of the estimates
+
+* We are satisfied with the unbiasedness, consistency and ability to test hypotheses
+
+* To obtain efficient estimates one needs to understand exactly the structure of heteroscedasticity. This is a rare case.
+
+
+## Obtaining efficient estimates [at the blackboard]
+
+Model $m_i = \beta_1 + \beta_2 r_i + \beta_3 t_i + \e_i$:
+
+* $m_i$ --- average grade in maths
+
+* $r_i$ --- numper of pupils
+
+* $t_i$ --- average time spent doing maths
+
+* Which structure of heteroscedasticity is to be expected?
+
+* How do we obtain efficient estimates with such a structure of heteroscedasticity?
+
+## Summing up
+
+* Violating the conditional homoscedasticity assumptions
+
+* Nearly always takes place in random samples
+ 
+* Not that bad, we use robast standard errors
+
+* If we need efficient estimates, we must know the structure of heteroscedasticity
+
+## Sources of wisdom:
+
+* Artamonov N.V., Introduction to Econometrics: chapter 3.3
+
+* Borzykh D.A., Demeshev B.B., Econometrics in Problems and Exercises: chapter 8
+
+* Katyshev P.K., Peresetskiy A.A., Econometrics. Beginners' Course: chapter 6.1
+
+* Seber G., Linear Regression Analysis: chapter 6.2

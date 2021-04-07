@@ -1,0 +1,606 @@
+---
+title: "Time series"
+babel-lang: english
+lang: english
+output:
+  beamer_presentation:
+    colortheme: whale
+    keep_tex: yes
+    theme: Madrid
+  ioslides_presentation: default
+  slidy_presentation: default
+header-includes:
+- \author[Econometrics. Lecture 8]{Econometrics. Lecture 8}
+- \newcommand{\e}{\varepsilon}
+- \usepackage{tikz}
+- \usetikzlibrary{cd}
+---
+
+
+# Time series:
+
+* Univariate
+
+One indicator for every time point
+
+* Multivariate
+
+Several indicators for every time point
+
+# Multivariate time series example
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library("pander")
+library("sophisthse")
+library("dplyr")
+library("knitr")
+library("zoo")
+library("forecast")
+opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
+y <- sophisthse(series.name = c("POPNUM_Y","GDPVA_EEA_Y"), output="data.frame")
+y_sel <- y %>% filter(T>2001,T<2014) %>% select(T, POPNUM_Y, GDPVA_EEA_Y)
+colnames(y_sel) <- c("Year", "Population (ths. ppl.)", "GDP (bln. rub.)")
+pander(y_sel)
+```
+
+
+
+# Univariate time series
+
+Time series is a sequence of random variables
+
+\[
+y_1, y_2, y_3, y_4 \ldots
+\]
+
+# You can't forecast without assumptions
+
+1, 2, 3, 4, 5, ?
+
+What number will be next?
+
+# You can't forecast without assumptions
+
+1, 2, 3, 4, 5, 42
+
+# Basic assumption is stationarity
+
+A time series is called stationary if:
+
+* $E(y_1)=E(y_2)=E(y_3)=\ldots$
+* $Var(y_1)=Var(y_2)=Var(y_3)=\ldots=\gamma_0$
+* $Cov(y_1,y_2)=Cov(y_2,y_3)=Cov(y_3,y_4)=\ldots=\gamma_1$
+* $Cov(y_1,y_3)=Cov(y_2,y_4)=Cov(y_3,y_5)=\ldots=\gamma_2$
+* \ldots
+
+
+# Assumptions briefly:
+
+A time series is called stationary if:
+
+* $E(y_t)=const$
+* $Cov(y_t,y_{t-k})=\gamma_k$, i.e. doesn't depend on $t$
+
+# Autocovariance function
+
+$\gamma_k=Cov(y_t, y_{t-k})$ --- (auto)covariance function of the process
+
+# The simplest example is white noise
+
+Time series $\e_t$ is white noise if:
+
+* $E(\e_t)=0$
+* $Var(\e_t)=\sigma^2$
+* $Cov(\e_t,\e_{t-k})=0$
+
+# White noise example
+
+$\e_t \sim N(0,4)$ and independent
+
+```{r, warning=FALSE, echo=FALSE, message=FALSE, fig.height=6}
+set.seed(42)
+y <- as.zoo(rnorm(200, sd=2))
+plot(y,main = "",xlab="",ylab="")
+```
+
+
+# Agreement on denotation
+
+In this lecture $\e_t$ will always denote white noise!
+
+# Examples of nonstationary processes
+
+* A process with deterministic trend
+
+* Random walk
+
+# A process with deterministic trend
+
+* $y_t= 5 + 6t + \e_t$. Nonstationarity: $E(y_t)=5+6t\neq const$
+
+
+```{r,fig.height=6}
+n <- 200
+y <- 5+6*(1:n) + arima.sim(n=n, list(order=c(0,0,0)), sd=200 )
+# tsdisplay(y)
+plot(y,main = "", xlab="", ylab="")
+```
+
+
+
+# Random walk
+
+* $\begin{cases}
+y_0 = 0 \\
+y_t = y_{t-1} + 2 + \e_t
+\end{cases}$. Nonstationarity: $Var(y_t)=t \sigma^2\neq const$
+
+```{r, fig.height=6}
+n <- 200
+y <- 20*arima.sim(n=n, list(order=c(0,1,0))  ) + 2*(0:n)
+plot(y,main = "",xlab="",ylab="")
+```
+
+# Moving average process
+
+Aprocess that can be represented as
+
+\[
+y_t= \mu + \e_t + a_1 \e_{t-1} + \ldots + a_q \e_{t-q}
+\]
+
+# Denotation of moving average process
+
+$y_t \sim MA(q)$, Moving Average
+
+
+# Example of MA process [at the blackboard]
+
+\[
+y_t = 5 + \e_t + 3 \e_{t-1} -2\e_{t-2}
+\]
+
+
+Find $E(y_t)$, $Var(y_t)$, $Cov(y_t,y_{t-k})$
+
+# Writing using the lag operator
+
+$L$ is the lag operator:
+
+* $Ly_t=y_{t-1}$
+
+* $L\cdot L\cdot y_t=L^2y_t=y_{t-2}$
+
+* \ldots
+
+# Example of the notation using lag operator
+
+$MA(2):$
+
+\[
+y_t= 2 + \e_t + 3\e_{t-1}-2\e_{t-2}
+\]
+
+\[
+y_t= 2 +(1+3L-2L^2)\e_t
+\]
+
+
+# Interpretation:
+
+The coefficients are hard to interpret. 
+
+A stationary process has an (auto)correlation function:
+
+\[
+\rho_k=Corr(y_t, y_{t-k})=\frac{Cov(y_t,y_{t-k})}{\sqrt{Var(y_t)Var(y_{t-k})}}=\frac{\gamma_k}{\gamma_0}
+\]
+
+# Interpretation
+
+If $y_t$ is a stationary process and $y_t \sim N(\mu_y, \sigma^2_y)$, then:
+
+$\rho_k$ means the average change in $y_{t}$ if $y_{t-k}$ grows by one unit
+
+# Autocorrelation function of MA process [at the blackboard]
+
+\[
+y_t = 5 + \e_t + 3 \e_{t-1} -2\e_{t-2}
+\]
+
+Find $\rho_k$
+
+# Partial autocorrelation function (idea) {.fragile}
+$\rho_k$ is an autocorrelation function. It calculates the cumulative treatment impact of $y_{t-k}$ on $y_t$ both directly and through $y_{t-k+1}$, $y_{t-k+2}$, ..., $y_{t-1}$
+
+
+$\phi_k$ is a partial autocorrelation function. It calculates the direct treatment impact of $y_{t-k}$ on $y_t$, eliminating the end-to-end impact through $y_{t-k+1}$, $y_{t-k+2}$, ..., $y_{t-1}$.
+
+
+\begin{tikzcd}
+y_1  \arrow[r] \arrow[rr, bend left=50] \arrow[bend left=75]{rrr}{\phi_3} &
+y_2  \arrow[r] \arrow[rr, bend left=50] &
+y_3  \arrow[r] &
+y_4 
+\end{tikzcd}
+
+
+# Partial autocorrelation dunction (interpretation)
+
+If $y_t$ is a stationary process and $y_t \sim N(\mu_y, \sigma^2_y)$, then:
+
+$\phi_k$ shows the average change in $y_{t}$ if $y_{t-k}$ grows by one unit
+
+$y_{t-1}$, $y_{t-2}$, \ldots, $y_{t-k+1}$ are fixed
+
+
+# Partial autocorrelation function (definition)
+
+\[
+\phi_{k}=Cor(y_t - P(y_t), y_{t-k} - P(y_{t-k}))
+\]
+
+where $P(y_t)$ is a projection of $y_t$ random variable on the linear span of $y_{t-1}$, $y_{t-2}$, \ldots, $y_{t-k+1}$ values.
+
+# Partial autocorrelation - algorithm of calculation
+
+
+\[
+\gamma_0 \phi_1 = \gamma_1  
+\]
+
+\[
+\begin{cases}
+\gamma_0 *_1 + \gamma_1 \phi_2  = \gamma_1 \\
+\gamma_1 *_1 + \gamma_0 \phi_2  = \gamma_2 
+\end{cases}
+\]
+
+
+\[
+\begin{cases}
+\gamma_0 *_1 + \gamma_1 *_2 + \gamma_2 \phi_3 = \gamma_1 \\
+\gamma_1 *_1 + \gamma_0 *_2 + \gamma_1 \phi_3 = \gamma_2 \\
+\gamma_2 *_1 + \gamma_1 *_2 + \gamma_0 \phi_3 = \gamma_3
+\end{cases}
+\]
+
+\ldots
+
+
+# Partial autocorrelation function of MA process [at the blackboard]
+
+\[
+y_t = 5 + \e_t + 3 \e_{t-1} -2\e_{t-2}
+\]
+
+Find $\phi_1$, $\phi_2$, $\phi_3$
+
+# Autoregression process
+
+* Stationary process of the form
+\[
+y_t=c + b_1 y_{t-1} + b_2 y_{t-2} + \ldots + b_p y_{t-p} + \e_t
+\]
+
+# Denotation of autoregression process
+
+$y_t \sim AR(p)$, AutoRegression
+
+# Partial and ordinary autocorrelation functions of AR process [at the blackboard]
+\[
+y_t = 2 + 0.5 y_{t-1} + \e_t \; \e_t \sim N(0,\sigma^2)
+\]
+
+Find $\rho_k$, $\phi_k$
+
+# Alternative notation
+
+\[
+y_t = 2 + 0.5 y_{t-1} + \e_t
+\]
+
+or
+
+\[
+(y_t - 4) = 0.5 (y_{t-1} - 4) + \e_t
+\]
+
+# Important warning
+
+You can't automatically conclude the presence of stationarity from just one $y_t = 2 + 0.5 y_{t-1} + \e_t$ equation (!)
+
+# Example of multiple solutions [at the blackboard]
+
+\[
+y_t = 2 + 0.5 y_{t-1} + \e_t \; \e_t \sim N(0,1)
+\]
+
+* $y_0=0$, $y_1\sim N(2,1)$, $y_2\sim N(3, 1.25)$, \ldots
+
+* $y_0\sim N(3, 4/3)$, $y_1\sim N(3, 4/3)$, $y_2\sim N(3, 4/3)$, \ldots
+
+
+# We assume stationary solution
+
+Write:
+\[
+y_t = 2 + 0.5 y_{t-1} + \e_t \; \e_t \sim N(0,1)
+\]
+
+Assume:
+
+* $y_0\sim N(3, 4/3)$, $y_1\sim N(3, 4/3)$, $y_2\sim N(3, 4/3)$, \ldots
+
+# Ar process can be rewritten using the lag operator
+
+\[
+y_t=2+0.5y_{t-1}-0.06y_{t-2}+\e_t
+\]
+
+\[
+(1-0.5L+0.06L^2)y_t=2+\e_t
+\]
+
+
+# Characteristic polynomial
+
+\[
+(1-0.5L+0.06L^2)y_t=2+\e_t
+\]
+
+\[
+f(L)y_t=2+\e_t
+\]
+
+$f(L)$ is a characteristic polynomial
+
+# When does a stationary solution exist?
+
+\[
+f(L)y_t=c+\e_t
+\]
+
+
+If the roots of the characteristic polynomial of an AR process, $f(z)=0$, are greater than one in absolute value, then there exists a unique stationary solution for which $y_t$ can be expressed in terms of former noises, i.e. through $\e_t$, $\e_{t-1}$, $\e_{t-2}$, \ldots
+
+# Exercise [at the blackboard]
+
+Example 1. $y_t=7+0.5y_{t-1}-0.06y_{t-2}+\e_t$
+
+Example 2. $y_t=-3+1.2y_{t-1}-0.2y_{t-2}+\e_t$
+
+Do these equations have stationary solutions?
+
+# Forecasting
+
+Forecast for $h$ steps forward: $E(y_{t+h}|y_t, y_{t-1}, y_{t-2}, \ldots)$
+
+Are often shortly denoted as: $\hat{y}_{t+h}$
+
+# Forecasting exercise [at the blackboard]
+
+\[
+y_t=2+0.5y_{t-1}-0.06y_{t-2}+\e_t \; \e_t \sim N(0;4)
+\]
+
+$y_{100}=4$, $y_{99}=3$.
+
+Construct point and interval predictions for 1st and 2nd steps forward
+
+# Autoregressive moving average model
+
+* A stationary process of the form
+\begin{multline}
+\nonumber
+y_t=c + b_1 y_{t-1} + b_2 y_{t-2} + \ldots + b_p y_{t-p} + \\
++\e_t + a_1 \e_{t-1} + \ldots + a_q \e_{t-q}
+\end{multline}
+
+where the $p+q$ sum is minimal possible
+
+# Denotation
+
+* $y_t \sim ARMA(p,q)$
+
+# The $p+q$ sum is minimal possible
+
+* $y_t=\e_t$
+
+* $y_t-y_{t-1}=\e_t-\e_{t-1}$
+
+In this example $y_t \sim ARMA(0,0)$
+
+# ARMA is our everything!
+
+Theorem. 
+
+Any stationary process can be written as $MA(\infty)$
+
+Practical conclusion. Using $ARMA(p,q)$ one can describe any stationary process in a compact and most precise way
+
+# Summing up everything about ARMA(p,q)
+
+* the coefficients are not interpretable
+
+* are used for forecasting
+
+# Coefficients estimation 
+
+There are $T$ observations: $y_1$, $y_2$, $y_3$, \ldots, $y_T$
+
+The maximum likelihood method is often in use
+
+
+# Maximum likelihood method details
+
+* Normality is usually assumed, $\e_t \sim N(0;\sigma^2)$
+
+* $y_t$ is stationary
+
+\begin{multline}
+\nonumber
+y_t=c + b_1 y_{t-1} + b_2 y_{t-2} + \ldots + b_p y_{t-p} + \\
++\e_t + a_1 \e_{t-1} + \ldots + a_q \e_{t-q}
+\end{multline}
+
+# Maximum likelihood method result
+
+As a result we get the estimates 
+
+\[
+\hat{\theta}=(\hat{c}, \hat{a}_1, \ldots, \hat{a}_q, \hat{b}_1, \ldots, \hat{b}_q, \hat{\sigma}^2)
+\]
+
+and the estimate of their covariance matrix $\widehat{Var}(\hat{\theta})$
+
+# Hypotheses testing and confidence intervals
+
+\[
+\frac{\hat{a}_j - a_j}{se(\hat{a}_j)} \to N(0;1)
+\]
+
+# Sample autocorrelation function
+
+ACF --- autocorrelation function
+
+\[
+\hat{\rho}_k = \frac{\sum_{t=k+1}^{T} (y_t-\bar{y})(y_{t-k}-\bar{y})}{\sum_{t=1}^{T} (y_t-\bar{y})^2}
+\]
+
+# Sample partial autocorrelation function
+
+PACF --- partial autocorrelation function
+
+Acquire $\hat{\phi}_k$ from the regression estimate
+
+\[
+\hat{y}_t = * + * \cdot y_{t-1} + * \cdot y_{t-2} + \ldots + *  \cdot y _{t-k+1} + \phi_k y_{t-k} + u_t
+\]
+
+# Notes to autocorrelation function calculation process
+
+* For the estimation of every $\hat{\phi}_k$ an individual regression is constructed
+
+* From every regression we need only the last coefficient
+
+# Algorithm in practice
+
+1. Time series graphs, ACF, PACF
+
+1. If the series is nonstationary, then modify it
+
+1. Choose $p$ and $q$ 
+
+1. Estimate $ARMA(p,q)$
+
+1. Forecast
+
+# Main modification
+
+Differencing: moving from $y_t$ to $\Delta y_t$
+
+# Denotation
+
+* $y_t \sim ARIMA(p,1,q)$ equally matches $\Delta y_t \sim ARMA(p,q)$
+
+* $y_t \sim ARIMA(p,0,q)$ equally matches $y_t \sim ARMA(p,q)$
+
+# Choosing $p$ and $q$ according to graphs
+
+Sample correlation function graph can be constructed for a nonstationary process, too!
+
+$\rho_k$ and $\phi_k$ do not exist for a nonstationary proces, but a computer always can construct a graph of sample autocorrelation or sample partial autocorrelation functions!
+
+# White noise
+
+White noise, $y_t=\e_t$
+
+```{r}
+y <- arima.sim(n=n, list(order=c(0,0,0)) )
+# tsdisplay(y)
+tsdisplay(y,main = "")
+```
+
+
+# Random walk (nonstationary process!)
+
+Random walk, $y_t=y_{t-1}+\e_t$. The true $\rho_k$ and $\phi_k$ DO NOT exist!
+
+```{r}
+y <- arima.sim(n=n, list(order=c(0,1,0)) )
+tsdisplay(y)
+```
+
+
+
+# Process with trend (nonstationary process!)
+
+Process with trend, $y_t=0.02\cdot t +\varepsilon_t$. The true $\rho_k$ and $\phi_k$ DO NOT exist!
+
+```{r}
+y <- 0.02*(1:n)+arima.sim(n=n, list(order=c(0,0,0)) )
+tsdisplay(y,main = "")
+```
+
+# AR(1) 
+
+AR(1), $y_t=0.7y_{t-1} +\varepsilon_t$
+
+```{r}
+y <- arima.sim(n=n, list(ar=0.7) )
+tsdisplay(y,main = "")
+```
+
+# AR(2)
+
+AR(2), $y_t=0.9y_{t-1}-0.5y_{t-2} +\varepsilon_t$
+
+
+```{r}
+y <- arima.sim(n=n, list(ar=c(0.9,-0.5)) )
+tsdisplay(y,main = "")
+```
+
+
+# MA(1) 
+
+MA(1), $y_t=0.7\varepsilon_{t-1} +\varepsilon_t$
+
+```{r}
+y <- arima.sim(n=n, list(ma=0.7) )
+tsdisplay(y,main = "")
+```
+
+# MA(2)
+
+MA(2), $y_t=0.9\varepsilon_{t-1} +0.5\varepsilon_{t-1}+\varepsilon_t$
+
+```{r}
+y <- arima.sim(n=n, list(ma=c(0.9,0.5)) )
+tsdisplay(y,main = "")
+```
+
+# ARMA(1,1)
+
+ARMA(1,1), $y_t=0.7y_{t-1}+0.5\varepsilon_{t-1} +\varepsilon_t$
+
+```{r}
+y <- arima.sim(n=n, list(ar=0.7, ma=0.5) )
+tsdisplay(y,main = "")
+```
+
+# Summing up
+
+* Time series: stationary and nonstationary
+
+* For stationary ones --- ARMA model
+
+
+# Sources of wisdom:
+
+* Borzykh D.A., Demeshev B.B., Econometrics in Problems and Exercises: chapter 12
+
+* Katyshev P.K., Peresetskiy A.A., Econometrics. Beginners' Course: chapters 11.3, 11.4
+
+* Nosko V.P., Econometrics. Introduction to Time Series Regression Analysis: chapter 2
