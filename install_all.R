@@ -48,9 +48,9 @@ install.packages("rugarch") # не используется в курсе, хо�
 
 install.packages("quantmod") # загрузка с finance.google.com
 install.packages("Quandl") # загрузка с Quandl
-install.packages("sophisthse") # read data from sophist.hse.ru
 
 # non-CRAN packages:
+devtools::install_github("bdemeshev/sophisthse") # read data from sophist.hse.ru
 devtools::install_github("bdemeshev/rlms") # авточистка данных RLMS 
 
 # дополнение к quantmod для загрузки данных с finam.ru
