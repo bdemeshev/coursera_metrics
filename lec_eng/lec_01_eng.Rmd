@@ -120,9 +120,9 @@ Example: $y_i=\beta_1 + \beta_2 x_i + \varepsilon_i$
 - come up with an adequate model  
 - obtain estimates of unknown parameters: $\hat{\beta}_1$, $\hat{\beta}_2$  
 - predict, replacing unknown parameters with their estimates:  
-\[
+$$
 \hat{y}_i=\hat{\beta}_1 + \hat{\beta}_2 x_i
-\]
+$$
 
 
 ## Least Squares Method
@@ -132,9 +132,9 @@ Example: $y_i=\beta_1 + \beta_2 x_i + \varepsilon_i$
 Forecast error: $\hat{\varepsilon}_i=y_i-\hat{y}_i$.
 
 Sum of squared forecast errors:
-\[
+$$
 Q(\hat{\beta}_1,\hat{\beta}_2)=\sum_{i=1}^n \hat{\varepsilon}_i^2=\sum_{i=1}^n (y_i-\hat{y}_i)^2
-\]
+$$
 
 The essence of LS method: take estimates $\hat{\beta}_1$, $\hat{\beta}_2$ such that the sum of squared forecast errors $Q$ is minimal.
 
@@ -150,9 +150,9 @@ Model: $y_i=\beta_1+\beta_2 x_i+\varepsilon_i$. Forecast formula:  $\hat{y}_i=\h
 
 Sum of squared forecast errors: $Q=\sum_{i=1}^n (y_i-\hat{y}_i)^2$
 
-\[
+$$
 Q=(0.6-\hat{\beta}_1-\hat{\beta}_2 6.68)^2+(3-\hat{\beta}_1-\hat{\beta}_2 6.68)^2+...
-\]
+$$
 
 Minimum point, found in R: $\hat{\beta}_1=-5.3$, $\hat{\beta}_2=0.7$:
 
@@ -177,32 +177,32 @@ Small preparation: $n\bar{x}=\sum_i x_i=\sum_i \bar{x}$, $\sum_i (x_i - \bar{x})
 <!--
 Model: $y_i=\beta x_i +\varepsilon_i$, Forecasts: $\hat{y}_i=\hat{\beta}x_i$.
 Sum of squared errors:
-\[
+$$
 Q(\hat{\beta})=(60-\hat{\beta}170)^2+(70-\hat{\beta}170)^2+(80-\hat{\beta}180)^2
-\]
+$$
 ## Solving the minimization problem
 Sum of squared errors:
-\[
+$$
 Q(\hat{\beta})=(60-\hat{\beta}170)^2+(70-\hat{\beta}170)^2+(80-\hat{\beta}180)^2
-\]
+$$
 Derivative:
 \begin{multline}
 Q'(\hat{\beta})=-2\cdot 170\cdot (60-\hat{\beta}170)-2\cdot 170\cdot(70-\hat{\beta}170)\\
 -2\cdot 180\cdot(80-\hat{\beta}180)
 \end{multline}
 Equating the derivative to zero, we obtain:
-\[
+$$
 \hat{\beta}=0.4047
-\]
+$$
 -->
 
 ## Final LS formulae. Regression on a constant
 
 In the $y_i=\beta +\varepsilon_i$ model
 
-\[
+$$
 \hat{\beta}=\bar{y}
-\]
+$$
 
 Interpretation:
 
@@ -213,12 +213,12 @@ In a model without explanatory variables the best forecast is the mean of the re
 
 In the $y_i=\beta_1+\beta_2 x_i +\varepsilon_i$ model
 
-\[
+$$
 \hat{\beta}_2=\frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum (x_i-\bar{x})^2}
-\]
-\[
+$$
+$$
 \hat{\beta}_1=\bar{y}-\hat{\beta}_2\bar{x}
-\]
+$$
 
 Interpretation:
 
@@ -285,37 +285,37 @@ $y_i=\beta_1+\beta_2 x_i +\beta_3 z_i+\varepsilon_i$
 
 Write out the system of equations for the $\hat{\beta}_1$, $\hat{\beta}_2$, $\hat{\beta}_3$ estimates:
 
-\[
+$$
 \begin{cases}
 \sum \hat{\varepsilon}_i \cdot 1 =0 \\
 \sum \hat{\varepsilon}_i \cdot x_i =0 \\
 \sum \hat{\varepsilon}_i \cdot z_i =0
 \end{cases}
-\]
+$$
 
 ## Sums of squares
 
 * Residual sum of squares 
-\[
+$$
 RSS=\sum \hat{\varepsilon}_i^2
-\]
+$$
 
 * Total sum of squares
-\[
+$$
 TSS=\sum (y_i-\bar{y})^2
-\]
+$$
 
 * Explained sum of squares
-\[
+$$
 ESS=\sum (\hat{y}_i-\bar{y})^2
-\]
+$$
 
 
 ## Nuts-and-bolts linear algebra course
 
 Vectors: $y$, $x$, $\hat{y}$, $\varepsilon$, \ldots
 
-\[
+$$
 y=\begin{pmatrix}
 y_1 \\
 y_2 \\
@@ -340,21 +340,21 @@ x_n
 \vdots \\
 1
 \end{pmatrix}
-\] 
+$$ 
 
 In our model:
 $\hat{y}=\hat{\beta}_1 \cdot \vec{1}+\hat{\beta}_2 \cdot x +\hat{\beta}_3 \cdot z$
 
 ## Matrix of all regressors
 
-\[
+$$
 X=\begin{pmatrix}
 1 & x_1 & z_1 \\
 1 & x_2 & z_2 \\
 \vdots \\
 1 & x_n & z_n 
 \end{pmatrix}
-\]
+$$
 
 ## Vector length
 
@@ -387,21 +387,21 @@ y_n
 
 ## Dot product of two vectors:
 
-\[
+$$
 (x,y)=|x|\cdot |y|\cdot cos(x,y)
-\]
+$$
 
-\[
+$$
 (x,y)=x_1 y_1 +x_2 y_2 +\ldots+ x_n y_n=\sum_i x_i y_i
-\]
+$$
 
 Perpendicularity condition: 
 
-\[
+$$
 x \perp y  \Leftrightarrow  \sum_i x_i y_i=0
-\]
+$$
 
-т.к. $cos(90^\circ)=0$.
+as $cos(90^\circ)=0$.
 
 ## Illustration for the regression on a constant [at the blackboard]
 
@@ -424,7 +424,7 @@ Forecasts: $\hat{y}_i=\hat{\beta}=\bar{y}$
 
 ## Geometric interpretation of first-order conditions
 
-\[
+$$
 \begin{cases}
 \sum \hat{\varepsilon}_i \cdot 1 =0 \\
 \sum \hat{\varepsilon}_i \cdot x_i =0 \\
@@ -435,7 +435,7 @@ Forecasts: $\hat{y}_i=\hat{\beta}=\bar{y}$
 \hat{\varepsilon}\perp x \\
 \hat{\varepsilon}\perp z \\
 \end{cases}
-\]
+$$
 
 ## Illustration for multivariate regression  [at the blackboard]
 
@@ -465,16 +465,16 @@ $R^2$ --- share of explained dispersion in total dispersion
 
 Theorem. If an intercept is included in the regression, $y_i=\beta_1 + \ldots$, and LS-estimates are unique, then $R^2$ is equal to the sample correlation between $y$ and $\hat{y}$, i.e.
 
-\[
+$$
 R^2=(sCorr(y,\hat{y}))^2=\left(\frac{\sum (y_i-\bar{y})(\hat{y}_i-\bar{y})}{\sqrt{\sum(y_i-\bar{y})^2}\sqrt{\sum(\hat{y}_i-\bar{y})^2}}\right)^2
-\]
+$$
 
 
 ## Explicit formula for coefficient estimates
 
 Model: $y_i=\beta_1 + \beta_2 x_i +\beta_3 z_i +\varepsilon_i$ 
 
-\[
+$$
 y=\begin{pmatrix}
 y_1 \\
 y_2 \\
@@ -487,13 +487,13 @@ y_n
 \vdots \\
 1 & x_n & z_n 
 \end{pmatrix}
-\]
+$$
 
 Linear algebra allows to obtain explicit formulae:
 
-\[
+$$
 \hat{\beta}=(X'X)^{-1}X'y
-\]
+$$
 
 ## Summing up
 

@@ -1,0 +1,5 @@
+figure/
+*.fls
+*.fdb_latexmk
+*.md
+*.tex
